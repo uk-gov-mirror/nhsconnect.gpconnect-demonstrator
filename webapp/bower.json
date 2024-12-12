@@ -25,7 +25,7 @@
         "fullcalendar": "2.4.0",
         "angular-ui-calendar": "latest",
         "angular-ui-tree": "2.15.0",
-        "angular-spinner": "0.7.0",
+        "angular-spinner": "0.8.0",
         "angular-gantt": "1.2.13",
         "jsrsasign": "5.0.13"
     },
