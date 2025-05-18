@@ -1,0 +1,19 @@
+{
+  "name": "postman-sdk-api",
+  "version": "1.0.0",
+  "description": "Project using Postman SDK API",
+  "main": "Postman.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node Postman.js"
+  },
+  "keywords": [
+    "postman",
+    "api"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "postman-collection": "^5.0.2"
+  }
+}

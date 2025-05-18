@@ -1,0 +1,163 @@
+HttpHeaderHelper() Constructor
+HttpHelper() Constructor
+All Header(s) Cleared
+All Parameters Cleared
+HttpContext->LoadAppConfig()
+Removed Key='Ssp-TraceID'
+Added Key='Ssp-TraceID' Value='0a7fa143-5a75-4d4c-b6b1-ac8589e7f3a9'
+Replaced Key='Ssp-TraceID' With Value='0a7fa143-5a75-4d4c-b6b1-ac8589e7f3a9'
+Removed Key='Ssp-From'
+Added Key='Ssp-From' Value='200000000359'
+Replaced Key='Ssp-From' With Value='200000000359'
+Removed Key='Ssp-To'
+Added Key='Ssp-To' Value='918999198738'
+Replaced Key='Ssp-To' With Value='918999198738'
+Removed Key='Accept'
+Added Key='Accept' Value='application/fhir+json'
+Replaced Key='Accept' With Value='application/fhir+json'
+GenericSteps() Constructor
+InitializeContainer For Dependency Injection
+10 Organisations Loaded From ODS CSV File.
+Feature: StructuredProblems
+
+Scenario: Verify response for a Patient with Problems linked to some clinical items
+SecurityContext->LoadAppConfig()
+useTLS=True
+useTLSFoundationsAndAppmts=True
+useTLSStructured=True
+useTLSDocuments=True
+clientCertThumbPrint=53 a0 9e 6a 3e 20 c0 10 48 9a 7d 50 89 d0 1e 18 be 18 77 21
+sendClientCert=False
+validateServerCert=False
+Force The Server Certificate Callback To Always Be True.
+JwtHelper() Constructor
+HttpSteps() Constructor
+HttpHeaderHelper() Constructor
+JwtSteps() Constructor
+All Header(s) Cleared
+All Parameters Cleared
+HttpContext->LoadAppConfig()
+Removed Key='Ssp-TraceID'
+Added Key='Ssp-TraceID' Value='b87b64d2-990a-4d8e-9f11-340b6e97fb00'
+Replaced Key='Ssp-TraceID' With Value='b87b64d2-990a-4d8e-9f11-340b6e97fb00'
+Removed Key='Ssp-From'
+Added Key='Ssp-From' Value='200000000359'
+Replaced Key='Ssp-From' With Value='200000000359'
+Removed Key='Ssp-To'
+Added Key='Ssp-To' Value='918999198738'
+Replaced Key='Ssp-To' With Value='918999198738'
+Removed Key='Accept'
+Added Key='Accept' Value='application/fhir+json'
+Replaced Key='Accept' With Value='application/fhir+json'
+Removed Key='Ssp-InteractionId'
+Added Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+Replaced Key='Ssp-InteractionId' With Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+Force The Server Certificate Callback To Always Be True.
+Removed Key='Authorization'
+Added Key='Authorization' Value='Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwczovL0NvbnN1bWVyU3lzdGVtVVJMIiwic3ViIjoiMSIsImF1ZCI6Imh0dHBzOi8vYXV0aG9yaXplLmZoaXIubmhzLm5ldC90b2tlbi8iLCJleHAiOjE3NDc0MTExMDUsImlhdCI6MTc0NzQxMDgwNSwicmVhc29uX2Zvcl9yZXF1ZXN0IjoiZGlyZWN0Y2FyZSIsInJlcXVlc3RpbmdfZGV2aWNlIjp7InJlc291cmNlVHlwZSI6IkRldmljZSIsImlkZW50aWZpZXIiOlt7InN5c3RlbSI6IkdQQ29ubmVjdFRlc3RTeXN0ZW0iLCJ2YWx1ZSI6IkNsaWVudCJ9XSwibW9kZWwiOiJ2MSIsInZlcnNpb24iOiIxLjEifSwicmVxdWVzdGluZ19vcmdhbml6YXRpb24iOnsicmVzb3VyY2VUeXBlIjoiT3JnYW5pemF0aW9uIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiaHR0cHM6Ly9maGlyLm5ocy51ay9JZC9vZHMtb3JnYW5pemF0aW9uLWNvZGUiLCJ2YWx1ZSI6IkdQQ0EwMDAxIn1dLCJuYW1lIjoiR1AgQ29ubmVjdCBBc3N1cmFuY2UifSwicmVxdWVzdGluZ19wcmFjdGl0aW9uZXIiOnsicmVzb3VyY2VUeXBlIjoiUHJhY3RpdGlvbmVyIiwiaWQiOiIxIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiaHR0cHM6Ly9maGlyLm5ocy51ay9JZC9zZHMtdXNlci1pZCIsInZhbHVlIjoiR0NBU0RTMDAwMSJ9LHsic3lzdGVtIjoiaHR0cHM6Ly9maGlyLm5ocy51ay9JZC9zZHMtcm9sZS1wcm9maWxlLWlkIiwidmFsdWUiOiIxMTIyMzM0NDU1NjYifSx7InN5c3RlbSI6Imh0dHBzOi8vY29uc3VtZXJzdXBwbGllci5jb20vSWQvdXNlci1ndWlkIiwidmFsdWUiOiI5OGVkNGY3OC04MTRkLTQyNjYtOGQ1Yi1jZGU3NDJmMzA5M2MifV0sIm5hbWUiOlt7ImZhbWlseSI6IkFzc3VyYW5jZVByYWN0aXRpb25lciIsImdpdmVuIjpbIkFzc3VyYW5jZVRlc3QiXSwicHJlZml4IjpbIk1yIl19XX0sInJlcXVlc3RlZF9zY29wZSI6InBhdGllbnQvKi5yZWFkIn0.'
+Replaced Key='Authorization' With Value='Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwczovL0NvbnN1bWVyU3lzdGVtVVJMIiwic3ViIjoiMSIsImF1ZCI6Imh0dHBzOi8vYXV0aG9yaXplLmZoaXIubmhzLm5ldC90b2tlbi8iLCJleHAiOjE3NDc0MTExMDUsImlhdCI6MTc0NzQxMDgwNSwicmVhc29uX2Zvcl9yZXF1ZXN0IjoiZGlyZWN0Y2FyZSIsInJlcXVlc3RpbmdfZGV2aWNlIjp7InJlc291cmNlVHlwZSI6IkRldmljZSIsImlkZW50aWZpZXIiOlt7InN5c3RlbSI6IkdQQ29ubmVjdFRlc3RTeXN0ZW0iLCJ2YWx1ZSI6IkNsaWVudCJ9XSwibW9kZWwiOiJ2MSIsInZlcnNpb24iOiIxLjEifSwicmVxdWVzdGluZ19vcmdhbml6YXRpb24iOnsicmVzb3VyY2VUeXBlIjoiT3JnYW5pemF0aW9uIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiaHR0cHM6Ly9maGlyLm5ocy51ay9JZC9vZHMtb3JnYW5pemF0aW9uLWNvZGUiLCJ2YWx1ZSI6IkdQQ0EwMDAxIn1dLCJuYW1lIjoiR1AgQ29ubmVjdCBBc3N1cmFuY2UifSwicmVxdWVzdGluZ19wcmFjdGl0aW9uZXIiOnsicmVzb3VyY2VUeXBlIjoiUHJhY3RpdGlvbmVyIiwiaWQiOiIxIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiaHR0cHM6Ly9maGlyLm5ocy51ay9JZC9zZHMtdXNlci1pZCIsInZhbHVlIjoiR0NBU0RTMDAwMSJ9LHsic3lzdGVtIjoiaHR0cHM6Ly9maGlyLm5ocy51ay9JZC9zZHMtcm9sZS1wcm9maWxlLWlkIiwidmFsdWUiOiIxMTIyMzM0NDU1NjYifSx7InN5c3RlbSI6Imh0dHBzOi8vY29uc3VtZXJzdXBwbGllci5jb20vSWQvdXNlci1ndWlkIiwidmFsdWUiOiI5OGVkNGY3OC04MTRkLTQyNjYtOGQ1Yi1jZGU3NDJmMzA5M2MifV0sIm5hbWUiOlt7ImZhbWlseSI6IkFzc3VyYW5jZVByYWN0aXRpb25lciIsImdpdmVuIjpbIkFzc3VyYW5jZVRlc3QiXSwicHJlZml4IjpbIk1yIl19XX0sInJlcXVlc3RlZF9zY29wZSI6InBhdGllbnQvKi5yZWFkIn0.'
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+GetRequestParameters Count='0'
+GetRequestHeaders Count='6'
+Header - Ssp-TraceID -> b87b64d2-990a-4d8e-9f11-340b6e97fb00
+Header - Ssp-From -> 200000000359
+Header - Ssp-To -> 918999198738
+Header - Accept -> application/fhir+json
+Header - Ssp-InteractionId -> urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1
+Header - Authorization -> Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwczovL0NvbnN1bWVyU3lzdGVtVVJMIiwic3ViIjoiMSIsImF1ZCI6Imh0dHBzOi8vYXV0aG9yaXplLmZoaXIubmhzLm5ldC90b2tlbi8iLCJleHAiOjE3NDc0MTExMDUsImlhdCI6MTc0NzQxMDgwNSwicmVhc29uX2Zvcl9yZXF1ZXN0IjoiZGlyZWN0Y2FyZSIsInJlcXVlc3RpbmdfZGV2aWNlIjp7InJlc291cmNlVHlwZSI6IkRldmljZSIsImlkZW50aWZpZXIiOlt7InN5c3RlbSI6IkdQQ29ubmVjdFRlc3RTeXN0ZW0iLCJ2YWx1ZSI6IkNsaWVudCJ9XSwibW9kZWwiOiJ2MSIsInZlcnNpb24iOiIxLjEifSwicmVxdWVzdGluZ19vcmdhbml6YXRpb24iOnsicmVzb3VyY2VUeXBlIjoiT3JnYW5pemF0aW9uIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiaHR0cHM6Ly9maGlyLm5ocy51ay9JZC9vZHMtb3JnYW5pemF0aW9uLWNvZGUiLCJ2YWx1ZSI6IkdQQ0EwMDAxIn1dLCJuYW1lIjoiR1AgQ29ubmVjdCBBc3N1cmFuY2UifSwicmVxdWVzdGluZ19wcmFjdGl0aW9uZXIiOnsicmVzb3VyY2VUeXBlIjoiUHJhY3RpdGlvbmVyIiwiaWQiOiIxIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiaHR0cHM6Ly9maGlyLm5ocy51ay9JZC9zZHMtdXNlci1pZCIsInZhbHVlIjoiR0NBU0RTMDAwMSJ9LHsic3lzdGVtIjoiaHR0cHM6Ly9maGlyLm5ocy51ay9JZC9zZHMtcm9sZS1wcm9maWxlLWlkIiwidmFsdWUiOiIxMTIyMzM0NDU1NjYifSx7InN5c3RlbSI6Imh0dHBzOi8vY29uc3VtZXJzdXBwbGllci5jb20vSWQvdXNlci1ndWlkIiwidmFsdWUiOiI5OGVkNGY3OC04MTRkLTQyNjYtOGQ1Yi1jZGU3NDJmMzA5M2MifV0sIm5hbWUiOlt7ImZhbWlseSI6IkFzc3VyYW5jZVByYWN0aXRpb25lciIsImdpdmVuIjpbIkFzc3VyYW5jZVRlc3QiXSwicHJlZml4IjpbIk1yIl19XX0sInJlcXVlc3RlZF9zY29wZSI6InBhdGllbnQvKi5yZWFkIn0.
+Header - Transfer-Encoding : chunked
+Header - Connection : keep-alive
+Header - Strict-Transport-Security : max-age=31536000
+Header - Cache-Control : no-store
+Header - Date : Fri, 16 May 2025 15:53:29 GMT
+Header - Location : https://orange.testlab.nhs.uk/B82617/STU3/1/gpconnect/fhir/Bundle/b87b64d2-990a-4d8e-9f11-340b6e97fb00
+Header - Server : nginx
+Header - X-Powered-By : HAPI FHIR 3.0.0 REST Server (FHIR Server; FHIR 3.0.1/DSTU3)
+Header - Content-Type : application/fhir+json; charset=UTF-8
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+Info : Bundle ID matched Request SSPTraceID
+No operation Outcome in the response
+Info : Found Linked Resource : Medication - Found ID: c260b451-9821-42de-81f9-ba86dcea2c32
+Info : Found Linked Resource : Medication - Found ID: c260b451-9821-42de-81f9-ba86dcea2c32
+Info : Found Linked Resource : Medication - Found ID: a260b451-9821-42de-81f9-ba86dcea2c32
+Info : Found Linked Resource : Medication - Found ID: a60b451-9821-42de-81f9-ba86dcea2c32
+Info : Found Linked Resource : Medication - Found ID: b260b451-9821-42de-81f9-ba86dcea2c32
+Info : Found Linked Resource : Medication - Found ID: b260b451-9821-42de-81f9-ba86dcea2c32
+Info : Found Linked Resource : Medication - Found ID: f260b451-9821-42de-81f9-ba86dcea2c32
+Info : Found Linked Resource : Medication - Found ID: f260b451-9821-42de-81f9-ba86dcea2c32
+Info : MedicationRequest found with a link to a Medication
+Info : Found Linked Resource : Medication - Found ID: c260b451-9821-42de-81f9-ba86dcea2c32
+Info : Found Linked Resource : MedicationRequest - Found ID: Consultation1-Topic1-Category-Plan-Medication-Plan
+Info : Found Linked Resource : Medication - Found ID: a260b451-9821-42de-81f9-ba86dcea2c32
+Info : Found Linked Resource : MedicationRequest - Found ID: Consultation1-Topic4-Category-Plan-Medication-Plan-1
+Info : Found Linked Resource : Medication - Found ID: b260b451-9821-42de-81f9-ba86dcea2c32
+Info : Found Linked Resource : MedicationRequest - Found ID: Consultation2-Topic1-Category-Plan-Medication-Plan
+Info : Found Linked Resource : Medication - Found ID: f260b451-9821-42de-81f9-ba86dcea2c32
+Info : Found Linked Resource : MedicationRequest - Found ID: Consultation3-Topic1-Category-Plan-Medication-Plan
+Info : Found MedicationStatements
+Info : Problem - Found Linked Clinical Item of type : Observation - with ID : Observation/Consultation1-Topic1-Category-History-Observation-1
+Info : Found Linked Resource : Observation - Found ID: Consultation1-Topic1-Category-History-Observation-1
+Info : Problem - Found with Context Link To an Encounter with ID : Encounter/Encounter1
+Info : Encounter Reference has been included in bundle with ID : Encounter/Encounter1
+Info : Problem - Found with Context Link To an Encounter with ID : Encounter/Encounter1
+Info : Encounter Reference has been included in bundle with ID : Encounter/Encounter1
+Info : Problem - Found with Context Link To an Encounter with ID : Encounter/Encounter1
+Info : Encounter Reference has been included in bundle with ID : Encounter/Encounter1
+Info : Problem - Found with Context Link To an Encounter with ID : Encounter/Encounter2
+Info : Encounter Reference has been included in bundle with ID : Encounter/Encounter2
+Info : No Consultation List Found as Expected
+Info : No Consultations List Found as Expected
+Info : No Heading List Found as Expected
+Info : No Topic List Found as Expected
+Info : Found Observation linked on List and Verified It was Contained in Bundle -ID : Consultation1-Topic1-Category-History-Observation-1
+Info : Found Observation linked on List and Verified It was Contained in Bundle -ID : Consultation1-Topic1-Category-Examination-Observation-1
+Info : Found Observation linked on List and Verified It was Contained in Bundle -ID : Consultation1-Topic1-Category-Social-Observation-1
+Info : Found Observation linked on List and Verified It was Contained in Bundle -ID : Consultation1-Topic1-Category-Social-Observation-2
+Info : Found Observation linked on List and Verified It was Contained in Bundle -ID : Consultation1-Topic1-Category-Plan-Observation-2
+Info : Found Observation linked on List and Verified It was Contained in Bundle -ID : Consultation2-Topic1-Category-History-Observation-1
+Info : Found Observation linked on List and Verified It was Contained in Bundle -ID : Consultation2-Topic1-Category-Examination-Observation-1
+Info : Found Observation linked on List and Verified It was Contained in Bundle -ID : Consultation2-Topic1-Category-Social-Observation-1
+Info : Found Observation linked on List and Verified It was Contained in Bundle -ID : Consultation2-Topic1-Category-Plan-Observation-1
+Info : Found Observation linked on List and Verified It was Contained in Bundle -ID : Consultation3-Topic1-Category-History-Observation-1
+Info : Found Observation linked on List and Verified It was Contained in Bundle -ID : Consultation3-Topic1-Category-Examination-Observation-1
+Info : Found Observation linked on List and Verified It was Contained in Bundle -ID : Consultation3-Topic1-Category-Social-Observation-1
+Info : Found Observation linked on List and Verified It was Contained in Bundle -ID : Consultation3-Topic1-Category-Plan-Observation-1
+Info : Found Observation linked on List and Verified It was Contained in Bundle -ID : Consultation1-Topic2-Category-History-Observation-1
+Info : Found Observation linked on List and Verified It was Contained in Bundle -ID : Consultation1-Topic2-Category-Examination-Observation-1
+Info : Found Observation linked on List and Verified It was Contained in Bundle -ID : Consultation1-Topic2-Category-Examination-Observation-2
+Info : Found Observation linked on List and Verified It was Contained in Bundle -ID : Consultation1-Topic2-Category-Examination-Observation-3
+Info : Found Observation linked on List and Verified It was Contained in Bundle -ID : Consultation1-Topic2-Category-Examination-Observation-4
+Info : Found Observation linked on List and Verified It was Contained in Bundle -ID : Consultation1-Topic2-Category-Examination-Observation-5
+Info : Found Observation linked on List and Verified It was Contained in Bundle -ID : Consultation1-Topic2-Category-Plan-Observation-1
+Info : Found Observation linked on List and Verified It was Contained in Bundle -ID : Consultation1-Topic2-Category-Plan-Observation-2
+Info : Found Observation linked on List and Verified It was Contained in Bundle -ID : Consultation1-Topic1-Category-History-Observation-2
+Info : Found Observation linked on List and Verified It was Contained in Bundle -ID : Consultation3-Topic2-Category-History-Observation-1
+Info : Found Observation linked on List and Verified It was Contained in Bundle -ID : Consultation3-Topic2-Category-Examination-Observation-1
+Info : Found Observation linked on List and Verified It was Contained in Bundle -ID : Consultation3-Topic2-Category-Examination-Observation-2
+Info : Found Observation linked on List and Verified It was Contained in Bundle -ID : Consultation3-Topic2-Category-Examination-Observation-3
+Info : Found Observation linked on List and Verified It was Contained in Bundle -ID : Consultation3-Topic2-Category-Examination-Observation-4
+Info : Found Observation linked on List and Verified It was Contained in Bundle -ID : Consultation3-Topic2-Category-Examination-Observation-5
+Info : Found Observation linked on List and Verified It was Contained in Bundle -ID : Consultation3-Topic2-Category-Plan-Observation-1
+Info : Found Observation linked on List and Verified It was Contained in Bundle -ID : Consultation1-Topic4-Category-History-Observation-1
+Info : Found Observation linked on List and Verified It was Contained in Bundle -ID : Consultation1-Topic4-Category-History-Observation-2
+Info : Found Observation linked on List and Verified It was Contained in Bundle -ID : Consultation1-Topic4-Category-History-Observation-3
+Info : Found Observation linked on List and Verified It was Contained in Bundle -ID : Consultation1-Topic4-Category-History-Observation-4
+Info : Found Observation linked on List and Verified It was Contained in Bundle -ID : Consultation1-Topic4-Category-History-Observation-5
+Info : Found Observation linked on List and Verified It was Contained in Bundle -ID : Consultation1-Topic5-Category-History-Observation-4
+Info : Found Observation linked on List and Verified It was Contained in Bundle -ID : Consultation2-Topic2-Category-History-Observation-1
+Info : Found Observation linked on List and Verified It was Contained in Bundle -ID : Consultation2-Topic2-Category-Plan-Observation-1
+Info : Found Observation linked on List and Verified It was Contained in Bundle -ID : Consultation2-Topic1-Category-History-Observation-1
+Info : Found Observation linked on List and Verified It was Contained in Bundle -ID : Consultation2-Topic1-Category-Plan-Observation-1
+Info : Validated Secondary list with Title : Problems - uncategorised data related to problems
+Info : Found MedicationStatement linked on List and Verified It was Contained in Bundle -ID : 8f78cb68-7f02-4f8c-9b85-05abc743ec7a
+Info : Found MedicationStatement linked on List and Verified It was Contained in Bundle -ID : 5a437365-7aa0-4c4f-b79e-75879bc8e14e
+Info : Found MedicationStatement linked on List and Verified It was Contained in Bundle -ID : 6bff710a-0bdc-4c9b-b98b-40db0a107edc
+Info : Found MedicationStatement linked on List and Verified It was Contained in Bundle -ID : d806d0aa-a2c7-4a4b-9121-e80e04c20693
+Info : Validated Secondary list with Title : Problems - medications related to problems
+C:/Temp/2025-05-16T161236\Verify response for a Patient with Problems linked to some clinical items-1
+GetRequestHeaders Count='6'
+GetRequestParameters Count='0'
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+endpointAddress=https://orange.testlab.nhs.uk/B82617/STU3/1/gpconnect/structured/fhir
+GetRequestHeaders Count='6'

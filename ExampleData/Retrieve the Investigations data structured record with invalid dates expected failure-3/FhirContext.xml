@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<fhirContext>
+  <request>
+    <fhirRequestParameters>{"resourceType":"Parameters","parameter":[{"name":"patientNHSNumber","valueIdentifier":{"system":"https://fhir.nhs.uk/Id/nhs-number","value":"9690937286"}},{"name":"includeInvestigations","part":[{"name":"investigationSearchPeriod","valuePeriod":{"start":"2015-10-23T11:08:32","end":"2016-11-01"}}]}]}</fhirRequestParameters>
+  </request>
+  <response>
+    <fhirResponseResource>{"resourceType":"OperationOutcome","meta":{"profile":["https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1"]},"issue":[{"severity":"error","code":"invalid","details":{"coding":[{"system":"https://fhir.nhs.uk/STU3/CodeSystem/Spine-ErrorOrWarningCode-1","code":"INVALID_PARAMETER","display":"INVALID_PARAMETER"}]},"diagnostics":"Invalid date used  Start date 2015-10-23T11:08:32 does not match yyyy-mm-dd"}]}</fhirResponseResource>
+  </response>
+</fhirContext>
