@@ -2,10 +2,12 @@
   "name": "postman-sdk-api",
   "version": "1.0.0",
   "description": "Project using Postman SDK API",
-  "main": "Postman.js",
+  "main": "src/Postman.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node Postman.js"
+    "pm": "node src/Postman.js",
+    "pd": "node src/ProcessGpcAcceptanceTestData.js",
+    "pd:custom": "echo \"Usage: npm run pd:custom -- <custom-path>\" && node src/ProcessGpcAcceptanceTestData.js"
   },
   "keywords": [
     "postman",

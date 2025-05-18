@@ -61,7 +61,7 @@ console.log(JSON.stringify(myCollection.toJSON(), null, 2));
 
 //write to file with filename same as myCollection.info.name
 const collectionName = myCollection.name;
-const fileName = `output/${collectionName.replace(/\s+/g, '_')}.json`;
+const fileName = `../output/${collectionName.replace(/\s+/g, '_')}.json`;
 const collectionJson = JSON.stringify(myCollection.toJSON(), null, 2);
 
 // Write the collection to a file

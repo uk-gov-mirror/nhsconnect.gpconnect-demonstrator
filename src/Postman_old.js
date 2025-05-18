@@ -65,6 +65,7 @@ const fileName = `output/${collectionName.replace(/\s+/g, '_')}.json`;
 const collectionJson = JSON.stringify(myCollection.toJSON(), null, 2);
 
 // Write the collection to a file
+console.log(`Writing to file: ${fileName} - Reason: Writing Postman collection to JSON file`);
 fs.writeFileSync(fileName, collectionJson);
 console.log(`Collection written to file: ${fileName}`);
 

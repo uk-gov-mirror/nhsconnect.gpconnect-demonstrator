@@ -1,3 +1,20 @@
+/**
+ * GPC Acceptance Test Data Processor
+ * 
+ * This script processes GPC acceptance test data and generates a JSON.
+ * 
+ * Usage:
+ *   node ProcessGpcAcceptanceTestData.js [customPath]
+ * 
+ * Examples:
+ *   node ProcessGpcAcceptanceTestData.js                      # Uses default path (project_root/ExampleData)
+ *   node ProcessGpcAcceptanceTestData.js c:\gpcAcceptanceTestData\  # Uses custom path
+ * 
+ * Or using npm scripts:
+ *   npm run pd                               # Uses default path
+ *   npm run pd:custom -- c:\gpcAcceptanceTestData\  # Uses custom path
+ */
+
 const fs = require('fs').promises;
 const path = require('path');
 const { existsSync, readFileSync } = require('fs');
@@ -7,12 +24,14 @@ function extractScenarioName(dirName) {
     return dirName.replace(/-\d+$/, '');
 }
 
-// Function to determine test result from TestRunLog.txt
-function getTestResult(scenarioName) {
+// Function to determine a test result from TestRunLog.txt
+function getTestResult(scenarioName, gpcAcceptanceTestDataDir) {
     try {
-        const testRunLogPath = path.join(__dirname, 'ExampleData', 'TestRunLog.txt');
+        const testRunLogPath = path.join(gpcAcceptanceTestDataDir, 'TestRunLog.txt');
+        console.log(`Checking if path exists: \n\t${testRunLogPath}`);
         if (!existsSync(testRunLogPath)) return 'Undetermined';
 
+        console.log(`Reading file: \n\t${testRunLogPath}\n - Reason: Determining test result for scenario ${scenarioName}`);
         const content = readFileSync(testRunLogPath, 'utf8');
         const lines = content.split('\n');
 
@@ -35,11 +54,13 @@ function getTestResult(scenarioName) {
 }
 
 // Function to extract failure reason from TestRunLog.txt
-function getFailureReason(scenarioName) {
+function getFailureReason(scenarioName, gpcAcceptanceTestDataDir) {
     try {
-        const testRunLogPath = path.join(__dirname, 'ExampleData', 'TestRunLog.txt');
+        const testRunLogPath = path.join(gpcAcceptanceTestDataDir, 'TestRunLog.txt');
+        console.log(`Checking if path exists: \n\t${testRunLogPath}`);
         if (!existsSync(testRunLogPath)) return null;
 
+        console.log(`Reading file: \n\t${testRunLogPath}\n - Reason: Extracting failure reason for scenario ${scenarioName}`);
         const content = readFileSync(testRunLogPath, 'utf8');
         const lines = content.split('\n');
 
@@ -101,7 +122,7 @@ function extractNhsNumber(requestBody) {
         // Parse the JSON
         const parsedBody = JSON.parse(decodedBody);
 
-        // Find the parameter with name "patientNHSNumber"
+        // Find the parameter with the name "patientNHSNumber"
         const patientParam = parsedBody.parameter.find(param => param.name === "patientNHSNumber");
 
         // Extract the NHS number
@@ -119,8 +140,10 @@ function extractNhsNumber(requestBody) {
 function extractQueryParameters(dirPath) {
     try {
         const consoleLogPath = path.join(dirPath, 'ConsoleLog.txt');
+        console.log(`Checking if path exists: \n\t${consoleLogPath}`);
         if (!existsSync(consoleLogPath)) return {};
 
+        console.log(`Reading file: \n\t${consoleLogPath}\n - Reason: Extracting query parameters from ConsoleLog.txt`);
         const content = readFileSync(consoleLogPath, 'utf8');
         const lines = content.split('\n');
 
@@ -197,7 +220,9 @@ function parseXmlToJson(xmlContent) {
         // Keep method, contentType, body, and parameters at the request level for backward compatibility
         result.request.method = extractXmlValue(requestContent, 'requestMethod');
         result.request.contentType = extractXmlValue(requestContent, 'requestContentType');
-        result.request.body = extractXmlValue(requestContent, 'requestBody');
+        result.request.body = {
+            value: extractXmlValue(requestContent, 'requestBody')
+        };
 
         // Extract request parameters
         result.request.parameters = [];
@@ -256,26 +281,29 @@ function parseXmlToJson(xmlContent) {
     return result;
 }
 
-async function processExampleData() {
-    const exampleDataDir = path.join(__dirname, 'ExampleData');
+async function processGpcAcceptanceTestData(gpcAcceptanceTestDataDir = path.join(__dirname, '..', 'ExampleData')) {
     const results = [];
 
     try {
-        // Get all subdirectories in the ExampleData folder
-        const directories = await fs.readdir(exampleDataDir);
+        // Get all subdirectories in the gpcAcceptanceTestData folder
+        console.log(`Reading directory: \n\t${gpcAcceptanceTestDataDir}\n - Reason: Getting all subdirectories in the gpcAcceptanceTestData folder`);
+        const directories = await fs.readdir(gpcAcceptanceTestDataDir);
 
         for (const dir of directories) {
-            const dirPath = path.join(exampleDataDir, dir);
+            const dirPath = path.join(gpcAcceptanceTestDataDir, dir);
 
             // Check if it's a directory
+            console.log(`Checking path stats: \n\t${dirPath}\n - Reason: Verifying if it's a directory`);
             const stats = await fs.stat(dirPath);
             if (!stats.isDirectory()) continue;
 
             // Check if HttpContext.xml exists in this directory
             const httpContextPath = path.join(dirPath, 'HttpContext.xml');
+            console.log(`Checking if path exists: \n\t${httpContextPath}`);
             if (!existsSync(httpContextPath)) continue;
 
             // Read and parse the HttpContext.xml file
+            console.log(`Reading file: \n\t${httpContextPath}\n - Reason: Reading and parsing the HttpContext.xml file`);
             let xmlContent = await fs.readFile(httpContextPath, 'utf8');
 
             // Extract query parameters from ConsoleLog.txt
@@ -295,6 +323,7 @@ async function processExampleData() {
                 );
 
                 // Write the updated XML back to the file
+                console.log(`Writing to file: \n\t${httpContextPath}\n - Reason: Writing updated XML with query parameters back to the file`);
                 await fs.writeFile(httpContextPath, xmlContent, 'utf8');
             }
 
@@ -306,9 +335,10 @@ async function processExampleData() {
 
             // Parse the XML content to JSON
             const data = parseXmlToJson(xmlContent);
+            data.testLocation = gpcAcceptanceTestDataDir;
 
             // Check if this is a Patient/$gpc.getstructuredrecord request
-            let name = requestUrl;
+            let requestName = requestUrl;
             if (requestUrl === "Patient/$gpc.getstructuredrecord" && data.requestBody) {
                 // Extract NHS number from request body
                 const nhsNumber = extractNhsNumber(data.requestBody);
@@ -320,19 +350,19 @@ async function processExampleData() {
 
             // Extract scenario name and determine test result
             const scenarioName = extractScenarioName(dir);
-            const testResult = getTestResult(scenarioName);
+            const testResult = getTestResult(scenarioName, gpcAcceptanceTestDataDir);
 
             // Create the result object
             const resultObj = {
-                name,
+                requestName,
                 dir,
                 testResult,
                 data
             };
 
-            // If test failed, add the reason for failure
+            // If the test failed, add the reason for failure
             if (testResult === 'Failed') {
-                const reasonFailed = getFailureReason(scenarioName);
+                const reasonFailed = getFailureReason(scenarioName, gpcAcceptanceTestDataDir);
                 if (reasonFailed) {
                     resultObj.reasonFailed = reasonFailed;
                 }
@@ -342,23 +372,47 @@ async function processExampleData() {
         }
 
         // Log the results
-        console.log(JSON.stringify(results, null, 2));
+        // console.log(JSON.stringify(results, null, 2));
 
         // Create an output directory if it doesn't exist
-        const outputDir = path.join(__dirname, 'output');
+        const outputDir = path.join(gpcAcceptanceTestDataDir ?? path.join(__dirname, '..'), 'output');
+        console.log(`Checking if path exists: \n\t${outputDir}`);
         if (!existsSync(outputDir)) {
+            console.log(`Creating directory: \n\t${outputDir}\n - Reason: Creating output directory for JSON results`);
             await fs.mkdir(outputDir, { recursive: true });
         }
 
         // Write results to a JSON file
-        const outputFile = path.join(outputDir, 'exampleData.json');
-        await fs.writeFile(outputFile, JSON.stringify(results, null, 2));
-        console.log(`Results written to ${outputFile}`);
+
+
+        let undetermined = results.filter(result => result.testResult === 'Undetermined');
+        let passed = results.filter(result => result.testResult === 'Passed');
+        let failed = results.filter(result => result.testResult === 'Failed');
+
+        const outputFileUndetermined = path.join(outputDir, `gpcAcceptanceTestData.undetermined.json`);
+        await fs.writeFile(outputFileUndetermined, JSON.stringify(undetermined, null, 2));
+        console.log(`Results written to \u001b]8;;file:///${outputFileUndetermined.replace(/\\/g, '/')}\u0007${outputFileUndetermined}\u001b]8;;\u0007`);
+
+        const outputFilePassed = path.join(outputDir, `gpcAcceptanceTestData.passed.json`);
+        await fs.writeFile(outputFilePassed, JSON.stringify(passed, null, 2));
+        console.log(`Results written to \u001b]8;;file:///${outputFilePassed.replace(/\\/g, '/')}\u0007${outputFilePassed}\u001b]8;;\u0007`);
+
+        const outputFileFailed = path.join(outputDir, `gpcAcceptanceTestData.failed.json`);
+        await fs.writeFile(outputFileFailed, JSON.stringify(failed, null, 2));
+        console.log(`Results written to \u001b]8;;file:///${outputFileFailed.replace(/\\/g, '/')}\u0007${outputFileFailed}\u001b]8;;\u0007`);
 
     } catch (error) {
         console.error('Error processing example data:', error);
     }
 }
 
-// Run the function
-processExampleData();
+// Check if a custom path was provided as a command line argument
+const customPath = process.argv[2];
+
+if (customPath) {
+    console.log(`Using custom path: ${customPath}`);
+    processGpcAcceptanceTestData(customPath);
+} else {
+    // Run the function with a default path
+    processGpcAcceptanceTestData(path.join(__dirname, '..', 'ExampleData'));
+}
