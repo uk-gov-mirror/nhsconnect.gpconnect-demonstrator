@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "pm": "node src/Postman.js",
+    "cc": "node src/CreateCollection.js",
     "pd": "node src/ProcessGpcAcceptanceTestData.js",
     "pd:custom": "echo \"Usage: npm run pd:custom -- <custom-path>\" && node src/ProcessGpcAcceptanceTestData.js"
   },
