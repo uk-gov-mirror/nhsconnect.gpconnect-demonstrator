@@ -215,6 +215,26 @@ function parseXmlToJson(xmlContent) {
                 name: match[1],
                 value: match[2]
             });
+
+            // Check for Authorization header with Bearer token
+            if (match[1] === "Authorization" && match[2].startsWith("Bearer ")) {
+                // Extract the JWT token (everything after "Bearer ")
+                const jwt = match[2].substring(7);
+
+                // Base64 decode the JWT token
+                try {
+                    // JWT tokens have 3 parts separated by dots. We need the middle part (payload)
+                    const parts = jwt.split('.');
+                    if (parts.length >= 2) {
+                        // Base64 decode the payload
+                        const payload = Buffer.from(parts[1], 'base64').toString('utf8');
+                        // Store the decoded JWT as a property on the request
+                        result.request.jwtoken = payload;
+                    }
+                } catch (error) {
+                    console.error('Error decoding JWT token:', error);
+                }
+            }
         }
 
         // Keep method, contentType, body, and parameters at the request level for backward compatibility
@@ -416,3 +436,8 @@ if (customPath) {
     // Run the function with a default path
     processGpcAcceptanceTestData(path.join(__dirname, '..', 'ExampleData'));
 }
+
+// Export functions for testing
+module.exports = {
+    parseXmlToJson
+};

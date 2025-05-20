@@ -4,6 +4,8 @@
 const sdk = require('postman-collection');
 const fs = require('fs');
 const path = require('path');
+const jwt = require('jsonwebtoken');
+const { getReasonPhrase } = require('http-status-codes');
 
 /**
  * Reads the NHSNoMap.csv file and creates a mapping of NHS numbers to patient identifiers
@@ -135,7 +137,7 @@ function createCollection(testDataFilePath) {
         });
 
         // Write the collection to a file
-        const outputDir = 'output';
+        const outputDir = filePath.replace("gpcAcceptanceTestData.passed.json", "");
         if (!fs.existsSync(outputDir)) {
             fs.mkdirSync(outputDir);
         }
@@ -151,6 +153,25 @@ function createCollection(testDataFilePath) {
         console.error('Error creating collection:', error);
         throw error;
     }
+}
+
+/**
+ * Decodes HTML entities in a string
+ * @param {string} value - The string that might contain HTML entities
+ * @returns {string} - The string with HTML entities decoded
+ */
+function decodeHtmlEntities(value) {
+    if (!value || typeof value !== 'string') {
+        return value;
+    }
+
+    // Replace common HTML entities
+    return value
+        .replace(/&amp;quot;/g, '"')
+        .replace(/&amp;lt;/g, '<')
+        .replace(/&amp;gt;/g, '>')
+        .replace(/&amp;amp;/g, '&')
+        .replace(/&amp;apos;/g, "'");
 }
 
 /**
@@ -195,6 +216,13 @@ function createRequestItem(testItem, nhsNoMap) {
                     key: header.name,
                     value: '{{$guid}}'
                 });
+            }
+            else if (header.name === 'Authorization')
+            {
+                headers.push({
+                    key: header.name,
+                    value: '{{pre_request_script_generated_JWT}}'
+                });
             } else {
                 // Replace NHS numbers in header values
                 const replacedValue = replaceNHSNumbers(header.value, nhsNoMap);
@@ -208,11 +236,22 @@ function createRequestItem(testItem, nhsNoMap) {
 
     // Create URL parameters
     const queryParams = [];
+    let hasDateParams = false;
     if (requestData.parameters) {
         if (Array.isArray(requestData.parameters)) {
             requestData.parameters.forEach(param => {
                 // Replace NHS numbers in parameter values
-                const replacedValue = replaceNHSNumbers(param.value, nhsNoMap);
+                let replacedValue = replaceNHSNumbers(param.value, nhsNoMap);
+
+                // Check for start and end parameters and replace their values
+                if (param.name === "start") {
+                    replacedValue = "ge{{pre_request_script_generated_search_start_date}}";
+                    hasDateParams = true;
+                } else if (param.name === "end") {
+                    replacedValue = "le{{pre_request_script_generated_search_end_date}}";
+                    hasDateParams = true;
+                }
+
                 queryParams.push({
                     key: param.name,
                     value: replacedValue
@@ -224,11 +263,17 @@ function createRequestItem(testItem, nhsNoMap) {
     // Create request body
     let body = null;
     if (requestData.body && requestData.body.value) {
-        // Replace NHS numbers in request body
+        // Replace NHS numbers in request body and decode HTML entities
         const replacedBody = replaceNHSNumbers(requestData.body.value, nhsNoMap);
+        const decodedBody = decodeHtmlEntities(replacedBody);
         body = {
             mode: 'raw',
-            raw: replacedBody
+            raw: decodedBody,
+            options: {
+                raw: {
+                    language: "json"
+                }
+            }
         };
     }
 
@@ -253,19 +298,50 @@ function createRequestItem(testItem, nhsNoMap) {
         value: replaceNHSNumbers(h.value, nhsNoMap)
     })) : [];
 
-    // Replace NHS numbers in response body
-    const responseBody = replaceNHSNumbers(responseData.body || "", nhsNoMap);
+    // Replace NHS numbers in response body and decode HTML entities
+    const responseBody = decodeHtmlEntities(replaceNHSNumbers(responseData.body || "", nhsNoMap));
+
+    // Create originalRequest object with the original request headers
+    const originalRequestHeaders = requestData.headers ? requestData.headers.map(h => ({
+        key: h.name,
+        value: h.value
+    })) : [];
+
+    const originalRequestBody = requestData.body && requestData.body.value ? {
+        mode: 'raw',
+        raw: decodeHtmlEntities(requestData.body.value)
+    } : null;
+
+    const originalRequestUrl = {
+        raw: testItem.data.endpointUrl,
+        host: [testItem.data.endpointUrl.replace(/^https?:\/\//, '').split('/')[0]],
+        path: testItem.data.endpointUrl.replace(/^https?:\/\/[^/]+\//, '').split('/')
+    };
+
+    // Add query parameters to URL if they exist
+    if (requestData.parameters && requestData.parameters.length > 0) {
+        originalRequestUrl.query = requestData.parameters.map(param => ({
+            key: param.name,
+            value: param.value
+        }));
+    }
 
     const exampleResponse = new sdk.Response({
-        name: "Example Response",
+        name: `Example ${responseData.statusCode} Response`,
         code: responseData.statusCode,
-        status: responseData.statusCode === "200" ? "OK" : "Error",
+        status: getReasonPhrase(responseData.statusCode),
         header: responseHeaders,
-        body: responseBody
+        body: responseBody,
+        originalRequest: {
+            method: requestData.method,
+            header: originalRequestHeaders,
+            body: originalRequestBody,
+            url: originalRequestUrl
+        }
     });
 
-    // Create request item
-    return new sdk.Item({
+    // Create the item configuration
+    const itemConfig = {
         name: testItem.dir || testItem.requestName,
         request: {
             url: url,
@@ -274,7 +350,33 @@ function createRequestItem(testItem, nhsNoMap) {
             body: body
         },
         response: [exampleResponse]
-    });
+    };
+
+    // Add prerequest script for date parameters if needed
+    if (hasDateParams) {
+        itemConfig.event = [
+            {
+                listen: "prerequest",
+                script: {
+                    exec: [
+                        "// Setup search dates",
+                        "var paramStartTime = new Date();",
+                        "var paramEndTime = new Date();",
+                        "paramEndTime.setDate(paramEndTime.getDate() + 3); // 3 days after current date",
+                        "",
+                        "// Set the environment variable used in the payload",
+                        "pm.environment.set(\"pre_request_script_generated_search_start_date\", paramStartTime.toISOString().split('T')[0]);",
+                        "pm.environment.set(\"pre_request_script_generated_search_end_date\", paramEndTime.toISOString().split('T')[0]);",
+                        ""
+                    ],
+                    type: "text/javascript"
+                }
+            }
+        ];
+    }
+
+    // Create request item
+    return new sdk.Item(itemConfig);
 }
 
 // If this script is run directly (not imported)
