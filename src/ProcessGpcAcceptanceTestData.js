@@ -40,9 +40,9 @@ function getTestResult(scenarioName, gpcAcceptanceTestDataDir) {
         for (const line of lines) {
             // Look for lines that contain the scenario name followed by parameters and Pass/Fail
             if (line.includes(scenarioName)) {
-                if (line.endsWith(',Pass')) {
+                if (line.trim().endsWith(',Pass')) {
                     return 'Passed';
-                } else if (line.endsWith(',Fail')) {
+                } else if (line.trim().endsWith(',Fail')) {
                     return 'Failed';
                 }
             }
