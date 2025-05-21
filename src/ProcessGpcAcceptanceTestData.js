@@ -4,15 +4,17 @@
  * This script processes GPC acceptance test data and generates a JSON.
  * 
  * Usage:
- *   node ProcessGpcAcceptanceTestData.js [customPath]
+ *   node ProcessGpcAcceptanceTestData.js [customPath] [projectName]
  * 
  * Examples:
  *   node ProcessGpcAcceptanceTestData.js                      # Uses default path (project_root/ExampleData)
  *   node ProcessGpcAcceptanceTestData.js c:\gpcAcceptanceTestData\  # Uses custom path
+ *   node ProcessGpcAcceptanceTestData.js c:\gpcAcceptanceTestData\ MyProject  # Uses custom path and project name
  * 
  * Or using npm scripts:
  *   npm run pd                               # Uses default path
  *   npm run pd:custom -- c:\gpcAcceptanceTestData\  # Uses custom path
+ *   npm run pd:custom -- c:\gpcAcceptanceTestData\ MyProject  # Uses custom path and project name
  */
 
 const fs = require('fs').promises;
@@ -301,7 +303,7 @@ function parseXmlToJson(xmlContent) {
     return result;
 }
 
-async function processGpcAcceptanceTestData(gpcAcceptanceTestDataDir = path.join(__dirname, '..', 'ExampleData')) {
+async function processGpcAcceptanceTestData(gpcAcceptanceTestDataDir = path.join(__dirname, '..', 'ExampleData'), projectName) {
     const results = [];
 
     try {
@@ -357,6 +359,29 @@ async function processGpcAcceptanceTestData(gpcAcceptanceTestDataDir = path.join
             const data = parseXmlToJson(xmlContent);
             data.testLocation = gpcAcceptanceTestDataDir;
 
+            let interactionIdHeader = data.request.headers.find(header => header.name === 'Ssp-InteractionId')
+            let interactionId = ""
+            if (interactionIdHeader) {
+                interactionId = data.request.headers
+                    .find(header => header.name === 'Ssp-InteractionId')
+                    .value
+                    .trim()
+                    .split(':')
+                    .slice(-2)
+                    .join("/")
+                    .replace(/-\d+$/, '');
+            }
+            // get last interaction 2 sections of an interaction id
+            // example "urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord"
+            // will select "operation/gpc.getstructuredrecord"
+
+            if (projectName === null || projectName === undefined || projectName.trim() === '') {
+                data.projectName = `${interactionId}`;
+            }
+            else {
+                data.projectName = `${projectName}/${interactionId}`;
+            }
+
             // Check if this is a Patient/$gpc.getstructuredrecord request
             let requestName = requestUrl;
             if (requestUrl === "Patient/$gpc.getstructuredrecord" && data.requestBody) {
@@ -395,7 +420,7 @@ async function processGpcAcceptanceTestData(gpcAcceptanceTestDataDir = path.join
         // console.log(JSON.stringify(results, null, 2));
 
         // Create an output directory if it doesn't exist
-        const outputDir = path.join(gpcAcceptanceTestDataDir ?? path.join(__dirname, '..'), 'output');
+        const outputDir = path.join(gpcAcceptanceTestDataDir ?? path.join(__dirname, '..'), '_output');
         console.log(`Checking if path exists: \n\t${outputDir}`);
         if (!existsSync(outputDir)) {
             console.log(`Creating directory: \n\t${outputDir}\n - Reason: Creating output directory for JSON results`);
@@ -409,13 +434,18 @@ async function processGpcAcceptanceTestData(gpcAcceptanceTestDataDir = path.join
         let passed = results.filter(result => result.testResult === 'Passed');
         let failed = results.filter(result => result.testResult === 'Failed');
 
+        var dir = __dirname.substring(0, __dirname.length - 3)
+        var outputMessage = str => str.startsWith('C:')
+            ? `Results written to \u001b]8;;file:///${str.replace(/\\/g, '/')}\u0007${str}\u001b]8;;\u0007`
+            : `Results written to \u001b]8;;file:///${dir + str.replace(/\\/g, '/')}\u0007${dir + str}\u001b]8;;\u0007`
+
         const outputFileUndetermined = path.join(outputDir, `gpcAcceptanceTestData.undetermined.json`);
         await fs.writeFile(outputFileUndetermined, JSON.stringify(undetermined, null, 2));
-        console.log(`Results written to \u001b]8;;file:///${outputFileUndetermined.replace(/\\/g, '/')}\u0007${outputFileUndetermined}\u001b]8;;\u0007`);
+        console.log(outputMessage(outputFileUndetermined));
 
         const outputFilePassed = path.join(outputDir, `gpcAcceptanceTestData.passed.json`);
         await fs.writeFile(outputFilePassed, JSON.stringify(passed, null, 2));
-        console.log(`Results written to \u001b]8;;file:///${outputFilePassed.replace(/\\/g, '/')}\u0007${outputFilePassed}\u001b]8;;\u0007`);
+        console.log(outputMessage(outputFilePassed));
 
         const outputFileFailed = path.join(outputDir, `gpcAcceptanceTestData.failed.json`);
         await fs.writeFile(outputFileFailed, JSON.stringify(failed, null, 2));
@@ -426,18 +456,22 @@ async function processGpcAcceptanceTestData(gpcAcceptanceTestDataDir = path.join
     }
 }
 
-// Check if a custom path was provided as a command line argument
+// Check if custom path and project name were provided as command line arguments
 const customPath = process.argv[2];
+const projectName = process.argv[3];
 
 if (customPath) {
     console.log(`Using custom path: ${customPath}`);
-    processGpcAcceptanceTestData(customPath);
+    console.log(`Using project name: ${projectName}`);
+    processGpcAcceptanceTestData(customPath, projectName);
 } else {
     // Run the function with a default path
+    console.log(`Using default path`);
     processGpcAcceptanceTestData(path.join(__dirname, '..', 'ExampleData'));
 }
 
-// Export functions for testing
+// Export functions for testing and for use by other modules
 module.exports = {
-    parseXmlToJson
+    parseXmlToJson,
+    processGpcAcceptanceTestData
 };

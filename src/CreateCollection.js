@@ -53,7 +53,7 @@ function readNHSNoMap() {
  */
 function createCollection(testDataFilePath) {
     // Set default file path if not provided
-    const filePath = testDataFilePath || 'ExampleData/output/gpcAcceptanceTestData.passed.json';
+    const filePath = testDataFilePath || 'ExampleData/_output/gpcAcceptanceTestData.passed.json';
 
     console.log(`Reading test data from: ${filePath}`);
 
