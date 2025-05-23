@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<fhirContext>
+  <request>
+    <fhirRequestParameters>{"resourceType":"Parameters","parameter":[{"name":"invalidNHSNumberParam","valueIdentifier":{"system":"https://fhir.nhs.uk/Id/nhs-number","value":"9658218865"}},{"name":"includeMedication","part":[{"name":"includePrescriptionIssues","valueBoolean":false}]}]}</fhirRequestParameters>
+  </request>
+  <response>
+    <fhirResponseResource>{"resourceType":"OperationOutcome","meta":{"profile":["https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1"]},"issue":[{"severity":"error","code":"invalid","details":{"coding":[{"system":"https://fhir.nhs.uk/STU3/CodeSystem/Spine-ErrorOrWarningCode-1","code":"INVALID_PARAMETER","display":"INVALID_PARAMETER"}]},"diagnostics":"Unable to read parameters. Expecting one of patientNHSNumber or registerPatient both of which are case-sensitive"}]}</fhirResponseResource>
+  </response>
+</fhirContext>

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<fhirContext>
+  <request>
+    <fhirRequestParameters>{"resourceType":"Parameters","parameter":[{"name":"registerPatient","resource":{"resourceType":"Patient","identifier":[{"extension":[{"url":"https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-NHSNumberVerificationStatus-1","valueCodeableConcept":{"coding":[{"system":"https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-NHSNumberVerificationStatus-1","code":"01","display":"Number present and verified"}]}}],"system":"https://fhir.nhs.uk/Id/nhs-number","value":"9476718943"}],"name":[{"use":"official","family":"GPConnectFamilyName","given":["GPConnectGivenName"]}],"gender":"other","birthDate":"2017-05-05"}}]}</fhirRequestParameters>
+  </request>
+  <response>
+    <fhirResponseResource>{"resourceType":"OperationOutcome","meta":{"profile":["https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1"]},"issue":[{"severity":"error","code":"invalid","details":{"coding":[{"system":"https://fhir.nhs.uk/STU3/CodeSystem/Spine-ErrorOrWarningCode-1","code":"INVALID_PATIENT_DEMOGRAPHICS","display":"INVALID_PATIENT_DEMOGRAPHICS"}]},"diagnostics":"Patient (NHS number - 9476718943) not present on PDS"}]}</fhirResponseResource>
+  </response>
+</fhirContext>

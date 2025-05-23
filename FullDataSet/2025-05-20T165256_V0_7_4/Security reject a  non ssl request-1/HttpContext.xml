@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<httpContext useWebProxy="false" webProxyUrl="http://localhost:8889" useSpineProxy="false" spineProxyUrl="http://proxy.int.spine2.ncrs.nhs.uk:443" providerUrl="http://gpconnect-win1.itblab.nic.cfh.nhs.uk:80/gpconnect-demonstrator/v0/fhir">
+  <request endpointUrl="http://gpconnect-win1.itblab.nic.cfh.nhs.uk:80/gpconnect-demonstrator/v0/fhir">
+    <requestHeaders>
+      <requestHeader name="Accept" value="application/json+fhir" />
+      <requestHeader name="Ssp-TraceID" value="cea7706d-fd41-4eb2-8b92-dcc76ec8ba82" />
+      <requestHeader name="Ssp-From" value="200000000985" />
+      <requestHeader name="Ssp-To" value="200000000985" />
+      <requestHeader name="Authorization" value="Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwczovL0NvbnN1bWVyU3lzdGVtVVJMIiwic3ViIjoiMSIsImF1ZCI6Imh0dHBzOi8vYXV0aG9yaXplLmZoaXIubmhzLm5ldC90b2tlbiIsImV4cCI6MTc0Nzc1Njc3NCwiaWF0IjoxNzQ3NzU2NDc0LCJyZWFzb25fZm9yX3JlcXVlc3QiOiJkaXJlY3RjYXJlIiwicmVxdWVzdGluZ19kZXZpY2UiOnsicmVzb3VyY2VUeXBlIjoiRGV2aWNlIiwiaWQiOiIxIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiR1BDb25uZWN0VGVzdFN5c3RlbSIsInZhbHVlIjoiQ2xpZW50In1dLCJtb2RlbCI6InYxIiwidmVyc2lvbiI6IjEuMSJ9LCJyZXF1ZXN0aW5nX29yZ2FuaXphdGlvbiI6eyJyZXNvdXJjZVR5cGUiOiJPcmdhbml6YXRpb24iLCJpZCI6IjEiLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwOi8vZmhpci5uaHMubmV0L0lkL29kcy1vcmdhbml6YXRpb24tY29kZSIsInZhbHVlIjoiR1BDQTAwMDEifV0sIm5hbWUiOiJHUCBDb25uZWN0IEFzc3VyYW5jZSJ9LCJyZXF1ZXN0aW5nX3ByYWN0aXRpb25lciI6eyJyZXNvdXJjZVR5cGUiOiJQcmFjdGl0aW9uZXIiLCJpZCI6IjEiLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwOi8vZmhpci5uaHMubmV0L3Nkcy11c2VyLWlkIiwidmFsdWUiOiJHQ0FTRFMwMDAxIn0seyJzeXN0ZW0iOiJodHRwczovL2NvbnN1bWVyc3VwcGxpZXIuY29tL0lkL3VzZXItZ3VpZCIsInZhbHVlIjoiOThlZDRmNzgtODE0ZC00MjY2LThkNWItY2RlNzQyZjMwOTNjIn1dLCJuYW1lIjp7ImZhbWlseSI6WyJBc3N1cmFuY2VQcmFjdGl0aW9uZXIiXSwiZ2l2ZW4iOlsiQXNzdXJhbmNlVGVzdCJdLCJwcmVmaXgiOlsiTXIiXX0sInByYWN0aXRpb25lclJvbGUiOlt7InJvbGUiOnsiY29kaW5nIjpbeyJzeXN0ZW0iOiJodHRwOi8vZmhpci5uaHMubmV0L1ZhbHVlU2V0L3Nkcy1qb2Itcm9sZS1uYW1lLTEiLCJjb2RlIjoiQXNzdXJhbmNlSm9iUm9sZSJ9XX19XX0sInJlcXVlc3RlZF9zY29wZSI6Im9yZ2FuaXphdGlvbi8qLnJlYWQiLCJyZXF1ZXN0ZWRfcmVjb3JkIjp7InJlc291cmNlVHlwZSI6Ik9yZ2FuaXphdGlvbiIsImlkIjoiMSIsImlkZW50aWZpZXIiOlt7InN5c3RlbSI6Imh0dHA6Ly9maGlyLm5ocy5uZXQvSWQvb2RzLW9yZ2FuaXphdGlvbi1jb2RlIiwidmFsdWUiOiJPcmdPRFNDb2RlMDAwMSJ9XSwibmFtZSI6IkdQIENvbm5lY3QgQXNzdXJhbmNlIn19." />
+      <requestHeader name="Ssp-InteractionId" value="urn:nhs:names:services:gpconnect:fhir:rest:read:metadata" />
+      <requestHeader name="Content-Type" value="application/json+fhir" />
+    </requestHeaders>
+    <requestUrl>/metadata</requestUrl>
+    <requestParameters />
+    <requestMethod>GET</requestMethod>
+    <requestContentType>application/json+fhir</requestContentType>
+    <requestBody />
+  </request>
+  <response>
+    <responseContentType>text/html</responseContentType>
+    <responseStatusCode>404</responseStatusCode>
+    <responseTimeInMilliseconds>4</responseTimeInMilliseconds>
+    <responseTimeAcceptable>true</responseTimeAcceptable>
+    <responseHeaders>
+      <responseHeader name="Content-Length" value="1245" />
+      <responseHeader name="Content-Type" value="text/html" />
+      <responseHeader name="Date" value="Tue, 20 May 2025 15:54:34 GMT" />
+      <responseHeader name="Server" value="Microsoft-IIS/10.0" />
+    </responseHeaders>
+    <responseBody>&amp;lt;!DOCTYPE html PUBLIC &amp;quot;-//W3C//DTD XHTML 1.0 Strict//EN&amp;quot; &amp;quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&amp;quot;&amp;gt;
+&amp;lt;html xmlns=&amp;quot;http://www.w3.org/1999/xhtml&amp;quot;&amp;gt;
+&amp;lt;head&amp;gt;
+&amp;lt;meta http-equiv=&amp;quot;Content-Type&amp;quot; content=&amp;quot;text/html; charset=iso-8859-1&amp;quot;/&amp;gt;
+&amp;lt;title&amp;gt;404 - File or directory not found.&amp;lt;/title&amp;gt;
+&amp;lt;style type=&amp;quot;text/css&amp;quot;&amp;gt;
+&amp;lt;!--
+body{margin:0;font-size:.7em;font-family:Verdana, Arial, Helvetica, sans-serif;background:#EEEEEE;}
+fieldset{padding:0 15px 10px 15px;} 
+h1{font-size:2.4em;margin:0;color:#FFF;}
+h2{font-size:1.7em;margin:0;color:#CC0000;} 
+h3{font-size:1.2em;margin:10px 0 0 0;color:#000000;} 
+#header{width:96%;margin:0 0 0 0;padding:6px 2% 6px 2%;font-family:&amp;quot;trebuchet MS&amp;quot;, Verdana, sans-serif;color:#FFF;
+background-color:#555555;}
+#content{margin:0 0 0 2%;position:relative;}
+.content-container{background:#FFF;width:96%;margin-top:8px;padding:10px;position:relative;}
+--&amp;gt;
+&amp;lt;/style&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+&amp;lt;div id=&amp;quot;header&amp;quot;&amp;gt;&amp;lt;h1&amp;gt;Server Error&amp;lt;/h1&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;div id=&amp;quot;content&amp;quot;&amp;gt;
+ &amp;lt;div class=&amp;quot;content-container&amp;quot;&amp;gt;&amp;lt;fieldset&amp;gt;
+  &amp;lt;h2&amp;gt;404 - File or directory not found.&amp;lt;/h2&amp;gt;
+  &amp;lt;h3&amp;gt;The resource you are looking for might have been removed, had its name changed, or is temporarily unavailable.&amp;lt;/h3&amp;gt;
+ &amp;lt;/fieldset&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+</responseBody>
+  </response>
+</httpContext>

@@ -1,0 +1,15 @@
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "patientNHSNumber",
+      "valueIdentifier": {
+        "system": "",
+        "value": "9690937278"
+      }
+    },
+    {
+      "name": "includeProblems"
+    }
+  ]
+}

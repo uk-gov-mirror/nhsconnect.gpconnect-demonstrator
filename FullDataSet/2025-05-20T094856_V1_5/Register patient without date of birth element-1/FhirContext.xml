@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<fhirContext>
+  <request>
+    <fhirRequestParameters>{"resourceType":"Parameters","parameter":[{"name":"registerPatient","resource":{"resourceType":"Patient","meta":{"profile":["https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1"]},"identifier":[{"extension":[{"url":"https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-NHSNumberVerificationStatus-1","valueCodeableConcept":{"coding":[{"system":"https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-NHSNumberVerificationStatus-1","code":"01","display":"Number present and verified"}]}}],"system":"https://fhir.nhs.uk/Id/nhs-number","value":"9651259167"}],"name":[{"use":"official","family":"LLOYD","given":["Matt"]}],"gender":"male"}}]}</fhirRequestParameters>
+  </request>
+  <response>
+    <fhirResponseResource>{"resourceType":"OperationOutcome","meta":{"profile":["https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1"]},"issue":[{"severity":"error","code":"invalid","details":{"coding":[{"system":"https://fhir.nhs.uk/STU3/CodeSystem/Spine-ErrorOrWarningCode-1","code":"BAD_REQUEST","display":"BAD_REQUEST"}]},"diagnostics":"The Patient date of birth must be supplied"}]}</fhirResponseResource>
+  </response>
+</fhirContext>

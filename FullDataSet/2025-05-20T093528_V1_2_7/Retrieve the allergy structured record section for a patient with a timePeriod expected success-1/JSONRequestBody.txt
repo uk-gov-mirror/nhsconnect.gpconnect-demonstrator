@@ -1,0 +1,28 @@
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "patientNHSNumber",
+      "valueIdentifier": {
+        "system": "https://fhir.nhs.uk/Id/nhs-number",
+        "value": "9658218865"
+      }
+    },
+    {
+      "name": "includeAllergies",
+      "part": [
+        {
+          "name": "timePeriod",
+          "valuePeriod": {
+            "start": "2023",
+            "end": "2025"
+          }
+        },
+        {
+          "name": "includeResolvedAllergies",
+          "valueBoolean": false
+        }
+      ]
+    }
+  ]
+}

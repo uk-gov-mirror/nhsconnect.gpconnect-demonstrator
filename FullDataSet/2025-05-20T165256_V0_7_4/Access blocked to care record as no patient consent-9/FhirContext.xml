@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<fhirContext>
+  <request>
+    <fhirRequestParameters>{"resourceType":"Parameters","parameter":[{"name":"patientNHSNumber","valueIdentifier":{"system":"http://fhir.nhs.net/Id/nhs-number","value":"9658220169"}},{"name":"recordSection","valueCodeableConcept":{"coding":[{"system":"http://fhir.nhs.net/ValueSet/gpconnect-record-section-1","code":"REF"}]}}]}</fhirRequestParameters>
+  </request>
+  <response>
+    <fhirResponseResource>{"resourceType":"OperationOutcome","meta":{"profile":["http://fhir.nhs.net/StructureDefinition/gpconnect-operationoutcome-1"]},"issue":[{"severity":"error","code":"forbidden","details":{"coding":[{"system":"http://fhir.nhs.net/ValueSet/gpconnect-error-or-warning-code-1","code":"NO_PATIENT_CONSENT","display":"NO_PATIENT_CONSENT"}]},"diagnostics":"Patient has not consented to share"}]}</fhirResponseResource>
+  </response>
+</fhirContext>

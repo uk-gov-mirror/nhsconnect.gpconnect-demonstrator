@@ -1,0 +1,10 @@
+{
+  "resourceType": "Bundle",
+  "id": "BABADEE1-E31E-466C-B4D6-B4A0B067243B",
+  "type": "searchset",
+  "total": 0,
+  "link": [ {
+    "relation": "self",
+    "url": "https://orange.testlab.nhs.uk/Endpoint?organization=https://fhir.nhs.uk/Id/ods-organization-code|B82617&identifier=https://fhir.nhs.uk/Id/nhsServiceInteractionId|urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord"
+  } ]
+}

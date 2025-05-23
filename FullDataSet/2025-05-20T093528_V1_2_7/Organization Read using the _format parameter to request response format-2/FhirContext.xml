@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<fhirContext>
+  <request>
+    <fhirRequestParameters>{"resourceType":"Parameters"}</fhirRequestParameters>
+  </request>
+  <response>
+    <fhirResponseResource>{"resourceType":"Organization","id":"7","meta":{"versionId":"1469444400000","lastUpdated":"2016-07-25T12:00:00+01:00","profile":["https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"]},"identifier":[{"system":"https://fhir.nhs.uk/Id/ods-organization-code","value":"A20047"}],"name":"Dr Legg's Surgery","telecom":[{"system":"phone","value":"12345678","use":"work"}],"address":[{"use":"work","line":["NHS NPFIT Test Data Manager","Princes Exchange"],"city":"Leeds","district":"West Yorkshire","postalCode":"LS1 4HY"}]}</fhirResponseResource>
+  </response>
+</fhirContext>

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<fhirContext>
+  <request>
+    <fhirRequestParameters>{"resourceType":"Parameters"}</fhirRequestParameters>
+  </request>
+  <response>
+    <fhirResponseResource>{"resourceType":"OperationOutcome","meta":{"profile":["https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1"]},"issue":[{"severity":"error","code":"not-found","details":{"coding":[{"system":"https://fhir.nhs.uk/STU3/CodeSystem/Spine-ErrorOrWarningCode-1","code":"REFERENCE_NOT_FOUND","display":"REFERENCE_NOT_FOUND"}]},"diagnostics":"No appointment details found for ID: Invalid4321"}]}</fhirResponseResource>
+  </response>
+</fhirContext>

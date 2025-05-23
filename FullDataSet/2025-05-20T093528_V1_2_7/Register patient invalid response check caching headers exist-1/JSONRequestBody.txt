@@ -1,0 +1,27 @@
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "registerPatient",
+      "resource": {
+        "resourceType": "Patient",
+        "meta": {
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1"
+          ]
+        },
+        "name": [
+          {
+            "use": "official",
+            "family": "WARNER",
+            "given": [
+              "Owen"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1958-09-16"
+      }
+    }
+  ]
+}

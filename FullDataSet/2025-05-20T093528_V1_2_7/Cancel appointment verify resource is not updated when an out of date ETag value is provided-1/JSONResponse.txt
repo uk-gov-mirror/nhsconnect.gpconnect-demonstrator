@@ -1,0 +1,24 @@
+{
+  "resourceType": "OperationOutcome",
+  "meta": {
+    "profile": [
+      "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1"
+    ]
+  },
+  "issue": [
+    {
+      "severity": "error",
+      "code": "conflict",
+      "details": {
+        "coding": [
+          {
+            "system": "https://fhir.nhs.uk/STU3/CodeSystem/Spine-ErrorOrWarningCode-1",
+            "code": "FHIR_CONSTRAINT_VIOLATION",
+            "display": "FHIR_CONSTRAINT_VIOLATION"
+          }
+        ]
+      },
+      "diagnostics": "The specified version (invalidEtag) did not match the current resource version (1747730319000)"
+    }
+  ]
+}

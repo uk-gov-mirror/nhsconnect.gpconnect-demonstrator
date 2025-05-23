@@ -1,0 +1,30 @@
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "patientNHSNumber",
+      "valueIdentifier": {
+        "system": "http://fhir.nhs.net/Id/nhs-number",
+        "value": "9658218873"
+      }
+    },
+    {
+      "name": "recordSection",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://fhir.nhs.net/ValueSet/gpconnect-record-section-1",
+            "code": "CLI"
+          }
+        ]
+      }
+    },
+    {
+      "name": "timePeriod",
+      "valuePeriod": {
+        "start": "2015-03-14T03:14:11+00:00",
+        "end": "2016-08-03T19:32:43+01:00"
+      }
+    }
+  ]
+}

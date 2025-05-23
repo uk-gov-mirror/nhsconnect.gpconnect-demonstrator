@@ -1,0 +1,298 @@
+HttpHeaderHelper() Constructor
+HttpHelper() Constructor
+All Header(s) Cleared
+All Parameters Cleared
+HttpContext->LoadAppConfig()
+Removed Key='Ssp-TraceID'
+Added Key='Ssp-TraceID' Value='abc87b9f-b3d5-4bab-9b0d-65002ec71313'
+Replaced Key='Ssp-TraceID' With Value='abc87b9f-b3d5-4bab-9b0d-65002ec71313'
+Removed Key='Ssp-From'
+Added Key='Ssp-From' Value='200000001329'
+Replaced Key='Ssp-From' With Value='200000001329'
+Removed Key='Ssp-To'
+Added Key='Ssp-To' Value='200000001329'
+Replaced Key='Ssp-To' With Value='200000001329'
+Removed Key='Accept'
+Added Key='Accept' Value='application/fhir+json'
+Replaced Key='Accept' With Value='application/fhir+json'
+GenericSteps() Constructor
+InitializeContainer For Dependency Injection
+10 Organisations Loaded From ODS CSV File.
+Feature: PatientRegister
+
+Scenario: Register Patient and use both the Accept header and _format parameter to request the response format
+SecurityContext->LoadAppConfig()
+useTLS=True
+useTLSFoundationsAndAppmts=True
+useTLSStructured=True
+useTLSDocuments=True
+clientCertThumbPrint=47 6A 52 2D 5C D5 7A 69 4F CD AF 59 C8 DA 22 5E 8E 80 DE 43
+sendClientCert=True
+validateServerCert=False
+Force The Server Certificate Callback To Always Be True.
+JwtHelper() Constructor
+HttpSteps() Constructor
+HttpHeaderHelper() Constructor
+JwtSteps() Constructor
+All Header(s) Cleared
+All Parameters Cleared
+HttpContext->LoadAppConfig()
+Removed Key='Ssp-TraceID'
+Added Key='Ssp-TraceID' Value='b579be08-560f-4b61-a3c7-83ebaebd54d6'
+Replaced Key='Ssp-TraceID' With Value='b579be08-560f-4b61-a3c7-83ebaebd54d6'
+Removed Key='Ssp-From'
+Added Key='Ssp-From' Value='200000001329'
+Replaced Key='Ssp-From' With Value='200000001329'
+Removed Key='Ssp-To'
+Added Key='Ssp-To' Value='200000001329'
+Replaced Key='Ssp-To' With Value='200000001329'
+Removed Key='Accept'
+Added Key='Accept' Value='application/fhir+json'
+Replaced Key='Accept' With Value='application/fhir+json'
+Removed Key='Ssp-InteractionId'
+Added Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:rest:search:patient-1'
+Replaced Key='Ssp-InteractionId' With Value='urn:nhs:names:services:gpconnect:fhir:rest:search:patient-1'
+Client Certificate Found = [Subject]
+  CN=GPConnect-Win1.itblab.nic.cfh.nhs.uk, OU=Devices, O=nhs
+
+[Issuer]
+  CN=NHS INT Authentication G2, OU=CA, O=nhs, C=GB
+
+[Serial Number]
+  151659822D991315931569FC1A28E5DB
+
+[Not Before]
+  9/10/2024 10:18:06 AM
+
+[Not After]
+  9/10/2027 10:48:06 AM
+
+[Thumbprint]
+  476A522D5CD57A694FCDAF59C8DA225E8E80DE43
+
+clientCertificate=[Subject]
+  CN=GPConnect-Win1.itblab.nic.cfh.nhs.uk, OU=Devices, O=nhs
+
+[Issuer]
+  CN=NHS INT Authentication G2, OU=CA, O=nhs, C=GB
+
+[Serial Number]
+  151659822D991315931569FC1A28E5DB
+
+[Not Before]
+  9/10/2024 10:18:06 AM
+
+[Not After]
+  9/10/2027 10:48:06 AM
+
+[Thumbprint]
+  476A522D5CD57A694FCDAF59C8DA225E8E80DE43
+
+Force The Server Certificate Callback To Always Be True.
+Added Key='identifier' Value='https://fhir.nhs.uk/Id/nhs-number|9651258667'
+Removed Key='Authorization'
+Added Key='Authorization' Value='Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwczovL0NvbnN1bWVyU3lzdGVtVVJMIiwic3ViIjoiMSIsImF1ZCI6Imh0dHBzOi8vYXV0aG9yaXplLmZoaXIubmhzLm5ldC90b2tlbi8iLCJleHAiOjE3NDc3MzE3MTksImlhdCI6MTc0NzczMTQxOSwicmVhc29uX2Zvcl9yZXF1ZXN0IjoiZGlyZWN0Y2FyZSIsInJlcXVlc3RpbmdfZGV2aWNlIjp7InJlc291cmNlVHlwZSI6IkRldmljZSIsImlkZW50aWZpZXIiOlt7InN5c3RlbSI6IkdQQ29ubmVjdFRlc3RTeXN0ZW0iLCJ2YWx1ZSI6IkNsaWVudCJ9XSwibW9kZWwiOiJ2MSIsInZlcnNpb24iOiIxLjEifSwicmVxdWVzdGluZ19vcmdhbml6YXRpb24iOnsicmVzb3VyY2VUeXBlIjoiT3JnYW5pemF0aW9uIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiaHR0cHM6Ly9maGlyLm5ocy51ay9JZC9vZHMtb3JnYW5pemF0aW9uLWNvZGUiLCJ2YWx1ZSI6IkdQQ0EwMDAxIn1dLCJuYW1lIjoiR1AgQ29ubmVjdCBBc3N1cmFuY2UifSwicmVxdWVzdGluZ19wcmFjdGl0aW9uZXIiOnsicmVzb3VyY2VUeXBlIjoiUHJhY3RpdGlvbmVyIiwiaWQiOiIxIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiaHR0cHM6Ly9maGlyLm5ocy51ay9JZC9zZHMtdXNlci1pZCIsInZhbHVlIjoiR0NBU0RTMDAwMSJ9LHsic3lzdGVtIjoiaHR0cHM6Ly9maGlyLm5ocy51ay9JZC9zZHMtcm9sZS1wcm9maWxlLWlkIiwidmFsdWUiOiIxMTIyMzM0NDU1NjYifSx7InN5c3RlbSI6Imh0dHBzOi8vY29uc3VtZXJzdXBwbGllci5jb20vSWQvdXNlci1ndWlkIiwidmFsdWUiOiI5OGVkNGY3OC04MTRkLTQyNjYtOGQ1Yi1jZGU3NDJmMzA5M2MifV0sIm5hbWUiOlt7ImZhbWlseSI6IkFzc3VyYW5jZVByYWN0aXRpb25lciIsImdpdmVuIjpbIkFzc3VyYW5jZVRlc3QiXSwicHJlZml4IjpbIk1yIl19XX0sInJlcXVlc3RlZF9zY29wZSI6InBhdGllbnQvKi5yZWFkIn0.'
+Replaced Key='Authorization' With Value='Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwczovL0NvbnN1bWVyU3lzdGVtVVJMIiwic3ViIjoiMSIsImF1ZCI6Imh0dHBzOi8vYXV0aG9yaXplLmZoaXIubmhzLm5ldC90b2tlbi8iLCJleHAiOjE3NDc3MzE3MTksImlhdCI6MTc0NzczMTQxOSwicmVhc29uX2Zvcl9yZXF1ZXN0IjoiZGlyZWN0Y2FyZSIsInJlcXVlc3RpbmdfZGV2aWNlIjp7InJlc291cmNlVHlwZSI6IkRldmljZSIsImlkZW50aWZpZXIiOlt7InN5c3RlbSI6IkdQQ29ubmVjdFRlc3RTeXN0ZW0iLCJ2YWx1ZSI6IkNsaWVudCJ9XSwibW9kZWwiOiJ2MSIsInZlcnNpb24iOiIxLjEifSwicmVxdWVzdGluZ19vcmdhbml6YXRpb24iOnsicmVzb3VyY2VUeXBlIjoiT3JnYW5pemF0aW9uIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiaHR0cHM6Ly9maGlyLm5ocy51ay9JZC9vZHMtb3JnYW5pemF0aW9uLWNvZGUiLCJ2YWx1ZSI6IkdQQ0EwMDAxIn1dLCJuYW1lIjoiR1AgQ29ubmVjdCBBc3N1cmFuY2UifSwicmVxdWVzdGluZ19wcmFjdGl0aW9uZXIiOnsicmVzb3VyY2VUeXBlIjoiUHJhY3RpdGlvbmVyIiwiaWQiOiIxIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiaHR0cHM6Ly9maGlyLm5ocy51ay9JZC9zZHMtdXNlci1pZCIsInZhbHVlIjoiR0NBU0RTMDAwMSJ9LHsic3lzdGVtIjoiaHR0cHM6Ly9maGlyLm5ocy51ay9JZC9zZHMtcm9sZS1wcm9maWxlLWlkIiwidmFsdWUiOiIxMTIyMzM0NDU1NjYifSx7InN5c3RlbSI6Imh0dHBzOi8vY29uc3VtZXJzdXBwbGllci5jb20vSWQvdXNlci1ndWlkIiwidmFsdWUiOiI5OGVkNGY3OC04MTRkLTQyNjYtOGQ1Yi1jZGU3NDJmMzA5M2MifV0sIm5hbWUiOlt7ImZhbWlseSI6IkFzc3VyYW5jZVByYWN0aXRpb25lciIsImdpdmVuIjpbIkFzc3VyYW5jZVRlc3QiXSwicHJlZml4IjpbIk1yIl19XX0sInJlcXVlc3RlZF9zY29wZSI6InBhdGllbnQvKi5yZWFkIn0.'
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:rest:search:patient-1'
+GetRequestParameters Count='1'
+GetRequestParameters Count='1'
+Parameter - identifier -> https://fhir.nhs.uk/Id/nhs-number|9651258667
+GetRequestHeaders Count='6'
+Header - Ssp-TraceID -> b579be08-560f-4b61-a3c7-83ebaebd54d6
+Header - Ssp-From -> 200000001329
+Header - Ssp-To -> 200000001329
+Header - Accept -> application/fhir+json
+Header - Ssp-InteractionId -> urn:nhs:names:services:gpconnect:fhir:rest:search:patient-1
+Header - Authorization -> Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwczovL0NvbnN1bWVyU3lzdGVtVVJMIiwic3ViIjoiMSIsImF1ZCI6Imh0dHBzOi8vYXV0aG9yaXplLmZoaXIubmhzLm5ldC90b2tlbi8iLCJleHAiOjE3NDc3MzE3MTksImlhdCI6MTc0NzczMTQxOSwicmVhc29uX2Zvcl9yZXF1ZXN0IjoiZGlyZWN0Y2FyZSIsInJlcXVlc3RpbmdfZGV2aWNlIjp7InJlc291cmNlVHlwZSI6IkRldmljZSIsImlkZW50aWZpZXIiOlt7InN5c3RlbSI6IkdQQ29ubmVjdFRlc3RTeXN0ZW0iLCJ2YWx1ZSI6IkNsaWVudCJ9XSwibW9kZWwiOiJ2MSIsInZlcnNpb24iOiIxLjEifSwicmVxdWVzdGluZ19vcmdhbml6YXRpb24iOnsicmVzb3VyY2VUeXBlIjoiT3JnYW5pemF0aW9uIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiaHR0cHM6Ly9maGlyLm5ocy51ay9JZC9vZHMtb3JnYW5pemF0aW9uLWNvZGUiLCJ2YWx1ZSI6IkdQQ0EwMDAxIn1dLCJuYW1lIjoiR1AgQ29ubmVjdCBBc3N1cmFuY2UifSwicmVxdWVzdGluZ19wcmFjdGl0aW9uZXIiOnsicmVzb3VyY2VUeXBlIjoiUHJhY3RpdGlvbmVyIiwiaWQiOiIxIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiaHR0cHM6Ly9maGlyLm5ocy51ay9JZC9zZHMtdXNlci1pZCIsInZhbHVlIjoiR0NBU0RTMDAwMSJ9LHsic3lzdGVtIjoiaHR0cHM6Ly9maGlyLm5ocy51ay9JZC9zZHMtcm9sZS1wcm9maWxlLWlkIiwidmFsdWUiOiIxMTIyMzM0NDU1NjYifSx7InN5c3RlbSI6Imh0dHBzOi8vY29uc3VtZXJzdXBwbGllci5jb20vSWQvdXNlci1ndWlkIiwidmFsdWUiOiI5OGVkNGY3OC04MTRkLTQyNjYtOGQ1Yi1jZGU3NDJmMzA5M2MifV0sIm5hbWUiOlt7ImZhbWlseSI6IkFzc3VyYW5jZVByYWN0aXRpb25lciIsImdpdmVuIjpbIkFzc3VyYW5jZVRlc3QiXSwicHJlZml4IjpbIk1yIl19XX0sInJlcXVlc3RlZF9zY29wZSI6InBhdGllbnQvKi5yZWFkIn0.
+Header - Transfer-Encoding : chunked
+Header - Connection : keep-alive
+Header - Cache-Control : no-store
+Header - Date : Tue, 20 May 2025 08:57:01 GMT
+Header - Server : nginx/1.19.6
+Header - X-Powered-By : HAPI FHIR 3.0.0 REST Server (FHIR Server; FHIR 3.0.1/DSTU3)
+Header - Content-Type : application/fhir+json; charset=UTF-8
+Header - Last-Modified : Tue, 20 May 2025 08:57:01 GMT
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:rest:search:patient-1'
+All Header(s) Cleared
+All Parameters Cleared
+HttpContext->LoadAppConfig()
+Removed Key='Ssp-TraceID'
+Added Key='Ssp-TraceID' Value='0fba182a-a7c9-4898-9f30-385045ea4d70'
+Replaced Key='Ssp-TraceID' With Value='0fba182a-a7c9-4898-9f30-385045ea4d70'
+Removed Key='Ssp-From'
+Added Key='Ssp-From' Value='200000001329'
+Replaced Key='Ssp-From' With Value='200000001329'
+Removed Key='Ssp-To'
+Added Key='Ssp-To' Value='200000001329'
+Replaced Key='Ssp-To' With Value='200000001329'
+Removed Key='Accept'
+Added Key='Accept' Value='application/fhir+json'
+Replaced Key='Accept' With Value='application/fhir+json'
+Removed Key='Ssp-InteractionId'
+Added Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.registerpatient-1'
+Replaced Key='Ssp-InteractionId' With Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.registerpatient-1'
+Client Certificate Found = [Subject]
+  CN=GPConnect-Win1.itblab.nic.cfh.nhs.uk, OU=Devices, O=nhs
+
+[Issuer]
+  CN=NHS INT Authentication G2, OU=CA, O=nhs, C=GB
+
+[Serial Number]
+  151659822D991315931569FC1A28E5DB
+
+[Not Before]
+  9/10/2024 10:18:06 AM
+
+[Not After]
+  9/10/2027 10:48:06 AM
+
+[Thumbprint]
+  476A522D5CD57A694FCDAF59C8DA225E8E80DE43
+
+clientCertificate=[Subject]
+  CN=GPConnect-Win1.itblab.nic.cfh.nhs.uk, OU=Devices, O=nhs
+
+[Issuer]
+  CN=NHS INT Authentication G2, OU=CA, O=nhs, C=GB
+
+[Serial Number]
+  151659822D991315931569FC1A28E5DB
+
+[Not Before]
+  9/10/2024 10:18:06 AM
+
+[Not After]
+  9/10/2027 10:48:06 AM
+
+[Thumbprint]
+  476A522D5CD57A694FCDAF59C8DA225E8E80DE43
+
+Force The Server Certificate Callback To Always Be True.
+Removed Key='Accept'
+Added Key='Accept' Value='application/fhir+xml'
+Replaced Key='Accept' With Value='application/fhir+xml'
+Added Key='_format' Value='application/fhir+json'
+Removed Key='Authorization'
+Added Key='Authorization' Value='Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwczovL0NvbnN1bWVyU3lzdGVtVVJMIiwic3ViIjoiMSIsImF1ZCI6Imh0dHBzOi8vYXV0aG9yaXplLmZoaXIubmhzLm5ldC90b2tlbi8iLCJleHAiOjE3NDc3MzE3MTksImlhdCI6MTc0NzczMTQxOSwicmVhc29uX2Zvcl9yZXF1ZXN0IjoiZGlyZWN0Y2FyZSIsInJlcXVlc3RpbmdfZGV2aWNlIjp7InJlc291cmNlVHlwZSI6IkRldmljZSIsImlkZW50aWZpZXIiOlt7InN5c3RlbSI6IkdQQ29ubmVjdFRlc3RTeXN0ZW0iLCJ2YWx1ZSI6IkNsaWVudCJ9XSwibW9kZWwiOiJ2MSIsInZlcnNpb24iOiIxLjEifSwicmVxdWVzdGluZ19vcmdhbml6YXRpb24iOnsicmVzb3VyY2VUeXBlIjoiT3JnYW5pemF0aW9uIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiaHR0cHM6Ly9maGlyLm5ocy51ay9JZC9vZHMtb3JnYW5pemF0aW9uLWNvZGUiLCJ2YWx1ZSI6IkdQQ0EwMDAxIn1dLCJuYW1lIjoiR1AgQ29ubmVjdCBBc3N1cmFuY2UifSwicmVxdWVzdGluZ19wcmFjdGl0aW9uZXIiOnsicmVzb3VyY2VUeXBlIjoiUHJhY3RpdGlvbmVyIiwiaWQiOiIxIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiaHR0cHM6Ly9maGlyLm5ocy51ay9JZC9zZHMtdXNlci1pZCIsInZhbHVlIjoiR0NBU0RTMDAwMSJ9LHsic3lzdGVtIjoiaHR0cHM6Ly9maGlyLm5ocy51ay9JZC9zZHMtcm9sZS1wcm9maWxlLWlkIiwidmFsdWUiOiIxMTIyMzM0NDU1NjYifSx7InN5c3RlbSI6Imh0dHBzOi8vY29uc3VtZXJzdXBwbGllci5jb20vSWQvdXNlci1ndWlkIiwidmFsdWUiOiI5OGVkNGY3OC04MTRkLTQyNjYtOGQ1Yi1jZGU3NDJmMzA5M2MifV0sIm5hbWUiOlt7ImZhbWlseSI6IkFzc3VyYW5jZVByYWN0aXRpb25lciIsImdpdmVuIjpbIkFzc3VyYW5jZVRlc3QiXSwicHJlZml4IjpbIk1yIl19XX0sInJlcXVlc3RlZF9zY29wZSI6InBhdGllbnQvKi53cml0ZSJ9.'
+Replaced Key='Authorization' With Value='Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwczovL0NvbnN1bWVyU3lzdGVtVVJMIiwic3ViIjoiMSIsImF1ZCI6Imh0dHBzOi8vYXV0aG9yaXplLmZoaXIubmhzLm5ldC90b2tlbi8iLCJleHAiOjE3NDc3MzE3MTksImlhdCI6MTc0NzczMTQxOSwicmVhc29uX2Zvcl9yZXF1ZXN0IjoiZGlyZWN0Y2FyZSIsInJlcXVlc3RpbmdfZGV2aWNlIjp7InJlc291cmNlVHlwZSI6IkRldmljZSIsImlkZW50aWZpZXIiOlt7InN5c3RlbSI6IkdQQ29ubmVjdFRlc3RTeXN0ZW0iLCJ2YWx1ZSI6IkNsaWVudCJ9XSwibW9kZWwiOiJ2MSIsInZlcnNpb24iOiIxLjEifSwicmVxdWVzdGluZ19vcmdhbml6YXRpb24iOnsicmVzb3VyY2VUeXBlIjoiT3JnYW5pemF0aW9uIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiaHR0cHM6Ly9maGlyLm5ocy51ay9JZC9vZHMtb3JnYW5pemF0aW9uLWNvZGUiLCJ2YWx1ZSI6IkdQQ0EwMDAxIn1dLCJuYW1lIjoiR1AgQ29ubmVjdCBBc3N1cmFuY2UifSwicmVxdWVzdGluZ19wcmFjdGl0aW9uZXIiOnsicmVzb3VyY2VUeXBlIjoiUHJhY3RpdGlvbmVyIiwiaWQiOiIxIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiaHR0cHM6Ly9maGlyLm5ocy51ay9JZC9zZHMtdXNlci1pZCIsInZhbHVlIjoiR0NBU0RTMDAwMSJ9LHsic3lzdGVtIjoiaHR0cHM6Ly9maGlyLm5ocy51ay9JZC9zZHMtcm9sZS1wcm9maWxlLWlkIiwidmFsdWUiOiIxMTIyMzM0NDU1NjYifSx7InN5c3RlbSI6Imh0dHBzOi8vY29uc3VtZXJzdXBwbGllci5jb20vSWQvdXNlci1ndWlkIiwidmFsdWUiOiI5OGVkNGY3OC04MTRkLTQyNjYtOGQ1Yi1jZGU3NDJmMzA5M2MifV0sIm5hbWUiOlt7ImZhbWlseSI6IkFzc3VyYW5jZVByYWN0aXRpb25lciIsImdpdmVuIjpbIkFzc3VyYW5jZVRlc3QiXSwicHJlZml4IjpbIk1yIl19XX0sInJlcXVlc3RlZF9zY29wZSI6InBhdGllbnQvKi53cml0ZSJ9.'
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.registerpatient-1'
+GetRequestParameters Count='1'
+GetRequestParameters Count='1'
+Parameter - _format -> application/fhir+json
+GetRequestHeaders Count='6'
+Header - Ssp-TraceID -> 0fba182a-a7c9-4898-9f30-385045ea4d70
+Header - Ssp-From -> 200000001329
+Header - Ssp-To -> 200000001329
+Header - Accept -> application/fhir+xml
+Header - Ssp-InteractionId -> urn:nhs:names:services:gpconnect:fhir:operation:gpc.registerpatient-1
+Header - Authorization -> Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwczovL0NvbnN1bWVyU3lzdGVtVVJMIiwic3ViIjoiMSIsImF1ZCI6Imh0dHBzOi8vYXV0aG9yaXplLmZoaXIubmhzLm5ldC90b2tlbi8iLCJleHAiOjE3NDc3MzE3MTksImlhdCI6MTc0NzczMTQxOSwicmVhc29uX2Zvcl9yZXF1ZXN0IjoiZGlyZWN0Y2FyZSIsInJlcXVlc3RpbmdfZGV2aWNlIjp7InJlc291cmNlVHlwZSI6IkRldmljZSIsImlkZW50aWZpZXIiOlt7InN5c3RlbSI6IkdQQ29ubmVjdFRlc3RTeXN0ZW0iLCJ2YWx1ZSI6IkNsaWVudCJ9XSwibW9kZWwiOiJ2MSIsInZlcnNpb24iOiIxLjEifSwicmVxdWVzdGluZ19vcmdhbml6YXRpb24iOnsicmVzb3VyY2VUeXBlIjoiT3JnYW5pemF0aW9uIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiaHR0cHM6Ly9maGlyLm5ocy51ay9JZC9vZHMtb3JnYW5pemF0aW9uLWNvZGUiLCJ2YWx1ZSI6IkdQQ0EwMDAxIn1dLCJuYW1lIjoiR1AgQ29ubmVjdCBBc3N1cmFuY2UifSwicmVxdWVzdGluZ19wcmFjdGl0aW9uZXIiOnsicmVzb3VyY2VUeXBlIjoiUHJhY3RpdGlvbmVyIiwiaWQiOiIxIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiaHR0cHM6Ly9maGlyLm5ocy51ay9JZC9zZHMtdXNlci1pZCIsInZhbHVlIjoiR0NBU0RTMDAwMSJ9LHsic3lzdGVtIjoiaHR0cHM6Ly9maGlyLm5ocy51ay9JZC9zZHMtcm9sZS1wcm9maWxlLWlkIiwidmFsdWUiOiIxMTIyMzM0NDU1NjYifSx7InN5c3RlbSI6Imh0dHBzOi8vY29uc3VtZXJzdXBwbGllci5jb20vSWQvdXNlci1ndWlkIiwidmFsdWUiOiI5OGVkNGY3OC04MTRkLTQyNjYtOGQ1Yi1jZGU3NDJmMzA5M2MifV0sIm5hbWUiOlt7ImZhbWlseSI6IkFzc3VyYW5jZVByYWN0aXRpb25lciIsImdpdmVuIjpbIkFzc3VyYW5jZVRlc3QiXSwicHJlZml4IjpbIk1yIl19XX0sInJlcXVlc3RlZF9zY29wZSI6InBhdGllbnQvKi53cml0ZSJ9.
+Header - Transfer-Encoding : chunked
+Header - Connection : keep-alive
+Header - Cache-Control : no-store
+Header - Date : Tue, 20 May 2025 08:57:01 GMT
+Header - Server : nginx/1.19.6
+Header - X-Powered-By : HAPI FHIR 3.0.0 REST Server (FHIR Server; FHIR 3.0.1/DSTU3)
+Header - Content-Type : application/fhir+json; charset=UTF-8
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.registerpatient-1'
+FhirSteps() Constructor
+HttpHeaderHelper() Constructor
+HttpHelper() Constructor
+All Header(s) Cleared
+All Parameters Cleared
+HttpContext->LoadAppConfig()
+Removed Key='Ssp-TraceID'
+Added Key='Ssp-TraceID' Value='74f8174b-6cf9-4269-ac2c-fb4320e75743'
+Replaced Key='Ssp-TraceID' With Value='74f8174b-6cf9-4269-ac2c-fb4320e75743'
+Removed Key='Ssp-From'
+Added Key='Ssp-From' Value='200000001329'
+Replaced Key='Ssp-From' With Value='200000001329'
+Removed Key='Ssp-To'
+Added Key='Ssp-To' Value='200000001329'
+Replaced Key='Ssp-To' With Value='200000001329'
+Removed Key='Accept'
+Added Key='Accept' Value='application/fhir+json'
+Replaced Key='Accept' With Value='application/fhir+json'
+HttpContext->LoadAppConfig()
+Removed Key='Ssp-TraceID'
+Added Key='Ssp-TraceID' Value='1ded7e31-6417-44c6-b6c0-b997fbdfcb43'
+Replaced Key='Ssp-TraceID' With Value='1ded7e31-6417-44c6-b6c0-b997fbdfcb43'
+Removed Key='Ssp-From'
+Added Key='Ssp-From' Value='200000001329'
+Replaced Key='Ssp-From' With Value='200000001329'
+Removed Key='Ssp-To'
+Added Key='Ssp-To' Value='200000001329'
+Replaced Key='Ssp-To' With Value='200000001329'
+Removed Key='Accept'
+Added Key='Accept' Value='application/fhir+json'
+Replaced Key='Accept' With Value='application/fhir+json'
+Removed Key='Ssp-InteractionId'
+Added Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:rest:read:location-1'
+Replaced Key='Ssp-InteractionId' With Value='urn:nhs:names:services:gpconnect:fhir:rest:read:location-1'
+JwtHelper() Constructor
+Client Certificate Found = [Subject]
+  CN=GPConnect-Win1.itblab.nic.cfh.nhs.uk, OU=Devices, O=nhs
+
+[Issuer]
+  CN=NHS INT Authentication G2, OU=CA, O=nhs, C=GB
+
+[Serial Number]
+  151659822D991315931569FC1A28E5DB
+
+[Not Before]
+  9/10/2024 10:18:06 AM
+
+[Not After]
+  9/10/2027 10:48:06 AM
+
+[Thumbprint]
+  476A522D5CD57A694FCDAF59C8DA225E8E80DE43
+
+clientCertificate=[Subject]
+  CN=GPConnect-Win1.itblab.nic.cfh.nhs.uk, OU=Devices, O=nhs
+
+[Issuer]
+  CN=NHS INT Authentication G2, OU=CA, O=nhs, C=GB
+
+[Serial Number]
+  151659822D991315931569FC1A28E5DB
+
+[Not Before]
+  9/10/2024 10:18:06 AM
+
+[Not After]
+  9/10/2027 10:48:06 AM
+
+[Thumbprint]
+  476A522D5CD57A694FCDAF59C8DA225E8E80DE43
+
+Force The Server Certificate Callback To Always Be True.
+Removed Key='Authorization'
+Added Key='Authorization' Value='Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwczovL0NvbnN1bWVyU3lzdGVtVVJMIiwic3ViIjoiMSIsImF1ZCI6Imh0dHBzOi8vYXV0aG9yaXplLmZoaXIubmhzLm5ldC90b2tlbi8iLCJleHAiOjE3NDc3MzE3MTksImlhdCI6MTc0NzczMTQxOSwicmVhc29uX2Zvcl9yZXF1ZXN0IjoiZGlyZWN0Y2FyZSIsInJlcXVlc3RpbmdfZGV2aWNlIjp7InJlc291cmNlVHlwZSI6IkRldmljZSIsImlkZW50aWZpZXIiOlt7InN5c3RlbSI6IkdQQ29ubmVjdFRlc3RTeXN0ZW0iLCJ2YWx1ZSI6IkNsaWVudCJ9XSwibW9kZWwiOiJ2MSIsInZlcnNpb24iOiIxLjEifSwicmVxdWVzdGluZ19vcmdhbml6YXRpb24iOnsicmVzb3VyY2VUeXBlIjoiT3JnYW5pemF0aW9uIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiaHR0cHM6Ly9maGlyLm5ocy51ay9JZC9vZHMtb3JnYW5pemF0aW9uLWNvZGUiLCJ2YWx1ZSI6IkdQQ0EwMDAxIn1dLCJuYW1lIjoiR1AgQ29ubmVjdCBBc3N1cmFuY2UifSwicmVxdWVzdGluZ19wcmFjdGl0aW9uZXIiOnsicmVzb3VyY2VUeXBlIjoiUHJhY3RpdGlvbmVyIiwiaWQiOiIxIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiaHR0cHM6Ly9maGlyLm5ocy51ay9JZC9zZHMtdXNlci1pZCIsInZhbHVlIjoiR0NBU0RTMDAwMSJ9LHsic3lzdGVtIjoiaHR0cHM6Ly9maGlyLm5ocy51ay9JZC9zZHMtcm9sZS1wcm9maWxlLWlkIiwidmFsdWUiOiIxMTIyMzM0NDU1NjYifSx7InN5c3RlbSI6Imh0dHBzOi8vY29uc3VtZXJzdXBwbGllci5jb20vSWQvdXNlci1ndWlkIiwidmFsdWUiOiI5OGVkNGY3OC04MTRkLTQyNjYtOGQ1Yi1jZGU3NDJmMzA5M2MifV0sIm5hbWUiOlt7ImZhbWlseSI6IkFzc3VyYW5jZVByYWN0aXRpb25lciIsImdpdmVuIjpbIkFzc3VyYW5jZVRlc3QiXSwicHJlZml4IjpbIk1yIl19XX0sInJlcXVlc3RlZF9zY29wZSI6Im9yZ2FuaXphdGlvbi8qLnJlYWQifQ.'
+Replaced Key='Authorization' With Value='Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwczovL0NvbnN1bWVyU3lzdGVtVVJMIiwic3ViIjoiMSIsImF1ZCI6Imh0dHBzOi8vYXV0aG9yaXplLmZoaXIubmhzLm5ldC90b2tlbi8iLCJleHAiOjE3NDc3MzE3MTksImlhdCI6MTc0NzczMTQxOSwicmVhc29uX2Zvcl9yZXF1ZXN0IjoiZGlyZWN0Y2FyZSIsInJlcXVlc3RpbmdfZGV2aWNlIjp7InJlc291cmNlVHlwZSI6IkRldmljZSIsImlkZW50aWZpZXIiOlt7InN5c3RlbSI6IkdQQ29ubmVjdFRlc3RTeXN0ZW0iLCJ2YWx1ZSI6IkNsaWVudCJ9XSwibW9kZWwiOiJ2MSIsInZlcnNpb24iOiIxLjEifSwicmVxdWVzdGluZ19vcmdhbml6YXRpb24iOnsicmVzb3VyY2VUeXBlIjoiT3JnYW5pemF0aW9uIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiaHR0cHM6Ly9maGlyLm5ocy51ay9JZC9vZHMtb3JnYW5pemF0aW9uLWNvZGUiLCJ2YWx1ZSI6IkdQQ0EwMDAxIn1dLCJuYW1lIjoiR1AgQ29ubmVjdCBBc3N1cmFuY2UifSwicmVxdWVzdGluZ19wcmFjdGl0aW9uZXIiOnsicmVzb3VyY2VUeXBlIjoiUHJhY3RpdGlvbmVyIiwiaWQiOiIxIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiaHR0cHM6Ly9maGlyLm5ocy51ay9JZC9zZHMtdXNlci1pZCIsInZhbHVlIjoiR0NBU0RTMDAwMSJ9LHsic3lzdGVtIjoiaHR0cHM6Ly9maGlyLm5ocy51ay9JZC9zZHMtcm9sZS1wcm9maWxlLWlkIiwidmFsdWUiOiIxMTIyMzM0NDU1NjYifSx7InN5c3RlbSI6Imh0dHBzOi8vY29uc3VtZXJzdXBwbGllci5jb20vSWQvdXNlci1ndWlkIiwidmFsdWUiOiI5OGVkNGY3OC04MTRkLTQyNjYtOGQ1Yi1jZGU3NDJmMzA5M2MifV0sIm5hbWUiOlt7ImZhbWlseSI6IkFzc3VyYW5jZVByYWN0aXRpb25lciIsImdpdmVuIjpbIkFzc3VyYW5jZVRlc3QiXSwicHJlZml4IjpbIk1yIl19XX0sInJlcXVlc3RlZF9zY29wZSI6Im9yZ2FuaXphdGlvbi8qLnJlYWQifQ.'
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:rest:read:location-1'
+GetRequestParameters Count='0'
+GetRequestHeaders Count='6'
+Header - Ssp-TraceID -> 1ded7e31-6417-44c6-b6c0-b997fbdfcb43
+Header - Ssp-From -> 200000001329
+Header - Ssp-To -> 200000001329
+Header - Accept -> application/fhir+json
+Header - Ssp-InteractionId -> urn:nhs:names:services:gpconnect:fhir:rest:read:location-1
+Header - Authorization -> Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwczovL0NvbnN1bWVyU3lzdGVtVVJMIiwic3ViIjoiMSIsImF1ZCI6Imh0dHBzOi8vYXV0aG9yaXplLmZoaXIubmhzLm5ldC90b2tlbi8iLCJleHAiOjE3NDc3MzE3MTksImlhdCI6MTc0NzczMTQxOSwicmVhc29uX2Zvcl9yZXF1ZXN0IjoiZGlyZWN0Y2FyZSIsInJlcXVlc3RpbmdfZGV2aWNlIjp7InJlc291cmNlVHlwZSI6IkRldmljZSIsImlkZW50aWZpZXIiOlt7InN5c3RlbSI6IkdQQ29ubmVjdFRlc3RTeXN0ZW0iLCJ2YWx1ZSI6IkNsaWVudCJ9XSwibW9kZWwiOiJ2MSIsInZlcnNpb24iOiIxLjEifSwicmVxdWVzdGluZ19vcmdhbml6YXRpb24iOnsicmVzb3VyY2VUeXBlIjoiT3JnYW5pemF0aW9uIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiaHR0cHM6Ly9maGlyLm5ocy51ay9JZC9vZHMtb3JnYW5pemF0aW9uLWNvZGUiLCJ2YWx1ZSI6IkdQQ0EwMDAxIn1dLCJuYW1lIjoiR1AgQ29ubmVjdCBBc3N1cmFuY2UifSwicmVxdWVzdGluZ19wcmFjdGl0aW9uZXIiOnsicmVzb3VyY2VUeXBlIjoiUHJhY3RpdGlvbmVyIiwiaWQiOiIxIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiaHR0cHM6Ly9maGlyLm5ocy51ay9JZC9zZHMtdXNlci1pZCIsInZhbHVlIjoiR0NBU0RTMDAwMSJ9LHsic3lzdGVtIjoiaHR0cHM6Ly9maGlyLm5ocy51ay9JZC9zZHMtcm9sZS1wcm9maWxlLWlkIiwidmFsdWUiOiIxMTIyMzM0NDU1NjYifSx7InN5c3RlbSI6Imh0dHBzOi8vY29uc3VtZXJzdXBwbGllci5jb20vSWQvdXNlci1ndWlkIiwidmFsdWUiOiI5OGVkNGY3OC04MTRkLTQyNjYtOGQ1Yi1jZGU3NDJmMzA5M2MifV0sIm5hbWUiOlt7ImZhbWlseSI6IkFzc3VyYW5jZVByYWN0aXRpb25lciIsImdpdmVuIjpbIkFzc3VyYW5jZVRlc3QiXSwicHJlZml4IjpbIk1yIl19XX0sInJlcXVlc3RlZF9zY29wZSI6Im9yZ2FuaXphdGlvbi8qLnJlYWQifQ.
+Header - Transfer-Encoding : chunked
+Header - Connection : keep-alive
+Header - Cache-Control : no-store
+Header - Date : Tue, 20 May 2025 08:57:01 GMT
+Header - ETag : W/"1469444400000"
+Header - Location : https://gpconnect-win1.itblab.nic.cfh.nhs.uk/B82617/STU3/1/gpconnect/documents/fhir/Location/1/_history/1469444400000
+Header - Server : nginx/1.19.6
+Header - X-Powered-By : HAPI FHIR 3.0.0 REST Server (FHIR Server; FHIR 3.0.1/DSTU3)
+Header - Content-Type : application/fhir+json; charset=UTF-8
+Header - Last-Modified : Mon, 25 Jul 2016 11:00:00 GMT
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:rest:read:location-1'
+C:/Temp/2025-05-20T094856\Register Patient and use both the Accept header and _format parameter to request the response format-8
+GetRequestHeaders Count='6'
+GetRequestParameters Count='1'
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.registerpatient-1'
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.registerpatient-1'
+endpointAddress=https://gpconnect-win1.itblab.nic.cfh.nhs.uk/B82617/STU3/1/gpconnect/fhir
+GetRequestHeaders Count='6'

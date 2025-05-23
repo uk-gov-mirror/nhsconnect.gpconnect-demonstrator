@@ -1,0 +1,29 @@
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "patientNHSNumber",
+      "valueIdentifier": {
+        "system": "https://fhir.nhs.uk/Id/nhs-number",
+        "value": "9658218865"
+      }
+    },
+    {
+      "name": "includeMedication",
+      "part": [
+        {
+          "name": "includePrescriptionIssues",
+          "valueBoolean": true
+        },
+        {
+          "name": "medicationSearchFromDate",
+          "valueDate": "2023-05-20"
+        },
+        {
+          "name": "madeUpProblems",
+          "valueCode": "madeUpProblemsValue1"
+        }
+      ]
+    }
+  ]
+}

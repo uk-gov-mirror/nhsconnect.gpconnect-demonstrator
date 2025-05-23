@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<fhirContext>
+  <request>
+    <fhirRequestParameters>{"resourceType":"Parameters","parameter":[{"name":"patientnhsnumber","valueIdentifier":{"system":"http://fhir.nhs.net/Id/nhs-number","value":"9658218873"}},{"name":"recordSection","valueCodeableConcept":{"coding":[{"system":"http://fhir.nhs.net/ValueSet/gpconnect-record-section-1","code":"ENC"}]}},{"name":"timePeriod","valuePeriod":{"start":"2023-05-20T16:53:35+01:00","end":"2025-05-20T16:53:35+01:00"}}]}</fhirRequestParameters>
+  </request>
+  <response>
+    <fhirResponseResource>{"resourceType":"OperationOutcome","meta":{"profile":["http://fhir.nhs.net/StructureDefinition/gpconnect-operationoutcome-1"]},"issue":[{"severity":"error","code":"invalid","details":{"coding":[{"system":"http://fhir.nhs.net/ValueSet/gpconnect-error-or-warning-code-1","code":"INVALID_PARAMETER","display":"INVALID_PARAMETER"}]},"diagnostics":"Invalid Parameter"}]}</fhirResponseResource>
+  </response>
+</fhirContext>

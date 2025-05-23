@@ -1,0 +1,22 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+  <h1>Administrative Items</h1>
+  <div class="date-banner">
+    <p>For the period '01-Jan-2014' to '31-Dec-2016'</p>
+  </div>
+  <table id="adm-tab">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Entry</th>
+        <th>Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="date-column">02-May-2015</td>
+        <td>Appointment Letter</td>
+        <td>Community diabetes clinic</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

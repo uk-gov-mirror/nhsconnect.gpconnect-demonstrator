@@ -1,0 +1,335 @@
+GenericSteps() Constructor
+InitializeContainer For Dependency Injection
+24 Patients Loaded From PDS CSV File.
+5 Organisations Loaded From ODS CSV File.
+4 Genders Loaded From FHIR ValueSet File.
+6 MaritalStatus Loaded From FHIR ValueSet File.
+55 Relationship Loaded From FHIR ValueSet File.
+190 HumanLanguage Loaded From FHIR ValueSet File.
+Feature: Fhir Base
+
+Scenario: Request and response in XML
+SecuritySteps() Constructor
+SecurityContext->LoadAppConfig()
+useTLS=True
+clientCertThumbPrint=47 6A 52 2D 5C D5 7A 69 4F CD AF 59 C8 DA 22 5E 8E 80 DE 43
+sendClientCert=False
+validateServerCert=False
+HttpHeaderHelper() Constructor
+JwtHelper() Constructor
+JwtSteps() Constructor
+SetDefaultJWTValues()
+HttpHelper() Constructor
+HttpSteps() Constructor
+HttpContext->LoadAppConfig()
+fhirServerUrl=gpconnect-win1.itblab.nic.cfh.nhs.uk
+fhirServerPort=443
+fhirServerFhirBase=/gpconnect-demonstrator/v0/fhir
+useWebProxy=False
+webProxyUrl=localhost
+webProxyPort=8889
+spineProxyUrl=proxy.int.spine2.ncrs.nhs.uk
+spineProxyPort=443
+providerASID=200000000985
+consumerASID=200000000985
+All Header(s) Cleared
+All Parameters Cleared
+Force The Server Certificate Callback To Always Be True.
+FhirSteps() Constructor
+ClearFhirOperationParameters()
+fhirRequestParameters=Hl7.Fhir.Model.Parameters
+Mapped test NHS number 9000000001 to NHS Number 9658218865
+Mapped test NHS number 9000000002 to NHS Number 9658218873
+Mapped test NHS number 9000000003 to NHS Number 9658218881
+Mapped test NHS number 9000000004 to NHS Number 9658218903
+Mapped test NHS number 9000000005 to NHS Number 9658218989
+Mapped test NHS number 9000000006 to NHS Number 9658218997
+Mapped test NHS number 9000000007 to NHS Number 9658219004
+Mapped test NHS number 9000000008 to NHS Number 9658219012
+Mapped test NHS number 9000000009 to NHS Number 9658220142
+Mapped test NHS number 9000000010 to NHS Number 9658220150
+Mapped test NHS number 9000000011 to NHS Number 9658220223
+Mapped test NHS number 9000000012 to NHS Number 9658220215
+Mapped test NHS number 9000000013 to NHS Number 9658219691
+Mapped test NHS number 9000000014 to NHS Number 9476718943
+Mapped test NHS number 9000000015 to NHS Number 9658220169
+HttpContext->LoadAppConfig()
+fhirServerUrl=gpconnect-win1.itblab.nic.cfh.nhs.uk
+fhirServerPort=443
+fhirServerFhirBase=/gpconnect-demonstrator/v0/fhir
+useWebProxy=False
+webProxyUrl=localhost
+webProxyPort=8889
+spineProxyUrl=proxy.int.spine2.ncrs.nhs.uk
+spineProxyPort=443
+providerASID=200000000985
+consumerASID=200000000985
+Force The Server Certificate Callback To Always Be True.
+Removed Key='Accept'
+Added Key='Accept' Value='application/json+fhir'
+Replaced Key='Accept' With Value='application/json+fhir'
+requestContentType=application/json+fhir
+Removed Key='Ssp-TraceID'
+Added Key='Ssp-TraceID' Value='37503fcf-b454-4992-bdbc-b5a36fdedaaa'
+Replaced Key='Ssp-TraceID' With Value='37503fcf-b454-4992-bdbc-b5a36fdedaaa'
+Removed Key='Ssp-From'
+Added Key='Ssp-From' Value='200000000985'
+Replaced Key='Ssp-From' With Value='200000000985'
+Removed Key='Ssp-To'
+Added Key='Ssp-To' Value='200000000985'
+Replaced Key='Ssp-To' With Value='200000000985'
+Removed Key='Authorization'
+Added Key='Authorization' Value='Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwczovL0NvbnN1bWVyU3lzdGVtVVJMIiwic3ViIjoiMSIsImF1ZCI6Imh0dHBzOi8vYXV0aG9yaXplLmZoaXIubmhzLm5ldC90b2tlbiIsImV4cCI6MTc0Nzc1Njc0MywiaWF0IjoxNzQ3NzU2NDQzLCJyZWFzb25fZm9yX3JlcXVlc3QiOiJkaXJlY3RjYXJlIiwicmVxdWVzdGluZ19kZXZpY2UiOnsicmVzb3VyY2VUeXBlIjoiRGV2aWNlIiwiaWQiOiIxIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiR1BDb25uZWN0VGVzdFN5c3RlbSIsInZhbHVlIjoiQ2xpZW50In1dLCJtb2RlbCI6InYxIiwidmVyc2lvbiI6IjEuMSJ9LCJyZXF1ZXN0aW5nX29yZ2FuaXphdGlvbiI6eyJyZXNvdXJjZVR5cGUiOiJPcmdhbml6YXRpb24iLCJpZCI6IjEiLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwOi8vZmhpci5uaHMubmV0L0lkL29kcy1vcmdhbml6YXRpb24tY29kZSIsInZhbHVlIjoiR1BDQTAwMDEifV0sIm5hbWUiOiJHUCBDb25uZWN0IEFzc3VyYW5jZSJ9LCJyZXF1ZXN0aW5nX3ByYWN0aXRpb25lciI6eyJyZXNvdXJjZVR5cGUiOiJQcmFjdGl0aW9uZXIiLCJpZCI6IjEiLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwOi8vZmhpci5uaHMubmV0L3Nkcy11c2VyLWlkIiwidmFsdWUiOiJHQ0FTRFMwMDAxIn0seyJzeXN0ZW0iOiJodHRwczovL2NvbnN1bWVyc3VwcGxpZXIuY29tL0lkL3VzZXItZ3VpZCIsInZhbHVlIjoiOThlZDRmNzgtODE0ZC00MjY2LThkNWItY2RlNzQyZjMwOTNjIn1dLCJuYW1lIjp7ImZhbWlseSI6WyJBc3N1cmFuY2VQcmFjdGl0aW9uZXIiXSwiZ2l2ZW4iOlsiQXNzdXJhbmNlVGVzdCJdLCJwcmVmaXgiOlsiTXIiXX0sInByYWN0aXRpb25lclJvbGUiOlt7InJvbGUiOnsiY29kaW5nIjpbeyJzeXN0ZW0iOiJodHRwOi8vZmhpci5uaHMubmV0L1ZhbHVlU2V0L3Nkcy1qb2Itcm9sZS1uYW1lLTEiLCJjb2RlIjoiQXNzdXJhbmNlSm9iUm9sZSJ9XX19XX0sInJlcXVlc3RlZF9zY29wZSI6Im9yZ2FuaXphdGlvbi8qLnJlYWQiLCJyZXF1ZXN0ZWRfcmVjb3JkIjp7InJlc291cmNlVHlwZSI6Ik9yZ2FuaXphdGlvbiIsImlkIjoiMSIsImlkZW50aWZpZXIiOlt7InN5c3RlbSI6Imh0dHA6Ly9maGlyLm5ocy5uZXQvSWQvb2RzLW9yZ2FuaXphdGlvbi1jb2RlIiwidmFsdWUiOiJPcmdPRFNDb2RlMDAwMSJ9XSwibmFtZSI6IkdQIENvbm5lY3QgQXNzdXJhbmNlIn19.'
+Replaced Key='Authorization' With Value='Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwczovL0NvbnN1bWVyU3lzdGVtVVJMIiwic3ViIjoiMSIsImF1ZCI6Imh0dHBzOi8vYXV0aG9yaXplLmZoaXIubmhzLm5ldC90b2tlbiIsImV4cCI6MTc0Nzc1Njc0MywiaWF0IjoxNzQ3NzU2NDQzLCJyZWFzb25fZm9yX3JlcXVlc3QiOiJkaXJlY3RjYXJlIiwicmVxdWVzdGluZ19kZXZpY2UiOnsicmVzb3VyY2VUeXBlIjoiRGV2aWNlIiwiaWQiOiIxIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiR1BDb25uZWN0VGVzdFN5c3RlbSIsInZhbHVlIjoiQ2xpZW50In1dLCJtb2RlbCI6InYxIiwidmVyc2lvbiI6IjEuMSJ9LCJyZXF1ZXN0aW5nX29yZ2FuaXphdGlvbiI6eyJyZXNvdXJjZVR5cGUiOiJPcmdhbml6YXRpb24iLCJpZCI6IjEiLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwOi8vZmhpci5uaHMubmV0L0lkL29kcy1vcmdhbml6YXRpb24tY29kZSIsInZhbHVlIjoiR1BDQTAwMDEifV0sIm5hbWUiOiJHUCBDb25uZWN0IEFzc3VyYW5jZSJ9LCJyZXF1ZXN0aW5nX3ByYWN0aXRpb25lciI6eyJyZXNvdXJjZVR5cGUiOiJQcmFjdGl0aW9uZXIiLCJpZCI6IjEiLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwOi8vZmhpci5uaHMubmV0L3Nkcy11c2VyLWlkIiwidmFsdWUiOiJHQ0FTRFMwMDAxIn0seyJzeXN0ZW0iOiJodHRwczovL2NvbnN1bWVyc3VwcGxpZXIuY29tL0lkL3VzZXItZ3VpZCIsInZhbHVlIjoiOThlZDRmNzgtODE0ZC00MjY2LThkNWItY2RlNzQyZjMwOTNjIn1dLCJuYW1lIjp7ImZhbWlseSI6WyJBc3N1cmFuY2VQcmFjdGl0aW9uZXIiXSwiZ2l2ZW4iOlsiQXNzdXJhbmNlVGVzdCJdLCJwcmVmaXgiOlsiTXIiXX0sInByYWN0aXRpb25lclJvbGUiOlt7InJvbGUiOnsiY29kaW5nIjpbeyJzeXN0ZW0iOiJodHRwOi8vZmhpci5uaHMubmV0L1ZhbHVlU2V0L3Nkcy1qb2Itcm9sZS1uYW1lLTEiLCJjb2RlIjoiQXNzdXJhbmNlSm9iUm9sZSJ9XX19XX0sInJlcXVlc3RlZF9zY29wZSI6Im9yZ2FuaXphdGlvbi8qLnJlYWQiLCJyZXF1ZXN0ZWRfcmVjb3JkIjp7InJlc291cmNlVHlwZSI6Ik9yZ2FuaXphdGlvbiIsImlkIjoiMSIsImlkZW50aWZpZXIiOlt7InN5c3RlbSI6Imh0dHA6Ly9maGlyLm5ocy5uZXQvSWQvb2RzLW9yZ2FuaXphdGlvbi1jb2RlIiwidmFsdWUiOiJPcmdPRFNDb2RlMDAwMSJ9XSwibmFtZSI6IkdQIENvbm5lY3QgQXNzdXJhbmNlIn19.'
+Removed Key='Ssp-InteractionId'
+Added Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord'
+Replaced Key='Ssp-InteractionId' With Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord'
+Removed Key='Authorization'
+Added Key='Authorization' Value='Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwczovL0NvbnN1bWVyU3lzdGVtVVJMIiwic3ViIjoiMSIsImF1ZCI6Imh0dHBzOi8vYXV0aG9yaXplLmZoaXIubmhzLm5ldC90b2tlbiIsImV4cCI6MTc0Nzc1Njc0MywiaWF0IjoxNzQ3NzU2NDQzLCJyZWFzb25fZm9yX3JlcXVlc3QiOiJkaXJlY3RjYXJlIiwicmVxdWVzdGluZ19kZXZpY2UiOnsicmVzb3VyY2VUeXBlIjoiRGV2aWNlIiwiaWQiOiIxIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiR1BDb25uZWN0VGVzdFN5c3RlbSIsInZhbHVlIjoiQ2xpZW50In1dLCJtb2RlbCI6InYxIiwidmVyc2lvbiI6IjEuMSJ9LCJyZXF1ZXN0aW5nX29yZ2FuaXphdGlvbiI6eyJyZXNvdXJjZVR5cGUiOiJPcmdhbml6YXRpb24iLCJpZCI6IjEiLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwOi8vZmhpci5uaHMubmV0L0lkL29kcy1vcmdhbml6YXRpb24tY29kZSIsInZhbHVlIjoiR1BDQTAwMDEifV0sIm5hbWUiOiJHUCBDb25uZWN0IEFzc3VyYW5jZSJ9LCJyZXF1ZXN0aW5nX3ByYWN0aXRpb25lciI6eyJyZXNvdXJjZVR5cGUiOiJQcmFjdGl0aW9uZXIiLCJpZCI6IjEiLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwOi8vZmhpci5uaHMubmV0L3Nkcy11c2VyLWlkIiwidmFsdWUiOiJHQ0FTRFMwMDAxIn0seyJzeXN0ZW0iOiJodHRwczovL2NvbnN1bWVyc3VwcGxpZXIuY29tL0lkL3VzZXItZ3VpZCIsInZhbHVlIjoiOThlZDRmNzgtODE0ZC00MjY2LThkNWItY2RlNzQyZjMwOTNjIn1dLCJuYW1lIjp7ImZhbWlseSI6WyJBc3N1cmFuY2VQcmFjdGl0aW9uZXIiXSwiZ2l2ZW4iOlsiQXNzdXJhbmNlVGVzdCJdLCJwcmVmaXgiOlsiTXIiXX0sInByYWN0aXRpb25lclJvbGUiOlt7InJvbGUiOnsiY29kaW5nIjpbeyJzeXN0ZW0iOiJodHRwOi8vZmhpci5uaHMubmV0L1ZhbHVlU2V0L3Nkcy1qb2Itcm9sZS1uYW1lLTEiLCJjb2RlIjoiQXNzdXJhbmNlSm9iUm9sZSJ9XX19XX0sInJlcXVlc3RlZF9zY29wZSI6InBhdGllbnQvKi5yZWFkIiwicmVxdWVzdGVkX3JlY29yZCI6eyJyZXNvdXJjZVR5cGUiOiJPcmdhbml6YXRpb24iLCJpZCI6IjEiLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwOi8vZmhpci5uaHMubmV0L0lkL29kcy1vcmdhbml6YXRpb24tY29kZSIsInZhbHVlIjoiT3JnT0RTQ29kZTAwMDEifV0sIm5hbWUiOiJHUCBDb25uZWN0IEFzc3VyYW5jZSJ9fQ.'
+Replaced Key='Authorization' With Value='Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwczovL0NvbnN1bWVyU3lzdGVtVVJMIiwic3ViIjoiMSIsImF1ZCI6Imh0dHBzOi8vYXV0aG9yaXplLmZoaXIubmhzLm5ldC90b2tlbiIsImV4cCI6MTc0Nzc1Njc0MywiaWF0IjoxNzQ3NzU2NDQzLCJyZWFzb25fZm9yX3JlcXVlc3QiOiJkaXJlY3RjYXJlIiwicmVxdWVzdGluZ19kZXZpY2UiOnsicmVzb3VyY2VUeXBlIjoiRGV2aWNlIiwiaWQiOiIxIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiR1BDb25uZWN0VGVzdFN5c3RlbSIsInZhbHVlIjoiQ2xpZW50In1dLCJtb2RlbCI6InYxIiwidmVyc2lvbiI6IjEuMSJ9LCJyZXF1ZXN0aW5nX29yZ2FuaXphdGlvbiI6eyJyZXNvdXJjZVR5cGUiOiJPcmdhbml6YXRpb24iLCJpZCI6IjEiLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwOi8vZmhpci5uaHMubmV0L0lkL29kcy1vcmdhbml6YXRpb24tY29kZSIsInZhbHVlIjoiR1BDQTAwMDEifV0sIm5hbWUiOiJHUCBDb25uZWN0IEFzc3VyYW5jZSJ9LCJyZXF1ZXN0aW5nX3ByYWN0aXRpb25lciI6eyJyZXNvdXJjZVR5cGUiOiJQcmFjdGl0aW9uZXIiLCJpZCI6IjEiLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwOi8vZmhpci5uaHMubmV0L3Nkcy11c2VyLWlkIiwidmFsdWUiOiJHQ0FTRFMwMDAxIn0seyJzeXN0ZW0iOiJodHRwczovL2NvbnN1bWVyc3VwcGxpZXIuY29tL0lkL3VzZXItZ3VpZCIsInZhbHVlIjoiOThlZDRmNzgtODE0ZC00MjY2LThkNWItY2RlNzQyZjMwOTNjIn1dLCJuYW1lIjp7ImZhbWlseSI6WyJBc3N1cmFuY2VQcmFjdGl0aW9uZXIiXSwiZ2l2ZW4iOlsiQXNzdXJhbmNlVGVzdCJdLCJwcmVmaXgiOlsiTXIiXX0sInByYWN0aXRpb25lclJvbGUiOlt7InJvbGUiOnsiY29kaW5nIjpbeyJzeXN0ZW0iOiJodHRwOi8vZmhpci5uaHMubmV0L1ZhbHVlU2V0L3Nkcy1qb2Itcm9sZS1uYW1lLTEiLCJjb2RlIjoiQXNzdXJhbmNlSm9iUm9sZSJ9XX19XX0sInJlcXVlc3RlZF9zY29wZSI6InBhdGllbnQvKi5yZWFkIiwicmVxdWVzdGVkX3JlY29yZCI6eyJyZXNvdXJjZVR5cGUiOiJPcmdhbml6YXRpb24iLCJpZCI6IjEiLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwOi8vZmhpci5uaHMubmV0L0lkL29kcy1vcmdhbml6YXRpb24tY29kZSIsInZhbHVlIjoiT3JnT0RTQ29kZTAwMDEifV0sIm5hbWUiOiJHUCBDb25uZWN0IEFzc3VyYW5jZSJ9fQ.'
+Removed Key='Authorization'
+Added Key='Authorization' Value='Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwczovL0NvbnN1bWVyU3lzdGVtVVJMIiwic3ViIjoiMSIsImF1ZCI6Imh0dHBzOi8vYXV0aG9yaXplLmZoaXIubmhzLm5ldC90b2tlbiIsImV4cCI6MTc0Nzc1Njc0MywiaWF0IjoxNzQ3NzU2NDQzLCJyZWFzb25fZm9yX3JlcXVlc3QiOiJkaXJlY3RjYXJlIiwicmVxdWVzdGluZ19kZXZpY2UiOnsicmVzb3VyY2VUeXBlIjoiRGV2aWNlIiwiaWQiOiIxIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiR1BDb25uZWN0VGVzdFN5c3RlbSIsInZhbHVlIjoiQ2xpZW50In1dLCJtb2RlbCI6InYxIiwidmVyc2lvbiI6IjEuMSJ9LCJyZXF1ZXN0aW5nX29yZ2FuaXphdGlvbiI6eyJyZXNvdXJjZVR5cGUiOiJPcmdhbml6YXRpb24iLCJpZCI6IjEiLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwOi8vZmhpci5uaHMubmV0L0lkL29kcy1vcmdhbml6YXRpb24tY29kZSIsInZhbHVlIjoiR1BDQTAwMDEifV0sIm5hbWUiOiJHUCBDb25uZWN0IEFzc3VyYW5jZSJ9LCJyZXF1ZXN0aW5nX3ByYWN0aXRpb25lciI6eyJyZXNvdXJjZVR5cGUiOiJQcmFjdGl0aW9uZXIiLCJpZCI6IjEiLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwOi8vZmhpci5uaHMubmV0L3Nkcy11c2VyLWlkIiwidmFsdWUiOiJHQ0FTRFMwMDAxIn0seyJzeXN0ZW0iOiJodHRwczovL2NvbnN1bWVyc3VwcGxpZXIuY29tL0lkL3VzZXItZ3VpZCIsInZhbHVlIjoiOThlZDRmNzgtODE0ZC00MjY2LThkNWItY2RlNzQyZjMwOTNjIn1dLCJuYW1lIjp7ImZhbWlseSI6WyJBc3N1cmFuY2VQcmFjdGl0aW9uZXIiXSwiZ2l2ZW4iOlsiQXNzdXJhbmNlVGVzdCJdLCJwcmVmaXgiOlsiTXIiXX0sInByYWN0aXRpb25lclJvbGUiOlt7InJvbGUiOnsiY29kaW5nIjpbeyJzeXN0ZW0iOiJodHRwOi8vZmhpci5uaHMubmV0L1ZhbHVlU2V0L3Nkcy1qb2Itcm9sZS1uYW1lLTEiLCJjb2RlIjoiQXNzdXJhbmNlSm9iUm9sZSJ9XX19XX0sInJlcXVlc3RlZF9zY29wZSI6InBhdGllbnQvKi5yZWFkIiwicmVxdWVzdGVkX3JlY29yZCI6eyJyZXNvdXJjZVR5cGUiOiJQYXRpZW50IiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiaHR0cDovL2ZoaXIubmhzLm5ldC9JZC9uaHMtbnVtYmVyIiwidmFsdWUiOiI5NjU4MjE4ODczIn1dfX0.'
+Replaced Key='Authorization' With Value='Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwczovL0NvbnN1bWVyU3lzdGVtVVJMIiwic3ViIjoiMSIsImF1ZCI6Imh0dHBzOi8vYXV0aG9yaXplLmZoaXIubmhzLm5ldC90b2tlbiIsImV4cCI6MTc0Nzc1Njc0MywiaWF0IjoxNzQ3NzU2NDQzLCJyZWFzb25fZm9yX3JlcXVlc3QiOiJkaXJlY3RjYXJlIiwicmVxdWVzdGluZ19kZXZpY2UiOnsicmVzb3VyY2VUeXBlIjoiRGV2aWNlIiwiaWQiOiIxIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiR1BDb25uZWN0VGVzdFN5c3RlbSIsInZhbHVlIjoiQ2xpZW50In1dLCJtb2RlbCI6InYxIiwidmVyc2lvbiI6IjEuMSJ9LCJyZXF1ZXN0aW5nX29yZ2FuaXphdGlvbiI6eyJyZXNvdXJjZVR5cGUiOiJPcmdhbml6YXRpb24iLCJpZCI6IjEiLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwOi8vZmhpci5uaHMubmV0L0lkL29kcy1vcmdhbml6YXRpb24tY29kZSIsInZhbHVlIjoiR1BDQTAwMDEifV0sIm5hbWUiOiJHUCBDb25uZWN0IEFzc3VyYW5jZSJ9LCJyZXF1ZXN0aW5nX3ByYWN0aXRpb25lciI6eyJyZXNvdXJjZVR5cGUiOiJQcmFjdGl0aW9uZXIiLCJpZCI6IjEiLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwOi8vZmhpci5uaHMubmV0L3Nkcy11c2VyLWlkIiwidmFsdWUiOiJHQ0FTRFMwMDAxIn0seyJzeXN0ZW0iOiJodHRwczovL2NvbnN1bWVyc3VwcGxpZXIuY29tL0lkL3VzZXItZ3VpZCIsInZhbHVlIjoiOThlZDRmNzgtODE0ZC00MjY2LThkNWItY2RlNzQyZjMwOTNjIn1dLCJuYW1lIjp7ImZhbWlseSI6WyJBc3N1cmFuY2VQcmFjdGl0aW9uZXIiXSwiZ2l2ZW4iOlsiQXNzdXJhbmNlVGVzdCJdLCJwcmVmaXgiOlsiTXIiXX0sInByYWN0aXRpb25lclJvbGUiOlt7InJvbGUiOnsiY29kaW5nIjpbeyJzeXN0ZW0iOiJodHRwOi8vZmhpci5uaHMubmV0L1ZhbHVlU2V0L3Nkcy1qb2Itcm9sZS1uYW1lLTEiLCJjb2RlIjoiQXNzdXJhbmNlSm9iUm9sZSJ9XX19XX0sInJlcXVlc3RlZF9zY29wZSI6InBhdGllbnQvKi5yZWFkIiwicmVxdWVzdGVkX3JlY29yZCI6eyJyZXNvdXJjZVR5cGUiOiJQYXRpZW50IiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiaHR0cDovL2ZoaXIubmhzLm5ldC9JZC9uaHMtbnVtYmVyIiwidmFsdWUiOiI5NjU4MjE4ODczIn1dfX0.'
+Removed Key='Accept'
+Added Key='Accept' Value='application/xml+fhir'
+Replaced Key='Accept' With Value='application/xml+fhir'
+Header Key='Accept' Value='application/xml+fhir'
+endpointAddress=https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v0/fhir
+requestUrl=/Patient/gpc.getcarerecord
+requestMethod=POST
+requestBody={"resourceType":"Parameters","parameter":[{"name":"patientNHSNumber","valueIdentifier":{"system":"http://fhir.nhs.net/Id/nhs-number","value":"9658218873"}},{"name":"recordSection","valueCodeableConcept":{"coding":[{"system":"http://fhir.nhs.net/ValueSet/gpconnect-record-section-1","code":"IMM"}]}}]}
+*** OnBeforeRequest ***
+GetRequestHeaders Count='6'
+Added Header Key='Ssp-TraceID' Value='37503fcf-b454-4992-bdbc-b5a36fdedaaa'
+Added Header Key='Ssp-From' Value='200000000985'
+Added Header Key='Ssp-To' Value='200000000985'
+Added Header Key='Authorization' Value='Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwczovL0NvbnN1bWVyU3lzdGVtVVJMIiwic3ViIjoiMSIsImF1ZCI6Imh0dHBzOi8vYXV0aG9yaXplLmZoaXIubmhzLm5ldC90b2tlbiIsImV4cCI6MTc0Nzc1Njc0MywiaWF0IjoxNzQ3NzU2NDQzLCJyZWFzb25fZm9yX3JlcXVlc3QiOiJkaXJlY3RjYXJlIiwicmVxdWVzdGluZ19kZXZpY2UiOnsicmVzb3VyY2VUeXBlIjoiRGV2aWNlIiwiaWQiOiIxIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiR1BDb25uZWN0VGVzdFN5c3RlbSIsInZhbHVlIjoiQ2xpZW50In1dLCJtb2RlbCI6InYxIiwidmVyc2lvbiI6IjEuMSJ9LCJyZXF1ZXN0aW5nX29yZ2FuaXphdGlvbiI6eyJyZXNvdXJjZVR5cGUiOiJPcmdhbml6YXRpb24iLCJpZCI6IjEiLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwOi8vZmhpci5uaHMubmV0L0lkL29kcy1vcmdhbml6YXRpb24tY29kZSIsInZhbHVlIjoiR1BDQTAwMDEifV0sIm5hbWUiOiJHUCBDb25uZWN0IEFzc3VyYW5jZSJ9LCJyZXF1ZXN0aW5nX3ByYWN0aXRpb25lciI6eyJyZXNvdXJjZVR5cGUiOiJQcmFjdGl0aW9uZXIiLCJpZCI6IjEiLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwOi8vZmhpci5uaHMubmV0L3Nkcy11c2VyLWlkIiwidmFsdWUiOiJHQ0FTRFMwMDAxIn0seyJzeXN0ZW0iOiJodHRwczovL2NvbnN1bWVyc3VwcGxpZXIuY29tL0lkL3VzZXItZ3VpZCIsInZhbHVlIjoiOThlZDRmNzgtODE0ZC00MjY2LThkNWItY2RlNzQyZjMwOTNjIn1dLCJuYW1lIjp7ImZhbWlseSI6WyJBc3N1cmFuY2VQcmFjdGl0aW9uZXIiXSwiZ2l2ZW4iOlsiQXNzdXJhbmNlVGVzdCJdLCJwcmVmaXgiOlsiTXIiXX0sInByYWN0aXRpb25lclJvbGUiOlt7InJvbGUiOnsiY29kaW5nIjpbeyJzeXN0ZW0iOiJodHRwOi8vZmhpci5uaHMubmV0L1ZhbHVlU2V0L3Nkcy1qb2Itcm9sZS1uYW1lLTEiLCJjb2RlIjoiQXNzdXJhbmNlSm9iUm9sZSJ9XX19XX0sInJlcXVlc3RlZF9zY29wZSI6InBhdGllbnQvKi5yZWFkIiwicmVxdWVzdGVkX3JlY29yZCI6eyJyZXNvdXJjZVR5cGUiOiJQYXRpZW50IiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiaHR0cDovL2ZoaXIubmhzLm5ldC9JZC9uaHMtbnVtYmVyIiwidmFsdWUiOiI5NjU4MjE4ODczIn1dfX0.'
+Added Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord'
+*** OnAfterResponse ***
+responseStatusCode=OK
+Response StatusCode=OK
+responseContentType=application/xml+fhir;charset=UTF-8
+Response ContentType=application/xml+fhir;charset=UTF-8
+The given key was not present in the dictionary.
+fhirResponseResource=Hl7.Fhir.Model.Bundle
+responseTimeInMilliseconds=122
+responseTimeAcceptable=True
+responseBody=<Bundle xmlns="http://hl7.org/fhir"><type value="searchset"/><entry><resource><Composition xmlns="http://hl7.org/fhir"><meta><profile value="http://fhir.nhs.net/StructureDefinition/gpconnect-carerecord-composition-1"/></meta><date value="2025-05-20T16:54:03+01:00"/><type><coding><system value="http://snomed.info/sct"/><code value="425173008"/><display value="record extract (record artifact)"/></coding><text value="record extract (record artifact)"/></type><class><coding><system value="http://snomed.info/sct"/><code value="700232004"/><display value="general medical service (qualifier value)"/></coding><text value="general medical service (qualifier value)"/></class><title value="Patient Care Record"/><status value="final"/><subject><reference value="Patient/2"/></subject><author><reference value="Practitioner/1"/></author><section><title value="Immunisations"/><code><coding><system value="http://fhir.nhs.net/ValueSet/gpconnect-record-section-1"/><code value="IMM"/><display value="Immunisations"/></coding><text value="Immunisations"/></code><text><status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><h1>Immunisations</h1><table id="imm-tab"><thead><tr><th>Date</th><th>Vaccination</th><th>Part</th><th>Contents</th><th>Details</th></tr></thead><tbody><tr><td class="date-column">30-Aug-2015</td><td>Pneumovax II</td><td align="right">1</td><td>Pneumoccocal</td><td/></tr><tr><td class="date-column">18-Jan-2013</td><td>Influenza vaccine</td><td align="right">1</td><td>Influenza</td><td/></tr><tr><td class="date-column">04-Oct-2010</td><td>Influenza vaccine</td><td align="right">1</td><td>Influenza</td><td/></tr></tbody></table></div></text></section></Composition></resource></entry><entry><fullUrl value="Practitioner/1"/><resource><Practitioner xmlns="http://hl7.org/fhir"><id value="1"/><meta><versionId value="1469444400000"/><lastUpdated value="2016-07-25T12:00:00.000+01:00"/><profile value="http://fhir.nhs.net/StructureDefinition/gpconnect-practitioner-1"/></meta><identifier><system value="http://fhir.nhs.net/Id/sds-user-id"/><value value="G13579135"/></identifier><identifier><system value="http://fhir.nhs.net/Id/sds-role-profile-id"/><value value="PT1234"/></identifier><name><use value="usual"/><family value="Gilbert"/><given value="Nichole"/><prefix value="Miss"/></name><gender value="female"/><practitionerRole><managingOrganization><reference value="Organization/8"/></managingOrganization><role><coding><system value="http://fhir.nhs.net/ValueSet/sds-job-role-name-1"/><code value="R0050"/><display value="Consultant"/></coding></role></practitionerRole><communication><coding><system value="http://fhir.nhs.net/ValueSet/human-language-1"/><code value="en"/><display value="English"/></coding></communication></Practitioner></resource></entry><entry><fullUrl value="Organization/8"/><resource><Organization xmlns="http://hl7.org/fhir"><id value="8"/><meta><versionId value="1548849600000"/><lastUpdated value="2019-01-30T12:00:00.000+00:00"/><profile value="http://fhir.nhs.net/StructureDefinition/gpconnect-organization-1"/></meta><identifier><system value="http://fhir.nhs.net/Id/ods-organization-code"/><value value="A20047"/></identifier><name value="Dr Legg's Surgery"/><telecom><system value="phone"/><value value="12345678"/><use value="work"/></telecom><address><use value="work"/><line value="NHS NPFIT"/><line value="Test Data Manager"/><line value="Princes Exchange"/><city value="Leeds"/><postalCode value="LS1 4HY"/></address></Organization></resource></entry><entry><fullUrl value="Patient/2"/><resource><Patient xmlns="http://hl7.org/fhir"><id value="2"/><meta><versionId value="1521806400000"/><lastUpdated value="2018-03-23T12:00:00.000+00:00"/><profile value="http://fhir.nhs.net/StructureDefinition/gpconnect-patient-1"/></meta><identifier><system value="http://fhir.nhs.net/Id/nhs-number"/><value value="9658218873"/></identifier><name><use value="usual"/><text value="Mike MEAKIN"/><family value="MEAKIN"/><given value="Mike"/><prefix value="MR"/></name><telecom><system value="phone"/><value value="01454587554"/><use value="home"/></telecom><gender value="male"/><birthDate value="1927-06-19"/><address><use value="home"/><type value="physical"/><text value="1 KNIGHTS COURT, DN16 3PL"/></address><careProvider><reference value="Practitioner/1"/><display value="Miss Nichole Gilbert"/></careProvider></Patient></resource></entry></Bundle>
+fhirResponseResource=Hl7.Fhir.Model.Bundle
+C:\Temp\2025-05-20T165256\Request and response in XML-5
+GetRequestHeaders Count='6'
+GetRequestParameters Count='0'
+webProxyAddress=https://localhost:8889
+spineProxyAddress=https://proxy.int.spine2.ncrs.nhs.uk:443
+endpointAddress=https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v0/fhir
+Exception writing JSONResponse to Output File - Reponse May Not be JSON
+GetRequestHeaders Count='6'
+Exception writing HTMLResponse to Output File - Reponse May not Include HTML. Exception Message : Unexpected character encountered while parsing value: <. Path '', line 0, position 0.
+Response ContentType=application/xml+fhir;charset=UTF-8
+responseXML=<Bundle xmlns="http://hl7.org/fhir">
+  <type value="searchset" />
+  <entry>
+    <resource>
+      <Composition xmlns="http://hl7.org/fhir">
+        <meta>
+          <profile value="http://fhir.nhs.net/StructureDefinition/gpconnect-carerecord-composition-1" />
+        </meta>
+        <date value="2025-05-20T16:54:03+01:00" />
+        <type>
+          <coding>
+            <system value="http://snomed.info/sct" />
+            <code value="425173008" />
+            <display value="record extract (record artifact)" />
+          </coding>
+          <text value="record extract (record artifact)" />
+        </type>
+        <class>
+          <coding>
+            <system value="http://snomed.info/sct" />
+            <code value="700232004" />
+            <display value="general medical service (qualifier value)" />
+          </coding>
+          <text value="general medical service (qualifier value)" />
+        </class>
+        <title value="Patient Care Record" />
+        <status value="final" />
+        <subject>
+          <reference value="Patient/2" />
+        </subject>
+        <author>
+          <reference value="Practitioner/1" />
+        </author>
+        <section>
+          <title value="Immunisations" />
+          <code>
+            <coding>
+              <system value="http://fhir.nhs.net/ValueSet/gpconnect-record-section-1" />
+              <code value="IMM" />
+              <display value="Immunisations" />
+            </coding>
+            <text value="Immunisations" />
+          </code>
+          <text>
+            <status value="generated" />
+            <div xmlns="http://www.w3.org/1999/xhtml">
+              <h1>Immunisations</h1>
+              <table id="imm-tab">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Vaccination</th>
+                    <th>Part</th>
+                    <th>Contents</th>
+                    <th>Details</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="date-column">30-Aug-2015</td>
+                    <td>Pneumovax II</td>
+                    <td align="right">1</td>
+                    <td>Pneumoccocal</td>
+                    <td />
+                  </tr>
+                  <tr>
+                    <td class="date-column">18-Jan-2013</td>
+                    <td>Influenza vaccine</td>
+                    <td align="right">1</td>
+                    <td>Influenza</td>
+                    <td />
+                  </tr>
+                  <tr>
+                    <td class="date-column">04-Oct-2010</td>
+                    <td>Influenza vaccine</td>
+                    <td align="right">1</td>
+                    <td>Influenza</td>
+                    <td />
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </text>
+        </section>
+      </Composition>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="Practitioner/1" />
+    <resource>
+      <Practitioner xmlns="http://hl7.org/fhir">
+        <id value="1" />
+        <meta>
+          <versionId value="1469444400000" />
+          <lastUpdated value="2016-07-25T12:00:00.000+01:00" />
+          <profile value="http://fhir.nhs.net/StructureDefinition/gpconnect-practitioner-1" />
+        </meta>
+        <identifier>
+          <system value="http://fhir.nhs.net/Id/sds-user-id" />
+          <value value="G13579135" />
+        </identifier>
+        <identifier>
+          <system value="http://fhir.nhs.net/Id/sds-role-profile-id" />
+          <value value="PT1234" />
+        </identifier>
+        <name>
+          <use value="usual" />
+          <family value="Gilbert" />
+          <given value="Nichole" />
+          <prefix value="Miss" />
+        </name>
+        <gender value="female" />
+        <practitionerRole>
+          <managingOrganization>
+            <reference value="Organization/8" />
+          </managingOrganization>
+          <role>
+            <coding>
+              <system value="http://fhir.nhs.net/ValueSet/sds-job-role-name-1" />
+              <code value="R0050" />
+              <display value="Consultant" />
+            </coding>
+          </role>
+        </practitionerRole>
+        <communication>
+          <coding>
+            <system value="http://fhir.nhs.net/ValueSet/human-language-1" />
+            <code value="en" />
+            <display value="English" />
+          </coding>
+        </communication>
+      </Practitioner>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="Organization/8" />
+    <resource>
+      <Organization xmlns="http://hl7.org/fhir">
+        <id value="8" />
+        <meta>
+          <versionId value="1548849600000" />
+          <lastUpdated value="2019-01-30T12:00:00.000+00:00" />
+          <profile value="http://fhir.nhs.net/StructureDefinition/gpconnect-organization-1" />
+        </meta>
+        <identifier>
+          <system value="http://fhir.nhs.net/Id/ods-organization-code" />
+          <value value="A20047" />
+        </identifier>
+        <name value="Dr Legg's Surgery" />
+        <telecom>
+          <system value="phone" />
+          <value value="12345678" />
+          <use value="work" />
+        </telecom>
+        <address>
+          <use value="work" />
+          <line value="NHS NPFIT" />
+          <line value="Test Data Manager" />
+          <line value="Princes Exchange" />
+          <city value="Leeds" />
+          <postalCode value="LS1 4HY" />
+        </address>
+      </Organization>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="Patient/2" />
+    <resource>
+      <Patient xmlns="http://hl7.org/fhir">
+        <id value="2" />
+        <meta>
+          <versionId value="1521806400000" />
+          <lastUpdated value="2018-03-23T12:00:00.000+00:00" />
+          <profile value="http://fhir.nhs.net/StructureDefinition/gpconnect-patient-1" />
+        </meta>
+        <identifier>
+          <system value="http://fhir.nhs.net/Id/nhs-number" />
+          <value value="9658218873" />
+        </identifier>
+        <name>
+          <use value="usual" />
+          <text value="Mike MEAKIN" />
+          <family value="MEAKIN" />
+          <given value="Mike" />
+          <prefix value="MR" />
+        </name>
+        <telecom>
+          <system value="phone" />
+          <value value="01454587554" />
+          <use value="home" />
+        </telecom>
+        <gender value="male" />
+        <birthDate value="1927-06-19" />
+        <address>
+          <use value="home" />
+          <type value="physical" />
+          <text value="1 KNIGHTS COURT, DN16 3PL" />
+        </address>
+        <careProvider>
+          <reference value="Practitioner/1" />
+          <display value="Miss Nichole Gilbert" />
+        </careProvider>
+      </Patient>
+    </resource>
+  </entry>
+</Bundle>
+fhirResponseResource=Hl7.Fhir.Model.Bundle

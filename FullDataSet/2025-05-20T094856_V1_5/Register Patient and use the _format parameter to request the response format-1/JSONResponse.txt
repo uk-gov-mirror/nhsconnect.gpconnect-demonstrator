@@ -1,0 +1,181 @@
+{
+  "resourceType": "Bundle",
+  "meta": {
+    "profile": [
+      "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Searchset-Bundle-1"
+    ]
+  },
+  "type": "searchset",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "44",
+        "meta": {
+          "versionId": "1747731421981",
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1"
+          ]
+        },
+        "language": "en-GB",
+        "extension": [
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-RegistrationDetails-1",
+            "extension": [
+              {
+                "url": "registrationPeriod",
+                "valuePeriod": {
+                  "start": "2025-05-20T09:57:02+01:00"
+                }
+              },
+              {
+                "url": "registrationType",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "system": "https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-RegistrationType-1",
+                      "code": "T",
+                      "display": "Temporary"
+                    }
+                  ]
+                }
+              },
+              {
+                "url": "preferredBranchSurgery",
+                "valueReference": {
+                  "reference": "Location/1"
+                }
+              }
+            ]
+          },
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-NHSCommunication-1",
+            "extension": [
+              {
+                "url": "language",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "system": "https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-HumanLanguage-1",
+                      "code": "en",
+                      "display": "English"
+                    }
+                  ]
+                }
+              },
+              {
+                "url": "preferred",
+                "valueBoolean": false
+              },
+              {
+                "url": "modeOfCommunication",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "system": "https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-LanguageAbilityMode-1",
+                      "code": "RWR",
+                      "display": "Received written"
+                    }
+                  ]
+                }
+              },
+              {
+                "url": "communicationProficiency",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "system": "https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-LanguageAbilityProficiency-1",
+                      "code": "E",
+                      "display": "Excellent"
+                    }
+                  ]
+                }
+              },
+              {
+                "url": "interpreterRequired",
+                "valueBoolean": false
+              }
+            ]
+          }
+        ],
+        "identifier": [
+          {
+            "extension": [
+              {
+                "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-NHSNumberVerificationStatus-1",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "system": "https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-NHSNumberVerificationStatus-1",
+                      "code": "01",
+                      "display": "Number present and verified"
+                    }
+                  ]
+                }
+              }
+            ],
+            "system": "https://fhir.nhs.uk/Id/nhs-number",
+            "value": "9651258845"
+          },
+          {
+            "use": "usual",
+            "type": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/ValueSet/identifier-type",
+                  "code": "EN",
+                  "display": "Employer number"
+                }
+              ]
+            },
+            "system": "https://fhir.nhs.uk/Id/local-patient-identifier",
+            "value": "123456",
+            "assigner": {
+              "reference": "Organization/1"
+            }
+          }
+        ],
+        "active": true,
+        "name": [
+          {
+            "use": "official",
+            "text": "Archie FALVEY",
+            "family": "FALVEY",
+            "given": [
+              "Archie"
+            ]
+          },
+          {
+            "use": "official",
+            "family": "AnotherOfficialFamilyName",
+            "given": [
+              "AnotherOfficialGivenName"
+            ],
+            "period": {
+              "start": "2016-02-01T09:57:01+00:00",
+              "end": "2016-02-01T09:57:01+00:00"
+            }
+          },
+          {
+            "use": "temp",
+            "family": "AdditionalFamily",
+            "given": [
+              "AdditionalGiven"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "2000-12-03",
+        "address": [
+          {
+            "use": "work",
+            "type": "physical"
+          }
+        ],
+        "managingOrganization": {
+          "reference": "Organization/7"
+        }
+      }
+    }
+  ]
+}

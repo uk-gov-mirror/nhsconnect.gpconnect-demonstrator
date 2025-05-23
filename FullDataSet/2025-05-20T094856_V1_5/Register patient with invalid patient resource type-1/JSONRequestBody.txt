@@ -1,0 +1,47 @@
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "registerPatient",
+      "resource": {
+        "resourceType": "InvalidResourceType",
+        "meta": {
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1"
+          ]
+        },
+        "identifier": [
+          {
+            "extension": [
+              {
+                "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-NHSNumberVerificationStatus-1",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "system": "https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-NHSNumberVerificationStatus-1",
+                      "code": "01",
+                      "display": "Number present and verified"
+                    }
+                  ]
+                }
+              }
+            ],
+            "system": "https://fhir.nhs.uk/Id/nhs-number",
+            "value": "9651259035"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "family": "GORDON",
+            "given": [
+              "Katie"
+            ]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "2000-04-02"
+      }
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "resourceType": "Bundle",
+  "id": "977ACE91-C8CC-4751-845D-D8EA447B9860",
+  "type": "searchset",
+  "total": 0,
+  "link": [ {
+    "relation": "self",
+    "url": "https://orange.testlab.nhs.uk/Endpoint?organization=https://fhir.nhs.uk/Id/ods-organization-code|A20047&identifier=https://fhir.nhs.uk/Id/nhsServiceInteractionId|urn:nhs:names:services:gpconnect:documents:fhir:rest:search:patient-1"
+  } ]
+}

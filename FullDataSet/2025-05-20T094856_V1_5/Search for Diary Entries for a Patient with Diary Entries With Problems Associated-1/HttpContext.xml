@@ -1,0 +1,476 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<httpContext useWebProxy="false" webProxyUrl="https://localhost:8889" useSpineProxy="false" spineProxyUrl="https://proxy.int.spine2.ncrs.nhs.uk:443" providerUrl="https://gpconnect-win1.itblab.nic.cfh.nhs.uk/B82617/STU3/1/gpconnect/structured/fhir">
+  <request endpointUrl="https://gpconnect-win1.itblab.nic.cfh.nhs.uk/B82617/STU3/1/gpconnect/structured/fhir">
+    <requestHeaders>
+      <requestHeader name="Ssp-TraceID" value="2c756534-e2dd-4045-b48f-fbf808bc98d2" />
+      <requestHeader name="Ssp-From" value="200000001329" />
+      <requestHeader name="Ssp-To" value="200000001329" />
+      <requestHeader name="Accept" value="application/fhir+json" />
+      <requestHeader name="Ssp-InteractionId" value="urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1" />
+      <requestHeader name="Authorization" value="Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwczovL0NvbnN1bWVyU3lzdGVtVVJMIiwic3ViIjoiMSIsImF1ZCI6Imh0dHBzOi8vYXV0aG9yaXplLmZoaXIubmhzLm5ldC90b2tlbi8iLCJleHAiOjE3NDc3MzE4NzYsImlhdCI6MTc0NzczMTU3NiwicmVhc29uX2Zvcl9yZXF1ZXN0IjoiZGlyZWN0Y2FyZSIsInJlcXVlc3RpbmdfZGV2aWNlIjp7InJlc291cmNlVHlwZSI6IkRldmljZSIsImlkZW50aWZpZXIiOlt7InN5c3RlbSI6IkdQQ29ubmVjdFRlc3RTeXN0ZW0iLCJ2YWx1ZSI6IkNsaWVudCJ9XSwibW9kZWwiOiJ2MSIsInZlcnNpb24iOiIxLjEifSwicmVxdWVzdGluZ19vcmdhbml6YXRpb24iOnsicmVzb3VyY2VUeXBlIjoiT3JnYW5pemF0aW9uIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiaHR0cHM6Ly9maGlyLm5ocy51ay9JZC9vZHMtb3JnYW5pemF0aW9uLWNvZGUiLCJ2YWx1ZSI6IkdQQ0EwMDAxIn1dLCJuYW1lIjoiR1AgQ29ubmVjdCBBc3N1cmFuY2UifSwicmVxdWVzdGluZ19wcmFjdGl0aW9uZXIiOnsicmVzb3VyY2VUeXBlIjoiUHJhY3RpdGlvbmVyIiwiaWQiOiIxIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiaHR0cHM6Ly9maGlyLm5ocy51ay9JZC9zZHMtdXNlci1pZCIsInZhbHVlIjoiR0NBU0RTMDAwMSJ9LHsic3lzdGVtIjoiaHR0cHM6Ly9maGlyLm5ocy51ay9JZC9zZHMtcm9sZS1wcm9maWxlLWlkIiwidmFsdWUiOiIxMTIyMzM0NDU1NjYifSx7InN5c3RlbSI6Imh0dHBzOi8vY29uc3VtZXJzdXBwbGllci5jb20vSWQvdXNlci1ndWlkIiwidmFsdWUiOiI5OGVkNGY3OC04MTRkLTQyNjYtOGQ1Yi1jZGU3NDJmMzA5M2MifV0sIm5hbWUiOlt7ImZhbWlseSI6IkFzc3VyYW5jZVByYWN0aXRpb25lciIsImdpdmVuIjpbIkFzc3VyYW5jZVRlc3QiXSwicHJlZml4IjpbIk1yIl19XX0sInJlcXVlc3RlZF9zY29wZSI6InBhdGllbnQvKi5yZWFkIn0." />
+    </requestHeaders>
+    <requestUrl>Patient/$gpc.getstructuredrecord</requestUrl>
+    <requestParameters />
+    <requestMethod>POST</requestMethod>
+    <requestContentType>application/fhir+json</requestContentType>
+    <requestBody>{&amp;quot;resourceType&amp;quot;:&amp;quot;Parameters&amp;quot;,&amp;quot;parameter&amp;quot;:[{&amp;quot;name&amp;quot;:&amp;quot;patientNHSNumber&amp;quot;,&amp;quot;valueIdentifier&amp;quot;:{&amp;quot;system&amp;quot;:&amp;quot;https://fhir.nhs.uk/Id/nhs-number&amp;quot;,&amp;quot;value&amp;quot;:&amp;quot;9690937286&amp;quot;}},{&amp;quot;name&amp;quot;:&amp;quot;includeDiaryEntries&amp;quot;}]}</requestBody>
+  </request>
+  <response>
+    <responseContentType>application/fhir+json</responseContentType>
+    <responseStatusCode>200</responseStatusCode>
+    <responseTimeInMilliseconds>42</responseTimeInMilliseconds>
+    <responseTimeAcceptable>true</responseTimeAcceptable>
+    <responseHeaders>
+      <responseHeader name="Connection" value="keep-alive" />
+      <responseHeader name="Pragma" value="no-cache" />
+      <responseHeader name="Cache-Control" value="no-store" />
+      <responseHeader name="Date" value="Tue, 20 May 2025 08:59:38 GMT" />
+      <responseHeader name="Server" value="nginx/1.19.6" />
+      <responseHeader name="Content-Length" value="13444" />
+      <responseHeader name="Content-Type" value="application/fhir+json; charset=UTF-8" />
+      <responseHeader name="Expires" value="0" />
+    </responseHeaders>
+    <responseBody>{
+  &amp;quot;resourceType&amp;quot;: &amp;quot;Bundle&amp;quot;,
+  &amp;quot;id&amp;quot;: &amp;quot;2c756534-e2dd-4045-b48f-fbf808bc98d2&amp;quot;,
+  &amp;quot;meta&amp;quot;: {
+    &amp;quot;profile&amp;quot;: [ &amp;quot;https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-StructuredRecord-Bundle-1&amp;quot; ]
+  },
+  &amp;quot;type&amp;quot;: &amp;quot;collection&amp;quot;,
+  &amp;quot;entry&amp;quot;: [ {
+    &amp;quot;resource&amp;quot;: {
+      &amp;quot;resourceType&amp;quot;: &amp;quot;Patient&amp;quot;,
+      &amp;quot;id&amp;quot;: &amp;quot;2&amp;quot;,
+      &amp;quot;meta&amp;quot;: {
+        &amp;quot;versionId&amp;quot;: &amp;quot;1521806400000&amp;quot;,
+        &amp;quot;profile&amp;quot;: [ &amp;quot;https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1&amp;quot; ]
+      },
+      &amp;quot;extension&amp;quot;: [ {
+        &amp;quot;url&amp;quot;: &amp;quot;https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-RegistrationDetails-1&amp;quot;,
+        &amp;quot;extension&amp;quot;: [ {
+          &amp;quot;url&amp;quot;: &amp;quot;registrationPeriod&amp;quot;,
+          &amp;quot;valuePeriod&amp;quot;: {
+            &amp;quot;start&amp;quot;: &amp;quot;1962-07-13T00:00:00+01:00&amp;quot;
+          }
+        } ]
+      }, {
+        &amp;quot;url&amp;quot;: &amp;quot;https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-NHSCommunication-1&amp;quot;,
+        &amp;quot;extension&amp;quot;: [ {
+          &amp;quot;url&amp;quot;: &amp;quot;language&amp;quot;,
+          &amp;quot;valueCodeableConcept&amp;quot;: {
+            &amp;quot;coding&amp;quot;: [ {
+              &amp;quot;system&amp;quot;: &amp;quot;https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-HumanLanguage-1&amp;quot;,
+              &amp;quot;code&amp;quot;: &amp;quot;en&amp;quot;,
+              &amp;quot;display&amp;quot;: &amp;quot;English&amp;quot;
+            } ]
+          }
+        }, {
+          &amp;quot;url&amp;quot;: &amp;quot;preferred&amp;quot;,
+          &amp;quot;valueBoolean&amp;quot;: false
+        }, {
+          &amp;quot;url&amp;quot;: &amp;quot;modeOfCommunication&amp;quot;,
+          &amp;quot;valueCodeableConcept&amp;quot;: {
+            &amp;quot;coding&amp;quot;: [ {
+              &amp;quot;system&amp;quot;: &amp;quot;https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-LanguageAbilityMode-1&amp;quot;,
+              &amp;quot;code&amp;quot;: &amp;quot;RWR&amp;quot;,
+              &amp;quot;display&amp;quot;: &amp;quot;Received written&amp;quot;
+            } ]
+          }
+        }, {
+          &amp;quot;url&amp;quot;: &amp;quot;communicationProficiency&amp;quot;,
+          &amp;quot;valueCodeableConcept&amp;quot;: {
+            &amp;quot;coding&amp;quot;: [ {
+              &amp;quot;system&amp;quot;: &amp;quot;https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-LanguageAbilityProficiency-1&amp;quot;,
+              &amp;quot;code&amp;quot;: &amp;quot;E&amp;quot;,
+              &amp;quot;display&amp;quot;: &amp;quot;Excellent&amp;quot;
+            } ]
+          }
+        }, {
+          &amp;quot;url&amp;quot;: &amp;quot;interpreterRequired&amp;quot;,
+          &amp;quot;valueBoolean&amp;quot;: false
+        } ]
+      } ],
+      &amp;quot;identifier&amp;quot;: [ {
+        &amp;quot;extension&amp;quot;: [ {
+          &amp;quot;url&amp;quot;: &amp;quot;https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-NHSNumberVerificationStatus-1&amp;quot;,
+          &amp;quot;valueCodeableConcept&amp;quot;: {
+            &amp;quot;coding&amp;quot;: [ {
+              &amp;quot;system&amp;quot;: &amp;quot;https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-NHSNumberVerificationStatus-1&amp;quot;,
+              &amp;quot;code&amp;quot;: &amp;quot;01&amp;quot;,
+              &amp;quot;display&amp;quot;: &amp;quot;Number present and verified&amp;quot;
+            } ]
+          }
+        } ],
+        &amp;quot;system&amp;quot;: &amp;quot;https://fhir.nhs.uk/Id/nhs-number&amp;quot;,
+        &amp;quot;value&amp;quot;: &amp;quot;9690937286&amp;quot;
+      } ],
+      &amp;quot;active&amp;quot;: true,
+      &amp;quot;name&amp;quot;: [ {
+        &amp;quot;use&amp;quot;: &amp;quot;official&amp;quot;,
+        &amp;quot;text&amp;quot;: &amp;quot;Horace SKELLY&amp;quot;,
+        &amp;quot;family&amp;quot;: &amp;quot;SKELLY&amp;quot;,
+        &amp;quot;given&amp;quot;: [ &amp;quot;Horace&amp;quot; ],
+        &amp;quot;prefix&amp;quot;: [ &amp;quot;MR&amp;quot; ]
+      } ],
+      &amp;quot;telecom&amp;quot;: [ {
+        &amp;quot;system&amp;quot;: &amp;quot;phone&amp;quot;,
+        &amp;quot;value&amp;quot;: &amp;quot;01454587554&amp;quot;,
+        &amp;quot;use&amp;quot;: &amp;quot;home&amp;quot;
+      }, {
+        &amp;quot;system&amp;quot;: &amp;quot;phone&amp;quot;,
+        &amp;quot;value&amp;quot;: &amp;quot;+447401254880&amp;quot;,
+        &amp;quot;use&amp;quot;: &amp;quot;mobile&amp;quot;
+      } ],
+      &amp;quot;gender&amp;quot;: &amp;quot;male&amp;quot;,
+      &amp;quot;birthDate&amp;quot;: &amp;quot;1925-04-21&amp;quot;,
+      &amp;quot;address&amp;quot;: [ {
+        &amp;quot;use&amp;quot;: &amp;quot;home&amp;quot;,
+        &amp;quot;type&amp;quot;: &amp;quot;physical&amp;quot;,
+        &amp;quot;line&amp;quot;: [ &amp;quot;3 BOWESFIELD CRESCENT&amp;quot; ],
+        &amp;quot;city&amp;quot;: &amp;quot;STOCKTON-ON-TEES&amp;quot;,
+        &amp;quot;postalCode&amp;quot;: &amp;quot;TS18 3BL&amp;quot;
+      } ],
+      &amp;quot;contact&amp;quot;: [ {
+        &amp;quot;relationship&amp;quot;: [ {
+          &amp;quot;text&amp;quot;: &amp;quot;Emergency contact&amp;quot;
+        }, {
+          &amp;quot;text&amp;quot;: &amp;quot;Next of kin&amp;quot;
+        }, {
+          &amp;quot;text&amp;quot;: &amp;quot;Daughter&amp;quot;
+        } ],
+        &amp;quot;name&amp;quot;: {
+          &amp;quot;use&amp;quot;: &amp;quot;official&amp;quot;,
+          &amp;quot;text&amp;quot;: &amp;quot;JACKSON Jane (Miss)&amp;quot;,
+          &amp;quot;family&amp;quot;: &amp;quot;Jackson&amp;quot;,
+          &amp;quot;given&amp;quot;: [ &amp;quot;Jane&amp;quot; ],
+          &amp;quot;prefix&amp;quot;: [ &amp;quot;Miss&amp;quot; ]
+        },
+        &amp;quot;telecom&amp;quot;: [ {
+          &amp;quot;system&amp;quot;: &amp;quot;phone&amp;quot;,
+          &amp;quot;value&amp;quot;: &amp;quot;07777123123&amp;quot;,
+          &amp;quot;use&amp;quot;: &amp;quot;mobile&amp;quot;
+        } ],
+        &amp;quot;address&amp;quot;: {
+          &amp;quot;use&amp;quot;: &amp;quot;home&amp;quot;,
+          &amp;quot;type&amp;quot;: &amp;quot;physical&amp;quot;,
+          &amp;quot;line&amp;quot;: [ &amp;quot;Trevelyan Square&amp;quot;, &amp;quot;Boar Ln&amp;quot; ],
+          &amp;quot;postalCode&amp;quot;: &amp;quot;LS1 6AE&amp;quot;
+        },
+        &amp;quot;gender&amp;quot;: &amp;quot;female&amp;quot;
+      } ],
+      &amp;quot;generalPractitioner&amp;quot;: [ {
+        &amp;quot;reference&amp;quot;: &amp;quot;Practitioner/1&amp;quot;
+      } ],
+      &amp;quot;managingOrganization&amp;quot;: {
+        &amp;quot;reference&amp;quot;: &amp;quot;Organization/7&amp;quot;
+      }
+    }
+  }, {
+    &amp;quot;resource&amp;quot;: {
+      &amp;quot;resourceType&amp;quot;: &amp;quot;Practitioner&amp;quot;,
+      &amp;quot;id&amp;quot;: &amp;quot;1&amp;quot;,
+      &amp;quot;meta&amp;quot;: {
+        &amp;quot;versionId&amp;quot;: &amp;quot;1469444400000&amp;quot;,
+        &amp;quot;lastUpdated&amp;quot;: &amp;quot;2016-07-25T12:00:00.000+01:00&amp;quot;,
+        &amp;quot;profile&amp;quot;: [ &amp;quot;https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1&amp;quot; ]
+      },
+      &amp;quot;extension&amp;quot;: [ {
+        &amp;quot;url&amp;quot;: &amp;quot;https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-NHSCommunication-1&amp;quot;,
+        &amp;quot;extension&amp;quot;: [ {
+          &amp;quot;url&amp;quot;: &amp;quot;language&amp;quot;,
+          &amp;quot;valueCodeableConcept&amp;quot;: {
+            &amp;quot;coding&amp;quot;: [ {
+              &amp;quot;system&amp;quot;: &amp;quot;https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-HumanLanguage-1&amp;quot;,
+              &amp;quot;code&amp;quot;: &amp;quot;de&amp;quot;,
+              &amp;quot;display&amp;quot;: &amp;quot;German&amp;quot;
+            } ]
+          }
+        } ]
+      }, {
+        &amp;quot;url&amp;quot;: &amp;quot;https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-NHSCommunication-1&amp;quot;,
+        &amp;quot;extension&amp;quot;: [ {
+          &amp;quot;url&amp;quot;: &amp;quot;language&amp;quot;,
+          &amp;quot;valueCodeableConcept&amp;quot;: {
+            &amp;quot;coding&amp;quot;: [ {
+              &amp;quot;system&amp;quot;: &amp;quot;https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-HumanLanguage-1&amp;quot;,
+              &amp;quot;code&amp;quot;: &amp;quot;en&amp;quot;,
+              &amp;quot;display&amp;quot;: &amp;quot;English&amp;quot;
+            } ]
+          }
+        } ]
+      } ],
+      &amp;quot;identifier&amp;quot;: [ {
+        &amp;quot;system&amp;quot;: &amp;quot;https://fhir.nhs.uk/Id/sds-user-id&amp;quot;,
+        &amp;quot;value&amp;quot;: &amp;quot;G13579135&amp;quot;
+      } ],
+      &amp;quot;name&amp;quot;: [ {
+        &amp;quot;use&amp;quot;: &amp;quot;usual&amp;quot;,
+        &amp;quot;family&amp;quot;: &amp;quot;Gilbert&amp;quot;,
+        &amp;quot;given&amp;quot;: [ &amp;quot;Nichole&amp;quot; ],
+        &amp;quot;prefix&amp;quot;: [ &amp;quot;Miss&amp;quot; ]
+      } ],
+      &amp;quot;gender&amp;quot;: &amp;quot;female&amp;quot;
+    }
+  }, {
+    &amp;quot;resource&amp;quot;: {
+      &amp;quot;resourceType&amp;quot;: &amp;quot;Organization&amp;quot;,
+      &amp;quot;id&amp;quot;: &amp;quot;7&amp;quot;,
+      &amp;quot;meta&amp;quot;: {
+        &amp;quot;versionId&amp;quot;: &amp;quot;1469444400000&amp;quot;,
+        &amp;quot;lastUpdated&amp;quot;: &amp;quot;2016-07-25T12:00:00.000+01:00&amp;quot;,
+        &amp;quot;profile&amp;quot;: [ &amp;quot;https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1&amp;quot; ]
+      },
+      &amp;quot;identifier&amp;quot;: [ {
+        &amp;quot;system&amp;quot;: &amp;quot;https://fhir.nhs.uk/Id/ods-organization-code&amp;quot;,
+        &amp;quot;value&amp;quot;: &amp;quot;B82617&amp;quot;
+      } ],
+      &amp;quot;name&amp;quot;: &amp;quot;COXWOLD SURGERY&amp;quot;,
+      &amp;quot;telecom&amp;quot;: [ {
+        &amp;quot;system&amp;quot;: &amp;quot;phone&amp;quot;,
+        &amp;quot;value&amp;quot;: &amp;quot;12345678&amp;quot;,
+        &amp;quot;use&amp;quot;: &amp;quot;work&amp;quot;
+      } ],
+      &amp;quot;address&amp;quot;: [ {
+        &amp;quot;use&amp;quot;: &amp;quot;work&amp;quot;,
+        &amp;quot;line&amp;quot;: [ &amp;quot;NHS NPFIT Test Data Manager&amp;quot;, &amp;quot;Princes Exchange&amp;quot; ],
+        &amp;quot;city&amp;quot;: &amp;quot;Leeds&amp;quot;,
+        &amp;quot;district&amp;quot;: &amp;quot;West Yorkshire&amp;quot;,
+        &amp;quot;postalCode&amp;quot;: &amp;quot;LS1 4HY&amp;quot;
+      } ]
+    }
+  }, {
+    &amp;quot;resource&amp;quot;: {
+      &amp;quot;resourceType&amp;quot;: &amp;quot;PractitionerRole&amp;quot;,
+      &amp;quot;id&amp;quot;: &amp;quot;e0244de8-07ef-4274-9f7a-d7067bcc8d21&amp;quot;,
+      &amp;quot;meta&amp;quot;: {
+        &amp;quot;profile&amp;quot;: [ &amp;quot;https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-PractitionerRole-1&amp;quot; ]
+      },
+      &amp;quot;practitioner&amp;quot;: {
+        &amp;quot;reference&amp;quot;: &amp;quot;Practitioner/6c41ebfd-57c3-4162-9d7b-208c171a2fd7&amp;quot;
+      },
+      &amp;quot;organization&amp;quot;: {
+        &amp;quot;reference&amp;quot;: &amp;quot;Organization/db67f447-b30d-442a-8e31-6918d1367eeb&amp;quot;
+      },
+      &amp;quot;code&amp;quot;: [ {
+        &amp;quot;coding&amp;quot;: [ {
+          &amp;quot;system&amp;quot;: &amp;quot;https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-SDSJobRoleName-1&amp;quot;,
+          &amp;quot;code&amp;quot;: &amp;quot;R0260&amp;quot;,
+          &amp;quot;display&amp;quot;: &amp;quot;General Medical Practitioner&amp;quot;
+        } ]
+      } ]
+    }
+  }, {
+    &amp;quot;resource&amp;quot;: {
+      &amp;quot;resourceType&amp;quot;: &amp;quot;Location&amp;quot;,
+      &amp;quot;id&amp;quot;: &amp;quot;17&amp;quot;,
+      &amp;quot;meta&amp;quot;: {
+        &amp;quot;versionId&amp;quot;: &amp;quot;636064088100870233&amp;quot;,
+        &amp;quot;profile&amp;quot;: [ &amp;quot;https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Location-1&amp;quot; ]
+      },
+      &amp;quot;name&amp;quot;: &amp;quot;The Trevelyan Practice&amp;quot;,
+      &amp;quot;telecom&amp;quot;: [ {
+        &amp;quot;system&amp;quot;: &amp;quot;phone&amp;quot;,
+        &amp;quot;value&amp;quot;: &amp;quot;03003035678&amp;quot;,
+        &amp;quot;use&amp;quot;: &amp;quot;work&amp;quot;
+      } ],
+      &amp;quot;address&amp;quot;: {
+        &amp;quot;line&amp;quot;: [ &amp;quot;Trevelyan Square&amp;quot;, &amp;quot;Boar Ln&amp;quot;, &amp;quot;Leeds&amp;quot; ],
+        &amp;quot;postalCode&amp;quot;: &amp;quot;LS1 6AE&amp;quot;
+      },
+      &amp;quot;managingOrganization&amp;quot;: {
+        &amp;quot;reference&amp;quot;: &amp;quot;Organization/db67f447-b30d-442a-8e31-6918d1367eeb&amp;quot;
+      }
+    }
+  }, {
+    &amp;quot;resource&amp;quot;: {
+      &amp;quot;resourceType&amp;quot;: &amp;quot;List&amp;quot;,
+      &amp;quot;meta&amp;quot;: {
+        &amp;quot;profile&amp;quot;: [ &amp;quot;https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1&amp;quot; ]
+      },
+      &amp;quot;status&amp;quot;: &amp;quot;current&amp;quot;,
+      &amp;quot;mode&amp;quot;: &amp;quot;snapshot&amp;quot;,
+      &amp;quot;title&amp;quot;: &amp;quot;Patient recall administration&amp;quot;,
+      &amp;quot;code&amp;quot;: {
+        &amp;quot;coding&amp;quot;: [ {
+          &amp;quot;system&amp;quot;: &amp;quot;http://snomed.info/sct&amp;quot;,
+          &amp;quot;code&amp;quot;: &amp;quot;714311000000108&amp;quot;,
+          &amp;quot;display&amp;quot;: &amp;quot;Patient recall administration&amp;quot;
+        } ]
+      },
+      &amp;quot;subject&amp;quot;: {
+        &amp;quot;reference&amp;quot;: &amp;quot;Patient/2&amp;quot;
+      },
+      &amp;quot;date&amp;quot;: &amp;quot;2019-03-01T10:57:34+00:00&amp;quot;,
+      &amp;quot;orderedBy&amp;quot;: {
+        &amp;quot;coding&amp;quot;: [ {
+          &amp;quot;system&amp;quot;: &amp;quot;http://hl7.org/fhir/list-order&amp;quot;,
+          &amp;quot;code&amp;quot;: &amp;quot;event-date&amp;quot;
+        } ]
+      },
+      &amp;quot;entry&amp;quot;: [ {
+        &amp;quot;item&amp;quot;: {
+          &amp;quot;reference&amp;quot;: &amp;quot;ProcedureRequest/eba25af1-5b74-4790-aa5a-2134fd27ad45&amp;quot;
+        }
+      }, {
+        &amp;quot;item&amp;quot;: {
+          &amp;quot;reference&amp;quot;: &amp;quot;ProcedureRequest/eba25af1-5b74-4790-aa5a-2134fd57ad46&amp;quot;
+        }
+      } ]
+    }
+  }, {
+    &amp;quot;resource&amp;quot;: {
+      &amp;quot;resourceType&amp;quot;: &amp;quot;ProcedureRequest&amp;quot;,
+      &amp;quot;id&amp;quot;: &amp;quot;eba25af1-5b74-4790-aa5a-2134fd27ad45&amp;quot;,
+      &amp;quot;meta&amp;quot;: {
+        &amp;quot;profile&amp;quot;: [ &amp;quot;https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProcedureRequest-1&amp;quot; ]
+      },
+      &amp;quot;identifier&amp;quot;: [ {
+        &amp;quot;system&amp;quot;: &amp;quot;https://fhir.nhs.uk/Id/cross-care-setting-identifier&amp;quot;,
+        &amp;quot;value&amp;quot;: &amp;quot;urn:uuid:eba25af1-5b74-4790-aa5a-2134fd27ad75&amp;quot;
+      } ],
+      &amp;quot;status&amp;quot;: &amp;quot;active&amp;quot;,
+      &amp;quot;intent&amp;quot;: &amp;quot;plan&amp;quot;,
+      &amp;quot;code&amp;quot;: {
+        &amp;quot;coding&amp;quot;: [ {
+          &amp;quot;system&amp;quot;: &amp;quot;http://snomed.info/sct&amp;quot;,
+          &amp;quot;code&amp;quot;: &amp;quot;314529007&amp;quot;,
+          &amp;quot;display&amp;quot;: &amp;quot;Medication review due&amp;quot;
+        } ]
+      },
+      &amp;quot;subject&amp;quot;: {
+        &amp;quot;reference&amp;quot;: &amp;quot;Patient/2&amp;quot;
+      },
+      &amp;quot;context&amp;quot;: {
+        &amp;quot;reference&amp;quot;: &amp;quot;Encounter/Encounter1&amp;quot;
+      },
+      &amp;quot;authoredOn&amp;quot;: &amp;quot;2019-03-02&amp;quot;,
+      &amp;quot;requester&amp;quot;: {
+        &amp;quot;agent&amp;quot;: {
+          &amp;quot;reference&amp;quot;: &amp;quot;Practitioner/1&amp;quot;
+        }
+      }
+    }
+  }, {
+    &amp;quot;resource&amp;quot;: {
+      &amp;quot;resourceType&amp;quot;: &amp;quot;ProcedureRequest&amp;quot;,
+      &amp;quot;id&amp;quot;: &amp;quot;eba25af1-5b74-4790-aa5a-2134fd57ad46&amp;quot;,
+      &amp;quot;meta&amp;quot;: {
+        &amp;quot;profile&amp;quot;: [ &amp;quot;https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProcedureRequest-1&amp;quot; ]
+      },
+      &amp;quot;identifier&amp;quot;: [ {
+        &amp;quot;system&amp;quot;: &amp;quot;https://fhir.nhs.uk/Id/cross-care-setting-identifier&amp;quot;,
+        &amp;quot;value&amp;quot;: &amp;quot;urn:uuid:eba25af1-5b74-4790-aa5a-2134fd27ad76&amp;quot;
+      } ],
+      &amp;quot;status&amp;quot;: &amp;quot;active&amp;quot;,
+      &amp;quot;intent&amp;quot;: &amp;quot;plan&amp;quot;,
+      &amp;quot;code&amp;quot;: {
+        &amp;quot;coding&amp;quot;: [ {
+          &amp;quot;system&amp;quot;: &amp;quot;http://snomed.info/sct&amp;quot;,
+          &amp;quot;code&amp;quot;: &amp;quot;408490001&amp;quot;,
+          &amp;quot;display&amp;quot;: &amp;quot;Antipsychotic drug therapy&amp;quot;
+        } ]
+      },
+      &amp;quot;subject&amp;quot;: {
+        &amp;quot;reference&amp;quot;: &amp;quot;Patient/2&amp;quot;
+      },
+      &amp;quot;context&amp;quot;: {
+        &amp;quot;reference&amp;quot;: &amp;quot;Encounter/Encounter3&amp;quot;
+      },
+      &amp;quot;authoredOn&amp;quot;: &amp;quot;2019-05-01&amp;quot;,
+      &amp;quot;requester&amp;quot;: {
+        &amp;quot;agent&amp;quot;: {
+          &amp;quot;reference&amp;quot;: &amp;quot;Practitioner/1&amp;quot;
+        }
+      }
+    }
+  }, {
+    &amp;quot;resource&amp;quot;: {
+      &amp;quot;resourceType&amp;quot;: &amp;quot;Condition&amp;quot;,
+      &amp;quot;id&amp;quot;: &amp;quot;Problem-B-Swollen-Legs&amp;quot;,
+      &amp;quot;meta&amp;quot;: {
+        &amp;quot;profile&amp;quot;: [ &amp;quot;https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProblemHeader-Condition-1&amp;quot; ]
+      },
+      &amp;quot;extension&amp;quot;: [ {
+        &amp;quot;url&amp;quot;: &amp;quot;https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-ProblemSignificance-1&amp;quot;,
+        &amp;quot;valueCode&amp;quot;: &amp;quot;major&amp;quot;
+      }, {
+        &amp;quot;url&amp;quot;: &amp;quot;https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1&amp;quot;,
+        &amp;quot;valueReference&amp;quot;: {
+          &amp;quot;reference&amp;quot;: &amp;quot;ProcedureRequest/eba25af1-5b74-4790-aa5a-2134fd27ad45&amp;quot;
+        }
+      } ],
+      &amp;quot;identifier&amp;quot;: [ {
+        &amp;quot;system&amp;quot;: &amp;quot;https://fhir.nhs.uk/Id/cross-care-setting-identifier&amp;quot;,
+        &amp;quot;value&amp;quot;: &amp;quot;62658072-28af-47e5-b81c-bc0521d5c41c&amp;quot;
+      } ],
+      &amp;quot;clinicalStatus&amp;quot;: &amp;quot;active&amp;quot;,
+      &amp;quot;category&amp;quot;: [ {
+        &amp;quot;coding&amp;quot;: [ {
+          &amp;quot;system&amp;quot;: &amp;quot;https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-ConditionCategory-1&amp;quot;,
+          &amp;quot;code&amp;quot;: &amp;quot;problem-list-item&amp;quot;,
+          &amp;quot;display&amp;quot;: &amp;quot;Problem List Item&amp;quot;
+        } ]
+      } ],
+      &amp;quot;code&amp;quot;: {
+        &amp;quot;coding&amp;quot;: [ {
+          &amp;quot;extension&amp;quot;: [ {
+            &amp;quot;url&amp;quot;: &amp;quot;https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid&amp;quot;,
+            &amp;quot;extension&amp;quot;: [ {
+              &amp;quot;url&amp;quot;: &amp;quot;DescriptionID&amp;quot;,
+              &amp;quot;valueId&amp;quot;: &amp;quot;2729461000000110&amp;quot;
+            }, {
+              &amp;quot;url&amp;quot;: &amp;quot;descriptionDisplay&amp;quot;,
+              &amp;quot;valueString&amp;quot;: &amp;quot;Swollen leg&amp;quot;
+            } ]
+          } ],
+          &amp;quot;system&amp;quot;: &amp;quot;http://snomed.info/sct&amp;quot;,
+          &amp;quot;code&amp;quot;: &amp;quot;449614009&amp;quot;,
+          &amp;quot;display&amp;quot;: &amp;quot;Swelling of lower limb (finding)&amp;quot;
+        } ],
+        &amp;quot;text&amp;quot;: &amp;quot;Swollen legs&amp;quot;
+      },
+      &amp;quot;subject&amp;quot;: {
+        &amp;quot;reference&amp;quot;: &amp;quot;Patient/2&amp;quot;
+      },
+      &amp;quot;onsetDateTime&amp;quot;: &amp;quot;2019-03-28T10:30:00&amp;quot;,
+      &amp;quot;assertedDate&amp;quot;: &amp;quot;2018-09-28T10:30:00&amp;quot;,
+      &amp;quot;asserter&amp;quot;: {
+        &amp;quot;reference&amp;quot;: &amp;quot;Practitioner/1&amp;quot;
+      }
+    }
+  }, {
+    &amp;quot;resource&amp;quot;: {
+      &amp;quot;resourceType&amp;quot;: &amp;quot;List&amp;quot;,
+      &amp;quot;meta&amp;quot;: {
+        &amp;quot;profile&amp;quot;: [ &amp;quot;https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1&amp;quot; ]
+      },
+      &amp;quot;status&amp;quot;: &amp;quot;current&amp;quot;,
+      &amp;quot;mode&amp;quot;: &amp;quot;snapshot&amp;quot;,
+      &amp;quot;title&amp;quot;: &amp;quot;Problems - linked problems not relating to the primary query&amp;quot;,
+      &amp;quot;code&amp;quot;: {
+        &amp;quot;coding&amp;quot;: [ {
+          &amp;quot;system&amp;quot;: &amp;quot;https://fhir.hl7.org.uk/STU3/CodeSystem/GPConnect-SecondaryListValues-1&amp;quot;,
+          &amp;quot;code&amp;quot;: &amp;quot;problems-linked-problems-not-relating-to-the-primary-query&amp;quot;,
+          &amp;quot;display&amp;quot;: &amp;quot;Problems - linked problems not relating to the primary query&amp;quot;
+        } ]
+      },
+      &amp;quot;subject&amp;quot;: {
+        &amp;quot;reference&amp;quot;: &amp;quot;Patient/2&amp;quot;
+      },
+      &amp;quot;date&amp;quot;: &amp;quot;2019-03-01T10:57:34+00:00&amp;quot;,
+      &amp;quot;orderedBy&amp;quot;: {
+        &amp;quot;coding&amp;quot;: [ {
+          &amp;quot;system&amp;quot;: &amp;quot;http://hl7.org/fhir/list-order&amp;quot;,
+          &amp;quot;code&amp;quot;: &amp;quot;event-date&amp;quot;
+        } ]
+      },
+      &amp;quot;entry&amp;quot;: [ {
+        &amp;quot;item&amp;quot;: {
+          &amp;quot;reference&amp;quot;: &amp;quot;Condition/Problem-B-Swollen-Legs&amp;quot;
+        }
+      } ]
+    }
+  } ]
+}</responseBody>
+  </response>
+</httpContext>

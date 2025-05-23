@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<fhirContext>
+  <request>
+    <fhirRequestParameters>{"resourceType":"Parameters"}</fhirRequestParameters>
+  </request>
+  <response>
+    <fhirResponseResource>{"resourceType":"Location","id":"3","meta":{"versionId":"1469444400000","lastUpdated":"2016-07-25T12:00:00+01:00","profile":["https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Location-1"]},"status":"suspended","name":"Building C","address":{"line":["24 Back Lane","Farsley"],"city":"Leeds","district":"West Yorkshire","postalCode":"GPC 113","country":"U.K."},"managingOrganization":{"reference":"Organization/2/_history/1469444400000"}}</fhirResponseResource>
+  </response>
+</fhirContext>

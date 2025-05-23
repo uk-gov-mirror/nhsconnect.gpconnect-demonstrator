@@ -1,0 +1,31 @@
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "patientNHSNumber",
+      "valueIdentifier": {
+        "system": "https://fhir.nhs.uk/Id/nhs-number",
+        "value": "9690937278"
+      }
+    },
+    {
+      "name": "includeMadeUpParam",
+      "part": [
+        {
+          "name": "madeUpPartParam1",
+          "valueString": "madeUpValue1"
+        },
+        {
+          "name": "madeUpPartParam2",
+          "valueString": "madeUpValue2"
+        }
+      ]
+    },
+    {
+      "name": "madeUpImmunizations"
+    },
+    {
+      "name": "includeConsults"
+    }
+  ]
+}

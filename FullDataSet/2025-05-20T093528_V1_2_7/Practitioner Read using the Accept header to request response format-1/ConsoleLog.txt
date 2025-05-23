@@ -1,0 +1,132 @@
+HttpHeaderHelper() Constructor
+HttpHelper() Constructor
+All Header(s) Cleared
+All Parameters Cleared
+HttpContext->LoadAppConfig()
+Removed Key='Ssp-TraceID'
+Added Key='Ssp-TraceID' Value='1d4642f5-6c1b-4bc9-beff-4ebc7ec5b99d'
+Replaced Key='Ssp-TraceID' With Value='1d4642f5-6c1b-4bc9-beff-4ebc7ec5b99d'
+Removed Key='Ssp-From'
+Added Key='Ssp-From' Value='200000000985'
+Replaced Key='Ssp-From' With Value='200000000985'
+Removed Key='Ssp-To'
+Added Key='Ssp-To' Value='200000000985'
+Replaced Key='Ssp-To' With Value='200000000985'
+Removed Key='Accept'
+Added Key='Accept' Value='application/fhir+json'
+Replaced Key='Accept' With Value='application/fhir+json'
+GenericSteps() Constructor
+InitializeContainer For Dependency Injection
+10 Organisations Loaded From ODS CSV File.
+Feature: PractitionerRead
+
+Scenario: Practitioner Read using the Accept header to request response format
+SecurityContext->LoadAppConfig()
+useTLS=True
+useTLSFoundationsAndAppmts=True
+useTLSStructured=True
+clientCertThumbPrint=b8 c7 e4 cc d4 bd cf 2e a2 e3 72 54 e4 74 7d b0 3a d5 7c c2
+sendClientCert=False
+validateServerCert=False
+Force The Server Certificate Callback To Always Be True.
+JwtHelper() Constructor
+HttpSteps() Constructor
+HttpHeaderHelper() Constructor
+JwtSteps() Constructor
+All Header(s) Cleared
+All Parameters Cleared
+HttpContext->LoadAppConfig()
+Removed Key='Ssp-TraceID'
+Added Key='Ssp-TraceID' Value='3db265e7-e0fd-4d2b-80bf-f2700238ed02'
+Replaced Key='Ssp-TraceID' With Value='3db265e7-e0fd-4d2b-80bf-f2700238ed02'
+Removed Key='Ssp-From'
+Added Key='Ssp-From' Value='200000000985'
+Replaced Key='Ssp-From' With Value='200000000985'
+Removed Key='Ssp-To'
+Added Key='Ssp-To' Value='200000000985'
+Replaced Key='Ssp-To' With Value='200000000985'
+Removed Key='Accept'
+Added Key='Accept' Value='application/fhir+json'
+Replaced Key='Accept' With Value='application/fhir+json'
+Removed Key='Ssp-InteractionId'
+Added Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:rest:search:practitioner-1'
+Replaced Key='Ssp-InteractionId' With Value='urn:nhs:names:services:gpconnect:fhir:rest:search:practitioner-1'
+Force The Server Certificate Callback To Always Be True.
+Added Key='identifier' Value='https://fhir.nhs.uk/Id/sds-user-id|G13579135'
+Removed Key='Authorization'
+Added Key='Authorization' Value='Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwczovL0NvbnN1bWVyU3lzdGVtVVJMIiwic3ViIjoiMSIsImF1ZCI6Imh0dHBzOi8vYXV0aG9yaXplLmZoaXIubmhzLm5ldC90b2tlbiIsImV4cCI6MTc0NzczMDczMSwiaWF0IjoxNzQ3NzMwNDMxLCJyZWFzb25fZm9yX3JlcXVlc3QiOiJkaXJlY3RjYXJlIiwicmVxdWVzdGluZ19kZXZpY2UiOnsicmVzb3VyY2VUeXBlIjoiRGV2aWNlIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiR1BDb25uZWN0VGVzdFN5c3RlbSIsInZhbHVlIjoiQ2xpZW50In1dLCJtb2RlbCI6InYxIiwidmVyc2lvbiI6IjEuMSJ9LCJyZXF1ZXN0aW5nX29yZ2FuaXphdGlvbiI6eyJyZXNvdXJjZVR5cGUiOiJPcmdhbml6YXRpb24iLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwczovL2ZoaXIubmhzLnVrL0lkL29kcy1vcmdhbml6YXRpb24tY29kZSIsInZhbHVlIjoiR1BDQTAwMDEifV0sIm5hbWUiOiJHUCBDb25uZWN0IEFzc3VyYW5jZSJ9LCJyZXF1ZXN0aW5nX3ByYWN0aXRpb25lciI6eyJyZXNvdXJjZVR5cGUiOiJQcmFjdGl0aW9uZXIiLCJpZCI6IjEiLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwczovL2ZoaXIubmhzLnVrL0lkL3Nkcy11c2VyLWlkIiwidmFsdWUiOiJHQ0FTRFMwMDAxIn0seyJzeXN0ZW0iOiJodHRwczovL2ZoaXIubmhzLnVrL0lkL3Nkcy1yb2xlLXByb2ZpbGUtaWQiLCJ2YWx1ZSI6IjExMjIzMzQ0NTU2NiJ9LHsic3lzdGVtIjoiaHR0cHM6Ly9jb25zdW1lcnN1cHBsaWVyLmNvbS9JZC91c2VyLWd1aWQiLCJ2YWx1ZSI6Ijk4ZWQ0Zjc4LTgxNGQtNDI2Ni04ZDViLWNkZTc0MmYzMDkzYyJ9XSwibmFtZSI6W3siZmFtaWx5IjoiQXNzdXJhbmNlUHJhY3RpdGlvbmVyIiwiZ2l2ZW4iOlsiQXNzdXJhbmNlVGVzdCJdLCJwcmVmaXgiOlsiTXIiXX1dfSwicmVxdWVzdGVkX3Njb3BlIjoib3JnYW5pemF0aW9uLyoucmVhZCJ9.'
+Replaced Key='Authorization' With Value='Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwczovL0NvbnN1bWVyU3lzdGVtVVJMIiwic3ViIjoiMSIsImF1ZCI6Imh0dHBzOi8vYXV0aG9yaXplLmZoaXIubmhzLm5ldC90b2tlbiIsImV4cCI6MTc0NzczMDczMSwiaWF0IjoxNzQ3NzMwNDMxLCJyZWFzb25fZm9yX3JlcXVlc3QiOiJkaXJlY3RjYXJlIiwicmVxdWVzdGluZ19kZXZpY2UiOnsicmVzb3VyY2VUeXBlIjoiRGV2aWNlIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiR1BDb25uZWN0VGVzdFN5c3RlbSIsInZhbHVlIjoiQ2xpZW50In1dLCJtb2RlbCI6InYxIiwidmVyc2lvbiI6IjEuMSJ9LCJyZXF1ZXN0aW5nX29yZ2FuaXphdGlvbiI6eyJyZXNvdXJjZVR5cGUiOiJPcmdhbml6YXRpb24iLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwczovL2ZoaXIubmhzLnVrL0lkL29kcy1vcmdhbml6YXRpb24tY29kZSIsInZhbHVlIjoiR1BDQTAwMDEifV0sIm5hbWUiOiJHUCBDb25uZWN0IEFzc3VyYW5jZSJ9LCJyZXF1ZXN0aW5nX3ByYWN0aXRpb25lciI6eyJyZXNvdXJjZVR5cGUiOiJQcmFjdGl0aW9uZXIiLCJpZCI6IjEiLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwczovL2ZoaXIubmhzLnVrL0lkL3Nkcy11c2VyLWlkIiwidmFsdWUiOiJHQ0FTRFMwMDAxIn0seyJzeXN0ZW0iOiJodHRwczovL2ZoaXIubmhzLnVrL0lkL3Nkcy1yb2xlLXByb2ZpbGUtaWQiLCJ2YWx1ZSI6IjExMjIzMzQ0NTU2NiJ9LHsic3lzdGVtIjoiaHR0cHM6Ly9jb25zdW1lcnN1cHBsaWVyLmNvbS9JZC91c2VyLWd1aWQiLCJ2YWx1ZSI6Ijk4ZWQ0Zjc4LTgxNGQtNDI2Ni04ZDViLWNkZTc0MmYzMDkzYyJ9XSwibmFtZSI6W3siZmFtaWx5IjoiQXNzdXJhbmNlUHJhY3RpdGlvbmVyIiwiZ2l2ZW4iOlsiQXNzdXJhbmNlVGVzdCJdLCJwcmVmaXgiOlsiTXIiXX1dfSwicmVxdWVzdGVkX3Njb3BlIjoib3JnYW5pemF0aW9uLyoucmVhZCJ9.'
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:rest:search:practitioner-1'
+GetRequestParameters Count='1'
+GetRequestParameters Count='1'
+Parameter - identifier -> https://fhir.nhs.uk/Id/sds-user-id|G13579135
+GetRequestHeaders Count='6'
+Header - Ssp-TraceID -> 3db265e7-e0fd-4d2b-80bf-f2700238ed02
+Header - Ssp-From -> 200000000985
+Header - Ssp-To -> 200000000985
+Header - Accept -> application/fhir+json
+Header - Ssp-InteractionId -> urn:nhs:names:services:gpconnect:fhir:rest:search:practitioner-1
+Header - Authorization -> Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwczovL0NvbnN1bWVyU3lzdGVtVVJMIiwic3ViIjoiMSIsImF1ZCI6Imh0dHBzOi8vYXV0aG9yaXplLmZoaXIubmhzLm5ldC90b2tlbiIsImV4cCI6MTc0NzczMDczMSwiaWF0IjoxNzQ3NzMwNDMxLCJyZWFzb25fZm9yX3JlcXVlc3QiOiJkaXJlY3RjYXJlIiwicmVxdWVzdGluZ19kZXZpY2UiOnsicmVzb3VyY2VUeXBlIjoiRGV2aWNlIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiR1BDb25uZWN0VGVzdFN5c3RlbSIsInZhbHVlIjoiQ2xpZW50In1dLCJtb2RlbCI6InYxIiwidmVyc2lvbiI6IjEuMSJ9LCJyZXF1ZXN0aW5nX29yZ2FuaXphdGlvbiI6eyJyZXNvdXJjZVR5cGUiOiJPcmdhbml6YXRpb24iLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwczovL2ZoaXIubmhzLnVrL0lkL29kcy1vcmdhbml6YXRpb24tY29kZSIsInZhbHVlIjoiR1BDQTAwMDEifV0sIm5hbWUiOiJHUCBDb25uZWN0IEFzc3VyYW5jZSJ9LCJyZXF1ZXN0aW5nX3ByYWN0aXRpb25lciI6eyJyZXNvdXJjZVR5cGUiOiJQcmFjdGl0aW9uZXIiLCJpZCI6IjEiLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwczovL2ZoaXIubmhzLnVrL0lkL3Nkcy11c2VyLWlkIiwidmFsdWUiOiJHQ0FTRFMwMDAxIn0seyJzeXN0ZW0iOiJodHRwczovL2ZoaXIubmhzLnVrL0lkL3Nkcy1yb2xlLXByb2ZpbGUtaWQiLCJ2YWx1ZSI6IjExMjIzMzQ0NTU2NiJ9LHsic3lzdGVtIjoiaHR0cHM6Ly9jb25zdW1lcnN1cHBsaWVyLmNvbS9JZC91c2VyLWd1aWQiLCJ2YWx1ZSI6Ijk4ZWQ0Zjc4LTgxNGQtNDI2Ni04ZDViLWNkZTc0MmYzMDkzYyJ9XSwibmFtZSI6W3siZmFtaWx5IjoiQXNzdXJhbmNlUHJhY3RpdGlvbmVyIiwiZ2l2ZW4iOlsiQXNzdXJhbmNlVGVzdCJdLCJwcmVmaXgiOlsiTXIiXX1dfSwicmVxdWVzdGVkX3Njb3BlIjoib3JnYW5pemF0aW9uLyoucmVhZCJ9.
+Header - Transfer-Encoding : chunked
+Header - Connection : keep-alive
+Header - Cache-Control : no-store
+Header - Date : Tue, 20 May 2025 08:40:33 GMT
+Header - Server : nginx/1.19.6
+Header - X-Powered-By : HAPI FHIR 3.0.0 REST Server (FHIR Server; FHIR 3.0.1/DSTU3)
+Header - Content-Type : application/fhir+json; charset=UTF-8
+Header - Last-Modified : Tue, 20 May 2025 08:40:33 GMT
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:rest:search:practitioner-1'
+All Header(s) Cleared
+All Parameters Cleared
+HttpContext->LoadAppConfig()
+Removed Key='Ssp-TraceID'
+Added Key='Ssp-TraceID' Value='51988afc-ea04-47e6-b1ac-08ef8fda7a38'
+Replaced Key='Ssp-TraceID' With Value='51988afc-ea04-47e6-b1ac-08ef8fda7a38'
+Removed Key='Ssp-From'
+Added Key='Ssp-From' Value='200000000985'
+Replaced Key='Ssp-From' With Value='200000000985'
+Removed Key='Ssp-To'
+Added Key='Ssp-To' Value='200000000985'
+Replaced Key='Ssp-To' With Value='200000000985'
+Removed Key='Accept'
+Added Key='Accept' Value='application/fhir+json'
+Replaced Key='Accept' With Value='application/fhir+json'
+Removed Key='Ssp-InteractionId'
+Added Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:rest:read:practitioner-1'
+Replaced Key='Ssp-InteractionId' With Value='urn:nhs:names:services:gpconnect:fhir:rest:read:practitioner-1'
+Force The Server Certificate Callback To Always Be True.
+Removed Key='Accept'
+Added Key='Accept' Value='application/fhir+json'
+Replaced Key='Accept' With Value='application/fhir+json'
+Removed Key='Authorization'
+Added Key='Authorization' Value='Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwczovL0NvbnN1bWVyU3lzdGVtVVJMIiwic3ViIjoiMSIsImF1ZCI6Imh0dHBzOi8vYXV0aG9yaXplLmZoaXIubmhzLm5ldC90b2tlbiIsImV4cCI6MTc0NzczMDczMSwiaWF0IjoxNzQ3NzMwNDMxLCJyZWFzb25fZm9yX3JlcXVlc3QiOiJkaXJlY3RjYXJlIiwicmVxdWVzdGluZ19kZXZpY2UiOnsicmVzb3VyY2VUeXBlIjoiRGV2aWNlIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiR1BDb25uZWN0VGVzdFN5c3RlbSIsInZhbHVlIjoiQ2xpZW50In1dLCJtb2RlbCI6InYxIiwidmVyc2lvbiI6IjEuMSJ9LCJyZXF1ZXN0aW5nX29yZ2FuaXphdGlvbiI6eyJyZXNvdXJjZVR5cGUiOiJPcmdhbml6YXRpb24iLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwczovL2ZoaXIubmhzLnVrL0lkL29kcy1vcmdhbml6YXRpb24tY29kZSIsInZhbHVlIjoiR1BDQTAwMDEifV0sIm5hbWUiOiJHUCBDb25uZWN0IEFzc3VyYW5jZSJ9LCJyZXF1ZXN0aW5nX3ByYWN0aXRpb25lciI6eyJyZXNvdXJjZVR5cGUiOiJQcmFjdGl0aW9uZXIiLCJpZCI6IjEiLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwczovL2ZoaXIubmhzLnVrL0lkL3Nkcy11c2VyLWlkIiwidmFsdWUiOiJHQ0FTRFMwMDAxIn0seyJzeXN0ZW0iOiJodHRwczovL2ZoaXIubmhzLnVrL0lkL3Nkcy1yb2xlLXByb2ZpbGUtaWQiLCJ2YWx1ZSI6IjExMjIzMzQ0NTU2NiJ9LHsic3lzdGVtIjoiaHR0cHM6Ly9jb25zdW1lcnN1cHBsaWVyLmNvbS9JZC91c2VyLWd1aWQiLCJ2YWx1ZSI6Ijk4ZWQ0Zjc4LTgxNGQtNDI2Ni04ZDViLWNkZTc0MmYzMDkzYyJ9XSwibmFtZSI6W3siZmFtaWx5IjoiQXNzdXJhbmNlUHJhY3RpdGlvbmVyIiwiZ2l2ZW4iOlsiQXNzdXJhbmNlVGVzdCJdLCJwcmVmaXgiOlsiTXIiXX1dfSwicmVxdWVzdGVkX3Njb3BlIjoib3JnYW5pemF0aW9uLyoucmVhZCJ9.'
+Replaced Key='Authorization' With Value='Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwczovL0NvbnN1bWVyU3lzdGVtVVJMIiwic3ViIjoiMSIsImF1ZCI6Imh0dHBzOi8vYXV0aG9yaXplLmZoaXIubmhzLm5ldC90b2tlbiIsImV4cCI6MTc0NzczMDczMSwiaWF0IjoxNzQ3NzMwNDMxLCJyZWFzb25fZm9yX3JlcXVlc3QiOiJkaXJlY3RjYXJlIiwicmVxdWVzdGluZ19kZXZpY2UiOnsicmVzb3VyY2VUeXBlIjoiRGV2aWNlIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiR1BDb25uZWN0VGVzdFN5c3RlbSIsInZhbHVlIjoiQ2xpZW50In1dLCJtb2RlbCI6InYxIiwidmVyc2lvbiI6IjEuMSJ9LCJyZXF1ZXN0aW5nX29yZ2FuaXphdGlvbiI6eyJyZXNvdXJjZVR5cGUiOiJPcmdhbml6YXRpb24iLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwczovL2ZoaXIubmhzLnVrL0lkL29kcy1vcmdhbml6YXRpb24tY29kZSIsInZhbHVlIjoiR1BDQTAwMDEifV0sIm5hbWUiOiJHUCBDb25uZWN0IEFzc3VyYW5jZSJ9LCJyZXF1ZXN0aW5nX3ByYWN0aXRpb25lciI6eyJyZXNvdXJjZVR5cGUiOiJQcmFjdGl0aW9uZXIiLCJpZCI6IjEiLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwczovL2ZoaXIubmhzLnVrL0lkL3Nkcy11c2VyLWlkIiwidmFsdWUiOiJHQ0FTRFMwMDAxIn0seyJzeXN0ZW0iOiJodHRwczovL2ZoaXIubmhzLnVrL0lkL3Nkcy1yb2xlLXByb2ZpbGUtaWQiLCJ2YWx1ZSI6IjExMjIzMzQ0NTU2NiJ9LHsic3lzdGVtIjoiaHR0cHM6Ly9jb25zdW1lcnN1cHBsaWVyLmNvbS9JZC91c2VyLWd1aWQiLCJ2YWx1ZSI6Ijk4ZWQ0Zjc4LTgxNGQtNDI2Ni04ZDViLWNkZTc0MmYzMDkzYyJ9XSwibmFtZSI6W3siZmFtaWx5IjoiQXNzdXJhbmNlUHJhY3RpdGlvbmVyIiwiZ2l2ZW4iOlsiQXNzdXJhbmNlVGVzdCJdLCJwcmVmaXgiOlsiTXIiXX1dfSwicmVxdWVzdGVkX3Njb3BlIjoib3JnYW5pemF0aW9uLyoucmVhZCJ9.'
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:rest:read:practitioner-1'
+GetRequestParameters Count='0'
+GetRequestHeaders Count='6'
+Header - Ssp-TraceID -> 51988afc-ea04-47e6-b1ac-08ef8fda7a38
+Header - Ssp-From -> 200000000985
+Header - Ssp-To -> 200000000985
+Header - Accept -> application/fhir+json
+Header - Ssp-InteractionId -> urn:nhs:names:services:gpconnect:fhir:rest:read:practitioner-1
+Header - Authorization -> Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwczovL0NvbnN1bWVyU3lzdGVtVVJMIiwic3ViIjoiMSIsImF1ZCI6Imh0dHBzOi8vYXV0aG9yaXplLmZoaXIubmhzLm5ldC90b2tlbiIsImV4cCI6MTc0NzczMDczMSwiaWF0IjoxNzQ3NzMwNDMxLCJyZWFzb25fZm9yX3JlcXVlc3QiOiJkaXJlY3RjYXJlIiwicmVxdWVzdGluZ19kZXZpY2UiOnsicmVzb3VyY2VUeXBlIjoiRGV2aWNlIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiR1BDb25uZWN0VGVzdFN5c3RlbSIsInZhbHVlIjoiQ2xpZW50In1dLCJtb2RlbCI6InYxIiwidmVyc2lvbiI6IjEuMSJ9LCJyZXF1ZXN0aW5nX29yZ2FuaXphdGlvbiI6eyJyZXNvdXJjZVR5cGUiOiJPcmdhbml6YXRpb24iLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwczovL2ZoaXIubmhzLnVrL0lkL29kcy1vcmdhbml6YXRpb24tY29kZSIsInZhbHVlIjoiR1BDQTAwMDEifV0sIm5hbWUiOiJHUCBDb25uZWN0IEFzc3VyYW5jZSJ9LCJyZXF1ZXN0aW5nX3ByYWN0aXRpb25lciI6eyJyZXNvdXJjZVR5cGUiOiJQcmFjdGl0aW9uZXIiLCJpZCI6IjEiLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwczovL2ZoaXIubmhzLnVrL0lkL3Nkcy11c2VyLWlkIiwidmFsdWUiOiJHQ0FTRFMwMDAxIn0seyJzeXN0ZW0iOiJodHRwczovL2ZoaXIubmhzLnVrL0lkL3Nkcy1yb2xlLXByb2ZpbGUtaWQiLCJ2YWx1ZSI6IjExMjIzMzQ0NTU2NiJ9LHsic3lzdGVtIjoiaHR0cHM6Ly9jb25zdW1lcnN1cHBsaWVyLmNvbS9JZC91c2VyLWd1aWQiLCJ2YWx1ZSI6Ijk4ZWQ0Zjc4LTgxNGQtNDI2Ni04ZDViLWNkZTc0MmYzMDkzYyJ9XSwibmFtZSI6W3siZmFtaWx5IjoiQXNzdXJhbmNlUHJhY3RpdGlvbmVyIiwiZ2l2ZW4iOlsiQXNzdXJhbmNlVGVzdCJdLCJwcmVmaXgiOlsiTXIiXX1dfSwicmVxdWVzdGVkX3Njb3BlIjoib3JnYW5pemF0aW9uLyoucmVhZCJ9.
+Header - Transfer-Encoding : chunked
+Header - Connection : keep-alive
+Header - Cache-Control : no-store
+Header - Date : Tue, 20 May 2025 08:40:33 GMT
+Header - ETag : W/"1469444400000"
+Header - Location : https://data.developer.nhs.uk/gpconnect-demonstrator/v1/fhir/Practitioner/1/_history/1469444400000
+Header - Server : nginx/1.19.6
+Header - X-Powered-By : HAPI FHIR 3.0.0 REST Server (FHIR Server; FHIR 3.0.1/DSTU3)
+Header - Content-Type : application/fhir+json; charset=UTF-8
+Header - Last-Modified : Mon, 25 Jul 2016 11:00:00 GMT
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:rest:read:practitioner-1'
+FhirSteps() Constructor
+C:/Temp/2025-05-20T093528\Practitioner Read using the Accept header to request response format-1
+GetRequestHeaders Count='6'
+GetRequestParameters Count='0'
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:rest:read:practitioner-1'
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:rest:read:practitioner-1'
+endpointAddress=https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir
+GetRequestHeaders Count='6'
+Warning : Exception writing JSONRequestBody to Output File - May Not be a JSON RequestBody

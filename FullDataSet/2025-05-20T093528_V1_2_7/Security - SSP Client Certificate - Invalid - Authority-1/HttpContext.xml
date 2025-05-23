@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<httpContext useWebProxy="false" webProxyUrl="https://localhost:8889" useSpineProxy="false" spineProxyUrl="https://proxy.dev.spine2.ncrs.nhs.uk:443" providerUrl="https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir">
+  <request endpointUrl="https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir">
+    <requestHeaders>
+      <requestHeader name="Ssp-TraceID" value="22edf479-6b01-47ae-b6b2-ba22189a6780" />
+      <requestHeader name="Ssp-From" value="200000000985" />
+      <requestHeader name="Ssp-To" value="200000000985" />
+      <requestHeader name="Accept" value="application/fhir+json" />
+      <requestHeader name="Ssp-InteractionId" value="urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1" />
+    </requestHeaders>
+    <requestUrl>metadata</requestUrl>
+    <requestParameters>
+      <requestParameter name="Ssp-TraceID" value="22edf479-6b01-47ae-b6b2-ba22189a6780" />
+      <requestParameter name="Ssp-From" value="200000000985" />
+      <requestParameter name="Ssp-To" value="200000000985" />
+      <requestParameter name="Accept" value="application/fhir+json" />
+      <requestParameter name="Ssp-InteractionId" value="urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1" />
+    </requestParameters>
+    <requestMethod>GET</requestMethod>
+    <requestContentType>application/fhir+json</requestContentType>
+    <requestBody />
+  </request>
+  <response>
+    <responseContentType />
+    <responseStatusCode>0</responseStatusCode>
+    <responseTimeInMilliseconds>-1</responseTimeInMilliseconds>
+    <responseTimeAcceptable>true</responseTimeAcceptable>
+    <responseHeaders />
+    <responseBody />
+  </response>
+</httpContext>

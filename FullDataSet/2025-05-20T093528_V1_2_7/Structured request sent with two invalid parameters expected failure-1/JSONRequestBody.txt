@@ -1,0 +1,28 @@
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "invalidNHSNumberParam",
+      "valueIdentifier": {
+        "system": "https://fhir.nhs.uk/Id/nhs-number",
+        "value": "9658218865"
+      }
+    },
+    {
+      "name": "Consultations",
+      "part": [
+        {
+          "name": "consultationSearchPeriod",
+          "valuePeriod": {
+            "start": "2025-05-10",
+            "end": "2025-05-25"
+          }
+        },
+        {
+          "name": "includeNumberOfMostRecent",
+          "valueString": "3"
+        }
+      ]
+    }
+  ]
+}

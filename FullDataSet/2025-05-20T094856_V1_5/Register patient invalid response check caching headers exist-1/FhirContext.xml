@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<fhirContext>
+  <request>
+    <fhirRequestParameters>{"resourceType":"Parameters","parameter":[{"name":"registerPatient","resource":{"resourceType":"Patient","meta":{"profile":["https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1"]},"name":[{"use":"official","family":"MASSAM","given":["Joanna"]}],"gender":"female","birthDate":"1957-10-25"}}]}</fhirRequestParameters>
+  </request>
+  <response>
+    <fhirResponseResource>{"resourceType":"OperationOutcome","meta":{"profile":["https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1"]},"issue":[{"severity":"error","code":"value","details":{"coding":[{"system":"https://fhir.nhs.uk/STU3/CodeSystem/Spine-ErrorOrWarningCode-1","code":"INVALID_NHS_NUMBER","display":"INVALID_NHS_NUMBER"}]},"diagnostics":"No NHS number submitted: org.hl7.fhir.dstu3.model.Parameters@7f3b5fe1"}]}</fhirResponseResource>
+  </response>
+</fhirContext>

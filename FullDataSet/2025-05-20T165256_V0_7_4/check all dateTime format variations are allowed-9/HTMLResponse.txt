@@ -1,0 +1,7 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+  <h1>Clinical Items</h1>
+  <div class="date-banner">
+    <p>For the period '01-Jan-2014' to '01-Jun-2016'</p>
+  </div>
+  <p>No 'Clinical Items' data is recorded for this patient.</p>
+</div>

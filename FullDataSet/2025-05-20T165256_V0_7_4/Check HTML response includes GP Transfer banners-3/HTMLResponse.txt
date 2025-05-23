@@ -1,0 +1,42 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+  <h1>Allergies and Adverse Reactions</h1>
+  <div class="gptransfer-banner">
+    <p>Patient record transfer from previous GP practice not yet complete; information recorded before 13-May-2025 may be missing</p>
+  </div>
+  <div>
+    <h2>Current Allergies and Adverse Reactions</h2>
+    <table id="all-tab-curr">
+      <thead>
+        <tr>
+          <th>Start Date</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="date-column">01-May-2015</td>
+          <td>Work allergy</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <h2>Historical Allergies and Adverse Reactions</h2>
+    <table id="all-tab-hist">
+      <thead>
+        <tr>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="date-column">01-May-2015</td>
+          <td class="date-column">01-May-2015</td>
+          <td>Skin allergy</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

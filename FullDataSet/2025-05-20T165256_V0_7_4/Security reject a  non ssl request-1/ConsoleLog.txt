@@ -1,0 +1,141 @@
+GenericSteps() Constructor
+InitializeContainer For Dependency Injection
+24 Patients Loaded From PDS CSV File.
+5 Organisations Loaded From ODS CSV File.
+4 Genders Loaded From FHIR ValueSet File.
+6 MaritalStatus Loaded From FHIR ValueSet File.
+55 Relationship Loaded From FHIR ValueSet File.
+190 HumanLanguage Loaded From FHIR ValueSet File.
+Feature: Security
+
+Scenario: Security reject a  non ssl request
+SecuritySteps() Constructor
+SecurityContext->LoadAppConfig()
+useTLS=True
+clientCertThumbPrint=47 6A 52 2D 5C D5 7A 69 4F CD AF 59 C8 DA 22 5E 8E 80 DE 43
+sendClientCert=False
+validateServerCert=False
+HttpHeaderHelper() Constructor
+JwtHelper() Constructor
+JwtSteps() Constructor
+SetDefaultJWTValues()
+HttpHelper() Constructor
+HttpSteps() Constructor
+HttpContext->LoadAppConfig()
+fhirServerUrl=gpconnect-win1.itblab.nic.cfh.nhs.uk
+fhirServerPort=443
+fhirServerFhirBase=/gpconnect-demonstrator/v0/fhir
+useWebProxy=False
+webProxyUrl=localhost
+webProxyPort=8889
+spineProxyUrl=proxy.int.spine2.ncrs.nhs.uk
+spineProxyPort=443
+providerASID=200000000985
+consumerASID=200000000985
+All Header(s) Cleared
+All Parameters Cleared
+Force The Server Certificate Callback To Always Be True.
+FhirSteps() Constructor
+ClearFhirOperationParameters()
+fhirRequestParameters=Hl7.Fhir.Model.Parameters
+HttpContext->LoadAppConfig()
+fhirServerUrl=gpconnect-win1.itblab.nic.cfh.nhs.uk
+fhirServerPort=443
+fhirServerFhirBase=/gpconnect-demonstrator/v0/fhir
+useWebProxy=False
+webProxyUrl=localhost
+webProxyPort=8889
+spineProxyUrl=proxy.int.spine2.ncrs.nhs.uk
+spineProxyPort=443
+providerASID=200000000985
+consumerASID=200000000985
+Force The Server Certificate Callback To Always Be True.
+Removed Key='Accept'
+Added Key='Accept' Value='application/json+fhir'
+Replaced Key='Accept' With Value='application/json+fhir'
+requestContentType=application/json+fhir
+Removed Key='Ssp-TraceID'
+Added Key='Ssp-TraceID' Value='cea7706d-fd41-4eb2-8b92-dcc76ec8ba82'
+Replaced Key='Ssp-TraceID' With Value='cea7706d-fd41-4eb2-8b92-dcc76ec8ba82'
+Removed Key='Ssp-From'
+Added Key='Ssp-From' Value='200000000985'
+Replaced Key='Ssp-From' With Value='200000000985'
+Removed Key='Ssp-To'
+Added Key='Ssp-To' Value='200000000985'
+Replaced Key='Ssp-To' With Value='200000000985'
+Removed Key='Authorization'
+Added Key='Authorization' Value='Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwczovL0NvbnN1bWVyU3lzdGVtVVJMIiwic3ViIjoiMSIsImF1ZCI6Imh0dHBzOi8vYXV0aG9yaXplLmZoaXIubmhzLm5ldC90b2tlbiIsImV4cCI6MTc0Nzc1Njc3NCwiaWF0IjoxNzQ3NzU2NDc0LCJyZWFzb25fZm9yX3JlcXVlc3QiOiJkaXJlY3RjYXJlIiwicmVxdWVzdGluZ19kZXZpY2UiOnsicmVzb3VyY2VUeXBlIjoiRGV2aWNlIiwiaWQiOiIxIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiR1BDb25uZWN0VGVzdFN5c3RlbSIsInZhbHVlIjoiQ2xpZW50In1dLCJtb2RlbCI6InYxIiwidmVyc2lvbiI6IjEuMSJ9LCJyZXF1ZXN0aW5nX29yZ2FuaXphdGlvbiI6eyJyZXNvdXJjZVR5cGUiOiJPcmdhbml6YXRpb24iLCJpZCI6IjEiLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwOi8vZmhpci5uaHMubmV0L0lkL29kcy1vcmdhbml6YXRpb24tY29kZSIsInZhbHVlIjoiR1BDQTAwMDEifV0sIm5hbWUiOiJHUCBDb25uZWN0IEFzc3VyYW5jZSJ9LCJyZXF1ZXN0aW5nX3ByYWN0aXRpb25lciI6eyJyZXNvdXJjZVR5cGUiOiJQcmFjdGl0aW9uZXIiLCJpZCI6IjEiLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwOi8vZmhpci5uaHMubmV0L3Nkcy11c2VyLWlkIiwidmFsdWUiOiJHQ0FTRFMwMDAxIn0seyJzeXN0ZW0iOiJodHRwczovL2NvbnN1bWVyc3VwcGxpZXIuY29tL0lkL3VzZXItZ3VpZCIsInZhbHVlIjoiOThlZDRmNzgtODE0ZC00MjY2LThkNWItY2RlNzQyZjMwOTNjIn1dLCJuYW1lIjp7ImZhbWlseSI6WyJBc3N1cmFuY2VQcmFjdGl0aW9uZXIiXSwiZ2l2ZW4iOlsiQXNzdXJhbmNlVGVzdCJdLCJwcmVmaXgiOlsiTXIiXX0sInByYWN0aXRpb25lclJvbGUiOlt7InJvbGUiOnsiY29kaW5nIjpbeyJzeXN0ZW0iOiJodHRwOi8vZmhpci5uaHMubmV0L1ZhbHVlU2V0L3Nkcy1qb2Itcm9sZS1uYW1lLTEiLCJjb2RlIjoiQXNzdXJhbmNlSm9iUm9sZSJ9XX19XX0sInJlcXVlc3RlZF9zY29wZSI6Im9yZ2FuaXphdGlvbi8qLnJlYWQiLCJyZXF1ZXN0ZWRfcmVjb3JkIjp7InJlc291cmNlVHlwZSI6Ik9yZ2FuaXphdGlvbiIsImlkIjoiMSIsImlkZW50aWZpZXIiOlt7InN5c3RlbSI6Imh0dHA6Ly9maGlyLm5ocy5uZXQvSWQvb2RzLW9yZ2FuaXphdGlvbi1jb2RlIiwidmFsdWUiOiJPcmdPRFNDb2RlMDAwMSJ9XSwibmFtZSI6IkdQIENvbm5lY3QgQXNzdXJhbmNlIn19.'
+Replaced Key='Authorization' With Value='Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwczovL0NvbnN1bWVyU3lzdGVtVVJMIiwic3ViIjoiMSIsImF1ZCI6Imh0dHBzOi8vYXV0aG9yaXplLmZoaXIubmhzLm5ldC90b2tlbiIsImV4cCI6MTc0Nzc1Njc3NCwiaWF0IjoxNzQ3NzU2NDc0LCJyZWFzb25fZm9yX3JlcXVlc3QiOiJkaXJlY3RjYXJlIiwicmVxdWVzdGluZ19kZXZpY2UiOnsicmVzb3VyY2VUeXBlIjoiRGV2aWNlIiwiaWQiOiIxIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiR1BDb25uZWN0VGVzdFN5c3RlbSIsInZhbHVlIjoiQ2xpZW50In1dLCJtb2RlbCI6InYxIiwidmVyc2lvbiI6IjEuMSJ9LCJyZXF1ZXN0aW5nX29yZ2FuaXphdGlvbiI6eyJyZXNvdXJjZVR5cGUiOiJPcmdhbml6YXRpb24iLCJpZCI6IjEiLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwOi8vZmhpci5uaHMubmV0L0lkL29kcy1vcmdhbml6YXRpb24tY29kZSIsInZhbHVlIjoiR1BDQTAwMDEifV0sIm5hbWUiOiJHUCBDb25uZWN0IEFzc3VyYW5jZSJ9LCJyZXF1ZXN0aW5nX3ByYWN0aXRpb25lciI6eyJyZXNvdXJjZVR5cGUiOiJQcmFjdGl0aW9uZXIiLCJpZCI6IjEiLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwOi8vZmhpci5uaHMubmV0L3Nkcy11c2VyLWlkIiwidmFsdWUiOiJHQ0FTRFMwMDAxIn0seyJzeXN0ZW0iOiJodHRwczovL2NvbnN1bWVyc3VwcGxpZXIuY29tL0lkL3VzZXItZ3VpZCIsInZhbHVlIjoiOThlZDRmNzgtODE0ZC00MjY2LThkNWItY2RlNzQyZjMwOTNjIn1dLCJuYW1lIjp7ImZhbWlseSI6WyJBc3N1cmFuY2VQcmFjdGl0aW9uZXIiXSwiZ2l2ZW4iOlsiQXNzdXJhbmNlVGVzdCJdLCJwcmVmaXgiOlsiTXIiXX0sInByYWN0aXRpb25lclJvbGUiOlt7InJvbGUiOnsiY29kaW5nIjpbeyJzeXN0ZW0iOiJodHRwOi8vZmhpci5uaHMubmV0L1ZhbHVlU2V0L3Nkcy1qb2Itcm9sZS1uYW1lLTEiLCJjb2RlIjoiQXNzdXJhbmNlSm9iUm9sZSJ9XX19XX0sInJlcXVlc3RlZF9zY29wZSI6Im9yZ2FuaXphdGlvbi8qLnJlYWQiLCJyZXF1ZXN0ZWRfcmVjb3JkIjp7InJlc291cmNlVHlwZSI6Ik9yZ2FuaXphdGlvbiIsImlkIjoiMSIsImlkZW50aWZpZXIiOlt7InN5c3RlbSI6Imh0dHA6Ly9maGlyLm5ocy5uZXQvSWQvb2RzLW9yZ2FuaXphdGlvbi1jb2RlIiwidmFsdWUiOiJPcmdPRFNDb2RlMDAwMSJ9XSwibmFtZSI6IkdQIENvbm5lY3QgQXNzdXJhbmNlIn19.'
+useTLS=False
+validateServerCert=False
+sendClientCert=False
+fhirServerPort=80
+Removed Key='Ssp-InteractionId'
+Added Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:rest:read:metadata'
+Replaced Key='Ssp-InteractionId' With Value='urn:nhs:names:services:gpconnect:fhir:rest:read:metadata'
+GET relative URL = /metadata
+requestMethod=GET
+requestUrl=/metadata
+requestBody=
+endpointAddress=http://gpconnect-win1.itblab.nic.cfh.nhs.uk:80/gpconnect-demonstrator/v0/fhir
+Added Key='Content-Type' Value='application/json+fhir'
+GetRequestHeaders Count='7'
+Header - Accept -> application/json+fhir
+Header - Ssp-TraceID -> cea7706d-fd41-4eb2-8b92-dcc76ec8ba82
+Header - Ssp-From -> 200000000985
+Header - Ssp-To -> 200000000985
+Header - Authorization -> Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwczovL0NvbnN1bWVyU3lzdGVtVVJMIiwic3ViIjoiMSIsImF1ZCI6Imh0dHBzOi8vYXV0aG9yaXplLmZoaXIubmhzLm5ldC90b2tlbiIsImV4cCI6MTc0Nzc1Njc3NCwiaWF0IjoxNzQ3NzU2NDc0LCJyZWFzb25fZm9yX3JlcXVlc3QiOiJkaXJlY3RjYXJlIiwicmVxdWVzdGluZ19kZXZpY2UiOnsicmVzb3VyY2VUeXBlIjoiRGV2aWNlIiwiaWQiOiIxIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiR1BDb25uZWN0VGVzdFN5c3RlbSIsInZhbHVlIjoiQ2xpZW50In1dLCJtb2RlbCI6InYxIiwidmVyc2lvbiI6IjEuMSJ9LCJyZXF1ZXN0aW5nX29yZ2FuaXphdGlvbiI6eyJyZXNvdXJjZVR5cGUiOiJPcmdhbml6YXRpb24iLCJpZCI6IjEiLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwOi8vZmhpci5uaHMubmV0L0lkL29kcy1vcmdhbml6YXRpb24tY29kZSIsInZhbHVlIjoiR1BDQTAwMDEifV0sIm5hbWUiOiJHUCBDb25uZWN0IEFzc3VyYW5jZSJ9LCJyZXF1ZXN0aW5nX3ByYWN0aXRpb25lciI6eyJyZXNvdXJjZVR5cGUiOiJQcmFjdGl0aW9uZXIiLCJpZCI6IjEiLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwOi8vZmhpci5uaHMubmV0L3Nkcy11c2VyLWlkIiwidmFsdWUiOiJHQ0FTRFMwMDAxIn0seyJzeXN0ZW0iOiJodHRwczovL2NvbnN1bWVyc3VwcGxpZXIuY29tL0lkL3VzZXItZ3VpZCIsInZhbHVlIjoiOThlZDRmNzgtODE0ZC00MjY2LThkNWItY2RlNzQyZjMwOTNjIn1dLCJuYW1lIjp7ImZhbWlseSI6WyJBc3N1cmFuY2VQcmFjdGl0aW9uZXIiXSwiZ2l2ZW4iOlsiQXNzdXJhbmNlVGVzdCJdLCJwcmVmaXgiOlsiTXIiXX0sInByYWN0aXRpb25lclJvbGUiOlt7InJvbGUiOnsiY29kaW5nIjpbeyJzeXN0ZW0iOiJodHRwOi8vZmhpci5uaHMubmV0L1ZhbHVlU2V0L3Nkcy1qb2Itcm9sZS1uYW1lLTEiLCJjb2RlIjoiQXNzdXJhbmNlSm9iUm9sZSJ9XX19XX0sInJlcXVlc3RlZF9zY29wZSI6Im9yZ2FuaXphdGlvbi8qLnJlYWQiLCJyZXF1ZXN0ZWRfcmVjb3JkIjp7InJlc291cmNlVHlwZSI6Ik9yZ2FuaXphdGlvbiIsImlkIjoiMSIsImlkZW50aWZpZXIiOlt7InN5c3RlbSI6Imh0dHA6Ly9maGlyLm5ocy5uZXQvSWQvb2RzLW9yZ2FuaXphdGlvbi1jb2RlIiwidmFsdWUiOiJPcmdPRFNDb2RlMDAwMSJ9XSwibmFtZSI6IkdQIENvbm5lY3QgQXNzdXJhbmNlIn19.
+Header - Ssp-InteractionId -> urn:nhs:names:services:gpconnect:fhir:rest:read:metadata
+Header - Content-Type -> application/json+fhir
+GetRequestParameters Count='0'
+responseTimeInMilliseconds=4
+responseTimeAcceptable=True
+Error Message = 
+Error Exception = 
+responseStatusCode=NotFound
+responseContentType=text/html
+responseBody=<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<title>404 - File or directory not found.</title>
+<style type="text/css">
+<!--
+body{margin:0;font-size:.7em;font-family:Verdana, Arial, Helvetica, sans-serif;background:#EEEEEE;}
+fieldset{padding:0 15px 10px 15px;} 
+h1{font-size:2.4em;margin:0;color:#FFF;}
+h2{font-size:1.7em;margin:0;color:#CC0000;} 
+h3{font-size:1.2em;margin:10px 0 0 0;color:#000000;} 
+#header{width:96%;margin:0 0 0 0;padding:6px 2% 6px 2%;font-family:"trebuchet MS", Verdana, sans-serif;color:#FFF;
+background-color:#555555;}
+#content{margin:0 0 0 2%;position:relative;}
+.content-container{background:#FFF;width:96%;margin-top:8px;padding:10px;position:relative;}
+-->
+</style>
+</head>
+<body>
+<div id="header"><h1>Server Error</h1></div>
+<div id="content">
+ <div class="content-container"><fieldset>
+  <h2>404 - File or directory not found.</h2>
+  <h3>The resource you are looking for might have been removed, had its name changed, or is temporarily unavailable.</h3>
+ </fieldset></div>
+</div>
+</body>
+</html>
+
+Response Header: Content-Length : 1245
+The given key was not present in the dictionary.
+Response Header: Content-Type : text/html
+Response Header: Date : Tue, 20 May 2025 15:54:34 GMT
+Response Header: Server : Microsoft-IIS/10.0
+C:\Temp\2025-05-20T165256\Security reject a  non ssl request-1
+GetRequestHeaders Count='7'
+GetRequestParameters Count='0'
+webProxyAddress=http://localhost:8889
+spineProxyAddress=http://proxy.int.spine2.ncrs.nhs.uk:443
+endpointAddress=http://gpconnect-win1.itblab.nic.cfh.nhs.uk:80/gpconnect-demonstrator/v0/fhir
+Exception writing JSONResponse to Output File
+GetRequestHeaders Count='7'
+Exception writing JSONRequestBody to Output File - Request May Not be JSON
+Exception writing HTMLResponse to Output File - Reponse May not Include HTML. Exception Message : Unexpected character encountered while parsing value: <. Path '', line 0, position 0.

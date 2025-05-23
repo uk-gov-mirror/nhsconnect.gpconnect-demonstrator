@@ -1,0 +1,10 @@
+{
+  "resourceType": "Bundle",
+  "id": "DE682863-F4A5-4FDA-B977-5F21596684BB",
+  "type": "searchset",
+  "total": 0,
+  "link": [ {
+    "relation": "self",
+    "url": "https://orange.testlab.nhs.uk/Endpoint?organization=https://fhir.nhs.uk/Id/ods-organization-code|A20047&identifier=https://fhir.nhs.uk/Id/nhsServiceInteractionId|urn:nhs:names:services:gpconnect:documents:fhir:rest:read:metadata-1"
+  } ]
+}

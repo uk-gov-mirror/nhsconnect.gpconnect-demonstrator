@@ -1,0 +1,25 @@
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "patientNHSNumber",
+      "valueIdentifier": {
+        "system": "https://fhir.nhs.uk/Id/nhs-number",
+        "value": "9690937294"
+      }
+    },
+    {
+      "name": "includeMedication",
+      "part": [
+        {
+          "name": "includePrescriptionIssues",
+          "valueBoolean": true
+        },
+        {
+          "name": "includePrescriptionIssues",
+          "valueBoolean": true
+        }
+      ]
+    }
+  ]
+}

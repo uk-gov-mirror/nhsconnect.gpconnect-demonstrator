@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<fhirContext>
+  <request>
+    <fhirRequestParameters>{"resourceType":"Parameters","parameter":[{"name":"registerPatient","resource":{"resourceType":"Patient","meta":{"profile":["https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1"]},"identifier":[{"extension":[{"url":"https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-NHSNumberVerificationStatus-1","valueCodeableConcept":{"coding":[{"system":"https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-NHSNumberVerificationStatus-1","code":"01","display":"Number present and verified"}]}}],"system":"https://fhir.nhs.uk/Id/nhs-number","value":"9651258713"}],"name":[{"use":"official","family":"MOAH","given":["Josh"]}],"telecom":[{"system":"phone","value":"01234567891","use":"temp"},{"system":"phone","value":"01234567891","use":"temp"}],"gender":"male","birthDate":"2017-05-18","address":[{"use":"temp","line":["1 Trevelyan Square","Boar Lane"],"city":"Leeds","postalCode":"LS1 6AE"}]}}]}</fhirRequestParameters>
+  </request>
+  <response>
+    <fhirResponseResource>{"resourceType":"OperationOutcome","meta":{"profile":["https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1"]},"issue":[{"severity":"error","code":"invalid","details":{"coding":[{"system":"https://fhir.nhs.uk/STU3/CodeSystem/Spine-ErrorOrWarningCode-1","code":"BAD_REQUEST","display":"BAD_REQUEST"}]},"diagnostics":"Only one Telecom of type phone with use type temp is allowed in a register patient request."}]}</fhirResponseResource>
+  </response>
+</fhirContext>

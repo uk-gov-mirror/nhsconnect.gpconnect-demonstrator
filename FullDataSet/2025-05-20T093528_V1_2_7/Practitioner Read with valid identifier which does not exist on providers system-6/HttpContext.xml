@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<httpContext useWebProxy="false" webProxyUrl="https://localhost:8889" useSpineProxy="false" spineProxyUrl="https://proxy.dev.spine2.ncrs.nhs.uk:443" providerUrl="https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir">
+  <request endpointUrl="https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir">
+    <requestHeaders>
+      <requestHeader name="Ssp-TraceID" value="a9e19106-c689-4a64-ba77-8266b12d246d" />
+      <requestHeader name="Ssp-From" value="200000000985" />
+      <requestHeader name="Ssp-To" value="200000000985" />
+      <requestHeader name="Accept" value="application/fhir+json" />
+      <requestHeader name="Ssp-InteractionId" value="urn:nhs:names:services:gpconnect:fhir:rest:read:practitioner-1" />
+      <requestHeader name="Authorization" value="Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwczovL0NvbnN1bWVyU3lzdGVtVVJMIiwic3ViIjoiMSIsImF1ZCI6Imh0dHBzOi8vYXV0aG9yaXplLmZoaXIubmhzLm5ldC90b2tlbiIsImV4cCI6MTc0NzczMDczMiwiaWF0IjoxNzQ3NzMwNDMyLCJyZWFzb25fZm9yX3JlcXVlc3QiOiJkaXJlY3RjYXJlIiwicmVxdWVzdGluZ19kZXZpY2UiOnsicmVzb3VyY2VUeXBlIjoiRGV2aWNlIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiR1BDb25uZWN0VGVzdFN5c3RlbSIsInZhbHVlIjoiQ2xpZW50In1dLCJtb2RlbCI6InYxIiwidmVyc2lvbiI6IjEuMSJ9LCJyZXF1ZXN0aW5nX29yZ2FuaXphdGlvbiI6eyJyZXNvdXJjZVR5cGUiOiJPcmdhbml6YXRpb24iLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwczovL2ZoaXIubmhzLnVrL0lkL29kcy1vcmdhbml6YXRpb24tY29kZSIsInZhbHVlIjoiR1BDQTAwMDEifV0sIm5hbWUiOiJHUCBDb25uZWN0IEFzc3VyYW5jZSJ9LCJyZXF1ZXN0aW5nX3ByYWN0aXRpb25lciI6eyJyZXNvdXJjZVR5cGUiOiJQcmFjdGl0aW9uZXIiLCJpZCI6IjEiLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwczovL2ZoaXIubmhzLnVrL0lkL3Nkcy11c2VyLWlkIiwidmFsdWUiOiJHQ0FTRFMwMDAxIn0seyJzeXN0ZW0iOiJodHRwczovL2ZoaXIubmhzLnVrL0lkL3Nkcy1yb2xlLXByb2ZpbGUtaWQiLCJ2YWx1ZSI6IjExMjIzMzQ0NTU2NiJ9LHsic3lzdGVtIjoiaHR0cHM6Ly9jb25zdW1lcnN1cHBsaWVyLmNvbS9JZC91c2VyLWd1aWQiLCJ2YWx1ZSI6Ijk4ZWQ0Zjc4LTgxNGQtNDI2Ni04ZDViLWNkZTc0MmYzMDkzYyJ9XSwibmFtZSI6W3siZmFtaWx5IjoiQXNzdXJhbmNlUHJhY3RpdGlvbmVyIiwiZ2l2ZW4iOlsiQXNzdXJhbmNlVGVzdCJdLCJwcmVmaXgiOlsiTXIiXX1dfSwicmVxdWVzdGVkX3Njb3BlIjoib3JnYW5pemF0aW9uLyoucmVhZCJ9." />
+    </requestHeaders>
+    <requestUrl>Practitioner/nd-skdm.mks--s</requestUrl>
+    <requestParameters />
+    <requestMethod>GET</requestMethod>
+    <requestContentType>application/fhir+json</requestContentType>
+    <requestBody />
+  </request>
+  <response>
+    <responseContentType>application/fhir+json</responseContentType>
+    <responseStatusCode>404</responseStatusCode>
+    <responseTimeInMilliseconds>33</responseTimeInMilliseconds>
+    <responseTimeAcceptable>true</responseTimeAcceptable>
+    <responseHeaders>
+      <responseHeader name="Transfer-Encoding" value="chunked" />
+      <responseHeader name="Connection" value="keep-alive" />
+      <responseHeader name="Cache-Control" value="no-store" />
+      <responseHeader name="Date" value="Tue, 20 May 2025 08:40:34 GMT" />
+      <responseHeader name="Server" value="nginx/1.19.6" />
+      <responseHeader name="X-Powered-By" value="HAPI FHIR 3.0.0 REST Server (FHIR Server; FHIR 3.0.1/DSTU3)" />
+      <responseHeader name="Content-Type" value="application/fhir+json; charset=UTF-8" />
+    </responseHeaders>
+    <responseBody>{&amp;quot;resourceType&amp;quot;:&amp;quot;OperationOutcome&amp;quot;,&amp;quot;meta&amp;quot;:{&amp;quot;profile&amp;quot;:[&amp;quot;https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1&amp;quot;]},&amp;quot;issue&amp;quot;:[{&amp;quot;severity&amp;quot;:&amp;quot;error&amp;quot;,&amp;quot;code&amp;quot;:&amp;quot;invalid&amp;quot;,&amp;quot;details&amp;quot;:{&amp;quot;coding&amp;quot;:[{&amp;quot;system&amp;quot;:&amp;quot;https://fhir.nhs.uk/STU3/CodeSystem/Spine-ErrorOrWarningCode-1&amp;quot;,&amp;quot;code&amp;quot;:&amp;quot;PRACTITIONER_NOT_FOUND&amp;quot;,&amp;quot;display&amp;quot;:&amp;quot;PRACTITIONER_NOT_FOUND&amp;quot;}]},&amp;quot;diagnostics&amp;quot;:&amp;quot;No practitioner details found for practitioner ID: nd-skdm.mks--s&amp;quot;}]}</responseBody>
+  </response>
+</httpContext>

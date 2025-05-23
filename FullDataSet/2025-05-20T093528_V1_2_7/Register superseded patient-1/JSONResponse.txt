@@ -1,0 +1,24 @@
+{
+  "resourceType": "OperationOutcome",
+  "meta": {
+    "profile": [
+      "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1"
+    ]
+  },
+  "issue": [
+    {
+      "severity": "error",
+      "code": "invalid",
+      "details": {
+        "coding": [
+          {
+            "system": "https://fhir.nhs.uk/STU3/CodeSystem/Spine-ErrorOrWarningCode-1",
+            "code": "INVALID_NHS_NUMBER",
+            "display": "INVALID_NHS_NUMBER"
+          }
+        ]
+      },
+      "diagnostics": "Patient (NHS number - 9658220223) is superseded"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+  <h1>Immunisations</h1>
+  <div class="gptransfer-banner">
+    <p>Patient record transfer from previous GP practice not yet complete; information recorded before 13-May-2025 may be missing</p>
+  </div>
+  <table id="imm-tab">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Vaccination</th>
+        <th>Part</th>
+        <th>Contents</th>
+        <th>Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="date-column">01-Jul-2016</td>
+        <td>HIV Injection</td>
+        <td></td>
+        <td></td>
+        <td>Dont Know</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,30 @@
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "timePeriod",
+      "valuePeriod": {
+        "start": "2023-05-20T16:53:52+01:00",
+        "end": "2025-05-20T16:53:52+01:00"
+      }
+    },
+    {
+      "name": "recordSection",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://fhir.nhs.net/ValueSet/gpconnect-record-section-1",
+            "code": "ENC"
+          }
+        ]
+      }
+    },
+    {
+      "name": "patientNHSNumber",
+      "valueIdentifier": {
+        "system": "http://fhir.nhs.net/Id/nhs-number",
+        "value": "9658218873"
+      }
+    }
+  ]
+}

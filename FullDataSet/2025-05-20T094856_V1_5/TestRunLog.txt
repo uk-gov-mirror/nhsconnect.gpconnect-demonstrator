@@ -1,0 +1,1340 @@
+****************************************************************
+Overall Stats From Test Run: Total=1039  Passed=977  Failed: 62
+****************************************************************
+TestRunDateTime : 20/05/2025 10:00:19
+consumerASID : 200000001329
+providerASID : 200000001329
+GPConnectSpecVersionFoundationsAndAppmts : 1.5.0
+GPConnectSpecVersionStructured : 1.5.1
+GPConnectSpecVersionDocuments : 1.5.1
+UseTLSFoundationsAndAppmts Flag : True
+jwtAudValueFoundationsAndAppmts : https://authorize.fhir.nhs.net/token/
+serverURL - FoundationsAndAppmts : gpconnect-win1.itblab.nic.cfh.nhs.uk
+serverPort - FoundationsAndAppmts - HTTP : 80
+serverPort - FoundationsAndAppmts - HTTPS : 443
+serverBase - FoundationsAndAppmts : /B82617/STU3/1/gpconnect/fhir
+UseTLSStructured Flag : True
+jwtAudValueStructured : https://authorize.fhir.nhs.net/token/
+serverURL - Structured : gpconnect-win1.itblab.nic.cfh.nhs.uk
+serverPort - Structured - HTTP : 80
+serverPort - Structured HTTPS : 443
+serverBase - Structured : /B82617/STU3/1/gpconnect/structured/fhir
+UseTLSDocuments Flag : True
+jwtAudValueDocuments : https://authorize.fhir.nhs.net/token/
+serverURL - Documents : gpconnect-win1.itblab.nic.cfh.nhs.uk
+serverPort - Documents - HTTP : 80
+serverPort - Documents HTTPS : 443
+serverBase - Documents : /B82617/STU3/1/gpconnect/documents/fhir
+useSpineProxy Flag : False
+spineProxyUrl : proxy.int.spine2.ncrs.nhs.uk
+spineProxyPort : 443
+****************************************************************
+Individual Test Results Below
+****************************************************************
+----------------------------------------------------------------
+20/05/2025 09:56:13,Fhir Get Metadata and Check Version of Documents CapabilityStatement1(),Fail
+capabilityStatement.Version
+    should be
+"1.5.1"
+    but was
+"1.5.0"
+    difference
+Difference     |                      |   
+               |                     \|/  
+Index          | 0    1    2    3    4    
+Expected Value | 1    .    5    .    1    
+Actual Value   | 1    .    5    .    0    
+Expected Code  | 49   46   53   46   49   
+Actual Code    | 49   46   53   46   48   
+
+Additional Info:
+    The Documents CapabilityStatement should match the specification version 1.5.1 but was 1.5.0
+----------------------------------------------------------------
+20/05/2025 09:56:13,Fhir Get Metadata and Check Version of Structured CapabilityStatement1(),Fail
+capabilityStatement.Version
+    should be
+"1.5.1"
+    but was
+"1.5.0"
+    difference
+Difference     |                      |   
+               |                     \|/  
+Index          | 0    1    2    3    4    
+Expected Value | 1    .    5    .    1    
+Actual Value   | 1    .    5    .    0    
+Expected Code  | 49   46   53   46   49   
+Actual Code    | 49   46   53   46   48   
+
+Additional Info:
+    The Structured CapabilityStatement should match the specification version 1.5.1 but was 1.5.0
+----------------------------------------------------------------
+20/05/2025 09:56:55,Register deceased patient1(),Fail
+coding.Display
+    should be
+"Invalid patient demographics"
+    but was
+"INVALID_PATIENT_DEMOGRAPHICS"
+    difference
+Difference     |       |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |        
+               |      \|/  \|/  \|/  \|/  \|/  \|/  \|/  \|/  \|/  \|/  \|/  \|/  \|/  \|/  \|/  \|/  \|/  \|/  \|/  \|/  \|/       
+Index          | ...  1    2    3    4    5    6    7    8    9    10   11   12   13   14   15   16   17   18   19   20   21   ...  
+Expected Value | ...  n    v    a    l    i    d    \s   p    a    t    i    e    n    t    \s   d    e    m    o    g    r    ...  
+Actual Value   | ...  N    V    A    L    I    D    _    P    A    T    I    E    N    T    _    D    E    M    O    G    R    ...  
+Expected Code  | ...  110  118  97   108  105  100  32   112  97   116  105  101  110  116  32   100  101  109  111  103  114  ...  
+Actual Code    | ...  78   86   65   76   73   68   95   80   65   84   73   69   78   84   95   68   69   77   79   71   82   ...  
+
+Difference     |       |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |   
+               |      \|/  \|/  \|/  \|/  \|/  \|/  \|/  \|/  \|/  \|/  \|/  \|/  \|/  \|/  \|/  \|/  \|/  \|/  \|/  \|/  \|/  
+Index          | ...  7    8    9    10   11   12   13   14   15   16   17   18   19   20   21   22   23   24   25   26   27   
+Expected Value | ...  \s   p    a    t    i    e    n    t    \s   d    e    m    o    g    r    a    p    h    i    c    s    
+Actual Value   | ...  _    P    A    T    I    E    N    T    _    D    E    M    O    G    R    A    P    H    I    C    S    
+Expected Code  | ...  32   112  97   116  105  101  110  116  32   100  101  109  111  103  114  97   112  104  105  99   115  
+Actual Code    | ...  95   80   65   84   73   69   78   84   95   68   69   77   79   71   82   65   80   72   73   67   83   
+
+Additional Info:
+    coding.Display should be Invalid patient demographics but is INVALID_PATIENT_DEMOGRAPHICS
+----------------------------------------------------------------
+20/05/2025 09:57:33,Register superseded patient1(),Fail
+coding.Display
+    should be
+"Invalid NHS number"
+    but was
+"INVALID_NHS_NUMBER"
+    difference
+Difference     |       |    |    |    |    |    |    |                   |    |    |    |    |    |    |   
+               |      \|/  \|/  \|/  \|/  \|/  \|/  \|/                 \|/  \|/  \|/  \|/  \|/  \|/  \|/  
+Index          | 0    1    2    3    4    5    6    7    8    9    10   11   12   13   14   15   16   17   
+Expected Value | I    n    v    a    l    i    d    \s   N    H    S    \s   n    u    m    b    e    r    
+Actual Value   | I    N    V    A    L    I    D    _    N    H    S    _    N    U    M    B    E    R    
+Expected Code  | 73   110  118  97   108  105  100  32   78   72   83   32   110  117  109  98   101  114  
+Actual Code    | 73   78   86   65   76   73   68   95   78   72   83   95   78   85   77   66   69   82   
+
+Additional Info:
+    coding.Display should be Invalid NHS number but is INVALID_NHS_NUMBER
+----------------------------------------------------------------
+20/05/2025 09:59:17,Security - Connect with invalid insecure Cipher1(),Fail
+An attempt was made to load a program with an incorrect format. (Exception from HRESULT: 0x8007000B)
+----------------------------------------------------------------
+20/05/2025 09:59:17,Security - Connect with invalid nonexistent Cipher1(),Fail
+An attempt was made to load a program with an incorrect format. (Exception from HRESULT: 0x8007000B)
+----------------------------------------------------------------
+20/05/2025 09:59:17,Security - Connect with invalid secure Cipher1(),Fail
+An attempt was made to load a program with an incorrect format. (Exception from HRESULT: 0x8007000B)
+----------------------------------------------------------------
+20/05/2025 09:59:17,Security - Connect with valid Cipher1(("ECDHE-RSA-AES128-GCM-SHA256",null)),Fail
+An attempt was made to load a program with an incorrect format. (Exception from HRESULT: 0x8007000B)
+----------------------------------------------------------------
+20/05/2025 09:59:17,Security - Connect with valid Cipher2(("ECDHE-RSA-AES256-GCM-SHA384",null)),Fail
+An attempt was made to load a program with an incorrect format. (Exception from HRESULT: 0x8007000B)
+----------------------------------------------------------------
+20/05/2025 09:59:17,Security - Connect with valid Cipher3(("ECDHE-RSA-AES256-SHA384",null)),Fail
+An attempt was made to load a program with an incorrect format. (Exception from HRESULT: 0x8007000B)
+----------------------------------------------------------------
+20/05/2025 09:59:17,Security - Connect with valid Cipher4(("ECDHE-RSA-AES256-SHA",null)),Fail
+An attempt was made to load a program with an incorrect format. (Exception from HRESULT: 0x8007000B)
+----------------------------------------------------------------
+20/05/2025 09:59:17,Security - Connect with valid Cipher5(("DHE-RSA-AES128-GCM-SHA256",null)),Fail
+An attempt was made to load a program with an incorrect format. (Exception from HRESULT: 0x8007000B)
+----------------------------------------------------------------
+20/05/2025 09:59:17,Security - Connect with valid Cipher6(("DHE-RSA-AES256-GCM-SHA384",null)),Fail
+An attempt was made to load a program with an incorrect format. (Exception from HRESULT: 0x8007000B)
+----------------------------------------------------------------
+20/05/2025 09:59:17,Security - Connect with valid Cipher7(("DHE-RSA-AES256-SHA256",null)),Fail
+An attempt was made to load a program with an incorrect format. (Exception from HRESULT: 0x8007000B)
+----------------------------------------------------------------
+20/05/2025 09:59:17,Security - Connect with valid Cipher8(("DHE-RSA-AES256-SHA",null)),Fail
+An attempt was made to load a program with an incorrect format. (Exception from HRESULT: 0x8007000B)
+----------------------------------------------------------------
+20/05/2025 09:59:17,Security - Non-SSL to SSL1(),Fail
+connectionClosedOrRedirected
+    should be
+True
+    but was
+False
+
+Additional Info:
+    The connection should have been closed by the server or the Request should have been redirected but neither occured.
+----------------------------------------------------------------
+20/05/2025 09:59:18,Security - SSP Client Certificate - Invalid - Authority1(),Fail
+Cert with thumbprint: 'f8 b8 ff 86 6a 74 b7 68 b3 f2 bb d9 8f cd 17 64 e5 3c b3 9a' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:59:18,Security - SSP Client Certificate - Invalid - Expired1(),Fail
+Cert with thumbprint: '86 31 d6 25 ba 88 65 b6 06 cb f2 70 fe ed 7a 82 5b 4d 14 aa' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:59:18,Security - SSP Client Certificate - Invalid - FQDN1(),Fail
+Cert with thumbprint: '34 36 1f eb 71 9a 94 42 f6 63 08 84 e1 2e 0c bc d1 0f 34 0b' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:59:18,Security - SSP Client Certificate - Invalid - Missing1(),Fail
+(int)_httpContext.HttpResponse.StatusCode).ToString(
+    should be
+"496"
+    but was
+"200"
+    difference
+Difference     |  |    |    |   
+               | \|/  \|/  \|/  
+Index          | 0    1    2    
+Expected Value | 4    9    6    
+Actual Value   | 2    0    0    
+Expected Code  | 52   57   54   
+Actual Code    | 50   48   48   
+----------------------------------------------------------------
+20/05/2025 09:59:18,Security - SSP Client Certificate - Invalid - Revoked1(),Fail
+Cert with thumbprint: 'de 6f 9c 50 dc 30 42 78 6a de 5d 3b c9 43 27 de 14 47 a9 f7' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:59:18,SSP - Connect with invalid insecure Cipher1(),Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:59:18,SSP - Connect with invalid nonexistent Cipher1(),Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:59:18,SSP - Connect with invalid secure Cipher1(),Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:59:19,SSP - Connect with valid Cipher1(("ECDHE-RSA-AES128-GCM-SHA256",null)),Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:59:19,SSP - Connect with valid Cipher2(("ECDHE-RSA-AES256-GCM-SHA384",null)),Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:59:19,SSP - Connect with valid Cipher3(("ECDHE-RSA-AES256-SHA384",null)),Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:59:19,SSP - Connect with valid Cipher4(("ECDHE-RSA-AES256-SHA",null)),Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:59:19,SSP - Connect with valid Cipher5(("DHE-RSA-AES128-GCM-SHA256",null)),Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:59:19,SSP - Connect with valid Cipher6(("DHE-RSA-AES256-GCM-SHA384",null)),Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:59:19,SSP - Connect with valid Cipher7(("DHE-RSA-AES256-SHA256",null)),Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:59:19,SSP - Connect with valid Cipher8(("DHE-RSA-AES256-SHA",null)),Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:59:19,SSP - Consumer Client Certificate - Invalid - Authority1(),Fail
+Cert with thumbprint: '4a cc fc 13 4c 3d d4 90 e2 76 e5 92 17 95 a6 7d 29 bc d4 be' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:59:19,SSP - Consumer Client Certificate - Invalid - Expired1(),Fail
+Cert with thumbprint: 'f3 35 d6 ea f8 00 41 61 81 11 e6 0d 00 6f e6 13 e7 b6 ef ee' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:59:19,SSP - Consumer Client Certificate - Invalid - FQDN1(),Fail
+Cert with thumbprint: 'c7 15 67 71 7b 98 ff 15 da 49 70 8e 21 55 c8 6e 28 7c 51 ba' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:59:19,SSP - Consumer Client Certificate - Invalid - Missing1(),Fail
+statusCodes
+    should contain
+HttpStatusCode.BadRequest
+    but was actually
+[HttpStatusCode.495, HttpStatusCode.496]
+
+Additional Info:
+    The Response Status Code should be one of 495, 496, but it was 400.
+----------------------------------------------------------------
+20/05/2025 09:59:19,SSP - Consumer Client Certificate - Invalid - Revoked1(),Fail
+Cert with thumbprint: 'de 6f 9c 50 dc 30 42 78 6a de 5d 3b c9 43 27 de 14 47 a9 f7' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:59:19,SSP - Consumer Client Certificate - Valid1(),Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:59:19,SSP - CORS1(("GpcGetCareRecord","POST","Patient/$gpc.getcarerecord",null)),Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:59:19,SSP - CORS2(("GpcGetStructuredRecord","POST","Patient/$gpc.getstructuredrecord",null)),Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:59:19,SSP - CORS3(("OrganizationSearch","GET","Organization",null)),Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:59:19,SSP - CORS4(("OrganizationRead","GET","Organization/{id}",null)),Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:59:19,SSP - CORS5(("PractitionerSearch","GET","Practitioner",null)),Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:59:19,SSP - CORS6(("PractitionerRead","GET","Practitioner/{id}",null)),Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:59:19,SSP - CORS7(("PatientSearch","GET","Patient",null)),Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:59:19,SSP - CORS8(("PatientRead","GET","Patient/{id}",null)),Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:59:19,SSP - CORS9(("LocationRead","GET","Location/{id}",null)),Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:59:19,SSP - CORS10(("RegisterPatient","POST","Patient/$gpc.registerpatient",null)),Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:59:19,SSP - CORS11(("SearchForFreeSlots","GET","Slot",null)),Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:59:19,SSP - CORS12(("AppointmentCreate","POST","Appointment",null)),Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:59:19,SSP - CORS13(("AppointmentSearch","GET","Patient/{id}/Appointment",null)),Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:59:19,SSP - CORS14(("AppointmentAmend","GET, PUT","Appointment/{id}",null)),Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:59:19,SSP - CORS15(("AppointmentCancel","GET, PUT","Appointment/{id}",null)),Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:59:19,SSP - CORS16(("AppointmentRead","GET, PUT","Appointment/{id}",null)),Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:59:19,SSP - CORS17(("MetadataRead","GET","metadata",null)),Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:59:19,SSP - Non-SSL to SSL1(),Fail
+_httpContext.HttpResponse.Headers
+    should contain key
+"Strict-Transport-Security"
+    but does not
+
+Additional Info:
+    The Response Headers should contain a Strict-Transport-Security header, but it wasn't found.
+----------------------------------------------------------------
+20/05/2025 09:59:20,SSP - To ASID - Invalid1(),Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:59:33,Retrieve consultations structured record with startDate only expected success1(),Fail
+Encounters.ToList().Count()
+    should be greater than
+0
+    but was
+0
+
+Additional Info:
+    Error Should be Atleast One Encounter in response as per Data requirements
+----------------------------------------------------------------
+20/05/2025 09:59:37,Verify Consultations structured record for a Patient includeConsultation and consultationSearchPeriod partParameter1(),Fail
+Encounters.ToList().Count()
+    should be greater than
+0
+    but was
+0
+
+Additional Info:
+    Error Should be Atleast One Encounter in response as per Data requirements
+----------------------------------------------------------------
+20/05/2025 10:00:08,Patient with Referrals Has Warnings and Associated Notes1(("patient16","confidential-items","Items excluded due to confidentiality and/or patient preferences.",null)),Fail
+found.Count()
+    should be
+1
+    but was
+0
+
+Additional Info:
+    Unable to Find Warning : confidential-items in List : Outbound referral
+----------------------------------------------------------------
+20/05/2025 10:00:08,Patient with Referrals Has Warnings and Associated Notes2(("patient13","data-in-transit","Patient record transfer from previous GP practice not yet complete; information recorded before dd-Mmm-yyyy may be missing.",null)),Fail
+found.Count()
+    should be
+1
+    but was
+0
+
+Additional Info:
+    Unable to Find Warning : data-in-transit in List : Outbound referral
+----------------------------------------------------------------
+20/05/2025 10:00:08,Retrieve Referrals data structured record for a patient that has sensitive flag1(),Fail
+coding.Display
+    should be
+"Patient not found"
+    but was
+"PATIENT_NOT_FOUND"
+    difference
+Difference     |       |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |   
+               |      \|/  \|/  \|/  \|/  \|/  \|/  \|/  \|/  \|/  \|/  \|/  \|/  \|/  \|/  \|/  \|/  
+Index          | 0    1    2    3    4    5    6    7    8    9    10   11   12   13   14   15   16   
+Expected Value | P    a    t    i    e    n    t    \s   n    o    t    \s   f    o    u    n    d    
+Actual Value   | P    A    T    I    E    N    T    _    N    O    T    _    F    O    U    N    D    
+Expected Code  | 80   97   116  105  101  110  116  32   110  111  116  32   102  111  117  110  100  
+Actual Code    | 80   65   84   73   69   78   84   95   78   79   84   95   70   79   85   78   68   
+
+Additional Info:
+    coding.Display should be Patient not found but is PATIENT_NOT_FOUND
+----------------------------------------------------------------
+20/05/2025 09:49:02,Amend appointment and send an invalid appointment resource1(),Pass
+20/05/2025 09:49:05,Amend appointment and send an invalid bundle resource1(),Pass
+20/05/2025 09:49:08,Amend appointment and update cancellation reason1(),Pass
+20/05/2025 09:49:16,Amend appointment and update element which cannot be updated1(),Pass
+20/05/2025 09:49:19,Amend appointment and update to absolute reference1(),Pass
+20/05/2025 09:49:22,Amend appointment invalid response check caching headers exist1(),Pass
+20/05/2025 09:49:24,Amend appointment prefer header set to minimal1(),Pass
+20/05/2025 09:49:27,Amend appointment prefer header set to representation1(),Pass
+20/05/2025 09:49:29,Amend appointment send an update with an invalid if-match header1(),Pass
+20/05/2025 09:49:32,Amend appointment set etag and check etag is the same in the returned amended appointment1(),Pass
+20/05/2025 09:49:34,Amend appointment using the _format and accept parameter to request response format1(("application/fhir+json","application/fhir+json","JSON",null)),Pass
+20/05/2025 09:49:37,Amend appointment using the _format and accept parameter to request response format2(("application/fhir+json","application/fhir+xml","XML",null)),Pass
+20/05/2025 09:49:39,Amend appointment using the _format and accept parameter to request response format3(("application/fhir+xml","application/fhir+json","JSON",null)),Pass
+20/05/2025 09:49:41,Amend appointment using the _format and accept parameter to request response format4(("application/fhir+xml","application/fhir+xml","XML",null)),Pass
+20/05/2025 09:49:43,Amend appointment using the _format parameter to request response format1(("application/fhir+json","JSON",null)),Pass
+20/05/2025 09:49:46,Amend appointment using the _format parameter to request response format2(("application/fhir+xml","XML",null)),Pass
+20/05/2025 09:49:48,Amend appointment using the accept header to request response format1(("application/fhir+json","JSON",null)),Pass
+20/05/2025 09:49:50,Amend appointment using the accept header to request response format2(("application/fhir+xml","XML",null)),Pass
+20/05/2025 09:49:53,Amend appointment valid response check caching headers exist1(),Pass
+20/05/2025 09:49:55,Amend appointment with Comment and Description1(),Pass
+20/05/2025 09:49:55,CapabilityStatement profile support the Amend appointment operation1(),Pass
+20/05/2025 09:49:59,I perform amend appointment with participants with absoulte references1(),Pass
+20/05/2025 09:50:01,I perform a successful amend appointment and check the returned appointment resources are in the future1(("patient1",null)),Pass
+20/05/2025 09:50:04,I perform a successful amend appointment and check the returned appointment resources are in the future2(("patient2",null)),Pass
+20/05/2025 09:50:07,I perform a successful amend appointment and check the returned appointment resources are in the future3(("patient3",null)),Pass
+20/05/2025 09:50:09,I perform a successful amend appointment with Extensions1(("patient1","true","true","true",null)),Pass
+20/05/2025 09:50:10,Successfully amend appointment ensuring backwards compatibility with consumers that do not send ServiceCategory And serviceType expect success1(),Pass
+20/05/2025 09:50:12,Successfully amend comment and description on an appointment when sending in ServiceCategory and serviceType1(),Pass
+20/05/2025 09:50:14,Book appointment _format parameter only but varying request content types1(("application/fhir+json","application/fhir+json","JSON",null)),Pass
+20/05/2025 09:50:16,Book appointment _format parameter only but varying request content types2(("application/fhir+json","application/fhir+xml","XML",null)),Pass
+20/05/2025 09:50:18,Book appointment _format parameter only but varying request content types3(("application/fhir+xml","application/fhir+json","JSON",null)),Pass
+20/05/2025 09:50:20,Book appointment _format parameter only but varying request content types4(("application/fhir+xml","application/fhir+xml","XML",null)),Pass
+20/05/2025 09:50:22,Book appointment accept header and _format parameter to request response format1(("application/fhir+json","application/fhir+json","JSON",null)),Pass
+20/05/2025 09:50:25,Book appointment accept header and _format parameter to request response format2(("application/fhir+json","application/fhir+xml","XML",null)),Pass
+20/05/2025 09:50:27,Book appointment accept header and _format parameter to request response format3(("application/fhir+xml","application/fhir+json","JSON",null)),Pass
+20/05/2025 09:50:30,Book appointment accept header and _format parameter to request response format4(("application/fhir+xml","application/fhir+xml","XML",null)),Pass
+20/05/2025 09:50:32,Book appointment accept header to request response format1(("application/fhir+json","JSON",null)),Pass
+20/05/2025 09:50:34,Book appointment accept header to request response format2(("application/fhir+xml","XML",null)),Pass
+20/05/2025 09:50:36,Book Appointment and appointment participant is valid1(),Pass
+20/05/2025 09:50:40,Book Appointment and remove all participants1(),Pass
+20/05/2025 09:50:42,Book Appointment and remove identifier value from the appointment booking1(),Pass
+20/05/2025 09:50:44,Book Appointment and remove manadatory resources from the appointment booking1(("Patient",null)),Pass
+20/05/2025 09:50:46,Book Appointment and remove manadatory resources from the appointment booking2(("Location",null)),Pass
+20/05/2025 09:50:49,Book Appointment and remove participant status from the appointment booking1(),Pass
+20/05/2025 09:50:51,Book appointment and send an invalid appointment resource1(),Pass
+20/05/2025 09:50:53,Book appointment and send an invalid bundle resource1(),Pass
+20/05/2025 09:50:55,Book appointment and send a reason in the appointment1(),Pass
+20/05/2025 09:50:57,Book appointment for patient and send extra fields in the resource1(),Pass
+20/05/2025 09:51:01,Book appointment invalid response check caching headers exist1(),Pass
+20/05/2025 09:51:03,Book appointment prefer header set to minimal1(),Pass
+20/05/2025 09:51:05,Book appointment prefer header set to representation1(),Pass
+20/05/2025 09:51:09,Book appointment re-using an already booked slot1(),Pass
+20/05/2025 09:51:11,Book appointment valid response check caching headers exist1(),Pass
+20/05/2025 09:51:13,Book appointment with a comment1(),Pass
+20/05/2025 09:51:15,Book appointment with a description1(),Pass
+20/05/2025 09:51:17,Book appointment with a description and comment1(),Pass
+20/05/2025 09:51:20,Book appointment with invalid slot reference1(("Slot/45555g55555",null)),Pass
+20/05/2025 09:51:23,Book appointment with invalid slot reference2(("Slot/45555555##",null)),Pass
+20/05/2025 09:51:25,Book appointment with invalid slot reference3(("Slot/hello",null)),Pass
+20/05/2025 09:51:27,Book appointment with invalid slot reference4(("https://test1.supplier.thirdparty.nhs.uk/A11111/STU3/1/GPConnect/Slot/#12345",null)),Pass
+20/05/2025 09:51:29,Book Appointment with invalid url for booking appointment1(("appointmentqq/!",null)),Pass
+20/05/2025 09:51:33,Book appointment with missing end element in appointment resource1(),Pass
+20/05/2025 09:51:35,Book appointment with missing slot element in appointment resource1(),Pass
+20/05/2025 09:51:37,Book appointment with missing start element in appointment resource1(),Pass
+20/05/2025 09:51:40,Book appointment with missing status element in appointment resource1(),Pass
+20/05/2025 09:51:42,Book appointment with name removed from booking organization1(),Pass
+20/05/2025 09:51:45,Book appointment without a comment1(),Pass
+20/05/2025 09:51:47,Book Appointment without practitioner participant1(),Pass
+20/05/2025 09:51:50,Book appointment with telecom removed from booking organization1(),Pass
+20/05/2025 09:51:52,Book appointment with typeCode in appointment resource1(),Pass
+20/05/2025 09:51:53,Book single appointment ensuring backwards compatibility with consumers that do not send ServiceCategory And serviceType expect success1(),Pass
+20/05/2025 09:51:54,Book single appointment expecting servicecategory in response when ServiceCategory and serviceType are in request but ignored1(),Pass
+20/05/2025 09:51:55,Book single appointment expecting serviceType in response when ServiceCategory and serviceType are in request but ignored1(),Pass
+20/05/2025 09:51:57,Book single appointment for patient1(),Pass
+20/05/2025 09:51:59,Book single appointment for patient and check the location reference is valid1(),Pass
+20/05/2025 09:52:00,Book single appointment for Patient expecting servicecategory is populated1(),Pass
+20/05/2025 09:52:01,Book single appointment for Patient expecting serviceType is populated1(),Pass
+20/05/2025 09:52:03,Book single appointment for patient with Extensions1(("true","true","true",null)),Pass
+20/05/2025 09:52:07,Book single appointment for patient with invalid reference1(),Pass
+20/05/2025 09:52:09,Book single appointment for patient with optional elements1(("false","false","false",null)),Pass
+20/05/2025 09:52:11,Book single appointment for patient with optional elements2(("false","false","true",null)),Pass
+20/05/2025 09:52:13,Book single appointment for patient with optional elements3(("false","true","false",null)),Pass
+20/05/2025 09:52:15,Book single appointment for patient with optional elements4(("false","true","true",null)),Pass
+20/05/2025 09:52:17,Book single appointment for patient with optional elements5(("true","false","false",null)),Pass
+20/05/2025 09:52:19,Book single appointment for patient with optional elements6(("true","false","true",null)),Pass
+20/05/2025 09:52:21,Book single appointment for patient with optional elements7(("true","true","false",null)),Pass
+20/05/2025 09:52:23,Book single appointment for patient with optional elements8(("true","true","true",null)),Pass
+20/05/2025 09:52:25,Book single appointment for patient without organisation type1(),Pass
+20/05/2025 09:52:25,CapabilityStatement profile supports the book appointment operation1(),Pass
+20/05/2025 09:52:29,Amend a cancelled appointment1(),Pass
+20/05/2025 09:52:31,Cancel appointment check cancellation reason is equal to the request cancellation reason1(("Test cancellation reason 1",null)),Pass
+20/05/2025 09:52:33,Cancel appointment check cancellation reason is equal to the request cancellation reason2(("test reason for cancel 2",null)),Pass
+20/05/2025 09:52:35,Cancel appointment check the version id of the cancelled resource is different1(("patient1",null)),Pass
+20/05/2025 09:52:38,Cancel appointment check the version id of the cancelled resource is different2(("patient2",null)),Pass
+20/05/2025 09:52:41,Cancel appointment invalid cancellation extension url1(("","Too busy",null)),Pass
+20/05/2025 09:52:43,Cancel appointment invalid cancellation extension url2(("http://fhir.nhs.uk/StructuraeDefinition/extension-gpconnect-appointment-cancellation-reason-1-010","Too busy",null)),Pass
+20/05/2025 09:52:45,Cancel appointment invalid response check caching headers exist1(),Pass
+20/05/2025 09:52:47,Cancel appointment missing cancellation extension reason1(),Pass
+20/05/2025 09:52:50,Cancel appointment prefer header set to minimal1(),Pass
+20/05/2025 09:52:52,Cancel appointment prefer header set to representation1(),Pass
+20/05/2025 09:52:54,Cancel appointment using the _format parameter to request response format1(("application/fhir+json","JSON",null)),Pass
+20/05/2025 09:52:57,Cancel appointment using the _format parameter to request response format2(("application/fhir+xml","XML",null)),Pass
+20/05/2025 09:52:59,Cancel appointment using the accept header and _format parameter and content-type to request response format1(("application/fhir+xml","application/fhir+xml","application/fhir+xml","XML",null)),Pass
+20/05/2025 09:53:01,Cancel appointment using the accept header and _format parameter and content-type to request response format2(("application/fhir+json","application/fhir+json","application/fhir+json","JSON",null)),Pass
+20/05/2025 09:53:03,Cancel appointment using the accept header and _format parameter and content-type to request response format3(("application/fhir+xml","application/fhir+xml","application/fhir+json","JSON",null)),Pass
+20/05/2025 09:53:05,Cancel appointment using the accept header and _format parameter and content-type to request response format4(("application/fhir+json","application/fhir+json","application/fhir+xml","XML",null)),Pass
+20/05/2025 09:53:07,Cancel appointment using the accept header and _format parameter and content-type to request response format5(("application/fhir+xml","application/fhir+json","application/fhir+json","JSON",null)),Pass
+20/05/2025 09:53:09,Cancel appointment using the accept header and _format parameter and content-type to request response format6(("application/fhir+json","application/fhir+xml","application/fhir+xml","XML",null)),Pass
+20/05/2025 09:53:12,Cancel appointment using the accept header and _format parameter and content-type to request response format7(("application/fhir+xml","application/fhir+json","application/fhir+xml","XML",null)),Pass
+20/05/2025 09:53:14,Cancel appointment using the accept header and _format parameter and content-type to request response format8(("application/fhir+json","application/fhir+xml","application/fhir+json","JSON",null)),Pass
+20/05/2025 09:53:16,Cancel appointment using the accept header and _format parameter to request response format1(("application/fhir+json","application/fhir+json","JSON",null)),Pass
+20/05/2025 09:53:18,Cancel appointment using the accept header and _format parameter to request response format2(("application/fhir+json","application/fhir+xml","XML",null)),Pass
+20/05/2025 09:53:20,Cancel appointment using the accept header and _format parameter to request response format3(("application/fhir+xml","application/fhir+json","JSON",null)),Pass
+20/05/2025 09:53:22,Cancel appointment using the accept header and _format parameter to request response format4(("application/fhir+xml","application/fhir+xml","XML",null)),Pass
+20/05/2025 09:53:24,Cancel appointment using the accept header to request response format1(("application/fhir+json","JSON",null)),Pass
+20/05/2025 09:53:27,Cancel appointment using the accept header to request response format2(("application/fhir+xml","XML",null)),Pass
+20/05/2025 09:53:29,Cancel appointment valid response check caching headers exist1(),Pass
+20/05/2025 09:53:33,Cancel appointment verify resource is not updated when an out of date ETag value is provided1(),Pass
+20/05/2025 09:53:35,Cancel appointment verify resource is updated when an valid ETag value is provided1(),Pass
+20/05/2025 09:53:35,CapabilityStatement profile supports the cancel appointment operation1(),Pass
+20/05/2025 09:53:37,I cancel appointment for patient with absoulute reference1(),Pass
+20/05/2025 09:53:39,I perform a successful cancel appointment1(("patient1",null)),Pass
+20/05/2025 09:53:41,I perform a successful cancel appointment2(("patient2",null)),Pass
+20/05/2025 09:53:44,I perform a successful cancel appointment3(("patient3",null)),Pass
+20/05/2025 09:53:47,I perform a successful cancel appointment and amend the comment1(),Pass
+20/05/2025 09:53:49,I perform a successful cancel appointment with Extensions1(("patient1","true","true","true",null)),Pass
+20/05/2025 09:53:53,I perform cancel appointment and add participants1(),Pass
+20/05/2025 09:53:55,I perform cancel appointment and update the description1(),Pass
+20/05/2025 09:53:57,I perform cancel appointment and update the type text1(),Pass
+20/05/2025 09:54:01,I perform cancel appointment with participants with absoulte references1(),Pass
+20/05/2025 09:54:02,Successfully Cancel an appointment ensuring backwards compatibility with consumers that do not send ServiceCategory And serviceType expect success1(),Pass
+20/05/2025 09:54:03,Successfully Cancel an appointment that has serviceCategory populated1(),Pass
+20/05/2025 09:54:03,Successfully Cancel an appointment that has serviceType populated1(),Pass
+20/05/2025 09:54:04,CapabilityStatement profile supports the read appointment operation1(),Pass
+20/05/2025 09:54:06,I perform a successful Read appointment1(("patient1",null)),Pass
+20/05/2025 09:54:08,I perform a successful Read appointment2(("patient2",null)),Pass
+20/05/2025 09:54:10,I perform a successful Read appointment3(("patient3",null)),Pass
+20/05/2025 09:54:12,I perform a successful Read appointment with Extensions1(("patient1","true","true","true",null)),Pass
+20/05/2025 09:54:14,I perform a successful Read appointment with JWT Org Different1(),Pass
+20/05/2025 09:54:15,Read a patient’s appointments expecting servicecategory is populated1(("patient1","true","true","true",null)),Pass
+20/05/2025 09:54:15,Read a patient’s appointments expecting serviceType is populated1(("patient1","true","true","true",null)),Pass
+20/05/2025 09:54:18,Read appointment ensure response appointments contain the manadatory elements1(("application/fhir+json","JSON",null)),Pass
+20/05/2025 09:54:20,Read appointment ensure response appointments contain the manadatory elements2(("application/fhir+xml","XML",null)),Pass
+20/05/2025 09:54:22,Read appointment invalid appointment id1(("Invalid4321",null)),Pass
+20/05/2025 09:54:24,Read appointment invalid appointment id2(("8888888888",null)),Pass
+20/05/2025 09:54:27,Read appointment invalid appointment id3(("",null)),Pass
+20/05/2025 09:54:29,Read appointment invalid response check caching headers exist1(),Pass
+20/05/2025 09:54:31,Read appointment using the _format parameter and accept header to request response format1(("application/fhir+json","application/fhir+json","JSON",null)),Pass
+20/05/2025 09:54:33,Read appointment using the _format parameter and accept header to request response format2(("application/fhir+json","application/fhir+xml","XML",null)),Pass
+20/05/2025 09:54:35,Read appointment using the _format parameter and accept header to request response format3(("application/fhir+xml","application/fhir+json","JSON",null)),Pass
+20/05/2025 09:54:38,Read appointment using the _format parameter and accept header to request response format4(("application/fhir+xml","application/fhir+xml","XML",null)),Pass
+20/05/2025 09:54:40,Read appointment using the _format parameter to request response format1(("application/fhir+json","JSON",null)),Pass
+20/05/2025 09:54:42,Read appointment using the _format parameter to request response format2(("application/fhir+xml","XML",null)),Pass
+20/05/2025 09:54:44,Read appointment valid response check caching headers exist1(),Pass
+20/05/2025 09:54:45,Appointment retreive with date parameters in the past1(("2010-02-03","2010-03-03",null)),Pass
+20/05/2025 09:54:45,Appointment retreive with date parameters in the past2(("2010-03-03","2030-03-30",null)),Pass
+20/05/2025 09:54:47,Appointment retreive with end date before start date1(),Pass
+20/05/2025 09:54:49,Appointment retrieve _format parameter only to request response format1(("application/fhir+json","JSON",null)),Pass
+20/05/2025 09:54:52,Appointment retrieve _format parameter only to request response format2(("application/fhir+xml","XML",null)),Pass
+20/05/2025 09:54:54,Appointment retrieve accept header and _format parameter to request response format1(("application/fhir+json","application/fhir+json","JSON",null)),Pass
+20/05/2025 09:54:56,Appointment retrieve accept header and _format parameter to request response format2(("application/fhir+json","application/fhir+xml","XML",null)),Pass
+20/05/2025 09:54:58,Appointment retrieve accept header and _format parameter to request response format3(("application/fhir+xml","application/fhir+json","JSON",null)),Pass
+20/05/2025 09:55:00,Appointment retrieve accept header and _format parameter to request response format4(("application/fhir+xml","application/fhir+xml","XML",null)),Pass
+20/05/2025 09:55:02,Appointment retrieve accept header to request response format1(("application/fhir+json","JSON",null)),Pass
+20/05/2025 09:55:04,Appointment retrieve accept header to request response format2(("application/fhir+xml","XML",null)),Pass
+20/05/2025 09:55:06,Appointment retrieve and response should contain valid booking orgainzation1(),Pass
+20/05/2025 09:55:12,Appointment retrieve bundle valid resources returned in the response1(),Pass
+20/05/2025 09:55:13,Appointment retrieve fail due to invalid patient logical id1(("null",null)),Pass
+20/05/2025 09:55:13,Appointment retrieve fail due to invalid patient logical id2(("dd",null)),Pass
+20/05/2025 09:55:13,Appointment retrieve invalid date format1(("yyyy-MM-dd","yyyy",null)),Pass
+20/05/2025 09:55:13,Appointment retrieve invalid date format2(("yyyy-MM-dd","yyyy-MM",null)),Pass
+20/05/2025 09:55:14,Appointment retrieve invalid date format3(("yyyy-MM-dd","yyyy-MM-ddTHH:mm:ss",null)),Pass
+20/05/2025 09:55:15,Appointment retrieve invalid date format4(("yyyy-MM-dd","yyyy-MM-ddTHH:mm:ssZ",null)),Pass
+20/05/2025 09:55:15,Appointment retrieve invalid date format5(("yyyy","yyyy-MM-dd",null)),Pass
+20/05/2025 09:55:16,Appointment retrieve invalid date format6(("yyyy-MM","yyyy-MM-dd",null)),Pass
+20/05/2025 09:55:16,Appointment retrieve invalid date format7(("yyyy-MM-ddTHH:mm:ss","yyyy-MM-dd",null)),Pass
+20/05/2025 09:55:16,Appointment retrieve invalid date format8(("yyyy-MM-ddTHH:mm:ssZ","yyyy-MM-dd",null)),Pass
+20/05/2025 09:55:17,Appointment retrieve invalid date prefix1(("ge","lt",null)),Pass
+20/05/2025 09:55:17,Appointment retrieve invalid date prefix2(("ge","gt",null)),Pass
+20/05/2025 09:55:17,Appointment retrieve invalid date prefix3(("ge","eq",null)),Pass
+20/05/2025 09:55:17,Appointment retrieve invalid date prefix4(("ge","ge",null)),Pass
+20/05/2025 09:55:18,Appointment retrieve invalid date prefix5(("lt","le",null)),Pass
+20/05/2025 09:55:18,Appointment retrieve invalid date prefix6(("gt","le",null)),Pass
+20/05/2025 09:55:18,Appointment retrieve invalid date prefix7(("eqs","le",null)),Pass
+20/05/2025 09:55:20,Appointment retrieve invalid date prefix8(("le","le",null)),Pass
+20/05/2025 09:55:20,Appointment retrieve invalid date prefix9(("random123","random123",null)),Pass
+20/05/2025 09:55:20,Appointment retrieve invalid response check caching headers exist1(),Pass
+20/05/2025 09:55:22,Appointment retrieve JWT patient type request invalid1(("organization/*.write",null)),Pass
+20/05/2025 09:55:24,Appointment retrieve JWT patient type request invalid2(("patient/*.write",null)),Pass
+20/05/2025 09:55:32,Appointment retrieve multiple appointment retrived1(("patient4","1",null)),Pass
+20/05/2025 09:55:40,Appointment retrieve multiple appointment retrived2(("patient5","3",null)),Pass
+20/05/2025 09:55:48,Appointment retrieve multiple appointment retrived3(("patient6","2",null)),Pass
+20/05/2025 09:55:48,Appointment retrieve sending additional valid parameters in the request1(),Pass
+20/05/2025 09:55:48,Appointment retrieve success valid id where appointment resource returned is not required1(),Pass
+20/05/2025 09:55:49,Appointment retrieve valid response check caching headers exist1(),Pass
+20/05/2025 09:55:50,Appointment retrieve with only one start parameter1(("le2030-03-03",null)),Pass
+20/05/2025 09:55:51,Appointment retrieve with only one start parameter2(("ge2030-03-03",null)),Pass
+20/05/2025 09:55:51,CapabilityStatement profile supports the search appointment operation1(),Pass
+20/05/2025 09:55:53,I perform a successful retrieve appointment with Extensions1(("patient1","true","true","true",null)),Pass
+20/05/2025 09:55:54,Retrieve a patient’s appointments expecting servicecategory is populated1(("patient1","true","true","true",null)),Pass
+20/05/2025 09:55:54,Retrieve a patient’s appointments expecting serviceType is populated1(("patient1","true","true","true",null)),Pass
+20/05/2025 09:55:55,Documents Patient Search and check response conforms with the GPConnect specification1(("patient1",null)),Pass
+20/05/2025 09:55:57,Documents Patient Search and check response conforms with the GPConnect specification2(("patient2",null)),Pass
+20/05/2025 09:55:58,Documents Patient Search and check response conforms with the GPConnect specification3(("patient3",null)),Pass
+20/05/2025 09:55:58,Documents Patient Search and check response conforms with the GPConnect specification4(("patient4",null)),Pass
+20/05/2025 09:55:58,Documents Patient Search and check response conforms with the GPConnect specification5(("patient5",null)),Pass
+20/05/2025 09:55:59,Documents Patient Search and check response conforms with the GPConnect specification6(("patient6",null)),Pass
+20/05/2025 09:55:59,Documents Patient search for a No Consent Patient search gets a valid response1(),Pass
+20/05/2025 09:55:59,Documents Patient search for a patient with a inactive flag should return no results1(),Pass
+20/05/2025 09:55:59,Documents Patient search for a patient with a sensitive flag should return no results1(),Pass
+20/05/2025 09:55:59,Documents Patient search invalid response check caching headers exist1(),Pass
+20/05/2025 09:56:00,Documents Patient Search resource should contain NHS number identifier returned as XML1(("patient1",null)),Pass
+20/05/2025 09:56:00,Documents Patient Search resource should contain NHS number identifier returned as XML2(("patient2",null)),Pass
+20/05/2025 09:56:00,Documents Patient Search resource should contain NHS number identifier returned as XML3(("patient3",null)),Pass
+20/05/2025 09:56:01,Documents Patient search response does not return deceased patient1(),Pass
+20/05/2025 09:56:01,Documents Patient Search response should be an error if no value is sent in the identifier parameter1(),Pass
+20/05/2025 09:56:01,Documents Patient Search results should contain a logical identifier1(),Pass
+20/05/2025 09:56:01,Documents Patient search should contain a preferred branch1(),Pass
+20/05/2025 09:56:01,Documents Patient search should error if multiple parameters valid or invalid are sent1(("identifier","patient2","identifier","patient2",null)),Pass
+20/05/2025 09:56:02,Documents Patient search should error if multiple parameters valid or invalid are sent2(("identifier","patient1","identifier","patient2",null)),Pass
+20/05/2025 09:56:02,Documents Patient search should error if multiple parameters valid or invalid are sent3(("identifier","patient2","identifier","patient1",null)),Pass
+20/05/2025 09:56:02,Documents Patient Search should fail if no identifier parameter is include1(),Pass
+20/05/2025 09:56:02,Documents Patient Search should return an error when a blank system is supplied in the identifier parameter1(),Pass
+20/05/2025 09:56:02,Documents Patient Search should return an error when no system is supplied in the identifier parameter1(),Pass
+20/05/2025 09:56:02,Documents Patient Search The identifier parameter should be rejected if the case is incorrect1(),Pass
+20/05/2025 09:56:02,Documents Patient search valid response check caching headers exist1(),Pass
+20/05/2025 09:56:03,Documents Patient Search When a patient is not found on the provider system an empty bundle should be returned1(),Pass
+20/05/2025 09:56:03,Retrieve a Document for Patient21(),Pass
+20/05/2025 09:56:03,Search for Documents on a Patient that doesnt exist1(),Pass
+20/05/2025 09:56:03,Search for Documents on a Patient that doesnt exist21(),Pass
+20/05/2025 09:56:04,Search for Documents on a patient which exists on the system as a temporary patient1(),Pass
+20/05/2025 09:56:05,Search for Documents on a Patient with deceased date not older than 28 days1(),Pass
+20/05/2025 09:56:05,Search for Documents on a Patient with Documents1(),Pass
+20/05/2025 09:56:05,Search for Documents on a Patient with Documents Over 5MB1(),Pass
+20/05/2025 09:56:05,Search for Documents on a Patient with NO Documents1(),Pass
+20/05/2025 09:56:06,Search for Documents using author parameter1(),Pass
+20/05/2025 09:56:06,Search for Documents using author parameter but with invalid identifier1(),Pass
+20/05/2025 09:56:06,Search for Documents with an invalid parameter1(),Pass
+20/05/2025 09:56:06,Search for Documents without Mandatory include Params expect fail1(),Pass
+20/05/2025 09:56:06,Search for Patient Documents created greater than a date1(("365",null)),Pass
+20/05/2025 09:56:07,Search for Patient Documents created less than a date1(("2",null)),Pass
+20/05/2025 09:56:08,Search for Patient Documents created within a last 365 days1(),Pass
+20/05/2025 09:56:08,Search for Patient Documents created within a last 365 days21(),Pass
+20/05/2025 09:56:08,The Documents Patient Search endpoint should accept the accept header1(("application/fhir+xml","XML",null)),Pass
+20/05/2025 09:56:08,The Documents Patient Search endpoint should accept the accept header2(("application/fhir+json","JSON",null)),Pass
+20/05/2025 09:56:09,The Documents patient search endpoint should accept the format parameter1(("application/fhir+xml","XML",null)),Pass
+20/05/2025 09:56:09,The Documents patient search endpoint should accept the format parameter2(("application/fhir+json","JSON",null)),Pass
+20/05/2025 09:56:09,The Documents patient search endpoint should accept the format parameter after the identifier parameter1(("application/fhir+xml","application/fhir+xml","XML",null)),Pass
+20/05/2025 09:56:09,The Documents patient search endpoint should accept the format parameter after the identifier parameter2(("application/fhir+json","application/fhir+xml","XML",null)),Pass
+20/05/2025 09:56:09,The Documents patient search endpoint should accept the format parameter after the identifier parameter3(("application/fhir+json","application/fhir+json","JSON",null)),Pass
+20/05/2025 09:56:09,The Documents patient search endpoint should accept the format parameter after the identifier parameter4(("application/fhir+xml","application/fhir+json","JSON",null)),Pass
+20/05/2025 09:56:10,The Documents Patient search endpoint should accept the format parameter before the identifier parameter1(("application/fhir+xml","application/fhir+xml","XML",null)),Pass
+20/05/2025 09:56:10,The Documents Patient search endpoint should accept the format parameter before the identifier parameter2(("application/fhir+json","application/fhir+xml","XML",null)),Pass
+20/05/2025 09:56:10,The Documents Patient search endpoint should accept the format parameter before the identifier parameter3(("application/fhir+json","application/fhir+json","JSON",null)),Pass
+20/05/2025 09:56:10,The Documents Patient search endpoint should accept the format parameter before the identifier parameter4(("application/fhir+xml","application/fhir+json","JSON",null)),Pass
+20/05/2025 09:56:10,Check Documents CapabilityStatement includes specific searchInclude1(("DocumentReference:subject:Patient",null)),Pass
+20/05/2025 09:56:10,Check Documents CapabilityStatement includes specific searchInclude2(("DocumentReference:custodian:Organization",null)),Pass
+20/05/2025 09:56:10,Check Documents CapabilityStatement includes specific searchInclude3(("DocumentReference:author:Organization",null)),Pass
+20/05/2025 09:56:10,Check Documents CapabilityStatement includes specific searchInclude4(("DocumentReference:author:Practitioner",null)),Pass
+20/05/2025 09:56:10,Check Documents CapabilityStatement includes specific searchParams1(("created","date",null)),Pass
+20/05/2025 09:56:10,Check Documents CapabilityStatement includes specific searchParams2(("author","token",null)),Pass
+20/05/2025 09:56:10,Check Documents CapabilityStatement includes specific searchParams3(("description","string",null)),Pass
+20/05/2025 09:56:11,Documents CapabilityStatement profile indicates acceptance of xml and json format1(),Pass
+20/05/2025 09:56:11,Documents CapabilityStatement profile suppliers software versions present1(),Pass
+20/05/2025 09:56:11,Documents CapabilityStatement profile supported fhir version1(),Pass
+20/05/2025 09:56:11,Documents CapabilityStatement profile supports the Binary Read operation1(),Pass
+20/05/2025 09:56:11,Documents CapabilityStatement profile supports the DocumentReference search operation1(),Pass
+20/05/2025 09:56:11,Documents CapabilityStatement profile supports the Patient read operation1(),Pass
+20/05/2025 09:56:11,Documents CapabilityStatement profile supports the Patient search operation1(),Pass
+20/05/2025 09:56:11,Documents CapabilityStatement returns correct profile versions1(("https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1/_history/1.8",null)),Pass
+20/05/2025 09:56:11,Documents CapabilityStatement returns correct profile versions2(("https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1/_history/1.4",null)),Pass
+20/05/2025 09:56:11,Documents CapabilityStatement returns correct profile versions3(("https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1/_history/1.2",null)),Pass
+20/05/2025 09:56:11,Documents CapabilityStatement returns correct profile versions4(("https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-PractitionerRole-1/_history/1.2",null)),Pass
+20/05/2025 09:56:11,Documents CapabilityStatement returns correct profile versions5(("https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1/_history/1.2",null)),Pass
+20/05/2025 09:56:11,Documents CapabilityStatement returns correct profile versions6(("https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-DocumentReference-1/_history/1.3",null)),Pass
+20/05/2025 09:56:11,Documents CapabilityStatement returns correct profile versions7(("https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Searchset-Bundle-1/_history/1.3",null)),Pass
+20/05/2025 09:56:12,Documents Fhir content type test where _format parameter is JSON and request payload is JSON1(),Pass
+20/05/2025 09:56:12,Documents Fhir content type test where _format parameter is JSON and request payload is XML1(),Pass
+20/05/2025 09:56:12,Documents Fhir content type test where _format parameter is XML and request payload is JSON1(),Pass
+20/05/2025 09:56:12,Documents Fhir content type test where _format parameter is XML and request payload is XML1(),Pass
+20/05/2025 09:56:12,Documents Fhir content type test where Accept header is JSON and _format parameter is JSON1(),Pass
+20/05/2025 09:56:12,Documents Fhir content type test where Accept header is JSON and _format parameter is XML1(),Pass
+20/05/2025 09:56:12,Documents Fhir content type test where Accept header is JSON and request payload is XML1(),Pass
+20/05/2025 09:56:12,Documents Fhir content type test where Accept header is XML and _format parameter is JSON1(),Pass
+20/05/2025 09:56:12,Documents Fhir content type test where Accept header is XML and _format parameter is XML1(),Pass
+20/05/2025 09:56:12,Documents Fhir content type test where Accept header is XML and request payload is JSON1(),Pass
+20/05/2025 09:56:13,Fhir Get Metadata and Check Version of Foundations And Appointments CapabilityStatement1(),Pass
+20/05/2025 09:56:13,Foundations CapabilityStatement profile indicates acceptance of xml and json format1(),Pass
+20/05/2025 09:56:13,Foundations CapabilityStatement profile suppliers software versions present1(),Pass
+20/05/2025 09:56:13,Foundations CapabilityStatement profile supported fhir version1(),Pass
+20/05/2025 09:56:14,Foundations CapabilityStatement profile supports the GetStructuredRecord operation1(),Pass
+20/05/2025 09:56:14,Foundations CapabilityStatement profile supports the RegisterPatient operation1(),Pass
+20/05/2025 09:56:14,Foundations CapabilityStatement returns correct profile versions1(("https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1",null)),Pass
+20/05/2025 09:56:14,Foundations CapabilityStatement returns correct profile versions2(("https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1",null)),Pass
+20/05/2025 09:56:14,Foundations CapabilityStatement returns correct profile versions3(("https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1",null)),Pass
+20/05/2025 09:56:14,Foundations CapabilityStatement returns correct profile versions4(("https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-PractitionerRole-1",null)),Pass
+20/05/2025 09:56:15,Foundations CapabilityStatement returns correct profile versions5(("https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Location-1",null)),Pass
+20/05/2025 09:56:15,Foundations CapabilityStatement returns correct profile versions6(("https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1",null)),Pass
+20/05/2025 09:56:15,Foundations CapabilityStatement returns correct profile versions7(("https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1",null)),Pass
+20/05/2025 09:56:15,Foundations CapabilityStatement returns correct profile versions8(("https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Schedule-1",null)),Pass
+20/05/2025 09:56:16,Foundations CapabilityStatement returns correct profile versions9(("https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Slot-1",null)),Pass
+20/05/2025 09:56:16,Foundations CapabilityStatement returns correct profile versions10(("https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1",null)),Pass
+20/05/2025 09:56:16,Foundations CapabilityStatement returns correct profile versions11(("https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Medication-1",null)),Pass
+20/05/2025 09:56:16,Foundations CapabilityStatement returns correct profile versions12(("https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1",null)),Pass
+20/05/2025 09:56:16,Foundations CapabilityStatement returns correct profile versions13(("https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1",null)),Pass
+20/05/2025 09:56:17,Foundations CapabilityStatement returns correct profile versions14(("https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1",null)),Pass
+20/05/2025 09:56:17,Foundations CapabilityStatement returns correct profile versions15(("https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-StructuredRecord-Bundle-1",null)),Pass
+20/05/2025 09:56:17,Foundations CapabilityStatement returns correct profile versions16(("https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Immunization-1",null)),Pass
+20/05/2025 09:56:17,Foundations CapabilityStatement returns correct profile versions17(("https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProblemHeader-Condition-1",null)),Pass
+20/05/2025 09:56:17,Foundations CapabilityStatement returns correct profile versions18(("https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Encounter-1",null)),Pass
+20/05/2025 09:56:18,Foundations CapabilityStatement returns correct profile versions19(("https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1",null)),Pass
+20/05/2025 09:56:18,Foundations CapabilityStatement returns correct profile versions20(("https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-DiagnosticReport-1",null)),Pass
+20/05/2025 09:56:18,Foundations CapabilityStatement returns correct profile versions21(("https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Specimen-1",null)),Pass
+20/05/2025 09:56:18,Foundations CapabilityStatement returns correct profile versions22(("https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProcedureRequest-1",null)),Pass
+20/05/2025 09:56:18,Foundations CapabilityStatement returns correct profile versions23(("https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ReferralRequest-1",null)),Pass
+20/05/2025 09:56:18,Foundations endpoint should support gzip compression for metadata endpoint and contain the correct payload1(),Pass
+20/05/2025 09:56:19,Foundations Fhir content type test where _format parameter is JSON and request payload is JSON1(),Pass
+20/05/2025 09:56:19,Foundations Fhir content type test where _format parameter is JSON and request payload is XML1(),Pass
+20/05/2025 09:56:19,Foundations Fhir content type test where _format parameter is XML and request payload is JSON1(),Pass
+20/05/2025 09:56:19,Foundations Fhir content type test where _format parameter is XML and request payload is XML1(),Pass
+20/05/2025 09:56:20,Foundations Fhir content type test where Accept header is JSON and _format parameter is JSON1(),Pass
+20/05/2025 09:56:20,Foundations Fhir content type test where Accept header is JSON and _format parameter is XML1(),Pass
+20/05/2025 09:56:20,Foundations Fhir content type test where Accept header is JSON and request payload is XML1(),Pass
+20/05/2025 09:56:20,Foundations Fhir content type test where Accept header is XML and _format parameter is JSON1(),Pass
+20/05/2025 09:56:20,Foundations Fhir content type test where Accept header is XML and _format parameter is XML1(),Pass
+20/05/2025 09:56:20,Foundations Fhir content type test where Accept header is XML and request payload is JSON1(),Pass
+20/05/2025 09:56:21,Structured CapabilityStatement profile indicates acceptance of xml and json format1(),Pass
+20/05/2025 09:56:21,Structured CapabilityStatement profile suppliers software versions present1(),Pass
+20/05/2025 09:56:23,Structured CapabilityStatement profile supported fhir version1(),Pass
+20/05/2025 09:56:24,Structured CapabilityStatement profile supports the GetStructuredRecord operation1(),Pass
+20/05/2025 09:56:24,Structured CapabilityStatement returns correct profile versions1(("https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1/_history/1.8",null)),Pass
+20/05/2025 09:56:24,Structured CapabilityStatement returns correct profile versions2(("https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1/_history/1.4",null)),Pass
+20/05/2025 09:56:25,Structured CapabilityStatement returns correct profile versions3(("https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1/_history/1.2",null)),Pass
+20/05/2025 09:56:25,Structured CapabilityStatement returns correct profile versions4(("https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-PractitionerRole-1/_history/1.2",null)),Pass
+20/05/2025 09:56:25,Structured CapabilityStatement returns correct profile versions5(("https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1/_history/1.7",null)),Pass
+20/05/2025 09:56:25,Structured CapabilityStatement returns correct profile versions6(("https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Medication-1/_history/1.2",null)),Pass
+20/05/2025 09:56:25,Structured CapabilityStatement returns correct profile versions7(("https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1/_history/1.7",null)),Pass
+20/05/2025 09:56:26,Structured CapabilityStatement returns correct profile versions8(("https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1/_history/1.6",null)),Pass
+20/05/2025 09:56:26,Structured CapabilityStatement returns correct profile versions9(("https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1/_history/1.7",null)),Pass
+20/05/2025 09:56:26,Structured CapabilityStatement returns correct profile versions10(("https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-StructuredRecord-Bundle-1/_history/1.3",null)),Pass
+20/05/2025 09:56:27,Structured CapabilityStatement returns correct profile versions11(("https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1/_history/1.2",null)),Pass
+20/05/2025 09:56:27,Structured CapabilityStatement returns correct profile versions12(("https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Immunization-1/_history/1.5",null)),Pass
+20/05/2025 09:56:28,Structured CapabilityStatement returns correct profile versions13(("https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProblemHeader-Condition-1/_history/1.7",null)),Pass
+20/05/2025 09:56:28,Structured CapabilityStatement returns correct profile versions14(("https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Encounter-1/_history/1.5",null)),Pass
+20/05/2025 09:56:28,Structured CapabilityStatement returns correct profile versions15(("https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1/_history/1.7",null)),Pass
+20/05/2025 09:56:29,Structured CapabilityStatement returns correct profile versions16(("https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-DiagnosticReport-1/_history/1.3",null)),Pass
+20/05/2025 09:56:29,Structured CapabilityStatement returns correct profile versions17(("https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Specimen-1/_history/1.3",null)),Pass
+20/05/2025 09:56:29,Structured CapabilityStatement returns correct profile versions18(("https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProcedureRequest-1/_history/1.3",null)),Pass
+20/05/2025 09:56:29,Structured CapabilityStatement returns correct profile versions19(("https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ReferralRequest-1/_history/1.2",null)),Pass
+20/05/2025 09:56:30,Structured CapabilityStatement returns correct profile versions20(("https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-DocumentReference-1/_history/1.3",null)),Pass
+20/05/2025 09:56:30,Structured CapabilityStatement returns correct profile versions21(("https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-HealthcareService-1/_history/1.0",null)),Pass
+20/05/2025 09:56:30,Structured Fhir content type test where _format parameter is JSON and request payload is JSON1(),Pass
+20/05/2025 09:56:30,Structured Fhir content type test where _format parameter is JSON and request payload is XML1(),Pass
+20/05/2025 09:56:30,Structured Fhir content type test where _format parameter is XML and request payload is JSON1(),Pass
+20/05/2025 09:56:30,Structured Fhir content type test where _format parameter is XML and request payload is XML1(),Pass
+20/05/2025 09:56:31,Structured Fhir content type test where Accept header is JSON and _format parameter is JSON1(),Pass
+20/05/2025 09:56:31,Structured Fhir content type test where Accept header is JSON and _format parameter is XML1(),Pass
+20/05/2025 09:56:31,Structured Fhir content type test where Accept header is JSON and request payload is XML1(),Pass
+20/05/2025 09:56:31,Structured Fhir content type test where Accept header is XML and _format parameter is JSON1(),Pass
+20/05/2025 09:56:31,Structured Fhir content type test where Accept header is XML and _format parameter is XML1(),Pass
+20/05/2025 09:56:32,Structured Fhir content type test where Accept header is XML and request payload is JSON1(),Pass
+20/05/2025 09:56:32,Http DELETE to valid endpoint1(),Pass
+20/05/2025 09:56:32,Http GET from invalid endpoint1(),Pass
+20/05/2025 09:56:32,Http incorrect case on url fhir resource1(),Pass
+20/05/2025 09:56:32,Http OPTIONS to valid endpoint1(),Pass
+20/05/2025 09:56:32,Http PATCH to valid endpoint1(),Pass
+20/05/2025 09:56:32,Http POST to invalid endpoint1(),Pass
+20/05/2025 09:56:33,Http PUT to invalid endpoint1(),Pass
+20/05/2025 09:56:33,JWT - Authorization Server Token URL - missing1(),Pass
+20/05/2025 09:56:33,JWT - Bearer Token - not base 64 encoded1(),Pass
+20/05/2025 09:56:33,JWT - Consumer clock is slow 600s1(),Pass
+20/05/2025 09:56:33,JWT - Creation Time - in the future1(),Pass
+20/05/2025 09:56:33,JWT - Creation Time - missing1(),Pass
+20/05/2025 09:56:33,JWT - Everything normal test1(),Pass
+20/05/2025 09:56:33,JWT - Expiry Time - before Creation Time1(),Pass
+20/05/2025 09:56:34,JWT - Expiry Time - greater than 300 seconds1(),Pass
+20/05/2025 09:56:34,JWT - Expiry Time - less than 300 seconds1(),Pass
+20/05/2025 09:56:34,JWT - Expiry Time - missing1(),Pass
+20/05/2025 09:56:34,JWT - Missing sdsRoleProfile and guid1(),Pass
+20/05/2025 09:56:34,JWT - Reason For Request - missing1(),Pass
+20/05/2025 09:56:34,JWT - Requested Scope - Metadata - incorrect1(),Pass
+20/05/2025 09:56:34,JWT - Requested Scope - missing1(),Pass
+20/05/2025 09:56:35,JWT - Requesting Device - invalid1(),Pass
+20/05/2025 09:56:35,JWT - Requesting Device - missing1(),Pass
+20/05/2025 09:56:35,JWT - Requesting Device - Resource Type - invalid1(),Pass
+20/05/2025 09:56:35,JWT - Requesting Identity - missing1(),Pass
+20/05/2025 09:56:35,JWT - Requesting Identity - Resource Type - invalid1(),Pass
+20/05/2025 09:56:35,JWT - Requesting Identity - UNK value1(),Pass
+20/05/2025 09:56:35,JWT - Requesting Organization - Backward Compatability for RC51(),Pass
+20/05/2025 09:56:36,JWT - Requesting System URL - missing1(),Pass
+20/05/2025 09:56:36,CapabilityStatement profile supports the Location read operation1(),Pass
+20/05/2025 09:56:36,Location read invalid response check caching headers exist1(),Pass
+20/05/2025 09:56:36,Location read resource conforms to GP-Connect specification1(("application/fhir+json","JSON",null)),Pass
+20/05/2025 09:56:36,Location read resource conforms to GP-Connect specification2(("application/fhir+xml","XML",null)),Pass
+20/05/2025 09:56:36,Location Read sending the Accept header and _format parameter to request response format1(("application/fhir+json","application/fhir+json","JSON",null)),Pass
+20/05/2025 09:56:37,Location Read sending the Accept header and _format parameter to request response format2(("application/fhir+json","application/fhir+xml","XML",null)),Pass
+20/05/2025 09:56:37,Location Read sending the Accept header and _format parameter to request response format3(("application/fhir+xml","application/fhir+json","JSON",null)),Pass
+20/05/2025 09:56:37,Location Read sending the Accept header and _format parameter to request response format4(("application/fhir+xml","application/fhir+xml","XML",null)),Pass
+20/05/2025 09:56:37,Location read should contain ETag1(),Pass
+20/05/2025 09:56:37,Location read successful request validate the response contains logical identifier1(("SIT1",null)),Pass
+20/05/2025 09:56:37,Location read successful request validate the response contains logical identifier2(("SIT2",null)),Pass
+20/05/2025 09:56:37,Location read successful request validate the response contains logical identifier3(("SIT3",null)),Pass
+20/05/2025 09:56:38,Location Read using the _format parameter to request response format1(("application/fhir+json","JSON",null)),Pass
+20/05/2025 09:56:38,Location Read using the _format parameter to request response format2(("application/fhir+xml","XML",null)),Pass
+20/05/2025 09:56:38,Location read valid response check caching headers exist1(),Pass
+20/05/2025 09:56:39,Location Read with valid identifier which does not exist on providers system1(("mfpBm",null)),Pass
+20/05/2025 09:56:41,Location Read with valid identifier which does not exist on providers system2(("231Zcr64",null)),Pass
+20/05/2025 09:56:41,Location Read with valid identifier which does not exist on providers system3(("th.as.e",null)),Pass
+20/05/2025 09:56:41,Location Read with valid identifier which does not exist on providers system4(("11dd4.45-23",null)),Pass
+20/05/2025 09:56:41,Location Read with valid identifier which does not exist on providers system5(("40-95-3",null)),Pass
+20/05/2025 09:56:41,Location Read with valid identifier which does not exist on providers system6(("a-tm.mss..s",null)),Pass
+20/05/2025 09:56:41,CapabilityStatement profile supports the Organization read operation1(),Pass
+20/05/2025 09:56:42,Organization read invalid response check caching headers exist1(),Pass
+20/05/2025 09:56:42,Organization Read sending the Accept header and _format parameter to request response format1(("application/fhir+json","application/fhir+json","JSON",null)),Pass
+20/05/2025 09:56:42,Organization Read sending the Accept header and _format parameter to request response format2(("application/fhir+json","application/fhir+xml","XML",null)),Pass
+20/05/2025 09:56:42,Organization Read sending the Accept header and _format parameter to request response format3(("application/fhir+xml","application/fhir+json","JSON",null)),Pass
+20/05/2025 09:56:43,Organization Read sending the Accept header and _format parameter to request response format4(("application/fhir+xml","application/fhir+xml","XML",null)),Pass
+20/05/2025 09:56:43,Organization Read successful request validate all of response1(),Pass
+20/05/2025 09:56:43,Organization Read using the _format parameter to request response format1(("application/fhir+json","JSON",null)),Pass
+20/05/2025 09:56:44,Organization Read using the _format parameter to request response format2(("application/fhir+xml","XML",null)),Pass
+20/05/2025 09:56:44,Organization Read using the Accept header to request response format1(("application/fhir+json","JSON",null)),Pass
+20/05/2025 09:56:44,Organization Read using the Accept header to request response format2(("application/fhir+xml","XML",null)),Pass
+20/05/2025 09:56:45,Organization read valid response check caching headers exist1(),Pass
+20/05/2025 09:56:45,Organization Read with valid identifier which does not exist on providers system1(("ddBm",null)),Pass
+20/05/2025 09:56:45,Organization Read with valid identifier which does not exist on providers system2(("1Zcr4",null)),Pass
+20/05/2025 09:56:45,Organization Read with valid identifier which does not exist on providers system3(("z.as.e",null)),Pass
+20/05/2025 09:56:45,Organization Read with valid identifier which does not exist on providers system4(("1.1445.23",null)),Pass
+20/05/2025 09:56:45,Organization Read with valid identifier which does not exist on providers system5(("40-9223",null)),Pass
+20/05/2025 09:56:46,Organization Read with valid identifier which does not exist on providers system6(("nc-sfem.mks--s",null)),Pass
+20/05/2025 09:56:46,CapabilityStatement profile supports the Organization search operation1(),Pass
+20/05/2025 09:56:46,Organization search add _format parameter to request after the identifer and check for correct response format1(("application/fhir+json","JSON","https://fhir.nhs.uk/Id/ods-organization-code",null)),Pass
+20/05/2025 09:56:46,Organization search add _format parameter to request after the identifer and check for correct response format2(("application/fhir+xml","XML","https://fhir.nhs.uk/Id/ods-organization-code",null)),Pass
+20/05/2025 09:56:46,Organization search add _format parameter to request and check for correct response format1(("application/fhir+json","JSON","https://fhir.nhs.uk/Id/ods-organization-code",null)),Pass
+20/05/2025 09:56:46,Organization search add _format parameter to request and check for correct response format2(("application/fhir+xml","XML","https://fhir.nhs.uk/Id/ods-organization-code",null)),Pass
+20/05/2025 09:56:47,Organization search add _format parameter to request before the identifer and check for correct response format1(("application/fhir+json","JSON","https://fhir.nhs.uk/Id/ods-organization-code",null)),Pass
+20/05/2025 09:56:47,Organization search add _format parameter to request before the identifer and check for correct response format2(("application/fhir+xml","XML","https://fhir.nhs.uk/Id/ods-organization-code",null)),Pass
+20/05/2025 09:56:47,Organization search add accept header and _format parameter to the request and check for correct response format1(("application/fhir+json","application/fhir+json","JSON","https://fhir.nhs.uk/Id/ods-organization-code",null)),Pass
+20/05/2025 09:56:47,Organization search add accept header and _format parameter to the request and check for correct response format2(("application/fhir+json","application/fhir+xml","XML","https://fhir.nhs.uk/Id/ods-organization-code",null)),Pass
+20/05/2025 09:56:47,Organization search add accept header to request and check for correct response format1(("application/fhir+json","JSON","https://fhir.nhs.uk/Id/ods-organization-code",null)),Pass
+20/05/2025 09:56:47,Organization search add accept header to request and check for correct response format2(("application/fhir+xml","XML","https://fhir.nhs.uk/Id/ods-organization-code",null)),Pass
+20/05/2025 09:56:48,Organization search by organization code successfully returns multiple results containing the correct fields1(),Pass
+20/05/2025 09:56:48,Organization search by organization code successfully returns single result containing the correct fields1(),Pass
+20/05/2025 09:56:48,Organization search check organization response contains logical identifier1(),Pass
+20/05/2025 09:56:48,Organization search failure due to no identifier parameter1(),Pass
+20/05/2025 09:56:48,Organization search include count and sort parameters1(),Pass
+20/05/2025 09:56:48,Organization search invalid response check caching headers exist1(),Pass
+20/05/2025 09:56:49,Organization search success1(("https://fhir.nhs.uk/Id/ods-organization-code","unknownORG","0",null)),Pass
+20/05/2025 09:56:49,Organization search success2(("https://fhir.nhs.uk/Id/ods-organization-code","ORG1","1",null)),Pass
+20/05/2025 09:56:49,Organization search valid response check caching headers exist1(),Pass
+20/05/2025 09:56:49,CapabilityStatement profile supports the Patient read operation1(),Pass
+20/05/2025 09:56:49,Check read patient on a patient with no Consent returns a valid response1(),Pass
+20/05/2025 09:56:50,Patient read invalid response check caching headers exist1(),Pass
+20/05/2025 09:56:50,Patient read valid response check caching headers exist1(),Pass
+20/05/2025 09:56:50,Patient read valid response check preferred branch1(),Pass
+20/05/2025 09:56:50,Patient Read with valid identifier which does not exist on providers system1(("aaBA",null)),Pass
+20/05/2025 09:56:50,Patient Read with valid identifier which does not exist on providers system2(("1ZEc2",null)),Pass
+20/05/2025 09:56:50,Patient Read with valid identifier which does not exist on providers system3(("z.as.dd",null)),Pass
+20/05/2025 09:56:51,Patient Read with valid identifier which does not exist on providers system4(("1.1.22",null)),Pass
+20/05/2025 09:56:51,Patient Read with valid identifier which does not exist on providers system5(("40-9",null)),Pass
+20/05/2025 09:56:51,Patient Read with valid identifier which does not exist on providers system6(("nd-skdm.mks--s",null)),Pass
+20/05/2025 09:56:51,Read patient 400 or 404 if patient id not sent1(),Pass
+20/05/2025 09:56:51,Read patient 404 if patient not found1(("SomthingIncorrectWhichIsNotTheOnProviderSystem",null)),Pass
+20/05/2025 09:56:51,Read patient 404 if patient not found2(("4543567638475665845564986758479086840564796854665748763454",null)),Pass
+20/05/2025 09:56:51,Read patient response should contain an ETag header1(),Pass
+20/05/2025 09:56:52,Read patient returned should conform to the GPconnect specification1(),Pass
+20/05/2025 09:56:52,Read patient sending the Accept header and _format parameter to request response format1(("application/fhir+json","application/fhir+json","JSON",null)),Pass
+20/05/2025 09:56:53,Read patient sending the Accept header and _format parameter to request response format2(("application/fhir+json","application/fhir+xml","XML",null)),Pass
+20/05/2025 09:56:53,Read patient sending the Accept header and _format parameter to request response format3(("application/fhir+xml","application/fhir+json","JSON",null)),Pass
+20/05/2025 09:56:53,Read patient sending the Accept header and _format parameter to request response format4(("application/fhir+xml","application/fhir+xml","XML",null)),Pass
+20/05/2025 09:56:53,Read patient should contain correct logical identifier1(),Pass
+20/05/2025 09:56:54,Read patient using the _format parameter to request response format1(("application/fhir+json","JSON",null)),Pass
+20/05/2025 09:56:54,Read patient using the _format parameter to request response format2(("application/fhir+xml","XML",null)),Pass
+20/05/2025 09:56:54,Read patient using the Accept header to request response format1(("application/fhir+json","JSON",null)),Pass
+20/05/2025 09:56:54,Read patient using the Accept header to request response format2(("application/fhir+xml","XML",null)),Pass
+20/05/2025 09:56:55,Register patient1 which already exists on the system as a normal patient1(),Pass
+20/05/2025 09:56:57,Register patient and check preferred branch1(),Pass
+20/05/2025 09:56:59,Register Patient and use both the Accept header and _format parameter to request the response format1(("application/fhir+xml","application/fhir+xml","application/fhir+xml","XML",null)),Pass
+20/05/2025 09:56:59,Register Patient and use both the Accept header and _format parameter to request the response format2(("application/fhir+xml","application/fhir+xml","application/fhir+json","JSON",null)),Pass
+20/05/2025 09:57:00,Register Patient and use both the Accept header and _format parameter to request the response format3(("application/fhir+json","application/fhir+json","application/fhir+xml","XML",null)),Pass
+20/05/2025 09:57:00,Register Patient and use both the Accept header and _format parameter to request the response format4(("application/fhir+xml","application/fhir+json","application/fhir+json","JSON",null)),Pass
+20/05/2025 09:57:00,Register Patient and use both the Accept header and _format parameter to request the response format5(("application/fhir+json","application/fhir+xml","application/fhir+xml","XML",null)),Pass
+20/05/2025 09:57:01,Register Patient and use both the Accept header and _format parameter to request the response format6(("application/fhir+json","application/fhir+json","application/fhir+json","JSON",null)),Pass
+20/05/2025 09:57:01,Register Patient and use both the Accept header and _format parameter to request the response format7(("application/fhir+xml","application/fhir+json","application/fhir+xml","XML",null)),Pass
+20/05/2025 09:57:01,Register Patient and use both the Accept header and _format parameter to request the response format8(("application/fhir+json","application/fhir+xml","application/fhir+json","JSON",null)),Pass
+20/05/2025 09:57:02,Register Patient and use the _format parameter to request the response format1(("application/fhir+xml","XML",null)),Pass
+20/05/2025 09:57:02,Register Patient and use the _format parameter to request the response format2(("application/fhir+json","JSON",null)),Pass
+20/05/2025 09:57:02,Register Patient and use the Accept Header to request response format1(("application/fhir+xml","XML",null)),Pass
+20/05/2025 09:57:03,Register Patient and use the Accept Header to request response format2(("application/fhir+json","JSON",null)),Pass
+20/05/2025 09:57:04,Register patient containing identifier without mandatory system elements1(),Pass
+20/05/2025 09:57:05,Register patient invalid response check caching headers exist1(),Pass
+20/05/2025 09:57:05,Register patient no family names1(),Pass
+20/05/2025 09:57:05,Register patient send request to incorrect URL1(("2017-05-05","Patient/$gpc.registerpatien",null)),Pass
+20/05/2025 09:57:05,Register patient send request to incorrect URL2(("1999-01-22","Patient/$gpc.registerpati#ent",null)),Pass
+20/05/2025 09:57:06,Register patient setting JWT request type to invalid type1(("patient/*.read",null)),Pass
+20/05/2025 09:57:06,Register patient setting JWT request type to invalid type2(("organization/*.read",null)),Pass
+20/05/2025 09:57:06,Register patient which already exists on the system as a temporary patient1(),Pass
+20/05/2025 09:57:06,Register patient which is not the Spine1(),Pass
+20/05/2025 09:57:07,Register patient with additional not allowed elements1(("Animal",null)),Pass
+20/05/2025 09:57:07,Register patient with additional not allowed elements2(("Communication",null)),Pass
+20/05/2025 09:57:07,Register patient with additional not allowed elements3(("Photo",null)),Pass
+20/05/2025 09:57:07,Register patient with additional not allowed elements4(("Deceased",null)),Pass
+20/05/2025 09:57:08,Register patient with additional valid elements1(("Address",null)),Pass
+20/05/2025 09:57:08,Register patient with additional valid elements2(("Name",null)),Pass
+20/05/2025 09:57:08,Register patient with additional valid elements3(("Telecom",null)),Pass
+20/05/2025 09:57:09,Register patient with Address and Invalid Telecom elements1(("Home","Home",null)),Pass
+20/05/2025 09:57:09,Register patient with Address and Invalid Telecom elements2(("Work","Work",null)),Pass
+20/05/2025 09:57:09,Register patient with Address and Invalid Telecom elements3(("Mobile","Mobile",null)),Pass
+20/05/2025 09:57:11,Register patient with Address and Invalid Telecom elements4(("Temp","Temp",null)),Pass
+20/05/2025 09:57:11,Register patient with Address and Invalid Telecom elements5(("Email","Email",null)),Pass
+20/05/2025 09:57:12,Register patient with Address and Telecom1(),Pass
+20/05/2025 09:57:12,Register patient with Address and Valid Telecom elements1(("Home","Work",null)),Pass
+20/05/2025 09:57:12,Register patient with Address and Valid Telecom elements2(("Home","Mobile",null)),Pass
+20/05/2025 09:57:13,Register patient with Address and Valid Telecom elements3(("Home","Temp",null)),Pass
+20/05/2025 09:57:13,Register patient with Address and Valid Telecom elements4(("Home","Email",null)),Pass
+20/05/2025 09:57:13,Register patient with Address and Valid Telecom elements5(("Work","Home",null)),Pass
+20/05/2025 09:57:14,Register patient with Address and Valid Telecom elements6(("Work","Mobile",null)),Pass
+20/05/2025 09:57:14,Register patient with Address and Valid Telecom elements7(("Work","Temp",null)),Pass
+20/05/2025 09:57:14,Register patient with Address and Valid Telecom elements8(("Work","Email",null)),Pass
+20/05/2025 09:57:14,Register patient with Address and Valid Telecom elements9(("Mobile","Home",null)),Pass
+20/05/2025 09:57:15,Register patient with Address and Valid Telecom elements10(("Mobile","Work",null)),Pass
+20/05/2025 09:57:15,Register patient with Address and Valid Telecom elements11(("Mobile","Temp",null)),Pass
+20/05/2025 09:57:15,Register patient with Address and Valid Telecom elements12(("Mobile","Email",null)),Pass
+20/05/2025 09:57:16,Register patient with Address and Valid Telecom elements13(("Temp","Home",null)),Pass
+20/05/2025 09:57:16,Register patient with Address and Valid Telecom elements14(("Temp","Work",null)),Pass
+20/05/2025 09:57:16,Register patient with Address and Valid Telecom elements15(("Temp","Mobile",null)),Pass
+20/05/2025 09:57:17,Register patient with Address and Valid Telecom elements16(("Temp","Email",null)),Pass
+20/05/2025 09:57:17,Register patient with Address and Valid Telecom elements17(("Email","Home",null)),Pass
+20/05/2025 09:57:17,Register patient with Address and Valid Telecom elements18(("Email","Work",null)),Pass
+20/05/2025 09:57:18,Register patient with Address and Valid Telecom elements19(("Email","Mobile",null)),Pass
+20/05/2025 09:57:18,Register patient with Address and Valid Telecom elements20(("Email","Temp",null)),Pass
+20/05/2025 09:57:18,Register patient with Address Telecom and multiple nhsCommunication1(),Pass
+20/05/2025 09:57:19,Register patient with Address Telecom and nhsCommunication1(),Pass
+20/05/2025 09:57:19,Register patient with an invalid NHS number1(("34555##4",null)),Pass
+20/05/2025 09:57:19,Register patient with an invalid NHS number2(("hello",null)),Pass
+20/05/2025 09:57:19,Register patient with an invalid NHS number3(("999999999",null)),Pass
+20/05/2025 09:57:20,Register patient with an invalid NHS number4(("9000000008",null)),Pass
+20/05/2025 09:57:20,Register patient with an invalid NHS number5(("90000000090",null)),Pass
+20/05/2025 09:57:20,Register patient with duplicate patient resource parameters1(),Pass
+20/05/2025 09:57:21,Register patient with family name not matching PDS1(),Pass
+20/05/2025 09:57:22,Register patient with invalid additional valid elements1(("Active",null)),Pass
+20/05/2025 09:57:22,Register patient with invalid additional valid elements2(("Births",null)),Pass
+20/05/2025 09:57:22,Register patient with invalid additional valid elements3(("CareProvider",null)),Pass
+20/05/2025 09:57:22,Register patient with invalid additional valid elements4(("Contact",null)),Pass
+20/05/2025 09:57:23,Register patient with invalid additional valid elements5(("ManagingOrg",null)),Pass
+20/05/2025 09:57:23,Register patient with invalid additional valid elements6(("Marital",null)),Pass
+20/05/2025 09:57:23,Register patient with Invalid Address Use type1(("Work",null)),Pass
+20/05/2025 09:57:24,Register patient with Invalid Address Use type2(("Old",null)),Pass
+20/05/2025 09:57:24,Register patient with invalid bundle resource type1(),Pass
+20/05/2025 09:57:24,Register patient with Invalid Multiple Address Use types1(("Home","Work",null)),Pass
+20/05/2025 09:57:24,Register patient with Invalid Multiple Address Use types2(("Home","Home",null)),Pass
+20/05/2025 09:57:25,Register patient with Invalid Multiple Address Use types3(("Home","Old",null)),Pass
+20/05/2025 09:57:25,Register patient with Invalid Multiple Address Use types4(("Old","Work",null)),Pass
+20/05/2025 09:57:25,Register patient with Invalid Multiple Address Use types5(("Old","Old",null)),Pass
+20/05/2025 09:57:26,Register patient with Invalid Multiple Address Use types6(("Old","Temp",null)),Pass
+20/05/2025 09:57:26,Register patient with Invalid Multiple Address Use types7(("Temp","Work",null)),Pass
+20/05/2025 09:57:27,Register patient with Invalid Multiple Address Use types8(("Temp","Temp",null)),Pass
+20/05/2025 09:57:27,Register patient with Invalid Multiple Address Use types9(("Temp","Old",null)),Pass
+20/05/2025 09:57:27,Register patient with invalid patient resource type1(),Pass
+20/05/2025 09:57:27,Register patient with invalid patient resource with additional element1(),Pass
+20/05/2025 09:57:28,Register patient with Multiple Address not allowed and Telecom1(),Pass
+20/05/2025 09:57:28,Register patient with Multiple Address Use types1(("Home","Temp",null)),Pass
+20/05/2025 09:57:28,Register patient with Multiple Address Use types2(("Temp","Home",null)),Pass
+20/05/2025 09:57:29,Register Patient with multiple given names1(("1",null)),Pass
+20/05/2025 09:57:29,Register Patient with multiple given names2(("2",null)),Pass
+20/05/2025 09:57:29,Register Patient with multiple given names3(("5",null)),Pass
+20/05/2025 09:57:31,Register patient with no official name1(),Pass
+20/05/2025 09:57:31,Register patient without date of birth element1(),Pass
+20/05/2025 09:57:32,Register patient without gender element1(),Pass
+20/05/2025 09:57:32,Register patient without sending identifier within patient1(),Pass
+20/05/2025 09:57:32,Register sensitive patient1(),Pass
+20/05/2025 09:57:33,CapabilityStatement profile supports the Patient search operation1(),Pass
+20/05/2025 09:57:33,No Consent Patient search gets a valid response1(),Pass
+20/05/2025 09:57:33,Patient resource should contain NHS number identifier returned as XML1(("patient1",null)),Pass
+20/05/2025 09:57:33,Patient resource should contain NHS number identifier returned as XML2(("patient2",null)),Pass
+20/05/2025 09:57:33,Patient resource should contain NHS number identifier returned as XML3(("patient3",null)),Pass
+20/05/2025 09:57:34,Patient Search include count and sort parameters1(),Pass
+20/05/2025 09:57:34,Patient search invalid response check caching headers exist1(),Pass
+20/05/2025 09:57:34,Patient search response conforms with the GPConnect specification1(("patient1",null)),Pass
+20/05/2025 09:57:39,Patient search response conforms with the GPConnect specification2(("patient2",null)),Pass
+20/05/2025 09:57:40,Patient search response conforms with the GPConnect specification3(("patient3",null)),Pass
+20/05/2025 09:57:40,Patient search response conforms with the GPConnect specification4(("patient4",null)),Pass
+20/05/2025 09:57:40,Patient search response conforms with the GPConnect specification5(("patient5",null)),Pass
+20/05/2025 09:57:41,Patient search response conforms with the GPConnect specification6(("patient6",null)),Pass
+20/05/2025 09:57:41,Patient search response does not return deceased patient1(),Pass
+20/05/2025 09:57:41,Patient search should fail if no identifier parameter is include1(),Pass
+20/05/2025 09:57:41,Patient search valid response check caching headers exist1(),Pass
+20/05/2025 09:57:41,Provider should return an error when a blank system is supplied in the identifier parameter1(),Pass
+20/05/2025 09:57:41,Provider should return an error when no system is supplied in the identifier parameter1(),Pass
+20/05/2025 09:57:41,Returned patients should contain a logical identifier1(),Pass
+20/05/2025 09:57:41,Returned patients should contain a preferred branch1(),Pass
+20/05/2025 09:57:42,System should error if multiple parameters valid or invalid are sent1(("identifier","patient2","identifier","patient2",null)),Pass
+20/05/2025 09:57:42,System should error if multiple parameters valid or invalid are sent2(("identifier","patient1","identifier","patient2",null)),Pass
+20/05/2025 09:57:42,System should error if multiple parameters valid or invalid are sent3(("identifier","patient2","identifier","patient1",null)),Pass
+20/05/2025 09:57:42,The identifier parameter should be rejected if the case is incorrect1(),Pass
+20/05/2025 09:57:42,The patient search endpoint should accept the accept header1(("application/fhir+xml","XML",null)),Pass
+20/05/2025 09:57:42,The patient search endpoint should accept the accept header2(("application/fhir+json","JSON",null)),Pass
+20/05/2025 09:57:43,The patient search endpoint should accept the format parameter1(("application/fhir+xml","XML",null)),Pass
+20/05/2025 09:57:43,The patient search endpoint should accept the format parameter2(("application/fhir+json","JSON",null)),Pass
+20/05/2025 09:57:43,The patient search endpoint should accept the format parameter after the identifier parameter1(("application/fhir+xml","application/fhir+xml","XML",null)),Pass
+20/05/2025 09:57:43,The patient search endpoint should accept the format parameter after the identifier parameter2(("application/fhir+json","application/fhir+xml","XML",null)),Pass
+20/05/2025 09:57:43,The patient search endpoint should accept the format parameter after the identifier parameter3(("application/fhir+json","application/fhir+json","JSON",null)),Pass
+20/05/2025 09:57:43,The patient search endpoint should accept the format parameter after the identifier parameter4(("application/fhir+xml","application/fhir+json","JSON",null)),Pass
+20/05/2025 09:57:43,The patient search endpoint should accept the format parameter before the identifier parameter1(("application/fhir+xml","application/fhir+xml","XML",null)),Pass
+20/05/2025 09:57:44,The patient search endpoint should accept the format parameter before the identifier parameter2(("application/fhir+json","application/fhir+xml","XML",null)),Pass
+20/05/2025 09:57:44,The patient search endpoint should accept the format parameter before the identifier parameter3(("application/fhir+json","application/fhir+json","JSON",null)),Pass
+20/05/2025 09:57:44,The patient search endpoint should accept the format parameter before the identifier parameter4(("application/fhir+xml","application/fhir+json","JSON",null)),Pass
+20/05/2025 09:57:44,The response should be an error if no value is sent in the identifier parameter1(),Pass
+20/05/2025 09:57:44,When a patient is not found on the provider system an empty bundle should be returned1(),Pass
+20/05/2025 09:57:44,When a patient on the provider system has inactive flag1(),Pass
+20/05/2025 09:57:44,When a patient on the provider system has sensitive flag1(),Pass
+20/05/2025 09:57:45,CapabilityStatement profile supports the Practitioner read operation1(),Pass
+20/05/2025 09:57:45,Practitioner read invalid response check caching headers exist1(),Pass
+20/05/2025 09:57:45,Practitioner read response should contain an ETag header1(),Pass
+20/05/2025 09:57:45,Practitioner Read sending the Accept header and _format parameter to request response format1(("application/fhir+json","application/fhir+json","JSON",null)),Pass
+20/05/2025 09:57:46,Practitioner Read sending the Accept header and _format parameter to request response format2(("application/fhir+json","application/fhir+xml","XML",null)),Pass
+20/05/2025 09:57:46,Practitioner Read sending the Accept header and _format parameter to request response format3(("application/fhir+xml","application/fhir+json","JSON",null)),Pass
+20/05/2025 09:57:46,Practitioner Read sending the Accept header and _format parameter to request response format4(("application/fhir+xml","application/fhir+xml","XML",null)),Pass
+20/05/2025 09:57:46,Practitioner read successful request validate all of response1(("practitioner1","0",null)),Pass
+20/05/2025 09:57:47,Practitioner read successful request validate all of response2(("practitioner2","1",null)),Pass
+20/05/2025 09:57:47,Practitioner read successful request validate all of response3(("practitioner3","2",null)),Pass
+20/05/2025 09:57:47,Practitioner Read using the _format parameter to request response format1(("application/fhir+json","JSON",null)),Pass
+20/05/2025 09:57:47,Practitioner Read using the _format parameter to request response format2(("application/fhir+xml","XML",null)),Pass
+20/05/2025 09:57:48,Practitioner Read using the Accept header to request response format1(("application/fhir+json","JSON",null)),Pass
+20/05/2025 09:57:48,Practitioner Read using the Accept header to request response format2(("application/fhir+xml","XML",null)),Pass
+20/05/2025 09:57:48,Practitioner read valid response check caching headers exist1(),Pass
+20/05/2025 09:57:50,Practitioner Read with valid identifier which does not exist on providers system1(("aaBA",null)),Pass
+20/05/2025 09:57:51,Practitioner Read with valid identifier which does not exist on providers system2(("1ZEc2",null)),Pass
+20/05/2025 09:57:51,Practitioner Read with valid identifier which does not exist on providers system3(("z.as.dd",null)),Pass
+20/05/2025 09:57:51,Practitioner Read with valid identifier which does not exist on providers system4(("1.1.22",null)),Pass
+20/05/2025 09:57:52,Practitioner Read with valid identifier which does not exist on providers system5(("40-9",null)),Pass
+20/05/2025 09:57:52,Practitioner Read with valid identifier which does not exist on providers system6(("nd-skdm.mks--s",null)),Pass
+20/05/2025 09:57:52,Read practitioner returned should conform to the GPconnect specification1(),Pass
+20/05/2025 09:57:52,CapabilityStatement profile supports the Practitioner search operation1(),Pass
+20/05/2025 09:57:52,Practitioner search add accept header and _format parameter to the request and check for correct response format1(("application/fhir+json","application/fhir+json","JSON",null)),Pass
+20/05/2025 09:57:52,Practitioner search add accept header and _format parameter to the request and check for correct response format2(("application/fhir+json","application/fhir+xml","XML",null)),Pass
+20/05/2025 09:57:52,Practitioner search add accept header and _format parameter to the request and check for correct response format3(("application/fhir+xml","application/fhir+json","JSON",null)),Pass
+20/05/2025 09:57:53,Practitioner search add accept header and _format parameter to the request and check for correct response format4(("application/fhir+xml","application/fhir+xml","XML",null)),Pass
+20/05/2025 09:57:53,Practitioner search add accept header to request and check for correct response format1(("application/fhir+json","JSON",null)),Pass
+20/05/2025 09:57:53,Practitioner search add accept header to request and check for correct response format2(("application/fhir+xml","XML",null)),Pass
+20/05/2025 09:57:53,Practitioner search include count and sort parameters1(),Pass
+20/05/2025 09:57:53,Practitioner search invalid response check caching headers exist1(),Pass
+20/05/2025 09:57:53,Practitioner search multiple identifier parameter failure1(),Pass
+20/05/2025 09:57:53,Practitioner search multiple multiple identifiers for different practitioner parameter failure1(),Pass
+20/05/2025 09:57:54,Practitioner search returned should conform to the GPconnect specification1(),Pass
+20/05/2025 09:57:54,Practitioner search success and validate the practitioner identifiers1(("practitioner1","1","0",null)),Pass
+20/05/2025 09:57:54,Practitioner search success and validate the practitioner identifiers2(("practitioner2","1","1",null)),Pass
+20/05/2025 09:57:54,Practitioner search success and validate the practitioner identifiers3(("practitioner3","1","2",null)),Pass
+20/05/2025 09:57:54,Practitioner search testing paramater validity after adding identifier1(("_format","application/fhir+json","JSON",null)),Pass
+20/05/2025 09:57:54,Practitioner search testing paramater validity after adding identifier2(("_format","application/fhir+xml","XML",null)),Pass
+20/05/2025 09:57:54,Practitioner search testing paramater validity before adding identifier1(("_format","application/fhir+json","JSON",null)),Pass
+20/05/2025 09:57:55,Practitioner search testing paramater validity before adding identifier2(("_format","application/fhir+xml","XML",null)),Pass
+20/05/2025 09:57:55,Practitioner search valid response check caching headers exist1(),Pass
+20/05/2025 09:57:55,Practitioner search where identifier contains the incorrect case or spelling1(("Identifier",null)),Pass
+20/05/2025 09:57:55,Practitioner search with failure due to invalid identifier1(("https://fhir.nhs.uk/Id/sds-user-id","",null)),Pass
+20/05/2025 09:57:55,Practitioner search with failure due to invalid identifier2(("","practitioner2",null)),Pass
+20/05/2025 09:57:55,Practitioner search without the identifier parameter1(),Pass
+20/05/2025 09:57:55,Practitioner search with unknown identifier1(),Pass
+20/05/2025 09:57:56,CapabilityStatement profile supports the Slot Search Resource1(),Pass
+20/05/2025 09:57:56,Check CapabilityStatement includes specific searchInclude1(),Pass
+20/05/2025 09:57:56,Search for a slots expecting a Schedule with serviceCategory populated1(),Pass
+20/05/2025 09:57:58,Search for a slots expecting a slot with serviceType populated1(),Pass
+20/05/2025 09:57:59,Search for a slots expecting No Comment elements for the Schedules and Slots1(),Pass
+20/05/2025 09:57:59,SearchForFreeSlots invalid response check caching headers exist1(),Pass
+20/05/2025 09:57:59,SearchForFreeSlots valid response check caching headers exist1(),Pass
+20/05/2025 09:58:00,Searching for free slots should fail due to invalid parameter values1(("start","invalidStartDate",null)),Pass
+20/05/2025 09:58:01,Searching for free slots should fail due to invalid parameter values2(("start","",null)),Pass
+20/05/2025 09:58:01,Searching for free slots should fail due to invalid parameter values3(("end","invalidEnddate",null)),Pass
+20/05/2025 09:58:02,Searching for free slots should fail due to invalid parameter values4(("end","",null)),Pass
+20/05/2025 09:58:02,Searching for free slots should fail due to invalid parameter values5(("status","busy",null)),Pass
+20/05/2025 09:58:02,Searching for free slots should fail due to missing parameters1(("start,end",null)),Pass
+20/05/2025 09:58:02,Searching for free slots should fail due to missing parameters2(("start",null)),Pass
+20/05/2025 09:58:02,Searching for free slots should fail due to missing parameters3(("status",null)),Pass
+20/05/2025 09:58:02,Searching for free slots with invalid date range should return error1(("15",null)),Pass
+20/05/2025 09:58:02,Searching for free slots with invalid date range should return error2(("31",null)),Pass
+20/05/2025 09:58:02,Searching for free slots with invalid date range should return error3(("-1",null)),Pass
+20/05/2025 09:58:03,Searching for free slots with invalid partial dateTime strings1(("yyyy-MM-ddTHH:mm:ss","yyyy-MM-ddTHH:mm:ss",null)),Pass
+20/05/2025 09:58:03,Searching for free slots with invalid partial dateTime strings2(("yyyy-MM-ddTHH:mm:ssZ","yyyy-MM-ddTHH:mm:ss",null)),Pass
+20/05/2025 09:58:03,Searching for free slots with invalid partial dateTime strings3(("yyyy-MM-ddTHH:mm:ss","yyyy-MM-ddTHH:mm:ssZ",null)),Pass
+20/05/2025 09:58:03,Searching for free slots with invalid partial dateTime strings4(("yyyy","yyyy-MM",null)),Pass
+20/05/2025 09:58:03,Searching for free slots with invalid partial dateTime strings5(("yyyy-MM","yyyy",null)),Pass
+20/05/2025 09:58:03,Searching for free slots with invalid prefixes1(("lt","gt",null)),Pass
+20/05/2025 09:58:03,Searching for free slots with invalid prefixes2(("gt","gt",null)),Pass
+20/05/2025 09:58:04,Searching for free slots with invalid prefixes3(("lt","lt",null)),Pass
+20/05/2025 09:58:04,Searching for free slots with invalid prefixes4(("le","ge",null)),Pass
+20/05/2025 09:58:04,Searching for free slots with invalid prefixes5(("eq","eq",null)),Pass
+20/05/2025 09:58:04,Searching for free slots with invalid prefixes6(("gt","lt",null)),Pass
+20/05/2025 09:58:05,Searching for free slots with NO org code and NO org type searchFilter system1(),Pass
+20/05/2025 09:58:07,Searching for free slots with org code searchFilter system1(("A20047",null)),Pass
+20/05/2025 09:58:09,Searching for free slots with org code searchFilter system2(("B81016",null)),Pass
+20/05/2025 09:58:11,Searching for free slots with org code searchFilter system3(("M85015",null)),Pass
+20/05/2025 09:58:13,Searching for free slots with org code searchFilter system4(("RNR01",null)),Pass
+20/05/2025 09:58:15,Searching for free slots with org type and code searchFilter system1(("urgent-care","A20047",null)),Pass
+20/05/2025 09:58:16,Searching for free slots with org type and code searchFilter system2(("urgent-care","B81016",null)),Pass
+20/05/2025 09:58:18,Searching for free slots with org type and code searchFilter system3(("urgent-care","M85015",null)),Pass
+20/05/2025 09:58:20,Searching for free slots with org type and code searchFilter system4(("urgent-care","RNR01",null)),Pass
+20/05/2025 09:58:22,Searching for free slots with org type and code searchFilter system5(("gp-practice","A20047",null)),Pass
+20/05/2025 09:58:24,Searching for free slots with org type and code searchFilter system6(("gp-practice","B81016",null)),Pass
+20/05/2025 09:58:26,Searching for free slots with org type and code searchFilter system7(("gp-practice","M85015",null)),Pass
+20/05/2025 09:58:28,Searching for free slots with org type and code searchFilter system8(("gp-practice","RNR01",null)),Pass
+20/05/2025 09:58:30,Searching for free slots with org type and code searchFilter system9(("oncology","A20047",null)),Pass
+20/05/2025 09:58:32,Searching for free slots with org type and code searchFilter system10(("oncology","B81016",null)),Pass
+20/05/2025 09:58:34,Searching for free slots with org type and code searchFilter system11(("oncology","M85015",null)),Pass
+20/05/2025 09:58:36,Searching for free slots with org type and code searchFilter system12(("oncology","RNR01",null)),Pass
+20/05/2025 09:58:37,Searching for free slots with org type searchFilter system1(("urgent-care",null)),Pass
+20/05/2025 09:58:39,Searching for free slots with org type searchFilter system2(("gp-practice",null)),Pass
+20/05/2025 09:58:41,Searching for free slots with org type searchFilter system3(("oncology",null)),Pass
+20/05/2025 09:58:42,Searching for free slots with other searchFilter system1(),Pass
+20/05/2025 09:58:43,Searching for free slots without actor parameter should return results without actor resource1(("Location","Schedule:actor:Practitioner",null)),Pass
+20/05/2025 09:58:44,Searching for free slots without actor parameter should return results without actor resource2(("Practitioner","Schedule:actor:Location",null)),Pass
+20/05/2025 09:58:46,Searching for free slots with unknown prefixes1(("ne","ne",null)),Pass
+20/05/2025 09:58:46,Searching for free slots with unknown prefixes2(("gt","ne",null)),Pass
+20/05/2025 09:58:46,Searching for free slots with unknown prefixes3(("ne","lt",null)),Pass
+20/05/2025 09:58:46,Searching for free slots with unknown prefixes4(("ge","ne",null)),Pass
+20/05/2025 09:58:47,Searching for free slots with unknown prefixes5(("ne","le",null)),Pass
+20/05/2025 09:58:48,Searching for free slots with valid parameters should return success1(("8",null)),Pass
+20/05/2025 09:58:49,Searching for free slots with valid parameters should return success2(("0",null)),Pass
+20/05/2025 09:58:50,Searching for free slots with valid parameters should return success3(("14",null)),Pass
+20/05/2025 09:58:51,Searching for free slots with valid partial dateTime strings1(("yyyy-MM-dd","yyyy-MM-dd",null)),Pass
+20/05/2025 09:58:52,Searching for free slots with valid partial dateTime strings2(("yyyy-MM-ddTHH:mm:sszzz","yyyy-MM-ddTHH:mm:sszzz",null)),Pass
+20/05/2025 09:58:53,Searching for free slots with valid partial dateTime strings3(("yyyy-MM-ddTHH:mm:sszzz","yyyy-MM-dd",null)),Pass
+20/05/2025 09:58:53,Searching for free slots with valid partial dateTime strings4(("yyyy-MM-dd","yyyy-MM-ddTHH:mm:sszzz",null)),Pass
+20/05/2025 09:58:54,Searching for free slots with valid prefixes1(),Pass
+20/05/2025 09:58:54,Successfully search for free slots and check the included location resources returned are valid1(),Pass
+20/05/2025 09:58:55,Successfully search for free slots and check the included practitioner resources returned are valid1(),Pass
+20/05/2025 09:58:57,Successfully search for free slots and check the included schedule resources returned are valid1(),Pass
+20/05/2025 09:58:58,Successfully search for free slots and check the slot resources returned are valid1(),Pass
+20/05/2025 09:58:59,Successfully search for free slots using various content types XML and JSON in Accept header1(("application/fhir+xml","application/fhir+xml","XML",null)),Pass
+20/05/2025 09:59:00,Successfully search for free slots using various content types XML and JSON in Accept header2(("application/fhir+json","application/fhir+json","JSON",null)),Pass
+20/05/2025 09:59:01,Successfully search for free slots using various content types XML and JSON in Accept header3(("application/fhir+xml","application/fhir+json","JSON",null)),Pass
+20/05/2025 09:59:02,Successfully search for free slots using various content types XML and JSON in Accept header4(("application/fhir+json","application/fhir+xml","XML",null)),Pass
+20/05/2025 09:59:03,Successfully search for free slots using various content types XML and JSON in format parameter1(("application/fhir+xml","application/fhir+xml","XML",null)),Pass
+20/05/2025 09:59:04,Successfully search for free slots using various content types XML and JSON in format parameter2(("application/fhir+json","application/fhir+json","JSON",null)),Pass
+20/05/2025 09:59:06,Successfully search for free slots using various content types XML and JSON in format parameter3(("application/fhir+xml","application/fhir+json","JSON",null)),Pass
+20/05/2025 09:59:07,Successfully search for free slots using various content types XML and JSON in format parameter4(("application/fhir+json","application/fhir+xml","XML",null)),Pass
+20/05/2025 09:59:08,Successfully search for free slots using various content types XML and JSON in the Accept Header and format parameter1(("application/fhir+xml","application/fhir+xml","application/fhir+xml","XML",null)),Pass
+20/05/2025 09:59:09,Successfully search for free slots using various content types XML and JSON in the Accept Header and format parameter2(("application/fhir+json","application/fhir+json","application/fhir+json","JSON",null)),Pass
+20/05/2025 09:59:10,Successfully search for free slots using various content types XML and JSON in the Accept Header and format parameter3(("application/fhir+xml","application/fhir+json","application/fhir+json","JSON",null)),Pass
+20/05/2025 09:59:11,Successfully search for free slots using various content types XML and JSON in the Accept Header and format parameter4(("application/fhir+json","application/fhir+xml","application/fhir+xml","XML",null)),Pass
+20/05/2025 09:59:13,Successfully search for free slots using various content types XML and JSON in the Accept Header and format parameter5(("application/fhir+xml","application/fhir+json","application/fhir+xml","XML",null)),Pass
+20/05/2025 09:59:14,Successfully search for free slots using various content types XML and JSON in the Accept Header and format parameter6(("application/fhir+json","application/fhir+xml","application/fhir+json","JSON",null)),Pass
+20/05/2025 09:59:15,Successfully search for free slots using various content types XML and JSON in the Accept Header and format parameter7(("application/fhir+xml","application/fhir+xml","application/fhir+json","JSON",null)),Pass
+20/05/2025 09:59:16,Successfully search for free slots using various content types XML and JSON in the Accept Header and format parameter8(("application/fhir+json","application/fhir+json","application/fhir+xml","XML",null)),Pass
+20/05/2025 09:59:18,Security - SSP Client Certificate - Valid1(),Pass
+20/05/2025 09:59:20,Check allergy legacy endReason1(),Pass
+20/05/2025 09:59:20,Check allergy warning code is populated for a patient1(),Pass
+20/05/2025 09:59:21,Retrieve the allergy structured record for a patient with no problems and excluding resolved allergies1(("patient3",null)),Pass
+20/05/2025 09:59:22,Retrieve the allergy structured record for a patient with no problems and excluding resolved allergies2(("patient4",null)),Pass
+20/05/2025 09:59:22,Retrieve the allergy structured record for a patient with no problems and excluding resolved allergies3(("patient6",null)),Pass
+20/05/2025 09:59:22,Retrieve the allergy structured record for a patient with no problems and excluding resolved allergies4(("patient7",null)),Pass
+20/05/2025 09:59:22,Retrieve the allergy structured record for a patient with no problems and excluding resolved allergies5(("patient8",null)),Pass
+20/05/2025 09:59:22,Retrieve the allergy structured record for a patient with no problems and excluding resolved allergies6(("patient12",null)),Pass
+20/05/2025 09:59:23,Retrieve the allergy structured record for a patient with no problems and excluding resolved allergies7(("patient13",null)),Pass
+20/05/2025 09:59:24,Retrieve the allergy structured record for a patient with problems linked but excluding resolved allergies1(("patient2",null)),Pass
+20/05/2025 09:59:24,Retrieve the allergy structured record section excluding resolved allergies for a patient with no allergies coding1(),Pass
+20/05/2025 09:59:24,Retrieve the allergy structured record section excluding resolved allergies for a patient without any allergies1(),Pass
+20/05/2025 09:59:24,Retrieve the allergy structured record section for an empty Identifier System1(),Pass
+20/05/2025 09:59:24,Retrieve the allergy structured record section for an empty NHS number1(),Pass
+20/05/2025 09:59:24,Retrieve the allergy structured record section for an invalid Identifier System1(),Pass
+20/05/2025 09:59:24,Retrieve the allergy structured record section for an invalid NHS number1(),Pass
+20/05/2025 09:59:25,Retrieve the allergy structured record section for an invalid parameter type1(),Pass
+20/05/2025 09:59:25,Retrieve the allergy structured record section for a patient including resolved allergies no problems associated1(("patient3",null)),Pass
+20/05/2025 09:59:25,Retrieve the allergy structured record section for a patient including resolved allergies no problems associated2(("patient4",null)),Pass
+20/05/2025 09:59:25,Retrieve the allergy structured record section for a patient including resolved allergies no problems associated3(("patient6",null)),Pass
+20/05/2025 09:59:25,Retrieve the allergy structured record section for a patient including resolved allergies no problems associated4(("patient7",null)),Pass
+20/05/2025 09:59:26,Retrieve the allergy structured record section for a patient including resolved allergies no problems associated5(("patient8",null)),Pass
+20/05/2025 09:59:26,Retrieve the allergy structured record section for a patient including resolved allergies no problems associated6(("patient12",null)),Pass
+20/05/2025 09:59:26,Retrieve the allergy structured record section for a patient including resolved allergies no problems associated7(("patient13",null)),Pass
+20/05/2025 09:59:26,Retrieve the allergy structured record section for a patient including resolved allergies with linked Problems1(("patient2",null)),Pass
+20/05/2025 09:59:27,Retrieve the allergy structured record section for a patient with additional start date parameter expected success1(),Pass
+20/05/2025 09:59:27,Retrieve the allergy structured record section for a patient with additional timePeriod parameter expected success1(),Pass
+20/05/2025 09:59:27,Retrieve the allergy structured record section for a patient with an uknown parameter expected success1(),Pass
+20/05/2025 09:59:28,Retrieve the allergy structured record section for a patient without the resolved allergies parameter expected failure1(),Pass
+20/05/2025 09:59:29,Retrieve the allergy structured record section for a patient with recorder1(),Pass
+20/05/2025 09:59:29,Retrieve the allergy structured record section including resolved allergies for a patient with no allergies coding1(),Pass
+20/05/2025 09:59:29,Retrieve the allergy structured record section including resolved allergies for a patient without any allergies1(),Pass
+20/05/2025 09:59:29,Retrieve the allergy structured record with additional include unknown prescription issues parameter expected success with operational outcome1(),Pass
+20/05/2025 09:59:29,Structured Allergies Patient Has multiple Warnings and Associated Notes1(("patient16","confidential-items","Items excluded due to confidentiality and/or patient preferences.",null)),Pass
+20/05/2025 09:59:30,Structured Allergies Patient Has multiple Warnings and Associated Notes2(("patient13","data-in-transit","Patient record transfer from previous GP practice not yet complete; information recorded before dd-Mmm-yyyy may be missing.",null)),Pass
+20/05/2025 09:59:30,structured record for a patient that is not in the database1(),Pass
+20/05/2025 09:59:30,Retrieve consultations structured record for a patient that has no consultation data1(),Pass
+20/05/2025 09:59:30,Retrieve consultations structured record for a patient that has sensitive flag1(),Pass
+20/05/2025 09:59:30,Retrieve Consultations structured record malformed with partParameter only expected success1(),Pass
+20/05/2025 09:59:30,Retrieve consultations structured record section for an empty Identifier System1(),Pass
+20/05/2025 09:59:31,Retrieve consultations structured record section for an empty NHS number1(),Pass
+20/05/2025 09:59:31,Retrieve consultations structured record section for an invalid Identifier System1(),Pass
+20/05/2025 09:59:31,Retrieve consultations structured record section for an invalid NHS number1(),Pass
+20/05/2025 09:59:31,Retrieve consultations Structured record where consultationSearchPeriod part parameter is greater than the current date expected failure1(),Pass
+20/05/2025 09:59:31,Retrieve consultations structured record where start date of the consultationSearchPeriod part parameter is greater than the end date expected failure1(),Pass
+20/05/2025 09:59:33,Retrieve Consultations structured record with both partparameters consultationSearchPeriod and includeNumberOfMostRecent applied expected failure1(),Pass
+20/05/2025 09:59:33,Retrieve consultations structured record with endDate value only expected success1(),Pass
+20/05/2025 09:59:35,Retrieve the Consultations structured record section with invalid date values1(("StartDate","endDate",null)),Pass
+20/05/2025 09:59:35,Retrieve the Consultations structured record section with invalid date values2(("X2014","2015-12-01",null)),Pass
+20/05/2025 09:59:35,Retrieve the Consultations structured record section with invalid date values3(("X2014-02","2015-12-01",null)),Pass
+20/05/2025 09:59:35,Retrieve the Consultations structured record section with invalid date values4(("X2015-10-23T11:08:32","2016-01-12",null)),Pass
+20/05/2025 09:59:35,Retrieve the Consultations structured record section with invalid date values5(("X2015-10-23T11:08:32+00:00","2015-10-30",null)),Pass
+20/05/2025 09:59:35,Retrieve the Consultations structured record section with invalid date values6(("","2019-01-01",null)),Pass
+20/05/2025 09:59:35,Retrieve the Consultations structured record section with invalid date values7(("2014","2015-01-01",null)),Pass
+20/05/2025 09:59:35,Retrieve the Consultations structured record section with invalid date values8(("2014-02","2016-01-30",null)),Pass
+20/05/2025 09:59:35,Retrieve the Consultations structured record section with invalid date values9(("null","2019-11-11",null)),Pass
+20/05/2025 09:59:35,Retrieve the Consultations structured record section with invalid date values10(("null","null",null)),Pass
+20/05/2025 09:59:36,Retrieve the Consultations structured record section with invalid date values11(("","",null)),Pass
+20/05/2025 09:59:36,Retrieve the Consultations structured record section with invalid date values12(("2015-12-01","",null)),Pass
+20/05/2025 09:59:36,Retrieve the Consultations structured record section with invalid date values13(("2015-12-01","X2016-02",null)),Pass
+20/05/2025 09:59:36,Retrieve the Consultations structured record section with invalid date values14(("2015-12-01","X2016-10-23T11:08:32",null)),Pass
+20/05/2025 09:59:36,Retrieve the Consultations structured record section with invalid date values15(("2015-12-01","X2016-10-23T11:08:32+00:00",null)),Pass
+20/05/2025 09:59:36,Retrieve the Consultations structured record section with invalid date values16(("2015-12-01","2015",null)),Pass
+20/05/2025 09:59:36,Retrieve the Consultations structured record section with invalid date values17(("2015-12-01","2016-02",null)),Pass
+20/05/2025 09:59:36,Retrieve the Consultations structured record section with invalid date values18(("2015-12-01","null",null)),Pass
+20/05/2025 09:59:36,Retrieve the Consultations structured record section with invalid date values19(("2018","2019",null)),Pass
+20/05/2025 09:59:37,Verify Consultations Response for a Patient with Topic or Headings linked to clinical items and a problem1(),Pass
+20/05/2025 09:59:38,Verify Consultations structured record for a Patient includeConsultation and consultationsMostRecent partParameter1(),Pass
+20/05/2025 09:59:38,Search for Diary Entries for a Patient with Diary Entries and No Problems associated1(),Pass
+20/05/2025 09:59:38,Search for Diary Entries for a Patient with Diary Entries With Problems Associated1(),Pass
+20/05/2025 09:59:38,Search for Diary Entries for a Patient with No Diary Entries1(),Pass
+20/05/2025 09:59:38,Search for Diary Entries with a Past Date Expect Fail1(),Pass
+20/05/2025 09:59:38,Search for Diary Entries with invalid date values1(("X2014",null)),Pass
+20/05/2025 09:59:38,Search for Diary Entries with invalid date values2(("X2014-02",null)),Pass
+20/05/2025 09:59:38,Search for Diary Entries with invalid date values3(("X2015-10-23T11:08:32",null)),Pass
+20/05/2025 09:59:38,Search for Diary Entries with invalid date values4(("X2015-10-23T11:08:32+00:00",null)),Pass
+20/05/2025 09:59:38,Search for Diary Entries with invalid date values5(("",null)),Pass
+20/05/2025 09:59:38,Search for Diary Entries with invalid date values6(("2014",null)),Pass
+20/05/2025 09:59:39,Search for Diary Entries with invalid date values7(("2014-02",null)),Pass
+20/05/2025 09:59:39,Search for Diary Entries with invalid date values8(("null",null)),Pass
+20/05/2025 09:59:39,Search for Diary Entries with Todays Date and a Future Date on a Patient with Diary Entries1(("0",null)),Pass
+20/05/2025 09:59:39,Search for Diary Entries with Todays Date and a Future Date on a Patient with Diary Entries2(("10",null)),Pass
+20/05/2025 09:59:39,Retrieve the immunizations structured record for a patient that has no immunizations1(),Pass
+20/05/2025 09:59:39,Retrieve the immunizations structured record for a patient that has sensitive flag1(),Pass
+20/05/2025 09:59:39,Retrieve the immunizations structured record section for an empty Identifier System1(),Pass
+20/05/2025 09:59:40,Retrieve the immunizations structured record section for an empty NHS number1(),Pass
+20/05/2025 09:59:40,Retrieve the immunizations structured record section for an invalid Identifier System1(),Pass
+20/05/2025 09:59:40,Retrieve the immunizations structured record section for an invalid NHS number1(),Pass
+20/05/2025 09:59:40,Retrieve the immunizations structured record with a madeUp partParameter1(),Pass
+20/05/2025 09:59:40,Verify Immunizations structured record for a Patient with Immunizations associated to Problems1(),Pass
+20/05/2025 09:59:40,Verify Immunizations structured record for a Patient with Immunizations not linked to any problems1(),Pass
+20/05/2025 09:59:40,Retrieve Investigations data structured record for a patient that has sensitive flag1(),Pass
+20/05/2025 09:59:41,Retrieve Investigations data structured record section for an empty Identifier System1(),Pass
+20/05/2025 09:59:41,Retrieve Investigations data structured record section for an invalid Identifier System1(),Pass
+20/05/2025 09:59:41,Retrieve Investigations structured record for a patient that has no Investigations data1(),Pass
+20/05/2025 09:59:41,Retrieve the Investigations data structured record startDate after endDate expected failure1(),Pass
+20/05/2025 09:59:41,Retrieve the Investigations data structured record with invalid dates expected failure1(("2014","2016-01-01","includeInvestigations","investigationSearchPeriod",null)),Pass
+20/05/2025 09:59:43,Retrieve the Investigations data structured record with invalid dates expected failure2(("2014-02","2014-08-20","includeInvestigations","investigationSearchPeriod",null)),Pass
+20/05/2025 09:59:43,Retrieve the Investigations data structured record with invalid dates expected failure3(("2015-10-23T11:08:32","2016-11-01","includeInvestigations","investigationSearchPeriod",null)),Pass
+20/05/2025 09:59:43,Retrieve the Investigations data structured record with invalid dates expected failure4(("2015-10-23T11:08:32+00:00","2019-10-01","includeInvestigations","investigationSearchPeriod",null)),Pass
+20/05/2025 09:59:43,Retrieve the Investigations data structured record with invalid dates expected failure5(("2014-01-01","2016","includeInvestigations","investigationSearchPeriod",null)),Pass
+20/05/2025 09:59:43,Retrieve the Investigations data structured record with invalid dates expected failure6(("2014-02-01","2014-08","includeInvestigations","investigationSearchPeriod",null)),Pass
+20/05/2025 09:59:43,Retrieve the Investigations data structured record with invalid dates expected failure7(("2015-10-01","2016-11-23T11:08:32","includeInvestigations","investigationSearchPeriod",null)),Pass
+20/05/2025 09:59:44,Retrieve the Investigations data structured record with invalid dates expected failure8(("2014-01-01","2015-10-23T11:08:32+00:00","includeInvestigations","investigationSearchPeriod",null)),Pass
+20/05/2025 09:59:44,Retrieve the Investigations data structured record with investigationSearchPeriod in future expected failure1(),Pass
+20/05/2025 09:59:44,Retrieve the Investigations data structured record with period dates equal to current date expected success and no operation outcome1(),Pass
+20/05/2025 09:59:44,Verify Investigations structured record for a Patient with DiagnosticReports Linked to ProcedureRequests1(),Pass
+20/05/2025 09:59:44,Verify Investigations structured record for a Patient with Investigations associated to Problems1(),Pass
+20/05/2025 09:59:45,Verify Investigations structured record for a Patient with Investigations not linked to any problems1(),Pass
+20/05/2025 09:59:45,Attempt to Retrieve medications using duplicate part param expect failure1(),Pass
+20/05/2025 09:59:45,Check warning code is populated for a patient1(),Pass
+20/05/2025 09:59:47,Retrieve the medication structured record for a patient with no problems and excluding prescription issues1(("patient3",null)),Pass
+20/05/2025 09:59:47,Retrieve the medication structured record for a patient with no problems and excluding prescription issues2(("patient5",null)),Pass
+20/05/2025 09:59:47,Retrieve the medication structured record for a patient with no problems and excluding prescription issues3(("patient12",null)),Pass
+20/05/2025 09:59:47,Retrieve the medication structured record for a patient with problems linked and excluding prescription issues1(("patient2",null)),Pass
+20/05/2025 09:59:47,Retrieve the medication structured record section for an empty Identifier System1(),Pass
+20/05/2025 09:59:48,Retrieve the medication structured record section for an empty NHS number1(),Pass
+20/05/2025 09:59:48,Retrieve the medication structured record section for an invalid Identifier System1(),Pass
+20/05/2025 09:59:48,Retrieve the medication structured record section for an invalid NHS number1(),Pass
+20/05/2025 09:59:48,Retrieve the medication structured record section for an invalid parameter type1(),Pass
+20/05/2025 09:59:48,Retrieve the medication structured record section for a patient with a timePeriod1(),Pass
+20/05/2025 09:59:48,Retrieve the medication structured record section for a patient with invalid date values1(("X2014",null)),Pass
+20/05/2025 09:59:48,Retrieve the medication structured record section for a patient with invalid date values2(("X2014-02",null)),Pass
+20/05/2025 09:59:48,Retrieve the medication structured record section for a patient with invalid date values3(("X2015-10-23T11:08:32",null)),Pass
+20/05/2025 09:59:48,Retrieve the medication structured record section for a patient with invalid date values4(("X2015-10-23T11:08:32+00:00",null)),Pass
+20/05/2025 09:59:48,Retrieve the medication structured record section for a patient with invalid date values5(("",null)),Pass
+20/05/2025 09:59:49,Retrieve the medication structured record section for a patient with invalid date values6(("2014",null)),Pass
+20/05/2025 09:59:49,Retrieve the medication structured record section for a patient with invalid date values7(("2014-02",null)),Pass
+20/05/2025 09:59:49,Retrieve the medication structured record section for a patient with invalid date values8(("null",null)),Pass
+20/05/2025 09:59:49,Retrieve the medication structured record section for a patient with medication prescribed elsewhere1(),Pass
+20/05/2025 09:59:49,Retrieve the medication structured record section for a patient with no medications1(),Pass
+20/05/2025 09:59:49,Retrieve the medication structured record section for a patient with no medications including issues1(),Pass
+20/05/2025 09:59:50,Retrieve the medication structured record section for a patient with no problems and including prescription issues1(("patient3",null)),Pass
+20/05/2025 09:59:50,Retrieve the medication structured record section for a patient with no problems and including prescription issues2(("patient5",null)),Pass
+20/05/2025 09:59:50,Retrieve the medication structured record section for a patient with no problems and including prescription issues3(("patient12",null)),Pass
+20/05/2025 09:59:50,Retrieve the medication structured record section for a patient with no problems and including prescription issues4(("patient16",null)),Pass
+20/05/2025 09:59:50,Retrieve the medication structured record section for a patient without the includePrescriptionIssue parameter1(),Pass
+20/05/2025 09:59:51,Retrieve the medication structured record section for a patient with problems linked and including prescription issues1(("patient2",null)),Pass
+20/05/2025 09:59:51,Retrieve the medication structured record with startDate in the future - expected failure1(),Pass
+20/05/2025 09:59:51,Retrieve the structured record section for a patient without the medications parameter1(("patient2",null)),Pass
+20/05/2025 09:59:51,Retrieve the structured record section for a patient without the medications parameter2(("patient3",null)),Pass
+20/05/2025 09:59:52,Retrieve the structured record section for a patient without the medications parameter3(("patient5",null)),Pass
+20/05/2025 09:59:52,Retrieve the structured record section for a patient without the medications parameter4(("patient12",null)),Pass
+20/05/2025 09:59:52,Structured Medications Patient Has multiple Warnings and Associated Notes1(("data-in-transit","Patient record transfer from previous GP practice not yet complete; information recorded before dd-Mmm-yyyy may be missing.",null)),Pass
+20/05/2025 09:59:53,structured record for a patient that has inactive flag1(),Pass
+20/05/2025 09:59:53,structured record for a patient that has sensitive flag1(),Pass
+20/05/2025 09:59:54,Structured record for a patient that is deceased1(),Pass
+20/05/2025 09:59:54,Structured record for a patient that is not in the database1(),Pass
+20/05/2025 09:59:54,Verify that when the medication parameter is labelled incorrectly with correct mandatory partParameter returns success1(),Pass
+20/05/2025 09:59:55,Structured request sent for consultations and problems expect success1(),Pass
+20/05/2025 09:59:55,Structured request sent for multiple clinical areas expect success1(),Pass
+20/05/2025 09:59:56,Structured request sent with invalid parameter combination 10 expected failure1(),Pass
+20/05/2025 09:59:56,Structured request sent with invalid parameter combination 11 expected failure1(),Pass
+20/05/2025 09:59:56,Structured request sent with invalid parameter combination 12 expected failure1(),Pass
+20/05/2025 09:59:56,Structured request sent with invalid parameter combination 14 expected failure1(),Pass
+20/05/2025 09:59:56,Structured request sent with invalid parameter combination 1 expected failure1(),Pass
+20/05/2025 09:59:56,Structured request sent with invalid parameter combination 2 expected failure1(),Pass
+20/05/2025 09:59:56,Structured request sent with invalid parameter combination 3 expected failure1(),Pass
+20/05/2025 09:59:56,Structured request sent with invalid parameter combination 4 expected failure1(),Pass
+20/05/2025 09:59:56,Structured request sent with invalid parameter combination 5 expected failure1(),Pass
+20/05/2025 09:59:56,Structured request sent with invalid parameter combination 6 expected failure1(),Pass
+20/05/2025 09:59:57,Structured request sent with invalid parameter combination 8 expected failure1(),Pass
+20/05/2025 09:59:57,Structured request sent with invalid parameter combination 9 expected failure1(),Pass
+20/05/2025 09:59:57,Structured request sent with multiple parameters and part parameters with expected success including operation outcomes1(),Pass
+20/05/2025 09:59:59,Structured request sent with multiple parameters expected success and no operation outcome1(),Pass
+20/05/2025 10:00:00,Structured request sent with multiple valid parameters but not including the mandatory part parameters - expected failure1(),Pass
+20/05/2025 10:00:00,Structured request sent with three parameters and no expected mandatory for includeResolvedAllergies - expected failure1(),Pass
+20/05/2025 10:00:00,Structured request sent with two invalid parameters expected failure1(),Pass
+20/05/2025 10:00:00,Structured request sent with two parameters and an invalid boolean part parameter expected failure1(),Pass
+20/05/2025 10:00:00,Structured request sent with valid partParameter for includeAllergies and without includeMedications - expected success1(),Pass
+20/05/2025 10:00:01,Structured request sent with valid partParameter for includeMedications and without the mandatory partParameter for includeAllergies - expected failure1(),Pass
+20/05/2025 10:00:01,Structured request with one parameter and no Clinical information expected success1(),Pass
+20/05/2025 10:00:01,Retrieve problems structured record for a patient that has no problems data1(),Pass
+20/05/2025 10:00:01,Retrieve problems structured record for a patient that has repeating pair values expected success1(),Pass
+20/05/2025 10:00:03,Retrieve Problems structured record for a patient that has sensitive flag1(),Pass
+20/05/2025 10:00:03,Retrieve Problems structured record section for an empty Identifier System1(),Pass
+20/05/2025 10:00:03,Retrieve Problems structured record section for an empty NHS number1(),Pass
+20/05/2025 10:00:03,Retrieve Problems structured record section for an invalid Identifier System1(),Pass
+20/05/2025 10:00:03,Retrieve Problems structured record section for an invalid NHS number1(),Pass
+20/05/2025 10:00:04,Retrieve problems structured record with invalid significance partParameter expected failure1(("HIGH",null)),Pass
+20/05/2025 10:00:04,Retrieve problems structured record with invalid significance partParameter expected failure2(("null",null)),Pass
+20/05/2025 10:00:04,Retrieve problems structured record with invalid significance partParameter expected failure3(("off",null)),Pass
+20/05/2025 10:00:04,Retrieve problems structured record with invalid status and significance partParameter expected failure1(("invalid","invalid",null)),Pass
+20/05/2025 10:00:04,Retrieve problems structured record with invalid status and significance partParameter expected failure2(("active","low",null)),Pass
+20/05/2025 10:00:04,Retrieve problems structured record with invalid status and significance partParameter expected failure3(("resolved","major",null)),Pass
+20/05/2025 10:00:05,Retrieve problems structured record with invalid status partParameter expected failure1(("resolved",null)),Pass
+20/05/2025 10:00:05,Retrieve problems structured record with invalid status partParameter expected failure2(("recurrence",null)),Pass
+20/05/2025 10:00:05,Retrieve problems structured record with invalid status partParameter expected failure3(("remission",null)),Pass
+20/05/2025 10:00:05,Retrieve problems structured record with invalid status partParameter expected failure4(("null",null)),Pass
+20/05/2025 10:00:05,Retrieve problems structured record with invalid status partParameter expected failure5(("off",null)),Pass
+20/05/2025 10:00:06,Retrieve Problems structured record with made up partParameter expected success1(),Pass
+20/05/2025 10:00:06,Retrieve problems structured record with significance partParameter expected success1(("major",null)),Pass
+20/05/2025 10:00:06,Retrieve problems structured record with significance partParameter expected success2(("minor",null)),Pass
+20/05/2025 10:00:06,Retrieve problems structured record with status and significance partParameter expected success1(("active","major",null)),Pass
+20/05/2025 10:00:07,Retrieve problems structured record with status and significance partParameter expected success2(("active","minor",null)),Pass
+20/05/2025 10:00:07,Retrieve problems structured record with status partParameter expected success1(("active",null)),Pass
+20/05/2025 10:00:07,Retrieve problems structured record with status partParameter expected success2(("inactive",null)),Pass
+20/05/2025 10:00:07,Verify response for a Patient with Problems linked to other Problems1(),Pass
+20/05/2025 10:00:08,Verify response for a Patient with Problems linked to some clinical items1(),Pass
+20/05/2025 10:00:08,Retrieve Referrals data structured record section for an empty Identifier System1(),Pass
+20/05/2025 10:00:08,Retrieve Referrals data structured record section for an invalid Identifier System1(),Pass
+20/05/2025 10:00:09,Retrieve Referrals structured record for a patient that has no Referrals data1(),Pass
+20/05/2025 10:00:09,Retrieve the Referrals data structured record startDate after endDate expected failure1(),Pass
+20/05/2025 10:00:09,Retrieve the Referrals data structured record with invalid dates expected failure1(("2014","2016-01-01","includeReferrals","referralSearchPeriod",null)),Pass
+20/05/2025 10:00:10,Retrieve the Referrals data structured record with invalid dates expected failure2(("2014-02","2014-08-20","includeReferrals","referralSearchPeriod",null)),Pass
+20/05/2025 10:00:11,Retrieve the Referrals data structured record with invalid dates expected failure3(("2015-10-23T11:08:32","2016-11-01","includeReferrals","referralSearchPeriod",null)),Pass
+20/05/2025 10:00:11,Retrieve the Referrals data structured record with invalid dates expected failure4(("2015-10-23T11:08:32+00:00","2019-10-01","includeReferrals","referralSearchPeriod",null)),Pass
+20/05/2025 10:00:11,Retrieve the Referrals data structured record with invalid dates expected failure5(("2014-01-01","2016","includeReferrals","referralSearchPeriod",null)),Pass
+20/05/2025 10:00:11,Retrieve the Referrals data structured record with invalid dates expected failure6(("2014-02-01","2014-08","includeReferrals","referralSearchPeriod",null)),Pass
+20/05/2025 10:00:11,Retrieve the Referrals data structured record with invalid dates expected failure7(("2015-10-01","2016-11-23T11:08:32","includeReferrals","referralSearchPeriod",null)),Pass
+20/05/2025 10:00:13,Retrieve the Referrals data structured record with invalid dates expected failure8(("2014-01-01","2015-10-23T11:08:32+00:00","includeReferrals","referralSearchPeriod",null)),Pass
+20/05/2025 10:00:13,Retrieve the Referrals data structured record with period dates equal to current date expected success and no operation outcome1(),Pass
+20/05/2025 10:00:13,Retrieve the Referrals data structured record with referralSearchPeriod in future expected failure1(),Pass
+20/05/2025 10:00:13,Verify Referrals structured record for a Patient with Referrals associated to Problems1(),Pass
+20/05/2025 10:00:13,Verify Referrals structured record for a Patient with Referrals not linked to any problems1(),Pass
+20/05/2025 10:00:14,Retrieve the uncategorised data structured record startDate after endDate expected failure1(),Pass
+20/05/2025 10:00:14,Retrieve the uncategorised data structured record with invalid dates expected failure1(("2014","2016-01-01","includeUncategorisedData","uncategorisedDataSearchPeriod",null)),Pass
+20/05/2025 10:00:14,Retrieve the uncategorised data structured record with invalid dates expected failure2(("2014-02","2014-08-20","includeUncategorisedData","uncategorisedDataSearchPeriod",null)),Pass
+20/05/2025 10:00:14,Retrieve the uncategorised data structured record with invalid dates expected failure3(("2015-10-23T11:08:32","2016-11-01","includeUncategorisedData","uncategorisedDataSearchPeriod",null)),Pass
+20/05/2025 10:00:14,Retrieve the uncategorised data structured record with invalid dates expected failure4(("2015-10-23T11:08:32+00:00","2019-10-01","includeUncategorisedData","uncategorisedDataSearchPeriod",null)),Pass
+20/05/2025 10:00:14,Retrieve the uncategorised data structured record with invalid dates expected failure5(("2014-01-01","2016","includeUncategorisedData","uncategorisedDataSearchPeriod",null)),Pass
+20/05/2025 10:00:15,Retrieve the uncategorised data structured record with invalid dates expected failure6(("2014-02-01","2014-08","includeUncategorisedData","uncategorisedDataSearchPeriod",null)),Pass
+20/05/2025 10:00:15,Retrieve the uncategorised data structured record with invalid dates expected failure7(("2015-10-01","2016-11-23T11:08:32","includeUncategorisedData","uncategorisedDataSearchPeriod",null)),Pass
+20/05/2025 10:00:15,Retrieve the uncategorised data structured record with invalid dates expected failure8(("2014-01-01","2015-10-23T11:08:32+00:00","includeUncategorisedData","uncategorisedDataSearchPeriod",null)),Pass
+20/05/2025 10:00:15,Retrieve the uncategorised data structured record with period dates equal to current date expected success and no operation outcome1(),Pass
+20/05/2025 10:00:15,Retrieve the uncategorised data structured record with uncategorisedDataSearchPeriod in future expected failure1(),Pass
+20/05/2025 10:00:15,Retrieve uncategorised data structured record for a patient that has no uncategorised data1(),Pass
+20/05/2025 10:00:16,Retrieve uncategorised data structured record for a patient that has sensitive flag1(),Pass
+20/05/2025 10:00:16,Retrieve uncategorised data structured record section for an empty Identifier System1(),Pass
+20/05/2025 10:00:16,Retrieve uncategorised data structured record section for an empty NHS number1(),Pass
+20/05/2025 10:00:16,Retrieve uncategorised data structured record section for an invalid Identifier System1(),Pass
+20/05/2025 10:00:16,Retrieve uncategorised data structured record section for an invalid NHS number1(),Pass
+20/05/2025 10:00:16,Verify Uncategorised structured record for a Patient with Uncategorised data associated to Problems1(),Pass
+20/05/2025 10:00:16,Verify Uncategorised structured record for a Patient with Uncategorised data not linked to any problems1(),Pass

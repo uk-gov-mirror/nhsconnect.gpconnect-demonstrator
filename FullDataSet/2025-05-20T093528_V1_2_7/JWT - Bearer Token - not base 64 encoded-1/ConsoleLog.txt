@@ -1,0 +1,90 @@
+HttpHeaderHelper() Constructor
+HttpHelper() Constructor
+All Header(s) Cleared
+All Parameters Cleared
+HttpContext->LoadAppConfig()
+Removed Key='Ssp-TraceID'
+Added Key='Ssp-TraceID' Value='b99b2029-a699-4cf3-b8e3-bb458b78d345'
+Replaced Key='Ssp-TraceID' With Value='b99b2029-a699-4cf3-b8e3-bb458b78d345'
+Removed Key='Ssp-From'
+Added Key='Ssp-From' Value='200000000985'
+Replaced Key='Ssp-From' With Value='200000000985'
+Removed Key='Ssp-To'
+Added Key='Ssp-To' Value='200000000985'
+Replaced Key='Ssp-To' With Value='200000000985'
+Removed Key='Accept'
+Added Key='Accept' Value='application/fhir+json'
+Replaced Key='Accept' With Value='application/fhir+json'
+GenericSteps() Constructor
+InitializeContainer For Dependency Injection
+10 Organisations Loaded From ODS CSV File.
+Feature: JWT
+
+Scenario: JWT - Bearer Token - not base 64 encoded
+SecurityContext->LoadAppConfig()
+useTLS=True
+useTLSFoundationsAndAppmts=True
+useTLSStructured=True
+clientCertThumbPrint=b8 c7 e4 cc d4 bd cf 2e a2 e3 72 54 e4 74 7d b0 3a d5 7c c2
+sendClientCert=False
+validateServerCert=False
+Force The Server Certificate Callback To Always Be True.
+JwtHelper() Constructor
+HttpSteps() Constructor
+HttpHeaderHelper() Constructor
+JwtSteps() Constructor
+All Header(s) Cleared
+All Parameters Cleared
+HttpContext->LoadAppConfig()
+Removed Key='Ssp-TraceID'
+Added Key='Ssp-TraceID' Value='08f1c609-89e3-4d51-ad6c-6bba2d50be62'
+Replaced Key='Ssp-TraceID' With Value='08f1c609-89e3-4d51-ad6c-6bba2d50be62'
+Removed Key='Ssp-From'
+Added Key='Ssp-From' Value='200000000985'
+Replaced Key='Ssp-From' With Value='200000000985'
+Removed Key='Ssp-To'
+Added Key='Ssp-To' Value='200000000985'
+Replaced Key='Ssp-To' With Value='200000000985'
+Removed Key='Accept'
+Added Key='Accept' Value='application/fhir+json'
+Replaced Key='Accept' With Value='application/fhir+json'
+Removed Key='Ssp-InteractionId'
+Added Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1'
+Replaced Key='Ssp-InteractionId' With Value='urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1'
+Force The Server Certificate Callback To Always Be True.
+Removed Key='Authorization'
+Added Key='Authorization' Value='Bearer {"alg":"none","typ":"JWT"}.{"iss":"https://ConsumerSystemURL","sub":"1","aud":"https://authorize.fhir.nhs.net/token","exp":1747730707,"iat":1747730407,"reason_for_request":"directcare","requesting_device":{"resourceType":"Device","identifier":[{"system":"GPConnectTestSystem","value":"Client"}],"model":"v1","version":"1.1"},"requesting_organization":{"resourceType":"Organization","identifier":[{"system":"https://fhir.nhs.uk/Id/ods-organization-code","value":"GPCA0001"}],"name":"GP Connect Assurance"},"requesting_practitioner":{"resourceType":"Practitioner","id":"1","identifier":[{"system":"https://fhir.nhs.uk/Id/sds-user-id","value":"GCASDS0001"},{"system":"https://fhir.nhs.uk/Id/sds-role-profile-id","value":"112233445566"},{"system":"https://consumersupplier.com/Id/user-guid","value":"98ed4f78-814d-4266-8d5b-cde742f3093c"}],"name":[{"family":"AssurancePractitioner","given":["AssuranceTest"],"prefix":["Mr"]}]},"requested_scope":"organization/*.read"}.'
+Replaced Key='Authorization' With Value='Bearer {"alg":"none","typ":"JWT"}.{"iss":"https://ConsumerSystemURL","sub":"1","aud":"https://authorize.fhir.nhs.net/token","exp":1747730707,"iat":1747730407,"reason_for_request":"directcare","requesting_device":{"resourceType":"Device","identifier":[{"system":"GPConnectTestSystem","value":"Client"}],"model":"v1","version":"1.1"},"requesting_organization":{"resourceType":"Organization","identifier":[{"system":"https://fhir.nhs.uk/Id/ods-organization-code","value":"GPCA0001"}],"name":"GP Connect Assurance"},"requesting_practitioner":{"resourceType":"Practitioner","id":"1","identifier":[{"system":"https://fhir.nhs.uk/Id/sds-user-id","value":"GCASDS0001"},{"system":"https://fhir.nhs.uk/Id/sds-role-profile-id","value":"112233445566"},{"system":"https://consumersupplier.com/Id/user-guid","value":"98ed4f78-814d-4266-8d5b-cde742f3093c"}],"name":[{"family":"AssurancePractitioner","given":["AssuranceTest"],"prefix":["Mr"]}]},"requested_scope":"organization/*.read"}.'
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1'
+GetRequestParameters Count='0'
+GetRequestHeaders Count='6'
+Header - Ssp-TraceID -> 08f1c609-89e3-4d51-ad6c-6bba2d50be62
+Header - Ssp-From -> 200000000985
+Header - Ssp-To -> 200000000985
+Header - Accept -> application/fhir+json
+Header - Ssp-InteractionId -> urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1
+Header - Authorization -> Bearer {"alg":"none","typ":"JWT"}.{"iss":"https://ConsumerSystemURL","sub":"1","aud":"https://authorize.fhir.nhs.net/token","exp":1747730707,"iat":1747730407,"reason_for_request":"directcare","requesting_device":{"resourceType":"Device","identifier":[{"system":"GPConnectTestSystem","value":"Client"}],"model":"v1","version":"1.1"},"requesting_organization":{"resourceType":"Organization","identifier":[{"system":"https://fhir.nhs.uk/Id/ods-organization-code","value":"GPCA0001"}],"name":"GP Connect Assurance"},"requesting_practitioner":{"resourceType":"Practitioner","id":"1","identifier":[{"system":"https://fhir.nhs.uk/Id/sds-user-id","value":"GCASDS0001"},{"system":"https://fhir.nhs.uk/Id/sds-role-profile-id","value":"112233445566"},{"system":"https://consumersupplier.com/Id/user-guid","value":"98ed4f78-814d-4266-8d5b-cde742f3093c"}],"name":[{"family":"AssurancePractitioner","given":["AssuranceTest"],"prefix":["Mr"]}]},"requested_scope":"organization/*.read"}.
+Could not add header: AuthorizationSystem.FormatException: The format of value 'Bearer {"alg":"none","typ":"JWT"}.{"iss":"https://ConsumerSystemURL","sub":"1","aud":"https://authorize.fhir.nhs.net/token","exp":1747730707,"iat":1747730407,"reason_for_request":"directcare","requesting_device":{"resourceType":"Device","identifier":[{"system":"GPConnectTestSystem","value":"Client"}],"model":"v1","version":"1.1"},"requesting_organization":{"resourceType":"Organization","identifier":[{"system":"https://fhir.nhs.uk/Id/ods-organization-code","value":"GPCA0001"}],"name":"GP Connect Assurance"},"requesting_practitioner":{"resourceType":"Practitioner","id":"1","identifier":[{"system":"https://fhir.nhs.uk/Id/sds-user-id","value":"GCASDS0001"},{"system":"https://fhir.nhs.uk/Id/sds-role-profile-id","value":"112233445566"},{"system":"https://consumersupplier.com/Id/user-guid","value":"98ed4f78-814d-4266-8d5b-cde742f3093c"}],"name":[{"family":"AssurancePractitioner","given":["AssuranceTest"],"prefix":["Mr"]}]},"requested_scope":"organization/*.read"}.' is invalid.
+   at System.Net.Http.Headers.HttpHeaderParser.ParseValue(String value, Object storeValue, Int32& index)
+   at System.Net.Http.Headers.HttpHeaders.ParseAndAddValue(String name, HeaderStoreItemInfo info, String value)
+   at System.Net.Http.Headers.HttpHeaders.Add(String name, String value)
+   at GPConnect.Provider.AcceptanceTests.Http.HttpRequestBase.GetHttpRequestMessage() in C:\Source\INT\gpconnect-provider-testing_1.2.7\GPConnect.Provider.AcceptanceTests\Http\HttpRequestBase.cs:line 91
+Header - Transfer-Encoding : chunked
+Header - Connection : keep-alive
+Header - Cache-Control : no-store
+Header - Date : Tue, 20 May 2025 08:40:09 GMT
+Header - Server : nginx/1.19.6
+Header - X-Powered-By : HAPI FHIR 3.0.0 REST Server (FHIR Server; FHIR 3.0.1/DSTU3)
+Header - Content-Type : application/fhir+json; charset=UTF-8
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1'
+Response HttpStatusCode should be 400 but was BadRequest
+issue.severity value is incorrect should be issue.severity.error
+C:/Temp/2025-05-20T093528\JWT - Bearer Token - not base 64 encoded-1
+GetRequestHeaders Count='6'
+GetRequestParameters Count='0'
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1'
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1'
+endpointAddress=https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir
+GetRequestHeaders Count='6'
+Exception writing JWT Header to Output File
+Warning : Exception writing JSONRequestBody to Output File - May Not be a JSON RequestBody

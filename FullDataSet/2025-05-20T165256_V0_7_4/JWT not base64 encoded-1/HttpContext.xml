@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<httpContext useWebProxy="false" webProxyUrl="https://localhost:8889" useSpineProxy="false" spineProxyUrl="https://proxy.int.spine2.ncrs.nhs.uk:443" providerUrl="https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v0/fhir">
+  <request endpointUrl="https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v0/fhir">
+    <requestHeaders>
+      <requestHeader name="Accept" value="application/json+fhir" />
+      <requestHeader name="Ssp-TraceID" value="3d5a434a-c528-4025-97ba-80662bdaa4bc" />
+      <requestHeader name="Ssp-From" value="200000000985" />
+      <requestHeader name="Ssp-To" value="200000000985" />
+      <requestHeader name="Authorization" value="Bearer {&quot;alg&quot;:&quot;none&quot;,&quot;typ&quot;:&quot;JWT&quot;}.{&quot;iss&quot;:&quot;https://ConsumerSystemURL&quot;,&quot;sub&quot;:&quot;1&quot;,&quot;aud&quot;:&quot;https://authorize.fhir.nhs.net/token&quot;,&quot;exp&quot;:1747756773,&quot;iat&quot;:1747756473,&quot;reason_for_request&quot;:&quot;directcare&quot;,&quot;requesting_device&quot;:{&quot;resourceType&quot;:&quot;Device&quot;,&quot;id&quot;:&quot;1&quot;,&quot;identifier&quot;:[{&quot;system&quot;:&quot;GPConnectTestSystem&quot;,&quot;value&quot;:&quot;Client&quot;}],&quot;model&quot;:&quot;v1&quot;,&quot;version&quot;:&quot;1.1&quot;},&quot;requesting_organization&quot;:{&quot;resourceType&quot;:&quot;Organization&quot;,&quot;id&quot;:&quot;1&quot;,&quot;identifier&quot;:[{&quot;system&quot;:&quot;http://fhir.nhs.net/Id/ods-organization-code&quot;,&quot;value&quot;:&quot;GPCA0001&quot;}],&quot;name&quot;:&quot;GP Connect Assurance&quot;},&quot;requesting_practitioner&quot;:{&quot;resourceType&quot;:&quot;Practitioner&quot;,&quot;id&quot;:&quot;1&quot;,&quot;identifier&quot;:[{&quot;system&quot;:&quot;http://fhir.nhs.net/sds-user-id&quot;,&quot;value&quot;:&quot;GCASDS0001&quot;},{&quot;system&quot;:&quot;https://consumersupplier.com/Id/user-guid&quot;,&quot;value&quot;:&quot;98ed4f78-814d-4266-8d5b-cde742f3093c&quot;}],&quot;name&quot;:{&quot;family&quot;:[&quot;AssurancePractitioner&quot;],&quot;given&quot;:[&quot;AssuranceTest&quot;],&quot;prefix&quot;:[&quot;Mr&quot;]},&quot;practitionerRole&quot;:[{&quot;role&quot;:{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://fhir.nhs.net/ValueSet/sds-job-role-name-1&quot;,&quot;code&quot;:&quot;AssuranceJobRole&quot;}]}}]},&quot;requested_scope&quot;:&quot;organization/*.read&quot;,&quot;requested_record&quot;:{&quot;resourceType&quot;:&quot;Organization&quot;,&quot;id&quot;:&quot;1&quot;,&quot;identifier&quot;:[{&quot;system&quot;:&quot;http://fhir.nhs.net/Id/ods-organization-code&quot;,&quot;value&quot;:&quot;OrgODSCode0001&quot;}],&quot;name&quot;:&quot;GP Connect Assurance&quot;}}." />
+      <requestHeader name="Ssp-InteractionId" value="urn:nhs:names:services:gpconnect:fhir:rest:read:metadata" />
+      <requestHeader name="Content-Type" value="application/json+fhir" />
+    </requestHeaders>
+    <requestUrl>/metadata</requestUrl>
+    <requestParameters />
+    <requestMethod>GET</requestMethod>
+    <requestContentType>application/json+fhir</requestContentType>
+    <requestBody />
+  </request>
+  <response>
+    <responseContentType>application/json+fhir;charset=UTF-8</responseContentType>
+    <responseStatusCode>400</responseStatusCode>
+    <responseTimeInMilliseconds>20</responseTimeInMilliseconds>
+    <responseTimeAcceptable>true</responseTimeAcceptable>
+    <responseHeaders>
+      <responseHeader name="Transfer-Encoding" value="chunked" />
+      <responseHeader name="Connection" value="keep-alive" />
+      <responseHeader name="Content-Type" value="application/json+fhir;charset=UTF-8" />
+      <responseHeader name="Date" value="Tue, 20 May 2025 15:54:33 GMT" />
+      <responseHeader name="Server" value="nginx/1.19.6" />
+      <responseHeader name="X-Powered-By" value="HAPI FHIR 2.2 REST Server (FHIR Server; FHIR 1.0.2/DSTU2)" />
+    </responseHeaders>
+    <responseBody>{&amp;quot;resourceType&amp;quot;:&amp;quot;OperationOutcome&amp;quot;,&amp;quot;meta&amp;quot;:{&amp;quot;profile&amp;quot;:[&amp;quot;http://fhir.nhs.net/StructureDefinition/gpconnect-operationoutcome-1&amp;quot;]},&amp;quot;issue&amp;quot;:[{&amp;quot;severity&amp;quot;:&amp;quot;error&amp;quot;,&amp;quot;code&amp;quot;:&amp;quot;invalid&amp;quot;,&amp;quot;details&amp;quot;:{&amp;quot;coding&amp;quot;:[{&amp;quot;system&amp;quot;:&amp;quot;http://fhir.nhs.net/ValueSet/gpconnect-error-or-warning-code-1&amp;quot;,&amp;quot;code&amp;quot;:&amp;quot;INVALID_IDENTIFIER_SYSTEM&amp;quot;,&amp;quot;display&amp;quot;:&amp;quot;INVALID_IDENTIFIER_SYSTEM&amp;quot;}]},&amp;quot;diagnostics&amp;quot;:&amp;quot;Authorization header invalid.&amp;quot;}]}</responseBody>
+  </response>
+</httpContext>

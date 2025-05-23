@@ -1,0 +1,109 @@
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "registerPatient",
+      "resource": {
+        "resourceType": "Patient",
+        "meta": {
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1"
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-NHSCommunication-1",
+            "extension": [
+              {
+                "url": "language",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "system": "https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-HumanLanguage-1",
+                      "code": "de",
+                      "display": "German"
+                    }
+                  ]
+                }
+              },
+              {
+                "url": "interpreterRequired",
+                "valueBoolean": true
+              }
+            ]
+          },
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-NHSCommunication-1",
+            "extension": [
+              {
+                "url": "language",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "system": "https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-HumanLanguage-1",
+                      "code": "de",
+                      "display": "German"
+                    }
+                  ]
+                }
+              },
+              {
+                "url": "interpreterRequired",
+                "valueBoolean": true
+              }
+            ]
+          }
+        ],
+        "identifier": [
+          {
+            "extension": [
+              {
+                "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-NHSNumberVerificationStatus-1",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "system": "https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-NHSNumberVerificationStatus-1",
+                      "code": "01",
+                      "display": "Number present and verified"
+                    }
+                  ]
+                }
+              }
+            ],
+            "system": "https://fhir.nhs.uk/Id/nhs-number",
+            "value": "9651259302"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "family": "JUDGE",
+            "given": [
+              "Hubert"
+            ]
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "01234567891",
+            "use": "home"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1952-10-09",
+        "address": [
+          {
+            "use": "temp",
+            "line": [
+              "1 Trevelyan Square",
+              "Boar Lane"
+            ],
+            "city": "Leeds",
+            "postalCode": "LS1 6AE"
+          }
+        ]
+      }
+    }
+  ]
+}

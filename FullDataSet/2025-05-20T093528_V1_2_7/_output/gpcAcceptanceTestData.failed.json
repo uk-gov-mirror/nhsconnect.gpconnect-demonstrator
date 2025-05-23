@@ -1,0 +1,4183 @@
+[
+  {
+    "requestName": "metadata",
+    "dir": "Security - Connect with invalid insecure Cipher-1",
+    "testResult": "Failed",
+    "data": {
+      "request": {
+        "headers": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "ed587c5e-51d5-40c3-b793-e1d3f4e52c90"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ],
+        "method": "GET",
+        "contentType": "application/fhir+json",
+        "body": {
+          "value": null
+        },
+        "parameters": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "ed587c5e-51d5-40c3-b793-e1d3f4e52c90"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ]
+      },
+      "response": {
+        "contentType": null,
+        "statusCode": "0",
+        "timeInMilliseconds": "-1",
+        "timeAcceptable": "true",
+        "headers": [],
+        "body": null
+      },
+      "httpcontext": {
+        "useWebProxy": "false",
+        "webProxyUrl": "https://localhost:8889",
+        "useSpineProxy": "false",
+        "spineProxyUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443",
+        "providerUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir"
+      },
+      "endpointUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir",
+      "testLocation": "C:\\Users\\LillieDae\\source\\repos\\gpc-demonstrator-postman\\gpconnect-demonstrator\\FullDataSet\\2025-05-20T093528_V1_2_7",
+      "projectName": "read/metadata"
+    },
+    "reasonFailed": "Cert with thumbprint: 'b8 c7 e4 cc d4 bd cf 2e a2 e3 72 54 e4 74 7d b0 3a d5 7c c2' not found in local machine cert store."
+  },
+  {
+    "requestName": "metadata",
+    "dir": "Security - Connect with invalid nonexistent Cipher-1",
+    "testResult": "Failed",
+    "data": {
+      "request": {
+        "headers": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "e41c7e2f-1bc6-417c-bf12-bd7fabe3116c"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ],
+        "method": "GET",
+        "contentType": "application/fhir+json",
+        "body": {
+          "value": null
+        },
+        "parameters": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "e41c7e2f-1bc6-417c-bf12-bd7fabe3116c"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ]
+      },
+      "response": {
+        "contentType": null,
+        "statusCode": "0",
+        "timeInMilliseconds": "-1",
+        "timeAcceptable": "true",
+        "headers": [],
+        "body": null
+      },
+      "httpcontext": {
+        "useWebProxy": "false",
+        "webProxyUrl": "https://localhost:8889",
+        "useSpineProxy": "false",
+        "spineProxyUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443",
+        "providerUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir"
+      },
+      "endpointUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir",
+      "testLocation": "C:\\Users\\LillieDae\\source\\repos\\gpc-demonstrator-postman\\gpconnect-demonstrator\\FullDataSet\\2025-05-20T093528_V1_2_7",
+      "projectName": "read/metadata"
+    },
+    "reasonFailed": "Cert with thumbprint: 'b8 c7 e4 cc d4 bd cf 2e a2 e3 72 54 e4 74 7d b0 3a d5 7c c2' not found in local machine cert store."
+  },
+  {
+    "requestName": "metadata",
+    "dir": "Security - Connect with invalid secure Cipher-1",
+    "testResult": "Failed",
+    "data": {
+      "request": {
+        "headers": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "d77b9f01-26ba-42b1-b78f-86b42a3709f2"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ],
+        "method": "GET",
+        "contentType": "application/fhir+json",
+        "body": {
+          "value": null
+        },
+        "parameters": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "d77b9f01-26ba-42b1-b78f-86b42a3709f2"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ]
+      },
+      "response": {
+        "contentType": null,
+        "statusCode": "0",
+        "timeInMilliseconds": "-1",
+        "timeAcceptable": "true",
+        "headers": [],
+        "body": null
+      },
+      "httpcontext": {
+        "useWebProxy": "false",
+        "webProxyUrl": "https://localhost:8889",
+        "useSpineProxy": "false",
+        "spineProxyUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443",
+        "providerUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir"
+      },
+      "endpointUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir",
+      "testLocation": "C:\\Users\\LillieDae\\source\\repos\\gpc-demonstrator-postman\\gpconnect-demonstrator\\FullDataSet\\2025-05-20T093528_V1_2_7",
+      "projectName": "read/metadata"
+    },
+    "reasonFailed": "Cert with thumbprint: 'b8 c7 e4 cc d4 bd cf 2e a2 e3 72 54 e4 74 7d b0 3a d5 7c c2' not found in local machine cert store."
+  },
+  {
+    "requestName": "metadata",
+    "dir": "Security - Connect with valid Cipher-1",
+    "testResult": "Failed",
+    "data": {
+      "request": {
+        "headers": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "a75e68a4-a481-4bb4-825b-c7f2d6d0db4f"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ],
+        "method": "GET",
+        "contentType": "application/fhir+json",
+        "body": {
+          "value": null
+        },
+        "parameters": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "a75e68a4-a481-4bb4-825b-c7f2d6d0db4f"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ]
+      },
+      "response": {
+        "contentType": null,
+        "statusCode": "0",
+        "timeInMilliseconds": "-1",
+        "timeAcceptable": "true",
+        "headers": [],
+        "body": null
+      },
+      "httpcontext": {
+        "useWebProxy": "false",
+        "webProxyUrl": "https://localhost:8889",
+        "useSpineProxy": "false",
+        "spineProxyUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443",
+        "providerUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir"
+      },
+      "endpointUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir",
+      "testLocation": "C:\\Users\\LillieDae\\source\\repos\\gpc-demonstrator-postman\\gpconnect-demonstrator\\FullDataSet\\2025-05-20T093528_V1_2_7",
+      "projectName": "read/metadata"
+    },
+    "reasonFailed": "Cert with thumbprint: 'b8 c7 e4 cc d4 bd cf 2e a2 e3 72 54 e4 74 7d b0 3a d5 7c c2' not found in local machine cert store."
+  },
+  {
+    "requestName": "metadata",
+    "dir": "Security - Connect with valid Cipher-2",
+    "testResult": "Failed",
+    "data": {
+      "request": {
+        "headers": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "81ec4bf6-7436-415e-8049-a67733b73296"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ],
+        "method": "GET",
+        "contentType": "application/fhir+json",
+        "body": {
+          "value": null
+        },
+        "parameters": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "81ec4bf6-7436-415e-8049-a67733b73296"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ]
+      },
+      "response": {
+        "contentType": null,
+        "statusCode": "0",
+        "timeInMilliseconds": "-1",
+        "timeAcceptable": "true",
+        "headers": [],
+        "body": null
+      },
+      "httpcontext": {
+        "useWebProxy": "false",
+        "webProxyUrl": "https://localhost:8889",
+        "useSpineProxy": "false",
+        "spineProxyUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443",
+        "providerUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir"
+      },
+      "endpointUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir",
+      "testLocation": "C:\\Users\\LillieDae\\source\\repos\\gpc-demonstrator-postman\\gpconnect-demonstrator\\FullDataSet\\2025-05-20T093528_V1_2_7",
+      "projectName": "read/metadata"
+    },
+    "reasonFailed": "Cert with thumbprint: 'b8 c7 e4 cc d4 bd cf 2e a2 e3 72 54 e4 74 7d b0 3a d5 7c c2' not found in local machine cert store."
+  },
+  {
+    "requestName": "metadata",
+    "dir": "Security - Connect with valid Cipher-3",
+    "testResult": "Failed",
+    "data": {
+      "request": {
+        "headers": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "169ff5c2-998f-4f1f-b7b6-d0664789657a"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ],
+        "method": "GET",
+        "contentType": "application/fhir+json",
+        "body": {
+          "value": null
+        },
+        "parameters": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "169ff5c2-998f-4f1f-b7b6-d0664789657a"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ]
+      },
+      "response": {
+        "contentType": null,
+        "statusCode": "0",
+        "timeInMilliseconds": "-1",
+        "timeAcceptable": "true",
+        "headers": [],
+        "body": null
+      },
+      "httpcontext": {
+        "useWebProxy": "false",
+        "webProxyUrl": "https://localhost:8889",
+        "useSpineProxy": "false",
+        "spineProxyUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443",
+        "providerUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir"
+      },
+      "endpointUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir",
+      "testLocation": "C:\\Users\\LillieDae\\source\\repos\\gpc-demonstrator-postman\\gpconnect-demonstrator\\FullDataSet\\2025-05-20T093528_V1_2_7",
+      "projectName": "read/metadata"
+    },
+    "reasonFailed": "Cert with thumbprint: 'b8 c7 e4 cc d4 bd cf 2e a2 e3 72 54 e4 74 7d b0 3a d5 7c c2' not found in local machine cert store."
+  },
+  {
+    "requestName": "metadata",
+    "dir": "Security - Connect with valid Cipher-4",
+    "testResult": "Failed",
+    "data": {
+      "request": {
+        "headers": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "a541cf2a-0553-4d46-bf4d-8477d216e14f"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ],
+        "method": "GET",
+        "contentType": "application/fhir+json",
+        "body": {
+          "value": null
+        },
+        "parameters": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "a541cf2a-0553-4d46-bf4d-8477d216e14f"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ]
+      },
+      "response": {
+        "contentType": null,
+        "statusCode": "0",
+        "timeInMilliseconds": "-1",
+        "timeAcceptable": "true",
+        "headers": [],
+        "body": null
+      },
+      "httpcontext": {
+        "useWebProxy": "false",
+        "webProxyUrl": "https://localhost:8889",
+        "useSpineProxy": "false",
+        "spineProxyUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443",
+        "providerUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir"
+      },
+      "endpointUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir",
+      "testLocation": "C:\\Users\\LillieDae\\source\\repos\\gpc-demonstrator-postman\\gpconnect-demonstrator\\FullDataSet\\2025-05-20T093528_V1_2_7",
+      "projectName": "read/metadata"
+    },
+    "reasonFailed": "Cert with thumbprint: 'b8 c7 e4 cc d4 bd cf 2e a2 e3 72 54 e4 74 7d b0 3a d5 7c c2' not found in local machine cert store."
+  },
+  {
+    "requestName": "metadata",
+    "dir": "Security - Connect with valid Cipher-5",
+    "testResult": "Failed",
+    "data": {
+      "request": {
+        "headers": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "21073d2d-f43e-4b19-abe2-3dc01ccdcaa6"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ],
+        "method": "GET",
+        "contentType": "application/fhir+json",
+        "body": {
+          "value": null
+        },
+        "parameters": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "21073d2d-f43e-4b19-abe2-3dc01ccdcaa6"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ]
+      },
+      "response": {
+        "contentType": null,
+        "statusCode": "0",
+        "timeInMilliseconds": "-1",
+        "timeAcceptable": "true",
+        "headers": [],
+        "body": null
+      },
+      "httpcontext": {
+        "useWebProxy": "false",
+        "webProxyUrl": "https://localhost:8889",
+        "useSpineProxy": "false",
+        "spineProxyUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443",
+        "providerUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir"
+      },
+      "endpointUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir",
+      "testLocation": "C:\\Users\\LillieDae\\source\\repos\\gpc-demonstrator-postman\\gpconnect-demonstrator\\FullDataSet\\2025-05-20T093528_V1_2_7",
+      "projectName": "read/metadata"
+    },
+    "reasonFailed": "Cert with thumbprint: 'b8 c7 e4 cc d4 bd cf 2e a2 e3 72 54 e4 74 7d b0 3a d5 7c c2' not found in local machine cert store."
+  },
+  {
+    "requestName": "metadata",
+    "dir": "Security - Connect with valid Cipher-6",
+    "testResult": "Failed",
+    "data": {
+      "request": {
+        "headers": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "ac870a35-f1c9-4a9d-a3a9-11c3878326ca"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ],
+        "method": "GET",
+        "contentType": "application/fhir+json",
+        "body": {
+          "value": null
+        },
+        "parameters": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "ac870a35-f1c9-4a9d-a3a9-11c3878326ca"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ]
+      },
+      "response": {
+        "contentType": null,
+        "statusCode": "0",
+        "timeInMilliseconds": "-1",
+        "timeAcceptable": "true",
+        "headers": [],
+        "body": null
+      },
+      "httpcontext": {
+        "useWebProxy": "false",
+        "webProxyUrl": "https://localhost:8889",
+        "useSpineProxy": "false",
+        "spineProxyUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443",
+        "providerUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir"
+      },
+      "endpointUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir",
+      "testLocation": "C:\\Users\\LillieDae\\source\\repos\\gpc-demonstrator-postman\\gpconnect-demonstrator\\FullDataSet\\2025-05-20T093528_V1_2_7",
+      "projectName": "read/metadata"
+    },
+    "reasonFailed": "Cert with thumbprint: 'b8 c7 e4 cc d4 bd cf 2e a2 e3 72 54 e4 74 7d b0 3a d5 7c c2' not found in local machine cert store."
+  },
+  {
+    "requestName": "metadata",
+    "dir": "Security - Connect with valid Cipher-7",
+    "testResult": "Failed",
+    "data": {
+      "request": {
+        "headers": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "fd262f7a-1cda-4c83-a89e-e7456c67c9e3"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ],
+        "method": "GET",
+        "contentType": "application/fhir+json",
+        "body": {
+          "value": null
+        },
+        "parameters": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "fd262f7a-1cda-4c83-a89e-e7456c67c9e3"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ]
+      },
+      "response": {
+        "contentType": null,
+        "statusCode": "0",
+        "timeInMilliseconds": "-1",
+        "timeAcceptable": "true",
+        "headers": [],
+        "body": null
+      },
+      "httpcontext": {
+        "useWebProxy": "false",
+        "webProxyUrl": "https://localhost:8889",
+        "useSpineProxy": "false",
+        "spineProxyUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443",
+        "providerUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir"
+      },
+      "endpointUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir",
+      "testLocation": "C:\\Users\\LillieDae\\source\\repos\\gpc-demonstrator-postman\\gpconnect-demonstrator\\FullDataSet\\2025-05-20T093528_V1_2_7",
+      "projectName": "read/metadata"
+    },
+    "reasonFailed": "Cert with thumbprint: 'b8 c7 e4 cc d4 bd cf 2e a2 e3 72 54 e4 74 7d b0 3a d5 7c c2' not found in local machine cert store."
+  },
+  {
+    "requestName": "metadata",
+    "dir": "Security - Connect with valid Cipher-8",
+    "testResult": "Failed",
+    "data": {
+      "request": {
+        "headers": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "84f3c512-6048-450d-862e-c2f1ec561bfe"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ],
+        "method": "GET",
+        "contentType": "application/fhir+json",
+        "body": {
+          "value": null
+        },
+        "parameters": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "84f3c512-6048-450d-862e-c2f1ec561bfe"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ]
+      },
+      "response": {
+        "contentType": null,
+        "statusCode": "0",
+        "timeInMilliseconds": "-1",
+        "timeAcceptable": "true",
+        "headers": [],
+        "body": null
+      },
+      "httpcontext": {
+        "useWebProxy": "false",
+        "webProxyUrl": "https://localhost:8889",
+        "useSpineProxy": "false",
+        "spineProxyUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443",
+        "providerUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir"
+      },
+      "endpointUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir",
+      "testLocation": "C:\\Users\\LillieDae\\source\\repos\\gpc-demonstrator-postman\\gpconnect-demonstrator\\FullDataSet\\2025-05-20T093528_V1_2_7",
+      "projectName": "read/metadata"
+    },
+    "reasonFailed": "Cert with thumbprint: 'b8 c7 e4 cc d4 bd cf 2e a2 e3 72 54 e4 74 7d b0 3a d5 7c c2' not found in local machine cert store."
+  },
+  {
+    "requestName": "metadata",
+    "dir": "Security - Non-SSL to SSL-1",
+    "testResult": "Failed",
+    "data": {
+      "request": {
+        "headers": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "d37708e2-7e60-4d7c-85bd-ad91f5409290"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ],
+        "method": "GET",
+        "contentType": "application/fhir+json",
+        "body": {
+          "value": null
+        },
+        "parameters": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "d37708e2-7e60-4d7c-85bd-ad91f5409290"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ]
+      },
+      "response": {
+        "contentType": null,
+        "statusCode": "0",
+        "timeInMilliseconds": "-1",
+        "timeAcceptable": "true",
+        "headers": [],
+        "body": null
+      },
+      "httpcontext": {
+        "useWebProxy": "false",
+        "webProxyUrl": "https://localhost:8889",
+        "useSpineProxy": "false",
+        "spineProxyUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443",
+        "providerUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir"
+      },
+      "endpointUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir",
+      "testLocation": "C:\\Users\\LillieDae\\source\\repos\\gpc-demonstrator-postman\\gpconnect-demonstrator\\FullDataSet\\2025-05-20T093528_V1_2_7",
+      "projectName": "read/metadata"
+    },
+    "reasonFailed": "Cert with thumbprint: 'b8 c7 e4 cc d4 bd cf 2e a2 e3 72 54 e4 74 7d b0 3a d5 7c c2' not found in local machine cert store."
+  },
+  {
+    "requestName": "metadata",
+    "dir": "Security - SSP Client Certificate - Invalid - Authority-1",
+    "testResult": "Failed",
+    "data": {
+      "request": {
+        "headers": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "22edf479-6b01-47ae-b6b2-ba22189a6780"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ],
+        "method": "GET",
+        "contentType": "application/fhir+json",
+        "body": {
+          "value": null
+        },
+        "parameters": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "22edf479-6b01-47ae-b6b2-ba22189a6780"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ]
+      },
+      "response": {
+        "contentType": null,
+        "statusCode": "0",
+        "timeInMilliseconds": "-1",
+        "timeAcceptable": "true",
+        "headers": [],
+        "body": null
+      },
+      "httpcontext": {
+        "useWebProxy": "false",
+        "webProxyUrl": "https://localhost:8889",
+        "useSpineProxy": "false",
+        "spineProxyUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443",
+        "providerUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir"
+      },
+      "endpointUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir",
+      "testLocation": "C:\\Users\\LillieDae\\source\\repos\\gpc-demonstrator-postman\\gpconnect-demonstrator\\FullDataSet\\2025-05-20T093528_V1_2_7",
+      "projectName": "read/metadata"
+    },
+    "reasonFailed": "Cert with thumbprint: 'f8 b8 ff 86 6a 74 b7 68 b3 f2 bb d9 8f cd 17 64 e5 3c b3 9a' not found in local machine cert store."
+  },
+  {
+    "requestName": "metadata",
+    "dir": "Security - SSP Client Certificate - Invalid - Expired-1",
+    "testResult": "Failed",
+    "data": {
+      "request": {
+        "headers": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "4d19376c-d741-4a4f-ba9f-be77da138531"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ],
+        "method": "GET",
+        "contentType": "application/fhir+json",
+        "body": {
+          "value": null
+        },
+        "parameters": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "4d19376c-d741-4a4f-ba9f-be77da138531"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ]
+      },
+      "response": {
+        "contentType": null,
+        "statusCode": "0",
+        "timeInMilliseconds": "-1",
+        "timeAcceptable": "true",
+        "headers": [],
+        "body": null
+      },
+      "httpcontext": {
+        "useWebProxy": "false",
+        "webProxyUrl": "https://localhost:8889",
+        "useSpineProxy": "false",
+        "spineProxyUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443",
+        "providerUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir"
+      },
+      "endpointUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir",
+      "testLocation": "C:\\Users\\LillieDae\\source\\repos\\gpc-demonstrator-postman\\gpconnect-demonstrator\\FullDataSet\\2025-05-20T093528_V1_2_7",
+      "projectName": "read/metadata"
+    },
+    "reasonFailed": "Cert with thumbprint: '86 31 d6 25 ba 88 65 b6 06 cb f2 70 fe ed 7a 82 5b 4d 14 aa' not found in local machine cert store."
+  },
+  {
+    "requestName": "metadata",
+    "dir": "Security - SSP Client Certificate - Invalid - FQDN-1",
+    "testResult": "Failed",
+    "data": {
+      "request": {
+        "headers": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "6232c40b-d13f-4094-a76a-9166fd74a3e9"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ],
+        "method": "GET",
+        "contentType": "application/fhir+json",
+        "body": {
+          "value": null
+        },
+        "parameters": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "6232c40b-d13f-4094-a76a-9166fd74a3e9"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ]
+      },
+      "response": {
+        "contentType": null,
+        "statusCode": "0",
+        "timeInMilliseconds": "-1",
+        "timeAcceptable": "true",
+        "headers": [],
+        "body": null
+      },
+      "httpcontext": {
+        "useWebProxy": "false",
+        "webProxyUrl": "https://localhost:8889",
+        "useSpineProxy": "false",
+        "spineProxyUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443",
+        "providerUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir"
+      },
+      "endpointUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir",
+      "testLocation": "C:\\Users\\LillieDae\\source\\repos\\gpc-demonstrator-postman\\gpconnect-demonstrator\\FullDataSet\\2025-05-20T093528_V1_2_7",
+      "projectName": "read/metadata"
+    },
+    "reasonFailed": "Cert with thumbprint: '34 36 1f eb 71 9a 94 42 f6 63 08 84 e1 2e 0c bc d1 0f 34 0b' not found in local machine cert store."
+  },
+  {
+    "requestName": "metadata",
+    "dir": "Security - SSP Client Certificate - Invalid - Missing-1",
+    "testResult": "Failed",
+    "data": {
+      "request": {
+        "headers": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "80a9680a-e104-4b0c-86f2-101bc7e65587"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          },
+          {
+            "name": "Authorization",
+            "value": "Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwczovL0NvbnN1bWVyU3lzdGVtVVJMIiwic3ViIjoiMSIsImF1ZCI6Imh0dHBzOi8vYXV0aG9yaXplLmZoaXIubmhzLm5ldC90b2tlbiIsImV4cCI6MTc0NzczMDc5NSwiaWF0IjoxNzQ3NzMwNDk1LCJyZWFzb25fZm9yX3JlcXVlc3QiOiJkaXJlY3RjYXJlIiwicmVxdWVzdGluZ19kZXZpY2UiOnsicmVzb3VyY2VUeXBlIjoiRGV2aWNlIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiR1BDb25uZWN0VGVzdFN5c3RlbSIsInZhbHVlIjoiQ2xpZW50In1dLCJtb2RlbCI6InYxIiwidmVyc2lvbiI6IjEuMSJ9LCJyZXF1ZXN0aW5nX29yZ2FuaXphdGlvbiI6eyJyZXNvdXJjZVR5cGUiOiJPcmdhbml6YXRpb24iLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwczovL2ZoaXIubmhzLnVrL0lkL29kcy1vcmdhbml6YXRpb24tY29kZSIsInZhbHVlIjoiR1BDQTAwMDEifV0sIm5hbWUiOiJHUCBDb25uZWN0IEFzc3VyYW5jZSJ9LCJyZXF1ZXN0aW5nX3ByYWN0aXRpb25lciI6eyJyZXNvdXJjZVR5cGUiOiJQcmFjdGl0aW9uZXIiLCJpZCI6IjEiLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwczovL2ZoaXIubmhzLnVrL0lkL3Nkcy11c2VyLWlkIiwidmFsdWUiOiJHQ0FTRFMwMDAxIn0seyJzeXN0ZW0iOiJodHRwczovL2ZoaXIubmhzLnVrL0lkL3Nkcy1yb2xlLXByb2ZpbGUtaWQiLCJ2YWx1ZSI6IjExMjIzMzQ0NTU2NiJ9LHsic3lzdGVtIjoiaHR0cHM6Ly9jb25zdW1lcnN1cHBsaWVyLmNvbS9JZC91c2VyLWd1aWQiLCJ2YWx1ZSI6Ijk4ZWQ0Zjc4LTgxNGQtNDI2Ni04ZDViLWNkZTc0MmYzMDkzYyJ9XSwibmFtZSI6W3siZmFtaWx5IjoiQXNzdXJhbmNlUHJhY3RpdGlvbmVyIiwiZ2l2ZW4iOlsiQXNzdXJhbmNlVGVzdCJdLCJwcmVmaXgiOlsiTXIiXX1dfSwicmVxdWVzdGVkX3Njb3BlIjoib3JnYW5pemF0aW9uLyoucmVhZCJ9."
+          }
+        ],
+        "jwtoken": "{\"iss\":\"https://ConsumerSystemURL\",\"sub\":\"1\",\"aud\":\"https://authorize.fhir.nhs.net/token\",\"exp\":1747730795,\"iat\":1747730495,\"reason_for_request\":\"directcare\",\"requesting_device\":{\"resourceType\":\"Device\",\"identifier\":[{\"system\":\"GPConnectTestSystem\",\"value\":\"Client\"}],\"model\":\"v1\",\"version\":\"1.1\"},\"requesting_organization\":{\"resourceType\":\"Organization\",\"identifier\":[{\"system\":\"https://fhir.nhs.uk/Id/ods-organization-code\",\"value\":\"GPCA0001\"}],\"name\":\"GP Connect Assurance\"},\"requesting_practitioner\":{\"resourceType\":\"Practitioner\",\"id\":\"1\",\"identifier\":[{\"system\":\"https://fhir.nhs.uk/Id/sds-user-id\",\"value\":\"GCASDS0001\"},{\"system\":\"https://fhir.nhs.uk/Id/sds-role-profile-id\",\"value\":\"112233445566\"},{\"system\":\"https://consumersupplier.com/Id/user-guid\",\"value\":\"98ed4f78-814d-4266-8d5b-cde742f3093c\"}],\"name\":[{\"family\":\"AssurancePractitioner\",\"given\":[\"AssuranceTest\"],\"prefix\":[\"Mr\"]}]},\"requested_scope\":\"organization/*.read\"}",
+        "method": "GET",
+        "contentType": "application/fhir+json",
+        "body": {
+          "value": null
+        },
+        "parameters": ""
+      },
+      "response": {
+        "contentType": "application/fhir+json",
+        "statusCode": "200",
+        "timeInMilliseconds": "28",
+        "timeAcceptable": "true",
+        "headers": [
+          {
+            "name": "Transfer-Encoding",
+            "value": "chunked"
+          },
+          {
+            "name": "Connection",
+            "value": "keep-alive"
+          },
+          {
+            "name": "Cache-Control",
+            "value": "no-store"
+          },
+          {
+            "name": "Date",
+            "value": "Tue, 20 May 2025 08:41:37 GMT"
+          },
+          {
+            "name": "Server",
+            "value": "nginx/1.19.6"
+          },
+          {
+            "name": "X-Powered-By",
+            "value": "HAPI FHIR 3.0.0 REST Server (FHIR Server; FHIR 3.0.1/DSTU3)"
+          },
+          {
+            "name": "Content-Type",
+            "value": "application/fhir+json; charset=UTF-8"
+          }
+        ],
+        "body": "{&amp;quot;resourceType&amp;quot;:&amp;quot;CapabilityStatement&amp;quot;,&amp;quot;version&amp;quot;:&amp;quot;1.2.7&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;GP Connect&amp;quot;,&amp;quot;status&amp;quot;:&amp;quot;active&amp;quot;,&amp;quot;date&amp;quot;:&amp;quot;2018-02-23&amp;quot;,&amp;quot;publisher&amp;quot;:&amp;quot;Not provided&amp;quot;,&amp;quot;contact&amp;quot;:[{&amp;quot;name&amp;quot;:&amp;quot;NHS Digital&amp;quot;}],&amp;quot;description&amp;quot;:&amp;quot;This server implements the GP Connect API version 1.2.7&amp;quot;,&amp;quot;copyright&amp;quot;:&amp;quot;Copyright NHS Digital 2018&amp;quot;,&amp;quot;kind&amp;quot;:&amp;quot;capability&amp;quot;,&amp;quot;software&amp;quot;:{&amp;quot;name&amp;quot;:&amp;quot;HAPI FHIR Server&amp;quot;,&amp;quot;version&amp;quot;:&amp;quot;3.0.0&amp;quot;,&amp;quot;releaseDate&amp;quot;:&amp;quot;2017-09-27T00:00:00+01:00&amp;quot;},&amp;quot;fhirVersion&amp;quot;:&amp;quot;3.0.1&amp;quot;,&amp;quot;acceptUnknown&amp;quot;:&amp;quot;both&amp;quot;,&amp;quot;format&amp;quot;:[&amp;quot;application/fhir+json&amp;quot;,&amp;quot;application/fhir+xml&amp;quot;],&amp;quot;profile&amp;quot;:[{&amp;quot;reference&amp;quot;:&amp;quot;https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1&amp;quot;},{&amp;quot;reference&amp;quot;:&amp;quot;https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1&amp;quot;},{&amp;quot;reference&amp;quot;:&amp;quot;https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1&amp;quot;},{&amp;quot;reference&amp;quot;:&amp;quot;https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-PractitionerRole-1&amp;quot;},{&amp;quot;reference&amp;quot;:&amp;quot;https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Location-1&amp;quot;},{&amp;quot;reference&amp;quot;:&amp;quot;https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1&amp;quot;},{&amp;quot;reference&amp;quot;:&amp;quot;https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1&amp;quot;},{&amp;quot;reference&amp;quot;:&amp;quot;https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Schedule-1&amp;quot;},{&amp;quot;reference&amp;quot;:&amp;quot;https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Slot-1&amp;quot;},{&amp;quot;reference&amp;quot;:&amp;quot;https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1&amp;quot;},{&amp;quot;reference&amp;quot;:&amp;quot;https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Medication-1&amp;quot;},{&amp;quot;reference&amp;quot;:&amp;quot;https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1&amp;quot;},{&amp;quot;reference&amp;quot;:&amp;quot;https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1&amp;quot;},{&amp;quot;reference&amp;quot;:&amp;quot;https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1&amp;quot;},{&amp;quot;reference&amp;quot;:&amp;quot;https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-StructuredRecord-Bundle-1&amp;quot;}],&amp;quot;rest&amp;quot;:[{&amp;quot;mode&amp;quot;:&amp;quot;server&amp;quot;,&amp;quot;security&amp;quot;:{&amp;quot;cors&amp;quot;:true},&amp;quot;resource&amp;quot;:[{&amp;quot;type&amp;quot;:&amp;quot;Patient&amp;quot;,&amp;quot;interaction&amp;quot;:[{&amp;quot;code&amp;quot;:&amp;quot;read&amp;quot;},{&amp;quot;code&amp;quot;:&amp;quot;search-type&amp;quot;}],&amp;quot;searchParam&amp;quot;:[{&amp;quot;name&amp;quot;:&amp;quot;identifier&amp;quot;,&amp;quot;type&amp;quot;:&amp;quot;token&amp;quot;,&amp;quot;documentation&amp;quot;:&amp;quot;NHS Number (i.e. https://fhir.nhs.uk/Id/nhs-number|123456789)&amp;quot;}]},{&amp;quot;type&amp;quot;:&amp;quot;Organization&amp;quot;,&amp;quot;interaction&amp;quot;:[{&amp;quot;code&amp;quot;:&amp;quot;read&amp;quot;},{&amp;quot;code&amp;quot;:&amp;quot;search-type&amp;quot;}],&amp;quot;searchParam&amp;quot;:[{&amp;quot;name&amp;quot;:&amp;quot;identifier&amp;quot;,&amp;quot;type&amp;quot;:&amp;quot;token&amp;quot;,&amp;quot;documentation&amp;quot;:&amp;quot;ODS Code (i.e. https://fhir.nhs.uk/Id/ods-organization-code|Y12345)&amp;quot;}]},{&amp;quot;type&amp;quot;:&amp;quot;Practitioner&amp;quot;,&amp;quot;interaction&amp;quot;:[{&amp;quot;code&amp;quot;:&amp;quot;read&amp;quot;},{&amp;quot;code&amp;quot;:&amp;quot;search-type&amp;quot;}],&amp;quot;searchParam&amp;quot;:[{&amp;quot;name&amp;quot;:&amp;quot;identifier&amp;quot;,&amp;quot;type&amp;quot;:&amp;quot;token&amp;quot;,&amp;quot;documentation&amp;quot;:&amp;quot;SDS User Id (i.e. https://fhir.nhs.uk/Id/sds-user-id|999999)&amp;quot;}]},{&amp;quot;type&amp;quot;:&amp;quot;Location&amp;quot;,&amp;quot;interaction&amp;quot;:[{&amp;quot;code&amp;quot;:&amp;quot;read&amp;quot;}]},{&amp;quot;type&amp;quot;:&amp;quot;Appointment&amp;quot;,&amp;quot;interaction&amp;quot;:[{&amp;quot;code&amp;quot;:&amp;quot;read&amp;quot;},{&amp;quot;code&amp;quot;:&amp;quot;create&amp;quot;},{&amp;quot;code&amp;quot;:&amp;quot;update&amp;quot;},{&amp;quot;code&amp;quot;:&amp;quot;search-type&amp;quot;}],&amp;quot;updateCreate&amp;quot;:false,&amp;quot;searchParam&amp;quot;:[{&amp;quot;name&amp;quot;:&amp;quot;identifier&amp;quot;,&amp;quot;type&amp;quot;:&amp;quot;token&amp;quot;,&amp;quot;documentation&amp;quot;:&amp;quot;NHS Number (i.e. https://fhir.nhs.uk/Id/nhs-number|123456789)&amp;quot;}]},{&amp;quot;type&amp;quot;:&amp;quot;Slot&amp;quot;,&amp;quot;interaction&amp;quot;:[{&amp;quot;code&amp;quot;:&amp;quot;search-type&amp;quot;}],&amp;quot;searchInclude&amp;quot;:[&amp;quot;Schedule:actor:Location&amp;quot;,&amp;quot;Schedule:actor:Practitioner&amp;quot;,&amp;quot;Slot:schedule&amp;quot;,&amp;quot;Location:managingOrganization&amp;quot;],&amp;quot;searchParam&amp;quot;:[{&amp;quot;name&amp;quot;:&amp;quot;start&amp;quot;,&amp;quot;type&amp;quot;:&amp;quot;date&amp;quot;},{&amp;quot;name&amp;quot;:&amp;quot;end&amp;quot;,&amp;quot;type&amp;quot;:&amp;quot;date&amp;quot;},{&amp;quot;name&amp;quot;:&amp;quot;status&amp;quot;,&amp;quot;type&amp;quot;:&amp;quot;token&amp;quot;},{&amp;quot;name&amp;quot;:&amp;quot;searchFilter&amp;quot;,&amp;quot;type&amp;quot;:&amp;quot;token&amp;quot;}]}],&amp;quot;operation&amp;quot;:[{&amp;quot;name&amp;quot;:&amp;quot;gpc.registerpatient&amp;quot;,&amp;quot;definition&amp;quot;:{&amp;quot;reference&amp;quot;:&amp;quot;https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-RegisterPatient-Operation-1&amp;quot;}},{&amp;quot;name&amp;quot;:&amp;quot;gpc.getstructuredrecord&amp;quot;,&amp;quot;definition&amp;quot;:{&amp;quot;reference&amp;quot;:&amp;quot;https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1/_history/1.12&amp;quot;}}]}]}"
+      },
+      "httpcontext": {
+        "useWebProxy": "false",
+        "webProxyUrl": "https://localhost:8889",
+        "useSpineProxy": "false",
+        "spineProxyUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443",
+        "providerUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir"
+      },
+      "endpointUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir",
+      "testLocation": "C:\\Users\\LillieDae\\source\\repos\\gpc-demonstrator-postman\\gpconnect-demonstrator\\FullDataSet\\2025-05-20T093528_V1_2_7",
+      "projectName": "read/metadata"
+    },
+    "reasonFailed": "(int)_httpContext.HttpResponse.StatusCode).ToString(\n    should be\n\"496\"\n    but was\n\"200\"\n    difference\nDifference     |  |    |    |   \r\n               | \\|/  \\|/  \\|/  \r\nIndex          | 0    1    2    \r\nExpected Value | 4    9    6    \r\nActual Value   | 2    0    0    \r\nExpected Code  | 52   57   54   \r\nActual Code    | 50   48   48"
+  },
+  {
+    "requestName": "metadata",
+    "dir": "Security - SSP Client Certificate - Invalid - Revoked-1",
+    "testResult": "Failed",
+    "data": {
+      "request": {
+        "headers": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "14da9916-c350-4f8c-91c9-a87318bedbdc"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ],
+        "method": "GET",
+        "contentType": "application/fhir+json",
+        "body": {
+          "value": null
+        },
+        "parameters": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "14da9916-c350-4f8c-91c9-a87318bedbdc"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ]
+      },
+      "response": {
+        "contentType": null,
+        "statusCode": "0",
+        "timeInMilliseconds": "-1",
+        "timeAcceptable": "true",
+        "headers": [],
+        "body": null
+      },
+      "httpcontext": {
+        "useWebProxy": "false",
+        "webProxyUrl": "https://localhost:8889",
+        "useSpineProxy": "false",
+        "spineProxyUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443",
+        "providerUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir"
+      },
+      "endpointUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir",
+      "testLocation": "C:\\Users\\LillieDae\\source\\repos\\gpc-demonstrator-postman\\gpconnect-demonstrator\\FullDataSet\\2025-05-20T093528_V1_2_7",
+      "projectName": "read/metadata"
+    },
+    "reasonFailed": "Cert with thumbprint: 'de 6f 9c 50 dc 30 42 78 6a de 5d 3b c9 43 27 de 14 47 a9 f7' not found in local machine cert store."
+  },
+  {
+    "requestName": "metadata",
+    "dir": "Security - SSP Client Certificate - Valid-1",
+    "testResult": "Failed",
+    "data": {
+      "request": {
+        "headers": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "0afb40fe-436c-4332-bd14-ca273a83dacc"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ],
+        "method": "GET",
+        "contentType": "application/fhir+json",
+        "body": {
+          "value": null
+        },
+        "parameters": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "0afb40fe-436c-4332-bd14-ca273a83dacc"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ]
+      },
+      "response": {
+        "contentType": null,
+        "statusCode": "0",
+        "timeInMilliseconds": "-1",
+        "timeAcceptable": "true",
+        "headers": [],
+        "body": null
+      },
+      "httpcontext": {
+        "useWebProxy": "false",
+        "webProxyUrl": "https://localhost:8889",
+        "useSpineProxy": "false",
+        "spineProxyUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443",
+        "providerUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir"
+      },
+      "endpointUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir",
+      "testLocation": "C:\\Users\\LillieDae\\source\\repos\\gpc-demonstrator-postman\\gpconnect-demonstrator\\FullDataSet\\2025-05-20T093528_V1_2_7",
+      "projectName": "read/metadata"
+    },
+    "reasonFailed": "Cert with thumbprint: 'b8 c7 e4 cc d4 bd cf 2e a2 e3 72 54 e4 74 7d b0 3a d5 7c c2' not found in local machine cert store."
+  },
+  {
+    "requestName": "metadata",
+    "dir": "SSP - Connect with invalid insecure Cipher-1",
+    "testResult": "Failed",
+    "data": {
+      "request": {
+        "headers": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "46287d11-881c-4607-8945-bc876a26e1da"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ],
+        "method": "GET",
+        "contentType": "application/fhir+json",
+        "body": {
+          "value": null
+        },
+        "parameters": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "46287d11-881c-4607-8945-bc876a26e1da"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ]
+      },
+      "response": {
+        "contentType": null,
+        "statusCode": "0",
+        "timeInMilliseconds": "-1",
+        "timeAcceptable": "true",
+        "headers": [],
+        "body": null
+      },
+      "httpcontext": {
+        "useWebProxy": "false",
+        "webProxyUrl": "https://localhost:8889",
+        "useSpineProxy": "true",
+        "spineProxyUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443",
+        "providerUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir"
+      },
+      "endpointUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443/https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir",
+      "testLocation": "C:\\Users\\LillieDae\\source\\repos\\gpc-demonstrator-postman\\gpconnect-demonstrator\\FullDataSet\\2025-05-20T093528_V1_2_7",
+      "projectName": "read/metadata"
+    },
+    "reasonFailed": "Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store."
+  },
+  {
+    "requestName": "metadata",
+    "dir": "SSP - Connect with invalid nonexistent Cipher-1",
+    "testResult": "Failed",
+    "data": {
+      "request": {
+        "headers": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "bca18638-2b04-44d5-965e-044b0a93f87b"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ],
+        "method": "GET",
+        "contentType": "application/fhir+json",
+        "body": {
+          "value": null
+        },
+        "parameters": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "bca18638-2b04-44d5-965e-044b0a93f87b"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ]
+      },
+      "response": {
+        "contentType": null,
+        "statusCode": "0",
+        "timeInMilliseconds": "-1",
+        "timeAcceptable": "true",
+        "headers": [],
+        "body": null
+      },
+      "httpcontext": {
+        "useWebProxy": "false",
+        "webProxyUrl": "https://localhost:8889",
+        "useSpineProxy": "true",
+        "spineProxyUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443",
+        "providerUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir"
+      },
+      "endpointUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443/https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir",
+      "testLocation": "C:\\Users\\LillieDae\\source\\repos\\gpc-demonstrator-postman\\gpconnect-demonstrator\\FullDataSet\\2025-05-20T093528_V1_2_7",
+      "projectName": "read/metadata"
+    },
+    "reasonFailed": "Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store."
+  },
+  {
+    "requestName": "metadata",
+    "dir": "SSP - Connect with invalid secure Cipher-1",
+    "testResult": "Failed",
+    "data": {
+      "request": {
+        "headers": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "34dd3d8c-136a-4066-9299-03fcfc699d5f"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ],
+        "method": "GET",
+        "contentType": "application/fhir+json",
+        "body": {
+          "value": null
+        },
+        "parameters": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "34dd3d8c-136a-4066-9299-03fcfc699d5f"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ]
+      },
+      "response": {
+        "contentType": null,
+        "statusCode": "0",
+        "timeInMilliseconds": "-1",
+        "timeAcceptable": "true",
+        "headers": [],
+        "body": null
+      },
+      "httpcontext": {
+        "useWebProxy": "false",
+        "webProxyUrl": "https://localhost:8889",
+        "useSpineProxy": "true",
+        "spineProxyUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443",
+        "providerUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir"
+      },
+      "endpointUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443/https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir",
+      "testLocation": "C:\\Users\\LillieDae\\source\\repos\\gpc-demonstrator-postman\\gpconnect-demonstrator\\FullDataSet\\2025-05-20T093528_V1_2_7",
+      "projectName": "read/metadata"
+    },
+    "reasonFailed": "Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store."
+  },
+  {
+    "requestName": "metadata",
+    "dir": "SSP - Connect with valid Cipher-1",
+    "testResult": "Failed",
+    "data": {
+      "request": {
+        "headers": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "5397c30f-0fc6-4925-85fa-53d1de1ae95c"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ],
+        "method": "GET",
+        "contentType": "application/fhir+json",
+        "body": {
+          "value": null
+        },
+        "parameters": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "5397c30f-0fc6-4925-85fa-53d1de1ae95c"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ]
+      },
+      "response": {
+        "contentType": null,
+        "statusCode": "0",
+        "timeInMilliseconds": "-1",
+        "timeAcceptable": "true",
+        "headers": [],
+        "body": null
+      },
+      "httpcontext": {
+        "useWebProxy": "false",
+        "webProxyUrl": "https://localhost:8889",
+        "useSpineProxy": "true",
+        "spineProxyUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443",
+        "providerUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir"
+      },
+      "endpointUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443/https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir",
+      "testLocation": "C:\\Users\\LillieDae\\source\\repos\\gpc-demonstrator-postman\\gpconnect-demonstrator\\FullDataSet\\2025-05-20T093528_V1_2_7",
+      "projectName": "read/metadata"
+    },
+    "reasonFailed": "Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store."
+  },
+  {
+    "requestName": "metadata",
+    "dir": "SSP - Connect with valid Cipher-2",
+    "testResult": "Failed",
+    "data": {
+      "request": {
+        "headers": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "65239185-b1f9-456b-9cef-c57b24c68a78"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ],
+        "method": "GET",
+        "contentType": "application/fhir+json",
+        "body": {
+          "value": null
+        },
+        "parameters": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "65239185-b1f9-456b-9cef-c57b24c68a78"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ]
+      },
+      "response": {
+        "contentType": null,
+        "statusCode": "0",
+        "timeInMilliseconds": "-1",
+        "timeAcceptable": "true",
+        "headers": [],
+        "body": null
+      },
+      "httpcontext": {
+        "useWebProxy": "false",
+        "webProxyUrl": "https://localhost:8889",
+        "useSpineProxy": "true",
+        "spineProxyUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443",
+        "providerUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir"
+      },
+      "endpointUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443/https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir",
+      "testLocation": "C:\\Users\\LillieDae\\source\\repos\\gpc-demonstrator-postman\\gpconnect-demonstrator\\FullDataSet\\2025-05-20T093528_V1_2_7",
+      "projectName": "read/metadata"
+    },
+    "reasonFailed": "Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store."
+  },
+  {
+    "requestName": "metadata",
+    "dir": "SSP - Connect with valid Cipher-3",
+    "testResult": "Failed",
+    "data": {
+      "request": {
+        "headers": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "4190fc33-bc56-4b5e-894a-49a2ce02480b"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ],
+        "method": "GET",
+        "contentType": "application/fhir+json",
+        "body": {
+          "value": null
+        },
+        "parameters": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "4190fc33-bc56-4b5e-894a-49a2ce02480b"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ]
+      },
+      "response": {
+        "contentType": null,
+        "statusCode": "0",
+        "timeInMilliseconds": "-1",
+        "timeAcceptable": "true",
+        "headers": [],
+        "body": null
+      },
+      "httpcontext": {
+        "useWebProxy": "false",
+        "webProxyUrl": "https://localhost:8889",
+        "useSpineProxy": "true",
+        "spineProxyUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443",
+        "providerUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir"
+      },
+      "endpointUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443/https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir",
+      "testLocation": "C:\\Users\\LillieDae\\source\\repos\\gpc-demonstrator-postman\\gpconnect-demonstrator\\FullDataSet\\2025-05-20T093528_V1_2_7",
+      "projectName": "read/metadata"
+    },
+    "reasonFailed": "Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store."
+  },
+  {
+    "requestName": "metadata",
+    "dir": "SSP - Connect with valid Cipher-4",
+    "testResult": "Failed",
+    "data": {
+      "request": {
+        "headers": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "11ae270f-bf2d-4171-9b36-623139192794"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ],
+        "method": "GET",
+        "contentType": "application/fhir+json",
+        "body": {
+          "value": null
+        },
+        "parameters": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "11ae270f-bf2d-4171-9b36-623139192794"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ]
+      },
+      "response": {
+        "contentType": null,
+        "statusCode": "0",
+        "timeInMilliseconds": "-1",
+        "timeAcceptable": "true",
+        "headers": [],
+        "body": null
+      },
+      "httpcontext": {
+        "useWebProxy": "false",
+        "webProxyUrl": "https://localhost:8889",
+        "useSpineProxy": "true",
+        "spineProxyUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443",
+        "providerUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir"
+      },
+      "endpointUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443/https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir",
+      "testLocation": "C:\\Users\\LillieDae\\source\\repos\\gpc-demonstrator-postman\\gpconnect-demonstrator\\FullDataSet\\2025-05-20T093528_V1_2_7",
+      "projectName": "read/metadata"
+    },
+    "reasonFailed": "Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store."
+  },
+  {
+    "requestName": "metadata",
+    "dir": "SSP - Connect with valid Cipher-5",
+    "testResult": "Failed",
+    "data": {
+      "request": {
+        "headers": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "7006f2a0-1b99-4be9-a924-f56ea746748e"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ],
+        "method": "GET",
+        "contentType": "application/fhir+json",
+        "body": {
+          "value": null
+        },
+        "parameters": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "7006f2a0-1b99-4be9-a924-f56ea746748e"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ]
+      },
+      "response": {
+        "contentType": null,
+        "statusCode": "0",
+        "timeInMilliseconds": "-1",
+        "timeAcceptable": "true",
+        "headers": [],
+        "body": null
+      },
+      "httpcontext": {
+        "useWebProxy": "false",
+        "webProxyUrl": "https://localhost:8889",
+        "useSpineProxy": "true",
+        "spineProxyUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443",
+        "providerUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir"
+      },
+      "endpointUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443/https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir",
+      "testLocation": "C:\\Users\\LillieDae\\source\\repos\\gpc-demonstrator-postman\\gpconnect-demonstrator\\FullDataSet\\2025-05-20T093528_V1_2_7",
+      "projectName": "read/metadata"
+    },
+    "reasonFailed": "Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store."
+  },
+  {
+    "requestName": "metadata",
+    "dir": "SSP - Connect with valid Cipher-6",
+    "testResult": "Failed",
+    "data": {
+      "request": {
+        "headers": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "a5429f34-f1cd-4fe0-9aad-6200a4d7d3e5"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ],
+        "method": "GET",
+        "contentType": "application/fhir+json",
+        "body": {
+          "value": null
+        },
+        "parameters": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "a5429f34-f1cd-4fe0-9aad-6200a4d7d3e5"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ]
+      },
+      "response": {
+        "contentType": null,
+        "statusCode": "0",
+        "timeInMilliseconds": "-1",
+        "timeAcceptable": "true",
+        "headers": [],
+        "body": null
+      },
+      "httpcontext": {
+        "useWebProxy": "false",
+        "webProxyUrl": "https://localhost:8889",
+        "useSpineProxy": "true",
+        "spineProxyUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443",
+        "providerUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir"
+      },
+      "endpointUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443/https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir",
+      "testLocation": "C:\\Users\\LillieDae\\source\\repos\\gpc-demonstrator-postman\\gpconnect-demonstrator\\FullDataSet\\2025-05-20T093528_V1_2_7",
+      "projectName": "read/metadata"
+    },
+    "reasonFailed": "Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store."
+  },
+  {
+    "requestName": "metadata",
+    "dir": "SSP - Connect with valid Cipher-7",
+    "testResult": "Failed",
+    "data": {
+      "request": {
+        "headers": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "27bd3a60-12e0-4557-abb0-6bb9a9b10d75"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ],
+        "method": "GET",
+        "contentType": "application/fhir+json",
+        "body": {
+          "value": null
+        },
+        "parameters": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "27bd3a60-12e0-4557-abb0-6bb9a9b10d75"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ]
+      },
+      "response": {
+        "contentType": null,
+        "statusCode": "0",
+        "timeInMilliseconds": "-1",
+        "timeAcceptable": "true",
+        "headers": [],
+        "body": null
+      },
+      "httpcontext": {
+        "useWebProxy": "false",
+        "webProxyUrl": "https://localhost:8889",
+        "useSpineProxy": "true",
+        "spineProxyUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443",
+        "providerUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir"
+      },
+      "endpointUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443/https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir",
+      "testLocation": "C:\\Users\\LillieDae\\source\\repos\\gpc-demonstrator-postman\\gpconnect-demonstrator\\FullDataSet\\2025-05-20T093528_V1_2_7",
+      "projectName": "read/metadata"
+    },
+    "reasonFailed": "Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store."
+  },
+  {
+    "requestName": "metadata",
+    "dir": "SSP - Connect with valid Cipher-8",
+    "testResult": "Failed",
+    "data": {
+      "request": {
+        "headers": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "5c7196d9-0f3b-4d33-896d-5a46ebd8f158"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ],
+        "method": "GET",
+        "contentType": "application/fhir+json",
+        "body": {
+          "value": null
+        },
+        "parameters": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "5c7196d9-0f3b-4d33-896d-5a46ebd8f158"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ]
+      },
+      "response": {
+        "contentType": null,
+        "statusCode": "0",
+        "timeInMilliseconds": "-1",
+        "timeAcceptable": "true",
+        "headers": [],
+        "body": null
+      },
+      "httpcontext": {
+        "useWebProxy": "false",
+        "webProxyUrl": "https://localhost:8889",
+        "useSpineProxy": "true",
+        "spineProxyUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443",
+        "providerUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir"
+      },
+      "endpointUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443/https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir",
+      "testLocation": "C:\\Users\\LillieDae\\source\\repos\\gpc-demonstrator-postman\\gpconnect-demonstrator\\FullDataSet\\2025-05-20T093528_V1_2_7",
+      "projectName": "read/metadata"
+    },
+    "reasonFailed": "Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store."
+  },
+  {
+    "requestName": "metadata",
+    "dir": "SSP - Consumer Client Certificate - Invalid - Authority-1",
+    "testResult": "Failed",
+    "data": {
+      "request": {
+        "headers": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "2f4c37f8-5298-46f5-9363-2657b3d6fce7"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ],
+        "method": "GET",
+        "contentType": "application/fhir+json",
+        "body": {
+          "value": null
+        },
+        "parameters": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "2f4c37f8-5298-46f5-9363-2657b3d6fce7"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ]
+      },
+      "response": {
+        "contentType": null,
+        "statusCode": "0",
+        "timeInMilliseconds": "-1",
+        "timeAcceptable": "true",
+        "headers": [],
+        "body": null
+      },
+      "httpcontext": {
+        "useWebProxy": "false",
+        "webProxyUrl": "https://localhost:8889",
+        "useSpineProxy": "true",
+        "spineProxyUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443",
+        "providerUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir"
+      },
+      "endpointUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443/https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir",
+      "testLocation": "C:\\Users\\LillieDae\\source\\repos\\gpc-demonstrator-postman\\gpconnect-demonstrator\\FullDataSet\\2025-05-20T093528_V1_2_7",
+      "projectName": "read/metadata"
+    },
+    "reasonFailed": "Cert with thumbprint: '4a cc fc 13 4c 3d d4 90 e2 76 e5 92 17 95 a6 7d 29 bc d4 be' not found in local machine cert store."
+  },
+  {
+    "requestName": "metadata",
+    "dir": "SSP - Consumer Client Certificate - Invalid - Expired-1",
+    "testResult": "Failed",
+    "data": {
+      "request": {
+        "headers": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "1796724a-684d-44f0-a11f-a92bf49b9d7e"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ],
+        "method": "GET",
+        "contentType": "application/fhir+json",
+        "body": {
+          "value": null
+        },
+        "parameters": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "1796724a-684d-44f0-a11f-a92bf49b9d7e"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ]
+      },
+      "response": {
+        "contentType": null,
+        "statusCode": "0",
+        "timeInMilliseconds": "-1",
+        "timeAcceptable": "true",
+        "headers": [],
+        "body": null
+      },
+      "httpcontext": {
+        "useWebProxy": "false",
+        "webProxyUrl": "https://localhost:8889",
+        "useSpineProxy": "true",
+        "spineProxyUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443",
+        "providerUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir"
+      },
+      "endpointUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443/https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir",
+      "testLocation": "C:\\Users\\LillieDae\\source\\repos\\gpc-demonstrator-postman\\gpconnect-demonstrator\\FullDataSet\\2025-05-20T093528_V1_2_7",
+      "projectName": "read/metadata"
+    },
+    "reasonFailed": "Cert with thumbprint: 'f3 35 d6 ea f8 00 41 61 81 11 e6 0d 00 6f e6 13 e7 b6 ef ee' not found in local machine cert store."
+  },
+  {
+    "requestName": "metadata",
+    "dir": "SSP - Consumer Client Certificate - Invalid - FQDN-1",
+    "testResult": "Failed",
+    "data": {
+      "request": {
+        "headers": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "a0dd57cd-1b69-40dc-9325-a7b33130351a"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ],
+        "method": "GET",
+        "contentType": "application/fhir+json",
+        "body": {
+          "value": null
+        },
+        "parameters": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "a0dd57cd-1b69-40dc-9325-a7b33130351a"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ]
+      },
+      "response": {
+        "contentType": null,
+        "statusCode": "0",
+        "timeInMilliseconds": "-1",
+        "timeAcceptable": "true",
+        "headers": [],
+        "body": null
+      },
+      "httpcontext": {
+        "useWebProxy": "false",
+        "webProxyUrl": "https://localhost:8889",
+        "useSpineProxy": "true",
+        "spineProxyUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443",
+        "providerUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir"
+      },
+      "endpointUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443/https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir",
+      "testLocation": "C:\\Users\\LillieDae\\source\\repos\\gpc-demonstrator-postman\\gpconnect-demonstrator\\FullDataSet\\2025-05-20T093528_V1_2_7",
+      "projectName": "read/metadata"
+    },
+    "reasonFailed": "Cert with thumbprint: 'c7 15 67 71 7b 98 ff 15 da 49 70 8e 21 55 c8 6e 28 7c 51 ba' not found in local machine cert store."
+  },
+  {
+    "requestName": "metadata",
+    "dir": "SSP - Consumer Client Certificate - Invalid - Missing-1",
+    "testResult": "Failed",
+    "data": {
+      "request": {
+        "headers": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "3248c269-7d92-4677-af91-cd55c45a1540"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          },
+          {
+            "name": "Authorization",
+            "value": "Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwczovL0NvbnN1bWVyU3lzdGVtVVJMIiwic3ViIjoiMSIsImF1ZCI6Imh0dHBzOi8vYXV0aG9yaXplLmZoaXIubmhzLm5ldC90b2tlbiIsImV4cCI6MTc0NzczMDc5NiwiaWF0IjoxNzQ3NzMwNDk2LCJyZWFzb25fZm9yX3JlcXVlc3QiOiJkaXJlY3RjYXJlIiwicmVxdWVzdGluZ19kZXZpY2UiOnsicmVzb3VyY2VUeXBlIjoiRGV2aWNlIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiR1BDb25uZWN0VGVzdFN5c3RlbSIsInZhbHVlIjoiQ2xpZW50In1dLCJtb2RlbCI6InYxIiwidmVyc2lvbiI6IjEuMSJ9LCJyZXF1ZXN0aW5nX29yZ2FuaXphdGlvbiI6eyJyZXNvdXJjZVR5cGUiOiJPcmdhbml6YXRpb24iLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwczovL2ZoaXIubmhzLnVrL0lkL29kcy1vcmdhbml6YXRpb24tY29kZSIsInZhbHVlIjoiR1BDQTAwMDEifV0sIm5hbWUiOiJHUCBDb25uZWN0IEFzc3VyYW5jZSJ9LCJyZXF1ZXN0aW5nX3ByYWN0aXRpb25lciI6eyJyZXNvdXJjZVR5cGUiOiJQcmFjdGl0aW9uZXIiLCJpZCI6IjEiLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwczovL2ZoaXIubmhzLnVrL0lkL3Nkcy11c2VyLWlkIiwidmFsdWUiOiJHQ0FTRFMwMDAxIn0seyJzeXN0ZW0iOiJodHRwczovL2ZoaXIubmhzLnVrL0lkL3Nkcy1yb2xlLXByb2ZpbGUtaWQiLCJ2YWx1ZSI6IjExMjIzMzQ0NTU2NiJ9LHsic3lzdGVtIjoiaHR0cHM6Ly9jb25zdW1lcnN1cHBsaWVyLmNvbS9JZC91c2VyLWd1aWQiLCJ2YWx1ZSI6Ijk4ZWQ0Zjc4LTgxNGQtNDI2Ni04ZDViLWNkZTc0MmYzMDkzYyJ9XSwibmFtZSI6W3siZmFtaWx5IjoiQXNzdXJhbmNlUHJhY3RpdGlvbmVyIiwiZ2l2ZW4iOlsiQXNzdXJhbmNlVGVzdCJdLCJwcmVmaXgiOlsiTXIiXX1dfSwicmVxdWVzdGVkX3Njb3BlIjoib3JnYW5pemF0aW9uLyoucmVhZCJ9."
+          }
+        ],
+        "jwtoken": "{\"iss\":\"https://ConsumerSystemURL\",\"sub\":\"1\",\"aud\":\"https://authorize.fhir.nhs.net/token\",\"exp\":1747730796,\"iat\":1747730496,\"reason_for_request\":\"directcare\",\"requesting_device\":{\"resourceType\":\"Device\",\"identifier\":[{\"system\":\"GPConnectTestSystem\",\"value\":\"Client\"}],\"model\":\"v1\",\"version\":\"1.1\"},\"requesting_organization\":{\"resourceType\":\"Organization\",\"identifier\":[{\"system\":\"https://fhir.nhs.uk/Id/ods-organization-code\",\"value\":\"GPCA0001\"}],\"name\":\"GP Connect Assurance\"},\"requesting_practitioner\":{\"resourceType\":\"Practitioner\",\"id\":\"1\",\"identifier\":[{\"system\":\"https://fhir.nhs.uk/Id/sds-user-id\",\"value\":\"GCASDS0001\"},{\"system\":\"https://fhir.nhs.uk/Id/sds-role-profile-id\",\"value\":\"112233445566\"},{\"system\":\"https://consumersupplier.com/Id/user-guid\",\"value\":\"98ed4f78-814d-4266-8d5b-cde742f3093c\"}],\"name\":[{\"family\":\"AssurancePractitioner\",\"given\":[\"AssuranceTest\"],\"prefix\":[\"Mr\"]}]},\"requested_scope\":\"organization/*.read\"}",
+        "method": "GET",
+        "contentType": "application/fhir+json",
+        "body": {
+          "value": null
+        },
+        "parameters": ""
+      },
+      "response": {
+        "contentType": "text/html",
+        "statusCode": "400",
+        "timeInMilliseconds": "83",
+        "timeAcceptable": "true",
+        "headers": [
+          {
+            "name": "Connection",
+            "value": "close"
+          },
+          {
+            "name": "Date",
+            "value": "Tue, 20 May 2025 08:41:38 GMT"
+          },
+          {
+            "name": "Server",
+            "value": "nginx"
+          },
+          {
+            "name": "Content-Length",
+            "value": "230"
+          },
+          {
+            "name": "Content-Type",
+            "value": "text/html"
+          }
+        ],
+        "body": "&amp;lt;html&amp;gt;\r\n&amp;lt;head&amp;gt;&amp;lt;title&amp;gt;400 No required SSL certificate was sent&amp;lt;/title&amp;gt;&amp;lt;/head&amp;gt;\r\n&amp;lt;body&amp;gt;\r\n&amp;lt;center&amp;gt;&amp;lt;h1&amp;gt;400 Bad Request&amp;lt;/h1&amp;gt;&amp;lt;/center&amp;gt;\r\n&amp;lt;center&amp;gt;No required SSL certificate was sent&amp;lt;/center&amp;gt;\r\n&amp;lt;hr&amp;gt;&amp;lt;center&amp;gt;nginx&amp;lt;/center&amp;gt;\r\n&amp;lt;/body&amp;gt;\r\n&amp;lt;/html&amp;gt;\r\n"
+      },
+      "httpcontext": {
+        "useWebProxy": "false",
+        "webProxyUrl": "https://localhost:8889",
+        "useSpineProxy": "true",
+        "spineProxyUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443",
+        "providerUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir"
+      },
+      "endpointUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443/https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir",
+      "testLocation": "C:\\Users\\LillieDae\\source\\repos\\gpc-demonstrator-postman\\gpconnect-demonstrator\\FullDataSet\\2025-05-20T093528_V1_2_7",
+      "projectName": "read/metadata"
+    },
+    "reasonFailed": "statusCodes\n    should contain\nHttpStatusCode.BadRequest\n    but was actually\n[HttpStatusCode.495, HttpStatusCode.496]\n\nAdditional Info:\n    The Response Status Code should be one of 495, 496, but it was 400."
+  },
+  {
+    "requestName": "metadata",
+    "dir": "SSP - Consumer Client Certificate - Invalid - Revoked-1",
+    "testResult": "Failed",
+    "data": {
+      "request": {
+        "headers": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "11a1be12-1b20-4042-a074-ee9842bba3e8"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ],
+        "method": "GET",
+        "contentType": "application/fhir+json",
+        "body": {
+          "value": null
+        },
+        "parameters": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "11a1be12-1b20-4042-a074-ee9842bba3e8"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ]
+      },
+      "response": {
+        "contentType": null,
+        "statusCode": "0",
+        "timeInMilliseconds": "-1",
+        "timeAcceptable": "true",
+        "headers": [],
+        "body": null
+      },
+      "httpcontext": {
+        "useWebProxy": "false",
+        "webProxyUrl": "https://localhost:8889",
+        "useSpineProxy": "true",
+        "spineProxyUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443",
+        "providerUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir"
+      },
+      "endpointUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443/https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir",
+      "testLocation": "C:\\Users\\LillieDae\\source\\repos\\gpc-demonstrator-postman\\gpconnect-demonstrator\\FullDataSet\\2025-05-20T093528_V1_2_7",
+      "projectName": "read/metadata"
+    },
+    "reasonFailed": "Cert with thumbprint: 'de 6f 9c 50 dc 30 42 78 6a de 5d 3b c9 43 27 de 14 47 a9 f7' not found in local machine cert store."
+  },
+  {
+    "requestName": "metadata",
+    "dir": "SSP - Consumer Client Certificate - Valid-1",
+    "testResult": "Failed",
+    "data": {
+      "request": {
+        "headers": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "361c6a89-421e-49af-994c-73ff6d797c2d"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ],
+        "method": "GET",
+        "contentType": "application/fhir+json",
+        "body": {
+          "value": null
+        },
+        "parameters": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "361c6a89-421e-49af-994c-73ff6d797c2d"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ]
+      },
+      "response": {
+        "contentType": null,
+        "statusCode": "0",
+        "timeInMilliseconds": "-1",
+        "timeAcceptable": "true",
+        "headers": [],
+        "body": null
+      },
+      "httpcontext": {
+        "useWebProxy": "false",
+        "webProxyUrl": "https://localhost:8889",
+        "useSpineProxy": "true",
+        "spineProxyUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443",
+        "providerUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir"
+      },
+      "endpointUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443/https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir",
+      "testLocation": "C:\\Users\\LillieDae\\source\\repos\\gpc-demonstrator-postman\\gpconnect-demonstrator\\FullDataSet\\2025-05-20T093528_V1_2_7",
+      "projectName": "read/metadata"
+    },
+    "reasonFailed": "Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store."
+  },
+  {
+    "requestName": "Patient/$gpc.getcarerecord",
+    "dir": "SSP - CORS-1",
+    "testResult": "Failed",
+    "data": {
+      "request": {
+        "headers": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "9ef93218-92fd-4829-a933-6f4efdcd56b2"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord-1"
+          }
+        ],
+        "method": "POST",
+        "contentType": "application/fhir+json",
+        "body": {
+          "value": null
+        },
+        "parameters": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "9ef93218-92fd-4829-a933-6f4efdcd56b2"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord-1"
+          }
+        ]
+      },
+      "response": {
+        "contentType": null,
+        "statusCode": "0",
+        "timeInMilliseconds": "-1",
+        "timeAcceptable": "true",
+        "headers": [],
+        "body": null
+      },
+      "httpcontext": {
+        "useWebProxy": "false",
+        "webProxyUrl": "https://localhost:8889",
+        "useSpineProxy": "true",
+        "spineProxyUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443",
+        "providerUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir"
+      },
+      "endpointUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443/https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir",
+      "testLocation": "C:\\Users\\LillieDae\\source\\repos\\gpc-demonstrator-postman\\gpconnect-demonstrator\\FullDataSet\\2025-05-20T093528_V1_2_7",
+      "projectName": "operation/gpc.getcarerecord"
+    },
+    "reasonFailed": "Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store."
+  },
+  {
+    "requestName": "Patient/$gpc.registerpatient",
+    "dir": "SSP - CORS-10",
+    "testResult": "Failed",
+    "data": {
+      "request": {
+        "headers": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "4bdaa209-952f-45b4-9250-d0a59b3f58ca"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:operation:gpc.registerpatient-1"
+          }
+        ],
+        "method": "POST",
+        "contentType": "application/fhir+json",
+        "body": {
+          "value": null
+        },
+        "parameters": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "4bdaa209-952f-45b4-9250-d0a59b3f58ca"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:operation:gpc.registerpatient-1"
+          }
+        ]
+      },
+      "response": {
+        "contentType": null,
+        "statusCode": "0",
+        "timeInMilliseconds": "-1",
+        "timeAcceptable": "true",
+        "headers": [],
+        "body": null
+      },
+      "httpcontext": {
+        "useWebProxy": "false",
+        "webProxyUrl": "https://localhost:8889",
+        "useSpineProxy": "true",
+        "spineProxyUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443",
+        "providerUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir"
+      },
+      "endpointUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443/https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir",
+      "testLocation": "C:\\Users\\LillieDae\\source\\repos\\gpc-demonstrator-postman\\gpconnect-demonstrator\\FullDataSet\\2025-05-20T093528_V1_2_7",
+      "projectName": "operation/gpc.registerpatient"
+    },
+    "reasonFailed": "Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store."
+  },
+  {
+    "requestName": "Slot",
+    "dir": "SSP - CORS-11",
+    "testResult": "Failed",
+    "data": {
+      "request": {
+        "headers": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "18a393c2-0099-430d-b9c0-da51eecd05ef"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:search:slot-1"
+          }
+        ],
+        "method": "GET",
+        "contentType": "application/fhir+json",
+        "body": {
+          "value": null
+        },
+        "parameters": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "18a393c2-0099-430d-b9c0-da51eecd05ef"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:search:slot-1"
+          }
+        ]
+      },
+      "response": {
+        "contentType": null,
+        "statusCode": "0",
+        "timeInMilliseconds": "-1",
+        "timeAcceptable": "true",
+        "headers": [],
+        "body": null
+      },
+      "httpcontext": {
+        "useWebProxy": "false",
+        "webProxyUrl": "https://localhost:8889",
+        "useSpineProxy": "true",
+        "spineProxyUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443",
+        "providerUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir"
+      },
+      "endpointUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443/https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir",
+      "testLocation": "C:\\Users\\LillieDae\\source\\repos\\gpc-demonstrator-postman\\gpconnect-demonstrator\\FullDataSet\\2025-05-20T093528_V1_2_7",
+      "projectName": "search/slot"
+    },
+    "reasonFailed": "Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store."
+  },
+  {
+    "requestName": "Appointment",
+    "dir": "SSP - CORS-12",
+    "testResult": "Failed",
+    "data": {
+      "request": {
+        "headers": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "49044210-d260-4ccf-9b00-91d0da903355"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:create:appointment-1"
+          }
+        ],
+        "method": "POST",
+        "contentType": "application/fhir+json",
+        "body": {
+          "value": null
+        },
+        "parameters": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "49044210-d260-4ccf-9b00-91d0da903355"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:create:appointment-1"
+          }
+        ]
+      },
+      "response": {
+        "contentType": null,
+        "statusCode": "0",
+        "timeInMilliseconds": "-1",
+        "timeAcceptable": "true",
+        "headers": [],
+        "body": null
+      },
+      "httpcontext": {
+        "useWebProxy": "false",
+        "webProxyUrl": "https://localhost:8889",
+        "useSpineProxy": "true",
+        "spineProxyUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443",
+        "providerUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir"
+      },
+      "endpointUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443/https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir",
+      "testLocation": "C:\\Users\\LillieDae\\source\\repos\\gpc-demonstrator-postman\\gpconnect-demonstrator\\FullDataSet\\2025-05-20T093528_V1_2_7",
+      "projectName": "create/appointment"
+    },
+    "reasonFailed": "Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store."
+  },
+  {
+    "requestName": "Patient//Appointment",
+    "dir": "SSP - CORS-13",
+    "testResult": "Failed",
+    "data": {
+      "request": {
+        "headers": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "7338a83f-88dc-4dc4-be40-b574db6885ff"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:search:patient_appointments-1"
+          }
+        ],
+        "method": "GET",
+        "contentType": "application/fhir+json",
+        "body": {
+          "value": null
+        },
+        "parameters": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "7338a83f-88dc-4dc4-be40-b574db6885ff"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:search:patient_appointments-1"
+          }
+        ]
+      },
+      "response": {
+        "contentType": null,
+        "statusCode": "0",
+        "timeInMilliseconds": "-1",
+        "timeAcceptable": "true",
+        "headers": [],
+        "body": null
+      },
+      "httpcontext": {
+        "useWebProxy": "false",
+        "webProxyUrl": "https://localhost:8889",
+        "useSpineProxy": "true",
+        "spineProxyUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443",
+        "providerUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir"
+      },
+      "endpointUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443/https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir",
+      "testLocation": "C:\\Users\\LillieDae\\source\\repos\\gpc-demonstrator-postman\\gpconnect-demonstrator\\FullDataSet\\2025-05-20T093528_V1_2_7",
+      "projectName": "search/patient_appointments"
+    },
+    "reasonFailed": "Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store."
+  },
+  {
+    "requestName": "Appointment/",
+    "dir": "SSP - CORS-14",
+    "testResult": "Failed",
+    "data": {
+      "request": {
+        "headers": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "c5992863-fdb9-4cae-b233-6f3a0fe89e5b"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:update:appointment-1"
+          }
+        ],
+        "method": "PUT",
+        "contentType": "application/fhir+json",
+        "body": {
+          "value": null
+        },
+        "parameters": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "c5992863-fdb9-4cae-b233-6f3a0fe89e5b"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:update:appointment-1"
+          }
+        ]
+      },
+      "response": {
+        "contentType": null,
+        "statusCode": "0",
+        "timeInMilliseconds": "-1",
+        "timeAcceptable": "true",
+        "headers": [],
+        "body": null
+      },
+      "httpcontext": {
+        "useWebProxy": "false",
+        "webProxyUrl": "https://localhost:8889",
+        "useSpineProxy": "true",
+        "spineProxyUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443",
+        "providerUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir"
+      },
+      "endpointUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443/https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir",
+      "testLocation": "C:\\Users\\LillieDae\\source\\repos\\gpc-demonstrator-postman\\gpconnect-demonstrator\\FullDataSet\\2025-05-20T093528_V1_2_7",
+      "projectName": "update/appointment"
+    },
+    "reasonFailed": "Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store."
+  },
+  {
+    "requestName": "Appointment/",
+    "dir": "SSP - CORS-15",
+    "testResult": "Failed",
+    "data": {
+      "request": {
+        "headers": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "1208545e-b5c6-4a2e-b7e5-9ec004346881"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:cancel:appointment-1"
+          }
+        ],
+        "method": "PUT",
+        "contentType": "application/fhir+json",
+        "body": {
+          "value": null
+        },
+        "parameters": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "1208545e-b5c6-4a2e-b7e5-9ec004346881"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:cancel:appointment-1"
+          }
+        ]
+      },
+      "response": {
+        "contentType": null,
+        "statusCode": "0",
+        "timeInMilliseconds": "-1",
+        "timeAcceptable": "true",
+        "headers": [],
+        "body": null
+      },
+      "httpcontext": {
+        "useWebProxy": "false",
+        "webProxyUrl": "https://localhost:8889",
+        "useSpineProxy": "true",
+        "spineProxyUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443",
+        "providerUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir"
+      },
+      "endpointUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443/https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir",
+      "testLocation": "C:\\Users\\LillieDae\\source\\repos\\gpc-demonstrator-postman\\gpconnect-demonstrator\\FullDataSet\\2025-05-20T093528_V1_2_7",
+      "projectName": "cancel/appointment"
+    },
+    "reasonFailed": "Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store."
+  },
+  {
+    "requestName": "Appointment/",
+    "dir": "SSP - CORS-16",
+    "testResult": "Failed",
+    "data": {
+      "request": {
+        "headers": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "d2dc2d80-6a25-4dde-b7ac-362cbc5e383d"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:appointment-1"
+          }
+        ],
+        "method": "GET",
+        "contentType": "application/fhir+json",
+        "body": {
+          "value": null
+        },
+        "parameters": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "d2dc2d80-6a25-4dde-b7ac-362cbc5e383d"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:appointment-1"
+          }
+        ]
+      },
+      "response": {
+        "contentType": null,
+        "statusCode": "0",
+        "timeInMilliseconds": "-1",
+        "timeAcceptable": "true",
+        "headers": [],
+        "body": null
+      },
+      "httpcontext": {
+        "useWebProxy": "false",
+        "webProxyUrl": "https://localhost:8889",
+        "useSpineProxy": "true",
+        "spineProxyUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443",
+        "providerUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir"
+      },
+      "endpointUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443/https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir",
+      "testLocation": "C:\\Users\\LillieDae\\source\\repos\\gpc-demonstrator-postman\\gpconnect-demonstrator\\FullDataSet\\2025-05-20T093528_V1_2_7",
+      "projectName": "read/appointment"
+    },
+    "reasonFailed": "Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store."
+  },
+  {
+    "requestName": "metadata",
+    "dir": "SSP - CORS-17",
+    "testResult": "Failed",
+    "data": {
+      "request": {
+        "headers": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "1952ed9d-3e7b-444b-932f-3af4b2ebf847"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ],
+        "method": "GET",
+        "contentType": "application/fhir+json",
+        "body": {
+          "value": null
+        },
+        "parameters": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "1952ed9d-3e7b-444b-932f-3af4b2ebf847"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ]
+      },
+      "response": {
+        "contentType": null,
+        "statusCode": "0",
+        "timeInMilliseconds": "-1",
+        "timeAcceptable": "true",
+        "headers": [],
+        "body": null
+      },
+      "httpcontext": {
+        "useWebProxy": "false",
+        "webProxyUrl": "https://localhost:8889",
+        "useSpineProxy": "true",
+        "spineProxyUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443",
+        "providerUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir"
+      },
+      "endpointUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443/https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir",
+      "testLocation": "C:\\Users\\LillieDae\\source\\repos\\gpc-demonstrator-postman\\gpconnect-demonstrator\\FullDataSet\\2025-05-20T093528_V1_2_7",
+      "projectName": "read/metadata"
+    },
+    "reasonFailed": "Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store."
+  },
+  {
+    "requestName": "Patient/$gpc.getstructuredrecord",
+    "dir": "SSP - CORS-2",
+    "testResult": "Failed",
+    "data": {
+      "request": {
+        "headers": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "349d7836-eb49-4124-9cfb-d8d66ed2c8c6"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1"
+          }
+        ],
+        "method": "POST",
+        "contentType": "application/fhir+json",
+        "body": {
+          "value": null
+        },
+        "parameters": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "349d7836-eb49-4124-9cfb-d8d66ed2c8c6"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1"
+          }
+        ]
+      },
+      "response": {
+        "contentType": null,
+        "statusCode": "0",
+        "timeInMilliseconds": "-1",
+        "timeAcceptable": "true",
+        "headers": [],
+        "body": null
+      },
+      "httpcontext": {
+        "useWebProxy": "false",
+        "webProxyUrl": "https://localhost:8889",
+        "useSpineProxy": "true",
+        "spineProxyUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443",
+        "providerUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir"
+      },
+      "endpointUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443/https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir",
+      "testLocation": "C:\\Users\\LillieDae\\source\\repos\\gpc-demonstrator-postman\\gpconnect-demonstrator\\FullDataSet\\2025-05-20T093528_V1_2_7",
+      "projectName": "operation/gpc.getstructuredrecord"
+    },
+    "reasonFailed": "Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store."
+  },
+  {
+    "requestName": "Organization",
+    "dir": "SSP - CORS-3",
+    "testResult": "Failed",
+    "data": {
+      "request": {
+        "headers": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "c36acbc7-675c-4575-a45f-2c8b4ea8c550"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:search:organization-1"
+          }
+        ],
+        "method": "GET",
+        "contentType": "application/fhir+json",
+        "body": {
+          "value": null
+        },
+        "parameters": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "c36acbc7-675c-4575-a45f-2c8b4ea8c550"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:search:organization-1"
+          }
+        ]
+      },
+      "response": {
+        "contentType": null,
+        "statusCode": "0",
+        "timeInMilliseconds": "-1",
+        "timeAcceptable": "true",
+        "headers": [],
+        "body": null
+      },
+      "httpcontext": {
+        "useWebProxy": "false",
+        "webProxyUrl": "https://localhost:8889",
+        "useSpineProxy": "true",
+        "spineProxyUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443",
+        "providerUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir"
+      },
+      "endpointUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443/https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir",
+      "testLocation": "C:\\Users\\LillieDae\\source\\repos\\gpc-demonstrator-postman\\gpconnect-demonstrator\\FullDataSet\\2025-05-20T093528_V1_2_7",
+      "projectName": "search/organization"
+    },
+    "reasonFailed": "Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store."
+  },
+  {
+    "requestName": "Organization/",
+    "dir": "SSP - CORS-4",
+    "testResult": "Failed",
+    "data": {
+      "request": {
+        "headers": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "31418af1-ba3b-47a9-9d27-05f60cc13fca"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:organization-1"
+          }
+        ],
+        "method": "GET",
+        "contentType": "application/fhir+json",
+        "body": {
+          "value": null
+        },
+        "parameters": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "31418af1-ba3b-47a9-9d27-05f60cc13fca"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:organization-1"
+          }
+        ]
+      },
+      "response": {
+        "contentType": null,
+        "statusCode": "0",
+        "timeInMilliseconds": "-1",
+        "timeAcceptable": "true",
+        "headers": [],
+        "body": null
+      },
+      "httpcontext": {
+        "useWebProxy": "false",
+        "webProxyUrl": "https://localhost:8889",
+        "useSpineProxy": "true",
+        "spineProxyUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443",
+        "providerUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir"
+      },
+      "endpointUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443/https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir",
+      "testLocation": "C:\\Users\\LillieDae\\source\\repos\\gpc-demonstrator-postman\\gpconnect-demonstrator\\FullDataSet\\2025-05-20T093528_V1_2_7",
+      "projectName": "read/organization"
+    },
+    "reasonFailed": "Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store."
+  },
+  {
+    "requestName": "Practitioner",
+    "dir": "SSP - CORS-5",
+    "testResult": "Failed",
+    "data": {
+      "request": {
+        "headers": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "0d9a9e3c-0966-47bd-a493-9e5d0ba19c47"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:search:practitioner-1"
+          }
+        ],
+        "method": "GET",
+        "contentType": "application/fhir+json",
+        "body": {
+          "value": null
+        },
+        "parameters": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "0d9a9e3c-0966-47bd-a493-9e5d0ba19c47"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:search:practitioner-1"
+          }
+        ]
+      },
+      "response": {
+        "contentType": null,
+        "statusCode": "0",
+        "timeInMilliseconds": "-1",
+        "timeAcceptable": "true",
+        "headers": [],
+        "body": null
+      },
+      "httpcontext": {
+        "useWebProxy": "false",
+        "webProxyUrl": "https://localhost:8889",
+        "useSpineProxy": "true",
+        "spineProxyUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443",
+        "providerUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir"
+      },
+      "endpointUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443/https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir",
+      "testLocation": "C:\\Users\\LillieDae\\source\\repos\\gpc-demonstrator-postman\\gpconnect-demonstrator\\FullDataSet\\2025-05-20T093528_V1_2_7",
+      "projectName": "search/practitioner"
+    },
+    "reasonFailed": "Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store."
+  },
+  {
+    "requestName": "Practitioner/",
+    "dir": "SSP - CORS-6",
+    "testResult": "Failed",
+    "data": {
+      "request": {
+        "headers": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "2bf1003b-8f8c-49b4-a971-e6f465692f75"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:practitioner-1"
+          }
+        ],
+        "method": "GET",
+        "contentType": "application/fhir+json",
+        "body": {
+          "value": null
+        },
+        "parameters": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "2bf1003b-8f8c-49b4-a971-e6f465692f75"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:practitioner-1"
+          }
+        ]
+      },
+      "response": {
+        "contentType": null,
+        "statusCode": "0",
+        "timeInMilliseconds": "-1",
+        "timeAcceptable": "true",
+        "headers": [],
+        "body": null
+      },
+      "httpcontext": {
+        "useWebProxy": "false",
+        "webProxyUrl": "https://localhost:8889",
+        "useSpineProxy": "true",
+        "spineProxyUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443",
+        "providerUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir"
+      },
+      "endpointUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443/https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir",
+      "testLocation": "C:\\Users\\LillieDae\\source\\repos\\gpc-demonstrator-postman\\gpconnect-demonstrator\\FullDataSet\\2025-05-20T093528_V1_2_7",
+      "projectName": "read/practitioner"
+    },
+    "reasonFailed": "Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store."
+  },
+  {
+    "requestName": "Patient",
+    "dir": "SSP - CORS-7",
+    "testResult": "Failed",
+    "data": {
+      "request": {
+        "headers": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "452ecba3-b6aa-4d99-8f98-be548724578d"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:search:patient-1"
+          }
+        ],
+        "method": "GET",
+        "contentType": "application/fhir+json",
+        "body": {
+          "value": null
+        },
+        "parameters": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "452ecba3-b6aa-4d99-8f98-be548724578d"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:search:patient-1"
+          }
+        ]
+      },
+      "response": {
+        "contentType": null,
+        "statusCode": "0",
+        "timeInMilliseconds": "-1",
+        "timeAcceptable": "true",
+        "headers": [],
+        "body": null
+      },
+      "httpcontext": {
+        "useWebProxy": "false",
+        "webProxyUrl": "https://localhost:8889",
+        "useSpineProxy": "true",
+        "spineProxyUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443",
+        "providerUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir"
+      },
+      "endpointUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443/https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir",
+      "testLocation": "C:\\Users\\LillieDae\\source\\repos\\gpc-demonstrator-postman\\gpconnect-demonstrator\\FullDataSet\\2025-05-20T093528_V1_2_7",
+      "projectName": "search/patient"
+    },
+    "reasonFailed": "Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store."
+  },
+  {
+    "requestName": "Patient/",
+    "dir": "SSP - CORS-8",
+    "testResult": "Failed",
+    "data": {
+      "request": {
+        "headers": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "96adf8d2-67b0-4ec8-8078-ff025d47d9a1"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:patient-1"
+          }
+        ],
+        "method": "GET",
+        "contentType": "application/fhir+json",
+        "body": {
+          "value": null
+        },
+        "parameters": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "96adf8d2-67b0-4ec8-8078-ff025d47d9a1"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:patient-1"
+          }
+        ]
+      },
+      "response": {
+        "contentType": null,
+        "statusCode": "0",
+        "timeInMilliseconds": "-1",
+        "timeAcceptable": "true",
+        "headers": [],
+        "body": null
+      },
+      "httpcontext": {
+        "useWebProxy": "false",
+        "webProxyUrl": "https://localhost:8889",
+        "useSpineProxy": "true",
+        "spineProxyUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443",
+        "providerUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir"
+      },
+      "endpointUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443/https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir",
+      "testLocation": "C:\\Users\\LillieDae\\source\\repos\\gpc-demonstrator-postman\\gpconnect-demonstrator\\FullDataSet\\2025-05-20T093528_V1_2_7",
+      "projectName": "read/patient"
+    },
+    "reasonFailed": "Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store."
+  },
+  {
+    "requestName": "Location/",
+    "dir": "SSP - CORS-9",
+    "testResult": "Failed",
+    "data": {
+      "request": {
+        "headers": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "7c716ca8-c7c1-46cf-a8f5-0e81417ee49a"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:location-1"
+          }
+        ],
+        "method": "GET",
+        "contentType": "application/fhir+json",
+        "body": {
+          "value": null
+        },
+        "parameters": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "7c716ca8-c7c1-46cf-a8f5-0e81417ee49a"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:location-1"
+          }
+        ]
+      },
+      "response": {
+        "contentType": null,
+        "statusCode": "0",
+        "timeInMilliseconds": "-1",
+        "timeAcceptable": "true",
+        "headers": [],
+        "body": null
+      },
+      "httpcontext": {
+        "useWebProxy": "false",
+        "webProxyUrl": "https://localhost:8889",
+        "useSpineProxy": "true",
+        "spineProxyUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443",
+        "providerUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir"
+      },
+      "endpointUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443/https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir",
+      "testLocation": "C:\\Users\\LillieDae\\source\\repos\\gpc-demonstrator-postman\\gpconnect-demonstrator\\FullDataSet\\2025-05-20T093528_V1_2_7",
+      "projectName": "read/location"
+    },
+    "reasonFailed": "Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store."
+  },
+  {
+    "requestName": "metadata",
+    "dir": "SSP - Non-SSL to SSL-1",
+    "testResult": "Failed",
+    "data": {
+      "request": {
+        "headers": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "f1c2ab26-4b28-4e45-880f-b978fd253cbc"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          },
+          {
+            "name": "Authorization",
+            "value": "Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwczovL0NvbnN1bWVyU3lzdGVtVVJMIiwic3ViIjoiMSIsImF1ZCI6Imh0dHBzOi8vYXV0aG9yaXplLmZoaXIubmhzLm5ldC90b2tlbiIsImV4cCI6MTc0NzczMDc5NiwiaWF0IjoxNzQ3NzMwNDk2LCJyZWFzb25fZm9yX3JlcXVlc3QiOiJkaXJlY3RjYXJlIiwicmVxdWVzdGluZ19kZXZpY2UiOnsicmVzb3VyY2VUeXBlIjoiRGV2aWNlIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiR1BDb25uZWN0VGVzdFN5c3RlbSIsInZhbHVlIjoiQ2xpZW50In1dLCJtb2RlbCI6InYxIiwidmVyc2lvbiI6IjEuMSJ9LCJyZXF1ZXN0aW5nX29yZ2FuaXphdGlvbiI6eyJyZXNvdXJjZVR5cGUiOiJPcmdhbml6YXRpb24iLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwczovL2ZoaXIubmhzLnVrL0lkL29kcy1vcmdhbml6YXRpb24tY29kZSIsInZhbHVlIjoiR1BDQTAwMDEifV0sIm5hbWUiOiJHUCBDb25uZWN0IEFzc3VyYW5jZSJ9LCJyZXF1ZXN0aW5nX3ByYWN0aXRpb25lciI6eyJyZXNvdXJjZVR5cGUiOiJQcmFjdGl0aW9uZXIiLCJpZCI6IjEiLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwczovL2ZoaXIubmhzLnVrL0lkL3Nkcy11c2VyLWlkIiwidmFsdWUiOiJHQ0FTRFMwMDAxIn0seyJzeXN0ZW0iOiJodHRwczovL2ZoaXIubmhzLnVrL0lkL3Nkcy1yb2xlLXByb2ZpbGUtaWQiLCJ2YWx1ZSI6IjExMjIzMzQ0NTU2NiJ9LHsic3lzdGVtIjoiaHR0cHM6Ly9jb25zdW1lcnN1cHBsaWVyLmNvbS9JZC91c2VyLWd1aWQiLCJ2YWx1ZSI6Ijk4ZWQ0Zjc4LTgxNGQtNDI2Ni04ZDViLWNkZTc0MmYzMDkzYyJ9XSwibmFtZSI6W3siZmFtaWx5IjoiQXNzdXJhbmNlUHJhY3RpdGlvbmVyIiwiZ2l2ZW4iOlsiQXNzdXJhbmNlVGVzdCJdLCJwcmVmaXgiOlsiTXIiXX1dfSwicmVxdWVzdGVkX3Njb3BlIjoib3JnYW5pemF0aW9uLyoucmVhZCJ9."
+          }
+        ],
+        "jwtoken": "{\"iss\":\"https://ConsumerSystemURL\",\"sub\":\"1\",\"aud\":\"https://authorize.fhir.nhs.net/token\",\"exp\":1747730796,\"iat\":1747730496,\"reason_for_request\":\"directcare\",\"requesting_device\":{\"resourceType\":\"Device\",\"identifier\":[{\"system\":\"GPConnectTestSystem\",\"value\":\"Client\"}],\"model\":\"v1\",\"version\":\"1.1\"},\"requesting_organization\":{\"resourceType\":\"Organization\",\"identifier\":[{\"system\":\"https://fhir.nhs.uk/Id/ods-organization-code\",\"value\":\"GPCA0001\"}],\"name\":\"GP Connect Assurance\"},\"requesting_practitioner\":{\"resourceType\":\"Practitioner\",\"id\":\"1\",\"identifier\":[{\"system\":\"https://fhir.nhs.uk/Id/sds-user-id\",\"value\":\"GCASDS0001\"},{\"system\":\"https://fhir.nhs.uk/Id/sds-role-profile-id\",\"value\":\"112233445566\"},{\"system\":\"https://consumersupplier.com/Id/user-guid\",\"value\":\"98ed4f78-814d-4266-8d5b-cde742f3093c\"}],\"name\":[{\"family\":\"AssurancePractitioner\",\"given\":[\"AssuranceTest\"],\"prefix\":[\"Mr\"]}]},\"requested_scope\":\"organization/*.read\"}",
+        "method": "GET",
+        "contentType": "application/fhir+json",
+        "body": {
+          "value": null
+        },
+        "parameters": ""
+      },
+      "response": {
+        "contentType": "text/html",
+        "statusCode": "400",
+        "timeInMilliseconds": "47",
+        "timeAcceptable": "true",
+        "headers": [
+          {
+            "name": "Connection",
+            "value": "close"
+          },
+          {
+            "name": "Date",
+            "value": "Tue, 20 May 2025 08:41:38 GMT"
+          },
+          {
+            "name": "Server",
+            "value": "nginx"
+          },
+          {
+            "name": "Content-Length",
+            "value": "230"
+          },
+          {
+            "name": "Content-Type",
+            "value": "text/html"
+          }
+        ],
+        "body": "&amp;lt;html&amp;gt;\r\n&amp;lt;head&amp;gt;&amp;lt;title&amp;gt;400 No required SSL certificate was sent&amp;lt;/title&amp;gt;&amp;lt;/head&amp;gt;\r\n&amp;lt;body&amp;gt;\r\n&amp;lt;center&amp;gt;&amp;lt;h1&amp;gt;400 Bad Request&amp;lt;/h1&amp;gt;&amp;lt;/center&amp;gt;\r\n&amp;lt;center&amp;gt;No required SSL certificate was sent&amp;lt;/center&amp;gt;\r\n&amp;lt;hr&amp;gt;&amp;lt;center&amp;gt;nginx&amp;lt;/center&amp;gt;\r\n&amp;lt;/body&amp;gt;\r\n&amp;lt;/html&amp;gt;\r\n"
+      },
+      "httpcontext": {
+        "useWebProxy": "false",
+        "webProxyUrl": "https://localhost:8889",
+        "useSpineProxy": "true",
+        "spineProxyUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443",
+        "providerUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir"
+      },
+      "endpointUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443/https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir",
+      "testLocation": "C:\\Users\\LillieDae\\source\\repos\\gpc-demonstrator-postman\\gpconnect-demonstrator\\FullDataSet\\2025-05-20T093528_V1_2_7",
+      "projectName": "read/metadata"
+    },
+    "reasonFailed": "_httpContext.HttpResponse.Headers\n    should contain key\n\"Strict-Transport-Security\"\n    but does not\n\nAdditional Info:\n    The Response Headers should contain a Strict-Transport-Security header, but it wasn't found."
+  },
+  {
+    "requestName": "metadata",
+    "dir": "SSP - To ASID - Invalid-1",
+    "testResult": "Failed",
+    "data": {
+      "request": {
+        "headers": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "2edf15f0-848f-43a4-b7e6-9bba680a262a"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ],
+        "method": "GET",
+        "contentType": "application/fhir+json",
+        "body": {
+          "value": null
+        },
+        "parameters": [
+          {
+            "name": "Ssp-TraceID",
+            "value": "2edf15f0-848f-43a4-b7e6-9bba680a262a"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Accept",
+            "value": "application/fhir+json"
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1"
+          }
+        ]
+      },
+      "response": {
+        "contentType": null,
+        "statusCode": "0",
+        "timeInMilliseconds": "-1",
+        "timeAcceptable": "true",
+        "headers": [],
+        "body": null
+      },
+      "httpcontext": {
+        "useWebProxy": "false",
+        "webProxyUrl": "https://localhost:8889",
+        "useSpineProxy": "true",
+        "spineProxyUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443",
+        "providerUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir"
+      },
+      "endpointUrl": "https://proxy.dev.spine2.ncrs.nhs.uk:443/https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir",
+      "testLocation": "C:\\Users\\LillieDae\\source\\repos\\gpc-demonstrator-postman\\gpconnect-demonstrator\\FullDataSet\\2025-05-20T093528_V1_2_7",
+      "projectName": "read/metadata"
+    },
+    "reasonFailed": "Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store."
+  }
+]

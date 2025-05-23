@@ -1,0 +1,21 @@
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "patientNHSNumber",
+      "valueIdentifier": {
+        "system": "Invalid-System",
+        "value": "9658218865"
+      }
+    },
+    {
+      "name": "includeMedication",
+      "part": [
+        {
+          "name": "includePrescriptionIssues",
+          "valueBoolean": false
+        }
+      ]
+    }
+  ]
+}

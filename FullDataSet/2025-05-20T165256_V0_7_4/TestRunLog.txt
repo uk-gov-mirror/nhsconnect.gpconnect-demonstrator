@@ -1,0 +1,766 @@
+****************************************************************
+Overall Stats from test Run: Total=717  Passed=713  Failed: 4
+****************************************************************
+TestRunDateTime : 20/05/2025 16:54:37
+consumerASID : 200000000985
+providerASID : 200000000985
+useTLS Flag : True
+serverURL: gpconnect-win1.itblab.nic.cfh.nhs.uk
+serverPort : 443
+serverBase : /gpconnect-demonstrator/v0/fhir
+useSpineProxy Flag : False
+spineProxyUrl : proxy.int.spine2.ncrs.nhs.uk
+spineProxyPort : 443
+****************************************************************
+Individual Test Results Below
+****************************************************************
+----------------------------------------------------------------
+20/05/2025 16:54:33,JWT Missing sdsRoleProfile and guid1(),Fail
+(int)HttpContext.ResponseStatusCode).ToString(
+    should be
+"200"
+    but was
+"400"
+    difference
+Difference     |  |             
+               | \|/            
+Index          | 0    1    2    
+Expected Value | 2    0    0    
+Actual Value   | 4    0    0    
+Expected Code  | 50   48   48   
+Actual Code    | 52   48   48   
+----------------------------------------------------------------
+20/05/2025 16:54:34,Security Expired client certificate sent1(),Fail
+Cert with thumbprint: 'f7 5b 14 f8 b2 df 49 30 6c bb 2b 98 b3 2f f3 0d 80 65 bf f3' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 16:54:34,Security invalid client certificate sent1(),Fail
+Cert with thumbprint: '4f 04 cb 97 16 19 29 f1 d5 70 bf 57 ee bd f9 2b 27 60 35 a5' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 16:54:34,Security no client certificate sent1(),Fail
+(int)HttpContext.ResponseStatusCode).ToString(
+    should be
+"496"
+    but was
+"200"
+    difference
+Difference     |  |    |    |   
+               | \|/  \|/  \|/  
+Index          | 0    1    2    
+Expected Value | 4    9    6    
+Actual Value   | 2    0    0    
+Expected Code  | 52   57   54   
+Actual Code    | 50   48   48   
+----------------------------------------------------------------
+20/05/2025 16:52:59,Access blocked to care record as no patient consent1(("ADM",null)),Pass
+20/05/2025 16:52:59,Access blocked to care record as no patient consent2(("ALL",null)),Pass
+20/05/2025 16:52:59,Access blocked to care record as no patient consent3(("CLI",null)),Pass
+20/05/2025 16:52:59,Access blocked to care record as no patient consent4(("ENC",null)),Pass
+20/05/2025 16:52:59,Access blocked to care record as no patient consent5(("IMM",null)),Pass
+20/05/2025 16:52:59,Access blocked to care record as no patient consent6(("MED",null)),Pass
+20/05/2025 16:52:59,Access blocked to care record as no patient consent7(("OBS",null)),Pass
+20/05/2025 16:52:59,Access blocked to care record as no patient consent8(("PRB",null)),Pass
+20/05/2025 16:53:00,Access blocked to care record as no patient consent9(("REF",null)),Pass
+20/05/2025 16:53:00,Access blocked to care record as no patient consent10(("SUM",null)),Pass
+20/05/2025 16:53:00,A patient is requested which is not on Spine but is on provider system1(("ADM",null)),Pass
+20/05/2025 16:53:00,A patient is requested which is not on Spine but is on provider system2(("ALL",null)),Pass
+20/05/2025 16:53:00,A patient is requested which is not on Spine but is on provider system3(("CLI",null)),Pass
+20/05/2025 16:53:00,A patient is requested which is not on Spine but is on provider system4(("ENC",null)),Pass
+20/05/2025 16:53:00,A patient is requested which is not on Spine but is on provider system5(("IMM",null)),Pass
+20/05/2025 16:53:00,A patient is requested which is not on Spine but is on provider system6(("MED",null)),Pass
+20/05/2025 16:53:00,A patient is requested which is not on Spine but is on provider system7(("OBS",null)),Pass
+20/05/2025 16:53:01,A patient is requested which is not on Spine but is on provider system8(("PRB",null)),Pass
+20/05/2025 16:53:01,A patient is requested which is not on Spine but is on provider system9(("REF",null)),Pass
+20/05/2025 16:53:01,A patient is requested which is not on Spine but is on provider system10(("SUM",null)),Pass
+20/05/2025 16:53:01,check all dateTime format variations are allowed1(("ADM","2014","2016",null)),Pass
+20/05/2025 16:53:01,check all dateTime format variations are allowed2(("ADM","2014-02","2016",null)),Pass
+20/05/2025 16:53:01,check all dateTime format variations are allowed3(("ADM","2014-10-05","2016-08",null)),Pass
+20/05/2025 16:53:01,check all dateTime format variations are allowed4(("ADM","2014-05","2016-09-14",null)),Pass
+20/05/2025 16:53:02,check all dateTime format variations are allowed5(("ADM","2015-10-23T11:08:32+00:00","2016-12-08T23:59:59+00:00",null)),Pass
+20/05/2025 16:53:02,check all dateTime format variations are allowed6(("CLI","2013","2017",null)),Pass
+20/05/2025 16:53:02,check all dateTime format variations are allowed7(("CLI","2014-02","2016",null)),Pass
+20/05/2025 16:53:02,check all dateTime format variations are allowed8(("CLI","2014-02-03","2016-01-24",null)),Pass
+20/05/2025 16:53:02,check all dateTime format variations are allowed9(("CLI","2014","2016-06-01",null)),Pass
+20/05/2025 16:53:02,check all dateTime format variations are allowed10(("CLI","2015-03-14T03:14:11+00:00","2016-08-03T18:32:43+00:00",null)),Pass
+20/05/2025 16:53:02,check all dateTime format variations are allowed11(("ENC","2015","2017-01",null)),Pass
+20/05/2025 16:53:03,check all dateTime format variations are allowed12(("ENC","2015-05","2017-01-27",null)),Pass
+20/05/2025 16:53:03,check all dateTime format variations are allowed13(("ENC","2014-10-05","2016",null)),Pass
+20/05/2025 16:53:03,check all dateTime format variations are allowed14(("ENC","2014-10-05","2016-08",null)),Pass
+20/05/2025 16:53:03,check all dateTime format variations are allowed15(("ENC","2014-10-05","2016-09-01",null)),Pass
+20/05/2025 16:53:03,check all dateTime format variations are allowed16(("ENC","2014-04-03T22:03:25+00:00","2016-03-13T17:13:12+00:00",null)),Pass
+20/05/2025 16:53:03,check all dateTime format variations are allowed17(("REF","2013","2017",null)),Pass
+20/05/2025 16:53:03,check all dateTime format variations are allowed18(("REF","2014-02","2016",null)),Pass
+20/05/2025 16:53:04,check all dateTime format variations are allowed19(("REF","2014-02-03","2016-01-24",null)),Pass
+20/05/2025 16:53:04,check all dateTime format variations are allowed20(("REF","2014","2016-06-01",null)),Pass
+20/05/2025 16:53:04,check all dateTime format variations are allowed21(("REF","2015-03-14T03:14:11+00:00","2016-08-03T18:32:43+00:00",null)),Pass
+20/05/2025 16:53:04,check all dateTime format variations are allowed22(("MED","2014","2016",null)),Pass
+20/05/2025 16:53:04,check all dateTime format variations are allowed23(("MED","2014-02","2016",null)),Pass
+20/05/2025 16:53:04,check all dateTime format variations are allowed24(("MED","2014-10-05","2016-08",null)),Pass
+20/05/2025 16:53:04,check all dateTime format variations are allowed25(("MED","2014-05","2016-09-14",null)),Pass
+20/05/2025 16:53:05,check all dateTime format variations are allowed26(("MED","2015-10-23T11:08:32+00:00","2016-12-08T23:59:59+00:00",null)),Pass
+20/05/2025 16:53:05,check all dateTime format variations are allowed27(("OBS","2014","2016",null)),Pass
+20/05/2025 16:53:05,check all dateTime format variations are allowed28(("OBS","2014-02","2016",null)),Pass
+20/05/2025 16:53:05,check all dateTime format variations are allowed29(("OBS","2014-10-05","2016-08",null)),Pass
+20/05/2025 16:53:05,check all dateTime format variations are allowed30(("OBS","2014-05","2016-09-14",null)),Pass
+20/05/2025 16:53:06,check all dateTime format variations are allowed31(("OBS","2015-10-23T11:08:32+00:00","2016-12-08T23:59:59+00:00",null)),Pass
+20/05/2025 16:53:06,check all dateTime format variations are allowed32(("PRB","2014","2016",null)),Pass
+20/05/2025 16:53:06,check all dateTime format variations are allowed33(("PRB","2014-02","2016",null)),Pass
+20/05/2025 16:53:06,check all dateTime format variations are allowed34(("PRB","2014-10-05","2016-08",null)),Pass
+20/05/2025 16:53:06,check all dateTime format variations are allowed35(("PRB","2014-05","2016-09-14",null)),Pass
+20/05/2025 16:53:07,check all dateTime format variations are allowed36(("PRB","2015-10-23T11:08:32+00:00","2016-12-08T23:59:59+00:00",null)),Pass
+20/05/2025 16:53:07,check invalid dateTime format variations1(("ADM","2015-10-23T11:08:32","2016-12-08T23:59:59",null)),Pass
+20/05/2025 16:53:07,check invalid dateTime format variations2(("CLI","2015-03-14T03:14:11","2016-08-03T18:32:43",null)),Pass
+20/05/2025 16:53:07,check invalid dateTime format variations3(("ENC","2014-04-03T22:03:25","2016-03-13T17:13:12",null)),Pass
+20/05/2025 16:53:07,check invalid dateTime format variations4(("REF","2015-03-14T03:14:11","2016-08-03T18:32:43",null)),Pass
+20/05/2025 16:53:07,check invalid dateTime format variations5(("MED","2015-10-23T11:08:32","2016-12-08T23:59:59",null)),Pass
+20/05/2025 16:53:07,check invalid dateTime format variations6(("OBS","2015-10-23T11:08:32","2016-12-08T23:59:59",null)),Pass
+20/05/2025 16:53:07,check invalid dateTime format variations7(("PRB","2015-10-23T11:08:32","2016-12-08T23:59:59",null)),Pass
+20/05/2025 16:53:08,composition contains generic mandatory fields1(("patient1","ADM","Administrative Items","Administrative Items",null)),Pass
+20/05/2025 16:53:08,composition contains generic mandatory fields2(("patient2","ADM","Administrative Items","Administrative Items",null)),Pass
+20/05/2025 16:53:08,composition contains generic mandatory fields3(("patient1","ALL","Allergies and Adverse Reactions","Allergies and Adverse Reactions",null)),Pass
+20/05/2025 16:53:08,composition contains generic mandatory fields4(("patient2","ALL","Allergies and Adverse Reactions","Allergies and Adverse Reactions",null)),Pass
+20/05/2025 16:53:08,composition contains generic mandatory fields5(("patient1","CLI","Clinical Items","Clinical Items",null)),Pass
+20/05/2025 16:53:08,composition contains generic mandatory fields6(("patient2","CLI","Clinical Items","Clinical Items",null)),Pass
+20/05/2025 16:53:09,composition contains generic mandatory fields7(("patient1","ENC","Encounters","Encounters",null)),Pass
+20/05/2025 16:53:09,composition contains generic mandatory fields8(("patient2","ENC","Encounters","Encounters",null)),Pass
+20/05/2025 16:53:09,composition contains generic mandatory fields9(("patient1","IMM","Immunisations","Immunisations",null)),Pass
+20/05/2025 16:53:09,composition contains generic mandatory fields10(("patient2","IMM","Immunisations","Immunisations",null)),Pass
+20/05/2025 16:53:09,composition contains generic mandatory fields11(("patient1","MED","Medications","Medications",null)),Pass
+20/05/2025 16:53:10,composition contains generic mandatory fields12(("patient2","MED","Medications","Medications",null)),Pass
+20/05/2025 16:53:10,composition contains generic mandatory fields13(("patient1","OBS","Observations","Observations",null)),Pass
+20/05/2025 16:53:10,composition contains generic mandatory fields14(("patient2","OBS","Observations","Observations",null)),Pass
+20/05/2025 16:53:10,composition contains generic mandatory fields15(("patient1","PRB","Problems and Issues","Problems and Issues",null)),Pass
+20/05/2025 16:53:10,composition contains generic mandatory fields16(("patient2","PRB","Problems and Issues","Problems and Issues",null)),Pass
+20/05/2025 16:53:10,composition contains generic mandatory fields17(("patient1","REF","Referrals","Referrals",null)),Pass
+20/05/2025 16:53:10,composition contains generic mandatory fields18(("patient2","REF","Referrals","Referrals",null)),Pass
+20/05/2025 16:53:11,composition contains generic mandatory fields19(("patient1","SUM","Summary","Summary",null)),Pass
+20/05/2025 16:53:11,composition contains generic mandatory fields20(("patient2","SUM","Summary","Summary",null)),Pass
+20/05/2025 16:53:11,composition contains subject referencing a patient resource in the bundle1(("ADM",null)),Pass
+20/05/2025 16:53:11,composition contains subject referencing a patient resource in the bundle2(("ALL",null)),Pass
+20/05/2025 16:53:11,composition contains subject referencing a patient resource in the bundle3(("CLI",null)),Pass
+20/05/2025 16:53:11,composition contains subject referencing a patient resource in the bundle4(("ENC",null)),Pass
+20/05/2025 16:53:12,composition contains subject referencing a patient resource in the bundle5(("IMM",null)),Pass
+20/05/2025 16:53:12,composition contains subject referencing a patient resource in the bundle6(("MED",null)),Pass
+20/05/2025 16:53:12,composition contains subject referencing a patient resource in the bundle7(("OBS",null)),Pass
+20/05/2025 16:53:12,composition contains subject referencing a patient resource in the bundle8(("PRB",null)),Pass
+20/05/2025 16:53:12,composition contains subject referencing a patient resource in the bundle9(("REF",null)),Pass
+20/05/2025 16:53:12,composition contains subject referencing a patient resource in the bundle10(("SUM",null)),Pass
+20/05/2025 16:53:13,Deceased Date is within  allowed access period post patient death returns patient record1(("ADM",null)),Pass
+20/05/2025 16:53:13,Deceased Date is within  allowed access period post patient death returns patient record2(("ALL",null)),Pass
+20/05/2025 16:53:13,Deceased Date is within  allowed access period post patient death returns patient record3(("CLI",null)),Pass
+20/05/2025 16:53:13,Deceased Date is within  allowed access period post patient death returns patient record4(("ENC",null)),Pass
+20/05/2025 16:53:13,Deceased Date is within  allowed access period post patient death returns patient record5(("IMM",null)),Pass
+20/05/2025 16:53:13,Deceased Date is within  allowed access period post patient death returns patient record6(("MED",null)),Pass
+20/05/2025 16:53:13,Deceased Date is within  allowed access period post patient death returns patient record7(("OBS",null)),Pass
+20/05/2025 16:53:14,Deceased Date is within  allowed access period post patient death returns patient record8(("PRB",null)),Pass
+20/05/2025 16:53:14,Deceased Date is within  allowed access period post patient death returns patient record9(("REF",null)),Pass
+20/05/2025 16:53:14,Deceased Date is within  allowed access period post patient death returns patient record10(("SUM",null)),Pass
+20/05/2025 16:53:14,device resource element cardinality conformance1(("ADM",null)),Pass
+20/05/2025 16:53:14,device resource element cardinality conformance2(("ALL",null)),Pass
+20/05/2025 16:53:14,device resource element cardinality conformance3(("CLI",null)),Pass
+20/05/2025 16:53:14,device resource element cardinality conformance4(("ENC",null)),Pass
+20/05/2025 16:53:15,device resource element cardinality conformance5(("IMM",null)),Pass
+20/05/2025 16:53:15,device resource element cardinality conformance6(("MED",null)),Pass
+20/05/2025 16:53:15,device resource element cardinality conformance7(("OBS",null)),Pass
+20/05/2025 16:53:15,device resource element cardinality conformance8(("PRB",null)),Pass
+20/05/2025 16:53:15,device resource element cardinality conformance9(("REF",null)),Pass
+20/05/2025 16:53:15,device resource element cardinality conformance10(("SUM",null)),Pass
+20/05/2025 16:53:16,device resource type element values match specification1(("ADM",null)),Pass
+20/05/2025 16:53:16,device resource type element values match specification2(("ALL",null)),Pass
+20/05/2025 16:53:16,device resource type element values match specification3(("CLI",null)),Pass
+20/05/2025 16:53:16,device resource type element values match specification4(("ENC",null)),Pass
+20/05/2025 16:53:16,device resource type element values match specification5(("IMM",null)),Pass
+20/05/2025 16:53:16,device resource type element values match specification6(("MED",null)),Pass
+20/05/2025 16:53:16,device resource type element values match specification7(("OBS",null)),Pass
+20/05/2025 16:53:17,device resource type element values match specification8(("PRB",null)),Pass
+20/05/2025 16:53:17,device resource type element values match specification9(("REF",null)),Pass
+20/05/2025 16:53:17,device resource type element values match specification10(("SUM",null)),Pass
+20/05/2025 16:53:17,Duplicate NHS number parameters in request1(),Pass
+20/05/2025 16:53:17,Empty request1(),Pass
+20/05/2025 16:53:17,Ensure Retrieve the care record sections for senstive patients returns patient not found1(("ADM",null)),Pass
+20/05/2025 16:53:17,Ensure Retrieve the care record sections for senstive patients returns patient not found2(("ALL",null)),Pass
+20/05/2025 16:53:18,Ensure Retrieve the care record sections for senstive patients returns patient not found3(("CLI",null)),Pass
+20/05/2025 16:53:18,Ensure Retrieve the care record sections for senstive patients returns patient not found4(("ENC",null)),Pass
+20/05/2025 16:53:18,Ensure Retrieve the care record sections for senstive patients returns patient not found5(("IMM",null)),Pass
+20/05/2025 16:53:18,Ensure Retrieve the care record sections for senstive patients returns patient not found6(("MED",null)),Pass
+20/05/2025 16:53:18,Ensure Retrieve the care record sections for senstive patients returns patient not found7(("OBS",null)),Pass
+20/05/2025 16:53:18,Ensure Retrieve the care record sections for senstive patients returns patient not found8(("PRB",null)),Pass
+20/05/2025 16:53:18,Ensure Retrieve the care record sections for senstive patients returns patient not found9(("REF",null)),Pass
+20/05/2025 16:53:18,Ensure Retrieve the care record sections for senstive patients returns patient not found10(("SUM",null)),Pass
+20/05/2025 16:53:18,if composition contains author, the device reference can be found in the bundle1(("ADM",null)),Pass
+20/05/2025 16:53:19,if composition contains author, the device reference can be found in the bundle2(("ALL",null)),Pass
+20/05/2025 16:53:19,if composition contains author, the device reference can be found in the bundle3(("CLI",null)),Pass
+20/05/2025 16:53:19,if composition contains author, the device reference can be found in the bundle4(("ENC",null)),Pass
+20/05/2025 16:53:19,if composition contains author, the device reference can be found in the bundle5(("IMM",null)),Pass
+20/05/2025 16:53:19,if composition contains author, the device reference can be found in the bundle6(("MED",null)),Pass
+20/05/2025 16:53:19,if composition contains author, the device reference can be found in the bundle7(("OBS",null)),Pass
+20/05/2025 16:53:19,if composition contains author, the device reference can be found in the bundle8(("PRB",null)),Pass
+20/05/2025 16:53:20,if composition contains author, the device reference can be found in the bundle9(("REF",null)),Pass
+20/05/2025 16:53:20,if composition contains author, the device reference can be found in the bundle10(("SUM",null)),Pass
+20/05/2025 16:53:20,if composition contains class coding1(("ADM",null)),Pass
+20/05/2025 16:53:20,if composition contains class coding2(("ALL",null)),Pass
+20/05/2025 16:53:20,if composition contains class coding3(("CLI",null)),Pass
+20/05/2025 16:53:20,if composition contains class coding4(("ENC",null)),Pass
+20/05/2025 16:53:21,if composition contains class coding5(("IMM",null)),Pass
+20/05/2025 16:53:21,if composition contains class coding6(("MED",null)),Pass
+20/05/2025 16:53:21,if composition contains class coding7(("OBS",null)),Pass
+20/05/2025 16:53:21,if composition contains class coding8(("PRB",null)),Pass
+20/05/2025 16:53:21,if composition contains class coding9(("REF",null)),Pass
+20/05/2025 16:53:21,if composition contains class coding10(("SUM",null)),Pass
+20/05/2025 16:53:22,if composition contains custodian referenece1(("ADM",null)),Pass
+20/05/2025 16:53:22,if composition contains custodian referenece2(("ALL",null)),Pass
+20/05/2025 16:53:22,if composition contains custodian referenece3(("CLI",null)),Pass
+20/05/2025 16:53:22,if composition contains custodian referenece4(("ENC",null)),Pass
+20/05/2025 16:53:22,if composition contains custodian referenece5(("IMM",null)),Pass
+20/05/2025 16:53:22,if composition contains custodian referenece6(("MED",null)),Pass
+20/05/2025 16:53:22,if composition contains custodian referenece7(("OBS",null)),Pass
+20/05/2025 16:53:23,if composition contains custodian referenece8(("PRB",null)),Pass
+20/05/2025 16:53:23,if composition contains custodian referenece9(("REF",null)),Pass
+20/05/2025 16:53:23,if composition contains custodian referenece10(("SUM",null)),Pass
+20/05/2025 16:53:23,if composition contains type mandatory field fixed values should be correct1(("ADM",null)),Pass
+20/05/2025 16:53:23,if composition contains type mandatory field fixed values should be correct2(("ALL",null)),Pass
+20/05/2025 16:53:23,if composition contains type mandatory field fixed values should be correct3(("CLI",null)),Pass
+20/05/2025 16:53:23,if composition contains type mandatory field fixed values should be correct4(("ENC",null)),Pass
+20/05/2025 16:53:23,if composition contains type mandatory field fixed values should be correct5(("IMM",null)),Pass
+20/05/2025 16:53:24,if composition contains type mandatory field fixed values should be correct6(("MED",null)),Pass
+20/05/2025 16:53:24,if composition contains type mandatory field fixed values should be correct7(("OBS",null)),Pass
+20/05/2025 16:53:24,if composition contains type mandatory field fixed values should be correct8(("PRB",null)),Pass
+20/05/2025 16:53:24,if composition contains type mandatory field fixed values should be correct9(("REF",null)),Pass
+20/05/2025 16:53:24,if composition contains type mandatory field fixed values should be correct10(("SUM",null)),Pass
+20/05/2025 16:53:24,if patient contains contact1(("ADM",null)),Pass
+20/05/2025 16:53:25,if patient contains contact2(("ALL",null)),Pass
+20/05/2025 16:53:25,if patient contains contact3(("CLI",null)),Pass
+20/05/2025 16:53:25,if patient contains contact4(("ENC",null)),Pass
+20/05/2025 16:53:25,if patient contains contact5(("IMM",null)),Pass
+20/05/2025 16:53:25,if patient contains contact6(("MED",null)),Pass
+20/05/2025 16:53:25,if patient contains contact7(("OBS",null)),Pass
+20/05/2025 16:53:25,if patient contains contact8(("PRB",null)),Pass
+20/05/2025 16:53:26,if patient contains contact9(("REF",null)),Pass
+20/05/2025 16:53:26,if patient contains contact10(("SUM",null)),Pass
+20/05/2025 16:53:26,if patient contains managingOrganizaiton1(("ADM",null)),Pass
+20/05/2025 16:53:26,if patient contains managingOrganizaiton2(("ALL",null)),Pass
+20/05/2025 16:53:26,if patient contains managingOrganizaiton3(("CLI",null)),Pass
+20/05/2025 16:53:26,if patient contains managingOrganizaiton4(("ENC",null)),Pass
+20/05/2025 16:53:27,if patient contains managingOrganizaiton5(("IMM",null)),Pass
+20/05/2025 16:53:27,if patient contains managingOrganizaiton6(("MED",null)),Pass
+20/05/2025 16:53:27,if patient contains managingOrganizaiton7(("OBS",null)),Pass
+20/05/2025 16:53:27,if patient contains managingOrganizaiton8(("PRB",null)),Pass
+20/05/2025 16:53:27,if patient contains managingOrganizaiton9(("REF",null)),Pass
+20/05/2025 16:53:27,if patient contains managingOrganizaiton10(("SUM",null)),Pass
+20/05/2025 16:53:28,if patient contains maritalStatus1(("ADM",null)),Pass
+20/05/2025 16:53:28,if patient contains maritalStatus2(("ALL",null)),Pass
+20/05/2025 16:53:28,if patient contains maritalStatus3(("CLI",null)),Pass
+20/05/2025 16:53:28,if patient contains maritalStatus4(("ENC",null)),Pass
+20/05/2025 16:53:28,if patient contains maritalStatus5(("IMM",null)),Pass
+20/05/2025 16:53:28,if patient contains maritalStatus6(("MED",null)),Pass
+20/05/2025 16:53:28,if patient contains maritalStatus7(("OBS",null)),Pass
+20/05/2025 16:53:29,if patient contains maritalStatus8(("PRB",null)),Pass
+20/05/2025 16:53:29,if patient contains maritalStatus9(("REF",null)),Pass
+20/05/2025 16:53:29,if patient contains maritalStatus10(("SUM",null)),Pass
+20/05/2025 16:53:29,if patient contains practitioner as care provider1(("ADM",null)),Pass
+20/05/2025 16:53:29,if patient contains practitioner as care provider2(("ALL",null)),Pass
+20/05/2025 16:53:29,if patient contains practitioner as care provider3(("CLI",null)),Pass
+20/05/2025 16:53:30,if patient contains practitioner as care provider4(("ENC",null)),Pass
+20/05/2025 16:53:30,if patient contains practitioner as care provider5(("IMM",null)),Pass
+20/05/2025 16:53:30,if patient contains practitioner as care provider6(("MED",null)),Pass
+20/05/2025 16:53:30,if patient contains practitioner as care provider7(("OBS",null)),Pass
+20/05/2025 16:53:30,if patient contains practitioner as care provider8(("PRB",null)),Pass
+20/05/2025 16:53:31,if patient contains practitioner as care provider9(("REF",null)),Pass
+20/05/2025 16:53:31,if patient contains practitioner as care provider10(("SUM",null)),Pass
+20/05/2025 16:53:31,if patient contains telecom information1(("ADM",null)),Pass
+20/05/2025 16:53:31,if patient contains telecom information2(("ALL",null)),Pass
+20/05/2025 16:53:31,if patient contains telecom information3(("CLI",null)),Pass
+20/05/2025 16:53:31,if patient contains telecom information4(("ENC",null)),Pass
+20/05/2025 16:53:31,if patient contains telecom information5(("IMM",null)),Pass
+20/05/2025 16:53:31,if patient contains telecom information6(("MED",null)),Pass
+20/05/2025 16:53:32,if patient contains telecom information7(("OBS",null)),Pass
+20/05/2025 16:53:32,if patient contains telecom information8(("PRB",null)),Pass
+20/05/2025 16:53:32,if patient contains telecom information9(("REF",null)),Pass
+20/05/2025 16:53:32,if patient contains telecom information10(("SUM",null)),Pass
+20/05/2025 16:53:32,if patient contins communicaiton1(("ADM",null)),Pass
+20/05/2025 16:53:32,if patient contins communicaiton2(("ALL",null)),Pass
+20/05/2025 16:53:32,if patient contins communicaiton3(("CLI",null)),Pass
+20/05/2025 16:53:33,if patient contins communicaiton4(("ENC",null)),Pass
+20/05/2025 16:53:33,if patient contins communicaiton5(("IMM",null)),Pass
+20/05/2025 16:53:33,if patient contins communicaiton6(("MED",null)),Pass
+20/05/2025 16:53:33,if patient contins communicaiton7(("OBS",null)),Pass
+20/05/2025 16:53:33,if patient contins communicaiton8(("PRB",null)),Pass
+20/05/2025 16:53:33,if patient contins communicaiton9(("REF",null)),Pass
+20/05/2025 16:53:33,if patient contins communicaiton10(("SUM",null)),Pass
+20/05/2025 16:53:34,if practitioner resource contains a managing organization it must reference an organization within the response bundle1(("ADM",null)),Pass
+20/05/2025 16:53:34,if practitioner resource contains a managing organization it must reference an organization within the response bundle2(("ALL",null)),Pass
+20/05/2025 16:53:34,if practitioner resource contains a managing organization it must reference an organization within the response bundle3(("CLI",null)),Pass
+20/05/2025 16:53:34,if practitioner resource contains a managing organization it must reference an organization within the response bundle4(("ENC",null)),Pass
+20/05/2025 16:53:34,if practitioner resource contains a managing organization it must reference an organization within the response bundle5(("IMM",null)),Pass
+20/05/2025 16:53:34,if practitioner resource contains a managing organization it must reference an organization within the response bundle6(("MED",null)),Pass
+20/05/2025 16:53:34,if practitioner resource contains a managing organization it must reference an organization within the response bundle7(("OBS",null)),Pass
+20/05/2025 16:53:35,if practitioner resource contains a managing organization it must reference an organization within the response bundle8(("PRB",null)),Pass
+20/05/2025 16:53:35,if practitioner resource contains a managing organization it must reference an organization within the response bundle9(("REF",null)),Pass
+20/05/2025 16:53:35,if practitioner resource contains a managing organization it must reference an organization within the response bundle10(("SUM",null)),Pass
+20/05/2025 16:53:35,Invalid end date parameter1(),Pass
+20/05/2025 16:53:35,Invalid identifier system for patient NHS number1(),Pass
+20/05/2025 16:53:35,Invalid NHS number supplied1(),Pass
+20/05/2025 16:53:35,Invalid record section requested1(),Pass
+20/05/2025 16:53:35,invalid request parameter names and case1(("patientNHSNumber","patientsNHSNumber",null)),Pass
+20/05/2025 16:53:35,invalid request parameter names and case2(("patientNHSNumber","patientnhsnumber",null)),Pass
+20/05/2025 16:53:35,invalid request parameter names and case3(("patientNHSNumber","PATIENTNHSNUMBER",null)),Pass
+20/05/2025 16:53:36,invalid request parameter names and case4(("recordSection","recordSections",null)),Pass
+20/05/2025 16:53:36,invalid request parameter names and case5(("recordSection","RecordSection",null)),Pass
+20/05/2025 16:53:36,invalid request parameter names and case6(("recordSection","RECORDSECTION",null)),Pass
+20/05/2025 16:53:36,invalid request parameter names and case7(("timePeriod","time",null)),Pass
+20/05/2025 16:53:36,invalid request parameter names and case8(("timePeriod","TimePeriod",null)),Pass
+20/05/2025 16:53:36,invalid request parameter names and case9(("timePeriod","TIMEPERIOD",null)),Pass
+20/05/2025 16:53:36,Invalid start date parameter1(),Pass
+20/05/2025 16:53:36,Multiple different NHS number parameters in request1(),Pass
+20/05/2025 16:53:36,Multiple duplication record sections in request1(),Pass
+20/05/2025 16:53:36,Multiple record sections requested1(),Pass
+20/05/2025 16:53:36,No patient found with NHS number1(),Pass
+20/05/2025 16:53:37,No patient NHS number supplied1(),Pass
+20/05/2025 16:53:37,No record section requested1(),Pass
+20/05/2025 16:53:37,organization resource element cardinality1(("ADM",null)),Pass
+20/05/2025 16:53:37,organization resource element cardinality2(("ALL",null)),Pass
+20/05/2025 16:53:37,organization resource element cardinality3(("CLI",null)),Pass
+20/05/2025 16:53:37,organization resource element cardinality4(("ENC",null)),Pass
+20/05/2025 16:53:38,organization resource element cardinality5(("IMM",null)),Pass
+20/05/2025 16:53:38,organization resource element cardinality6(("MED",null)),Pass
+20/05/2025 16:53:38,organization resource element cardinality7(("OBS",null)),Pass
+20/05/2025 16:53:38,organization resource element cardinality8(("PRB",null)),Pass
+20/05/2025 16:53:38,organization resource element cardinality9(("REF",null)),Pass
+20/05/2025 16:53:38,organization resource element cardinality10(("SUM",null)),Pass
+20/05/2025 16:53:38,organization resource identifiers1(("ADM",null)),Pass
+20/05/2025 16:53:39,organization resource identifiers2(("ALL",null)),Pass
+20/05/2025 16:53:39,organization resource identifiers3(("CLI",null)),Pass
+20/05/2025 16:53:39,organization resource identifiers4(("ENC",null)),Pass
+20/05/2025 16:53:39,organization resource identifiers5(("IMM",null)),Pass
+20/05/2025 16:53:39,organization resource identifiers6(("MED",null)),Pass
+20/05/2025 16:53:39,organization resource identifiers7(("OBS",null)),Pass
+20/05/2025 16:53:40,organization resource identifiers8(("PRB",null)),Pass
+20/05/2025 16:53:40,organization resource identifiers9(("REF",null)),Pass
+20/05/2025 16:53:40,organization resource identifiers10(("SUM",null)),Pass
+20/05/2025 16:53:40,organization resource internal reference1(("ADM",null)),Pass
+20/05/2025 16:53:40,organization resource internal reference2(("ALL",null)),Pass
+20/05/2025 16:53:40,organization resource internal reference3(("CLI",null)),Pass
+20/05/2025 16:53:40,organization resource internal reference4(("ENC",null)),Pass
+20/05/2025 16:53:41,organization resource internal reference5(("IMM",null)),Pass
+20/05/2025 16:53:41,organization resource internal reference6(("MED",null)),Pass
+20/05/2025 16:53:41,organization resource internal reference7(("OBS",null)),Pass
+20/05/2025 16:53:41,organization resource internal reference8(("PRB",null)),Pass
+20/05/2025 16:53:41,organization resource internal reference9(("REF",null)),Pass
+20/05/2025 16:53:41,organization resource internal reference10(("SUM",null)),Pass
+20/05/2025 16:53:41,patient contains a valid identifiers1(("ADM",null)),Pass
+20/05/2025 16:53:42,patient contains a valid identifiers2(("ALL",null)),Pass
+20/05/2025 16:53:42,patient contains a valid identifiers3(("CLI",null)),Pass
+20/05/2025 16:53:42,patient contains a valid identifiers4(("ENC",null)),Pass
+20/05/2025 16:53:42,patient contains a valid identifiers5(("IMM",null)),Pass
+20/05/2025 16:53:42,patient contains a valid identifiers6(("MED",null)),Pass
+20/05/2025 16:53:42,patient contains a valid identifiers7(("OBS",null)),Pass
+20/05/2025 16:53:43,patient contains a valid identifiers8(("PRB",null)),Pass
+20/05/2025 16:53:43,patient contains a valid identifiers9(("REF",null)),Pass
+20/05/2025 16:53:43,patient contains a valid identifiers10(("SUM",null)),Pass
+20/05/2025 16:53:43,patient does not contain disallowed fields1(("ADM",null)),Pass
+20/05/2025 16:53:43,patient does not contain disallowed fields2(("ALL",null)),Pass
+20/05/2025 16:53:44,patient does not contain disallowed fields3(("CLI",null)),Pass
+20/05/2025 16:53:44,patient does not contain disallowed fields4(("ENC",null)),Pass
+20/05/2025 16:53:44,patient does not contain disallowed fields5(("IMM",null)),Pass
+20/05/2025 16:53:44,patient does not contain disallowed fields6(("MED",null)),Pass
+20/05/2025 16:53:44,patient does not contain disallowed fields7(("OBS",null)),Pass
+20/05/2025 16:53:44,patient does not contain disallowed fields8(("PRB",null)),Pass
+20/05/2025 16:53:44,patient does not contain disallowed fields9(("REF",null)),Pass
+20/05/2025 16:53:44,patient does not contain disallowed fields10(("SUM",null)),Pass
+20/05/2025 16:53:45,practitioner resource contains mandatory fields and does not include dissallowed fields1(("ADM",null)),Pass
+20/05/2025 16:53:45,practitioner resource contains mandatory fields and does not include dissallowed fields2(("ALL",null)),Pass
+20/05/2025 16:53:45,practitioner resource contains mandatory fields and does not include dissallowed fields3(("CLI",null)),Pass
+20/05/2025 16:53:45,practitioner resource contains mandatory fields and does not include dissallowed fields4(("ENC",null)),Pass
+20/05/2025 16:53:45,practitioner resource contains mandatory fields and does not include dissallowed fields5(("IMM",null)),Pass
+20/05/2025 16:53:45,practitioner resource contains mandatory fields and does not include dissallowed fields6(("MED",null)),Pass
+20/05/2025 16:53:45,practitioner resource contains mandatory fields and does not include dissallowed fields7(("OBS",null)),Pass
+20/05/2025 16:53:46,practitioner resource contains mandatory fields and does not include dissallowed fields8(("PRB",null)),Pass
+20/05/2025 16:53:46,practitioner resource contains mandatory fields and does not include dissallowed fields9(("REF",null)),Pass
+20/05/2025 16:53:46,practitioner resource contains mandatory fields and does not include dissallowed fields10(("SUM",null)),Pass
+20/05/2025 16:53:46,practitioner resource contains mandatory fields within optional elements1(("ADM",null)),Pass
+20/05/2025 16:53:46,practitioner resource contains mandatory fields within optional elements2(("ALL",null)),Pass
+20/05/2025 16:53:46,practitioner resource contains mandatory fields within optional elements3(("CLI",null)),Pass
+20/05/2025 16:53:46,practitioner resource contains mandatory fields within optional elements4(("ENC",null)),Pass
+20/05/2025 16:53:47,practitioner resource contains mandatory fields within optional elements5(("IMM",null)),Pass
+20/05/2025 16:53:47,practitioner resource contains mandatory fields within optional elements6(("MED",null)),Pass
+20/05/2025 16:53:47,practitioner resource contains mandatory fields within optional elements7(("OBS",null)),Pass
+20/05/2025 16:53:47,practitioner resource contains mandatory fields within optional elements8(("PRB",null)),Pass
+20/05/2025 16:53:47,practitioner resource contains mandatory fields within optional elements9(("REF",null)),Pass
+20/05/2025 16:53:47,practitioner resource contains mandatory fields within optional elements10(("SUM",null)),Pass
+20/05/2025 16:53:47,Record section with invalid system for codable concept1(),Pass
+20/05/2025 16:53:47,Request care record section with patientNHSNumber using String type value1(),Pass
+20/05/2025 16:53:48,Request care record where request resource type is something other than Parameters1(),Pass
+20/05/2025 16:53:48,request contain the structure definition in the meta fields1(("ADM",null)),Pass
+20/05/2025 16:53:48,request contain the structure definition in the meta fields2(("ALL",null)),Pass
+20/05/2025 16:53:48,request contain the structure definition in the meta fields3(("CLI",null)),Pass
+20/05/2025 16:53:49,request contain the structure definition in the meta fields4(("ENC",null)),Pass
+20/05/2025 16:53:49,request contain the structure definition in the meta fields5(("IMM",null)),Pass
+20/05/2025 16:53:49,request contain the structure definition in the meta fields6(("MED",null)),Pass
+20/05/2025 16:53:49,request contain the structure definition in the meta fields7(("OBS",null)),Pass
+20/05/2025 16:53:49,request contain the structure definition in the meta fields8(("PRB",null)),Pass
+20/05/2025 16:53:49,request contain the structure definition in the meta fields9(("REF",null)),Pass
+20/05/2025 16:53:49,request contain the structure definition in the meta fields10(("SUM",null)),Pass
+20/05/2025 16:53:49,Requested section code incorrect parameter case1(("adm",null)),Pass
+20/05/2025 16:53:50,Requested section code incorrect parameter case2(("Adm",null)),Pass
+20/05/2025 16:53:50,Requested section code incorrect parameter case3(("aDm",null)),Pass
+20/05/2025 16:53:50,Requested section code incorrect parameter case4(("all",null)),Pass
+20/05/2025 16:53:50,Requested section code incorrect parameter case5(("All",null)),Pass
+20/05/2025 16:53:50,Requested section code incorrect parameter case6(("AlL",null)),Pass
+20/05/2025 16:53:50,Requested section code incorrect parameter case7(("cli",null)),Pass
+20/05/2025 16:53:50,Requested section code incorrect parameter case8(("Cli",null)),Pass
+20/05/2025 16:53:50,Requested section code incorrect parameter case9(("enc",null)),Pass
+20/05/2025 16:53:50,Requested section code incorrect parameter case10(("Enc",null)),Pass
+20/05/2025 16:53:50,Requested section code incorrect parameter case11(("ENc",null)),Pass
+20/05/2025 16:53:50,Requested section code incorrect parameter case12(("imm",null)),Pass
+20/05/2025 16:53:51,Requested section code incorrect parameter case13(("Imm",null)),Pass
+20/05/2025 16:53:51,Requested section code incorrect parameter case14(("iMM",null)),Pass
+20/05/2025 16:53:51,Requested section code incorrect parameter case15(("med",null)),Pass
+20/05/2025 16:53:51,Requested section code incorrect parameter case16(("Med",null)),Pass
+20/05/2025 16:53:51,Requested section code incorrect parameter case17(("mEd",null)),Pass
+20/05/2025 16:53:51,Requested section code incorrect parameter case18(("obs",null)),Pass
+20/05/2025 16:53:51,Requested section code incorrect parameter case19(("Obs",null)),Pass
+20/05/2025 16:53:51,Requested section code incorrect parameter case20(("prb",null)),Pass
+20/05/2025 16:53:51,Requested section code incorrect parameter case21(("Prb",null)),Pass
+20/05/2025 16:53:51,Requested section code incorrect parameter case22(("ref",null)),Pass
+20/05/2025 16:53:51,Requested section code incorrect parameter case23(("Ref",null)),Pass
+20/05/2025 16:53:52,Requested section code incorrect parameter case24(("sum",null)),Pass
+20/05/2025 16:53:52,Requested section code incorrect parameter case25(("Sum",null)),Pass
+20/05/2025 16:53:52,Requested section code incorrect parameter case26(("sUm",null)),Pass
+20/05/2025 16:53:52,Request parameter patientNHSNumber system is empty1(),Pass
+20/05/2025 16:53:52,Request parameter patientNHSNumber values is empty1(),Pass
+20/05/2025 16:53:52,Request parameter recordSection system is empty1(),Pass
+20/05/2025 16:53:52,Request parameter recordSection values is empty1(),Pass
+20/05/2025 16:53:52,Request patient summary with parameters in oposite order to other tests1(("ADM",null)),Pass
+20/05/2025 16:53:52,Request patient summary with parameters in oposite order to other tests2(("CLI",null)),Pass
+20/05/2025 16:53:53,Request patient summary with parameters in oposite order to other tests3(("ENC",null)),Pass
+20/05/2025 16:53:53,Request patient summary with parameters in oposite order to other tests4(("REF",null)),Pass
+20/05/2025 16:53:53,Request record sections with String type rather than CodableConcept1(),Pass
+20/05/2025 16:53:53,response bundle should contain composition as the first entry1(("ADM",null)),Pass
+20/05/2025 16:53:53,response bundle should contain composition as the first entry2(("ALL",null)),Pass
+20/05/2025 16:53:53,response bundle should contain composition as the first entry3(("CLI",null)),Pass
+20/05/2025 16:53:53,response bundle should contain composition as the first entry4(("ENC",null)),Pass
+20/05/2025 16:53:53,response bundle should contain composition as the first entry5(("IMM",null)),Pass
+20/05/2025 16:53:54,response bundle should contain composition as the first entry6(("MED",null)),Pass
+20/05/2025 16:53:54,response bundle should contain composition as the first entry7(("OBS",null)),Pass
+20/05/2025 16:53:54,response bundle should contain composition as the first entry8(("PRB",null)),Pass
+20/05/2025 16:53:54,response bundle should contain composition as the first entry9(("REF",null)),Pass
+20/05/2025 16:53:54,response bundle should contain composition as the first entry10(("SUM",null)),Pass
+20/05/2025 16:53:54,response should be bundle containing all mandatory elements1(("ADM",null)),Pass
+20/05/2025 16:53:54,response should be bundle containing all mandatory elements2(("ALL",null)),Pass
+20/05/2025 16:53:55,response should be bundle containing all mandatory elements3(("CLI",null)),Pass
+20/05/2025 16:53:55,response should be bundle containing all mandatory elements4(("ENC",null)),Pass
+20/05/2025 16:53:55,response should be bundle containing all mandatory elements5(("IMM",null)),Pass
+20/05/2025 16:53:55,response should be bundle containing all mandatory elements6(("MED",null)),Pass
+20/05/2025 16:53:55,response should be bundle containing all mandatory elements7(("OBS",null)),Pass
+20/05/2025 16:53:55,response should be bundle containing all mandatory elements8(("PRB",null)),Pass
+20/05/2025 16:53:55,response should be bundle containing all mandatory elements9(("REF",null)),Pass
+20/05/2025 16:53:56,response should be bundle containing all mandatory elements10(("SUM",null)),Pass
+20/05/2025 16:53:56,Retrieve the care record sections for a patient1(("ADM",null)),Pass
+20/05/2025 16:53:56,Retrieve the care record sections for a patient2(("ALL",null)),Pass
+20/05/2025 16:53:56,Retrieve the care record sections for a patient3(("CLI",null)),Pass
+20/05/2025 16:53:56,Retrieve the care record sections for a patient4(("ENC",null)),Pass
+20/05/2025 16:53:56,Retrieve the care record sections for a patient5(("IMM",null)),Pass
+20/05/2025 16:53:56,Retrieve the care record sections for a patient6(("MED",null)),Pass
+20/05/2025 16:53:57,Retrieve the care record sections for a patient7(("OBS",null)),Pass
+20/05/2025 16:53:57,Retrieve the care record sections for a patient8(("PRB",null)),Pass
+20/05/2025 16:53:57,Retrieve the care record sections for a patient9(("REF",null)),Pass
+20/05/2025 16:53:57,Retrieve the care record sections for a patient10(("SUM",null)),Pass
+20/05/2025 16:53:57,Time period specified for a care record section that can be filtered1(("ADM",null)),Pass
+20/05/2025 16:53:57,Time period specified for a care record section that can be filtered2(("CLI",null)),Pass
+20/05/2025 16:53:57,Time period specified for a care record section that can be filtered3(("ENC",null)),Pass
+20/05/2025 16:53:57,Time period specified for a care record section that can be filtered4(("MED",null)),Pass
+20/05/2025 16:53:58,Time period specified for a care record section that can be filtered5(("OBS",null)),Pass
+20/05/2025 16:53:58,Time period specified for a care record section that can be filtered6(("PRB",null)),Pass
+20/05/2025 16:53:58,Time period specified for a care record section that can be filtered7(("REF",null)),Pass
+20/05/2025 16:53:58,Time period specified for a care record section that must not be filtered1(("ALL",null)),Pass
+20/05/2025 16:53:58,Time period specified for a care record section that must not be filtered2(("IMM",null)),Pass
+20/05/2025 16:53:58,Time period specified for a care record section that must not be filtered3(("SUM",null)),Pass
+20/05/2025 16:53:58,Time period where start date parameter is after end date parameter1(),Pass
+20/05/2025 16:53:58,Time period with only end date parameter1(),Pass
+20/05/2025 16:53:59,Time period with only start date parameter1(),Pass
+20/05/2025 16:53:59,When request is received after allowed access period post patient death returns patient not found1(("ADM",null)),Pass
+20/05/2025 16:53:59,When request is received after allowed access period post patient death returns patient not found2(("ALL",null)),Pass
+20/05/2025 16:53:59,When request is received after allowed access period post patient death returns patient not found3(("CLI",null)),Pass
+20/05/2025 16:53:59,When request is received after allowed access period post patient death returns patient not found4(("ENC",null)),Pass
+20/05/2025 16:53:59,When request is received after allowed access period post patient death returns patient not found5(("IMM",null)),Pass
+20/05/2025 16:53:59,When request is received after allowed access period post patient death returns patient not found6(("MED",null)),Pass
+20/05/2025 16:53:59,When request is received after allowed access period post patient death returns patient not found7(("OBS",null)),Pass
+20/05/2025 16:53:59,When request is received after allowed access period post patient death returns patient not found8(("PRB",null)),Pass
+20/05/2025 16:53:59,When request is received after allowed access period post patient death returns patient not found9(("REF",null)),Pass
+20/05/2025 16:53:59,When request is received after allowed access period post patient death returns patient not found10(("SUM",null)),Pass
+20/05/2025 16:54:00,Check Capability Version1(),Pass
+20/05/2025 16:54:00,Conformance profile indicates acceptance of xml and json format1(),Pass
+20/05/2025 16:54:00,Conformance profile suppliers software versions present1(),Pass
+20/05/2025 16:54:00,Conformance profile supported fhir version1(),Pass
+20/05/2025 16:54:00,Conformance profile supports the gpc.getcarerecord operation1(),Pass
+20/05/2025 16:54:00,endpoint should support chunking of data1(),Pass
+20/05/2025 16:54:00,endpoint should support gzip compression for getCareRecord operation1(),Pass
+20/05/2025 16:54:00,endpoint should support gzip compression for getCareRecord operation and contain correct payload1(),Pass
+20/05/2025 16:54:00,endpoint should support gzip compression for metadata endpoint1(),Pass
+20/05/2025 16:54:00,endpoint should support gzip compression for metadata endpoint and contain the correct payload1(),Pass
+20/05/2025 16:54:01,Fhir content type test where _format parameter is an unsupported media type and request payload is xml1(),Pass
+20/05/2025 16:54:01,Fhir content type test where _format parameter is JSON and request payload is JSON1(),Pass
+20/05/2025 16:54:01,Fhir content type test where _format parameter is JSON and request payload is XML1(),Pass
+20/05/2025 16:54:01,Fhir content type test where _format parameter is XML and request payload is JSON1(),Pass
+20/05/2025 16:54:01,Fhir content type test where _format parameter is XML and request payload is XML1(),Pass
+20/05/2025 16:54:01,Fhir content type test where Accept header is JSON and _format parameter is JSON1(),Pass
+20/05/2025 16:54:01,Fhir content type test where Accept header is JSON and _format parameter is XML1(),Pass
+20/05/2025 16:54:01,Fhir content type test where Accept header is JSON and request payload is JSON1(),Pass
+20/05/2025 16:54:01,Fhir content type test where Accept header is JSON and request payload is XML1(),Pass
+20/05/2025 16:54:01,Fhir content type test where Accept header is unsupported media type and request payload is JSON1(),Pass
+20/05/2025 16:54:01,Fhir content type test where Accept header is XML and _format parameter is JSON1(),Pass
+20/05/2025 16:54:01,Fhir content type test where Accept header is XML and _format parameter is XML1(),Pass
+20/05/2025 16:54:01,Fhir content type test where Accept header is XML and request payload is JSON1(),Pass
+20/05/2025 16:54:02,Fhir content type test where Accept header is XML and request payload is XML1(),Pass
+20/05/2025 16:54:02,Fhir Get MetaData1(),Pass
+20/05/2025 16:54:02,FHIR request content type JSON but no accept header or _format sent with request1(),Pass
+20/05/2025 16:54:02,FHIR request content type XML but no accept header or _format sent with request1(),Pass
+20/05/2025 16:54:02,Request and response in XML1(("ADM",null)),Pass
+20/05/2025 16:54:02,Request and response in XML2(("ALL",null)),Pass
+20/05/2025 16:54:02,Request and response in XML3(("CLI",null)),Pass
+20/05/2025 16:54:03,Request and response in XML4(("ENC",null)),Pass
+20/05/2025 16:54:03,Request and response in XML5(("IMM",null)),Pass
+20/05/2025 16:54:03,Request and response in XML6(("MED",null)),Pass
+20/05/2025 16:54:03,Request and response in XML7(("OBS",null)),Pass
+20/05/2025 16:54:03,Request and response in XML8(("PRB",null)),Pass
+20/05/2025 16:54:04,Request and response in XML9(("REF",null)),Pass
+20/05/2025 16:54:04,Request and response in XML10(("SUM",null)),Pass
+20/05/2025 16:54:04,Check html Date banners have the date banner class attribute1(("patient2","ADM","Administrative Items","h1",null)),Pass
+20/05/2025 16:54:04,Check html Date banners have the date banner class attribute2(("patient2","CLI","Clinical Items","h1",null)),Pass
+20/05/2025 16:54:04,Check html Date banners have the date banner class attribute3(("patient2","ENC","Encounters","h1",null)),Pass
+20/05/2025 16:54:04,Check html Date banners have the date banner class attribute4(("patient2","MED","All Medication,All Medication Issues","h2",null)),Pass
+20/05/2025 16:54:04,Check html Date banners have the date banner class attribute5(("patient2","OBS","Observations","h1",null)),Pass
+20/05/2025 16:54:05,Check html Date banners have the date banner class attribute6(("patient2","PRB","Active Problems and Issues,Major Inactive Problems and Issues,Other Inactive Problems and Issues","h2",null)),Pass
+20/05/2025 16:54:05,Check html Date banners have the date banner class attribute7(("patient2","REF","Referrals","h1",null)),Pass
+20/05/2025 16:54:05,Check html for non html formatting1(("ADM",null)),Pass
+20/05/2025 16:54:05,Check html for non html formatting2(("ALL",null)),Pass
+20/05/2025 16:54:05,Check html for non html formatting3(("CLI",null)),Pass
+20/05/2025 16:54:05,Check html for non html formatting4(("ENC",null)),Pass
+20/05/2025 16:54:05,Check html for non html formatting5(("IMM",null)),Pass
+20/05/2025 16:54:06,Check html for non html formatting6(("MED",null)),Pass
+20/05/2025 16:54:06,Check html for non html formatting7(("OBS",null)),Pass
+20/05/2025 16:54:06,Check html for non html formatting8(("PRB",null)),Pass
+20/05/2025 16:54:06,Check html for non html formatting9(("REF",null)),Pass
+20/05/2025 16:54:06,Check html for non html formatting10(("SUM",null)),Pass
+20/05/2025 16:54:06,Check HTML Medication Views and the Grouping of Entries1(),Pass
+20/05/2025 16:54:06,Check HTML response includes GP Transfer banners1(("patient13","SUM","Summary",null)),Pass
+20/05/2025 16:54:07,Check HTML response includes GP Transfer banners2(("patient13","ADM","Administrative Items",null)),Pass
+20/05/2025 16:54:07,Check HTML response includes GP Transfer banners3(("patient13","ALL","Allergies and Adverse Reactions",null)),Pass
+20/05/2025 16:54:07,Check HTML response includes GP Transfer banners4(("patient13","CLI","Clinical Items",null)),Pass
+20/05/2025 16:54:07,Check HTML response includes GP Transfer banners5(("patient13","ENC","Encounters",null)),Pass
+20/05/2025 16:54:07,Check HTML response includes GP Transfer banners6(("patient13","IMM","Immunisations",null)),Pass
+20/05/2025 16:54:07,Check HTML response includes GP Transfer banners7(("patient13","MED","Medications",null)),Pass
+20/05/2025 16:54:07,Check HTML response includes GP Transfer banners8(("patient13","OBS","Observations",null)),Pass
+20/05/2025 16:54:08,Check HTML response includes GP Transfer banners9(("patient13","PRB","Problems and Issues",null)),Pass
+20/05/2025 16:54:08,Check HTML response includes GP Transfer banners10(("patient13","REF","Referrals",null)),Pass
+20/05/2025 16:54:08,Check html table ids are present and in correct order1(("patient2","ADM","adm-tab",null)),Pass
+20/05/2025 16:54:08,Check html table ids are present and in correct order2(("patient2","MED","med-tab-acu-med,med-tab-curr-rep,med-tab-dis-rep,med-tab-all-sum,med-tab-all-iss",null)),Pass
+20/05/2025 16:54:08,Check html table ids are present and in correct order3(("patient2","ALL","all-tab-curr,all-tab-hist",null)),Pass
+20/05/2025 16:54:08,Check html table ids are present and in correct order4(("patient2","CLI","cli-tab",null)),Pass
+20/05/2025 16:54:09,Check html table ids are present and in correct order5(("patient2","ENC","enc-tab",null)),Pass
+20/05/2025 16:54:09,Check html table ids are present and in correct order6(("patient2","IMM","imm-tab",null)),Pass
+20/05/2025 16:54:09,Check html table ids are present and in correct order7(("patient2","OBS","obs-tab",null)),Pass
+20/05/2025 16:54:09,Check html table ids are present and in correct order8(("patient2","PRB","prb-tab-act,prb-tab-majinact,prb-tab-othinact",null)),Pass
+20/05/2025 16:54:09,Check html table ids are present and in correct order9(("patient2","REF","ref-tab",null)),Pass
+20/05/2025 16:54:09,Check html table ids are present and in correct order10(("patient2","SUM","cli-tab,enc-tab,prb-tab-act,prb-tab-majinact,all-tab-curr,med-tab-acu-med,med-tab-curr-rep",null)),Pass
+20/05/2025 16:54:09,Check html tables have date column class attribute for date columns1(("patient2","ADM","adm-tab","1",null)),Pass
+20/05/2025 16:54:10,Check html tables have date column class attribute for date columns2(("patient2","MED","med-tab-acu-med","2",null)),Pass
+20/05/2025 16:54:10,Check html tables have date column class attribute for date columns3(("patient2","MED","med-tab-curr-rep","2,6,9",null)),Pass
+20/05/2025 16:54:10,Check html tables have date column class attribute for date columns4(("patient2","MED","med-tab-dis-rep","6",null)),Pass
+20/05/2025 16:54:10,Check html tables have date column class attribute for date columns5(("patient2","MED","med-tab-all-sum","2,6",null)),Pass
+20/05/2025 16:54:10,Check html tables have date column class attribute for date columns6(("patient2","MED","med-tab-all-iss","2",null)),Pass
+20/05/2025 16:54:10,Check html tables have date column class attribute for date columns7(("patient2","ALL","all-tab-curr","1",null)),Pass
+20/05/2025 16:54:10,Check html tables have date column class attribute for date columns8(("patient2","ALL","all-tab-hist","1,2",null)),Pass
+20/05/2025 16:54:11,Check html tables have date column class attribute for date columns9(("patient2","CLI","cli-tab","1",null)),Pass
+20/05/2025 16:54:11,Check html tables have date column class attribute for date columns10(("patient2","ENC","enc-tab","1",null)),Pass
+20/05/2025 16:54:11,Check html tables have date column class attribute for date columns11(("patient2","IMM","imm-tab","1",null)),Pass
+20/05/2025 16:54:11,Check html tables have date column class attribute for date columns12(("patient2","OBS","obs-tab","1",null)),Pass
+20/05/2025 16:54:11,Check html tables have date column class attribute for date columns13(("patient2","PRB","prb-tab-act","1",null)),Pass
+20/05/2025 16:54:11,Check html tables have date column class attribute for date columns14(("patient2","PRB","prb-tab-majinact","1,2",null)),Pass
+20/05/2025 16:54:11,Check html tables have date column class attribute for date columns15(("patient2","PRB","prb-tab-othinact","1,2",null)),Pass
+20/05/2025 16:54:12,Check html tables have date column class attribute for date columns16(("patient2","REF","ref-tab","1",null)),Pass
+20/05/2025 16:54:12,Check html tables have date column class attribute for date columns17(("patient2","SUM","all-tab-curr","1",null)),Pass
+20/05/2025 16:54:12,Check html tables have date column class attribute for date columns18(("patient2","SUM","enc-tab","1",null)),Pass
+20/05/2025 16:54:12,Check html tables have date column class attribute for date columns19(("patient2","SUM","med-tab-acu-med","2",null)),Pass
+20/05/2025 16:54:12,Check html tables have date column class attribute for date columns20(("patient2","SUM","med-tab-curr-rep","2,6,9",null)),Pass
+20/05/2025 16:54:13,Check html tables have date column class attribute for date columns21(("patient2","SUM","prb-tab-act","1",null)),Pass
+20/05/2025 16:54:13,Check html tables have date column class attribute for date columns22(("patient2","SUM","prb-tab-majinact","1,2",null)),Pass
+20/05/2025 16:54:13,Check that the date banner class is not present when sections do not support date filters1(("patient2","SUM","Last 3 Encounters,Active Problems and Issues,Major Inactive Problems and Issues,Current Allergies and Adverse Reactions,Acute Medication (Last 12 Months),Current Repeat Medication","h2",null)),Pass
+20/05/2025 16:54:13,Check that the date banner class is not present when sections do not support date filters2(("patient2","ALL","Current Allergies and Adverse Reactions,Historical Allergies and Adverse Reactions","h2",null)),Pass
+20/05/2025 16:54:13,Check that the date banner class is not present when sections do not support date filters3(("patient2","IMM","Immunisations","h1",null)),Pass
+20/05/2025 16:54:13,check when empty date range supplied a 422 invalid Param error is returned1(("ENC","patient2","","",null)),Pass
+20/05/2025 16:54:13,check when empty date range supplied a 422 invalid Param error is returned2(("CLI","patient2","","",null)),Pass
+20/05/2025 16:54:13,check when empty date range supplied a 422 invalid Param error is returned3(("PRB","patient2","","",null)),Pass
+20/05/2025 16:54:13,check when empty date range supplied a 422 invalid Param error is returned4(("MED","patient2","","",null)),Pass
+20/05/2025 16:54:14,check when empty date range supplied a 422 invalid Param error is returned5(("REF","patient2","","",null)),Pass
+20/05/2025 16:54:14,check when empty date range supplied a 422 invalid Param error is returned6(("OBS","patient2","","",null)),Pass
+20/05/2025 16:54:14,check when empty date range supplied a 422 invalid Param error is returned7(("ADM","patient2","","",null)),Pass
+20/05/2025 16:54:14,Discontinued repeat medication subsection banner displayed with expected message1(),Pass
+20/05/2025 16:54:14,filtered sections should contain date range section banner1(("ADM","patient2","2014-05-03","2016-09-14","03-May-2014","14-Sep-2016",null)),Pass
+20/05/2025 16:54:14,filtered sections should contain date range section banner2(("CLI","patient2","2014-02-03","2016-01-24","03-Feb-2014","24-Jan-2016",null)),Pass
+20/05/2025 16:54:14,filtered sections should contain date range section banner3(("ENC","patient2","1982-10-05","2016-09-01","05-Oct-1982","01-Sep-2016",null)),Pass
+20/05/2025 16:54:14,filtered sections should contain date range section banner4(("REF","patient2","2014-03-21","2016-12-14","21-Mar-2014","14-Dec-2016",null)),Pass
+20/05/2025 16:54:15,filtered sections should contain date range section banner5(("ADM","patient2","2014-05","2016-09","01-May-2014","30-Sep-2016",null)),Pass
+20/05/2025 16:54:15,filtered sections should contain date range section banner6(("CLI","patient2","2014-02","2016-01","01-Feb-2014","31-Jan-2016",null)),Pass
+20/05/2025 16:54:15,filtered sections should contain date range section banner7(("ENC","patient2","2014-10","2016-09","01-Oct-2014","30-Sep-2016",null)),Pass
+20/05/2025 16:54:15,filtered sections should contain date range section banner8(("REF","patient2","2014-03","2016-12","01-Mar-2014","31-Dec-2016",null)),Pass
+20/05/2025 16:54:15,filtered sections should contain date range section banner9(("ADM","patient2","1992","2016","01-Jan-1992","31-Dec-2016",null)),Pass
+20/05/2025 16:54:16,filtered sections should contain date range section banner10(("CLI","patient2","2014","2017","01-Jan-2014","31-Dec-2017",null)),Pass
+20/05/2025 16:54:16,filtered sections should contain date range section banner11(("ENC","patient2","2012","2014","01-Jan-2012","31-Dec-2014",null)),Pass
+20/05/2025 16:54:16,filtered sections should contain date range section banner12(("REF","patient2","2016","2016","01-Jan-2016","31-Dec-2016",null)),Pass
+20/05/2025 16:54:16,filtered sections should contain date range section banner13(("MED","patient2","2014-02-03","2016-01-24","03-Feb-2014","24-Jan-2016",null)),Pass
+20/05/2025 16:54:16,filtered sections should contain date range section banner14(("OBS","patient2","2014-02-03","2016-01-24","03-Feb-2014","24-Jan-2016",null)),Pass
+20/05/2025 16:54:16,filtered sections should contain date range section banner15(("PRB","patient2","2014-02-03","2016-01-24","03-Feb-2014","24-Jan-2016",null)),Pass
+20/05/2025 16:54:17,filtered sections should return no data available html banner1(("ADM","patient2","2014-05-03","2015-04-30","03-May-2014","30-Apr-2015","Administrative Items",null)),Pass
+20/05/2025 16:54:17,filtered sections should return no data available html banner2(("CLI","patient2","2014-02-03","2015-01-24","03-Feb-2014","24-Jan-2015","Clinical Items",null)),Pass
+20/05/2025 16:54:17,filtered sections should return no data available html banner3(("ENC","patient2","1982-10-05","2015-04-30","05-Oct-1982","30-Apr-2015","Encounters",null)),Pass
+20/05/2025 16:54:17,filtered sections should return no data available html banner4(("REF","patient2","2014-03-21","2015-03-14","21-Mar-2014","14-Mar-2015","Referrals",null)),Pass
+20/05/2025 16:54:17,html section headers inside correct tag1(("patient1","ADM","Administrative Items",null)),Pass
+20/05/2025 16:54:17,html section headers inside correct tag2(("patient2","ALL","Allergies and Adverse Reactions",null)),Pass
+20/05/2025 16:54:18,html section headers inside correct tag3(("patient1","CLI","Clinical Items",null)),Pass
+20/05/2025 16:54:18,html section headers inside correct tag4(("patient2","ENC","Encounters",null)),Pass
+20/05/2025 16:54:18,html section headers inside correct tag5(("patient1","IMM","Immunisations",null)),Pass
+20/05/2025 16:54:18,html section headers inside correct tag6(("patient2","MED","Medications",null)),Pass
+20/05/2025 16:54:18,html section headers inside correct tag7(("patient1","OBS","Observations",null)),Pass
+20/05/2025 16:54:18,html section headers inside correct tag8(("patient2","PRB","Problems and Issues",null)),Pass
+20/05/2025 16:54:18,html section headers inside correct tag9(("patient1","REF","Referrals",null)),Pass
+20/05/2025 16:54:19,html section headers inside correct tag10(("patient2","SUM","Summary",null)),Pass
+20/05/2025 16:54:19,HTML should not contain disallowed elements1(("ADM",null)),Pass
+20/05/2025 16:54:19,HTML should not contain disallowed elements2(("ALL",null)),Pass
+20/05/2025 16:54:19,HTML should not contain disallowed elements3(("CLI",null)),Pass
+20/05/2025 16:54:19,HTML should not contain disallowed elements4(("ENC",null)),Pass
+20/05/2025 16:54:19,HTML should not contain disallowed elements5(("IMM",null)),Pass
+20/05/2025 16:54:19,HTML should not contain disallowed elements6(("MED",null)),Pass
+20/05/2025 16:54:20,HTML should not contain disallowed elements7(("OBS",null)),Pass
+20/05/2025 16:54:20,HTML should not contain disallowed elements8(("PRB",null)),Pass
+20/05/2025 16:54:20,HTML should not contain disallowed elements9(("REF",null)),Pass
+20/05/2025 16:54:20,HTML should not contain disallowed elements10(("SUM",null)),Pass
+20/05/2025 16:54:20,html sub section headers present1(("patient2","MED","Acute Medication (Last 12 Months),Current Repeat Medication,Discontinued Repeat Medication,All Medication,All Medication Issues",null)),Pass
+20/05/2025 16:54:20,html sub section headers present2(("patient2","PRB","Active Problems and Issues,Major Inactive Problems and Issues,Other Inactive Problems and Issues",null)),Pass
+20/05/2025 16:54:20,html sub section headers present3(("patient2","SUM","Last 3 Encounters,Active Problems and Issues,Major Inactive Problems and Issues,Current Allergies and Adverse Reactions,Acute Medication (Last 12 Months),Current Repeat Medication",null)),Pass
+20/05/2025 16:54:21,html sub section headers present4(("patient2","ALL","Current Allergies and Adverse Reactions,Historical Allergies and Adverse Reactions",null)),Pass
+20/05/2025 16:54:21,html table headers present and in order that is expected1(("patient2","ADM","Date,Entry,Details","1",null)),Pass
+20/05/2025 16:54:21,html table headers present and in order that is expected2(("patient2","ALL","Start Date,Details","1",null)),Pass
+20/05/2025 16:54:21,html table headers present and in order that is expected3(("patient2","ALL","Start Date,End Date,Details","2",null)),Pass
+20/05/2025 16:54:21,html table headers present and in order that is expected4(("patient2","CLI","Date,Entry,Details","1",null)),Pass
+20/05/2025 16:54:21,html table headers present and in order that is expected5(("patient2","ENC","Date,Title,Details","1",null)),Pass
+20/05/2025 16:54:21,html table headers present and in order that is expected6(("patient2","IMM","Date,Vaccination,Part,Contents,Details","1",null)),Pass
+20/05/2025 16:54:22,html table headers present and in order that is expected7(("patient2","MED","Type,Start Date,Medication Item,Dosage Instruction,Quantity,Scheduled End Date,Days Duration,Additional Information","1",null)),Pass
+20/05/2025 16:54:22,html table headers present and in order that is expected8(("patient2","MED","Type,Start Date,Medication Item,Dosage Instruction,Quantity,Last Issued Date,Number of Prescriptions Issued,Max Issues,Review Date,Additional Information","2",null)),Pass
+20/05/2025 16:54:22,html table headers present and in order that is expected9(("patient2","MED","Type,Last Issued Date,Medication Item,Dosage Instruction,Quantity,Discontinued Date,Discontinuation Reason,Additional Information","3",null)),Pass
+20/05/2025 16:54:22,html table headers present and in order that is expected10(("patient2","MED","Type,Start Date,Medication Item,Dosage Instruction,Quantity,Last Issued Date,Number of Prescriptions Issued,Discontinuation Details,Additional Information","4",null)),Pass
+20/05/2025 16:54:22,html table headers present and in order that is expected11(("patient2","MED","Type,Issue Date,Medication Item,Dosage Instruction,Quantity,Days Duration,Additional Information","5",null)),Pass
+20/05/2025 16:54:22,html table headers present and in order that is expected12(("patient2","OBS","Date,Entry,Value,Range,Details","1",null)),Pass
+20/05/2025 16:54:23,html table headers present and in order that is expected13(("patient2","PRB","Start Date,Entry,Significance,Details","1",null)),Pass
+20/05/2025 16:54:23,html table headers present and in order that is expected14(("patient2","PRB","Start Date,End Date,Entry,Significance,Details","2",null)),Pass
+20/05/2025 16:54:23,html table headers present and in order that is expected15(("patient2","PRB","Start Date,End Date,Entry,Significance,Details","3",null)),Pass
+20/05/2025 16:54:23,html table headers present and in order that is expected16(("patient2","REF","Date,From,To,Priority,Details","1",null)),Pass
+20/05/2025 16:54:23,html table headers present and in order that is expected17(("patient2","SUM","Date,Entry,Details,Location of further information","1",null)),Pass
+20/05/2025 16:54:23,html table headers present and in order that is expected18(("patient2","SUM","Date,Title,Details","2",null)),Pass
+20/05/2025 16:54:23,html table headers present and in order that is expected19(("patient2","SUM","Start Date,Entry,Significance,Details","3",null)),Pass
+20/05/2025 16:54:24,html table headers present and in order that is expected20(("patient2","SUM","Start Date,End Date,Entry,Significance,Details","4",null)),Pass
+20/05/2025 16:54:24,html table headers present and in order that is expected21(("patient2","SUM","Start Date,Details","5",null)),Pass
+20/05/2025 16:54:24,html table headers present and in order that is expected22(("patient2","SUM","Type,Start Date,Medication Item,Dosage Instruction,Quantity,Scheduled End Date,Days Duration,Additional Information","6",null)),Pass
+20/05/2025 16:54:24,html table headers present and in order that is expected23(("patient2","SUM","Type,Start Date,Medication Item,Dosage Instruction,Quantity,Last Issued Date,Number of Prescriptions Issued,Max Issues,Review Date,Additional Information","7",null)),Pass
+20/05/2025 16:54:24,section date filter applied but date filter not supported in subsection - not applied banner displayed1(("MED","patient2","2018-04-20","2018-04-30","Acute Medication (Last 12 Months)",null)),Pass
+20/05/2025 16:54:24,section date filter applied but date filter not supported in subsection - not applied banner displayed2(("MED","patient2","2018-04-20","2018-04-30","Current Repeat Medication",null)),Pass
+20/05/2025 16:54:25,section date filter applied but date filter not supported in subsection - not applied banner displayed3(("MED","patient2","2018-04-20","2018-04-30","Discontinued Repeat Medication",null)),Pass
+20/05/2025 16:54:25,section date filter applied but date filter not supported in subsection - not applied banner displayed4(("PRB","patient2","2018-04-20","2018-04-30","Active Problems and Issues",null)),Pass
+20/05/2025 16:54:25,sections should contain the all data items section banner1(("ADM","patient2",null)),Pass
+20/05/2025 16:54:25,sections should contain the all data items section banner2(("CLI","patient2",null)),Pass
+20/05/2025 16:54:25,sections should contain the all data items section banner3(("ENC","patient2",null)),Pass
+20/05/2025 16:54:25,sections should contain the all data items section banner4(("REF","patient2",null)),Pass
+20/05/2025 16:54:25,sections should contain the all data items section banner5(("MED","patient2",null)),Pass
+20/05/2025 16:54:26,sections should contain the all data items section banner6(("OBS","patient2",null)),Pass
+20/05/2025 16:54:26,sections should contain the all data items section banner7(("PRB","patient2",null)),Pass
+20/05/2025 16:54:26,sections should return no data available html banner1(("ADM","patient1","Administrative Items",null)),Pass
+20/05/2025 16:54:26,sections should return no data available html banner2(("CLI","patient1","Clinical Items",null)),Pass
+20/05/2025 16:54:26,sections should return no data available html banner3(("ENC","patient1","Encounters",null)),Pass
+20/05/2025 16:54:26,sections should return no data available html banner4(("SUM","patient1","Last 3 Encounters",null)),Pass
+20/05/2025 16:54:27,sections should return no data available html banner5(("SUM","patient1","Active Problems and Issues",null)),Pass
+20/05/2025 16:54:27,sections should return no data available html banner6(("SUM","patient1","Major Inactive Problems and Issues",null)),Pass
+20/05/2025 16:54:27,sections should return no data available html banner7(("SUM","patient1","Current Allergies and Adverse Reactions",null)),Pass
+20/05/2025 16:54:27,sections should return no data available html banner8(("SUM","patient1","Acute Medication (Last 12 Months)",null)),Pass
+20/05/2025 16:54:27,sections should return no data available html banner9(("SUM","patient1","Current Repeat Medication",null)),Pass
+20/05/2025 16:54:27,sections should return no data available html banner10(("REF","patient1","Referrals",null)),Pass
+20/05/2025 16:54:28,sections should return no data available html banner11(("ALL","patient1","Current Allergies and Adverse Reactions",null)),Pass
+20/05/2025 16:54:28,sections should return no data available html banner12(("ALL","patient1","Historical Allergies and Adverse Reactions",null)),Pass
+20/05/2025 16:54:28,sections should return no data available html banner13(("IMM","patient1","Immunisations",null)),Pass
+20/05/2025 16:54:28,sections should return no data available html banner14(("MED","patient1","Acute Medication (Last 12 Months)",null)),Pass
+20/05/2025 16:54:28,sections should return no data available html banner15(("MED","patient1","Current Repeat Medication",null)),Pass
+20/05/2025 16:54:28,sections should return no data available html banner16(("MED","patient1","Discontinued Repeat Medication",null)),Pass
+20/05/2025 16:54:28,sections should return no data available html banner17(("MED","patient1","All Medication",null)),Pass
+20/05/2025 16:54:29,sections should return no data available html banner18(("MED","patient1","All Medication Issues",null)),Pass
+20/05/2025 16:54:29,sections should return no data available html banner19(("OBS","patient1","Observations",null)),Pass
+20/05/2025 16:54:29,sections should return no data available html banner20(("PRB","patient1","Active Problems and Issues",null)),Pass
+20/05/2025 16:54:29,sections should return no data available html banner21(("PRB","patient1","Major Inactive Problems and Issues",null)),Pass
+20/05/2025 16:54:29,sections should return no data available html banner22(("PRB","patient1","Other Inactive Problems and Issues",null)),Pass
+20/05/2025 16:54:29,should contain the applied start banner1(("ENC","patient1","1982-10-05","05-Oct-1982",null)),Pass
+20/05/2025 16:54:29,should contain the applied start banner2(("CLI","patient2","2014-02","01-Feb-2014",null)),Pass
+20/05/2025 16:54:29,should contain the applied start banner3(("PRB","patient1","2014","01-Jan-2014",null)),Pass
+20/05/2025 16:54:30,should contain the applied start banner4(("MED","patient2","2016-12","01-Dec-2016",null)),Pass
+20/05/2025 16:54:30,should contain the applied start banner5(("REF","patient1","2016-11","01-Nov-2016",null)),Pass
+20/05/2025 16:54:30,should contain the applied start banner6(("OBS","patient2","2016-09","01-Sep-2016",null)),Pass
+20/05/2025 16:54:30,should contain the applied start banner7(("ADM","patient1","2016-12","01-Dec-2016",null)),Pass
+20/05/2025 16:54:30,should contain the banner All data items until1(("ENC","patient2","2016-12-12","12-Dec-2016",null)),Pass
+20/05/2025 16:54:30,should contain the banner All data items until2(("CLI","patient2","2016-02","29-Feb-2016",null)),Pass
+20/05/2025 16:54:31,should contain the banner All data items until3(("PRB","patient2","2016","31-Dec-2016",null)),Pass
+20/05/2025 16:54:31,should contain the banner All data items until4(("MED","patient2","2016-12","31-Dec-2016",null)),Pass
+20/05/2025 16:54:31,should contain the banner All data items until5(("REF","patient2","2016-11","30-Nov-2016",null)),Pass
+20/05/2025 16:54:31,should contain the banner All data items until6(("OBS","patient2","2016-09","30-Sep-2016",null)),Pass
+20/05/2025 16:54:31,should contain the banner All data items until7(("ADM","patient2","2016-12","31-Dec-2016",null)),Pass
+20/05/2025 16:54:31,Allow and audit additional http headers1(),Pass
+20/05/2025 16:54:31,Http DELETE to valid endpoint1(),Pass
+20/05/2025 16:54:31,Http GET from invalid endpoint1(),Pass
+20/05/2025 16:54:31,Http incorrect case on url fhir resource1(),Pass
+20/05/2025 16:54:32,Http operation incorrect case1(),Pass
+20/05/2025 16:54:32,Http OPTIONS to valid endpoint1(),Pass
+20/05/2025 16:54:32,Http PATCH to valid endpoint1(),Pass
+20/05/2025 16:54:32,Http POST to invalid endpoint1(),Pass
+20/05/2025 16:54:32,Http PUT to invalid endpoint1(),Pass
+20/05/2025 16:54:32,JWT - Consumer clock is slow 600s1(),Pass
+20/05/2025 16:54:32,JWT - Everything normal test1(),Pass
+20/05/2025 16:54:32,JWT authorization server token incorrect1(),Pass
+20/05/2025 16:54:32,JWT creation time in the future1(),Pass
+20/05/2025 16:54:32,JWT expiry time before creation time1(),Pass
+20/05/2025 16:54:32,JWT expiry time greater than 300 seconds1(),Pass
+20/05/2025 16:54:32,JWT expiry time less than 300 seconds1(),Pass
+20/05/2025 16:54:32,JWT missing aud claim1(),Pass
+20/05/2025 16:54:32,JWT missing exp claim1(),Pass
+20/05/2025 16:54:32,JWT missing iat claim1(),Pass
+20/05/2025 16:54:32,JWT missing iss claim1(),Pass
+20/05/2025 16:54:32,JWT missing reason for request claim1(),Pass
+20/05/2025 16:54:33,JWT missing requested record claim1(),Pass
+20/05/2025 16:54:33,JWT missing requested scope claim1(),Pass
+20/05/2025 16:54:33,JWT missing requesting device claim1(),Pass
+20/05/2025 16:54:33,JWT missing requesting organization claim1(),Pass
+20/05/2025 16:54:33,JWT missing requesting practitioner claim1(),Pass
+20/05/2025 16:54:33,JWT missing sub claim1(),Pass
+20/05/2025 16:54:33,JWT not base64 encoded1(),Pass
+20/05/2025 16:54:33,JWT reason for request is not directcare1(),Pass
+20/05/2025 16:54:33,JWT requested record patient does not match getCareRecord Payload patient1(),Pass
+20/05/2025 16:54:33,JWT requested scope for getCareRecord does not match type of request1(),Pass
+20/05/2025 16:54:33,JWT requested scope for metaData request does not match organization read1(),Pass
+20/05/2025 16:54:33,JWT requested scope is invalid type1(),Pass
+20/05/2025 16:54:33,JWT requesting device invalid resourceType1(),Pass
+20/05/2025 16:54:33,JWT requesting device is not valid FHIR device resource1(),Pass
+20/05/2025 16:54:34,JWT requesting organization does not contain and identifier1(),Pass
+20/05/2025 16:54:34,JWT requesting organization identifier does not contain an ODS code1(),Pass
+20/05/2025 16:54:34,JWT requesting organization invalid resourceType1(),Pass
+20/05/2025 16:54:34,JWT requesting organization is not valid FHIR organization resource1(),Pass
+20/05/2025 16:54:34,JWT requesting practitioner does not contain identifier1(),Pass
+20/05/2025 16:54:34,JWT requesting practitioner identifier does not contain an SDS Id1(),Pass
+20/05/2025 16:54:34,JWT requesting practitioner invalid resourceType1(),Pass
+20/05/2025 16:54:34,JWT requesting practitioner is not valid FHIR practitioner resource1(),Pass
+20/05/2025 16:54:34,JWT requesting practitioner name does not contain a family or given name1(),Pass
+20/05/2025 16:54:34,JWT requesting practitioner UNK value1(),Pass
+20/05/2025 16:54:34,JWT User Id does not match requesting practitioner id1(),Pass
+20/05/2025 16:54:34,Security reject a  non ssl request1(),Pass
+20/05/2025 16:54:34,Security valid client certificate, ciper and SSL1(),Pass
+20/05/2025 16:54:34,Authorization header not included in request1(),Pass
+20/05/2025 16:54:34,invalid interactionId in request1(),Pass
+20/05/2025 16:54:35,Mismatched interactionId and endpoint in request1(),Pass
+20/05/2025 16:54:35,Send to endpoint with incorrect To asid for the provider endpoint1(),Pass
+20/05/2025 16:54:35,SSP From header not included in request1(),Pass
+20/05/2025 16:54:35,SSP InteractionId header not included in request1(),Pass
+20/05/2025 16:54:35,SSP To header not included in request1(),Pass
+20/05/2025 16:54:35,SSP TraceID header not included in request1(),Pass

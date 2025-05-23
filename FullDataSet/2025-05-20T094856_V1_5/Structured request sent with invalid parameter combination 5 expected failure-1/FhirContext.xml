@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<fhirContext>
+  <request>
+    <fhirRequestParameters>{"resourceType":"Parameters","parameter":[{"name":"patientNHSNumber","valueIdentifier":{"system":"https://fhir.nhs.uk/Id/nhs-number","value":"9690937278"}},{"name":"includeConsultations"},{"name":"includeReferrals","part":[{"name":"referralSearchPeriod","valuePeriod":{"start":"2014","end":"2016"}}]}]}</fhirRequestParameters>
+  </request>
+  <response>
+    <fhirResponseResource>{"resourceType":"OperationOutcome","meta":{"profile":["https://fhir.nhs.uk/StructureDefinition/gpconnect-operationoutcome-1"]},"issue":[{"severity":"error","code":"invalid","details":{"coding":[{"system":"https://fhir.nhs.uk/ValueSet/gpconnect-error-or-warning-code-1","code":"INVALID_PARAMETER","display":"Invalid Parameter"}]},"diagnostics":"Disallowed Parameter part type combination for Consultations includeReferrals.referralSearchPeriod"}]}</fhirResponseResource>
+  </response>
+</fhirContext>

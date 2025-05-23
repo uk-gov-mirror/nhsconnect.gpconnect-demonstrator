@@ -1,0 +1,41 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+  <h1>Medications</h1>
+  <div>
+    <h2>Acute Medication (Last 12 Months)</h2>
+    <div class="date-banner">
+      <p>All relevant items</p>
+    </div>
+    <p>No 'Acute Medication (Last 12 Months)' data is recorded for this patient.</p>
+  </div>
+  <div>
+    <h2>Current Repeat Medication</h2>
+    <div class="date-banner">
+      <p>All relevant items</p>
+    </div>
+    <p>No 'Current Repeat Medication' data is recorded for this patient.</p>
+  </div>
+  <div>
+    <h2>Discontinued Repeat Medication</h2>
+    <div class="content-banner">
+      <p>All repeat medication ended by a clinician action</p>
+    </div>
+    <div class="date-banner">
+      <p>Date filter not applied</p>
+    </div>
+    <p>No 'Discontinued Repeat Medication' data is recorded for this patient.</p>
+  </div>
+  <div>
+    <h2>All Medication</h2>
+    <div class="date-banner">
+      <p>All relevant items</p>
+    </div>
+    <p>No 'All Medication' data is recorded for this patient.</p>
+  </div>
+  <div>
+    <h2>All Medication Issues</h2>
+    <div class="date-banner">
+      <p>All relevant items</p>
+    </div>
+    <p>No 'All Medication Issues' data is recorded for this patient.</p>
+  </div>
+</div>

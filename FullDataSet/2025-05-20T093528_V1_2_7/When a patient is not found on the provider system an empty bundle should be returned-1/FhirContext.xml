@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<fhirContext>
+  <request>
+    <fhirRequestParameters>{"resourceType":"Parameters"}</fhirRequestParameters>
+  </request>
+  <response>
+    <fhirResponseResource>{"resourceType":"Bundle","id":"77be464b-3be9-4063-8f7d-2dd50891dc94","meta":{"lastUpdated":"2025-05-20T09:40:32.76+01:00"},"type":"searchset"}</fhirResponseResource>
+  </response>
+</fhirContext>

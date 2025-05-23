@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<fhirContext>
+  <request>
+    <fhirRequestParameters>{"resourceType":"Parameters","parameter":[{"name":"registerPatient","resource":{"resourceType":"Patient","meta":{"profile":["https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1"]},"identifier":[{"extension":[{"url":"https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-NHSNumberVerificationStatus-1","valueCodeableConcept":{"coding":[{"system":"https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-NHSNumberVerificationStatus-1","code":"01","display":"Number present and verified"}]}}],"system":"https://fhir.nhs.uk/Id/nhs-number","value":"9651259817"}],"name":[{"use":"official","family":"KAY","given":["Rubin"]}],"gender":"male","birthDate":"1971-12-22","address":[{"use":"home","line":["1 Trevelyan Square","Boar Lane"],"city":"Leeds","postalCode":"LS1 6AE"},{"use":"home","line":["1 Trevelyan Square","Boar Lane"],"city":"Leeds","postalCode":"LS1 6AE"}]}}]}</fhirRequestParameters>
+  </request>
+  <response>
+    <fhirResponseResource>{"resourceType":"OperationOutcome","meta":{"profile":["https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1"]},"issue":[{"severity":"error","code":"invalid","details":{"coding":[{"system":"https://fhir.nhs.uk/STU3/CodeSystem/Spine-ErrorOrWarningCode-1","code":"INVALID_RESOURCE","display":"INVALID_RESOURCE"}]},"diagnostics":"Only a single address of each use type can be sent in a register patient request."}]}</fhirResponseResource>
+  </response>
+</fhirContext>

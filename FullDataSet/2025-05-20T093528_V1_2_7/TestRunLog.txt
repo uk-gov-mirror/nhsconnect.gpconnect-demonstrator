@@ -1,0 +1,933 @@
+****************************************************************
+Overall Stats from test Run: Total=774  Passed=720  Failed: 54
+****************************************************************
+TestRunDateTime : 20/05/2025 09:41:41
+consumerASID : 200000000985
+providerASID : 200000000985
+gpConnectSpecVersion : 1.2.7
+UseTLSFoundationsAndAppmts Flag : True
+jwtAudValueFoundationsAndAppmts : https://authorize.fhir.nhs.net/token
+serverURL - FoundationsAndAppmts : gpconnect-win1.itblab.nic.cfh.nhs.uk
+serverPort - FoundationsAndAppmts - HTTP : 80
+serverPort - FoundationsAndAppmts - HTTPS : 443
+serverBase - FoundationsAndAppmts : /gpconnect-demonstrator/v1/fhir
+UseTLSStructured Flag : True
+jwtAudValueStructured : https://authorize.fhir.nhs.net/token
+serverURL - Structured : gpconnect-win1.itblab.nic.cfh.nhs.uk
+serverPort - Structured - HTTP : 80
+serverPort - Structured HTTPS : 443
+serverBase - Structured : /gpconnect-demonstrator/v1/fhir
+useSpineProxy Flag : False
+spineProxyUrl : proxy.dev.spine2.ncrs.nhs.uk
+spineProxyPort : 443
+****************************************************************
+Individual Test Results Below
+****************************************************************
+----------------------------------------------------------------
+20/05/2025 09:41:36,Security - Connect with invalid insecure Cipher1,Fail
+Cert with thumbprint: 'b8 c7 e4 cc d4 bd cf 2e a2 e3 72 54 e4 74 7d b0 3a d5 7c c2' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:41:36,Security - Connect with invalid nonexistent Cipher1,Fail
+Cert with thumbprint: 'b8 c7 e4 cc d4 bd cf 2e a2 e3 72 54 e4 74 7d b0 3a d5 7c c2' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:41:36,Security - Connect with invalid secure Cipher1,Fail
+Cert with thumbprint: 'b8 c7 e4 cc d4 bd cf 2e a2 e3 72 54 e4 74 7d b0 3a d5 7c c2' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:41:37,Security - Connect with valid Cipher1,Fail
+Cert with thumbprint: 'b8 c7 e4 cc d4 bd cf 2e a2 e3 72 54 e4 74 7d b0 3a d5 7c c2' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:41:37,Security - Connect with valid Cipher2,Fail
+Cert with thumbprint: 'b8 c7 e4 cc d4 bd cf 2e a2 e3 72 54 e4 74 7d b0 3a d5 7c c2' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:41:37,Security - Connect with valid Cipher3,Fail
+Cert with thumbprint: 'b8 c7 e4 cc d4 bd cf 2e a2 e3 72 54 e4 74 7d b0 3a d5 7c c2' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:41:37,Security - Connect with valid Cipher4,Fail
+Cert with thumbprint: 'b8 c7 e4 cc d4 bd cf 2e a2 e3 72 54 e4 74 7d b0 3a d5 7c c2' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:41:37,Security - Connect with valid Cipher5,Fail
+Cert with thumbprint: 'b8 c7 e4 cc d4 bd cf 2e a2 e3 72 54 e4 74 7d b0 3a d5 7c c2' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:41:37,Security - Connect with valid Cipher6,Fail
+Cert with thumbprint: 'b8 c7 e4 cc d4 bd cf 2e a2 e3 72 54 e4 74 7d b0 3a d5 7c c2' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:41:37,Security - Connect with valid Cipher7,Fail
+Cert with thumbprint: 'b8 c7 e4 cc d4 bd cf 2e a2 e3 72 54 e4 74 7d b0 3a d5 7c c2' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:41:37,Security - Connect with valid Cipher8,Fail
+Cert with thumbprint: 'b8 c7 e4 cc d4 bd cf 2e a2 e3 72 54 e4 74 7d b0 3a d5 7c c2' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:41:37,Security - Non-SSL to SSL1,Fail
+Cert with thumbprint: 'b8 c7 e4 cc d4 bd cf 2e a2 e3 72 54 e4 74 7d b0 3a d5 7c c2' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:41:37,Security - SSP Client Certificate - Invalid - Authority1,Fail
+Cert with thumbprint: 'f8 b8 ff 86 6a 74 b7 68 b3 f2 bb d9 8f cd 17 64 e5 3c b3 9a' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:41:37,Security - SSP Client Certificate - Invalid - Expired1,Fail
+Cert with thumbprint: '86 31 d6 25 ba 88 65 b6 06 cb f2 70 fe ed 7a 82 5b 4d 14 aa' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:41:37,Security - SSP Client Certificate - Invalid - FQDN1,Fail
+Cert with thumbprint: '34 36 1f eb 71 9a 94 42 f6 63 08 84 e1 2e 0c bc d1 0f 34 0b' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:41:37,Security - SSP Client Certificate - Invalid - Missing1,Fail
+(int)_httpContext.HttpResponse.StatusCode).ToString(
+    should be
+"496"
+    but was
+"200"
+    difference
+Difference     |  |    |    |   
+               | \|/  \|/  \|/  
+Index          | 0    1    2    
+Expected Value | 4    9    6    
+Actual Value   | 2    0    0    
+Expected Code  | 52   57   54   
+Actual Code    | 50   48   48   
+----------------------------------------------------------------
+20/05/2025 09:41:38,Security - SSP Client Certificate - Invalid - Revoked1,Fail
+Cert with thumbprint: 'de 6f 9c 50 dc 30 42 78 6a de 5d 3b c9 43 27 de 14 47 a9 f7' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:41:38,Security - SSP Client Certificate - Valid1,Fail
+Cert with thumbprint: 'b8 c7 e4 cc d4 bd cf 2e a2 e3 72 54 e4 74 7d b0 3a d5 7c c2' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:41:38,SSP - Connect with invalid insecure Cipher1,Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:41:38,SSP - Connect with invalid nonexistent Cipher1,Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:41:38,SSP - Connect with invalid secure Cipher1,Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:41:38,SSP - Connect with valid Cipher1,Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:41:38,SSP - Connect with valid Cipher2,Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:41:38,SSP - Connect with valid Cipher3,Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:41:38,SSP - Connect with valid Cipher4,Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:41:38,SSP - Connect with valid Cipher5,Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:41:38,SSP - Connect with valid Cipher6,Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:41:38,SSP - Connect with valid Cipher7,Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:41:38,SSP - Connect with valid Cipher8,Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:41:38,SSP - Consumer Client Certificate - Invalid - Authority1,Fail
+Cert with thumbprint: '4a cc fc 13 4c 3d d4 90 e2 76 e5 92 17 95 a6 7d 29 bc d4 be' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:41:38,SSP - Consumer Client Certificate - Invalid - Expired1,Fail
+Cert with thumbprint: 'f3 35 d6 ea f8 00 41 61 81 11 e6 0d 00 6f e6 13 e7 b6 ef ee' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:41:38,SSP - Consumer Client Certificate - Invalid - FQDN1,Fail
+Cert with thumbprint: 'c7 15 67 71 7b 98 ff 15 da 49 70 8e 21 55 c8 6e 28 7c 51 ba' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:41:38,SSP - Consumer Client Certificate - Invalid - Missing1,Fail
+statusCodes
+    should contain
+HttpStatusCode.BadRequest
+    but was actually
+[HttpStatusCode.495, HttpStatusCode.496]
+
+Additional Info:
+    The Response Status Code should be one of 495, 496, but it was 400.
+----------------------------------------------------------------
+20/05/2025 09:41:38,SSP - Consumer Client Certificate - Invalid - Revoked1,Fail
+Cert with thumbprint: 'de 6f 9c 50 dc 30 42 78 6a de 5d 3b c9 43 27 de 14 47 a9 f7' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:41:38,SSP - Consumer Client Certificate - Valid1,Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:41:38,SSP - CORS1,Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:41:38,SSP - CORS2,Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:41:38,SSP - CORS3,Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:41:38,SSP - CORS4,Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:41:38,SSP - CORS5,Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:41:38,SSP - CORS6,Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:41:38,SSP - CORS7,Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:41:38,SSP - CORS8,Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:41:38,SSP - CORS9,Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:41:38,SSP - CORS10,Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:41:38,SSP - CORS11,Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:41:38,SSP - CORS12,Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:41:38,SSP - CORS13,Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:41:38,SSP - CORS14,Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:41:38,SSP - CORS15,Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:41:38,SSP - CORS16,Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:41:38,SSP - CORS17,Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:41:38,SSP - Non-SSL to SSL1,Fail
+_httpContext.HttpResponse.Headers
+    should contain key
+"Strict-Transport-Security"
+    but does not
+
+Additional Info:
+    The Response Headers should contain a Strict-Transport-Security header, but it wasn't found.
+----------------------------------------------------------------
+20/05/2025 09:41:38,SSP - To ASID - Invalid1,Fail
+Cert with thumbprint: '45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb' not found in local machine cert store.
+----------------------------------------------------------------
+20/05/2025 09:35:32,Check allergy legacy endReason1,Pass
+20/05/2025 09:35:32,Check allergy warning code is populated for a patient1,Pass
+20/05/2025 09:35:33,Retrieve the allergy structured record section excluding resolved allergies for a patient with no allergies coding1,Pass
+20/05/2025 09:35:33,Retrieve the allergy structured record section excluding resolved allergies for a patient without any allergies1,Pass
+20/05/2025 09:35:33,Retrieve the allergy structured record section for an empty Identifier System1,Pass
+20/05/2025 09:35:33,Retrieve the allergy structured record section for an empty NHS number1,Pass
+20/05/2025 09:35:33,Retrieve the allergy structured record section for an invalid Identifier System1,Pass
+20/05/2025 09:35:33,Retrieve the allergy structured record section for an invalid NHS number1,Pass
+20/05/2025 09:35:33,Retrieve the allergy structured record section for an invalid parameter type1,Pass
+20/05/2025 09:35:33,Retrieve the allergy structured record section for a patient excluding resolved allergies1,Pass
+20/05/2025 09:35:33,Retrieve the allergy structured record section for a patient excluding resolved allergies2,Pass
+20/05/2025 09:35:34,Retrieve the allergy structured record section for a patient excluding resolved allergies3,Pass
+20/05/2025 09:35:34,Retrieve the allergy structured record section for a patient excluding resolved allergies4,Pass
+20/05/2025 09:35:34,Retrieve the allergy structured record section for a patient excluding resolved allergies5,Pass
+20/05/2025 09:35:34,Retrieve the allergy structured record section for a patient excluding resolved allergies6,Pass
+20/05/2025 09:35:34,Retrieve the allergy structured record section for a patient excluding resolved allergies7,Pass
+20/05/2025 09:35:34,Retrieve the allergy structured record section for a patient excluding resolved allergies8,Pass
+20/05/2025 09:35:35,Retrieve the allergy structured record section for a patient including resolved allergies1,Pass
+20/05/2025 09:35:35,Retrieve the allergy structured record section for a patient including resolved allergies2,Pass
+20/05/2025 09:35:35,Retrieve the allergy structured record section for a patient including resolved allergies3,Pass
+20/05/2025 09:35:36,Retrieve the allergy structured record section for a patient including resolved allergies4,Pass
+20/05/2025 09:35:37,Retrieve the allergy structured record section for a patient including resolved allergies5,Pass
+20/05/2025 09:35:37,Retrieve the allergy structured record section for a patient including resolved allergies6,Pass
+20/05/2025 09:35:37,Retrieve the allergy structured record section for a patient including resolved allergies7,Pass
+20/05/2025 09:35:37,Retrieve the allergy structured record section for a patient including resolved allergies8,Pass
+20/05/2025 09:35:37,Retrieve the allergy structured record section for a patient with an end date only expected success1,Pass
+20/05/2025 09:35:38,Retrieve the allergy structured record section for a patient with an uknown parameter expected success1,Pass
+20/05/2025 09:35:38,Retrieve the allergy structured record section for a patient with a start date only expected success1,Pass
+20/05/2025 09:35:38,Retrieve the allergy structured record section for a patient with a timePeriod expected success1,Pass
+20/05/2025 09:35:40,Retrieve the allergy structured record section for a patient without the resolved allergies partParameter expected failure1,Pass
+20/05/2025 09:35:40,Retrieve the allergy structured record section for a patient with recorder1,Pass
+20/05/2025 09:35:40,Retrieve the allergy structured record section including resolved allergies for a patient with no allergies coding1,Pass
+20/05/2025 09:35:41,Retrieve the allergy structured record section including resolved allergies for a patient without any allergies1,Pass
+20/05/2025 09:35:41,Retrieve the allergy structured record to include an extra prescription issues parameter expected success1,Pass
+20/05/2025 09:35:41,Structured Allergies Patient Has multiple Warnings and Associated Notes1,Pass
+20/05/2025 09:35:41,Structured Allergies Patient Has multiple Warnings and Associated Notes2,Pass
+20/05/2025 09:35:42,Structured Allergies Patient Has multiple Warnings and Associated Notes3,Pass
+20/05/2025 09:35:43,structured record for a patient that is not in the database1,Pass
+20/05/2025 09:35:45,Check warning code is populated for a patient1,Pass
+20/05/2025 09:35:45,Retrieve the medication structured record expected failure with invalid date used operation outcome1,Pass
+20/05/2025 09:35:45,Retrieve the medication structured record expected failure with invalid date used operation outcome2,Pass
+20/05/2025 09:35:45,Retrieve the medication structured record expected failure with invalid date used operation outcome3,Pass
+20/05/2025 09:35:45,Retrieve the medication structured record expected failure with invalid date used operation outcome4,Pass
+20/05/2025 09:35:45,Retrieve the medication structured record expected failure with invalid date used operation outcome5,Pass
+20/05/2025 09:35:45,Retrieve the medication structured record expected failure with invalid date used operation outcome6,Pass
+20/05/2025 09:35:45,Retrieve the medication structured record expected failure with invalid date used operation outcome7,Pass
+20/05/2025 09:35:45,Retrieve the medication structured record expected failure with invalid date used operation outcome8,Pass
+20/05/2025 09:35:45,Retrieve the medication structured record expected failure with invalid date used operation outcome9,Pass
+20/05/2025 09:35:45,Retrieve the medication structured record from request with empty values for the parameter parts expect Failure1,Pass
+20/05/2025 09:35:45,Retrieve the medication structured record section for an empty Identifier System1,Pass
+20/05/2025 09:35:45,Retrieve the medication structured record section for an empty NHS number1,Pass
+20/05/2025 09:35:46,Retrieve the medication structured record section for an invalid Identifier System1,Pass
+20/05/2025 09:35:46,Retrieve the medication structured record section for an invalid NHS number1,Pass
+20/05/2025 09:35:46,Retrieve the medication structured record section for an invalid parameter type1,Pass
+20/05/2025 09:35:46,Retrieve the medication structured record section for a patient excludes the parameter part value as now optional1,Pass
+20/05/2025 09:35:46,Retrieve the medication structured record section for a patient excluding prescription issues1,Pass
+20/05/2025 09:35:46,Retrieve the medication structured record section for a patient excluding prescription issues2,Pass
+20/05/2025 09:35:46,Retrieve the medication structured record section for a patient excluding prescription issues3,Pass
+20/05/2025 09:35:46,Retrieve the medication structured record section for a patient excluding prescription issues4,Pass
+20/05/2025 09:35:46,Retrieve the medication structured record section for a patient with an invalid include parameter1,Pass
+20/05/2025 09:35:47,Retrieve the medication structured record section for a patient with a start date1,Pass
+20/05/2025 09:35:47,Retrieve the medication structured record section for a patient with a start date2,Pass
+20/05/2025 09:35:47,Retrieve the medication structured record section for a patient with a start date3,Pass
+20/05/2025 09:35:47,Retrieve the medication structured record section for a patient with a start date4,Pass
+20/05/2025 09:35:47,Retrieve the medication structured record section for a patient with a timePeriod1,Pass
+20/05/2025 09:35:47,Retrieve the medication structured record section for a patient with a timePeriod2,Pass
+20/05/2025 09:35:47,Retrieve the medication structured record section for a patient with a timePeriod3,Pass
+20/05/2025 09:35:47,Retrieve the medication structured record section for a patient with a timePeriod4,Pass
+20/05/2025 09:35:48,Retrieve the medication structured record section for a patient with medication prescribed elsewhere1,Pass
+20/05/2025 09:35:48,Retrieve the medication structured record section for a patient with no medications1,Pass
+20/05/2025 09:35:48,Retrieve the medication structured record section for a patient without the parameter part1,Pass
+20/05/2025 09:35:48,Retrieve the medication structured record section for a patient without the parameter part2,Pass
+20/05/2025 09:35:48,Retrieve the medication structured record section for a patient without the parameter part3,Pass
+20/05/2025 09:35:48,Retrieve the medication structured record section for a patient without the parameter part4,Pass
+20/05/2025 09:35:48,Retrieve the medication structured record section for a patient without the parameter part5,Pass
+20/05/2025 09:35:49,Retrieve the structured record section for a patient without the medications parameter1,Pass
+20/05/2025 09:35:49,Retrieve the structured record section for a patient without the medications parameter2,Pass
+20/05/2025 09:35:49,Retrieve the structured record section for a patient without the medications parameter3,Pass
+20/05/2025 09:35:49,Retrieve the structured record section for a patient without the medications parameter4,Pass
+20/05/2025 09:35:49,Structured Medications Patient Has multiple Warnings and Associated Notes1,Pass
+20/05/2025 09:35:49,Structured Medications Patient Has multiple Warnings and Associated Notes2,Pass
+20/05/2025 09:35:49,structured record for a patient that has inactive flag1,Pass
+20/05/2025 09:35:50,structured record for a patient that has sensitive flag1,Pass
+20/05/2025 09:35:50,structured record for a patient that is deceased1,Pass
+20/05/2025 09:35:50,structured record for a patient that is not in the database1,Pass
+20/05/2025 09:35:54,Amend appointment and send an invalid appointment resource1,Pass
+20/05/2025 09:35:56,Amend appointment and send an invalid bundle resource1,Pass
+20/05/2025 09:35:57,Amend appointment and update cancellation reason1,Pass
+20/05/2025 09:35:59,Amend appointment and update element which cannot be updated1,Pass
+20/05/2025 09:36:00,Amend appointment and update to absolute reference1,Pass
+20/05/2025 09:36:02,Amend appointment invalid response check caching headers exist1,Pass
+20/05/2025 09:36:04,Amend appointment prefer header set to minimal1,Pass
+20/05/2025 09:36:05,Amend appointment prefer header set to representation1,Pass
+20/05/2025 09:36:07,Amend appointment send an update with an invalid if-match header1,Pass
+20/05/2025 09:36:08,Amend appointment set etag and check etag is the same in the returned amended appointment1,Pass
+20/05/2025 09:36:10,Amend appointment using the _format and accept parameter to request response format1,Pass
+20/05/2025 09:36:12,Amend appointment using the _format and accept parameter to request response format2,Pass
+20/05/2025 09:36:14,Amend appointment using the _format and accept parameter to request response format3,Pass
+20/05/2025 09:36:15,Amend appointment using the _format and accept parameter to request response format4,Pass
+20/05/2025 09:36:17,Amend appointment using the _format parameter to request response format1,Pass
+20/05/2025 09:36:18,Amend appointment using the _format parameter to request response format2,Pass
+20/05/2025 09:36:20,Amend appointment using the accept header to request response format1,Pass
+20/05/2025 09:36:21,Amend appointment using the accept header to request response format2,Pass
+20/05/2025 09:36:23,Amend appointment valid response check caching headers exist1,Pass
+20/05/2025 09:36:24,Amend appointment with Comment and Description1,Pass
+20/05/2025 09:36:24,CapabilityStatement profile support the Amend appointment operation1,Pass
+20/05/2025 09:36:26,I perform amend appointment with participants with absoulte references1,Pass
+20/05/2025 09:36:28,I perform a successful amend appointment and check the returned appointment resources are in the future1,Pass
+20/05/2025 09:36:30,I perform a successful amend appointment and check the returned appointment resources are in the future2,Pass
+20/05/2025 09:36:31,I perform a successful amend appointment and check the returned appointment resources are in the future3,Pass
+20/05/2025 09:36:33,I perform a successful amend appointment with Extensions1,Pass
+20/05/2025 09:36:33,Successfully amend appointment ensuring backwards compatibility with consumers that do not send ServiceCategory And serviceType expect success1,Pass
+20/05/2025 09:36:34,Successfully amend comment and description on an appointment when sending in ServiceCategory and serviceType in request provider ignores ServiceCategory and serviceType in request1,Pass
+20/05/2025 09:36:35,Book appointment _format parameter only but varying request content types1,Pass
+20/05/2025 09:36:37,Book appointment _format parameter only but varying request content types2,Pass
+20/05/2025 09:36:38,Book appointment _format parameter only but varying request content types3,Pass
+20/05/2025 09:36:39,Book appointment _format parameter only but varying request content types4,Pass
+20/05/2025 09:36:41,Book appointment accept header and _format parameter to request response format1,Pass
+20/05/2025 09:36:43,Book appointment accept header and _format parameter to request response format2,Pass
+20/05/2025 09:36:44,Book appointment accept header and _format parameter to request response format3,Pass
+20/05/2025 09:36:45,Book appointment accept header and _format parameter to request response format4,Pass
+20/05/2025 09:36:47,Book appointment accept header to request response format1,Pass
+20/05/2025 09:36:48,Book appointment accept header to request response format2,Pass
+20/05/2025 09:36:50,Book Appointment and appointment participant is valid1,Pass
+20/05/2025 09:36:52,Book Appointment and remove all participants1,Pass
+20/05/2025 09:36:53,Book Appointment and remove identifier value from the appointment booking1,Pass
+20/05/2025 09:36:55,Book Appointment and remove manadatory resources from the appointment booking1,Pass
+20/05/2025 09:36:56,Book Appointment and remove manadatory resources from the appointment booking2,Pass
+20/05/2025 09:36:57,Book Appointment and remove participant status from the appointment booking1,Pass
+20/05/2025 09:36:58,Book appointment and send an invalid appointment resource1,Pass
+20/05/2025 09:37:00,Book appointment and send an invalid bundle resource1,Pass
+20/05/2025 09:37:01,Book appointment and send a reason in the appointment1,Pass
+20/05/2025 09:37:03,Book appointment for patient and send extra fields in the resource1,Pass
+20/05/2025 09:37:04,Book appointment invalid response check caching headers exist1,Pass
+20/05/2025 09:37:06,Book appointment prefer header set to minimal1,Pass
+20/05/2025 09:37:07,Book appointment prefer header set to representation1,Pass
+20/05/2025 09:37:08,Book appointment re-using an already booked slot1,Pass
+20/05/2025 09:37:10,Book appointment valid response check caching headers exist1,Pass
+20/05/2025 09:37:11,Book appointment with a comment1,Pass
+20/05/2025 09:37:13,Book appointment with a description1,Pass
+20/05/2025 09:37:14,Book appointment with a description and comment1,Pass
+20/05/2025 09:37:17,Book appointment with invalid slot reference1,Pass
+20/05/2025 09:37:18,Book appointment with invalid slot reference2,Pass
+20/05/2025 09:37:19,Book appointment with invalid slot reference3,Pass
+20/05/2025 09:37:20,Book appointment with invalid slot reference4,Pass
+20/05/2025 09:37:23,Book Appointment with invalid url for booking appointment1,Pass
+20/05/2025 09:37:24,Book appointment with missing end element in appointment resource1,Pass
+20/05/2025 09:37:25,Book appointment with missing slot element in appointment resource1,Pass
+20/05/2025 09:37:27,Book appointment with missing start element in appointment resource1,Pass
+20/05/2025 09:37:28,Book appointment with missing status element in appointment resource1,Pass
+20/05/2025 09:37:30,Book appointment with name removed from booking organization1,Pass
+20/05/2025 09:37:31,Book appointment without a comment1,Pass
+20/05/2025 09:37:32,Book Appointment without practitioner participant1,Pass
+20/05/2025 09:37:34,Book appointment with telecom removed from booking organization1,Pass
+20/05/2025 09:37:35,Book appointment with typeCode in appointment resource1,Pass
+20/05/2025 09:37:36,Book single appointment ensuring backwards compatibility with consumers that do not send ServiceCategory And serviceType expect success1,Pass
+20/05/2025 09:37:36,Book single appointment expecting servicecategory in response when ServiceCategory and serviceType are in request but ignored1,Pass
+20/05/2025 09:37:37,Book single appointment expecting serviceType in response when ServiceCategory and serviceType are in request but ignored1,Pass
+20/05/2025 09:37:38,Book single appointment for patient1,Pass
+20/05/2025 09:37:39,Book single appointment for patient and check the location reference is valid1,Pass
+20/05/2025 09:37:40,Book single appointment for Patient expecting servicecategory is populated1,Pass
+20/05/2025 09:37:40,Book single appointment for Patient expecting serviceType is populated1,Pass
+20/05/2025 09:37:41,Book single appointment for patient with Extensions1,Pass
+20/05/2025 09:37:44,Book single appointment for patient with invalid reference1,Pass
+20/05/2025 09:37:45,Book single appointment for patient with optional elements1,Pass
+20/05/2025 09:37:47,Book single appointment for patient with optional elements2,Pass
+20/05/2025 09:37:48,Book single appointment for patient with optional elements3,Pass
+20/05/2025 09:37:49,Book single appointment for patient with optional elements4,Pass
+20/05/2025 09:37:51,Book single appointment for patient with optional elements5,Pass
+20/05/2025 09:37:52,Book single appointment for patient with optional elements6,Pass
+20/05/2025 09:37:53,Book single appointment for patient with optional elements7,Pass
+20/05/2025 09:37:55,Book single appointment for patient with optional elements8,Pass
+20/05/2025 09:37:56,Book single appointment for patient without organisation type1,Pass
+20/05/2025 09:37:56,CapabilityStatement profile supports the book appointment operation1,Pass
+20/05/2025 09:37:58,Amend a cancelled appointment1,Pass
+20/05/2025 09:37:59,Cancel appointment check cancellation reason is equal to the request cancellation reason1,Pass
+20/05/2025 09:38:01,Cancel appointment check cancellation reason is equal to the request cancellation reason2,Pass
+20/05/2025 09:38:03,Cancel appointment check the version id of the cancelled resource is different1,Pass
+20/05/2025 09:38:04,Cancel appointment check the version id of the cancelled resource is different2,Pass
+20/05/2025 09:38:05,Cancel appointment invalid cancellation extension url1,Pass
+20/05/2025 09:38:07,Cancel appointment invalid cancellation extension url2,Pass
+20/05/2025 09:38:08,Cancel appointment invalid response check caching headers exist1,Pass
+20/05/2025 09:38:10,Cancel appointment missing cancellation extension reason1,Pass
+20/05/2025 09:38:11,Cancel appointment prefer header set to minimal1,Pass
+20/05/2025 09:38:13,Cancel appointment prefer header set to representation1,Pass
+20/05/2025 09:38:14,Cancel appointment using the _format parameter to request response format1,Pass
+20/05/2025 09:38:16,Cancel appointment using the _format parameter to request response format2,Pass
+20/05/2025 09:38:17,Cancel appointment using the accept header and _format parameter and content-type to request response format1,Pass
+20/05/2025 09:38:19,Cancel appointment using the accept header and _format parameter and content-type to request response format2,Pass
+20/05/2025 09:38:20,Cancel appointment using the accept header and _format parameter and content-type to request response format3,Pass
+20/05/2025 09:38:22,Cancel appointment using the accept header and _format parameter and content-type to request response format4,Pass
+20/05/2025 09:38:23,Cancel appointment using the accept header and _format parameter and content-type to request response format5,Pass
+20/05/2025 09:38:25,Cancel appointment using the accept header and _format parameter and content-type to request response format6,Pass
+20/05/2025 09:38:26,Cancel appointment using the accept header and _format parameter and content-type to request response format7,Pass
+20/05/2025 09:38:28,Cancel appointment using the accept header and _format parameter and content-type to request response format8,Pass
+20/05/2025 09:38:29,Cancel appointment using the accept header and _format parameter to request response format1,Pass
+20/05/2025 09:38:31,Cancel appointment using the accept header and _format parameter to request response format2,Pass
+20/05/2025 09:38:32,Cancel appointment using the accept header and _format parameter to request response format3,Pass
+20/05/2025 09:38:33,Cancel appointment using the accept header and _format parameter to request response format4,Pass
+20/05/2025 09:38:35,Cancel appointment using the accept header to request response format1,Pass
+20/05/2025 09:38:36,Cancel appointment using the accept header to request response format2,Pass
+20/05/2025 09:38:38,Cancel appointment valid response check caching headers exist1,Pass
+20/05/2025 09:38:40,Cancel appointment verify resource is not updated when an out of date ETag value is provided1,Pass
+20/05/2025 09:38:41,Cancel appointment verify resource is updated when an valid ETag value is provided1,Pass
+20/05/2025 09:38:41,CapabilityStatement profile supports the cancel appointment operation1,Pass
+20/05/2025 09:38:44,I cancel appointment for patient with absoulute reference1,Pass
+20/05/2025 09:38:45,I perform a successful cancel appointment1,Pass
+20/05/2025 09:38:47,I perform a successful cancel appointment2,Pass
+20/05/2025 09:38:48,I perform a successful cancel appointment3,Pass
+20/05/2025 09:38:50,I perform a successful cancel appointment and amend the comment1,Pass
+20/05/2025 09:38:51,I perform a successful cancel appointment with Extensions1,Pass
+20/05/2025 09:38:52,I perform cancel appointment and add participants1,Pass
+20/05/2025 09:38:54,I perform cancel appointment and update the description1,Pass
+20/05/2025 09:38:55,I perform cancel appointment and update the type text1,Pass
+20/05/2025 09:38:57,I perform cancel appointment with participants with absoulte references1,Pass
+20/05/2025 09:38:58,Successfully Cancel an appointment ensuring backwards compatibility with consumers that do not send ServiceCategory And serviceType expect success1,Pass
+20/05/2025 09:38:58,Successfully Cancel an appointment that has serviceCategory populated1,Pass
+20/05/2025 09:38:58,Successfully Cancel an appointment that has serviceType populated1,Pass
+20/05/2025 09:38:58,CapabilityStatement profile supports the read appointment operation1,Pass
+20/05/2025 09:39:00,I perform a successful Read appointment1,Pass
+20/05/2025 09:39:01,I perform a successful Read appointment2,Pass
+20/05/2025 09:39:03,I perform a successful Read appointment3,Pass
+20/05/2025 09:39:04,I perform a successful Read appointment with Extensions1,Pass
+20/05/2025 09:39:05,I perform a successful Read appointment with JWT Org Different1,Pass
+20/05/2025 09:39:06,Read a patient’s appointments expecting servicecategory is populated1,Pass
+20/05/2025 09:39:06,Read a patient’s appointments expecting serviceType is populated1,Pass
+20/05/2025 09:39:08,Read appointment ensure response appointments contain the manadatory elements1,Pass
+20/05/2025 09:39:09,Read appointment ensure response appointments contain the manadatory elements2,Pass
+20/05/2025 09:39:11,Read appointment invalid appointment id1,Pass
+20/05/2025 09:39:12,Read appointment invalid appointment id2,Pass
+20/05/2025 09:39:14,Read appointment invalid appointment id3,Pass
+20/05/2025 09:39:15,Read appointment invalid response check caching headers exist1,Pass
+20/05/2025 09:39:17,Read appointment using the _format parameter and accept header to request response format1,Pass
+20/05/2025 09:39:18,Read appointment using the _format parameter and accept header to request response format2,Pass
+20/05/2025 09:39:19,Read appointment using the _format parameter and accept header to request response format3,Pass
+20/05/2025 09:39:21,Read appointment using the _format parameter and accept header to request response format4,Pass
+20/05/2025 09:39:22,Read appointment using the _format parameter to request response format1,Pass
+20/05/2025 09:39:24,Read appointment using the _format parameter to request response format2,Pass
+20/05/2025 09:39:25,Read appointment valid response check caching headers exist1,Pass
+20/05/2025 09:39:25,Appointment retreive with date parameters in the past1,Pass
+20/05/2025 09:39:25,Appointment retreive with date parameters in the past2,Pass
+20/05/2025 09:39:27,Appointment retreive with end date before start date1,Pass
+20/05/2025 09:39:28,Appointment retrieve _format parameter only to request response format1,Pass
+20/05/2025 09:39:30,Appointment retrieve _format parameter only to request response format2,Pass
+20/05/2025 09:39:32,Appointment retrieve accept header and _format parameter to request response format1,Pass
+20/05/2025 09:39:33,Appointment retrieve accept header and _format parameter to request response format2,Pass
+20/05/2025 09:39:34,Appointment retrieve accept header and _format parameter to request response format3,Pass
+20/05/2025 09:39:36,Appointment retrieve accept header and _format parameter to request response format4,Pass
+20/05/2025 09:39:37,Appointment retrieve accept header to request response format1,Pass
+20/05/2025 09:39:39,Appointment retrieve accept header to request response format2,Pass
+20/05/2025 09:39:40,Appointment retrieve and response should contain valid booking orgainzation1,Pass
+20/05/2025 09:39:42,Appointment retrieve bundle valid resources returned in the response1,Pass
+20/05/2025 09:39:42,Appointment retrieve fail due to invalid patient logical id1,Pass
+20/05/2025 09:39:42,Appointment retrieve fail due to invalid patient logical id2,Pass
+20/05/2025 09:39:43,Appointment retrieve invalid date format1,Pass
+20/05/2025 09:39:43,Appointment retrieve invalid date format2,Pass
+20/05/2025 09:39:43,Appointment retrieve invalid date format3,Pass
+20/05/2025 09:39:44,Appointment retrieve invalid date format4,Pass
+20/05/2025 09:39:44,Appointment retrieve invalid date format5,Pass
+20/05/2025 09:39:45,Appointment retrieve invalid date format6,Pass
+20/05/2025 09:39:45,Appointment retrieve invalid date format7,Pass
+20/05/2025 09:39:45,Appointment retrieve invalid date format8,Pass
+20/05/2025 09:39:45,Appointment retrieve invalid date prefix1,Pass
+20/05/2025 09:39:45,Appointment retrieve invalid date prefix2,Pass
+20/05/2025 09:39:45,Appointment retrieve invalid date prefix3,Pass
+20/05/2025 09:39:45,Appointment retrieve invalid date prefix4,Pass
+20/05/2025 09:39:45,Appointment retrieve invalid date prefix5,Pass
+20/05/2025 09:39:45,Appointment retrieve invalid date prefix6,Pass
+20/05/2025 09:39:46,Appointment retrieve invalid date prefix7,Pass
+20/05/2025 09:39:46,Appointment retrieve invalid date prefix8,Pass
+20/05/2025 09:39:46,Appointment retrieve invalid date prefix9,Pass
+20/05/2025 09:39:46,Appointment retrieve invalid response check caching headers exist1,Pass
+20/05/2025 09:39:47,Appointment retrieve JWT patient type request invalid1,Pass
+20/05/2025 09:39:49,Appointment retrieve JWT patient type request invalid2,Pass
+20/05/2025 09:39:51,Appointment retrieve multiple appointment retrived1,Pass
+20/05/2025 09:39:57,Appointment retrieve multiple appointment retrived2,Pass
+20/05/2025 09:40:01,Appointment retrieve multiple appointment retrived3,Pass
+20/05/2025 09:40:01,Appointment retrieve sending additional valid parameters in the request1,Pass
+20/05/2025 09:40:01,Appointment retrieve success valid id where appointment resource returned is not required1,Pass
+20/05/2025 09:40:01,Appointment retrieve valid response check caching headers exist1,Pass
+20/05/2025 09:40:02,Appointment retrieve with only one start parameter1,Pass
+20/05/2025 09:40:02,Appointment retrieve with only one start parameter2,Pass
+20/05/2025 09:40:02,CapabilityStatement profile supports the search appointment operation1,Pass
+20/05/2025 09:40:03,I perform a successful retrieve appointment with Extensions1,Pass
+20/05/2025 09:40:04,Retrieve a patient’s appointments expecting servicecategory is populated1,Pass
+20/05/2025 09:40:04,Retrieve a patient’s appointments expecting serviceType is populated1,Pass
+20/05/2025 09:40:04,CapabilityStatement profile indicates acceptance of xml and json format1,Pass
+20/05/2025 09:40:04,CapabilityStatement profile suppliers software versions present1,Pass
+20/05/2025 09:40:04,CapabilityStatement profile supported fhir version1,Pass
+20/05/2025 09:40:04,CapabilityStatement profile supports the GetMetaDataRead operation1,Pass
+20/05/2025 09:40:05,CapabilityStatement profile supports the GetMetaDataRead operation2,Pass
+20/05/2025 09:40:05,CapabilityStatement profile supports the GetMetaDataRead operation3,Pass
+20/05/2025 09:40:05,CapabilityStatement profile supports the GetMetaDataRead operation4,Pass
+20/05/2025 09:40:05,CapabilityStatement profile supports the GetMetaDataRead operation5,Pass
+20/05/2025 09:40:05,CapabilityStatement profile supports the GetMetaDataRead operation6,Pass
+20/05/2025 09:40:05,CapabilityStatement profile supports the GetMetaDataRead operation7,Pass
+20/05/2025 09:40:05,CapabilityStatement profile supports the GetMetaDataRead operation8,Pass
+20/05/2025 09:40:05,CapabilityStatement profile supports the GetMetaDataRead operation9,Pass
+20/05/2025 09:40:05,CapabilityStatement profile supports the GetMetaDataRead operation10,Pass
+20/05/2025 09:40:05,CapabilityStatement profile supports the GetMetaDataRead operation11,Pass
+20/05/2025 09:40:05,CapabilityStatement profile supports the GetMetaDataRead operation12,Pass
+20/05/2025 09:40:05,CapabilityStatement profile supports the GetMetaDataRead operation13,Pass
+20/05/2025 09:40:05,CapabilityStatement profile supports the GetMetaDataRead operation14,Pass
+20/05/2025 09:40:06,CapabilityStatement profile supports the GetMetaDataRead operation15,Pass
+20/05/2025 09:40:06,CapabilityStatement profile supports the GetStructuredMetaDataRead operation1,Pass
+20/05/2025 09:40:06,CapabilityStatement profile supports the GetStructuredMetaDataRead operation2,Pass
+20/05/2025 09:40:06,CapabilityStatement profile supports the GetStructuredMetaDataRead operation3,Pass
+20/05/2025 09:40:06,CapabilityStatement profile supports the GetStructuredMetaDataRead operation4,Pass
+20/05/2025 09:40:06,CapabilityStatement profile supports the GetStructuredMetaDataRead operation5,Pass
+20/05/2025 09:40:06,CapabilityStatement profile supports the GetStructuredMetaDataRead operation6,Pass
+20/05/2025 09:40:06,CapabilityStatement profile supports the GetStructuredMetaDataRead operation7,Pass
+20/05/2025 09:40:06,CapabilityStatement profile supports the GetStructuredMetaDataRead operation8,Pass
+20/05/2025 09:40:06,CapabilityStatement profile supports the GetStructuredMetaDataRead operation9,Pass
+20/05/2025 09:40:06,CapabilityStatement profile supports the GetStructuredMetaDataRead operation10,Pass
+20/05/2025 09:40:06,CapabilityStatement profile supports the GetStructuredMetaDataRead operation11,Pass
+20/05/2025 09:40:07,CapabilityStatement profile supports the GetStructuredRecord operation1,Pass
+20/05/2025 09:40:07,CapabilityStatement profile supports the RegisterPatient operation1,Pass
+20/05/2025 09:40:07,endpoint should support gzip compression for metadata endpoint and contain the correct payload1,Pass
+20/05/2025 09:40:07,Fhir content type test where _format parameter is JSON and request payload is JSON1,Pass
+20/05/2025 09:40:07,Fhir content type test where _format parameter is JSON and request payload is XML1,Pass
+20/05/2025 09:40:07,Fhir content type test where _format parameter is XML and request payload is JSON1,Pass
+20/05/2025 09:40:07,Fhir content type test where _format parameter is XML and request payload is XML1,Pass
+20/05/2025 09:40:07,Fhir content type test where Accept header is JSON and _format parameter is JSON1,Pass
+20/05/2025 09:40:07,Fhir content type test where Accept header is JSON and _format parameter is XML1,Pass
+20/05/2025 09:40:08,Fhir content type test where Accept header is JSON and request payload is XML1,Pass
+20/05/2025 09:40:08,Fhir content type test where Accept header is XML and _format parameter is JSON1,Pass
+20/05/2025 09:40:08,Fhir content type test where Accept header is XML and _format parameter is XML1,Pass
+20/05/2025 09:40:08,Fhir content type test where Accept header is XML and request payload is JSON1,Pass
+20/05/2025 09:40:08,Fhir Get MetaData1,Pass
+20/05/2025 09:40:08,Http DELETE to valid endpoint1,Pass
+20/05/2025 09:40:08,Http GET from invalid endpoint1,Pass
+20/05/2025 09:40:08,Http incorrect case on url fhir resource1,Pass
+20/05/2025 09:40:08,Http OPTIONS to valid endpoint1,Pass
+20/05/2025 09:40:08,Http PATCH to valid endpoint1,Pass
+20/05/2025 09:40:08,Http POST to invalid endpoint1,Pass
+20/05/2025 09:40:08,Http PUT to invalid endpoint1,Pass
+20/05/2025 09:40:08,JWT - Authorization Server Token URL - missing1,Pass
+20/05/2025 09:40:09,JWT - Bearer Token - not base 64 encoded1,Pass
+20/05/2025 09:40:09,JWT - Consumer clock is slow 600s1,Pass
+20/05/2025 09:40:09,JWT - Creation Time - in the future1,Pass
+20/05/2025 09:40:09,JWT - Creation Time - missing1,Pass
+20/05/2025 09:40:09,JWT - Everything normal test1,Pass
+20/05/2025 09:40:09,JWT - Expiry Time - before Creation Time1,Pass
+20/05/2025 09:40:09,JWT - Expiry Time - greater than 300 seconds1,Pass
+20/05/2025 09:40:09,JWT - Expiry Time - less than 300 seconds1,Pass
+20/05/2025 09:40:09,JWT - Expiry Time - missing1,Pass
+20/05/2025 09:40:09,JWT - Missing sdsRoleProfile and guid1,Pass
+20/05/2025 09:40:09,JWT - Reason For Request - missing1,Pass
+20/05/2025 09:40:09,JWT - Requested Scope - Metadata - incorrect1,Pass
+20/05/2025 09:40:09,JWT - Requested Scope - missing1,Pass
+20/05/2025 09:40:09,JWT - Requesting Device - invalid1,Pass
+20/05/2025 09:40:10,JWT - Requesting Device - missing1,Pass
+20/05/2025 09:40:10,JWT - Requesting Device - Resource Type - invalid1,Pass
+20/05/2025 09:40:10,JWT - Requesting Identity - missing1,Pass
+20/05/2025 09:40:10,JWT - Requesting Identity - Resource Type - invalid1,Pass
+20/05/2025 09:40:10,JWT - Requesting Identity - UNK value1,Pass
+20/05/2025 09:40:10,JWT - Requesting Organization - Backward Compatability for RC51,Pass
+20/05/2025 09:40:10,JWT - Requesting System URL - missing1,Pass
+20/05/2025 09:40:10,CapabilityStatement profile supports the Location read operation1,Pass
+20/05/2025 09:40:10,Location read invalid response check caching headers exist1,Pass
+20/05/2025 09:40:10,Location read resource conforms to GP-Connect specification1,Pass
+20/05/2025 09:40:10,Location read resource conforms to GP-Connect specification2,Pass
+20/05/2025 09:40:10,Location Read sending the Accept header and _format parameter to request response format1,Pass
+20/05/2025 09:40:10,Location Read sending the Accept header and _format parameter to request response format2,Pass
+20/05/2025 09:40:10,Location Read sending the Accept header and _format parameter to request response format3,Pass
+20/05/2025 09:40:11,Location Read sending the Accept header and _format parameter to request response format4,Pass
+20/05/2025 09:40:11,Location read should contain ETag1,Pass
+20/05/2025 09:40:11,Location read successful request validate the response contains logical identifier1,Pass
+20/05/2025 09:40:11,Location read successful request validate the response contains logical identifier2,Pass
+20/05/2025 09:40:11,Location read successful request validate the response contains logical identifier3,Pass
+20/05/2025 09:40:11,Location Read using the _format parameter to request response format1,Pass
+20/05/2025 09:40:11,Location Read using the _format parameter to request response format2,Pass
+20/05/2025 09:40:11,Location read valid response check caching headers exist1,Pass
+20/05/2025 09:40:12,Location Read with valid identifier which does not exist on providers system1,Pass
+20/05/2025 09:40:12,Location Read with valid identifier which does not exist on providers system2,Pass
+20/05/2025 09:40:12,Location Read with valid identifier which does not exist on providers system3,Pass
+20/05/2025 09:40:12,Location Read with valid identifier which does not exist on providers system4,Pass
+20/05/2025 09:40:12,Location Read with valid identifier which does not exist on providers system5,Pass
+20/05/2025 09:40:12,Location Read with valid identifier which does not exist on providers system6,Pass
+20/05/2025 09:40:12,CapabilityStatement profile supports the Organization read operation1,Pass
+20/05/2025 09:40:12,Organization read invalid response check caching headers exist1,Pass
+20/05/2025 09:40:12,Organization Read sending the Accept header and _format parameter to request response format1,Pass
+20/05/2025 09:40:13,Organization Read sending the Accept header and _format parameter to request response format2,Pass
+20/05/2025 09:40:13,Organization Read sending the Accept header and _format parameter to request response format3,Pass
+20/05/2025 09:40:13,Organization Read sending the Accept header and _format parameter to request response format4,Pass
+20/05/2025 09:40:13,Organization Read successful request validate all of response1,Pass
+20/05/2025 09:40:13,Organization Read using the _format parameter to request response format1,Pass
+20/05/2025 09:40:13,Organization Read using the _format parameter to request response format2,Pass
+20/05/2025 09:40:13,Organization Read using the Accept header to request response format1,Pass
+20/05/2025 09:40:13,Organization Read using the Accept header to request response format2,Pass
+20/05/2025 09:40:13,Organization read valid response check caching headers exist1,Pass
+20/05/2025 09:40:13,Organization Read with valid identifier which does not exist on providers system1,Pass
+20/05/2025 09:40:13,Organization Read with valid identifier which does not exist on providers system2,Pass
+20/05/2025 09:40:13,Organization Read with valid identifier which does not exist on providers system3,Pass
+20/05/2025 09:40:13,Organization Read with valid identifier which does not exist on providers system4,Pass
+20/05/2025 09:40:13,Organization Read with valid identifier which does not exist on providers system5,Pass
+20/05/2025 09:40:13,Organization Read with valid identifier which does not exist on providers system6,Pass
+20/05/2025 09:40:13,CapabilityStatement profile supports the Organization search operation1,Pass
+20/05/2025 09:40:14,Organization search add _format parameter to request after the identifer and check for correct response format1,Pass
+20/05/2025 09:40:14,Organization search add _format parameter to request after the identifer and check for correct response format2,Pass
+20/05/2025 09:40:14,Organization search add _format parameter to request and check for correct response format1,Pass
+20/05/2025 09:40:14,Organization search add _format parameter to request and check for correct response format2,Pass
+20/05/2025 09:40:14,Organization search add _format parameter to request before the identifer and check for correct response format1,Pass
+20/05/2025 09:40:14,Organization search add _format parameter to request before the identifer and check for correct response format2,Pass
+20/05/2025 09:40:14,Organization search add accept header and _format parameter to the request and check for correct response format1,Pass
+20/05/2025 09:40:14,Organization search add accept header and _format parameter to the request and check for correct response format2,Pass
+20/05/2025 09:40:14,Organization search add accept header to request and check for correct response format1,Pass
+20/05/2025 09:40:14,Organization search add accept header to request and check for correct response format2,Pass
+20/05/2025 09:40:14,Organization search by organization code successfully returns multiple results containing the correct fields1,Pass
+20/05/2025 09:40:14,Organization search by organization code successfully returns single result containing the correct fields1,Pass
+20/05/2025 09:40:14,Organization search check organization response contains logical identifier1,Pass
+20/05/2025 09:40:14,Organization search failure due to no identifier parameter1,Pass
+20/05/2025 09:40:14,Organization search include count and sort parameters1,Pass
+20/05/2025 09:40:14,Organization search invalid response check caching headers exist1,Pass
+20/05/2025 09:40:14,Organization search success1,Pass
+20/05/2025 09:40:15,Organization search success2,Pass
+20/05/2025 09:40:15,Organization search valid response check caching headers exist1,Pass
+20/05/2025 09:40:15,CapabilityStatement profile supports the Patient read operation1,Pass
+20/05/2025 09:40:16,Check read patient on a patient with no Consent returns a valid response1,Pass
+20/05/2025 09:40:16,Patient read invalid response check caching headers exist1,Pass
+20/05/2025 09:40:16,Patient read valid response check caching headers exist1,Pass
+20/05/2025 09:40:16,Patient read valid response check preferred branch1,Pass
+20/05/2025 09:40:16,Patient Read with valid identifier which does not exist on providers system1,Pass
+20/05/2025 09:40:16,Patient Read with valid identifier which does not exist on providers system2,Pass
+20/05/2025 09:40:16,Patient Read with valid identifier which does not exist on providers system3,Pass
+20/05/2025 09:40:16,Patient Read with valid identifier which does not exist on providers system4,Pass
+20/05/2025 09:40:16,Patient Read with valid identifier which does not exist on providers system5,Pass
+20/05/2025 09:40:16,Patient Read with valid identifier which does not exist on providers system6,Pass
+20/05/2025 09:40:16,Read patient 400 or 404 if patient id not sent1,Pass
+20/05/2025 09:40:16,Read patient 404 if patient not found1,Pass
+20/05/2025 09:40:16,Read patient 404 if patient not found2,Pass
+20/05/2025 09:40:16,Read patient response should contain an ETag header1,Pass
+20/05/2025 09:40:17,Read patient returned should conform to the GPconnect specification1,Pass
+20/05/2025 09:40:17,Read patient sending the Accept header and _format parameter to request response format1,Pass
+20/05/2025 09:40:17,Read patient sending the Accept header and _format parameter to request response format2,Pass
+20/05/2025 09:40:17,Read patient sending the Accept header and _format parameter to request response format3,Pass
+20/05/2025 09:40:17,Read patient sending the Accept header and _format parameter to request response format4,Pass
+20/05/2025 09:40:17,Read patient should contain correct logical identifier1,Pass
+20/05/2025 09:40:17,Read patient using the _format parameter to request response format1,Pass
+20/05/2025 09:40:17,Read patient using the _format parameter to request response format2,Pass
+20/05/2025 09:40:17,Read patient using the Accept header to request response format1,Pass
+20/05/2025 09:40:17,Read patient using the Accept header to request response format2,Pass
+20/05/2025 09:40:17,Register deceased patient1,Pass
+20/05/2025 09:40:18,Register patient1 which already exists on the system as a normal patient1,Pass
+20/05/2025 09:40:18,Register patient and check preferred branch1,Pass
+20/05/2025 09:40:20,Register Patient and use both the Accept header and _format parameter to request the response format1,Pass
+20/05/2025 09:40:20,Register Patient and use both the Accept header and _format parameter to request the response format2,Pass
+20/05/2025 09:40:20,Register Patient and use both the Accept header and _format parameter to request the response format3,Pass
+20/05/2025 09:40:20,Register Patient and use both the Accept header and _format parameter to request the response format4,Pass
+20/05/2025 09:40:20,Register Patient and use both the Accept header and _format parameter to request the response format5,Pass
+20/05/2025 09:40:20,Register Patient and use both the Accept header and _format parameter to request the response format6,Pass
+20/05/2025 09:40:20,Register Patient and use both the Accept header and _format parameter to request the response format7,Pass
+20/05/2025 09:40:21,Register Patient and use both the Accept header and _format parameter to request the response format8,Pass
+20/05/2025 09:40:21,Register Patient and use the _format parameter to request the response format1,Pass
+20/05/2025 09:40:21,Register Patient and use the _format parameter to request the response format2,Pass
+20/05/2025 09:40:21,Register Patient and use the Accept Header to request response format1,Pass
+20/05/2025 09:40:21,Register Patient and use the Accept Header to request response format2,Pass
+20/05/2025 09:40:21,Register patient containing identifier without mandatory system elements1,Pass
+20/05/2025 09:40:21,Register patient invalid response check caching headers exist1,Pass
+20/05/2025 09:40:21,Register patient no family names1,Pass
+20/05/2025 09:40:21,Register patient send request to incorrect URL1,Pass
+20/05/2025 09:40:21,Register patient send request to incorrect URL2,Pass
+20/05/2025 09:40:21,Register patient setting JWT request type to invalid type1,Pass
+20/05/2025 09:40:22,Register patient setting JWT request type to invalid type2,Pass
+20/05/2025 09:40:22,Register patient which already exists on the system as a temporary patient1,Pass
+20/05/2025 09:40:22,Register patient which is not the Spine1,Pass
+20/05/2025 09:40:22,Register patient with additional not allowed elements1,Pass
+20/05/2025 09:40:22,Register patient with additional not allowed elements2,Pass
+20/05/2025 09:40:22,Register patient with additional not allowed elements3,Pass
+20/05/2025 09:40:22,Register patient with additional not allowed elements4,Pass
+20/05/2025 09:40:22,Register patient with additional valid elements1,Pass
+20/05/2025 09:40:22,Register patient with additional valid elements2,Pass
+20/05/2025 09:40:23,Register patient with additional valid elements3,Pass
+20/05/2025 09:40:23,Register patient with Address and Invalid Telecom elements1,Pass
+20/05/2025 09:40:23,Register patient with Address and Invalid Telecom elements2,Pass
+20/05/2025 09:40:23,Register patient with Address and Invalid Telecom elements3,Pass
+20/05/2025 09:40:23,Register patient with Address and Invalid Telecom elements4,Pass
+20/05/2025 09:40:23,Register patient with Address and Invalid Telecom elements5,Pass
+20/05/2025 09:40:23,Register patient with Address and Telecom1,Pass
+20/05/2025 09:40:23,Register patient with Address and Valid Telecom elements1,Pass
+20/05/2025 09:40:23,Register patient with Address and Valid Telecom elements2,Pass
+20/05/2025 09:40:23,Register patient with Address and Valid Telecom elements3,Pass
+20/05/2025 09:40:23,Register patient with Address and Valid Telecom elements4,Pass
+20/05/2025 09:40:24,Register patient with Address and Valid Telecom elements5,Pass
+20/05/2025 09:40:24,Register patient with Address and Valid Telecom elements6,Pass
+20/05/2025 09:40:24,Register patient with Address and Valid Telecom elements7,Pass
+20/05/2025 09:40:24,Register patient with Address and Valid Telecom elements8,Pass
+20/05/2025 09:40:24,Register patient with Address and Valid Telecom elements9,Pass
+20/05/2025 09:40:24,Register patient with Address and Valid Telecom elements10,Pass
+20/05/2025 09:40:24,Register patient with Address and Valid Telecom elements11,Pass
+20/05/2025 09:40:24,Register patient with Address and Valid Telecom elements12,Pass
+20/05/2025 09:40:24,Register patient with Address and Valid Telecom elements13,Pass
+20/05/2025 09:40:25,Register patient with Address and Valid Telecom elements14,Pass
+20/05/2025 09:40:25,Register patient with Address and Valid Telecom elements15,Pass
+20/05/2025 09:40:25,Register patient with Address and Valid Telecom elements16,Pass
+20/05/2025 09:40:25,Register patient with Address and Valid Telecom elements17,Pass
+20/05/2025 09:40:25,Register patient with Address and Valid Telecom elements18,Pass
+20/05/2025 09:40:25,Register patient with Address and Valid Telecom elements19,Pass
+20/05/2025 09:40:25,Register patient with Address and Valid Telecom elements20,Pass
+20/05/2025 09:40:25,Register patient with Address Telecom and multiple nhsCommunication1,Pass
+20/05/2025 09:40:25,Register patient with Address Telecom and nhsCommunication1,Pass
+20/05/2025 09:40:25,Register patient with an invalid NHS number1,Pass
+20/05/2025 09:40:26,Register patient with an invalid NHS number2,Pass
+20/05/2025 09:40:26,Register patient with an invalid NHS number3,Pass
+20/05/2025 09:40:26,Register patient with an invalid NHS number4,Pass
+20/05/2025 09:40:26,Register patient with an invalid NHS number5,Pass
+20/05/2025 09:40:26,Register patient with duplicate patient resource parameters1,Pass
+20/05/2025 09:40:26,Register patient with family name not matching PDS1,Pass
+20/05/2025 09:40:26,Register patient with invalid additional valid elements1,Pass
+20/05/2025 09:40:26,Register patient with invalid additional valid elements2,Pass
+20/05/2025 09:40:26,Register patient with invalid additional valid elements3,Pass
+20/05/2025 09:40:26,Register patient with invalid additional valid elements4,Pass
+20/05/2025 09:40:26,Register patient with invalid additional valid elements5,Pass
+20/05/2025 09:40:27,Register patient with invalid additional valid elements6,Pass
+20/05/2025 09:40:27,Register patient with Invalid Address Use type1,Pass
+20/05/2025 09:40:27,Register patient with Invalid Address Use type2,Pass
+20/05/2025 09:40:27,Register patient with invalid bundle resource type1,Pass
+20/05/2025 09:40:27,Register patient with Invalid Multiple Address Use types1,Pass
+20/05/2025 09:40:27,Register patient with Invalid Multiple Address Use types2,Pass
+20/05/2025 09:40:27,Register patient with Invalid Multiple Address Use types3,Pass
+20/05/2025 09:40:27,Register patient with Invalid Multiple Address Use types4,Pass
+20/05/2025 09:40:27,Register patient with Invalid Multiple Address Use types5,Pass
+20/05/2025 09:40:27,Register patient with Invalid Multiple Address Use types6,Pass
+20/05/2025 09:40:27,Register patient with Invalid Multiple Address Use types7,Pass
+20/05/2025 09:40:27,Register patient with Invalid Multiple Address Use types8,Pass
+20/05/2025 09:40:28,Register patient with Invalid Multiple Address Use types9,Pass
+20/05/2025 09:40:28,Register patient with invalid patient resource type1,Pass
+20/05/2025 09:40:28,Register patient with invalid patient resource with additional element1,Pass
+20/05/2025 09:40:28,Register patient with Multiple Address not allowed and Telecom1,Pass
+20/05/2025 09:40:28,Register patient with Multiple Address Use types1,Pass
+20/05/2025 09:40:28,Register patient with Multiple Address Use types2,Pass
+20/05/2025 09:40:28,Register Patient with multiple given names1,Pass
+20/05/2025 09:40:28,Register Patient with multiple given names2,Pass
+20/05/2025 09:40:28,Register Patient with multiple given names3,Pass
+20/05/2025 09:40:28,Register patient with no official name1,Pass
+20/05/2025 09:40:29,Register patient without date of birth element1,Pass
+20/05/2025 09:40:29,Register patient without gender element1,Pass
+20/05/2025 09:40:29,Register patient without sending identifier within patient1,Pass
+20/05/2025 09:40:29,Register sensitive patient1,Pass
+20/05/2025 09:40:29,Register superseded patient1,Pass
+20/05/2025 09:40:29,CapabilityStatement profile supports the Patient search operation1,Pass
+20/05/2025 09:40:29,No Consent Patient search gets a valid response1,Pass
+20/05/2025 09:40:29,Patient resource should contain NHS number identifier returned as XML1,Pass
+20/05/2025 09:40:29,Patient resource should contain NHS number identifier returned as XML2,Pass
+20/05/2025 09:40:29,Patient resource should contain NHS number identifier returned as XML3,Pass
+20/05/2025 09:40:29,Patient Search include count and sort parameters1,Pass
+20/05/2025 09:40:29,Patient search invalid response check caching headers exist1,Pass
+20/05/2025 09:40:29,Patient search response conforms with the GPConnect specification1,Pass
+20/05/2025 09:40:31,Patient search response conforms with the GPConnect specification2,Pass
+20/05/2025 09:40:31,Patient search response conforms with the GPConnect specification3,Pass
+20/05/2025 09:40:31,Patient search response conforms with the GPConnect specification4,Pass
+20/05/2025 09:40:31,Patient search response conforms with the GPConnect specification5,Pass
+20/05/2025 09:40:31,Patient search response conforms with the GPConnect specification6,Pass
+20/05/2025 09:40:31,Patient search response does not return deceased patient1,Pass
+20/05/2025 09:40:31,Patient search should fail if no identifier parameter is include1,Pass
+20/05/2025 09:40:31,Patient search valid response check caching headers exist1,Pass
+20/05/2025 09:40:31,Provider should return an error when a blank system is supplied in the identifier parameter1,Pass
+20/05/2025 09:40:31,Provider should return an error when no system is supplied in the identifier parameter1,Pass
+20/05/2025 09:40:31,Returned patients should contain a logical identifier1,Pass
+20/05/2025 09:40:31,Returned patients should contain a preferred branch1,Pass
+20/05/2025 09:40:31,System should error if multiple parameters valid or invalid are sent1,Pass
+20/05/2025 09:40:31,System should error if multiple parameters valid or invalid are sent2,Pass
+20/05/2025 09:40:32,System should error if multiple parameters valid or invalid are sent3,Pass
+20/05/2025 09:40:32,The identifier parameter should be rejected if the case is incorrect1,Pass
+20/05/2025 09:40:32,The patient search endpoint should accept the accept header1,Pass
+20/05/2025 09:40:32,The patient search endpoint should accept the accept header2,Pass
+20/05/2025 09:40:32,The patient search endpoint should accept the format parameter1,Pass
+20/05/2025 09:40:32,The patient search endpoint should accept the format parameter2,Pass
+20/05/2025 09:40:32,The patient search endpoint should accept the format parameter after the identifier parameter1,Pass
+20/05/2025 09:40:32,The patient search endpoint should accept the format parameter after the identifier parameter2,Pass
+20/05/2025 09:40:32,The patient search endpoint should accept the format parameter after the identifier parameter3,Pass
+20/05/2025 09:40:32,The patient search endpoint should accept the format parameter after the identifier parameter4,Pass
+20/05/2025 09:40:32,The patient search endpoint should accept the format parameter before the identifier parameter1,Pass
+20/05/2025 09:40:32,The patient search endpoint should accept the format parameter before the identifier parameter2,Pass
+20/05/2025 09:40:32,The patient search endpoint should accept the format parameter before the identifier parameter3,Pass
+20/05/2025 09:40:32,The patient search endpoint should accept the format parameter before the identifier parameter4,Pass
+20/05/2025 09:40:32,The response should be an error if no value is sent in the identifier parameter1,Pass
+20/05/2025 09:40:32,When a patient is not found on the provider system an empty bundle should be returned1,Pass
+20/05/2025 09:40:32,When a patient on the provider system has inactive flag1,Pass
+20/05/2025 09:40:32,When a patient on the provider system has sensitive flag1,Pass
+20/05/2025 09:40:32,CapabilityStatement profile supports the Practitioner read operation1,Pass
+20/05/2025 09:40:33,Practitioner read invalid response check caching headers exist1,Pass
+20/05/2025 09:40:33,Practitioner read response should contain an ETag header1,Pass
+20/05/2025 09:40:33,Practitioner Read sending the Accept header and _format parameter to request response format1,Pass
+20/05/2025 09:40:33,Practitioner Read sending the Accept header and _format parameter to request response format2,Pass
+20/05/2025 09:40:33,Practitioner Read sending the Accept header and _format parameter to request response format3,Pass
+20/05/2025 09:40:33,Practitioner Read sending the Accept header and _format parameter to request response format4,Pass
+20/05/2025 09:40:33,Practitioner read successful request validate all of response1,Pass
+20/05/2025 09:40:33,Practitioner read successful request validate all of response2,Pass
+20/05/2025 09:40:33,Practitioner read successful request validate all of response3,Pass
+20/05/2025 09:40:33,Practitioner Read using the _format parameter to request response format1,Pass
+20/05/2025 09:40:33,Practitioner Read using the _format parameter to request response format2,Pass
+20/05/2025 09:40:33,Practitioner Read using the Accept header to request response format1,Pass
+20/05/2025 09:40:33,Practitioner Read using the Accept header to request response format2,Pass
+20/05/2025 09:40:34,Practitioner read valid response check caching headers exist1,Pass
+20/05/2025 09:40:34,Practitioner Read with valid identifier which does not exist on providers system1,Pass
+20/05/2025 09:40:34,Practitioner Read with valid identifier which does not exist on providers system2,Pass
+20/05/2025 09:40:34,Practitioner Read with valid identifier which does not exist on providers system3,Pass
+20/05/2025 09:40:34,Practitioner Read with valid identifier which does not exist on providers system4,Pass
+20/05/2025 09:40:34,Practitioner Read with valid identifier which does not exist on providers system5,Pass
+20/05/2025 09:40:34,Practitioner Read with valid identifier which does not exist on providers system6,Pass
+20/05/2025 09:40:34,Read practitioner returned should conform to the GPconnect specification1,Pass
+20/05/2025 09:40:34,CapabilityStatement profile supports the Practitioner search operation1,Pass
+20/05/2025 09:40:34,Practitioner search add accept header and _format parameter to the request and check for correct response format1,Pass
+20/05/2025 09:40:34,Practitioner search add accept header and _format parameter to the request and check for correct response format2,Pass
+20/05/2025 09:40:34,Practitioner search add accept header and _format parameter to the request and check for correct response format3,Pass
+20/05/2025 09:40:34,Practitioner search add accept header and _format parameter to the request and check for correct response format4,Pass
+20/05/2025 09:40:34,Practitioner search add accept header to request and check for correct response format1,Pass
+20/05/2025 09:40:34,Practitioner search add accept header to request and check for correct response format2,Pass
+20/05/2025 09:40:34,Practitioner search include count and sort parameters1,Pass
+20/05/2025 09:40:34,Practitioner search invalid response check caching headers exist1,Pass
+20/05/2025 09:40:35,Practitioner search multiple identifier parameter failure1,Pass
+20/05/2025 09:40:35,Practitioner search multiple multiple identifiers for different practitioner parameter failure1,Pass
+20/05/2025 09:40:35,Practitioner search returned should conform to the GPconnect specification1,Pass
+20/05/2025 09:40:35,Practitioner search success and validate the practitioner identifiers1,Pass
+20/05/2025 09:40:35,Practitioner search success and validate the practitioner identifiers2,Pass
+20/05/2025 09:40:35,Practitioner search success and validate the practitioner identifiers3,Pass
+20/05/2025 09:40:35,Practitioner search testing paramater validity after adding identifier1,Pass
+20/05/2025 09:40:35,Practitioner search testing paramater validity after adding identifier2,Pass
+20/05/2025 09:40:35,Practitioner search testing paramater validity before adding identifier1,Pass
+20/05/2025 09:40:35,Practitioner search testing paramater validity before adding identifier2,Pass
+20/05/2025 09:40:35,Practitioner search valid response check caching headers exist1,Pass
+20/05/2025 09:40:35,Practitioner search where identifier contains the incorrect case or spelling1,Pass
+20/05/2025 09:40:35,Practitioner search with failure due to invalid identifier1,Pass
+20/05/2025 09:40:35,Practitioner search with failure due to invalid identifier2,Pass
+20/05/2025 09:40:36,Practitioner search without the identifier parameter1,Pass
+20/05/2025 09:40:36,Practitioner search with unknown identifier1,Pass
+20/05/2025 09:40:36,CapabilityStatement profile supports the Slot Search Resource1,Pass
+20/05/2025 09:40:36,Check CapabilityStatement includes specific searchInclude1,Pass
+20/05/2025 09:40:36,Search for a slots expecting a Schedule with serviceCategory populated1,Pass
+20/05/2025 09:40:37,Search for a slots expecting a slot with serviceType populated1,Pass
+20/05/2025 09:40:37,Search for a slots expecting No Comment elements for the Schedules and Slots1,Pass
+20/05/2025 09:40:37,SearchForFreeSlots invalid response check caching headers exist1,Pass
+20/05/2025 09:40:38,SearchForFreeSlots valid response check caching headers exist1,Pass
+20/05/2025 09:40:38,Searching for free slots should fail due to invalid parameter values1,Pass
+20/05/2025 09:40:38,Searching for free slots should fail due to invalid parameter values2,Pass
+20/05/2025 09:40:38,Searching for free slots should fail due to invalid parameter values3,Pass
+20/05/2025 09:40:38,Searching for free slots should fail due to invalid parameter values4,Pass
+20/05/2025 09:40:38,Searching for free slots should fail due to invalid parameter values5,Pass
+20/05/2025 09:40:38,Searching for free slots should fail due to missing parameters1,Pass
+20/05/2025 09:40:38,Searching for free slots should fail due to missing parameters2,Pass
+20/05/2025 09:40:38,Searching for free slots should fail due to missing parameters3,Pass
+20/05/2025 09:40:39,Searching for free slots with invalid date range should return error1,Pass
+20/05/2025 09:40:39,Searching for free slots with invalid date range should return error2,Pass
+20/05/2025 09:40:39,Searching for free slots with invalid date range should return error3,Pass
+20/05/2025 09:40:39,Searching for free slots with invalid partial dateTime strings1,Pass
+20/05/2025 09:40:39,Searching for free slots with invalid partial dateTime strings2,Pass
+20/05/2025 09:40:39,Searching for free slots with invalid partial dateTime strings3,Pass
+20/05/2025 09:40:39,Searching for free slots with invalid partial dateTime strings4,Pass
+20/05/2025 09:40:39,Searching for free slots with invalid partial dateTime strings5,Pass
+20/05/2025 09:40:39,Searching for free slots with invalid prefixes1,Pass
+20/05/2025 09:40:39,Searching for free slots with invalid prefixes2,Pass
+20/05/2025 09:40:39,Searching for free slots with invalid prefixes3,Pass
+20/05/2025 09:40:39,Searching for free slots with invalid prefixes4,Pass
+20/05/2025 09:40:39,Searching for free slots with invalid prefixes5,Pass
+20/05/2025 09:40:39,Searching for free slots with invalid prefixes6,Pass
+20/05/2025 09:40:40,Searching for free slots with NO org code and NO org type searchFilter system1,Pass
+20/05/2025 09:40:41,Searching for free slots with org code searchFilter system1,Pass
+20/05/2025 09:40:45,Searching for free slots with org code searchFilter system2,Pass
+20/05/2025 09:40:46,Searching for free slots with org code searchFilter system3,Pass
+20/05/2025 09:40:47,Searching for free slots with org code searchFilter system4,Pass
+20/05/2025 09:40:49,Searching for free slots with org type and code searchFilter system1,Pass
+20/05/2025 09:40:50,Searching for free slots with org type and code searchFilter system2,Pass
+20/05/2025 09:40:52,Searching for free slots with org type and code searchFilter system3,Pass
+20/05/2025 09:40:53,Searching for free slots with org type and code searchFilter system4,Pass
+20/05/2025 09:40:54,Searching for free slots with org type and code searchFilter system5,Pass
+20/05/2025 09:40:56,Searching for free slots with org type and code searchFilter system6,Pass
+20/05/2025 09:40:57,Searching for free slots with org type and code searchFilter system7,Pass
+20/05/2025 09:40:58,Searching for free slots with org type and code searchFilter system8,Pass
+20/05/2025 09:41:00,Searching for free slots with org type and code searchFilter system9,Pass
+20/05/2025 09:41:01,Searching for free slots with org type and code searchFilter system10,Pass
+20/05/2025 09:41:03,Searching for free slots with org type and code searchFilter system11,Pass
+20/05/2025 09:41:04,Searching for free slots with org type and code searchFilter system12,Pass
+20/05/2025 09:41:05,Searching for free slots with org type searchFilter system1,Pass
+20/05/2025 09:41:07,Searching for free slots with org type searchFilter system2,Pass
+20/05/2025 09:41:08,Searching for free slots with org type searchFilter system3,Pass
+20/05/2025 09:41:09,Searching for free slots with other searchFilter system1,Pass
+20/05/2025 09:41:10,Searching for free slots without actor parameter should return results without actor resource1,Pass
+20/05/2025 09:41:11,Searching for free slots without actor parameter should return results without actor resource2,Pass
+20/05/2025 09:41:12,Searching for free slots with unknown prefixes1,Pass
+20/05/2025 09:41:12,Searching for free slots with unknown prefixes2,Pass
+20/05/2025 09:41:12,Searching for free slots with unknown prefixes3,Pass
+20/05/2025 09:41:12,Searching for free slots with unknown prefixes4,Pass
+20/05/2025 09:41:12,Searching for free slots with unknown prefixes5,Pass
+20/05/2025 09:41:14,Searching for free slots with valid parameters should return success1,Pass
+20/05/2025 09:41:14,Searching for free slots with valid parameters should return success2,Pass
+20/05/2025 09:41:15,Searching for free slots with valid parameters should return success3,Pass
+20/05/2025 09:41:16,Searching for free slots with valid partial dateTime strings1,Pass
+20/05/2025 09:41:16,Searching for free slots with valid partial dateTime strings2,Pass
+20/05/2025 09:41:17,Searching for free slots with valid partial dateTime strings3,Pass
+20/05/2025 09:41:17,Searching for free slots with valid partial dateTime strings4,Pass
+20/05/2025 09:41:17,Searching for free slots with valid prefixes1,Pass
+20/05/2025 09:41:19,Successfully search for free slots and check the included location resources returned are valid1,Pass
+20/05/2025 09:41:20,Successfully search for free slots and check the included practitioner resources returned are valid1,Pass
+20/05/2025 09:41:20,Successfully search for free slots and check the included schedule resources returned are valid1,Pass
+20/05/2025 09:41:21,Successfully search for free slots and check the slot resources returned are valid1,Pass
+20/05/2025 09:41:22,Successfully search for free slots using various content types XML and JSON in Accept header1,Pass
+20/05/2025 09:41:23,Successfully search for free slots using various content types XML and JSON in Accept header2,Pass
+20/05/2025 09:41:24,Successfully search for free slots using various content types XML and JSON in Accept header3,Pass
+20/05/2025 09:41:25,Successfully search for free slots using various content types XML and JSON in Accept header4,Pass
+20/05/2025 09:41:25,Successfully search for free slots using various content types XML and JSON in format parameter1,Pass
+20/05/2025 09:41:26,Successfully search for free slots using various content types XML and JSON in format parameter2,Pass
+20/05/2025 09:41:27,Successfully search for free slots using various content types XML and JSON in format parameter3,Pass
+20/05/2025 09:41:28,Successfully search for free slots using various content types XML and JSON in format parameter4,Pass
+20/05/2025 09:41:29,Successfully search for free slots using various content types XML and JSON in the Accept Header and format parameter1,Pass
+20/05/2025 09:41:30,Successfully search for free slots using various content types XML and JSON in the Accept Header and format parameter2,Pass
+20/05/2025 09:41:31,Successfully search for free slots using various content types XML and JSON in the Accept Header and format parameter3,Pass
+20/05/2025 09:41:32,Successfully search for free slots using various content types XML and JSON in the Accept Header and format parameter4,Pass
+20/05/2025 09:41:33,Successfully search for free slots using various content types XML and JSON in the Accept Header and format parameter5,Pass
+20/05/2025 09:41:33,Successfully search for free slots using various content types XML and JSON in the Accept Header and format parameter6,Pass
+20/05/2025 09:41:34,Successfully search for free slots using various content types XML and JSON in the Accept Header and format parameter7,Pass
+20/05/2025 09:41:35,Successfully search for free slots using various content types XML and JSON in the Accept Header and format parameter8,Pass
+20/05/2025 09:41:39,Structured request sent includes one forward compatible parameter expected success with operation outcome1,Pass
+20/05/2025 09:41:39,Structured request sent includes unknown partParameter expected success with operation outcomes1,Pass
+20/05/2025 09:41:39,Structured request sent two forward compatible parameters expected success with multiple operation outcomes1,Pass
+20/05/2025 09:41:39,Structured request sent with Sensitive patient containing an unsupported parameter1,Pass
+20/05/2025 09:41:39,Structured request sent with two invalid parameters expected failure1,Pass
+20/05/2025 09:41:39,Structured request sent with two parameters one invalid boolean part parameter expected success with operation outcome1,Pass
+20/05/2025 09:41:39,Structured request sent with two parameters one invalid mandatory part parameter expected failure1,Pass
+20/05/2025 09:41:39,Structured request with one parameter no Clinical information expected success1,Pass

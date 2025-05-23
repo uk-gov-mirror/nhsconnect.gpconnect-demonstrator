@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<fhirContext>
+  <request>
+    <fhirRequestParameters>{"resourceType":"Parameters","parameter":[{"name":"patientNHSNumber","valueIdentifier":{"system":"https://fhir.nhs.uk/Id/nhs-number","value":"9658220142"}},{"name":"includeAllergies","part":[{"name":"includeResolvedAllergies","valueBoolean":true}]},{"name":"includeImmunisations"},{"name":"includeUncategorisedData","part":[{"name":"uncategorisedDataSearchPeriod","valuePeriod":{"start":"2025-05-10","end":"2025-05-25"}}]},{"name":"includeConsultations","part":[{"name":"consultationSearchPeriod","valuePeriod":{"start":"2025-05-10","end":"2025-05-25"}},{"name":"includeNumberOfMostRecent","valueString":"3"}]},{"name":"includeProblems","part":[{"name":"filterStatus","valueString":"active"},{"name":"filterSignificance","valueString":"major"}]}]}</fhirRequestParameters>
+  </request>
+  <response>
+    <fhirResponseResource>{"resourceType":"OperationOutcome","meta":{"profile":["https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1"]},"issue":[{"severity":"error","code":"not-found","details":{"coding":[{"system":"https://fhir.nhs.uk/STU3/CodeSystem/Spine-ErrorOrWarningCode-1","code":"PATIENT_NOT_FOUND","display":"PATIENT_NOT_FOUND"}]},"diagnostics":"No patient details found for patient ID: 9658220142"}]}</fhirResponseResource>
+  </response>
+</fhirContext>

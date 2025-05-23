@@ -1,0 +1,26 @@
+{
+  "resourceType": "Location",
+  "id": "1",
+  "meta": {
+    "versionId": "1469444400000",
+    "lastUpdated": "2016-07-25T12:00:00+01:00",
+    "profile": [
+      "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Location-1"
+    ]
+  },
+  "status": "active",
+  "name": "Building A",
+  "address": {
+    "line": [
+      "23 Main Street",
+      "Pudsey"
+    ],
+    "city": "Leeds",
+    "district": "West Yorkshire",
+    "postalCode": "GPC 111",
+    "country": "UK"
+  },
+  "managingOrganization": {
+    "reference": "Organization/1/_history/1469444400000"
+  }
+}

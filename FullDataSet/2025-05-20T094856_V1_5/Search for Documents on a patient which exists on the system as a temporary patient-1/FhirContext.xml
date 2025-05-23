@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<fhirContext>
+  <request>
+    <fhirRequestParameters>{"resourceType":"Parameters"}</fhirRequestParameters>
+  </request>
+  <response>
+    <fhirResponseResource>{"resourceType":"OperationOutcome","meta":{"profile":["https://fhir.nhs.uk/StructureDefinition/gpconnect-operationoutcome-1"]},"issue":[{"severity":"error","code":"invalid","details":{"coding":[{"system":"https://fhir.nhs.uk/ValueSet/gpconnect-error-or-warning-code-1","code":"PATIENT_NOT_FOUND","display":"Patient Not Found"}]},"diagnostics":"No patient details found for patient ID: 34"}]}</fhirResponseResource>
+  </response>
+</fhirContext>

@@ -1,0 +1,31 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+  <h1>Summary</h1>
+  <div>
+    <h2>Emergency Codes</h2>
+    <p>No 'Emergency Codes' data is recorded for this patient.</p>
+  </div>
+  <div>
+    <h2>Last 3 Encounters</h2>
+    <p>No 'Last 3 Encounters' data is recorded for this patient.</p>
+  </div>
+  <div>
+    <h2>Active Problems and Issues</h2>
+    <p>No 'Active Problems and Issues' data is recorded for this patient.</p>
+  </div>
+  <div>
+    <h2>Major Inactive Problems and Issues</h2>
+    <p>No 'Major Inactive Problems and Issues' data is recorded for this patient.</p>
+  </div>
+  <div>
+    <h2>Current Allergies and Adverse Reactions</h2>
+    <p>No 'Current Allergies and Adverse Reactions' data is recorded for this patient.</p>
+  </div>
+  <div>
+    <h2>Acute Medication (Last 12 Months)</h2>
+    <p>No 'Acute Medication (Last 12 Months)' data is recorded for this patient.</p>
+  </div>
+  <div>
+    <h2>Current Repeat Medication</h2>
+    <p>No 'Current Repeat Medication' data is recorded for this patient.</p>
+  </div>
+</div>

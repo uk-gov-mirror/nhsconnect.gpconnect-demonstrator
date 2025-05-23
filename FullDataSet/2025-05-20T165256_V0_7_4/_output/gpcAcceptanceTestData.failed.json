@@ -1,0 +1,186 @@
+[
+  {
+    "requestName": "/metadata",
+    "dir": "JWT Missing sdsRoleProfile and guid-1",
+    "testResult": "Failed",
+    "data": {
+      "request": {
+        "headers": [
+          {
+            "name": "Accept",
+            "value": "application/json+fhir"
+          },
+          {
+            "name": "Ssp-TraceID",
+            "value": "7b960113-42bb-479b-82d8-ebad1495b6e6"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Authorization",
+            "value": "Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwczovL0NvbnN1bWVyU3lzdGVtVVJMIiwic3ViIjoiMSIsImF1ZCI6Imh0dHBzOi8vYXV0aG9yaXplLmZoaXIubmhzLm5ldC90b2tlbiIsImV4cCI6MTc0Nzc1Njc3MywiaWF0IjoxNzQ3NzU2NDczLCJyZWFzb25fZm9yX3JlcXVlc3QiOiJkaXJlY3RjYXJlIiwicmVxdWVzdGluZ19kZXZpY2UiOnsicmVzb3VyY2VUeXBlIjoiRGV2aWNlIiwiaWQiOiIxIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiR1BDb25uZWN0VGVzdFN5c3RlbSIsInZhbHVlIjoiQ2xpZW50In1dLCJtb2RlbCI6InYxIiwidmVyc2lvbiI6IjEuMSJ9LCJyZXF1ZXN0aW5nX29yZ2FuaXphdGlvbiI6eyJyZXNvdXJjZVR5cGUiOiJPcmdhbml6YXRpb24iLCJpZCI6IjEiLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwOi8vZmhpci5uaHMubmV0L0lkL29kcy1vcmdhbml6YXRpb24tY29kZSIsInZhbHVlIjoiR1BDQTAwMDEifV0sIm5hbWUiOiJHUCBDb25uZWN0IEFzc3VyYW5jZSJ9LCJyZXF1ZXN0aW5nX3ByYWN0aXRpb25lciI6eyJyZXNvdXJjZVR5cGUiOiJQcmFjdGl0aW9uZXIiLCJpZCI6IjEiLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwOi8vZmhpci5uaHMubmV0L3Nkcy11c2VyLWlkIiwidmFsdWUiOiJHQ0FTRFMwMDAxIn1dLCJuYW1lIjp7ImZhbWlseSI6WyJBc3N1cmFuY2VQcmFjdGl0aW9uZXIiXSwiZ2l2ZW4iOlsiQXNzdXJhbmNlVGVzdCJdLCJwcmVmaXgiOlsiTXIiXX19LCJyZXF1ZXN0ZWRfc2NvcGUiOiJvcmdhbml6YXRpb24vKi5yZWFkIiwicmVxdWVzdGVkX3JlY29yZCI6eyJyZXNvdXJjZVR5cGUiOiJPcmdhbml6YXRpb24iLCJpZCI6IjEiLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwOi8vZmhpci5uaHMubmV0L0lkL29kcy1vcmdhbml6YXRpb24tY29kZSIsInZhbHVlIjoiT3JnT0RTQ29kZTAwMDEifV0sIm5hbWUiOiJHUCBDb25uZWN0IEFzc3VyYW5jZSJ9fQ."
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata"
+          },
+          {
+            "name": "Content-Type",
+            "value": "application/json+fhir"
+          }
+        ],
+        "jwtoken": "{\"iss\":\"https://ConsumerSystemURL\",\"sub\":\"1\",\"aud\":\"https://authorize.fhir.nhs.net/token\",\"exp\":1747756773,\"iat\":1747756473,\"reason_for_request\":\"directcare\",\"requesting_device\":{\"resourceType\":\"Device\",\"id\":\"1\",\"identifier\":[{\"system\":\"GPConnectTestSystem\",\"value\":\"Client\"}],\"model\":\"v1\",\"version\":\"1.1\"},\"requesting_organization\":{\"resourceType\":\"Organization\",\"id\":\"1\",\"identifier\":[{\"system\":\"http://fhir.nhs.net/Id/ods-organization-code\",\"value\":\"GPCA0001\"}],\"name\":\"GP Connect Assurance\"},\"requesting_practitioner\":{\"resourceType\":\"Practitioner\",\"id\":\"1\",\"identifier\":[{\"system\":\"http://fhir.nhs.net/sds-user-id\",\"value\":\"GCASDS0001\"}],\"name\":{\"family\":[\"AssurancePractitioner\"],\"given\":[\"AssuranceTest\"],\"prefix\":[\"Mr\"]}},\"requested_scope\":\"organization/*.read\",\"requested_record\":{\"resourceType\":\"Organization\",\"id\":\"1\",\"identifier\":[{\"system\":\"http://fhir.nhs.net/Id/ods-organization-code\",\"value\":\"OrgODSCode0001\"}],\"name\":\"GP Connect Assurance\"}}",
+        "method": "GET",
+        "contentType": "application/json+fhir",
+        "body": {
+          "value": null
+        },
+        "parameters": ""
+      },
+      "response": {
+        "contentType": "application/json+fhir;charset=UTF-8",
+        "statusCode": "400",
+        "timeInMilliseconds": "8",
+        "timeAcceptable": "true",
+        "headers": [
+          {
+            "name": "Transfer-Encoding",
+            "value": "chunked"
+          },
+          {
+            "name": "Connection",
+            "value": "keep-alive"
+          },
+          {
+            "name": "Content-Type",
+            "value": "application/json+fhir;charset=UTF-8"
+          },
+          {
+            "name": "Date",
+            "value": "Tue, 20 May 2025 15:54:33 GMT"
+          },
+          {
+            "name": "Server",
+            "value": "nginx/1.19.6"
+          },
+          {
+            "name": "X-Powered-By",
+            "value": "HAPI FHIR 2.2 REST Server (FHIR Server; FHIR 1.0.2/DSTU2)"
+          }
+        ],
+        "body": "{&amp;quot;resourceType&amp;quot;:&amp;quot;OperationOutcome&amp;quot;,&amp;quot;meta&amp;quot;:{&amp;quot;profile&amp;quot;:[&amp;quot;http://fhir.nhs.net/StructureDefinition/gpconnect-operationoutcome-1&amp;quot;]},&amp;quot;issue&amp;quot;:[{&amp;quot;severity&amp;quot;:&amp;quot;error&amp;quot;,&amp;quot;code&amp;quot;:&amp;quot;invalid&amp;quot;,&amp;quot;details&amp;quot;:{&amp;quot;coding&amp;quot;:[{&amp;quot;system&amp;quot;:&amp;quot;http://fhir.nhs.net/ValueSet/gpconnect-error-or-warning-code-1&amp;quot;,&amp;quot;code&amp;quot;:&amp;quot;BAD_REQUEST&amp;quot;,&amp;quot;display&amp;quot;:&amp;quot;BAD_REQUEST&amp;quot;}]},&amp;quot;diagnostics&amp;quot;:&amp;quot;JWT JSON Incomplete: claim requesting_practitioner.role.code is null.&amp;quot;}]}"
+      },
+      "httpcontext": {
+        "useWebProxy": "false",
+        "webProxyUrl": "https://localhost:8889",
+        "useSpineProxy": "false",
+        "spineProxyUrl": "https://proxy.int.spine2.ncrs.nhs.uk:443",
+        "providerUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v0/fhir"
+      },
+      "endpointUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v0/fhir",
+      "testLocation": "C:\\Users\\LillieDae\\source\\repos\\gpc-demonstrator-postman\\gpconnect-demonstrator\\FullDataSet\\2025-05-20T165256_V0_7_4",
+      "projectName": "read/metadata"
+    },
+    "reasonFailed": "(int)HttpContext.ResponseStatusCode).ToString(\n    should be\n\"200\"\n    but was\n\"400\"\n    difference\nDifference     |  |             \r\n               | \\|/            \r\nIndex          | 0    1    2    \r\nExpected Value | 2    0    0    \r\nActual Value   | 4    0    0    \r\nExpected Code  | 50   48   48   \r\nActual Code    | 52   48   48"
+  },
+  {
+    "requestName": "/metadata",
+    "dir": "Security no client certificate sent-1",
+    "testResult": "Failed",
+    "data": {
+      "request": {
+        "headers": [
+          {
+            "name": "Accept",
+            "value": "application/json+fhir"
+          },
+          {
+            "name": "Ssp-TraceID",
+            "value": "ab2d7973-7c9d-418c-92a2-5bd1df756a46"
+          },
+          {
+            "name": "Ssp-From",
+            "value": "200000000985"
+          },
+          {
+            "name": "Ssp-To",
+            "value": "200000000985"
+          },
+          {
+            "name": "Authorization",
+            "value": "Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwczovL0NvbnN1bWVyU3lzdGVtVVJMIiwic3ViIjoiMSIsImF1ZCI6Imh0dHBzOi8vYXV0aG9yaXplLmZoaXIubmhzLm5ldC90b2tlbiIsImV4cCI6MTc0Nzc1Njc3NCwiaWF0IjoxNzQ3NzU2NDc0LCJyZWFzb25fZm9yX3JlcXVlc3QiOiJkaXJlY3RjYXJlIiwicmVxdWVzdGluZ19kZXZpY2UiOnsicmVzb3VyY2VUeXBlIjoiRGV2aWNlIiwiaWQiOiIxIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiR1BDb25uZWN0VGVzdFN5c3RlbSIsInZhbHVlIjoiQ2xpZW50In1dLCJtb2RlbCI6InYxIiwidmVyc2lvbiI6IjEuMSJ9LCJyZXF1ZXN0aW5nX29yZ2FuaXphdGlvbiI6eyJyZXNvdXJjZVR5cGUiOiJPcmdhbml6YXRpb24iLCJpZCI6IjEiLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwOi8vZmhpci5uaHMubmV0L0lkL29kcy1vcmdhbml6YXRpb24tY29kZSIsInZhbHVlIjoiR1BDQTAwMDEifV0sIm5hbWUiOiJHUCBDb25uZWN0IEFzc3VyYW5jZSJ9LCJyZXF1ZXN0aW5nX3ByYWN0aXRpb25lciI6eyJyZXNvdXJjZVR5cGUiOiJQcmFjdGl0aW9uZXIiLCJpZCI6IjEiLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwOi8vZmhpci5uaHMubmV0L3Nkcy11c2VyLWlkIiwidmFsdWUiOiJHQ0FTRFMwMDAxIn0seyJzeXN0ZW0iOiJodHRwczovL2NvbnN1bWVyc3VwcGxpZXIuY29tL0lkL3VzZXItZ3VpZCIsInZhbHVlIjoiOThlZDRmNzgtODE0ZC00MjY2LThkNWItY2RlNzQyZjMwOTNjIn1dLCJuYW1lIjp7ImZhbWlseSI6WyJBc3N1cmFuY2VQcmFjdGl0aW9uZXIiXSwiZ2l2ZW4iOlsiQXNzdXJhbmNlVGVzdCJdLCJwcmVmaXgiOlsiTXIiXX0sInByYWN0aXRpb25lclJvbGUiOlt7InJvbGUiOnsiY29kaW5nIjpbeyJzeXN0ZW0iOiJodHRwOi8vZmhpci5uaHMubmV0L1ZhbHVlU2V0L3Nkcy1qb2Itcm9sZS1uYW1lLTEiLCJjb2RlIjoiQXNzdXJhbmNlSm9iUm9sZSJ9XX19XX0sInJlcXVlc3RlZF9zY29wZSI6Im9yZ2FuaXphdGlvbi8qLnJlYWQiLCJyZXF1ZXN0ZWRfcmVjb3JkIjp7InJlc291cmNlVHlwZSI6Ik9yZ2FuaXphdGlvbiIsImlkIjoiMSIsImlkZW50aWZpZXIiOlt7InN5c3RlbSI6Imh0dHA6Ly9maGlyLm5ocy5uZXQvSWQvb2RzLW9yZ2FuaXphdGlvbi1jb2RlIiwidmFsdWUiOiJPcmdPRFNDb2RlMDAwMSJ9XSwibmFtZSI6IkdQIENvbm5lY3QgQXNzdXJhbmNlIn19."
+          },
+          {
+            "name": "Ssp-InteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata"
+          },
+          {
+            "name": "Content-Type",
+            "value": "application/json+fhir"
+          }
+        ],
+        "jwtoken": "{\"iss\":\"https://ConsumerSystemURL\",\"sub\":\"1\",\"aud\":\"https://authorize.fhir.nhs.net/token\",\"exp\":1747756774,\"iat\":1747756474,\"reason_for_request\":\"directcare\",\"requesting_device\":{\"resourceType\":\"Device\",\"id\":\"1\",\"identifier\":[{\"system\":\"GPConnectTestSystem\",\"value\":\"Client\"}],\"model\":\"v1\",\"version\":\"1.1\"},\"requesting_organization\":{\"resourceType\":\"Organization\",\"id\":\"1\",\"identifier\":[{\"system\":\"http://fhir.nhs.net/Id/ods-organization-code\",\"value\":\"GPCA0001\"}],\"name\":\"GP Connect Assurance\"},\"requesting_practitioner\":{\"resourceType\":\"Practitioner\",\"id\":\"1\",\"identifier\":[{\"system\":\"http://fhir.nhs.net/sds-user-id\",\"value\":\"GCASDS0001\"},{\"system\":\"https://consumersupplier.com/Id/user-guid\",\"value\":\"98ed4f78-814d-4266-8d5b-cde742f3093c\"}],\"name\":{\"family\":[\"AssurancePractitioner\"],\"given\":[\"AssuranceTest\"],\"prefix\":[\"Mr\"]},\"practitionerRole\":[{\"role\":{\"coding\":[{\"system\":\"http://fhir.nhs.net/ValueSet/sds-job-role-name-1\",\"code\":\"AssuranceJobRole\"}]}}]},\"requested_scope\":\"organization/*.read\",\"requested_record\":{\"resourceType\":\"Organization\",\"id\":\"1\",\"identifier\":[{\"system\":\"http://fhir.nhs.net/Id/ods-organization-code\",\"value\":\"OrgODSCode0001\"}],\"name\":\"GP Connect Assurance\"}}",
+        "method": "GET",
+        "contentType": "application/json+fhir",
+        "body": {
+          "value": null
+        },
+        "parameters": ""
+      },
+      "response": {
+        "contentType": "application/json+fhir;charset=UTF-8",
+        "statusCode": "200",
+        "timeInMilliseconds": "37",
+        "timeAcceptable": "true",
+        "headers": [
+          {
+            "name": "Transfer-Encoding",
+            "value": "chunked"
+          },
+          {
+            "name": "Connection",
+            "value": "keep-alive"
+          },
+          {
+            "name": "Content-Encoding",
+            "value": ""
+          },
+          {
+            "name": "Content-Type",
+            "value": "application/json+fhir;charset=UTF-8"
+          },
+          {
+            "name": "Date",
+            "value": "Tue, 20 May 2025 15:54:34 GMT"
+          },
+          {
+            "name": "Server",
+            "value": "nginx/1.19.6"
+          },
+          {
+            "name": "X-Powered-By",
+            "value": "HAPI FHIR 2.2 REST Server (FHIR Server; FHIR 1.0.2/DSTU2)"
+          }
+        ],
+        "body": "{&amp;quot;resourceType&amp;quot;:&amp;quot;Conformance&amp;quot;,&amp;quot;version&amp;quot;:&amp;quot;0.7.4&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;GP Connect&amp;quot;,&amp;quot;publisher&amp;quot;:&amp;quot;Not provided&amp;quot;,&amp;quot;date&amp;quot;:&amp;quot;2025-05-20T09:29:25+01:00&amp;quot;,&amp;quot;description&amp;quot;:&amp;quot;This server implements the GP Connect API version 0.7.4&amp;quot;,&amp;quot;copyright&amp;quot;:&amp;quot;Copyright NHS Digital 2018&amp;quot;,&amp;quot;kind&amp;quot;:&amp;quot;instance&amp;quot;,&amp;quot;software&amp;quot;:{&amp;quot;name&amp;quot;:&amp;quot;HAPI FHIR Server&amp;quot;,&amp;quot;version&amp;quot;:&amp;quot;2.2&amp;quot;,&amp;quot;releaseDate&amp;quot;:&amp;quot;2016-12-20T00:00:00+00:00&amp;quot;},&amp;quot;fhirVersion&amp;quot;:&amp;quot;1.0.2&amp;quot;,&amp;quot;acceptUnknown&amp;quot;:&amp;quot;extensions&amp;quot;,&amp;quot;format&amp;quot;:[&amp;quot;application/xml+fhir&amp;quot;,&amp;quot;application/json+fhir&amp;quot;],&amp;quot;rest&amp;quot;:[{&amp;quot;mode&amp;quot;:&amp;quot;server&amp;quot;,&amp;quot;resource&amp;quot;:[{&amp;quot;type&amp;quot;:&amp;quot;OperationDefinition&amp;quot;,&amp;quot;profile&amp;quot;:{&amp;quot;reference&amp;quot;:&amp;quot;http://hl7.org/fhir/profiles/OperationDefinition&amp;quot;},&amp;quot;interaction&amp;quot;:[{&amp;quot;code&amp;quot;:&amp;quot;read&amp;quot;}]},{&amp;quot;type&amp;quot;:&amp;quot;Patient&amp;quot;,&amp;quot;profile&amp;quot;:{&amp;quot;reference&amp;quot;:&amp;quot;http://hl7.org/fhir/profiles/Patient&amp;quot;}},{&amp;quot;type&amp;quot;:&amp;quot;StructureDefinition&amp;quot;,&amp;quot;profile&amp;quot;:{&amp;quot;reference&amp;quot;:&amp;quot;http://hl7.org/fhir/profiles/StructureDefinition&amp;quot;},&amp;quot;interaction&amp;quot;:[{&amp;quot;code&amp;quot;:&amp;quot;read&amp;quot;},{&amp;quot;code&amp;quot;:&amp;quot;search-type&amp;quot;}]}],&amp;quot;operation&amp;quot;:[{&amp;quot;name&amp;quot;:&amp;quot;gpc.getcarerecord&amp;quot;,&amp;quot;definition&amp;quot;:{&amp;quot;reference&amp;quot;:&amp;quot;OperationDefinition/Patient--gpc.getcarerecord&amp;quot;}}]}]}"
+      },
+      "httpcontext": {
+        "useWebProxy": "false",
+        "webProxyUrl": "https://localhost:8889",
+        "useSpineProxy": "false",
+        "spineProxyUrl": "https://proxy.int.spine2.ncrs.nhs.uk:443",
+        "providerUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v0/fhir"
+      },
+      "endpointUrl": "https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v0/fhir",
+      "testLocation": "C:\\Users\\LillieDae\\source\\repos\\gpc-demonstrator-postman\\gpconnect-demonstrator\\FullDataSet\\2025-05-20T165256_V0_7_4",
+      "projectName": "read/metadata"
+    },
+    "reasonFailed": "(int)HttpContext.ResponseStatusCode).ToString(\n    should be\n\"496\"\n    but was\n\"200\"\n    difference\nDifference     |  |    |    |   \r\n               | \\|/  \\|/  \\|/  \r\nIndex          | 0    1    2    \r\nExpected Value | 4    9    6    \r\nActual Value   | 2    0    0    \r\nExpected Code  | 52   57   54   \r\nActual Code    | 50   48   48"
+  }
+]

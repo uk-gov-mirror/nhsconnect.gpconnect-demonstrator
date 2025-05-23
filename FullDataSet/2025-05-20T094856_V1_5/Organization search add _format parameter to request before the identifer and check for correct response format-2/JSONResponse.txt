@@ -1,0 +1,49 @@
+{
+  "resourceType": "Bundle",
+  "id": "3ec1f9a4-c786-455a-ba08-2a4be12093df",
+  "meta": {
+    "lastUpdated": "2025-05-20T09:56:47.122+01:00"
+  },
+  "type": "searchset",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Organization",
+        "id": "7",
+        "meta": {
+          "versionId": "1469444400000",
+          "lastUpdated": "2016-07-25T12:00:00+01:00",
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "https://fhir.nhs.uk/Id/ods-organization-code",
+            "value": "B82617"
+          }
+        ],
+        "name": "COXWOLD SURGERY",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "12345678",
+            "use": "work"
+          }
+        ],
+        "address": [
+          {
+            "use": "work",
+            "line": [
+              "NHS NPFIT Test Data Manager",
+              "Princes Exchange"
+            ],
+            "city": "Leeds",
+            "district": "West Yorkshire",
+            "postalCode": "LS1 4HY"
+          }
+        ]
+      }
+    }
+  ]
+}

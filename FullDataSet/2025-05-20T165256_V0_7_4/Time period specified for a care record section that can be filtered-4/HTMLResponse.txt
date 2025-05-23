@@ -1,0 +1,272 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+  <h1>Medications</h1>
+  <div>
+    <h2>Acute Medication (Last 12 Months)</h2>
+    <div class="date-banner">
+      <p>Date filter not applied</p>
+    </div>
+    <table id="med-tab-acu-med">
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Start Date</th>
+          <th>Medication Item</th>
+          <th>Dosage Instruction</th>
+          <th>Quantity</th>
+          <th>Scheduled End Date</th>
+          <th>Days Duration</th>
+          <th>Additional Information</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>NHS Medication</td>
+          <td class="date-column">25-Nov-2024</td>
+          <td>Tramadol 50mg capsules</td>
+          <td>one tablet every 4 to 6 hours</td>
+          <td>28 days</td>
+          <td></td>
+          <td align="right">28</td>
+          <td>Take 1 or 2 tablets as directed up to 4 times per day</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <h2>Current Repeat Medication</h2>
+    <div class="date-banner">
+      <p>Date filter not applied</p>
+    </div>
+    <table id="med-tab-curr-rep">
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Start Date</th>
+          <th>Medication Item</th>
+          <th>Dosage Instruction</th>
+          <th>Quantity</th>
+          <th>Last Issued Date</th>
+          <th>Number of Prescriptions Issued</th>
+          <th>Max Issues</th>
+          <th>Review Date</th>
+          <th>Additional Information</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Repeat</td>
+          <td class="date-column">01-Dec-2021</td>
+          <td>Metformin 500mg tablets</td>
+          <td>one tablet 2 to 3 times daily</td>
+          <td>28 days</td>
+          <td class="date-column">28-Oct-2024</td>
+          <td align="right">3</td>
+          <td align="right">6</td>
+          <td class="date-column">15-May-2025</td>
+          <td>Take one tablet three times daily</td>
+        </tr>
+        <tr>
+          <td>Repeat</td>
+          <td class="date-column">01-Oct-2012</td>
+          <td>Lercanidipine 20mg tablets</td>
+          <td>one tablet daily</td>
+          <td>28 days</td>
+          <td class="date-column">20-Oct-2024</td>
+          <td align="right">3</td>
+          <td align="right">6</td>
+          <td class="date-column">15-May-2025</td>
+          <td>Take one tablet daily</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <h2>Discontinued Repeat Medication</h2>
+    <div class="content-banner">
+      <p>All repeat medication ended by a clinician action</p>
+    </div>
+    <div class="date-banner">
+      <p>Date filter not applied</p>
+    </div>
+    <table id="med-tab-dis-rep">
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Last Issued Date</th>
+          <th>Medication Item</th>
+          <th>Dosage Instruction</th>
+          <th>Quantity</th>
+          <th>Discontinued Date</th>
+          <th>Discontinuation Reason</th>
+          <th>Additional Information</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Repeat</td>
+          <td class="date-column">01-Dec-2011</td>
+          <td>Metformin 500mg tablets</td>
+          <td>one tablet 2 to 3 times per day</td>
+          <td>28 days</td>
+          <td class="date-column">01-Dec-2011</td>
+          <td>60 tablet pack discontinued</td>
+          <td>Take with food and water</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <h2>All Medication</h2>
+    <div class="date-banner">
+      <p>For the period '20-May-2023' to '20-May-2025'</p>
+    </div>
+    <table id="med-tab-all-sum">
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Start Date</th>
+          <th>Medication Item</th>
+          <th>Dosage Instruction</th>
+          <th>Quantity</th>
+          <th>Last Issued Date</th>
+          <th>Number of Prescriptions Issued</th>
+          <th>Discontinuation Details</th>
+          <th>Additional Information</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="9" class="med-item-column">
+            <b>Lercanidipine 20mg tablets</b>
+          </td>
+        </tr>
+        <tr>
+          <td>Repeat</td>
+          <td class="date-column">01-Oct-2012</td>
+          <td>Lercanidipine 20mg tablets</td>
+          <td>one tablet daily</td>
+          <td>28 days</td>
+          <td class="date-column">01-Oct-2012</td>
+          <td align="right">1</td>
+          <td></td>
+          <td>Take one tablet daily</td>
+        </tr>
+        <tr>
+          <td colspan="9" class="med-item-column">
+            <b>Metformin 500mg tablets</b>
+          </td>
+        </tr>
+        <tr>
+          <td>Repeat</td>
+          <td class="date-column">01-Dec-2021</td>
+          <td>Metformin 500mg tablets</td>
+          <td>one tablet 2 to 3 times daily</td>
+          <td>28 days</td>
+          <td class="date-column">01-Dec-2021</td>
+          <td align="right">1</td>
+          <td></td>
+          <td>Take one tablet three times daily</td>
+        </tr>
+        <tr>
+          <td>Repeat</td>
+          <td class="date-column">01-Dec-2011</td>
+          <td>Metformin 500mg tablets</td>
+          <td>one tablet 2 to 3 times per day</td>
+          <td>28 days</td>
+          <td class="date-column">01-Dec-2011</td>
+          <td align="right">1</td>
+          <td>DISCONTINUED:<br />01-Dec-2011<br />60 tablet pack discontinued</td>
+          <td>Take with food and water</td>
+        </tr>
+        <tr>
+          <td colspan="9" class="med-item-column">
+            <b>Tramadol 50mg capsules</b>
+          </td>
+        </tr>
+        <tr>
+          <td>NHS Medication</td>
+          <td class="date-column">25-Nov-2024</td>
+          <td>Tramadol 50mg capsules</td>
+          <td>one tablet every 4 to 6 hours</td>
+          <td>28 days</td>
+          <td class="date-column">25-Nov-2024</td>
+          <td align="right">1</td>
+          <td></td>
+          <td>Take 1 or 2 tablets as directed up to 4 times per day</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <h2>All Medication Issues</h2>
+    <div class="date-banner">
+      <p>For the period '20-May-2023' to '20-May-2025'</p>
+    </div>
+    <table id="med-tab-all-iss">
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Issue Date</th>
+          <th>Medication Item</th>
+          <th>Dosage Instruction</th>
+          <th>Quantity</th>
+          <th>Days Duration</th>
+          <th>Additional Information</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="7" class="med-item-column">
+            <b>Lercanidipine 20mg tablets</b>
+          </td>
+        </tr>
+        <tr>
+          <td>Repeat</td>
+          <td class="date-column">01-Oct-2012</td>
+          <td>Lercanidipine 20mg tablets</td>
+          <td>one tablet daily</td>
+          <td>28 days</td>
+          <td></td>
+          <td>Take one tablet daily</td>
+        </tr>
+        <tr>
+          <td colspan="7" class="med-item-column">
+            <b>Metformin 500mg tablets</b>
+          </td>
+        </tr>
+        <tr>
+          <td>Repeat</td>
+          <td class="date-column">01-Dec-2021</td>
+          <td>Metformin 500mg tablets</td>
+          <td>one tablet 2 to 3 times daily</td>
+          <td>28 days</td>
+          <td></td>
+          <td>Take one tablet three times daily</td>
+        </tr>
+        <tr>
+          <td>Repeat</td>
+          <td class="date-column">01-Dec-2011</td>
+          <td>Metformin 500mg tablets</td>
+          <td>one tablet 2 to 3 times per day</td>
+          <td>28 days</td>
+          <td align="right">4</td>
+          <td>Take with food and water</td>
+        </tr>
+        <tr>
+          <td colspan="7" class="med-item-column">
+            <b>Tramadol 50mg capsules</b>
+          </td>
+        </tr>
+        <tr>
+          <td>NHS Medication</td>
+          <td class="date-column">25-Nov-2024</td>
+          <td>Tramadol 50mg capsules</td>
+          <td>one tablet every 4 to 6 hours</td>
+          <td>28 days</td>
+          <td align="right">28</td>
+          <td>Take 1 or 2 tablets as directed up to 4 times per day</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

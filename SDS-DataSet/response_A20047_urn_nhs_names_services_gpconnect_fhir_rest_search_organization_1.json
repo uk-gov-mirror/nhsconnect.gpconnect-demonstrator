@@ -1,0 +1,82 @@
+{
+  "resourceType": "Bundle",
+  "id": "CC3F9CC1-3E4D-4A5D-BEDF-CEF28549E0A7",
+  "type": "searchset",
+  "total": 1,
+  "link": [ {
+    "relation": "self",
+    "url": "https://orange.testlab.nhs.uk/Endpoint?organization=https://fhir.nhs.uk/Id/ods-organization-code|A20047&identifier=https://fhir.nhs.uk/Id/nhsServiceInteractionId|urn:nhs:names:services:gpconnect:fhir:rest:search:organization-1"
+  } ],
+  "entry": [ {
+    "fullUrl": "https://orange.testlab.nhs.uk/Endpoint/7053118E-583A-4097-922C-B276FBF111DC",
+    "resource": {
+      "resourceType": "Endpoint",
+      "id": "7053118E-583A-4097-922C-B276FBF111DC",
+      "extension": [ {
+        "url": "https://fhir.nhs.uk/StructureDefinition/Extension-SDS-ReliabilityConfiguration",
+        "extension": [ {
+          "url": "nhsMHSSyncReplyMode"
+        }, {
+          "url": "nhsMHSRetryInterval",
+          "valueString": "PT1M"
+        }, {
+          "url": "nhsMHSRetries",
+          "valueInteger": 2
+        }, {
+          "url": "nhsMHSPersistDuration",
+          "valueString": "PT5M"
+        }, {
+          "url": "nhsMHSDuplicateElimination",
+          "valueString": "never"
+        }, {
+          "url": "nhsMHSAckRequested",
+          "valueString": "never"
+        } ]
+      }, {
+        "url": "https://fhir.nhs.uk/StructureDefinition/Extension-SDS-NhsServiceInteractionId",
+        "valueReference": {
+          "identifier": {
+            "system": "https://fhir.nhs.uk/Id/nhsServiceInteractionId",
+            "value": "urn:nhs:names:services:gpconnect:fhir:rest:search:organization-1"
+          }
+        }
+      } ],
+      "identifier": [ {
+        "system": "https://fhir.nhs.uk/Id/nhsMhsFQDN",
+        "value": "orange.testlab.nhs.uk"
+      }, {
+        "system": "https://fhir.nhs.uk/Id/nhsMhsPartyKey",
+        "value": "A20047-9198993"
+      }, {
+        "system": "https://fhir.nhs.uk/Id/nhsMhsCPAId",
+        "value": "S918999411010"
+      }, {
+        "system": "https://fhir.nhs.uk/Id/nhsMHSId",
+        "value": "S918999411010"
+      } ],
+      "status": "active",
+      "connectionType": {
+        "system": "http://terminology.hl7.org/CodeSystem/endpoint-connection-type",
+        "code": "hl7-fhir-msg",
+        "display": "HL7 FHIR Messaging"
+      },
+      "managingOrganization": {
+        "identifier": {
+          "system": "https://fhir.nhs.uk/Id/ods-organization-code",
+          "value": "true"
+        }
+      },
+      "payloadType": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/endpoint-payload-type",
+          "code": "any",
+          "display": "Any"
+        } ]
+      } ],
+      "address": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/v1/fhir"
+    },
+    "search": {
+      "mode": "match"
+    }
+  } ]
+}

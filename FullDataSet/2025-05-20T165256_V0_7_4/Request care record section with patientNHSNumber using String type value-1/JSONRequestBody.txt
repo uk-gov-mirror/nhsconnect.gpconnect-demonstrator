@@ -1,0 +1,20 @@
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "patientNHSNumber",
+      "valueString": "9658218873"
+    },
+    {
+      "name": "recordSection",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://fhir.nhs.net/ValueSet/gpconnect-record-section-1",
+            "code": "SUM"
+          }
+        ]
+      }
+    }
+  ]
+}

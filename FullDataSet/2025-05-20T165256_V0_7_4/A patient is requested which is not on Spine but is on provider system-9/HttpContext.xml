@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<httpContext useWebProxy="false" webProxyUrl="https://localhost:8889" useSpineProxy="false" spineProxyUrl="https://proxy.int.spine2.ncrs.nhs.uk:443" providerUrl="https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v0/fhir">
+  <request endpointUrl="https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v0/fhir">
+    <requestHeaders>
+      <requestHeader name="Accept" value="application/json+fhir" />
+      <requestHeader name="Ssp-TraceID" value="a99c7d6a-9def-46b0-889c-817e68c51495" />
+      <requestHeader name="Ssp-From" value="200000000985" />
+      <requestHeader name="Ssp-To" value="200000000985" />
+      <requestHeader name="Authorization" value="Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwczovL0NvbnN1bWVyU3lzdGVtVVJMIiwic3ViIjoiMSIsImF1ZCI6Imh0dHBzOi8vYXV0aG9yaXplLmZoaXIubmhzLm5ldC90b2tlbiIsImV4cCI6MTc0Nzc1NjY4MSwiaWF0IjoxNzQ3NzU2MzgxLCJyZWFzb25fZm9yX3JlcXVlc3QiOiJkaXJlY3RjYXJlIiwicmVxdWVzdGluZ19kZXZpY2UiOnsicmVzb3VyY2VUeXBlIjoiRGV2aWNlIiwiaWQiOiIxIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiR1BDb25uZWN0VGVzdFN5c3RlbSIsInZhbHVlIjoiQ2xpZW50In1dLCJtb2RlbCI6InYxIiwidmVyc2lvbiI6IjEuMSJ9LCJyZXF1ZXN0aW5nX29yZ2FuaXphdGlvbiI6eyJyZXNvdXJjZVR5cGUiOiJPcmdhbml6YXRpb24iLCJpZCI6IjEiLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwOi8vZmhpci5uaHMubmV0L0lkL29kcy1vcmdhbml6YXRpb24tY29kZSIsInZhbHVlIjoiR1BDQTAwMDEifV0sIm5hbWUiOiJHUCBDb25uZWN0IEFzc3VyYW5jZSJ9LCJyZXF1ZXN0aW5nX3ByYWN0aXRpb25lciI6eyJyZXNvdXJjZVR5cGUiOiJQcmFjdGl0aW9uZXIiLCJpZCI6IjEiLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwOi8vZmhpci5uaHMubmV0L3Nkcy11c2VyLWlkIiwidmFsdWUiOiJHQ0FTRFMwMDAxIn0seyJzeXN0ZW0iOiJodHRwczovL2NvbnN1bWVyc3VwcGxpZXIuY29tL0lkL3VzZXItZ3VpZCIsInZhbHVlIjoiOThlZDRmNzgtODE0ZC00MjY2LThkNWItY2RlNzQyZjMwOTNjIn1dLCJuYW1lIjp7ImZhbWlseSI6WyJBc3N1cmFuY2VQcmFjdGl0aW9uZXIiXSwiZ2l2ZW4iOlsiQXNzdXJhbmNlVGVzdCJdLCJwcmVmaXgiOlsiTXIiXX0sInByYWN0aXRpb25lclJvbGUiOlt7InJvbGUiOnsiY29kaW5nIjpbeyJzeXN0ZW0iOiJodHRwOi8vZmhpci5uaHMubmV0L1ZhbHVlU2V0L3Nkcy1qb2Itcm9sZS1uYW1lLTEiLCJjb2RlIjoiQXNzdXJhbmNlSm9iUm9sZSJ9XX19XX0sInJlcXVlc3RlZF9zY29wZSI6InBhdGllbnQvKi5yZWFkIiwicmVxdWVzdGVkX3JlY29yZCI6eyJyZXNvdXJjZVR5cGUiOiJQYXRpZW50IiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiaHR0cDovL2ZoaXIubmhzLm5ldC9JZC9uaHMtbnVtYmVyIiwidmFsdWUiOiI5NDc2NzE4OTQzIn1dfX0." />
+      <requestHeader name="Ssp-InteractionId" value="urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord" />
+    </requestHeaders>
+    <requestUrl>/Patient/gpc.getcarerecord</requestUrl>
+    <requestParameters>
+      <requestParameter name="Accept" value="application/json+fhir" />
+      <requestParameter name="Ssp-TraceID" value="a99c7d6a-9def-46b0-889c-817e68c51495" />
+      <requestParameter name="Ssp-From" value="200000000985" />
+      <requestParameter name="Ssp-To" value="200000000985" />
+      <requestParameter name="Authorization" value="Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwczovL0NvbnN1bWVyU3lzdGVtVVJMIiwic3ViIjoiMSIsImF1ZCI6Imh0dHBzOi8vYXV0aG9yaXplLmZoaXIubmhzLm5ldC90b2tlbiIsImV4cCI6MTc0Nzc1NjY4MSwiaWF0IjoxNzQ3NzU2MzgxLCJyZWFzb25fZm9yX3JlcXVlc3QiOiJkaXJlY3RjYXJlIiwicmVxdWVzdGluZ19kZXZpY2UiOnsicmVzb3VyY2VUeXBlIjoiRGV2aWNlIiwiaWQiOiIxIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiR1BDb25uZWN0VGVzdFN5c3RlbSIsInZhbHVlIjoiQ2xpZW50In1dLCJtb2RlbCI6InYxIiwidmVyc2lvbiI6IjEuMSJ9LCJyZXF1ZXN0aW5nX29yZ2FuaXphdGlvbiI6eyJyZXNvdXJjZVR5cGUiOiJPcmdhbml6YXRpb24iLCJpZCI6IjEiLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwOi8vZmhpci5uaHMubmV0L0lkL29kcy1vcmdhbml6YXRpb24tY29kZSIsInZhbHVlIjoiR1BDQTAwMDEifV0sIm5hbWUiOiJHUCBDb25uZWN0IEFzc3VyYW5jZSJ9LCJyZXF1ZXN0aW5nX3ByYWN0aXRpb25lciI6eyJyZXNvdXJjZVR5cGUiOiJQcmFjdGl0aW9uZXIiLCJpZCI6IjEiLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwOi8vZmhpci5uaHMubmV0L3Nkcy11c2VyLWlkIiwidmFsdWUiOiJHQ0FTRFMwMDAxIn0seyJzeXN0ZW0iOiJodHRwczovL2NvbnN1bWVyc3VwcGxpZXIuY29tL0lkL3VzZXItZ3VpZCIsInZhbHVlIjoiOThlZDRmNzgtODE0ZC00MjY2LThkNWItY2RlNzQyZjMwOTNjIn1dLCJuYW1lIjp7ImZhbWlseSI6WyJBc3N1cmFuY2VQcmFjdGl0aW9uZXIiXSwiZ2l2ZW4iOlsiQXNzdXJhbmNlVGVzdCJdLCJwcmVmaXgiOlsiTXIiXX0sInByYWN0aXRpb25lclJvbGUiOlt7InJvbGUiOnsiY29kaW5nIjpbeyJzeXN0ZW0iOiJodHRwOi8vZmhpci5uaHMubmV0L1ZhbHVlU2V0L3Nkcy1qb2Itcm9sZS1uYW1lLTEiLCJjb2RlIjoiQXNzdXJhbmNlSm9iUm9sZSJ9XX19XX0sInJlcXVlc3RlZF9zY29wZSI6InBhdGllbnQvKi5yZWFkIiwicmVxdWVzdGVkX3JlY29yZCI6eyJyZXNvdXJjZVR5cGUiOiJQYXRpZW50IiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiaHR0cDovL2ZoaXIubmhzLm5ldC9JZC9uaHMtbnVtYmVyIiwidmFsdWUiOiI5NDc2NzE4OTQzIn1dfX0." />
+      <requestParameter name="Ssp-InteractionId" value="urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord" />
+    </requestParameters>
+    <requestMethod>POST</requestMethod>
+    <requestContentType>application/json+fhir</requestContentType>
+    <requestBody>{&amp;quot;resourceType&amp;quot;:&amp;quot;Parameters&amp;quot;,&amp;quot;parameter&amp;quot;:[{&amp;quot;name&amp;quot;:&amp;quot;patientNHSNumber&amp;quot;,&amp;quot;valueIdentifier&amp;quot;:{&amp;quot;system&amp;quot;:&amp;quot;http://fhir.nhs.net/Id/nhs-number&amp;quot;,&amp;quot;value&amp;quot;:&amp;quot;9476718943&amp;quot;}},{&amp;quot;name&amp;quot;:&amp;quot;recordSection&amp;quot;,&amp;quot;valueCodeableConcept&amp;quot;:{&amp;quot;coding&amp;quot;:[{&amp;quot;system&amp;quot;:&amp;quot;http://fhir.nhs.net/ValueSet/gpconnect-record-section-1&amp;quot;,&amp;quot;code&amp;quot;:&amp;quot;REF&amp;quot;}]}}]}</requestBody>
+  </request>
+  <response>
+    <responseContentType>application/json+fhir;charset=UTF-8</responseContentType>
+    <responseStatusCode>404</responseStatusCode>
+    <responseTimeInMilliseconds>29</responseTimeInMilliseconds>
+    <responseTimeAcceptable>true</responseTimeAcceptable>
+    <responseHeaders>
+      <responseHeader name="Transfer-Encoding" value="chunked" />
+      <responseHeader name="Connection" value="keep-alive" />
+      <responseHeader name="Content-Type" value="application/json+fhir;charset=UTF-8" />
+      <responseHeader name="Date" value="Tue, 20 May 2025 15:53:01 GMT" />
+      <responseHeader name="Server" value="nginx/1.19.6" />
+      <responseHeader name="X-Powered-By" value="HAPI FHIR 2.2 REST Server (FHIR Server; FHIR 1.0.2/DSTU2)" />
+    </responseHeaders>
+    <responseBody>{&amp;quot;resourceType&amp;quot;:&amp;quot;OperationOutcome&amp;quot;,&amp;quot;meta&amp;quot;:{&amp;quot;profile&amp;quot;:[&amp;quot;http://fhir.nhs.net/StructureDefinition/gpconnect-operationoutcome-1&amp;quot;]},&amp;quot;issue&amp;quot;:[{&amp;quot;severity&amp;quot;:&amp;quot;error&amp;quot;,&amp;quot;code&amp;quot;:&amp;quot;not-found&amp;quot;,&amp;quot;details&amp;quot;:{&amp;quot;coding&amp;quot;:[{&amp;quot;system&amp;quot;:&amp;quot;http://fhir.nhs.net/ValueSet/gpconnect-error-or-warning-code-1&amp;quot;,&amp;quot;code&amp;quot;:&amp;quot;PATIENT_NOT_FOUND&amp;quot;,&amp;quot;display&amp;quot;:&amp;quot;PATIENT_NOT_FOUND&amp;quot;}]},&amp;quot;diagnostics&amp;quot;:&amp;quot;Patient Record Not Found&amp;quot;}]}</responseBody>
+  </response>
+</httpContext>

@@ -1,0 +1,7 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+  <h1>Observations</h1>
+  <div class="date-banner">
+    <p>For the period '20-May-2023' to '20-May-2025'</p>
+  </div>
+  <p>No 'Observations' data is recorded for this patient.</p>
+</div>

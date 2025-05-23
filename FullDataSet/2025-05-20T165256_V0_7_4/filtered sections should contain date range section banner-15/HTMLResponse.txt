@@ -1,0 +1,47 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+  <h1>Problems and Issues</h1>
+  <div>
+    <h2>Active Problems and Issues</h2>
+    <div class="date-banner">
+      <p>Date filter not applied</p>
+    </div>
+    <table id="prb-tab-act">
+      <thead>
+        <tr>
+          <th>Start Date</th>
+          <th>Entry</th>
+          <th>Significance</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="date-column">25-Apr-2018</td>
+          <td>Lower back pain</td>
+          <td>Minor</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="date-column">01-May-2015</td>
+          <td>Type II Diabetes mellitus</td>
+          <td>Major</td>
+          <td>Diabetes type II blood glucose management</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <h2>Major Inactive Problems and Issues</h2>
+    <div class="date-banner">
+      <p>For the period '03-Feb-2014' to '24-Jan-2016'</p>
+    </div>
+    <p>No 'Major Inactive Problems and Issues' data is recorded for this patient.</p>
+  </div>
+  <div>
+    <h2>Other Inactive Problems and Issues</h2>
+    <div class="date-banner">
+      <p>For the period '03-Feb-2014' to '24-Jan-2016'</p>
+    </div>
+    <p>No 'Other Inactive Problems and Issues' data is recorded for this patient.</p>
+  </div>
+</div>

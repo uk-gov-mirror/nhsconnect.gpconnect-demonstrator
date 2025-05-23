@@ -1,5 +1,22 @@
-// CreateCollection.js
-// Script to create a Postman collection from test data
+/**
+ * GPC Acceptance Test Data Postman Collection Creator
+ *
+ * This script processes GPC acceptance parsed test data collected by ProcessGpcAcceptanceTestData.js
+ * and generates a Postman Collection json file that can be imported into postman.
+ *
+ * Usage:
+ *   node CreateCollection.js [testDataFilePath] [collectionName]
+ *
+ * Examples:
+ *   node CreateCollection.js                                                   # Uses default path (ExampleData/_output/gpcAcceptanceTestData.passed.json)
+ *   node CreateCollection.js c:\gpcAcceptanceTestData.passed.json              # Uses custom path
+ *   node CreateCollection.js c:\gpcAcceptanceTestData.passed.json MyCollection  # Uses custom path and collection name
+ *
+ * Or using npm scripts:
+ *   npm run cc                                         # Uses default path
+ *   npm run cc c:\gpcAcceptanceTestData\               # Uses custom path
+ *   npm run cc c:\gpcAcceptanceTestData\ MyCollection  # Uses custom path and collection name
+ */
 
 const sdk = require('postman-collection');
 const fs = require('fs');
@@ -51,7 +68,7 @@ function readNHSNoMap() {
  * Creates a Postman collection from test data
  * @param {string} testDataFilePath - Path to the test data file (optional)
  */
-function createCollection(testDataFilePath) {
+function createCollection(testDataFilePath, collectionName) {
     // Set default file path if not provided
     const filePath = testDataFilePath || 'ExampleData/_output/gpcAcceptanceTestData.passed.json';
 
@@ -60,6 +77,11 @@ function createCollection(testDataFilePath) {
     try {
         // Read NHS number mapping
         const { nhsNoMap, nhsMappings } = readNHSNoMap();
+
+        // test file exists
+        if (!fs.existsSync(filePath)) {
+            throw new Error(`Test data file does not exist: ${filePath}`);
+        }
 
         // Read and parse the test data file
         const testData = JSON.parse(fs.readFileSync(filePath, 'utf8'));
@@ -74,7 +96,7 @@ function createCollection(testDataFilePath) {
         // Create a new collection
         const collection = new sdk.Collection({
             info: {
-                name: "GpcAcceptTestEndpoints"
+                name: collectionName ?? "GpcAcceptTestEndpoints"
             },
             item: [],
             variable: collectionVariables
@@ -92,7 +114,7 @@ function createCollection(testDataFilePath) {
 
             // Split requestName to get folder structure
             // Example: "Patient/$gpc.getstructuredrecord" -> ["Patient", "$gpc.getstructuredrecord"]
-            const pathParts = testItem.requestName.split('/');
+            const pathParts = testItem.data.projectName.split('/').reverse();
 
             // Create or get main folder
             let mainFolder;
@@ -121,6 +143,7 @@ function createCollection(testDataFilePath) {
                 } else {
                     subFolder = new sdk.ItemGroup({
                         name: subFolderName,
+                        description: "The jwt on these endpoints require this scope",
                         item: []
                     });
                     mainFolder.items.add(subFolder);
@@ -128,6 +151,13 @@ function createCollection(testDataFilePath) {
 
                 // Create request item
                 const requestItem = createRequestItem(testItem, nhsNoMap);
+                var token = jsonTryParse(testItem.data.request.jwtoken);
+                if (token && token.requested_scope && !subFolder.description.content.includes(token.requested_scope)) {
+                    if (!subFolder.description.content || subFolder.description.content == undefined) {
+                        subFolder.description.content = "";
+                    }
+                    subFolder.description.content = subFolder.description.content + ", " + token.requested_scope;
+                }
                 subFolder.items.add(requestItem);
             } else {
                 // No subfolder, add request directly to main folder
@@ -152,6 +182,15 @@ function createCollection(testDataFilePath) {
     } catch (error) {
         console.error('Error creating collection:', error);
         throw error;
+    }
+}
+
+function jsonTryParse(jsonString) {
+    try {
+        return JSON.parse(jsonString);
+    } catch (e) {
+        console.log(`error parsing jsonString but ignored ${jsonString}`)
+        return null;
     }
 }
 
@@ -340,14 +379,23 @@ function createRequestItem(testItem, nhsNoMap) {
         }
     });
 
+    let token = jsonTryParse(testItem.data.request.jwtoken);
+    let description = "";
+    if (token && token.requested_scope) {
+        description = `Required JWT Scope: ${token.requested_scope}`;
+    }
+
+
     // Create the item configuration
     const itemConfig = {
         name: testItem.dir || testItem.requestName,
+        description,
         request: {
             url: url,
             method: requestData.method,
             header: headers,
-            body: body
+            body: body,
+            description
         },
         response: [exampleResponse]
     };
@@ -383,7 +431,8 @@ function createRequestItem(testItem, nhsNoMap) {
 if (require.main === module) {
     // Check if a file path was provided as a command line argument
     const testDataFilePath = process.argv[2];
-    createCollection(testDataFilePath);
+    const collectionName = process.argv[3];
+    createCollection(testDataFilePath, collectionName);
 }
 
 // Export the function for use in other modules

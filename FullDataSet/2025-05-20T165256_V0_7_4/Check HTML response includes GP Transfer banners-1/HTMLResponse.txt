@@ -1,0 +1,127 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+  <h1>Summary</h1>
+  <div class="gptransfer-banner">
+    <p>Patient record transfer from previous GP practice not yet complete; information recorded before 13-May-2025 may be missing</p>
+  </div>
+  <div>
+    <h2>Emergency Codes</h2>
+    <p>No 'Emergency Codes' data is recorded for this patient.</p>
+  </div>
+  <div>
+    <h2>Last 3 Encounters</h2>
+    <table id="enc-tab">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Title</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="date-column">01-Jul-2016</td>
+          <td>Miss Tanya Turnpike (Practice Nurse) - Dr Johnson and Partners (J12345)</td>
+          <td>Result : Full blood count - FBC - Normal - No Action.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <h2>Active Problems and Issues</h2>
+    <table id="prb-tab-act">
+      <thead>
+        <tr>
+          <th>Start Date</th>
+          <th>Entry</th>
+          <th>Significance</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="date-column">01-Jul-2016</td>
+          <td>Low Back Pain</td>
+          <td>Minor</td>
+          <td>Treated daily</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <h2>Major Inactive Problems and Issues</h2>
+    <table id="prb-tab-majinact">
+      <thead>
+        <tr>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Entry</th>
+          <th>Significance</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="date-column">01-Jul-2016</td>
+          <td class="date-column">01-Jul-2016</td>
+          <td>Asthma</td>
+          <td>Major</td>
+          <td>Treated daily</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <h2>Current Allergies and Adverse Reactions</h2>
+    <table id="all-tab-curr">
+      <thead>
+        <tr>
+          <th>Start Date</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="date-column">01-May-2015</td>
+          <td>Work allergy</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <h2>Acute Medication (Last 12 Months)</h2>
+    <p>No 'Acute Medication (Last 12 Months)' data is recorded for this patient.</p>
+  </div>
+  <div>
+    <h2>Current Repeat Medication</h2>
+    <table id="med-tab-curr-rep">
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Start Date</th>
+          <th>Medication Item</th>
+          <th>Dosage Instruction</th>
+          <th>Quantity</th>
+          <th>Last Issued Date</th>
+          <th>Number of Prescriptions Issued</th>
+          <th>Max Issues</th>
+          <th>Review Date</th>
+          <th>Additional Information</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Repeat</td>
+          <td class="date-column">01-Feb-2023</td>
+          <td>Metformin 500mg tablets</td>
+          <td>one tablet 2 to 3 time daily</td>
+          <td>28 days</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Take wth food and water</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

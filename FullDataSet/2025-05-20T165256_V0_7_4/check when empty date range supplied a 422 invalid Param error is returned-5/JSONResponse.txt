@@ -1,0 +1,24 @@
+{
+  "resourceType": "OperationOutcome",
+  "meta": {
+    "profile": [
+      "http://fhir.nhs.net/StructureDefinition/gpconnect-operationoutcome-1"
+    ]
+  },
+  "issue": [
+    {
+      "severity": "error",
+      "code": "not-found",
+      "details": {
+        "coding": [
+          {
+            "system": "http://fhir.nhs.net/ValueSet/gpconnect-error-or-warning-code-1",
+            "code": "INVALID_PARAMETER",
+            "display": "INVALID_PARAMETER"
+          }
+        ]
+      },
+      "diagnostics": "Invalid Parameter"
+    }
+  ]
+}

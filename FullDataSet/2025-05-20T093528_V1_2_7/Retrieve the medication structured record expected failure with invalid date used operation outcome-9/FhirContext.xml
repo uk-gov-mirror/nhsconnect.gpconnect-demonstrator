@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<fhirContext>
+  <request>
+    <fhirRequestParameters>{"resourceType":"Parameters","parameter":[{"name":"patientNHSNumber","valueIdentifier":{"system":"https://fhir.nhs.uk/Id/nhs-number","value":"9658218865"}},{"name":"includeMedication","part":[{"name":"includePrescriptionIssues","valueBoolean":false},{"name":"medicationSearchFromDate","valueDate":""}]}]}</fhirRequestParameters>
+  </request>
+  <response>
+    <fhirResponseResource>{"resourceType":"OperationOutcome","meta":{"profile":["https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1"]},"issue":[{"severity":"error","code":"invalid","details":{"coding":[{"system":"https://fhir.nhs.uk/STU3/CodeSystem/Spine-ErrorOrWarningCode-1","code":"INVALID_PARAMETER","display":"INVALID_PARAMETER"}]},"diagnostics":"Failed to parse request body as JSON resource. Error was: Invalid attribute value \"\": Attribute values must not be empty (\"\")"}]}</fhirResponseResource>
+  </response>
+</fhirContext>

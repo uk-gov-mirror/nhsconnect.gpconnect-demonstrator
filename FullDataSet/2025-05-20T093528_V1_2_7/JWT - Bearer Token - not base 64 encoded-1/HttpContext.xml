@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<httpContext useWebProxy="false" webProxyUrl="https://localhost:8889" useSpineProxy="false" spineProxyUrl="https://proxy.dev.spine2.ncrs.nhs.uk:443" providerUrl="https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir">
+  <request endpointUrl="https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir">
+    <requestHeaders>
+      <requestHeader name="Ssp-TraceID" value="08f1c609-89e3-4d51-ad6c-6bba2d50be62" />
+      <requestHeader name="Ssp-From" value="200000000985" />
+      <requestHeader name="Ssp-To" value="200000000985" />
+      <requestHeader name="Accept" value="application/fhir+json" />
+      <requestHeader name="Ssp-InteractionId" value="urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1" />
+      <requestHeader name="Authorization" value="Bearer {&quot;alg&quot;:&quot;none&quot;,&quot;typ&quot;:&quot;JWT&quot;}.{&quot;iss&quot;:&quot;https://ConsumerSystemURL&quot;,&quot;sub&quot;:&quot;1&quot;,&quot;aud&quot;:&quot;https://authorize.fhir.nhs.net/token&quot;,&quot;exp&quot;:1747730707,&quot;iat&quot;:1747730407,&quot;reason_for_request&quot;:&quot;directcare&quot;,&quot;requesting_device&quot;:{&quot;resourceType&quot;:&quot;Device&quot;,&quot;identifier&quot;:[{&quot;system&quot;:&quot;GPConnectTestSystem&quot;,&quot;value&quot;:&quot;Client&quot;}],&quot;model&quot;:&quot;v1&quot;,&quot;version&quot;:&quot;1.1&quot;},&quot;requesting_organization&quot;:{&quot;resourceType&quot;:&quot;Organization&quot;,&quot;identifier&quot;:[{&quot;system&quot;:&quot;https://fhir.nhs.uk/Id/ods-organization-code&quot;,&quot;value&quot;:&quot;GPCA0001&quot;}],&quot;name&quot;:&quot;GP Connect Assurance&quot;},&quot;requesting_practitioner&quot;:{&quot;resourceType&quot;:&quot;Practitioner&quot;,&quot;id&quot;:&quot;1&quot;,&quot;identifier&quot;:[{&quot;system&quot;:&quot;https://fhir.nhs.uk/Id/sds-user-id&quot;,&quot;value&quot;:&quot;GCASDS0001&quot;},{&quot;system&quot;:&quot;https://fhir.nhs.uk/Id/sds-role-profile-id&quot;,&quot;value&quot;:&quot;112233445566&quot;},{&quot;system&quot;:&quot;https://consumersupplier.com/Id/user-guid&quot;,&quot;value&quot;:&quot;98ed4f78-814d-4266-8d5b-cde742f3093c&quot;}],&quot;name&quot;:[{&quot;family&quot;:&quot;AssurancePractitioner&quot;,&quot;given&quot;:[&quot;AssuranceTest&quot;],&quot;prefix&quot;:[&quot;Mr&quot;]}]},&quot;requested_scope&quot;:&quot;organization/*.read&quot;}." />
+    </requestHeaders>
+    <requestUrl>metadata</requestUrl>
+    <requestParameters />
+    <requestMethod>GET</requestMethod>
+    <requestContentType>application/fhir+json</requestContentType>
+    <requestBody />
+  </request>
+  <response>
+    <responseContentType>application/fhir+json</responseContentType>
+    <responseStatusCode>400</responseStatusCode>
+    <responseTimeInMilliseconds>30</responseTimeInMilliseconds>
+    <responseTimeAcceptable>true</responseTimeAcceptable>
+    <responseHeaders>
+      <responseHeader name="Transfer-Encoding" value="chunked" />
+      <responseHeader name="Connection" value="keep-alive" />
+      <responseHeader name="Cache-Control" value="no-store" />
+      <responseHeader name="Date" value="Tue, 20 May 2025 08:40:09 GMT" />
+      <responseHeader name="Server" value="nginx/1.19.6" />
+      <responseHeader name="X-Powered-By" value="HAPI FHIR 3.0.0 REST Server (FHIR Server; FHIR 3.0.1/DSTU3)" />
+      <responseHeader name="Content-Type" value="application/fhir+json; charset=UTF-8" />
+    </responseHeaders>
+    <responseBody>{&amp;quot;resourceType&amp;quot;:&amp;quot;OperationOutcome&amp;quot;,&amp;quot;meta&amp;quot;:{&amp;quot;profile&amp;quot;:[&amp;quot;https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1&amp;quot;]},&amp;quot;issue&amp;quot;:[{&amp;quot;severity&amp;quot;:&amp;quot;error&amp;quot;,&amp;quot;code&amp;quot;:&amp;quot;invalid&amp;quot;,&amp;quot;details&amp;quot;:{&amp;quot;coding&amp;quot;:[{&amp;quot;system&amp;quot;:&amp;quot;https://fhir.nhs.uk/STU3/CodeSystem/Spine-ErrorOrWarningCode-1&amp;quot;,&amp;quot;code&amp;quot;:&amp;quot;BAD_REQUEST&amp;quot;,&amp;quot;display&amp;quot;:&amp;quot;BAD_REQUEST&amp;quot;}]},&amp;quot;diagnostics&amp;quot;:&amp;quot;Authorization header missing&amp;quot;}]}</responseBody>
+  </response>
+</httpContext>

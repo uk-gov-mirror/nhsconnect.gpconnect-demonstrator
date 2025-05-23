@@ -1,0 +1,29 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+  <h1>Observations</h1>
+  <div class="gptransfer-banner">
+    <p>Patient record transfer from previous GP practice not yet complete; information recorded before 13-May-2025 may be missing</p>
+  </div>
+  <div class="date-banner">
+    <p>All relevant items</p>
+  </div>
+  <table id="obs-tab">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Entry</th>
+        <th>Value</th>
+        <th>Range</th>
+        <th>Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="date-column">01-Jul-2016</td>
+        <td>Health of Nat Outc Sc item 1 - aggressive/disrupt behaviour</td>
+        <td>0</td>
+        <td></td>
+        <td>(Added from Questionnaire)</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

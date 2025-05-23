@@ -1,0 +1,47 @@
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "patientNHSNumber",
+      "valueIdentifier": {
+        "system": "https://fhir.nhs.uk/Id/nhs-number",
+        "value": "9690937286"
+      }
+    },
+    {
+      "name": "includeProblems",
+      "part": [
+        {
+          "name": "filterStatus",
+          "valueCode": "active"
+        },
+        {
+          "name": "filterSignificance",
+          "valueCode": "minor"
+        }
+      ]
+    },
+    {
+      "name": "includeProblems",
+      "part": [
+        {
+          "name": "filterStatus",
+          "valueCode": "inactive"
+        },
+        {
+          "name": "filterSignificance",
+          "valueCode": "major"
+        }
+      ]
+    },
+    {
+      "name": "includeMedication",
+      "part": [
+        {
+          "name": "includePrescriptionIssues",
+          "valueBoolean": true
+        }
+      ]
+    }
+  ]
+}

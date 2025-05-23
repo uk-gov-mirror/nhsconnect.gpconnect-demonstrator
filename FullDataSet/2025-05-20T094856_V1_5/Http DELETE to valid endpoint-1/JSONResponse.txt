@@ -1,0 +1,24 @@
+{
+  "resourceType": "OperationOutcome",
+  "meta": {
+    "profile": [
+      "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1"
+    ]
+  },
+  "issue": [
+    {
+      "severity": "error",
+      "code": "invalid",
+      "details": {
+        "coding": [
+          {
+            "system": "https://fhir.nhs.uk/STU3/CodeSystem/Spine-ErrorOrWarningCode-1",
+            "code": "BAD_REQUEST",
+            "display": "BAD_REQUEST"
+          }
+        ]
+      },
+      "diagnostics": "The interaction ID does not match the HTTP request verb (interaction ID - urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1 HTTP verb - DELETE)"
+    }
+  ]
+}

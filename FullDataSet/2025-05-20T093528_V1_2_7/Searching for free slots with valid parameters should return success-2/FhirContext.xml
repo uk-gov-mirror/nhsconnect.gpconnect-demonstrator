@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<fhirContext>
+  <request>
+    <fhirRequestParameters>{"resourceType":"Parameters"}</fhirRequestParameters>
+  </request>
+  <response>
+    <fhirResponseResource>{"resourceType":"Bundle","id":"9cb7c24b-c8df-4c35-9734-141952489c9e","meta":{"lastUpdated":"2025-05-20T09:41:14.291+01:00","profile":["https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Searchset-Bundle-1"]},"type":"searchset"}</fhirResponseResource>
+  </response>
+</fhirContext>

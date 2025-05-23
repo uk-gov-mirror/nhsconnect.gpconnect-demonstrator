@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<httpContext useWebProxy="false" webProxyUrl="https://localhost:8889" useSpineProxy="false" spineProxyUrl="https://proxy.int.spine2.ncrs.nhs.uk:443" providerUrl="https://gpconnect-win1.itblab.nic.cfh.nhs.uk/B82617/STU3/1/gpconnect/fhir">
+  <request endpointUrl="https://gpconnect-win1.itblab.nic.cfh.nhs.uk/B82617/STU3/1/gpconnect/fhir">
+    <requestHeaders>
+      <requestHeader name="Ssp-TraceID" value="e4e71e62-2acc-401a-b22d-6b5d3b894379" />
+      <requestHeader name="Ssp-From" value="200000001329" />
+      <requestHeader name="Ssp-To" value="200000001329" />
+      <requestHeader name="Accept" value="application/fhir+json" />
+      <requestHeader name="Ssp-InteractionId" value="urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1" />
+      <requestHeader name="Authorization" value="Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwczovL0NvbnN1bWVyU3lzdGVtVVJMIiwic3ViIjoiMSIsImF1ZCI6Imh0dHBzOi8vYXV0aG9yaXplLmZoaXIubmhzLm5ldC90b2tlbi8iLCJpYXQiOjE3NDc3MzEzOTIsInJlYXNvbl9mb3JfcmVxdWVzdCI6ImRpcmVjdGNhcmUiLCJyZXF1ZXN0aW5nX2RldmljZSI6eyJyZXNvdXJjZVR5cGUiOiJEZXZpY2UiLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJHUENvbm5lY3RUZXN0U3lzdGVtIiwidmFsdWUiOiJDbGllbnQifV0sIm1vZGVsIjoidjEiLCJ2ZXJzaW9uIjoiMS4xIn0sInJlcXVlc3Rpbmdfb3JnYW5pemF0aW9uIjp7InJlc291cmNlVHlwZSI6Ik9yZ2FuaXphdGlvbiIsImlkZW50aWZpZXIiOlt7InN5c3RlbSI6Imh0dHBzOi8vZmhpci5uaHMudWsvSWQvb2RzLW9yZ2FuaXphdGlvbi1jb2RlIiwidmFsdWUiOiJHUENBMDAwMSJ9XSwibmFtZSI6IkdQIENvbm5lY3QgQXNzdXJhbmNlIn0sInJlcXVlc3RpbmdfcHJhY3RpdGlvbmVyIjp7InJlc291cmNlVHlwZSI6IlByYWN0aXRpb25lciIsImlkIjoiMSIsImlkZW50aWZpZXIiOlt7InN5c3RlbSI6Imh0dHBzOi8vZmhpci5uaHMudWsvSWQvc2RzLXVzZXItaWQiLCJ2YWx1ZSI6IkdDQVNEUzAwMDEifSx7InN5c3RlbSI6Imh0dHBzOi8vZmhpci5uaHMudWsvSWQvc2RzLXJvbGUtcHJvZmlsZS1pZCIsInZhbHVlIjoiMTEyMjMzNDQ1NTY2In0seyJzeXN0ZW0iOiJodHRwczovL2NvbnN1bWVyc3VwcGxpZXIuY29tL0lkL3VzZXItZ3VpZCIsInZhbHVlIjoiOThlZDRmNzgtODE0ZC00MjY2LThkNWItY2RlNzQyZjMwOTNjIn1dLCJuYW1lIjpbeyJmYW1pbHkiOiJBc3N1cmFuY2VQcmFjdGl0aW9uZXIiLCJnaXZlbiI6WyJBc3N1cmFuY2VUZXN0Il0sInByZWZpeCI6WyJNciJdfV19LCJyZXF1ZXN0ZWRfc2NvcGUiOiJvcmdhbml6YXRpb24vKi5yZWFkIn0." />
+    </requestHeaders>
+    <requestUrl>metadata</requestUrl>
+    <requestParameters />
+    <requestMethod>GET</requestMethod>
+    <requestContentType>application/fhir+json</requestContentType>
+    <requestBody />
+  </request>
+  <response>
+    <responseContentType>application/fhir+json</responseContentType>
+    <responseStatusCode>400</responseStatusCode>
+    <responseTimeInMilliseconds>114</responseTimeInMilliseconds>
+    <responseTimeAcceptable>true</responseTimeAcceptable>
+    <responseHeaders>
+      <responseHeader name="Transfer-Encoding" value="chunked" />
+      <responseHeader name="Connection" value="keep-alive" />
+      <responseHeader name="Cache-Control" value="no-store" />
+      <responseHeader name="Date" value="Tue, 20 May 2025 08:56:34 GMT" />
+      <responseHeader name="Server" value="nginx/1.19.6" />
+      <responseHeader name="X-Powered-By" value="HAPI FHIR 3.0.0 REST Server (FHIR Server; FHIR 3.0.1/DSTU3)" />
+      <responseHeader name="Content-Type" value="application/fhir+json; charset=UTF-8" />
+    </responseHeaders>
+    <responseBody>{&amp;quot;resourceType&amp;quot;:&amp;quot;OperationOutcome&amp;quot;,&amp;quot;meta&amp;quot;:{&amp;quot;profile&amp;quot;:[&amp;quot;https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1&amp;quot;]},&amp;quot;issue&amp;quot;:[{&amp;quot;severity&amp;quot;:&amp;quot;error&amp;quot;,&amp;quot;code&amp;quot;:&amp;quot;invalid&amp;quot;,&amp;quot;details&amp;quot;:{&amp;quot;coding&amp;quot;:[{&amp;quot;system&amp;quot;:&amp;quot;https://fhir.nhs.uk/STU3/CodeSystem/Spine-ErrorOrWarningCode-1&amp;quot;,&amp;quot;code&amp;quot;:&amp;quot;BAD_REQUEST&amp;quot;,&amp;quot;display&amp;quot;:&amp;quot;BAD_REQUEST&amp;quot;}]},&amp;quot;diagnostics&amp;quot;:&amp;quot;JWT expiry time is not 5 minutes after the creation time&amp;quot;}]}</responseBody>
+  </response>
+</httpContext>

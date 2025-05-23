@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<httpContext useWebProxy="false" webProxyUrl="https://localhost:8889" useSpineProxy="false" spineProxyUrl="https://proxy.int.spine2.ncrs.nhs.uk:443" providerUrl="https://gpconnect-win1.itblab.nic.cfh.nhs.uk/B82617/STU3/1/gpconnect/documents/fhir">
+  <request endpointUrl="https://gpconnect-win1.itblab.nic.cfh.nhs.uk/B82617/STU3/1/gpconnect/documents/fhir">
+    <requestHeaders>
+      <requestHeader name="Ssp-TraceID" value="d52f0a92-852e-4d0a-989c-ef833044e142" />
+      <requestHeader name="Ssp-From" value="200000001329" />
+      <requestHeader name="Ssp-To" value="200000001329" />
+      <requestHeader name="Accept" value="application/fhir+xml" />
+      <requestHeader name="Ssp-InteractionId" value="urn:nhs:names:services:gpconnect:documents:fhir:rest:read:metadata-1" />
+      <requestHeader name="Authorization" value="Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwczovL0NvbnN1bWVyU3lzdGVtVVJMIiwic3ViIjoiMSIsImF1ZCI6Imh0dHBzOi8vYXV0aG9yaXplLmZoaXIubmhzLm5ldC90b2tlbi8iLCJleHAiOjE3NDc3MzE2NzAsImlhdCI6MTc0NzczMTM3MCwicmVhc29uX2Zvcl9yZXF1ZXN0IjoiZGlyZWN0Y2FyZSIsInJlcXVlc3RpbmdfZGV2aWNlIjp7InJlc291cmNlVHlwZSI6IkRldmljZSIsImlkZW50aWZpZXIiOlt7InN5c3RlbSI6IkdQQ29ubmVjdFRlc3RTeXN0ZW0iLCJ2YWx1ZSI6IkNsaWVudCJ9XSwibW9kZWwiOiJ2MSIsInZlcnNpb24iOiIxLjEifSwicmVxdWVzdGluZ19vcmdhbml6YXRpb24iOnsicmVzb3VyY2VUeXBlIjoiT3JnYW5pemF0aW9uIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiaHR0cHM6Ly9maGlyLm5ocy51ay9JZC9vZHMtb3JnYW5pemF0aW9uLWNvZGUiLCJ2YWx1ZSI6IkdQQ0EwMDAxIn1dLCJuYW1lIjoiR1AgQ29ubmVjdCBBc3N1cmFuY2UifSwicmVxdWVzdGluZ19wcmFjdGl0aW9uZXIiOnsicmVzb3VyY2VUeXBlIjoiUHJhY3RpdGlvbmVyIiwiaWQiOiIxIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiaHR0cHM6Ly9maGlyLm5ocy51ay9JZC9zZHMtdXNlci1pZCIsInZhbHVlIjoiR0NBU0RTMDAwMSJ9LHsic3lzdGVtIjoiaHR0cHM6Ly9maGlyLm5ocy51ay9JZC9zZHMtcm9sZS1wcm9maWxlLWlkIiwidmFsdWUiOiIxMTIyMzM0NDU1NjYifSx7InN5c3RlbSI6Imh0dHBzOi8vY29uc3VtZXJzdXBwbGllci5jb20vSWQvdXNlci1ndWlkIiwidmFsdWUiOiI5OGVkNGY3OC04MTRkLTQyNjYtOGQ1Yi1jZGU3NDJmMzA5M2MifV0sIm5hbWUiOlt7ImZhbWlseSI6IkFzc3VyYW5jZVByYWN0aXRpb25lciIsImdpdmVuIjpbIkFzc3VyYW5jZVRlc3QiXSwicHJlZml4IjpbIk1yIl19XX0sInJlcXVlc3RlZF9zY29wZSI6Im9yZ2FuaXphdGlvbi8qLnJlYWQifQ." />
+    </requestHeaders>
+    <requestUrl>metadata</requestUrl>
+    <requestParameters>
+      <requestParameter name="_format" value="application/fhir+xml" />
+    </requestParameters>
+    <requestMethod>GET</requestMethod>
+    <requestContentType>application/fhir+xml</requestContentType>
+    <requestBody />
+  </request>
+  <response>
+    <responseContentType>application/fhir+xml</responseContentType>
+    <responseStatusCode>200</responseStatusCode>
+    <responseTimeInMilliseconds>37</responseTimeInMilliseconds>
+    <responseTimeAcceptable>true</responseTimeAcceptable>
+    <responseHeaders>
+      <responseHeader name="Connection" value="keep-alive" />
+      <responseHeader name="Pragma" value="no-cache" />
+      <responseHeader name="Cache-Control" value="no-store" />
+      <responseHeader name="Date" value="Tue, 20 May 2025 08:56:12 GMT" />
+      <responseHeader name="Server" value="nginx/1.19.6" />
+      <responseHeader name="Content-Length" value="3787" />
+      <responseHeader name="Content-Type" value="application/fhir+xml; charset=UTF-8" />
+      <responseHeader name="Expires" value="0" />
+    </responseHeaders>
+    <responseBody>&amp;lt;CapabilityStatement xmlns=&amp;quot;http://hl7.org/fhir&amp;quot;&amp;gt;
+   &amp;lt;version value=&amp;quot;1.5.0&amp;quot;&amp;gt;&amp;lt;/version&amp;gt;
+   &amp;lt;name value=&amp;quot;GP Connect API - Access Document&amp;quot;&amp;gt;&amp;lt;/name&amp;gt;
+   &amp;lt;status value=&amp;quot;active&amp;quot;&amp;gt;&amp;lt;/status&amp;gt;
+   &amp;lt;date value=&amp;quot;2020-02-10&amp;quot;&amp;gt;&amp;lt;/date&amp;gt;
+   &amp;lt;publisher value=&amp;quot;[Provider Software Vendor Name]&amp;quot;&amp;gt;&amp;lt;/publisher&amp;gt;
+   &amp;lt;contact&amp;gt;
+      &amp;lt;name value=&amp;quot;[Provider Software Vendor Contact Name]&amp;quot;&amp;gt;&amp;lt;/name&amp;gt;
+   &amp;lt;/contact&amp;gt;
+   &amp;lt;description value=&amp;quot;This server implements the GP Connect API - Access Document version 1.5.0&amp;quot;&amp;gt;&amp;lt;/description&amp;gt;
+   &amp;lt;copyright value=&amp;quot;Copyright NHS Digital 2016-20&amp;quot;&amp;gt;&amp;lt;/copyright&amp;gt;
+   &amp;lt;kind value=&amp;quot;capability&amp;quot;&amp;gt;&amp;lt;/kind&amp;gt;
+   &amp;lt;software&amp;gt;
+      &amp;lt;name value=&amp;quot;[Provider Software Name]&amp;quot;&amp;gt;&amp;lt;/name&amp;gt;
+      &amp;lt;version value=&amp;quot;[Provider Software Version]&amp;quot;&amp;gt;&amp;lt;/version&amp;gt;
+      &amp;lt;releaseDate value=&amp;quot;2017-09-27T00:00:00+01:00&amp;quot;&amp;gt;&amp;lt;/releaseDate&amp;gt;
+   &amp;lt;/software&amp;gt;
+   &amp;lt;fhirVersion value=&amp;quot;3.0.1&amp;quot;&amp;gt;&amp;lt;/fhirVersion&amp;gt;
+   &amp;lt;acceptUnknown value=&amp;quot;both&amp;quot;&amp;gt;&amp;lt;/acceptUnknown&amp;gt;
+   &amp;lt;format value=&amp;quot;application/fhir+json&amp;quot;&amp;gt;&amp;lt;/format&amp;gt;
+   &amp;lt;format value=&amp;quot;application/fhir+xml&amp;quot;&amp;gt;&amp;lt;/format&amp;gt;
+   &amp;lt;profile&amp;gt;
+	   &amp;lt;reference value=&amp;quot;https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1/_history/1.8&amp;quot;&amp;gt;&amp;lt;/reference&amp;gt;
+   &amp;lt;/profile&amp;gt;
+   &amp;lt;profile&amp;gt;
+	   &amp;lt;reference value=&amp;quot;https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1/_history/1.4&amp;quot;&amp;gt;&amp;lt;/reference&amp;gt;
+   &amp;lt;/profile&amp;gt;
+   &amp;lt;profile&amp;gt;
+	   &amp;lt;reference value=&amp;quot;https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1/_history/1.2&amp;quot;&amp;gt;&amp;lt;/reference&amp;gt;
+   &amp;lt;/profile&amp;gt;
+   &amp;lt;profile&amp;gt;
+	   &amp;lt;reference value=&amp;quot;https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-PractitionerRole-1/_history/1.2&amp;quot;&amp;gt;&amp;lt;/reference&amp;gt;
+   &amp;lt;/profile&amp;gt;
+   &amp;lt;profile&amp;gt;
+	   &amp;lt;reference value=&amp;quot;https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1/_history/1.2&amp;quot;&amp;gt;&amp;lt;/reference&amp;gt;
+   &amp;lt;/profile&amp;gt;
+   &amp;lt;profile&amp;gt;
+	   &amp;lt;reference value=&amp;quot;https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-DocumentReference-1/_history/1.3&amp;quot;&amp;gt;&amp;lt;/reference&amp;gt;
+   &amp;lt;/profile&amp;gt;
+   &amp;lt;profile&amp;gt;
+	   &amp;lt;reference value=&amp;quot;https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Searchset-Bundle-1/_history/1.3&amp;quot;&amp;gt;&amp;lt;/reference&amp;gt;
+   &amp;lt;/profile&amp;gt;
+   &amp;lt;rest&amp;gt;
+      &amp;lt;mode value=&amp;quot;server&amp;quot;&amp;gt;&amp;lt;/mode&amp;gt;
+      &amp;lt;security&amp;gt;
+         &amp;lt;cors value=&amp;quot;true&amp;quot;&amp;gt;&amp;lt;/cors&amp;gt;
+      &amp;lt;/security&amp;gt;
+      &amp;lt;resource&amp;gt;
+         &amp;lt;type value=&amp;quot;Patient&amp;quot;&amp;gt;&amp;lt;/type&amp;gt;
+         &amp;lt;interaction&amp;gt;
+            &amp;lt;code value=&amp;quot;search-type&amp;quot;&amp;gt;&amp;lt;/code&amp;gt;
+         &amp;lt;/interaction&amp;gt;
+         &amp;lt;searchParam&amp;gt;
+            &amp;lt;name value=&amp;quot;identifier&amp;quot;&amp;gt;&amp;lt;/name&amp;gt;
+            &amp;lt;type value=&amp;quot;token&amp;quot;&amp;gt;&amp;lt;/type&amp;gt;
+            &amp;lt;documentation value=&amp;quot;NHS Number (i.e. https://fhir.nhs.uk/Id/nhs-number|123456789)&amp;quot;&amp;gt;&amp;lt;/documentation&amp;gt;
+         &amp;lt;/searchParam&amp;gt;
+      &amp;lt;/resource&amp;gt;
+      &amp;lt;resource&amp;gt;
+         &amp;lt;type value=&amp;quot;Binary&amp;quot;&amp;gt;&amp;lt;/type&amp;gt;
+         &amp;lt;interaction&amp;gt;
+            &amp;lt;code value=&amp;quot;read&amp;quot;&amp;gt;&amp;lt;/code&amp;gt;
+         &amp;lt;/interaction&amp;gt;
+      &amp;lt;/resource&amp;gt;
+      &amp;lt;resource&amp;gt;
+         &amp;lt;type value=&amp;quot;DocumentReference&amp;quot;&amp;gt;&amp;lt;/type&amp;gt;
+         &amp;lt;interaction&amp;gt;
+            &amp;lt;code value=&amp;quot;search-type&amp;quot;&amp;gt;&amp;lt;/code&amp;gt;
+         &amp;lt;/interaction&amp;gt;
+         &amp;lt;searchInclude value=&amp;quot;DocumentReference:subject:Patient&amp;quot;&amp;gt;&amp;lt;/searchInclude&amp;gt;
+         &amp;lt;searchInclude value=&amp;quot;DocumentReference:custodian:Organization&amp;quot;&amp;gt;&amp;lt;/searchInclude&amp;gt;
+         &amp;lt;searchInclude value=&amp;quot;DocumentReference:author:Organization&amp;quot;&amp;gt;&amp;lt;/searchInclude&amp;gt;
+         &amp;lt;searchInclude value=&amp;quot;DocumentReference:author:Practitioner&amp;quot;&amp;gt;&amp;lt;/searchInclude&amp;gt;
+         &amp;lt;searchParam&amp;gt;
+            &amp;lt;name value=&amp;quot;created&amp;quot;&amp;gt;&amp;lt;/name&amp;gt;
+            &amp;lt;type value=&amp;quot;date&amp;quot;&amp;gt;&amp;lt;/type&amp;gt;
+         &amp;lt;/searchParam&amp;gt;
+         &amp;lt;searchParam&amp;gt;
+            &amp;lt;name value=&amp;quot;author&amp;quot;&amp;gt;&amp;lt;/name&amp;gt;
+            &amp;lt;type value=&amp;quot;token&amp;quot;&amp;gt;&amp;lt;/type&amp;gt;
+         &amp;lt;/searchParam&amp;gt;
+         &amp;lt;searchParam&amp;gt;
+            &amp;lt;name value=&amp;quot;description&amp;quot;&amp;gt;&amp;lt;/name&amp;gt;
+            &amp;lt;type value=&amp;quot;string&amp;quot;&amp;gt;&amp;lt;/type&amp;gt;
+         &amp;lt;/searchParam&amp;gt;
+      &amp;lt;/resource&amp;gt;
+   &amp;lt;/rest&amp;gt;
+&amp;lt;/CapabilityStatement&amp;gt;
+</responseBody>
+  </response>
+</httpContext>

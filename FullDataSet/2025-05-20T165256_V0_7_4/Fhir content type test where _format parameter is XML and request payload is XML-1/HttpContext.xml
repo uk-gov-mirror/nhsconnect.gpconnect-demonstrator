@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<httpContext useWebProxy="false" webProxyUrl="https://localhost:8889" useSpineProxy="false" spineProxyUrl="https://proxy.int.spine2.ncrs.nhs.uk:443" providerUrl="https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v0/fhir">
+  <request endpointUrl="https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v0/fhir">
+    <requestHeaders>
+      <requestHeader name="Content-Type" value="application/xml+fhir" />
+      <requestHeader name="Ssp-TraceID" value="acd682c3-a06d-49d4-a18a-e39878ce8cc2" />
+      <requestHeader name="Ssp-From" value="200000000985" />
+      <requestHeader name="Ssp-To" value="200000000985" />
+      <requestHeader name="Authorization" value="Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwczovL0NvbnN1bWVyU3lzdGVtVVJMIiwic3ViIjoiMSIsImF1ZCI6Imh0dHBzOi8vYXV0aG9yaXplLmZoaXIubmhzLm5ldC90b2tlbiIsImV4cCI6MTc0Nzc1Njc0MSwiaWF0IjoxNzQ3NzU2NDQxLCJyZWFzb25fZm9yX3JlcXVlc3QiOiJkaXJlY3RjYXJlIiwicmVxdWVzdGluZ19kZXZpY2UiOnsicmVzb3VyY2VUeXBlIjoiRGV2aWNlIiwiaWQiOiIxIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiR1BDb25uZWN0VGVzdFN5c3RlbSIsInZhbHVlIjoiQ2xpZW50In1dLCJtb2RlbCI6InYxIiwidmVyc2lvbiI6IjEuMSJ9LCJyZXF1ZXN0aW5nX29yZ2FuaXphdGlvbiI6eyJyZXNvdXJjZVR5cGUiOiJPcmdhbml6YXRpb24iLCJpZCI6IjEiLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwOi8vZmhpci5uaHMubmV0L0lkL29kcy1vcmdhbml6YXRpb24tY29kZSIsInZhbHVlIjoiR1BDQTAwMDEifV0sIm5hbWUiOiJHUCBDb25uZWN0IEFzc3VyYW5jZSJ9LCJyZXF1ZXN0aW5nX3ByYWN0aXRpb25lciI6eyJyZXNvdXJjZVR5cGUiOiJQcmFjdGl0aW9uZXIiLCJpZCI6IjEiLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwOi8vZmhpci5uaHMubmV0L3Nkcy11c2VyLWlkIiwidmFsdWUiOiJHQ0FTRFMwMDAxIn0seyJzeXN0ZW0iOiJodHRwczovL2NvbnN1bWVyc3VwcGxpZXIuY29tL0lkL3VzZXItZ3VpZCIsInZhbHVlIjoiOThlZDRmNzgtODE0ZC00MjY2LThkNWItY2RlNzQyZjMwOTNjIn1dLCJuYW1lIjp7ImZhbWlseSI6WyJBc3N1cmFuY2VQcmFjdGl0aW9uZXIiXSwiZ2l2ZW4iOlsiQXNzdXJhbmNlVGVzdCJdLCJwcmVmaXgiOlsiTXIiXX0sInByYWN0aXRpb25lclJvbGUiOlt7InJvbGUiOnsiY29kaW5nIjpbeyJzeXN0ZW0iOiJodHRwOi8vZmhpci5uaHMubmV0L1ZhbHVlU2V0L3Nkcy1qb2Itcm9sZS1uYW1lLTEiLCJjb2RlIjoiQXNzdXJhbmNlSm9iUm9sZSJ9XX19XX0sInJlcXVlc3RlZF9zY29wZSI6Im9yZ2FuaXphdGlvbi8qLnJlYWQiLCJyZXF1ZXN0ZWRfcmVjb3JkIjp7InJlc291cmNlVHlwZSI6Ik9yZ2FuaXphdGlvbiIsImlkIjoiMSIsImlkZW50aWZpZXIiOlt7InN5c3RlbSI6Imh0dHA6Ly9maGlyLm5ocy5uZXQvSWQvb2RzLW9yZ2FuaXphdGlvbi1jb2RlIiwidmFsdWUiOiJPcmdPRFNDb2RlMDAwMSJ9XSwibmFtZSI6IkdQIENvbm5lY3QgQXNzdXJhbmNlIn19." />
+      <requestHeader name="Ssp-InteractionId" value="urn:nhs:names:services:gpconnect:fhir:rest:read:metadata" />
+    </requestHeaders>
+    <requestUrl>/metadata</requestUrl>
+    <requestParameters>
+      <requestParameter name="_format" value="application/xml+fhir" />
+    </requestParameters>
+    <requestMethod>GET</requestMethod>
+    <requestContentType>application/xml+fhir</requestContentType>
+    <requestBody />
+  </request>
+  <response>
+    <responseContentType>application/xml+fhir;charset=UTF-8</responseContentType>
+    <responseStatusCode>200</responseStatusCode>
+    <responseTimeInMilliseconds>18</responseTimeInMilliseconds>
+    <responseTimeAcceptable>true</responseTimeAcceptable>
+    <responseHeaders>
+      <responseHeader name="Transfer-Encoding" value="chunked" />
+      <responseHeader name="Connection" value="keep-alive" />
+      <responseHeader name="Content-Encoding" value="" />
+      <responseHeader name="Content-Type" value="application/xml+fhir;charset=UTF-8" />
+      <responseHeader name="Date" value="Tue, 20 May 2025 15:54:01 GMT" />
+      <responseHeader name="Server" value="nginx/1.19.6" />
+      <responseHeader name="X-Powered-By" value="HAPI FHIR 2.2 REST Server (FHIR Server; FHIR 1.0.2/DSTU2)" />
+    </responseHeaders>
+    <responseBody>&amp;lt;Conformance xmlns=&amp;quot;http://hl7.org/fhir&amp;quot;&amp;gt;&amp;lt;version value=&amp;quot;0.7.4&amp;quot;/&amp;gt;&amp;lt;name value=&amp;quot;GP Connect&amp;quot;/&amp;gt;&amp;lt;publisher value=&amp;quot;Not provided&amp;quot;/&amp;gt;&amp;lt;date value=&amp;quot;2025-05-20T09:29:25+01:00&amp;quot;/&amp;gt;&amp;lt;description value=&amp;quot;This server implements the GP Connect API version 0.7.4&amp;quot;/&amp;gt;&amp;lt;copyright value=&amp;quot;Copyright NHS Digital 2018&amp;quot;/&amp;gt;&amp;lt;kind value=&amp;quot;instance&amp;quot;/&amp;gt;&amp;lt;software&amp;gt;&amp;lt;name value=&amp;quot;HAPI FHIR Server&amp;quot;/&amp;gt;&amp;lt;version value=&amp;quot;2.2&amp;quot;/&amp;gt;&amp;lt;releaseDate value=&amp;quot;2016-12-20T00:00:00+00:00&amp;quot;/&amp;gt;&amp;lt;/software&amp;gt;&amp;lt;fhirVersion value=&amp;quot;1.0.2&amp;quot;/&amp;gt;&amp;lt;acceptUnknown value=&amp;quot;extensions&amp;quot;/&amp;gt;&amp;lt;format value=&amp;quot;application/xml+fhir&amp;quot;/&amp;gt;&amp;lt;format value=&amp;quot;application/json+fhir&amp;quot;/&amp;gt;&amp;lt;rest&amp;gt;&amp;lt;mode value=&amp;quot;server&amp;quot;/&amp;gt;&amp;lt;resource&amp;gt;&amp;lt;type value=&amp;quot;OperationDefinition&amp;quot;/&amp;gt;&amp;lt;profile&amp;gt;&amp;lt;reference value=&amp;quot;http://hl7.org/fhir/profiles/OperationDefinition&amp;quot;/&amp;gt;&amp;lt;/profile&amp;gt;&amp;lt;interaction&amp;gt;&amp;lt;code value=&amp;quot;read&amp;quot;/&amp;gt;&amp;lt;/interaction&amp;gt;&amp;lt;/resource&amp;gt;&amp;lt;resource&amp;gt;&amp;lt;type value=&amp;quot;Patient&amp;quot;/&amp;gt;&amp;lt;profile&amp;gt;&amp;lt;reference value=&amp;quot;http://hl7.org/fhir/profiles/Patient&amp;quot;/&amp;gt;&amp;lt;/profile&amp;gt;&amp;lt;/resource&amp;gt;&amp;lt;resource&amp;gt;&amp;lt;type value=&amp;quot;StructureDefinition&amp;quot;/&amp;gt;&amp;lt;profile&amp;gt;&amp;lt;reference value=&amp;quot;http://hl7.org/fhir/profiles/StructureDefinition&amp;quot;/&amp;gt;&amp;lt;/profile&amp;gt;&amp;lt;interaction&amp;gt;&amp;lt;code value=&amp;quot;read&amp;quot;/&amp;gt;&amp;lt;/interaction&amp;gt;&amp;lt;interaction&amp;gt;&amp;lt;code value=&amp;quot;search-type&amp;quot;/&amp;gt;&amp;lt;/interaction&amp;gt;&amp;lt;/resource&amp;gt;&amp;lt;operation&amp;gt;&amp;lt;name value=&amp;quot;gpc.getcarerecord&amp;quot;/&amp;gt;&amp;lt;definition&amp;gt;&amp;lt;reference value=&amp;quot;OperationDefinition/Patient--gpc.getcarerecord&amp;quot;/&amp;gt;&amp;lt;/definition&amp;gt;&amp;lt;/operation&amp;gt;&amp;lt;/rest&amp;gt;&amp;lt;/Conformance&amp;gt;</responseBody>
+  </response>
+</httpContext>

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<fhirContext>
+  <request>
+    <fhirRequestParameters>{"resourceType":"Parameters","parameter":[{"name":"patientNHSNumber","valueIdentifier":{"system":"Invalid-System","value":"9658218865"}},{"name":"includeMedication","part":[{"name":"includePrescriptionIssues","valueBoolean":false}]}]}</fhirRequestParameters>
+  </request>
+  <response>
+    <fhirResponseResource>{"resourceType":"OperationOutcome","meta":{"profile":["https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1"]},"issue":[{"severity":"error","code":"invalid","details":{"coding":[{"system":"https://fhir.nhs.uk/STU3/CodeSystem/Spine-ErrorOrWarningCode-1","code":"INVALID_IDENTIFIER_SYSTEM","display":"INVALID_IDENTIFIER_SYSTEM"}]},"diagnostics":"The given identifier system code (Invalid-System) does not match the expected code - https://fhir.nhs.uk/Id/nhs-number"}]}</fhirResponseResource>
+  </response>
+</fhirContext>

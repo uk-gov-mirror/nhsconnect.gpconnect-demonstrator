@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<httpContext useWebProxy="false" webProxyUrl="https://localhost:8889" useSpineProxy="false" spineProxyUrl="https://proxy.dev.spine2.ncrs.nhs.uk:443" providerUrl="https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir">
+  <request endpointUrl="https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir">
+    <requestHeaders>
+      <requestHeader name="Ssp-TraceID" value="0526fcea-dbb4-4e52-bc3a-116132144e7b" />
+      <requestHeader name="Ssp-From" value="200000000985" />
+      <requestHeader name="Ssp-To" value="200000000985" />
+      <requestHeader name="Accept" value="application/fhir+xml" />
+      <requestHeader name="Ssp-InteractionId" value="urn:nhs:names:services:gpconnect:fhir:rest:read:appointment-1" />
+      <requestHeader name="Authorization" value="Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwczovL0NvbnN1bWVyU3lzdGVtVVJMIiwic3ViIjoiMSIsImF1ZCI6Imh0dHBzOi8vYXV0aG9yaXplLmZoaXIubmhzLm5ldC90b2tlbiIsImV4cCI6MTc0NzczMDY0NywiaWF0IjoxNzQ3NzMwMzQ3LCJyZWFzb25fZm9yX3JlcXVlc3QiOiJkaXJlY3RjYXJlIiwicmVxdWVzdGluZ19kZXZpY2UiOnsicmVzb3VyY2VUeXBlIjoiRGV2aWNlIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiR1BDb25uZWN0VGVzdFN5c3RlbSIsInZhbHVlIjoiQ2xpZW50In1dLCJtb2RlbCI6InYxIiwidmVyc2lvbiI6IjEuMSJ9LCJyZXF1ZXN0aW5nX29yZ2FuaXphdGlvbiI6eyJyZXNvdXJjZVR5cGUiOiJPcmdhbml6YXRpb24iLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwczovL2ZoaXIubmhzLnVrL0lkL29kcy1vcmdhbml6YXRpb24tY29kZSIsInZhbHVlIjoiR1BDQTAwMDEifV0sIm5hbWUiOiJHUCBDb25uZWN0IEFzc3VyYW5jZSJ9LCJyZXF1ZXN0aW5nX3ByYWN0aXRpb25lciI6eyJyZXNvdXJjZVR5cGUiOiJQcmFjdGl0aW9uZXIiLCJpZCI6IjEiLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwczovL2ZoaXIubmhzLnVrL0lkL3Nkcy11c2VyLWlkIiwidmFsdWUiOiJHQ0FTRFMwMDAxIn0seyJzeXN0ZW0iOiJodHRwczovL2ZoaXIubmhzLnVrL0lkL3Nkcy1yb2xlLXByb2ZpbGUtaWQiLCJ2YWx1ZSI6IjExMjIzMzQ0NTU2NiJ9LHsic3lzdGVtIjoiaHR0cHM6Ly9jb25zdW1lcnN1cHBsaWVyLmNvbS9JZC91c2VyLWd1aWQiLCJ2YWx1ZSI6Ijk4ZWQ0Zjc4LTgxNGQtNDI2Ni04ZDViLWNkZTc0MmYzMDkzYyJ9XSwibmFtZSI6W3siZmFtaWx5IjoiQXNzdXJhbmNlUHJhY3RpdGlvbmVyIiwiZ2l2ZW4iOlsiQXNzdXJhbmNlVGVzdCJdLCJwcmVmaXgiOlsiTXIiXX1dfSwicmVxdWVzdGVkX3Njb3BlIjoicGF0aWVudC8qLnJlYWQifQ." />
+    </requestHeaders>
+    <requestUrl>Appointment/118</requestUrl>
+    <requestParameters>
+      <requestParameter name="identifier" value="https://fhir.nhs.uk/Id/nhs-number|9658218865" />
+      <requestParameter name="start" value="ge2025-05-21T01:00:00+01:00" />
+      <requestParameter name="end" value="le2025-06-04T01:00:00+01:00" />
+      <requestParameter name="status" value="free" />
+      <requestParameter name="searchFilter" value="https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1|urgent-care" />
+      <requestParameter name="_include" value="Slot:schedule" />
+    </requestParameters>
+    <requestMethod>GET</requestMethod>
+    <requestContentType>application/fhir+json</requestContentType>
+    <requestBody />
+  </request>
+  <response>
+    <responseContentType>application/fhir+xml</responseContentType>
+    <responseStatusCode>200</responseStatusCode>
+    <responseTimeInMilliseconds>36</responseTimeInMilliseconds>
+    <responseTimeAcceptable>true</responseTimeAcceptable>
+    <responseHeaders>
+      <responseHeader name="Transfer-Encoding" value="chunked" />
+      <responseHeader name="Connection" value="keep-alive" />
+      <responseHeader name="Cache-Control" value="no-store" />
+      <responseHeader name="Date" value="Tue, 20 May 2025 08:39:09 GMT" />
+      <responseHeader name="ETag" value="W/&quot;1747730349000&quot;" />
+      <responseHeader name="Location" value="https://data.developer.nhs.uk/gpconnect-demonstrator/v1/fhir/Appointment/118/_history/1747730349000" />
+      <responseHeader name="Server" value="nginx/1.19.6" />
+      <responseHeader name="X-Powered-By" value="HAPI FHIR 3.0.0 REST Server (FHIR Server; FHIR 3.0.1/DSTU3)" />
+      <responseHeader name="Content-Type" value="application/fhir+xml; charset=UTF-8" />
+      <responseHeader name="Last-Modified" value="Tue, 20 May 2025 08:39:09 GMT" />
+    </responseHeaders>
+    <responseBody>&amp;lt;Appointment xmlns=&amp;quot;http://hl7.org/fhir&amp;quot;&amp;gt;&amp;lt;id value=&amp;quot;118&amp;quot;/&amp;gt;&amp;lt;meta&amp;gt;&amp;lt;versionId value=&amp;quot;1747730349000&amp;quot;/&amp;gt;&amp;lt;lastUpdated value=&amp;quot;2025-05-20T09:39:09.000+01:00&amp;quot;/&amp;gt;&amp;lt;profile value=&amp;quot;https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1&amp;quot;/&amp;gt;&amp;lt;/meta&amp;gt;&amp;lt;contained&amp;gt;&amp;lt;Organization xmlns=&amp;quot;http://hl7.org/fhir&amp;quot;&amp;gt;&amp;lt;id value=&amp;quot;1&amp;quot;/&amp;gt;&amp;lt;meta&amp;gt;&amp;lt;profile value=&amp;quot;https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1&amp;quot;/&amp;gt;&amp;lt;/meta&amp;gt;&amp;lt;identifier&amp;gt;&amp;lt;system value=&amp;quot;https://fhir.nhs.uk/Id/ods-organization-code&amp;quot;/&amp;gt;&amp;lt;value value=&amp;quot;A20047&amp;quot;/&amp;gt;&amp;lt;/identifier&amp;gt;&amp;lt;name value=&amp;quot;Test Suite Validator&amp;quot;/&amp;gt;&amp;lt;telecom&amp;gt;&amp;lt;system value=&amp;quot;phone&amp;quot;/&amp;gt;&amp;lt;value value=&amp;quot;01823938938&amp;quot;/&amp;gt;&amp;lt;use value=&amp;quot;temp&amp;quot;/&amp;gt;&amp;lt;/telecom&amp;gt;&amp;lt;/Organization&amp;gt;&amp;lt;/contained&amp;gt;&amp;lt;extension url=&amp;quot;https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-DeliveryChannel-2&amp;quot;&amp;gt;&amp;lt;valueCode value=&amp;quot;Video&amp;quot;/&amp;gt;&amp;lt;/extension&amp;gt;&amp;lt;extension url=&amp;quot;https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-PractitionerRole-1&amp;quot;&amp;gt;&amp;lt;valueCodeableConcept&amp;gt;&amp;lt;coding&amp;gt;&amp;lt;system value=&amp;quot;https://fhir.nhs.uk/STU3/ValueSet/GPConnect-PractitionerRole-1&amp;quot;/&amp;gt;&amp;lt;code value=&amp;quot;R0260&amp;quot;/&amp;gt;&amp;lt;display value=&amp;quot;General Medical Practitioner&amp;quot;/&amp;gt;&amp;lt;/coding&amp;gt;&amp;lt;/valueCodeableConcept&amp;gt;&amp;lt;/extension&amp;gt;&amp;lt;extension url=&amp;quot;https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-BookingOrganisation-1&amp;quot;&amp;gt;&amp;lt;valueReference&amp;gt;&amp;lt;reference value=&amp;quot;#1&amp;quot;/&amp;gt;&amp;lt;/valueReference&amp;gt;&amp;lt;/extension&amp;gt;&amp;lt;status value=&amp;quot;booked&amp;quot;/&amp;gt;&amp;lt;serviceCategory&amp;gt;&amp;lt;text value=&amp;quot;General medicine&amp;quot;/&amp;gt;&amp;lt;/serviceCategory&amp;gt;&amp;lt;serviceType&amp;gt;&amp;lt;text value=&amp;quot;Clinical oncology&amp;quot;/&amp;gt;&amp;lt;/serviceType&amp;gt;&amp;lt;priority value=&amp;quot;0&amp;quot;/&amp;gt;&amp;lt;description value=&amp;quot;Default Description&amp;quot;/&amp;gt;&amp;lt;start value=&amp;quot;2025-05-25T16:30:00+01:00&amp;quot;/&amp;gt;&amp;lt;end value=&amp;quot;2025-05-25T16:40:00+01:00&amp;quot;/&amp;gt;&amp;lt;minutesDuration value=&amp;quot;10&amp;quot;/&amp;gt;&amp;lt;slot&amp;gt;&amp;lt;reference value=&amp;quot;Slot/16763&amp;quot;/&amp;gt;&amp;lt;/slot&amp;gt;&amp;lt;created value=&amp;quot;2025-05-20T09:39:10+01:00&amp;quot;/&amp;gt;&amp;lt;participant&amp;gt;&amp;lt;actor&amp;gt;&amp;lt;reference value=&amp;quot;Patient/1&amp;quot;/&amp;gt;&amp;lt;/actor&amp;gt;&amp;lt;status value=&amp;quot;accepted&amp;quot;/&amp;gt;&amp;lt;/participant&amp;gt;&amp;lt;participant&amp;gt;&amp;lt;actor&amp;gt;&amp;lt;reference value=&amp;quot;Location/16&amp;quot;/&amp;gt;&amp;lt;/actor&amp;gt;&amp;lt;status value=&amp;quot;accepted&amp;quot;/&amp;gt;&amp;lt;/participant&amp;gt;&amp;lt;participant&amp;gt;&amp;lt;actor&amp;gt;&amp;lt;reference value=&amp;quot;Practitioner/1&amp;quot;/&amp;gt;&amp;lt;/actor&amp;gt;&amp;lt;status value=&amp;quot;accepted&amp;quot;/&amp;gt;&amp;lt;/participant&amp;gt;&amp;lt;/Appointment&amp;gt;</responseBody>
+  </response>
+</httpContext>

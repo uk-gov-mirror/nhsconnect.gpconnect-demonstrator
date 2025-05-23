@@ -1,0 +1,24 @@
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "patientNHSNumber",
+      "valueIdentifier": {
+        "system": "https://fhir.nhs.uk/Id/nhs-number",
+        "value": "9690937286"
+      }
+    },
+    {
+      "name": "includeUncategorisedData",
+      "part": [
+        {
+          "name": "uncategorisedDataSearchPeriod",
+          "valuePeriod": {
+            "start": "2014-01-01",
+            "end": "2015-10-23T12:08:32+01:00"
+          }
+        }
+      ]
+    }
+  ]
+}

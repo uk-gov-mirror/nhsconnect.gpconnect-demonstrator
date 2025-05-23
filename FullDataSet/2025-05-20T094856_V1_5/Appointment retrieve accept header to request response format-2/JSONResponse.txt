@@ -1,0 +1,1666 @@
+{
+  "resourceType": "Bundle",
+  "id": "fe728221-43ca-4664-a6f6-269b6d37488b",
+  "meta": {
+    "lastUpdated": "2025-05-20T09:55:04.746+01:00"
+  },
+  "type": "searchset",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "1",
+        "meta": {
+          "versionId": "1747699266000",
+          "lastUpdated": "2025-05-20T01:01:06+01:00",
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1"
+          ]
+        },
+        "contained": [
+          {
+            "resourceType": "Organization",
+            "id": "1",
+            "meta": {
+              "profile": [
+                "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"
+              ]
+            },
+            "identifier": [
+              {
+                "system": "https://fhir.nhs.uk/Id/ods-organization-code",
+                "value": "B82617"
+              }
+            ],
+            "name": "COXWOLD Surgery",
+            "telecom": [
+              {
+                "system": "phone",
+                "value": "0300 303 5678"
+              }
+            ]
+          }
+        ],
+        "extension": [
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-DeliveryChannel-2",
+            "valueCode": "Telephone"
+          },
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-PractitionerRole-1",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://fhir.nhs.uk/STU3/ValueSet/GPConnect-PractitionerRole-1",
+                  "code": "R1480",
+                  "display": "Healthcare Assistant"
+                }
+              ]
+            }
+          },
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-BookingOrganisation-1",
+            "valueReference": {
+              "reference": "#1"
+            }
+          }
+        ],
+        "status": "booked",
+        "serviceCategory": {
+          "text": "General practice"
+        },
+        "serviceType": [
+          {
+            "text": "General medical practice"
+          }
+        ],
+        "priority": 0,
+        "description": "A appointment to discuss test data",
+        "start": "2025-05-21T09:00:00+01:00",
+        "end": "2025-05-21T09:10:00+01:00",
+        "minutesDuration": 10,
+        "slot": [
+          {
+            "reference": "Slot/12176"
+          }
+        ],
+        "participant": [
+          {
+            "actor": {
+              "reference": "Patient/2"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Location/17"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Practitioner/2"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "2",
+        "meta": {
+          "versionId": "1747699266000",
+          "lastUpdated": "2025-05-20T01:01:06+01:00",
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1"
+          ]
+        },
+        "contained": [
+          {
+            "resourceType": "Organization",
+            "id": "1",
+            "meta": {
+              "profile": [
+                "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"
+              ]
+            },
+            "identifier": [
+              {
+                "system": "https://fhir.nhs.uk/Id/ods-organization-code",
+                "value": "B82617"
+              }
+            ],
+            "name": "COXWOLD Surgery",
+            "telecom": [
+              {
+                "system": "phone",
+                "value": "0300 303 5678"
+              }
+            ]
+          }
+        ],
+        "extension": [
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-DeliveryChannel-2",
+            "valueCode": "Telephone"
+          },
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-PractitionerRole-1",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://fhir.nhs.uk/STU3/ValueSet/GPConnect-PractitionerRole-1",
+                  "code": "R1480",
+                  "display": "Healthcare Assistant"
+                }
+              ]
+            }
+          },
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-BookingOrganisation-1",
+            "valueReference": {
+              "reference": "#1"
+            }
+          }
+        ],
+        "status": "booked",
+        "serviceCategory": {
+          "text": "General practice"
+        },
+        "serviceType": [
+          {
+            "text": "General medical practice"
+          }
+        ],
+        "priority": 0,
+        "description": "A follow-up appointment for tests.",
+        "start": "2025-05-21T09:10:00+01:00",
+        "end": "2025-05-21T09:20:00+01:00",
+        "minutesDuration": 10,
+        "slot": [
+          {
+            "reference": "Slot/12177"
+          }
+        ],
+        "participant": [
+          {
+            "actor": {
+              "reference": "Patient/2"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Location/17"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Practitioner/2"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "19",
+        "meta": {
+          "versionId": "1747730988000",
+          "lastUpdated": "2025-05-20T09:49:48+01:00",
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1"
+          ]
+        },
+        "contained": [
+          {
+            "resourceType": "Organization",
+            "id": "1",
+            "meta": {
+              "profile": [
+                "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"
+              ]
+            },
+            "identifier": [
+              {
+                "system": "https://fhir.nhs.uk/Id/ods-organization-code",
+                "value": "B82617"
+              }
+            ],
+            "name": "Test Suite Validator",
+            "telecom": [
+              {
+                "system": "phone",
+                "value": "01823938938",
+                "use": "temp"
+              }
+            ]
+          }
+        ],
+        "extension": [
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-DeliveryChannel-2",
+            "valueCode": "In-person"
+          },
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-PractitionerRole-1",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://fhir.nhs.uk/STU3/ValueSet/GPConnect-PractitionerRole-1",
+                  "code": "R0260",
+                  "display": "General Medical Practitioner"
+                }
+              ]
+            }
+          },
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-BookingOrganisation-1",
+            "valueReference": {
+              "reference": "#1"
+            }
+          }
+        ],
+        "status": "booked",
+        "serviceCategory": {
+          "text": "General medicine"
+        },
+        "serviceType": [
+          {
+            "text": "Clinical oncology"
+          }
+        ],
+        "priority": 0,
+        "description": "customDescription",
+        "start": "2025-05-24T12:40:00+01:00",
+        "end": "2025-05-24T12:50:00+01:00",
+        "minutesDuration": 10,
+        "slot": [
+          {
+            "reference": "Slot/12636"
+          }
+        ],
+        "created": "2025-05-20T09:49:48+01:00",
+        "participant": [
+          {
+            "actor": {
+              "reference": "Patient/2"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Location/16"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Practitioner/1"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "20",
+        "meta": {
+          "versionId": "1747730991000",
+          "lastUpdated": "2025-05-20T09:49:51+01:00",
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1"
+          ]
+        },
+        "contained": [
+          {
+            "resourceType": "Organization",
+            "id": "1",
+            "meta": {
+              "profile": [
+                "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"
+              ]
+            },
+            "identifier": [
+              {
+                "system": "https://fhir.nhs.uk/Id/ods-organization-code",
+                "value": "B82617"
+              }
+            ],
+            "name": "Test Suite Validator",
+            "telecom": [
+              {
+                "system": "phone",
+                "value": "01823938938",
+                "use": "temp"
+              }
+            ]
+          }
+        ],
+        "extension": [
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-DeliveryChannel-2",
+            "valueCode": "In-person"
+          },
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-PractitionerRole-1",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://fhir.nhs.uk/STU3/ValueSet/GPConnect-PractitionerRole-1",
+                  "code": "R0260",
+                  "display": "General Medical Practitioner"
+                }
+              ]
+            }
+          },
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-BookingOrganisation-1",
+            "valueReference": {
+              "reference": "#1"
+            }
+          }
+        ],
+        "status": "booked",
+        "serviceCategory": {
+          "text": "General medicine"
+        },
+        "serviceType": [
+          {
+            "text": "Clinical oncology"
+          }
+        ],
+        "priority": 0,
+        "description": "customDescription",
+        "start": "2025-05-21T10:10:00+01:00",
+        "end": "2025-05-21T10:20:00+01:00",
+        "minutesDuration": 10,
+        "slot": [
+          {
+            "reference": "Slot/12477"
+          }
+        ],
+        "created": "2025-05-20T09:49:51+01:00",
+        "participant": [
+          {
+            "actor": {
+              "reference": "Patient/2"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Location/16"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Practitioner/1"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "25",
+        "meta": {
+          "versionId": "1747731004000",
+          "lastUpdated": "2025-05-20T09:50:04+01:00",
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1"
+          ]
+        },
+        "contained": [
+          {
+            "resourceType": "Organization",
+            "id": "1",
+            "meta": {
+              "profile": [
+                "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"
+              ]
+            },
+            "identifier": [
+              {
+                "system": "https://fhir.nhs.uk/Id/ods-organization-code",
+                "value": "B82617"
+              }
+            ],
+            "name": "Test Suite Validator",
+            "telecom": [
+              {
+                "system": "phone",
+                "value": "01823938938",
+                "use": "temp"
+              }
+            ]
+          }
+        ],
+        "extension": [
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-DeliveryChannel-2",
+            "valueCode": "In-person"
+          },
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-PractitionerRole-1",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://fhir.nhs.uk/STU3/ValueSet/GPConnect-PractitionerRole-1",
+                  "code": "R0260",
+                  "display": "General Medical Practitioner"
+                }
+              ]
+            }
+          },
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-BookingOrganisation-1",
+            "valueReference": {
+              "reference": "#1"
+            }
+          }
+        ],
+        "status": "booked",
+        "serviceCategory": {
+          "text": "General medicine"
+        },
+        "serviceType": [
+          {
+            "text": "Clinical oncology"
+          }
+        ],
+        "priority": 0,
+        "description": "customDescription",
+        "start": "2025-05-21T11:20:00+01:00",
+        "end": "2025-05-21T11:30:00+01:00",
+        "minutesDuration": 10,
+        "slot": [
+          {
+            "reference": "Slot/12484"
+          }
+        ],
+        "created": "2025-05-20T09:50:04+01:00",
+        "participant": [
+          {
+            "actor": {
+              "reference": "Patient/2"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Location/16"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Practitioner/1"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "60",
+        "meta": {
+          "versionId": "1747731133000",
+          "lastUpdated": "2025-05-20T09:52:13+01:00",
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1"
+          ]
+        },
+        "contained": [
+          {
+            "resourceType": "Organization",
+            "id": "1",
+            "meta": {
+              "profile": [
+                "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"
+              ]
+            },
+            "identifier": [
+              {
+                "system": "https://fhir.nhs.uk/Id/ods-organization-code",
+                "value": "B82617"
+              }
+            ],
+            "name": "Test Suite Validator",
+            "telecom": [
+              {
+                "system": "phone",
+                "value": "01823938938",
+                "use": "temp"
+              }
+            ]
+          }
+        ],
+        "extension": [
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-DeliveryChannel-2",
+            "valueCode": "Video"
+          },
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-PractitionerRole-1",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://fhir.nhs.uk/STU3/ValueSet/GPConnect-PractitionerRole-1",
+                  "code": "R0260",
+                  "display": "General Medical Practitioner"
+                }
+              ]
+            }
+          },
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-BookingOrganisation-1",
+            "valueReference": {
+              "reference": "#1"
+            }
+          }
+        ],
+        "status": "booked",
+        "serviceCategory": {
+          "text": "General medicine"
+        },
+        "serviceType": [
+          {
+            "text": "Clinical oncology"
+          }
+        ],
+        "priority": 0,
+        "description": "Default Description",
+        "start": "2025-05-29T16:30:00+01:00",
+        "end": "2025-05-29T16:40:00+01:00",
+        "minutesDuration": 10,
+        "slot": [
+          {
+            "reference": "Slot/12899"
+          }
+        ],
+        "created": "2025-05-20T09:52:13+01:00",
+        "participant": [
+          {
+            "actor": {
+              "reference": "Patient/2"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Location/16"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Practitioner/1"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "71",
+        "meta": {
+          "versionId": "1747731158000",
+          "lastUpdated": "2025-05-20T09:52:38+01:00",
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1"
+          ]
+        },
+        "contained": [
+          {
+            "resourceType": "Organization",
+            "id": "1",
+            "meta": {
+              "profile": [
+                "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"
+              ]
+            },
+            "identifier": [
+              {
+                "system": "https://fhir.nhs.uk/Id/ods-organization-code",
+                "value": "B82617"
+              }
+            ],
+            "name": "Test Suite Validator",
+            "telecom": [
+              {
+                "system": "phone",
+                "value": "01823938938",
+                "use": "temp"
+              }
+            ]
+          }
+        ],
+        "extension": [
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-AppointmentCancellationReason-1",
+            "valueString": "double booked"
+          },
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-DeliveryChannel-2",
+            "valueCode": "In-person"
+          },
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-PractitionerRole-1",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://fhir.nhs.uk/STU3/ValueSet/GPConnect-PractitionerRole-1",
+                  "code": "R0260",
+                  "display": "General Medical Practitioner"
+                }
+              ]
+            }
+          },
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-BookingOrganisation-1",
+            "valueReference": {
+              "reference": "#1"
+            }
+          }
+        ],
+        "status": "cancelled",
+        "serviceCategory": {
+          "text": "General medicine"
+        },
+        "serviceType": [
+          {
+            "text": "Clinical oncology"
+          }
+        ],
+        "priority": 0,
+        "description": "Default Description",
+        "start": "2025-05-26T11:10:00+01:00",
+        "end": "2025-05-26T11:20:00+01:00",
+        "minutesDuration": 10,
+        "slot": [
+          {
+            "reference": "Slot/12723"
+          }
+        ],
+        "created": "2025-05-20T09:52:38+01:00",
+        "participant": [
+          {
+            "actor": {
+              "reference": "Patient/2"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Location/16"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Practitioner/1"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "75",
+        "meta": {
+          "versionId": "1747731167000",
+          "lastUpdated": "2025-05-20T09:52:47+01:00",
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1"
+          ]
+        },
+        "contained": [
+          {
+            "resourceType": "Organization",
+            "id": "1",
+            "meta": {
+              "profile": [
+                "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"
+              ]
+            },
+            "identifier": [
+              {
+                "system": "https://fhir.nhs.uk/Id/ods-organization-code",
+                "value": "B82617"
+              }
+            ],
+            "name": "Test Suite Validator",
+            "telecom": [
+              {
+                "system": "phone",
+                "value": "01823938938",
+                "use": "temp"
+              }
+            ]
+          }
+        ],
+        "extension": [
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-DeliveryChannel-2",
+            "valueCode": "In-person"
+          },
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-PractitionerRole-1",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://fhir.nhs.uk/STU3/ValueSet/GPConnect-PractitionerRole-1",
+                  "code": "R0260",
+                  "display": "General Medical Practitioner"
+                }
+              ]
+            }
+          },
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-BookingOrganisation-1",
+            "valueReference": {
+              "reference": "#1"
+            }
+          }
+        ],
+        "status": "booked",
+        "serviceCategory": {
+          "text": "General medicine"
+        },
+        "serviceType": [
+          {
+            "text": "Clinical oncology"
+          }
+        ],
+        "priority": 0,
+        "description": "Default Description",
+        "start": "2025-05-26T12:20:00+01:00",
+        "end": "2025-05-26T12:30:00+01:00",
+        "minutesDuration": 10,
+        "slot": [
+          {
+            "reference": "Slot/12730"
+          }
+        ],
+        "created": "2025-05-20T09:52:48+01:00",
+        "participant": [
+          {
+            "actor": {
+              "reference": "Patient/2"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Location/16"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Practitioner/1"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "77",
+        "meta": {
+          "versionId": "1747731172000",
+          "lastUpdated": "2025-05-20T09:52:52+01:00",
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1"
+          ]
+        },
+        "contained": [
+          {
+            "resourceType": "Organization",
+            "id": "1",
+            "meta": {
+              "profile": [
+                "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"
+              ]
+            },
+            "identifier": [
+              {
+                "system": "https://fhir.nhs.uk/Id/ods-organization-code",
+                "value": "B82617"
+              }
+            ],
+            "name": "Test Suite Validator",
+            "telecom": [
+              {
+                "system": "phone",
+                "value": "01823938938",
+                "use": "temp"
+              }
+            ]
+          }
+        ],
+        "extension": [
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-AppointmentCancellationReason-1",
+            "valueString": "double booked"
+          },
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-DeliveryChannel-2",
+            "valueCode": "Video"
+          },
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-PractitionerRole-1",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://fhir.nhs.uk/STU3/ValueSet/GPConnect-PractitionerRole-1",
+                  "code": "R0260",
+                  "display": "General Medical Practitioner"
+                }
+              ]
+            }
+          },
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-BookingOrganisation-1",
+            "valueReference": {
+              "reference": "#1"
+            }
+          }
+        ],
+        "status": "cancelled",
+        "serviceCategory": {
+          "text": "General medicine"
+        },
+        "serviceType": [
+          {
+            "text": "Clinical oncology"
+          }
+        ],
+        "priority": 0,
+        "description": "Default Description",
+        "start": "2025-05-24T14:30:00+01:00",
+        "end": "2025-05-24T14:40:00+01:00",
+        "minutesDuration": 10,
+        "slot": [
+          {
+            "reference": "Slot/12647"
+          }
+        ],
+        "created": "2025-05-20T09:52:52+01:00",
+        "participant": [
+          {
+            "actor": {
+              "reference": "Patient/2"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Location/16"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Practitioner/1"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "81",
+        "meta": {
+          "versionId": "1747731182000",
+          "lastUpdated": "2025-05-20T09:53:02+01:00",
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1"
+          ]
+        },
+        "contained": [
+          {
+            "resourceType": "Organization",
+            "id": "1",
+            "meta": {
+              "profile": [
+                "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"
+              ]
+            },
+            "identifier": [
+              {
+                "system": "https://fhir.nhs.uk/Id/ods-organization-code",
+                "value": "B82617"
+              }
+            ],
+            "name": "Test Suite Validator",
+            "telecom": [
+              {
+                "system": "phone",
+                "value": "01823938938",
+                "use": "temp"
+              }
+            ]
+          }
+        ],
+        "extension": [
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-AppointmentCancellationReason-1",
+            "valueString": "double booked"
+          },
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-DeliveryChannel-2",
+            "valueCode": "In-person"
+          },
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-PractitionerRole-1",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://fhir.nhs.uk/STU3/ValueSet/GPConnect-PractitionerRole-1",
+                  "code": "R0260",
+                  "display": "General Medical Practitioner"
+                }
+              ]
+            }
+          },
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-BookingOrganisation-1",
+            "valueReference": {
+              "reference": "#1"
+            }
+          }
+        ],
+        "status": "cancelled",
+        "serviceCategory": {
+          "text": "General medicine"
+        },
+        "serviceType": [
+          {
+            "text": "Clinical oncology"
+          }
+        ],
+        "priority": 0,
+        "description": "Default Description",
+        "start": "2025-05-28T11:00:00+01:00",
+        "end": "2025-05-28T11:10:00+01:00",
+        "minutesDuration": 10,
+        "slot": [
+          {
+            "reference": "Slot/12818"
+          }
+        ],
+        "created": "2025-05-20T09:53:01+01:00",
+        "participant": [
+          {
+            "actor": {
+              "reference": "Patient/2"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Location/16"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Practitioner/1"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "87",
+        "meta": {
+          "versionId": "1747731194000",
+          "lastUpdated": "2025-05-20T09:53:14+01:00",
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1"
+          ]
+        },
+        "contained": [
+          {
+            "resourceType": "Organization",
+            "id": "1",
+            "meta": {
+              "profile": [
+                "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"
+              ]
+            },
+            "identifier": [
+              {
+                "system": "https://fhir.nhs.uk/Id/ods-organization-code",
+                "value": "B82617"
+              }
+            ],
+            "name": "Test Suite Validator",
+            "telecom": [
+              {
+                "system": "phone",
+                "value": "01823938938",
+                "use": "temp"
+              }
+            ]
+          }
+        ],
+        "extension": [
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-AppointmentCancellationReason-1",
+            "valueString": "double booked"
+          },
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-DeliveryChannel-2",
+            "valueCode": "In-person"
+          },
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-PractitionerRole-1",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://fhir.nhs.uk/STU3/ValueSet/GPConnect-PractitionerRole-1",
+                  "code": "R0260",
+                  "display": "General Medical Practitioner"
+                }
+              ]
+            }
+          },
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-BookingOrganisation-1",
+            "valueReference": {
+              "reference": "#1"
+            }
+          }
+        ],
+        "status": "cancelled",
+        "serviceCategory": {
+          "text": "General medicine"
+        },
+        "serviceType": [
+          {
+            "text": "Clinical oncology"
+          }
+        ],
+        "priority": 0,
+        "description": "Default Description",
+        "start": "2025-05-21T12:10:00+01:00",
+        "end": "2025-05-21T12:20:00+01:00",
+        "minutesDuration": 10,
+        "slot": [
+          {
+            "reference": "Slot/12489"
+          }
+        ],
+        "created": "2025-05-20T09:53:14+01:00",
+        "participant": [
+          {
+            "actor": {
+              "reference": "Patient/2"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Location/16"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Practitioner/1"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "91",
+        "meta": {
+          "versionId": "1747731203000",
+          "lastUpdated": "2025-05-20T09:53:23+01:00",
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1"
+          ]
+        },
+        "contained": [
+          {
+            "resourceType": "Organization",
+            "id": "1",
+            "meta": {
+              "profile": [
+                "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"
+              ]
+            },
+            "identifier": [
+              {
+                "system": "https://fhir.nhs.uk/Id/ods-organization-code",
+                "value": "B82617"
+              }
+            ],
+            "name": "Test Suite Validator",
+            "telecom": [
+              {
+                "system": "phone",
+                "value": "01823938938",
+                "use": "temp"
+              }
+            ]
+          }
+        ],
+        "extension": [
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-AppointmentCancellationReason-1",
+            "valueString": "double booked"
+          },
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-DeliveryChannel-2",
+            "valueCode": "Video"
+          },
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-PractitionerRole-1",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://fhir.nhs.uk/STU3/ValueSet/GPConnect-PractitionerRole-1",
+                  "code": "R0260",
+                  "display": "General Medical Practitioner"
+                }
+              ]
+            }
+          },
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-BookingOrganisation-1",
+            "valueReference": {
+              "reference": "#1"
+            }
+          }
+        ],
+        "status": "cancelled",
+        "serviceCategory": {
+          "text": "General medicine"
+        },
+        "serviceType": [
+          {
+            "text": "Clinical oncology"
+          }
+        ],
+        "priority": 0,
+        "description": "Default Description",
+        "start": "2025-05-23T14:30:00+01:00",
+        "end": "2025-05-23T14:40:00+01:00",
+        "minutesDuration": 10,
+        "slot": [
+          {
+            "reference": "Slot/12599"
+          }
+        ],
+        "created": "2025-05-20T09:53:22+01:00",
+        "participant": [
+          {
+            "actor": {
+              "reference": "Patient/2"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Location/16"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Practitioner/1"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "96",
+        "meta": {
+          "versionId": "1747731215000",
+          "lastUpdated": "2025-05-20T09:53:35+01:00",
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1"
+          ]
+        },
+        "contained": [
+          {
+            "resourceType": "Organization",
+            "id": "1",
+            "meta": {
+              "profile": [
+                "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"
+              ]
+            },
+            "identifier": [
+              {
+                "system": "https://fhir.nhs.uk/Id/ods-organization-code",
+                "value": "B82617"
+              }
+            ],
+            "name": "Test Suite Validator",
+            "telecom": [
+              {
+                "system": "phone",
+                "value": "01823938938",
+                "use": "temp"
+              }
+            ]
+          }
+        ],
+        "extension": [
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-AppointmentCancellationReason-1",
+            "valueString": "double booked"
+          },
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-DeliveryChannel-2",
+            "valueCode": "Video"
+          },
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-PractitionerRole-1",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://fhir.nhs.uk/STU3/ValueSet/GPConnect-PractitionerRole-1",
+                  "code": "R0260",
+                  "display": "General Medical Practitioner"
+                }
+              ]
+            }
+          },
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-BookingOrganisation-1",
+            "valueReference": {
+              "reference": "#1"
+            }
+          }
+        ],
+        "status": "cancelled",
+        "serviceCategory": {
+          "text": "General medicine"
+        },
+        "serviceType": [
+          {
+            "text": "Clinical oncology"
+          }
+        ],
+        "priority": 0,
+        "description": "Default Description",
+        "start": "2025-05-24T15:50:00+01:00",
+        "end": "2025-05-24T16:00:00+01:00",
+        "minutesDuration": 10,
+        "slot": [
+          {
+            "reference": "Slot/12655"
+          }
+        ],
+        "created": "2025-05-20T09:53:35+01:00",
+        "participant": [
+          {
+            "actor": {
+              "reference": "Patient/2"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Location/16"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Practitioner/1"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "99",
+        "meta": {
+          "versionId": "1747731222000",
+          "lastUpdated": "2025-05-20T09:53:42+01:00",
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1"
+          ]
+        },
+        "contained": [
+          {
+            "resourceType": "Organization",
+            "id": "1",
+            "meta": {
+              "profile": [
+                "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"
+              ]
+            },
+            "identifier": [
+              {
+                "system": "https://fhir.nhs.uk/Id/ods-organization-code",
+                "value": "B82617"
+              }
+            ],
+            "name": "Test Suite Validator",
+            "telecom": [
+              {
+                "system": "phone",
+                "value": "01823938938",
+                "use": "temp"
+              }
+            ]
+          }
+        ],
+        "extension": [
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-AppointmentCancellationReason-1",
+            "valueString": "double booked"
+          },
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-DeliveryChannel-2",
+            "valueCode": "Video"
+          },
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-PractitionerRole-1",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://fhir.nhs.uk/STU3/ValueSet/GPConnect-PractitionerRole-1",
+                  "code": "R0260",
+                  "display": "General Medical Practitioner"
+                }
+              ]
+            }
+          },
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-BookingOrganisation-1",
+            "valueReference": {
+              "reference": "#1"
+            }
+          }
+        ],
+        "status": "cancelled",
+        "serviceCategory": {
+          "text": "General medicine"
+        },
+        "serviceType": [
+          {
+            "text": "Clinical oncology"
+          }
+        ],
+        "priority": 0,
+        "description": "Default Description",
+        "start": "2025-05-28T15:30:00+01:00",
+        "end": "2025-05-28T15:40:00+01:00",
+        "minutesDuration": 10,
+        "slot": [
+          {
+            "reference": "Slot/12845"
+          }
+        ],
+        "created": "2025-05-20T09:53:42+01:00",
+        "participant": [
+          {
+            "actor": {
+              "reference": "Patient/2"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Location/16"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Practitioner/1"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "111",
+        "meta": {
+          "versionId": "1747731248000",
+          "lastUpdated": "2025-05-20T09:54:08+01:00",
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1"
+          ]
+        },
+        "contained": [
+          {
+            "resourceType": "Organization",
+            "id": "1",
+            "meta": {
+              "profile": [
+                "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"
+              ]
+            },
+            "identifier": [
+              {
+                "system": "https://fhir.nhs.uk/Id/ods-organization-code",
+                "value": "B82617"
+              }
+            ],
+            "name": "Test Suite Validator",
+            "telecom": [
+              {
+                "system": "phone",
+                "value": "01823938938",
+                "use": "temp"
+              }
+            ]
+          }
+        ],
+        "extension": [
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-DeliveryChannel-2",
+            "valueCode": "Video"
+          },
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-PractitionerRole-1",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://fhir.nhs.uk/STU3/ValueSet/GPConnect-PractitionerRole-1",
+                  "code": "R0260",
+                  "display": "General Medical Practitioner"
+                }
+              ]
+            }
+          },
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-BookingOrganisation-1",
+            "valueReference": {
+              "reference": "#1"
+            }
+          }
+        ],
+        "status": "booked",
+        "serviceCategory": {
+          "text": "General medicine"
+        },
+        "serviceType": [
+          {
+            "text": "Clinical oncology"
+          }
+        ],
+        "priority": 0,
+        "description": "Default Description",
+        "start": "2025-05-21T15:50:00+01:00",
+        "end": "2025-05-21T16:00:00+01:00",
+        "minutesDuration": 10,
+        "slot": [
+          {
+            "reference": "Slot/12511"
+          }
+        ],
+        "created": "2025-05-20T09:54:08+01:00",
+        "participant": [
+          {
+            "actor": {
+              "reference": "Patient/2"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Location/16"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Practitioner/1"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "138",
+        "meta": {
+          "versionId": "1747731304000",
+          "lastUpdated": "2025-05-20T09:55:04+01:00",
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1"
+          ]
+        },
+        "contained": [
+          {
+            "resourceType": "Organization",
+            "id": "1",
+            "meta": {
+              "profile": [
+                "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"
+              ]
+            },
+            "identifier": [
+              {
+                "system": "https://fhir.nhs.uk/Id/ods-organization-code",
+                "value": "B82617"
+              }
+            ],
+            "name": "Test Suite Validator",
+            "telecom": [
+              {
+                "system": "phone",
+                "value": "01823938938",
+                "use": "temp"
+              }
+            ]
+          }
+        ],
+        "extension": [
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-DeliveryChannel-2",
+            "valueCode": "In-person"
+          },
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-PractitionerRole-1",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://fhir.nhs.uk/STU3/ValueSet/GPConnect-PractitionerRole-1",
+                  "code": "R0260",
+                  "display": "General Medical Practitioner"
+                }
+              ]
+            }
+          },
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-BookingOrganisation-1",
+            "valueReference": {
+              "reference": "#1"
+            }
+          }
+        ],
+        "status": "booked",
+        "serviceCategory": {
+          "text": "General medicine"
+        },
+        "serviceType": [
+          {
+            "text": "Clinical oncology"
+          }
+        ],
+        "priority": 0,
+        "description": "Default Description",
+        "start": "2025-05-27T11:40:00+01:00",
+        "end": "2025-05-27T11:50:00+01:00",
+        "minutesDuration": 10,
+        "slot": [
+          {
+            "reference": "Slot/12774"
+          }
+        ],
+        "created": "2025-05-20T09:55:05+01:00",
+        "participant": [
+          {
+            "actor": {
+              "reference": "Patient/2"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Location/16"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Practitioner/1"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    }
+  ]
+}

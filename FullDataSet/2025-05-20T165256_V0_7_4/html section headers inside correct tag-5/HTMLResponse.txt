@@ -1,0 +1,4 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+  <h1>Immunisations</h1>
+  <p>No 'Immunisations' data is recorded for this patient.</p>
+</div>

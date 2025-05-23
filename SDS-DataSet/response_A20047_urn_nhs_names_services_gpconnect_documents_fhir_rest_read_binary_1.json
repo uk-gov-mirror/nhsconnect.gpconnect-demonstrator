@@ -1,0 +1,10 @@
+{
+  "resourceType": "Bundle",
+  "id": "08FDE24C-2400-45BE-8331-B9042109A98D",
+  "type": "searchset",
+  "total": 0,
+  "link": [ {
+    "relation": "self",
+    "url": "https://orange.testlab.nhs.uk/Endpoint?organization=https://fhir.nhs.uk/Id/ods-organization-code|A20047&identifier=https://fhir.nhs.uk/Id/nhsServiceInteractionId|urn:nhs:names:services:gpconnect:documents:fhir:rest:read:binary-1"
+  } ]
+}

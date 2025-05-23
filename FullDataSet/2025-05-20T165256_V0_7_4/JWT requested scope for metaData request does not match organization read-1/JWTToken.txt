@@ -1,0 +1,86 @@
+Header:
+{
+  "alg": "none",
+  "typ": "JWT"
+}
+Payload:
+{
+  "iss": "https://ConsumerSystemURL",
+  "sub": "1",
+  "aud": "https://authorize.fhir.nhs.net/token",
+  "exp": 1747756773,
+  "iat": 1747756473,
+  "reason_for_request": "directcare",
+  "requesting_device": {
+    "resourceType": "Device",
+    "id": "1",
+    "identifier": [
+      {
+        "system": "GPConnectTestSystem",
+        "value": "Client"
+      }
+    ],
+    "model": "v1",
+    "version": "1.1"
+  },
+  "requesting_organization": {
+    "resourceType": "Organization",
+    "id": "1",
+    "identifier": [
+      {
+        "system": "http://fhir.nhs.net/Id/ods-organization-code",
+        "value": "GPCA0001"
+      }
+    ],
+    "name": "GP Connect Assurance"
+  },
+  "requesting_practitioner": {
+    "resourceType": "Practitioner",
+    "id": "1",
+    "identifier": [
+      {
+        "system": "http://fhir.nhs.net/sds-user-id",
+        "value": "GCASDS0001"
+      },
+      {
+        "system": "https://consumersupplier.com/Id/user-guid",
+        "value": "98ed4f78-814d-4266-8d5b-cde742f3093c"
+      }
+    ],
+    "name": {
+      "family": [
+        "AssurancePractitioner"
+      ],
+      "given": [
+        "AssuranceTest"
+      ],
+      "prefix": [
+        "Mr"
+      ]
+    },
+    "practitionerRole": [
+      {
+        "role": {
+          "coding": [
+            {
+              "system": "http://fhir.nhs.net/ValueSet/sds-job-role-name-1",
+              "code": "AssuranceJobRole"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "requested_scope": "patient/*.read",
+  "requested_record": {
+    "resourceType": "Organization",
+    "id": "1",
+    "identifier": [
+      {
+        "system": "http://fhir.nhs.net/Id/ods-organization-code",
+        "value": "OrgODSCode0001"
+      }
+    ],
+    "name": "GP Connect Assurance"
+  }
+}

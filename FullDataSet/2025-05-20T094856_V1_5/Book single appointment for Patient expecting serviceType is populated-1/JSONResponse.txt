@@ -1,0 +1,100 @@
+{
+  "resourceType": "Appointment",
+  "id": "56",
+  "meta": {
+    "versionId": "1747731121000",
+    "lastUpdated": "2025-05-20T09:52:01+01:00",
+    "profile": [
+      "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1"
+    ]
+  },
+  "contained": [
+    {
+      "resourceType": "Organization",
+      "id": "1",
+      "meta": {
+        "profile": [
+          "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"
+        ]
+      },
+      "identifier": [
+        {
+          "system": "https://fhir.nhs.uk/Id/ods-organization-code",
+          "value": "B82617"
+        }
+      ],
+      "name": "Test Suite Validator",
+      "telecom": [
+        {
+          "system": "phone",
+          "value": "01823938938",
+          "use": "temp"
+        }
+      ]
+    }
+  ],
+  "extension": [
+    {
+      "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-DeliveryChannel-2",
+      "valueCode": "In-person"
+    },
+    {
+      "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-PractitionerRole-1",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://fhir.nhs.uk/STU3/ValueSet/GPConnect-PractitionerRole-1",
+            "code": "R0260",
+            "display": "General Medical Practitioner"
+          }
+        ]
+      }
+    },
+    {
+      "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-BookingOrganisation-1",
+      "valueReference": {
+        "reference": "#1"
+      }
+    }
+  ],
+  "status": "booked",
+  "serviceCategory": {
+    "text": "General medicine"
+  },
+  "serviceType": [
+    {
+      "text": "Clinical oncology"
+    }
+  ],
+  "priority": 0,
+  "description": "Default Description",
+  "start": "2025-05-22T11:20:00+01:00",
+  "end": "2025-05-22T11:30:00+01:00",
+  "minutesDuration": 10,
+  "slot": [
+    {
+      "reference": "Slot/12532"
+    }
+  ],
+  "created": "2025-05-20T09:52:01+01:00",
+  "participant": [
+    {
+      "actor": {
+        "reference": "Patient/1"
+      },
+      "status": "accepted"
+    },
+    {
+      "actor": {
+        "reference": "Location/16"
+      },
+      "status": "accepted"
+    },
+    {
+      "actor": {
+        "reference": "Practitioner/1"
+      },
+      "status": "accepted"
+    }
+  ]
+}

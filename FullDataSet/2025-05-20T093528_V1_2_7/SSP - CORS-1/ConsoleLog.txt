@@ -1,0 +1,66 @@
+HttpHeaderHelper() Constructor
+HttpHelper() Constructor
+All Header(s) Cleared
+All Parameters Cleared
+HttpContext->LoadAppConfig()
+Removed Key='Ssp-TraceID'
+Added Key='Ssp-TraceID' Value='7153013b-25f0-4d6a-844d-f3345ee5ca38'
+Replaced Key='Ssp-TraceID' With Value='7153013b-25f0-4d6a-844d-f3345ee5ca38'
+Removed Key='Ssp-From'
+Added Key='Ssp-From' Value='200000000985'
+Replaced Key='Ssp-From' With Value='200000000985'
+Removed Key='Ssp-To'
+Added Key='Ssp-To' Value='200000000985'
+Replaced Key='Ssp-To' With Value='200000000985'
+Removed Key='Accept'
+Added Key='Accept' Value='application/fhir+json'
+Replaced Key='Accept' With Value='application/fhir+json'
+GenericSteps() Constructor
+InitializeContainer For Dependency Injection
+10 Organisations Loaded From ODS CSV File.
+Feature: SSP
+
+Scenario: SSP - CORS
+SecurityContext->LoadAppConfig()
+useTLS=True
+useTLSFoundationsAndAppmts=True
+useTLSStructured=True
+clientCertThumbPrint=b8 c7 e4 cc d4 bd cf 2e a2 e3 72 54 e4 74 7d b0 3a d5 7c c2
+sendClientCert=False
+validateServerCert=False
+Force The Server Certificate Callback To Always Be True.
+JwtHelper() Constructor
+HttpSteps() Constructor
+HttpHeaderHelper() Constructor
+JwtSteps() Constructor
+All Header(s) Cleared
+All Parameters Cleared
+HttpContext->LoadAppConfig()
+Removed Key='Ssp-TraceID'
+Added Key='Ssp-TraceID' Value='9ef93218-92fd-4829-a933-6f4efdcd56b2'
+Replaced Key='Ssp-TraceID' With Value='9ef93218-92fd-4829-a933-6f4efdcd56b2'
+Removed Key='Ssp-From'
+Added Key='Ssp-From' Value='200000000985'
+Replaced Key='Ssp-From' With Value='200000000985'
+Removed Key='Ssp-To'
+Added Key='Ssp-To' Value='200000000985'
+Replaced Key='Ssp-To' With Value='200000000985'
+Removed Key='Accept'
+Added Key='Accept' Value='application/fhir+json'
+Replaced Key='Accept' With Value='application/fhir+json'
+Removed Key='Ssp-InteractionId'
+Added Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord-1'
+Replaced Key='Ssp-InteractionId' With Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord-1'
+Force The Server Certificate Callback To Always Be True.
+clientCertThumbPrint=45 0d 78 4a 89 9c 65 ea 09 45 1c b6 7e 91 82 04 62 61 34 cb
+sendClientCert=True
+C:/Temp/2025-05-20T093528\SSP - CORS-1
+GetRequestHeaders Count='5'
+GetRequestParameters Count='0'
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord-1'
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord-1'
+endpointAddress=https://proxy.dev.spine2.ncrs.nhs.uk:443/https://gpconnect-win1.itblab.nic.cfh.nhs.uk/gpconnect-demonstrator/v1/fhir
+Exception writing FhirContext to Output File
+Warning : Exception writing JSONResponse to Output File - May not be A JSON Response
+GetRequestHeaders Count='5'
+Warning : Exception writing JSONRequestBody to Output File - May Not be a JSON RequestBody

@@ -1,0 +1,12 @@
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "patientNHSNumber",
+      "valueIdentifier": {
+        "system": "http://fhir.nhs.net/Id/nhs-number",
+        "value": "9658218873"
+      }
+    }
+  ]
+}

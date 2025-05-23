@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<fhirContext>
+  <request>
+    <fhirRequestParameters>{"resourceType":"Parameters"}</fhirRequestParameters>
+  </request>
+  <response>
+    <fhirResponseResource>{"resourceType":"Bundle","id":"92859892-e69f-40ec-a543-281bdea9e839","meta":{"lastUpdated":"2025-05-20T09:57:55.044+01:00"},"type":"searchset","entry":[{"resource":{"resourceType":"Practitioner","id":"1","meta":{"versionId":"1469444400000","lastUpdated":"2016-07-25T12:00:00+01:00","profile":["https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1"]},"extension":[{"url":"https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-NHSCommunication-1","extension":[{"url":"language","valueCodeableConcept":{"coding":[{"system":"https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-HumanLanguage-1","code":"de","display":"German"}]}}]},{"url":"https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-NHSCommunication-1","extension":[{"url":"language","valueCodeableConcept":{"coding":[{"system":"https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-HumanLanguage-1","code":"en","display":"English"}]}}]}],"identifier":[{"system":"https://fhir.nhs.uk/Id/sds-user-id","value":"G13579135"}],"name":[{"use":"usual","family":"Gilbert","given":["Nichole"],"prefix":["Miss"]}],"gender":"female"}}]}</fhirResponseResource>
+  </response>
+</fhirContext>

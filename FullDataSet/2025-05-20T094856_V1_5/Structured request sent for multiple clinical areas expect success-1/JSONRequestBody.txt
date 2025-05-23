@@ -1,0 +1,48 @@
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "patientNHSNumber",
+      "valueIdentifier": {
+        "system": "https://fhir.nhs.uk/Id/nhs-number",
+        "value": "9690937286"
+      }
+    },
+    {
+      "name": "includeAllergies",
+      "part": [
+        {
+          "name": "includeResolvedAllergies",
+          "valueBoolean": true
+        }
+      ]
+    },
+    {
+      "name": "includeMedication",
+      "part": [
+        {
+          "name": "includePrescriptionIssues",
+          "valueBoolean": true
+        }
+      ]
+    },
+    {
+      "name": "includeConsultations"
+    },
+    {
+      "name": "includeProblems"
+    },
+    {
+      "name": "includeImmunisations"
+    },
+    {
+      "name": "includeUncategorisedData"
+    },
+    {
+      "name": "includeInvestigations"
+    },
+    {
+      "name": "includeReferrals"
+    }
+  ]
+}

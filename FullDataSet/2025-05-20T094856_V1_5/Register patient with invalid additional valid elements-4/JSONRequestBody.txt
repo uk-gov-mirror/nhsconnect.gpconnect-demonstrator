@@ -1,0 +1,58 @@
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "registerPatient",
+      "resource": {
+        "resourceType": "Patient",
+        "meta": {
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1"
+          ]
+        },
+        "identifier": [
+          {
+            "extension": [
+              {
+                "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-NHSNumberVerificationStatus-1",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "system": "https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-NHSNumberVerificationStatus-1",
+                      "code": "01",
+                      "display": "Number present and verified"
+                    }
+                  ]
+                }
+              }
+            ],
+            "system": "https://fhir.nhs.uk/Id/nhs-number",
+            "value": "9651260203"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "family": "NAPIER",
+            "given": [
+              "Melvin"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1988-11-13",
+        "contact": [
+          {
+            "name": {
+              "use": "anonymous",
+              "family": "TestFamily",
+              "given": [
+                "TestGiven"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

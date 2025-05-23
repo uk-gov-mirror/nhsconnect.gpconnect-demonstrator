@@ -1,0 +1,25 @@
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "patientNHSNumber",
+      "valueIdentifier": {
+        "system": "https://fhir.nhs.uk/Id/nhs-number",
+        "value": "9658218865"
+      }
+    },
+    {
+      "name": "includeMedication",
+      "part": [
+        {
+          "name": "includePrescriptionIssues",
+          "valueBoolean": false
+        },
+        {
+          "name": "medicationSearchFromDate",
+          "valueDate": "2015-10-23T11:08:32"
+        }
+      ]
+    }
+  ]
+}

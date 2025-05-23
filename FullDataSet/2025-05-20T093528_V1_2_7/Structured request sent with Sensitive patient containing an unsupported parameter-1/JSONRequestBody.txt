@@ -1,0 +1,65 @@
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "patientNHSNumber",
+      "valueIdentifier": {
+        "system": "https://fhir.nhs.uk/Id/nhs-number",
+        "value": "9658220142"
+      }
+    },
+    {
+      "name": "includeAllergies",
+      "part": [
+        {
+          "name": "includeResolvedAllergies",
+          "valueBoolean": true
+        }
+      ]
+    },
+    {
+      "name": "includeImmunisations"
+    },
+    {
+      "name": "includeUncategorisedData",
+      "part": [
+        {
+          "name": "uncategorisedDataSearchPeriod",
+          "valuePeriod": {
+            "start": "2025-05-10",
+            "end": "2025-05-25"
+          }
+        }
+      ]
+    },
+    {
+      "name": "includeConsultations",
+      "part": [
+        {
+          "name": "consultationSearchPeriod",
+          "valuePeriod": {
+            "start": "2025-05-10",
+            "end": "2025-05-25"
+          }
+        },
+        {
+          "name": "includeNumberOfMostRecent",
+          "valueString": "3"
+        }
+      ]
+    },
+    {
+      "name": "includeProblems",
+      "part": [
+        {
+          "name": "filterStatus",
+          "valueString": "active"
+        },
+        {
+          "name": "filterSignificance",
+          "valueString": "major"
+        }
+      ]
+    }
+  ]
+}
