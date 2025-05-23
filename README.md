@@ -4,7 +4,11 @@ A project to replace the GPC (GP Connect) demonstrator with a Postman collection
 
 ## Project Overview
 
-This project converts GP Connect acceptance test data into a Postman collection that can be used as a mock server. The mock server returns static responses based on the original test data, allowing developers to test their applications against the GP Connect API without needing the actual GPC demonstrator.
+This project converts GP Connect acceptance test data into a Postman 
+collection that can be used as a mock server. The mock server returns 
+static responses based on the original test data, allowing developers 
+to test their applications against the GP Connect API without needing 
+the actual GPC demonstrator.
 
 ## Features
 
@@ -13,6 +17,9 @@ This project converts GP Connect acceptance test data into a Postman collection 
 - Categorizes tests as passed, failed
 - Includes example responses with the original request information
 - Supports JWT tokens and claims required
+
+If you just want to run mock server you need Postman and you can skip 
+to the [Running as a Mock Server](#running-as-a-mock-server) section
 
 ## Prerequisites
 
@@ -23,7 +30,7 @@ This project converts GP Connect acceptance test data into a Postman collection 
 
 1. Clone this repository:
    ```
-   git clone <repository-url>
+   git clone -b postman-replacement https://github.com/nhsconnect/gpconnect-demonstrator.git
    ```
 
 2. Install dependencies:
