@@ -18,14 +18,20 @@ GPC Ping is a lightweight ASP.NET Core service designed to validate JWT tokens a
 
 ### Running Locally
 1. Clone the repository
+```bash
+git clone -b gpc-ping https://github.com/nhsconnect/gpconnect-demonstrator.git
+```
 2. Navigate to the project directory
+```bash
+ cd .\gpconnect-demonstrator\gpc-ping
+```bash
 3. Run the application:
    ```
    dotnet run
    ```
 4. The service will be available at:
-   - HTTP: `http://localhost:5000/gpc-ping`
-   - HTTPS: `https://localhost:5001/gpc-ping`
+   - HTTP: `http://localhost:5005/gpc-ping`
+   - HTTPS: `https://localhost:7187/gpc-ping`
 
 ### Docker Deployment
 1. Build the Docker image:
