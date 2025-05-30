@@ -1,0 +1,7 @@
+﻿services:
+  gpc-ping:
+    image: gpc-ping
+    build:
+      context: .
+      dockerfile: gpc-ping/Dockerfile
+

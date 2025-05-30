@@ -1,0 +1,6 @@
+@gpc_ping_HostAddress = http://localhost:5005
+
+GET {{gpc_ping_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
