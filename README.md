@@ -33,11 +33,11 @@ to the [Running as a Mock Server](#running-as-a-mock-server) section
    git clone -b postman-replacement https://github.com/nhsconnect/gpconnect-demonstrator.git
    ```
 
-2. Install dependencies:
-   ```
-   npm install
-   ```
+2. Decide which version of demonstrator you're testing against
+3. Locate the postman collection for this version in the folder tree
+      a. `FullDataSet` > `Version` > `_output` > `GpcAcceptTestEndpoints.json`
 
+<<<<<<< Updated upstream
 ## Usage
 
 ### Processing GPC Acceptance Test Data
@@ -66,6 +66,19 @@ npm run cc [testDataFilePath]
 ## Running as a Mock Server
 
 To use the generated collection as a mock server:
+=======
+4. Goto Postman and select `Collections` from the side menu   
+   
+<img src="./readme_appendix/hint_collections.png" alt="drawing" width="200"/>
+
+5. Drag the file int the open space inside collections, or click the `import` button and select the file location / drag the file into the popup.
+
+You can now view all the pre-arranged endpoints, and their canned responses. 
+
+## Run The Mock Server
+
+In order to hit these mocked endpoints from your application, you need to run a mock server within Postman.
+>>>>>>> Stashed changes
 
 1. Import the generated collection file (`GpcAcceptTestEndpoints.json`) into Postman
 2. In Postman, click on the collection and select "Mock" from the right sidebar
@@ -103,6 +116,26 @@ The mock server will use these updated responses when matching requests are made
   - Various test scenario directories with HttpContext.xml files
   - `output/`: Generated JSON files and Postman collections
 
+# Developer Corner
+
+If you want to generate some example data / test a smaller set of scenarios, you can either use the `./ExampleData` folder which has a subset of test data to use, or utilise your own test data. 
+
+**_Note:_** You may also want to do this if new acceptance tests are created, and the responses need adding to the assurance process.
+
+To build test data (used by the Postman collections) you can use the following commands:
+
+```bash
+# build from default Example Data
+npm run pd
+
+# build from custom dataset
+npm run pd <location>
+```
+
+On Successfully creating the response example data, run the following command (this will create the postman collection)
+```bash
+npm run cc
+```
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
