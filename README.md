@@ -37,7 +37,6 @@ to the [Running as a Mock Server](#running-as-a-mock-server) section
 3. Locate the postman collection for this version in the folder tree
       a. `FullDataSet` > `Version` > `_output` > `GpcAcceptTestEndpoints.json`
 
-<<<<<<< Updated upstream
 ## Usage
 
 ### Processing GPC Acceptance Test Data
@@ -66,19 +65,6 @@ npm run cc [testDataFilePath]
 ## Running as a Mock Server
 
 To use the generated collection as a mock server:
-=======
-4. Goto Postman and select `Collections` from the side menu   
-   
-<img src="./readme_appendix/hint_collections.png" alt="drawing" width="200"/>
-
-5. Drag the file int the open space inside collections, or click the `import` button and select the file location / drag the file into the popup.
-
-You can now view all the pre-arranged endpoints, and their canned responses. 
-
-## Run The Mock Server
-
-In order to hit these mocked endpoints from your application, you need to run a mock server within Postman.
->>>>>>> Stashed changes
 
 1. Import the generated collection file (`GpcAcceptTestEndpoints.json`) into Postman
 2. In Postman, click on the collection and select "Mock" from the right sidebar
