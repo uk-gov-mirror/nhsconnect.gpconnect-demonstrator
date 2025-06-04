@@ -1,6 +1,6 @@
 using System.IdentityModel.Tokens.Jwt;
 
-namespace GpcPing.Extensions;
+namespace gpc_ping.Extensions;
 
 /// <summary>
 /// Offers a set of static extension methods for performing operations
@@ -19,17 +19,14 @@ public static class JwtExtensions
     /// <param name="logger">An instance of <see cref="ILogger"/> used to log token details and issues.</param>
     /// <param name="requestMethod">The HTTP request method associated with the token validation context.</param>
     /// <returns>An array of strings representing any issues found during validation, or an empty array if no issues are found.</returns>
-    public static string[] ValidateToken(this JwtSecurityToken jwtToken, ILogger<Program> logger, string requestMethod)
+    public static string[] ValidateToken(this JwtSecurityToken jwtToken, string requestMethod, ILogger<Program> logger)
     {
-        // Helper method to validate requesting_device claim structure in JWT
-        // Log token information with colored output via NLog
         logger.LogInformation("JWT: {jwtToken}", jwtToken);
         logger.LogInformation("JWT Token Header: {Header}", jwtToken.Header);
         logger.LogInformation("JWT Token Issuer: {Issuer}", jwtToken.Issuer);
         logger.LogInformation("JWT Token Valid From: {ValidFrom}", jwtToken.ValidFrom);
         logger.LogInformation("JWT Token Valid To: {ValidTo}", jwtToken.ValidTo);
 
-        // Log claims
         logger.LogInformation("JWT Token Claims:");
         foreach (var claim in jwtToken.Claims)
         {
@@ -40,15 +37,13 @@ public static class JwtExtensions
 
         var issues = new List<string>();
 
-        // Validate token expiration
+
         if (jwtToken.ValidTo < DateTime.UtcNow)
             issues.Add("Token has expired");
 
-        // Validate token is not less than 6 minutes and more than 4 minutes in future.
-        if (jwtToken.ValidFrom < DateTime.UtcNow.AddMinutes(6) || jwtToken.ValidFrom > DateTime.UtcNow.AddMinutes(4))
-            issues.Add("Token should be 5 minutes in the future");
 
-        // Validate mandatory claims
+        ValidateActiveToken(jwtToken, issues);
+
         ValidateMandatoryClaims(jwtToken, issues);
 
         if (ValidateRequestingClaims(jwtToken, issues, out var strings))
@@ -60,13 +55,11 @@ public static class JwtExtensions
         // but it is scope in the spec and requested_scope in the demonstrator app.
         ValidateRequestedScopeClaims(jwtToken, requestMethod, issues);
 
-        // Validate requesting_device claim
-        ValidateRequestingDevice(jwtToken, issues);
 
-        // Validate requesting_practitioner claim
+        ValidateRequestingDevice(jwtToken, issues);
         ValidateRequestingPractitioner(jwtToken, issues);
 
-        return issues.ToArray();
+        return [.. issues];
     }
 
     /// <summary>
@@ -79,25 +72,25 @@ public static class JwtExtensions
         if (string.IsNullOrEmpty(jwtToken.Issuer))
             issues.Add("Missing mandatory claim: 'iss' (Issuer)");
 
+        if (jwtToken.ValidFrom != default)
+            issues.Add("iat is missing / default value");
+
         if (jwtToken.Claims.All(c => c.Type != "sub"))
             issues.Add("Missing mandatory claim: 'sub' (Subject)");
 
         if (string.IsNullOrEmpty(jwtToken.Audiences.FirstOrDefault()))
             issues.Add("Missing mandatory claim: 'aud' (Audience)");
 
-        if (jwtToken.ValidTo == default)
-            issues.Add("Missing mandatory claim: 'exp' (Expiration Time)");
-
-        if (jwtToken.ValidFrom == default)
-            issues.Add("Missing mandatory claim: 'iat' (Issued At)");
 
         if (jwtToken.Claims.All(c => c.Type != "reason_for_request"))
             issues.Add("Missing mandatory claim: 'reason_for_request'");
         else
         {
             var reasonForRequest = jwtToken.Claims.FirstOrDefault(c => c.Type == "reason_for_request")?.Value;
-            if (reasonForRequest != "directcare" && reasonForRequest != "secondaryuses" && reasonForRequest != "patientaccess")
-                issues.Add("Invalid 'reason_for_request' value. Must be one of: directcare, secondaryuses, patientaccess");
+            if (reasonForRequest != "directcare" && reasonForRequest != "secondaryuses" &&
+                reasonForRequest != "patientaccess")
+                issues.Add(
+                    "Invalid 'reason_for_request' value. Must be one of: directcare, secondaryuses, patientaccess");
         }
 
         if (jwtToken.Claims.All(c => c.Type != "scope")
@@ -130,7 +123,7 @@ public static class JwtExtensions
         }
 
         // commented out as this is for care connect not GP Connect requirements. (needs double checking)
-        
+
         // // Get potential matching claims
         // var requestingUser = jwtToken.Claims.FirstOrDefault(c => c.Type == "requesting_user")?.Value;
         // var requestingPatient = jwtToken.Claims.FirstOrDefault(c => c.Type == "requesting_patient")?.Value;
@@ -160,7 +153,8 @@ public static class JwtExtensions
         //     issues.Add("The 'requesting_system' claim must start with 'https://fhir.nhs.uk/Id/ods-organization-code'");
 
         // Validate identifiers have the correct format (URI|value)
-        foreach (var identifierType in new[] { "sub", "requesting_system", "requesting_organization", "requesting_user", "requesting_patient" })
+        foreach (var identifierType in new[]
+                     { "sub", "requesting_system", "requesting_organization", "requesting_user", "requesting_patient" })
         {
             var claim = jwtToken.Claims.FirstOrDefault(c => c.Type == identifierType)?.Value;
             if (!string.IsNullOrEmpty(claim) && !claim.Contains("|"))
@@ -177,7 +171,8 @@ public static class JwtExtensions
     /// <param name="jwtToken">The JWT token containing the claims to be validated.</param>
     /// <param name="requestMethod">The HTTP request method (e.g., GET, POST) being validated against the claims within the token.</param>
     /// <param name="issues">A list of string issues where any claim validation errors or mismatches will be recorded.</param>
-    private static void ValidateRequestedScopeClaims(JwtSecurityToken jwtToken, string requestMethod, List<string> issues)
+    private static void ValidateRequestedScopeClaims(JwtSecurityToken jwtToken, string requestMethod,
+        List<string> issues)
     {
         var requestingScope = jwtToken.Claims.FirstOrDefault(c => c.Type == "requested_scope")?.Value;
         if (WriteMethods.Contains(requestMethod))
@@ -216,9 +211,11 @@ public static class JwtExtensions
             var root = doc.RootElement;
 
             // Check resource type
-            if (!root.TryGetProperty("resourceType", out var resourceType) || resourceType.GetString() != "Practitioner")
+            if (!root.TryGetProperty("resourceType", out var resourceType) ||
+                resourceType.GetString() != "Practitioner")
             {
-                issues.Add("Invalid 'requesting_practitioner' claim: Missing or invalid 'resourceType' - must be 'Practitioner'");
+                issues.Add(
+                    "Invalid 'requesting_practitioner' claim: Missing or invalid 'resourceType' - must be 'Practitioner'");
             }
 
             // Check ID field - required and must match the 'sub' claim
@@ -237,7 +234,8 @@ public static class JwtExtensions
             }
 
             // Check identifier array
-            if (!root.TryGetProperty("identifier", out var identifierArr) || !identifierArr.ValueKind.HasFlag(System.Text.Json.JsonValueKind.Array))
+            if (!root.TryGetProperty("identifier", out var identifierArr) ||
+                !identifierArr.ValueKind.HasFlag(System.Text.Json.JsonValueKind.Array))
             {
                 issues.Add("Invalid 'requesting_practitioner' claim: Missing or invalid 'identifier' array");
             }
@@ -274,12 +272,14 @@ public static class JwtExtensions
                 // Validate required identifiers
                 if (!hasSdsUserId)
                 {
-                    issues.Add("Invalid 'requesting_practitioner' claim: Missing identifier with system 'https://fhir.nhs.uk/Id/sds-user-id'");
+                    issues.Add(
+                        "Invalid 'requesting_practitioner' claim: Missing identifier with system 'https://fhir.nhs.uk/Id/sds-user-id'");
                 }
             }
 
             // Check name field
-            if (!root.TryGetProperty("name", out var nameArr) || !nameArr.ValueKind.HasFlag(System.Text.Json.JsonValueKind.Array))
+            if (!root.TryGetProperty("name", out var nameArr) ||
+                !nameArr.ValueKind.HasFlag(System.Text.Json.JsonValueKind.Array))
             {
                 issues.Add("Invalid 'requesting_practitioner' claim: Missing or invalid 'name' array");
             }
@@ -321,7 +321,8 @@ public static class JwtExtensions
 
                 if (!hasValidName)
                 {
-                    issues.Add("Invalid 'requesting_practitioner' claim: 'name' must contain at least one entry with non-empty 'family' and 'given' elements");
+                    issues.Add(
+                        "Invalid 'requesting_practitioner' claim: 'name' must contain at least one entry with non-empty 'family' and 'given' elements");
                 }
             }
         }
@@ -365,7 +366,8 @@ public static class JwtExtensions
             }
 
             // Check identifier
-            if (!root.TryGetProperty("identifier", out var identifierArr) || !identifierArr.ValueKind.HasFlag(System.Text.Json.JsonValueKind.Array))
+            if (!root.TryGetProperty("identifier", out var identifierArr) ||
+                !identifierArr.ValueKind.HasFlag(System.Text.Json.JsonValueKind.Array))
             {
                 issues.Add("Invalid 'requesting_device' claim: Missing or invalid 'identifier' array");
             }
@@ -386,7 +388,8 @@ public static class JwtExtensions
 
                 if (!hasValidIdentifier)
                 {
-                    issues.Add("Invalid 'requesting_device' claim: Identifier must contain at least one entry with non-empty 'system' and 'value' elements");
+                    issues.Add(
+                        "Invalid 'requesting_device' claim: Identifier must contain at least one entry with non-empty 'system' and 'value' elements");
                 }
             }
 
@@ -410,5 +413,24 @@ public static class JwtExtensions
         {
             issues.Add($"Error validating 'requesting_device' claim: {ex.Message}");
         }
+    }
+
+    private static void ValidateActiveToken(JwtSecurityToken jwtToken, List<string> issues)
+    {
+        if (jwtToken.ValidTo == default)
+            issues.Add("Missing mandatory claim: 'exp' (Expiration Time)");
+
+        if (jwtToken.ValidTo != default && jwtToken.ValidTo > DateTime.Now.AddMinutes(5))
+        {
+            issues.Add("exp claim is too far in the future");
+        }
+
+        if (jwtToken.ValidTo != default && jwtToken.ValidTo < DateTime.Now.AddMinutes(-5))
+        {
+            issues.Add("exp has expired");
+        }
+
+        if (jwtToken.ValidFrom == default)
+            issues.Add("Missing mandatory claim: 'iat' (Issued At)");
     }
 }

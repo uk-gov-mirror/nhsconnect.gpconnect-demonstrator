@@ -1,8 +1,6 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
-
-using GpcPing.Extensions;
-
+using gpc_ping.Extensions;
 using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.Extensions.Logging;
@@ -95,8 +93,8 @@ public partial class Program
                     {
                         var jwtToken = handler.ReadJwtToken(token);
 
-                        var issues = jwtToken.ValidateToken(logger, context.Request.Method);
-                        
+                        var issues = jwtToken.ValidateToken(context.Request.Method, logger);
+
                         return Results.Ok(new
                         {
                             message = $"Ping successful, JWT token decoded and logged",
@@ -136,6 +134,7 @@ public partial class Program
             {
                 Console.Error.WriteLine($"Application terminated unexpectedly: {ex.Message}");
             }
+
             throw;
         }
         finally
@@ -145,4 +144,3 @@ public partial class Program
         }
     }
 }
-
