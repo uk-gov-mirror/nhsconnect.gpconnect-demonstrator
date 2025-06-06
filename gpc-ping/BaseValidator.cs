@@ -70,15 +70,13 @@ public abstract class BaseValidator(JwtSecurityToken token)
             : (true, "Subject is valid.");
     }
 
-    public (bool IsValid, string Message) ValidateLifetime()
+    public (bool IsValid, string[] Messages) ValidateLifetime()
     {
-        
-        return (true, "Lifetime is valid");
+        return (true, ["Lifetime is valid"]);
     }
 
     public abstract (bool IsValid, string Message) ValidateAudience();
-    public abstract (bool, string) ValidateExpiration();
-    public abstract (bool, string) ValidateIssuedAt();
+
     public abstract (bool, string) ValidateReasonForRequest();
     public abstract (bool, string) ValidateRequestedRecord();
     public abstract (bool, string) ValidateRequestedScope();

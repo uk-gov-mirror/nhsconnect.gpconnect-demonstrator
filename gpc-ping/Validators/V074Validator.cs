@@ -20,11 +20,6 @@ public class V074Validator(JwtSecurityToken token) : BaseValidator(token)
             : (false, "Audience is not valid - see GP Connect specification");
     }
 
-    public override (bool, string) ValidateExpiration()
-    {
-        throw new NotImplementedException();
-    }
-
     public override (bool, string) ValidateIssuedAt()
     {
         throw new NotImplementedException();

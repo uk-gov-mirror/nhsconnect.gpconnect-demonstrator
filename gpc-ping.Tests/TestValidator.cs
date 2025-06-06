@@ -1,12 +1,8 @@
 using System.IdentityModel.Tokens.Jwt;
 using gpc_ping;
 
-public class TestValidator : BaseValidator
+internal class TestValidator(JwtSecurityToken token) : BaseValidator(token)
 {
-    public TestValidator(JwtSecurityToken token) : base(token)
-    {
-    }
-
     public override (bool, string) ValidateAudience()
     {
         throw new NotImplementedException();
