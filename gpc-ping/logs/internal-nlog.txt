@@ -1,0 +1,30 @@
+2025-06-05 09:24:46.4317 Info Loading assembly name: NLog.Web.AspNetCore
+2025-06-05 09:24:46.4640 Info NLog.Web.AspNetCore, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.8.1035. Product version: 5.3.8+0c5db2371c65c25905734b0335fd0c593ee61ad6. GlobalAssemblyCache: False
+2025-06-05 09:24:46.4938 Info Registered target NLog.Targets.ColoredConsoleTarget(Name=coloredConsole)
+2025-06-05 09:24:46.4999 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2025-06-05 09:24:46.4999 Info Registered target NLog.Targets.FileTarget(Name=jwtlogs)
+2025-06-05 09:24:46.5050 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.8.2366. Product version: 5.2.8+f586f1341c46fa38aaaff4c641e7f0fa7e813943. GlobalAssemblyCache: False
+2025-06-05 09:24:46.5115 Info Validating config: TargetNames=allfile, coloredConsole, jwtlogs, ConfigItems=95, FilePath=/app/bin/Debug/net9.0/nlog.config
+2025-06-05 09:24:46.5173 Info Configuration initialized.
+2025-06-05 09:24:46.6487 Info Validating config: TargetNames=allfile, coloredConsole, jwtlogs, ConfigItems=95, FilePath=/app/bin/Debug/net9.0/nlog.config
+2025-06-05 09:24:46.6487 Info Validating config: TargetNames=allfile, coloredConsole, jwtlogs, ConfigItems=95, FilePath=/app/bin/Debug/net9.0/nlog.config
+2025-06-06 14:53:28.3852 Info Configuration file change detected! Reloading in 1000ms...
+2025-06-06 14:53:28.3981 Info Configuration file change detected! Reloading in 1000ms...
+2025-06-06 14:53:29.4059 Info Reloading configuration...
+2025-06-06 14:53:29.4249 Info Loading NLog config from XML file: /app/bin/Debug/net9.0/nlog.config
+2025-06-06 14:53:29.4482 Info Registered target NLog.Targets.ColoredConsoleTarget(Name=coloredConsole)
+2025-06-06 14:53:29.4497 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2025-06-06 14:53:29.4497 Info Registered target NLog.Targets.FileTarget(Name=jwtlogs)
+2025-06-06 14:53:29.4559 Info Closing old configuration.
+2025-06-06 14:53:29.4738 Info Validating config: TargetNames=allfile, coloredConsole, jwtlogs, ConfigItems=95, FilePath=/app/bin/Debug/net9.0/nlog.config
+2025-06-06 14:53:29.4768 Info Configuration initialized.
+2025-06-06 16:11:16.2835 Info Loading assembly name: NLog.Web.AspNetCore
+2025-06-06 16:11:16.3724 Info NLog.Web.AspNetCore, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.8.1035. Product version: 5.3.8+0c5db2371c65c25905734b0335fd0c593ee61ad6. GlobalAssemblyCache: False
+2025-06-06 16:11:16.4495 Info Registered target NLog.Targets.ColoredConsoleTarget(Name=coloredConsole)
+2025-06-06 16:11:16.4587 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2025-06-06 16:11:16.4619 Info Registered target NLog.Targets.FileTarget(Name=jwtlogs)
+2025-06-06 16:11:16.5039 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.8.2366. Product version: 5.2.8+f586f1341c46fa38aaaff4c641e7f0fa7e813943. GlobalAssemblyCache: False
+2025-06-06 16:11:16.5414 Info Validating config: TargetNames=allfile, coloredConsole, jwtlogs, ConfigItems=95, FilePath=/app/bin/Debug/net9.0/nlog.config
+2025-06-06 16:11:16.5765 Info Configuration initialized.
+2025-06-06 16:11:16.7921 Info Validating config: TargetNames=allfile, coloredConsole, jwtlogs, ConfigItems=95, FilePath=/app/bin/Debug/net9.0/nlog.config
+2025-06-06 16:11:16.7934 Info Validating config: TargetNames=allfile, coloredConsole, jwtlogs, ConfigItems=95, FilePath=/app/bin/Debug/net9.0/nlog.config
