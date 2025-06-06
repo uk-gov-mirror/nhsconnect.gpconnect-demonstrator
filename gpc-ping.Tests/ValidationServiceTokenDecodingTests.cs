@@ -9,7 +9,7 @@ public class ValidationServiceTokenDecodingTests
     /*
      Valid unsigned token
      Null/empty input
-     Signed token (non-empty 3rd seg)
+     Signed token
      Too few/too many segments
      Base64 decoding errors
      Malformed JSON in payload
