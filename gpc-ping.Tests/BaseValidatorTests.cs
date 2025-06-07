@@ -1,11 +1,10 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text.Json;
-using gpc_ping;
-using Microsoft.IdentityModel.Tokens;
 using Shouldly;
+using gpc_ping;
 
-public class ValidatorTests
+public class BaseValidatorTests
 {
     #region Validate Header
 
@@ -189,6 +188,151 @@ public class ValidatorTests
         // Assert
         result.Message.ShouldBe("Subject is valid.");
         result.IsValid.ShouldBeTrue();
+    }
+
+    #endregion
+
+    #region ValidateLifetime
+
+    private JwtSecurityToken CreateTokenWithClaims(Dictionary<string, string> claimsDict)
+    {
+        var claims = claimsDict.Select(kvp => new Claim(kvp.Key, kvp.Value)).ToList();
+
+        return new JwtSecurityToken(claims: claims);
+    }
+
+    private TestValidator CreateValidatorWithToken(Dictionary<string, string> claims)
+    {
+        var token = CreateTokenWithClaims(claims);
+        return new TestValidator(token);
+    }
+
+    [Fact]
+    public void Should_ReturnFalse_When_IatClaimMissing()
+    {
+        var validator = CreateValidatorWithToken(new()
+        {
+            { "exp", "1717776000" }
+        });
+
+        var result = validator.ValidateLifetime();
+
+        result.IsValid.ShouldBeFalse();
+        result.Messages.ShouldContain("Missing 'iat' claim.");
+    }
+
+    [Fact]
+    public void Should_ReturnFalse_When_ExpClaimMissing()
+    {
+        var validator = CreateValidatorWithToken(new()
+        {
+            { "iat", "1717775700" }
+        });
+
+        var result = validator.ValidateLifetime();
+
+        result.IsValid.ShouldBeFalse();
+        result.Messages.ShouldContain("Missing 'exp' claim.");
+    }
+
+    [Fact]
+    public void Should_ReturnFalse_When_IatNotValidUnixTime()
+    {
+        var validator = CreateValidatorWithToken(new()
+        {
+            { "iat", "not-a-number" },
+            { "exp", "1717776000" }
+        });
+
+        var result = validator.ValidateLifetime();
+
+        result.IsValid.ShouldBeFalse();
+        result.Messages.ShouldContain("'iat' claim is not a valid Unix time.");
+    }
+
+    [Fact]
+    public void Should_ReturnFalse_When_ExpNotValidUnixTime()
+    {
+        var validator = CreateValidatorWithToken(new()
+        {
+            { "iat", "1717775700" },
+            { "exp", "not-a-number" }
+        });
+
+        var result = validator.ValidateLifetime();
+
+        result.IsValid.ShouldBeFalse();
+        result.Messages.ShouldContain("'exp' claim is not a valid Unix time.");
+    }
+
+    [Fact]
+    public void Should_ReturnTrue_When_LifetimeIsExactlyFiveMinutes()
+    {
+        var now = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
+        var fiveMinutesLater = now + 300;
+
+        var validator = CreateValidatorWithToken(new()
+        {
+            { "iat", now.ToString() },
+            { "exp", fiveMinutesLater.ToString() }
+        });
+
+        var result = validator.ValidateLifetime();
+
+        result.IsValid.ShouldBeTrue();
+        result.Messages.ShouldContain("Lifetime is valid");
+    }
+
+    [Fact]
+    public void Should_ReturnFalse_When_LifetimeIsTooShort()
+    {
+        var now = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
+        var fourMinutesLater = now + 240;
+
+        var validator = CreateValidatorWithToken(new()
+        {
+            { "iat", now.ToString() },
+            { "exp", fourMinutesLater.ToString() }
+        });
+
+        var result = validator.ValidateLifetime();
+
+        result.IsValid.ShouldBeFalse();
+        result.Messages.ShouldContain("Lifetime of claim is not valid");
+    }
+
+    [Fact]
+    public void Should_ReturnFalse_When_LifetimeIsTooLong()
+    {
+        var now = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
+        var sixMinutesLater = now + 360;
+
+        var validator = CreateValidatorWithToken(new()
+        {
+            { "iat", now.ToString() },
+            { "exp", sixMinutesLater.ToString() }
+        });
+
+        var result = validator.ValidateLifetime();
+
+        result.IsValid.ShouldBeFalse();
+        result.Messages.ShouldContain("Lifetime of claim is not valid");
+    }
+
+    [Fact]
+    public void Should_ReturnAllErrors_When_ClaimsAreMissingOrInvalid()
+    {
+        var validator = CreateValidatorWithToken(new()
+        {
+            { "iat", "not-a-number" },
+            { "exp", "" }
+        });
+
+        var result = validator.ValidateLifetime();
+
+        result.IsValid.ShouldBeFalse();
+        result.Messages.ShouldContain("'iat' claim is not a valid Unix time.");
+        result.Messages.ShouldContain("Missing 'exp' claim.");
     }
 
     #endregion

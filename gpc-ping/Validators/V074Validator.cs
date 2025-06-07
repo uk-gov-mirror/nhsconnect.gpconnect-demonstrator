@@ -20,14 +20,17 @@ public class V074Validator(JwtSecurityToken token) : BaseValidator(token)
             : (false, "Audience is not valid - see GP Connect specification");
     }
 
-    public override (bool, string) ValidateIssuedAt()
+    public override (bool IsValid, string Message) ValidateReasonForRequest()
     {
-        throw new NotImplementedException();
-    }
+        var reason = token.Claims.FirstOrDefault(x => x.Type == "reason_for_request")?.Value;
 
-    public override (bool, string) ValidateReasonForRequest()
-    {
-        throw new NotImplementedException();
+        if (string.IsNullOrWhiteSpace(reason))
+            return (false, "Missing 'reason_for_request' claim");
+
+        // GP Connect only supports usage for direct care on this version of spec
+        return reason == "directcare"
+            ? (true, "Reason for request is valid.")
+            : (false, $"Invalid reason for request: '{reason}'");
     }
 
     public override (bool, string) ValidateRequestedRecord()

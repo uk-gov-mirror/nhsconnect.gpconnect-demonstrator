@@ -72,12 +72,51 @@ public abstract class BaseValidator(JwtSecurityToken token)
 
     public (bool IsValid, string[] Messages) ValidateLifetime()
     {
-        return (true, ["Lifetime is valid"]);
+        var messages = new List<string>();
+
+        var issuedAtUnix = GetUnixTimeClaim("iat", "Missing 'iat' claim.", "'iat' claim is not a valid Unix time.");
+        var expiresAtUnix = GetUnixTimeClaim("exp", "Missing 'exp' claim.", "'exp' claim is not a valid Unix time.");
+
+        if (messages.Count > 0)
+            return (false, messages.ToArray());
+
+        var issuedAt = DateTimeOffset.FromUnixTimeSeconds(issuedAtUnix).UtcDateTime;
+        var expiresAt = DateTimeOffset.FromUnixTimeSeconds(expiresAtUnix).UtcDateTime;
+
+        var timeSpan = expiresAt - issuedAt;
+
+        const double toleranceInMinutes = 0.001;
+        const int expectedLifetimeMinutes = 5;
+
+        if (Math.Abs(timeSpan.TotalMinutes - expectedLifetimeMinutes) > toleranceInMinutes)
+            messages.Add("Lifetime of claim is not valid");
+
+        return messages.Count == 0
+            ? (true, ["Lifetime is valid"])
+            : (false, messages.ToArray());
+
+        // Local helper method
+        long GetUnixTimeClaim(string claimType, string missingMessage, string invalidMessage)
+        {
+            var value = token.Claims.SingleOrDefault(x => x.Type == claimType)?.Value;
+
+            if (string.IsNullOrWhiteSpace(value))
+            {
+                messages.Add(missingMessage);
+                return 0;
+            }
+
+            if (long.TryParse(value, out var unixTime)) return unixTime;
+
+            messages.Add(invalidMessage);
+            return 0;
+        }
     }
+
 
     public abstract (bool IsValid, string Message) ValidateAudience();
 
-    public abstract (bool, string) ValidateReasonForRequest();
+    public abstract (bool IsValid, string Message) ValidateReasonForRequest();
     public abstract (bool, string) ValidateRequestedRecord();
     public abstract (bool, string) ValidateRequestedScope();
     public abstract (bool, string) ValidateRequestingDevice();

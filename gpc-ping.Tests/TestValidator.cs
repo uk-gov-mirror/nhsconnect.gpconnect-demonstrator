@@ -3,48 +3,12 @@ using gpc_ping;
 
 internal class TestValidator(JwtSecurityToken token) : BaseValidator(token)
 {
-    public override (bool, string) ValidateAudience()
-    {
-        throw new NotImplementedException();
-    }
-
-    public override (bool, string) ValidateExpiration()
-    {
-        throw new NotImplementedException();
-    }
-
-    public override (bool, string) ValidateIssuedAt()
-    {
-        throw new NotImplementedException();
-    }
-
-    public override (bool, string) ValidateReasonForRequest()
-    {
-        throw new NotImplementedException();
-    }
-
-    public override (bool, string) ValidateRequestedRecord()
-    {
-        throw new NotImplementedException();
-    }
-
-    public override (bool, string) ValidateRequestedScope()
-    {
-        throw new NotImplementedException();
-    }
-
-    public override (bool, string) ValidateRequestingDevice()
-    {
-        throw new NotImplementedException();
-    }
-
-    public override (bool, string) ValidateRequestingOrganization()
-    {
-        throw new NotImplementedException();
-    }
-
-    public override (bool, string) ValidateRequestingPractitioner()
-    {
-        throw new NotImplementedException();
-    }
+    // Stubbed Concrete Implementations to isolate testing of base concrete methods
+    public override (bool IsValid, string Message) ValidateAudience() => (true, "stub");
+    public override (bool IsValid, string Message) ValidateReasonForRequest() => (true, "stub");
+    public override (bool, string) ValidateRequestedRecord() => (true, "stub");
+    public override (bool, string) ValidateRequestedScope() => (true, "stub");
+    public override (bool, string) ValidateRequestingDevice() => (true, "stub");
+    public override (bool, string) ValidateRequestingOrganization() => (true, "stub");
+    public override (bool, string) ValidateRequestingPractitioner() => (true, "stub");
 }
