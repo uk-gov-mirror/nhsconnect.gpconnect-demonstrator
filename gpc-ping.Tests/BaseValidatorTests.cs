@@ -192,6 +192,23 @@ public class BaseValidatorTests
         result.IsValid.ShouldBeTrue();
     }
 
+    [Fact]
+    public void ValidateSubject_ShouldReturnFalse_When_RequestingPractitionerIsMissing()
+    {
+        // Arrange
+        var validator = TestHelpers.CreateValidatorWithToken<TestValidator>(new Dictionary<string, string>
+        {
+            { "sub", "2119" }
+        });
+
+        // Arrange
+        var result = validator.ValidateSubject();
+
+        // Act
+        result.IsValid.ShouldBeFalse();
+        result.Message.ShouldBe("Missing 'requesting_practitioner' claim.");
+    }
+
     #endregion
 
     #region ValidateLifetime
@@ -418,7 +435,8 @@ public class BaseValidatorTests
     [Theory]
     [InlineData(new[] { "patient/*.read", "organization/*.read" }, "patient/.*read")]
     [InlineData(new[] { "patient/*.read", "organization/*.read" }, "random_scope")]
-    public void ShouldReturnFalse_When_RequestedScopeIsNotAccepted(string[] acceptedScopes, string requestScopeClaim)
+    public void ShouldReturnFalse_When_RequestedScopeIsNotAccepted(string[] acceptedScopes,
+        string requestScopeClaim)
     {
         // Arrange
         var validator = CreateValidatorWithToken<TestValidator>(
@@ -449,19 +467,74 @@ public class BaseValidatorTests
         result.Message.ShouldBe("Missing 'requested_scope' claim");
     }
 
+    [Fact]
+    public void ShouldReturnFalse_When_RequestedScopeClaimIsNullOrEmpty()
+    {
+        // Arrange
+        var validator =
+            TestHelpers.CreateValidatorWithToken<TestValidator>(
+                new Dictionary<string, string> { { "requested_scope", "" } });
+
+        // Act
+        var result = validator.ValidateRequestedScope(["patient/*.read", "organization/*.read"]);
+
+        // Assert
+        result.IsValid.ShouldBeFalse();
+        result.Message.ShouldBe("'requested_scope' claim cannot be null or empty");
+    }
+
     [Theory]
-    [InlineData("")]
     [InlineData("patient/*.read patient/*.write")]
     [InlineData("patient/*.read patient/*.write patient/*.delete")]
     public void ShouldReturnFalse_When_RequestedScopeClaimHasIncorrectNumberOfScopes(string requestScopeClaim)
     {
         // Arrange
-        
-        
+        var validator = TestHelpers.CreateValidatorWithToken<TestValidator>(
+            new Dictionary<string, string>()
+            {
+                { "requested_scope", requestScopeClaim }
+            });
+
         // Act
-        
-        
+        var result = validator.ValidateRequestedScope(["patient/*.read"]);
+
         // Assert
+        result.IsValid.ShouldBeFalse();
+        result.Message.ShouldBe("'requested_scope' claim must 1 value");
+    }
+
+    [Fact]
+    public void ValidateRequestedScope_ThrowsArgumentException_WhenAcceptedClaimValuesIsNull()
+    {
+        // Arrange
+        var validator = CreateValidatorWithToken<TestValidator>(new Dictionary<string, string>
+        {
+            { "requested_scope", "patient/*.read" }
+        });
+
+        // Act
+        var exception = Should.Throw<ArgumentException>(() => validator.ValidateRequestedScope(null));
+
+        // Assert
+        exception.Message.ShouldContain("acceptedClaims must not be null or empty");
+        exception.ParamName.ShouldBe("acceptedClaimValues");
+    }
+
+    [Fact]
+    public void ValidateRequestedScope_ThrowsArgumentException_WhenAcceptedClaimValuesIsEmpty()
+    {
+        // Arrange
+        var validator = CreateValidatorWithToken<TestValidator>(new Dictionary<string, string>
+        {
+            { "requested_scope", "patient/*.read" }
+        });
+
+        // Act
+        var exception = Should.Throw<ArgumentException>(() => validator.ValidateRequestedScope([]));
+
+        // Assert
+        exception.Message.ShouldContain("acceptedClaims must not be null or empty");
+        exception.ParamName.ShouldBe("acceptedClaimValues");
     }
 
     #endregion

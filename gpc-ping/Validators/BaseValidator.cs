@@ -36,7 +36,7 @@ public abstract class BaseValidator(JwtSecurityToken token)
             : (false, "Issuer must contain the URL of auth server token endpoint");
     }
 
-    public (bool IsValid, string Message) ValidateSubject()
+    public (bool IsValid, string Message) ValidateSubject(string requestingPractitionerId)
     {
         var subject = token.Claims.SingleOrDefault(x => x.Type == "sub")?.Value;
 
@@ -158,7 +158,7 @@ public abstract class BaseValidator(JwtSecurityToken token)
 
         if (claimValues.Length is < 1 or > 1)
         {
-            return (false, "requested_scope claim must 1 value");
+            return (false, "'requested_scope' claim must 1 value");
         }
 
         return acceptedClaimValues.Contains(claimValues.First())
