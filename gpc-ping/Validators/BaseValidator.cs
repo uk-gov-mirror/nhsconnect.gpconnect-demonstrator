@@ -1,5 +1,8 @@
 using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 using System.Text.Json;
+using System.Text.RegularExpressions;
+using Microsoft.IdentityModel.Tokens;
 
 namespace gpc_ping;
 
@@ -113,13 +116,81 @@ public abstract class BaseValidator(JwtSecurityToken token)
         }
     }
 
+    public virtual (bool IsValid, string Message) ValidateAudience()
+    {
+        return token.Audiences.IsNullOrEmpty()
+            ? (false, "Audience is not valid - must have value")
+            : IsValidAudience(token.Claims.FirstOrDefault(x => x.Type == "aud"));
+    }
 
-    public abstract (bool IsValid, string Message) ValidateAudience();
+    public virtual (bool IsValid, string Message) ValidateReasonForRequest()
+    {
+        var reason =
+            token.Claims.FirstOrDefault(x => x.Type == "reason_for_request")?.Value;
+        if (string.IsNullOrWhiteSpace(reason))
+            return (false, "Missing 'reason_for_request' claim");
 
-    public abstract (bool IsValid, string Message) ValidateReasonForRequest();
-    public abstract (bool, string) ValidateRequestedRecord();
-    public abstract (bool, string) ValidateRequestedScope();
-    public abstract (bool, string) ValidateRequestingDevice();
-    public abstract (bool, string) ValidateRequestingOrganization();
-    public abstract (bool, string) ValidateRequestingPractitioner();
+        // GP Connect only supports usage for direct care on most versions of spec
+        return reason == "directcare"
+            ? (true, "Reason for request is valid.")
+            : (false, $"Invalid reason for request: '{reason}'");
+    }
+
+    public virtual (bool IsValid, string Message) ValidateRequestedScope(string[] acceptedClaimValues)
+    {
+        if (acceptedClaimValues == null || acceptedClaimValues.Length == 0)
+        {
+            throw new ArgumentException("acceptedClaims must not be null or empty", nameof(acceptedClaimValues));
+        }
+
+        var scopeClaim = token.Claims.FirstOrDefault(x => x.Type == "requested_scope");
+        if (scopeClaim == null)
+        {
+            return (false, "Missing 'requested_scope' claim");
+        }
+
+        if (string.IsNullOrWhiteSpace(scopeClaim.Value))
+        {
+            return (false, "'requested_scope' claim cannot be null or empty");
+        }
+
+        var claimValues = scopeClaim.Value.Split(' ');
+
+        if (claimValues.Length is < 1 or > 1)
+        {
+            return (false, "requested_scope claim must 1 value");
+        }
+
+        return acceptedClaimValues.Contains(claimValues.First())
+            ? (true, "'requested_scope' claim is valid")
+            : (false, "Invalid 'requested_scope' claim - claim contains invalid value(s)");
+    }
+
+    public abstract (bool IsValid, string Message)
+        ValidateRequestedRecord();
+
+    public abstract (bool IsValid, string Message)
+        ValidateRequestingDevice();
+
+    public abstract (bool IsValid, string Message)
+        ValidateRequestingOrganization();
+
+    public abstract (bool IsValid, string Message)
+        ValidateRequestingPractitioner();
+
+    private (bool IsValid, string Message) IsValidAudience(Claim? audienceClaim)
+    {
+        var value = audienceClaim?.Value;
+        if (audienceClaim == null || string.IsNullOrWhiteSpace(value))
+        {
+            return (false, "Audience claim not valid - must have value");
+        }
+
+        const string pattern = @"^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$";
+        var isValid = Regex.IsMatch(value, pattern);
+
+        return isValid
+            ? (true, "Audience is valid")
+            : (false, "Audience is not valid - see GP Connect specification");
+    }
 }

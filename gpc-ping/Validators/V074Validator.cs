@@ -20,27 +20,37 @@ public class V074Validator(JwtSecurityToken token) : BaseValidator(token)
             : (false, "Audience is not valid - see GP Connect specification");
     }
 
-    public override (bool IsValid, string Message) ValidateReasonForRequest()
-    {
-        var reason = token.Claims.FirstOrDefault(x => x.Type == "reason_for_request")?.Value;
-
-        if (string.IsNullOrWhiteSpace(reason))
-            return (false, "Missing 'reason_for_request' claim");
-
-        // GP Connect only supports usage for direct care on this version of spec
-        return reason == "directcare"
-            ? (true, "Reason for request is valid.")
-            : (false, $"Invalid reason for request: '{reason}'");
-    }
-
     public override (bool, string) ValidateRequestedRecord()
     {
         throw new NotImplementedException();
     }
 
-    public override (bool, string) ValidateRequestedScope()
+    public override (bool IsValid, string Message) ValidateRequestedScope(string[] acceptedClaimValues)
     {
-        throw new NotImplementedException();
+        var scopeClaim = token.Claims.FirstOrDefault(x => x.Type == "requested_scope");
+        if (scopeClaim == null)
+        {
+            return (false, "Missing 'requested_scope' claim");
+        }
+
+        if (string.IsNullOrWhiteSpace(scopeClaim.Value))
+        {
+            return (false, "'requested_scope' claim cannot be null or empty");
+        }
+
+        var claimValues = scopeClaim.Value.Split(' ');
+        if (claimValues.Length is < 1 or > 1)
+        {
+            return (false, "requested_scope claim must 1 value");
+        }
+
+        return acceptedClaimValues.Contains(claimValues.First())
+            ? (true, "'requested_scope' claim is valid")
+            : (false,
+                "Invalid 'requested_scope' claim - claim contains {invalidValueCount} invalid value(s)");
+
+
+        return (true, "Requested scope is valid");
     }
 
     public override (bool, string) ValidateRequestingDevice()

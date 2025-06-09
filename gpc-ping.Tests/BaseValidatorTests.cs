@@ -3,6 +3,8 @@ using System.Security.Claims;
 using System.Text.Json;
 using Shouldly;
 using gpc_ping;
+using gpc.Helpers;
+using static gpc.Helpers.TestHelpers;
 
 public class BaseValidatorTests
 {
@@ -194,23 +196,10 @@ public class BaseValidatorTests
 
     #region ValidateLifetime
 
-    private JwtSecurityToken CreateTokenWithClaims(Dictionary<string, string> claimsDict)
-    {
-        var claims = claimsDict.Select(kvp => new Claim(kvp.Key, kvp.Value)).ToList();
-
-        return new JwtSecurityToken(claims: claims);
-    }
-
-    private TestValidator CreateValidatorWithToken(Dictionary<string, string> claims)
-    {
-        var token = CreateTokenWithClaims(claims);
-        return new TestValidator(token);
-    }
-
     [Fact]
     public void Should_ReturnFalse_When_IatClaimMissing()
     {
-        var validator = CreateValidatorWithToken(new()
+        var validator = CreateValidatorWithToken<TestValidator>(new()
         {
             { "exp", "1717776000" }
         });
@@ -224,7 +213,7 @@ public class BaseValidatorTests
     [Fact]
     public void Should_ReturnFalse_When_ExpClaimMissing()
     {
-        var validator = CreateValidatorWithToken(new()
+        var validator = CreateValidatorWithToken<TestValidator>(new()
         {
             { "iat", "1717775700" }
         });
@@ -238,7 +227,7 @@ public class BaseValidatorTests
     [Fact]
     public void Should_ReturnFalse_When_IatNotValidUnixTime()
     {
-        var validator = CreateValidatorWithToken(new()
+        var validator = CreateValidatorWithToken<TestValidator>(new()
         {
             { "iat", "not-a-number" },
             { "exp", "1717776000" }
@@ -253,7 +242,7 @@ public class BaseValidatorTests
     [Fact]
     public void Should_ReturnFalse_When_ExpNotValidUnixTime()
     {
-        var validator = CreateValidatorWithToken(new()
+        var validator = CreateValidatorWithToken<TestValidator>(new()
         {
             { "iat", "1717775700" },
             { "exp", "not-a-number" }
@@ -271,7 +260,7 @@ public class BaseValidatorTests
         var now = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
         var fiveMinutesLater = now + 300;
 
-        var validator = CreateValidatorWithToken(new()
+        var validator = CreateValidatorWithToken<TestValidator>(new()
         {
             { "iat", now.ToString() },
             { "exp", fiveMinutesLater.ToString() }
@@ -289,7 +278,7 @@ public class BaseValidatorTests
         var now = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
         var fourMinutesLater = now + 240;
 
-        var validator = CreateValidatorWithToken(new()
+        var validator = CreateValidatorWithToken<TestValidator>(new()
         {
             { "iat", now.ToString() },
             { "exp", fourMinutesLater.ToString() }
@@ -307,7 +296,7 @@ public class BaseValidatorTests
         var now = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
         var sixMinutesLater = now + 360;
 
-        var validator = CreateValidatorWithToken(new()
+        var validator = CreateValidatorWithToken<TestValidator>(new()
         {
             { "iat", now.ToString() },
             { "exp", sixMinutesLater.ToString() }
@@ -322,7 +311,7 @@ public class BaseValidatorTests
     [Fact]
     public void Should_ReturnAllErrors_When_ClaimsAreMissingOrInvalid()
     {
-        var validator = CreateValidatorWithToken(new()
+        var validator = CreateValidatorWithToken<TestValidator>(new()
         {
             { "iat", "not-a-number" },
             { "exp", "" }
@@ -333,6 +322,146 @@ public class BaseValidatorTests
         result.IsValid.ShouldBeFalse();
         result.Messages.ShouldContain("'iat' claim is not a valid Unix time.");
         result.Messages.ShouldContain("Missing 'exp' claim.");
+    }
+
+    #endregion
+
+    #region ValidateAudience
+
+    [Fact]
+    public void Should_ReturnTrueWhen_AudienceIsValid()
+    {
+        // Arrange
+        var validator = CreateValidatorWithToken<TestValidator>(new Dictionary<string, string>
+        {
+            { "aud", "https://providersupplier.thirdparty.nhs.uk/GP0001/STU3/1" }
+        });
+
+        var result = validator.ValidateAudience();
+
+        result.IsValid.ShouldBeTrue();
+        result.Message.ShouldBe("Audience is valid");
+    }
+
+    [Fact]
+    public void Should_ReturnFalseWhen_AudienceIsMissing()
+    {
+        // Arrange
+        var validator = CreateValidatorWithToken<TestValidator>(new Dictionary<string, string>());
+
+        // Act
+        var result = validator.ValidateAudience();
+
+        // Assert
+        result.IsValid.ShouldBeFalse();
+        result.Message.ShouldBe("Audience is not valid - must have value");
+    }
+
+    [Fact]
+    public void Should_ReturnFalseWhen_AudienceIsInvalid()
+    {
+        // Arrange
+        var validator = CreateValidatorWithToken<TestValidator>(new Dictionary<string, string>
+        {
+            { "aud", "invalid-audience" }
+        });
+
+        // Act
+        var result = validator.ValidateAudience();
+
+        // Assert
+        result.IsValid.ShouldBeFalse();
+        result.Message.ShouldBe("Audience is not valid - see GP Connect specification");
+    }
+
+    [Fact]
+    public void Should_ReturnFalseWhen_AudienceIsNullOrEmpty()
+    {
+        // Arrange
+        var validator = CreateValidatorWithToken<TestValidator>(new Dictionary<string, string>
+        {
+            { "aud", "" }
+        });
+
+        // Act
+        var result = validator.ValidateAudience();
+
+        // Assert
+        result.IsValid.ShouldBeFalse();
+        result.Message.ShouldBe("Audience claim not valid - must have value");
+    }
+
+    #endregion
+
+    #region ValidateRequestedScope
+
+    [Theory]
+    [InlineData(new[] { "patient/*.read", "organization/*.read" }, "patient/*.read")]
+    [InlineData(new[] { "patient/*.read", "organization/*.read" }, "organization/*.read")]
+    public void ShouldReturnTrue_When_RequestedScopeIsAccepted(string[] acceptedScopes, string requestScopeClaim)
+    {
+        // Arrange
+        var validator = CreateValidatorWithToken<TestValidator>(new Dictionary<string, string>()
+        {
+            { "requested_scope", requestScopeClaim }
+        });
+
+        // Act
+        var result = validator.ValidateRequestedScope(acceptedScopes);
+
+        // Assert
+        result.IsValid.ShouldBeTrue();
+        result.Message.ShouldBe("'requested_scope' claim is valid");
+    }
+
+
+    [Theory]
+    [InlineData(new[] { "patient/*.read", "organization/*.read" }, "patient/.*read")]
+    [InlineData(new[] { "patient/*.read", "organization/*.read" }, "random_scope")]
+    public void ShouldReturnFalse_When_RequestedScopeIsNotAccepted(string[] acceptedScopes, string requestScopeClaim)
+    {
+        // Arrange
+        var validator = CreateValidatorWithToken<TestValidator>(
+            new Dictionary<string, string>()
+            {
+                { "requested_scope", requestScopeClaim }
+            });
+
+        // Act
+        var result = validator.ValidateRequestedScope(acceptedScopes);
+
+        // Assert
+        result.IsValid.ShouldBeFalse();
+        result.Message.ShouldBe("Invalid 'requested_scope' claim - claim contains invalid value(s)");
+    }
+
+    [Fact]
+    public void ShouldReturnFalse_When_RequestedScopeClaimIsMissing()
+    {
+        // Arrange
+        var validator = CreateValidatorWithToken<TestValidator>(new Dictionary<string, string>());
+
+        // Act
+        var result = validator.ValidateRequestedScope(new[] { "patient/*.read", "organization/*.read" });
+
+        // Assert
+        result.IsValid.ShouldBeFalse();
+        result.Message.ShouldBe("Missing 'requested_scope' claim");
+    }
+
+    [Theory]
+    [InlineData("")]
+    [InlineData("patient/*.read patient/*.write")]
+    [InlineData("patient/*.read patient/*.write patient/*.delete")]
+    public void ShouldReturnFalse_When_RequestedScopeClaimHasIncorrectNumberOfScopes(string requestScopeClaim)
+    {
+        // Arrange
+        
+        
+        // Act
+        
+        
+        // Assert
     }
 
     #endregion

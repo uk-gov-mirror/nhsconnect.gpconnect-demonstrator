@@ -3,6 +3,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using gpc_ping.Validators;
 using Shouldly;
+using gpc.Helpers;
 
 
 namespace gpc;
@@ -74,7 +75,7 @@ public class V074ValidatorTests
     public void ValidateReasonForRequest_ReturnsTrue_WhenValid()
     {
         // Arrange
-        var validator = CreateValidatorWithToken(new Dictionary<string, string>()
+        var validator = TestHelpers.CreateValidatorWithToken<V074Validator>(new Dictionary<string, string>()
         {
             { "reason_for_request", "directcare" }
         });
@@ -91,7 +92,7 @@ public class V074ValidatorTests
     public void ValidateReasonForRequest_ReturnsFalse_WhenMissingClaim()
     {
         // Arrange
-        var validator = CreateValidatorWithToken(new Dictionary<string, string>());
+        var validator = TestHelpers.CreateValidatorWithToken<V074Validator>(new Dictionary<string, string>());
 
         // Act
         var result = validator.ValidateReasonForRequest();
@@ -105,7 +106,7 @@ public class V074ValidatorTests
     public void ValidateReasonForRequest_ReturnsFalse_WhenInvalidClaim()
     {
         // Arrange
-        var validator = CreateValidatorWithToken(new Dictionary<string, string>()
+        var validator = TestHelpers.CreateValidatorWithToken<V074Validator>(new Dictionary<string, string>()
         {
             { "reason_for_request", "patient_data" }
         });
@@ -119,18 +120,4 @@ public class V074ValidatorTests
     }
 
     #endregion
-
-
-    private JwtSecurityToken CreateTokenWithClaims(Dictionary<string, string> claimsDict)
-    {
-        var claims = claimsDict.Select(kvp => new Claim(kvp.Key, kvp.Value)).ToList();
-
-        return new JwtSecurityToken(claims: claims);
-    }
-
-    private V074Validator CreateValidatorWithToken(Dictionary<string, string> claims)
-    {
-        var token = CreateTokenWithClaims(claims);
-        return new V074Validator(token);
-    }
 }
