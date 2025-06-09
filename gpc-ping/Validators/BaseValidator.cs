@@ -36,6 +36,8 @@ public abstract class BaseValidator(JwtSecurityToken token)
             : (false, "Issuer must contain the URL of auth server token endpoint");
     }
 
+    // TODO: update this method to pass in a requestingPractitionerId,
+    // instead of carrying out logic in method to compare with
     public (bool IsValid, string Message) ValidateSubject(string requestingPractitionerId)
     {
         var subject = token.Claims.SingleOrDefault(x => x.Type == "sub")?.Value;
