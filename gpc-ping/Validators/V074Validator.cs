@@ -1,21 +1,25 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Text.Json;
-using Microsoft.IdentityModel.Tokens;
 
 namespace gpc_ping.Validators;
 
-public class V074Validator(JwtSecurityToken token) : BaseValidator(token)
+public class V074Validator : BaseValidator
 {
+    public V074Validator(JwtSecurityToken token, IValidationCommonValidation validationHelper) : base(token,
+        validationHelper)
+    {
+    }
+
     public override (bool IsValid, string Message) ValidateAudience()
     {
-        var audience = token.Claims.FirstOrDefault(x => x.Type == "aud")?.Value;
+        var audience = Token.Claims.FirstOrDefault(x => x.Type == "aud")?.Value;
 
         if (audience == null || string.IsNullOrWhiteSpace(audience))
         {
             return (false, "'aud' claim cannot be null or empty");
         }
 
-        var value = token.Audiences.FirstOrDefault();
+        var value = Token.Audiences.FirstOrDefault();
 
         return value == "https://authorize.fhir.nhs.net/token"
             ? (true, "'aud' claim is valid")
@@ -24,7 +28,7 @@ public class V074Validator(JwtSecurityToken token) : BaseValidator(token)
 
     public (bool IsValid, string[] Messages) ValidateRequestedRecord()
     {
-        var claim = token.Claims.FirstOrDefault(x => x.Type == "requested_record");
+        var claim = Token.Claims.FirstOrDefault(x => x.Type == "requested_record");
 
         if (claim == null || string.IsNullOrWhiteSpace(claim.Value))
         {
@@ -72,7 +76,7 @@ public class V074Validator(JwtSecurityToken token) : BaseValidator(token)
 
     public override (bool IsValid, string Message) ValidateRequestingDevice()
     {
-        var claim = token.Claims.FirstOrDefault(x => x.Type == "requesting_device");
+        var claim = Token.Claims.FirstOrDefault(x => x.Type == "requesting_device");
         if (claim == null || string.IsNullOrWhiteSpace(claim.Value))
         {
             return (false, "'requesting_device' claim cannot be null or empty");
@@ -93,7 +97,7 @@ public class V074Validator(JwtSecurityToken token) : BaseValidator(token)
             return (false, "Invalid requesting device - see GP Connect specification");
         }
 
-        var baseValidationResult = ValidationHelpers.ValidateRequestingDeviceCommon(requestingDevice);
+        var baseValidationResult = _validationHelper.ValidateRequestingDeviceCommon(requestingDevice);
 
         if (!baseValidationResult.IsValid)
             return baseValidationResult;
@@ -103,16 +107,34 @@ public class V074Validator(JwtSecurityToken token) : BaseValidator(token)
             : (true, "The requesting device is valid.");
     }
 
-    public override (bool, string) ValidateRequestingOrganization()
+    public override (bool IsValid, string[] Messages) ValidateRequestingOrganization()
     {
-        throw new NotImplementedException();
+        var (baseIsValid, baseValidationMessages, deserializedClaim) =
+            _validationHelper.ValidateRequestingOrganizationCommon<V074RequestingOrganization>(Token);
+
+        if (!baseIsValid || deserializedClaim == null)
+        {
+            return (false, baseValidationMessages);
+        }
+
+        if (string.IsNullOrEmpty(deserializedClaim.Id))
+        {
+            return (false, ["Invalid 'requesting_organization' - missing Id"]);
+        }
+
+        if (string.IsNullOrEmpty(deserializedClaim.Name))
+        {
+            return (false, ["Invalid 'requesting_organization' - missing Name"]);
+        }
+
+        return (true, ["'requesting_organization' is valid"]);
     }
 
     public override (bool IsValid, string[] Messages) ValidateRequestingPractitioner()
     {
         var (isValid, messages, requestingPractitioner) =
-            ValidationHelpers.DeserializeAndValidateCommonRequestingPractitionerProperties(
-                token.Claims.FirstOrDefault(x => x.Type == "requesting_practitioner"));
+            _validationHelper.DeserializeAndValidateCommonRequestingPractitionerProperties(
+                Token.Claims.FirstOrDefault(x => x.Type == "requesting_practitioner"));
 
         if (!isValid)
         {
@@ -121,7 +143,7 @@ public class V074Validator(JwtSecurityToken token) : BaseValidator(token)
 
         const int requiredIdentifierLength = 3;
         var (isIdentifierValid, identifierMessages) =
-            ValidationHelpers.ValidateRequestingPractitionerIdentifier(requestingPractitioner,
+            _validationHelper.ValidateRequestingPractitionerIdentifier(requestingPractitioner,
                 requiredIdentifierLength);
 
         if (!isIdentifierValid)

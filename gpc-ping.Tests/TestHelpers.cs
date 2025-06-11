@@ -18,7 +18,7 @@ public static class TestHelpers
     {
         var token = CreateTokenWithClaims(claims);
 
-        if (Activator.CreateInstance(typeof(TValidator), token) is not TValidator validator)
+        if (Activator.CreateInstance(typeof(TValidator), token, new ValidationHelper()) is not TValidator validator)
         {
             throw new InvalidOperationException(
                 $"Cannot create an instance of {typeof(TValidator).Name} with a JwtSecurityToken.");

@@ -6,6 +6,7 @@ using gpc_ping;
 using gpc_ping.Validators;
 using Shouldly;
 using gpc.Helpers;
+using NSubstitute;
 
 
 namespace gpc;
@@ -22,7 +23,7 @@ public class V074ValidatorTests
             "eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0.eyJhdWQiOiJodHRwczovL2F1dGhvcml6ZS5maGlyLm5ocy5uZXQvdG9rZW4ifQ.";
 
         var token = new JwtSecurityTokenHandler().ReadJwtToken(tokenString);
-        var validator = new V074Validator(token);
+        var validator = new V074Validator(token, new ValidationHelper());
 
         // Act
         var result = validator.ValidateAudience();
@@ -40,7 +41,7 @@ public class V074ValidatorTests
     {
         // Arrange
         var token = new JwtSecurityTokenHandler().ReadJwtToken(tokenString);
-        var validator = new V074Validator(token);
+        var validator = new V074Validator(token, new ValidationHelper());
 
         // Act
         var result = validator.ValidateAudience();
@@ -506,6 +507,132 @@ public class V074ValidatorTests
 
         Assert.False(result.IsValid);
         Assert.Contains("'requested_record' - identifier[0] claim is invalid", result.Messages);
+    }
+
+    #endregion
+
+    #region Requesting Organization
+
+    [Fact]
+    public void ValidateRequestingOrganization_ShouldCall_ValidationHelpers_ValidateRequestingOrganizationCommon()
+    {
+        // Arrange
+        const string tokenString =
+            "eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJJZCI6IjAxMDEwIiwiTmFtZSI6InRlc3QtbmFtZSIsIlJlc291cmNlVHlwZSI6Ik9yZ2FuaXphdGlvbiIsIklkZW50aWZpZXIiOlt7IlN5c3RlbSI6Imh0dHBzOi8vdmFsaWQudXJsIiwiVmFsdWUiOiIwMTkxMjMifV19.";
+
+        var token = new JwtSecurityTokenHandler().ReadJwtToken(tokenString);
+
+        var mockHelper = Substitute.For<IValidationCommonValidation>();
+        mockHelper.ValidateRequestingOrganizationCommon<V074RequestingOrganization>(token).Returns((true, [], null));
+
+        var testValidator = new V074Validator(token, mockHelper);
+
+        // Act
+        testValidator.ValidateRequestingOrganization();
+
+        // Assert
+        mockHelper
+            .Received(1)
+            .ValidateRequestingOrganizationCommon<V074RequestingOrganization>(token);
+    }
+
+    [Fact]
+    public void ValidateRequestingOrganization_ReturnsTrue_WhenValid()
+    {
+        // Arrange
+        const string tokenString =
+            "eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJJZCI6IjAxMDEwIiwiTmFtZSI6InRlc3QtbmFtZSIsIlJlc291cmNlVHlwZSI6Ik9yZ2FuaXphdGlvbiIsIklkZW50aWZpZXIiOlt7IlN5c3RlbSI6Imh0dHBzOi8vdmFsaWQudXJsIiwiVmFsdWUiOiIwMTkxMjMifV19.";
+
+        var deserializedClaim = new V074RequestingOrganization()
+        {
+            Id = "01010",
+            Name = "testname",
+            ResourceType = "Organization",
+            Identifier =
+            [
+                new Identifier()
+                {
+                    System = "https://valid.url",
+                    Value = "019123"
+                }
+            ]
+        };
+
+        var token = new JwtSecurityTokenHandler().ReadJwtToken(tokenString);
+
+        var mockHelper = Substitute.For<IValidationCommonValidation>();
+        mockHelper.ValidateRequestingOrganizationCommon<V074RequestingOrganization>(token)
+            .Returns((true, ["Returning message from helper"], deserializedClaim));
+
+        var testValidator = new V074Validator(token, mockHelper);
+
+        // Act
+        var result = testValidator.ValidateRequestingOrganization();
+
+        // Assert
+        result.IsValid.ShouldBeTrue();
+        result.Messages.Length.ShouldBe(1);
+        result.Messages[0].ShouldBe("'requesting_organization' is valid");
+    }
+
+    [Fact]
+    public void ValidateRequestingOrganization_ReturnsFalse_When_IdIsEmpty()
+    {
+        // Arrange
+        var testOrg = new V074RequestingOrganization()
+        {
+            Id = string.Empty,
+            Name = "testname",
+            ResourceType = "Organization",
+            Identifier =
+            [
+                new Identifier() { System = "https://valid.url", Value = "019123" }
+            ]
+        };
+        var json = JsonSerializer.Serialize(testOrg);
+
+        var testValidator = TestHelpers.CreateValidatorWithToken<V074Validator>(new Dictionary<string, string>
+        {
+            { "requesting_organization", json }
+        });
+
+        // Act
+        var result = testValidator.ValidateRequestingOrganization();
+
+        // Assert
+        result.IsValid.ShouldBeFalse();
+        result.Messages.Length.ShouldBe(1);
+        result.Messages[0].ShouldBe("Invalid 'requesting_organization' - missing Id");
+    }
+
+    [Fact]
+    public void ValidateRequestingOrganization_ReturnsFalse_When_NameIsEmpty()
+    {
+        // Arrange
+        var testOrg = new V074RequestingOrganization()
+        {
+            Id = "010101",
+            Name = string.Empty,
+            ResourceType = "Organization",
+            Identifier =
+            [
+                new Identifier() { System = "https://valid.url", Value = "019123" }
+            ]
+        };
+        var json = JsonSerializer.Serialize(testOrg);
+
+        var testValidator = TestHelpers.CreateValidatorWithToken<V074Validator>(new Dictionary<string, string>
+        {
+            { "requesting_organization", json }
+        });
+
+        // Act
+        var result = testValidator.ValidateRequestingOrganization();
+
+        // Assert
+        result.IsValid.ShouldBeFalse();
+        result.Messages.Length.ShouldBe(1);
+        result.Messages[0].ShouldBe("Invalid 'requesting_organization' - missing Name");
     }
 
     #endregion

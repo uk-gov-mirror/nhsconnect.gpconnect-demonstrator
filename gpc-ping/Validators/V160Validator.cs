@@ -4,7 +4,8 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace gpc_ping.Validators;
 
-public class V160Validator(JwtSecurityToken token) : BaseValidator(token)
+public class V160Validator(JwtSecurityToken token, IValidationCommonValidation validationHelper)
+    : BaseValidator(token, validationHelper)
 {
     public override (bool IsValid, string Message) ValidateReasonForRequest()
     {
@@ -71,11 +72,6 @@ public class V160Validator(JwtSecurityToken token) : BaseValidator(token)
     }
 
     public override (bool IsValid, string Message) ValidateRequestingDevice()
-    {
-        throw new NotImplementedException();
-    }
-
-    public override (bool IsValid, string Message) ValidateRequestingOrganization()
     {
         throw new NotImplementedException();
     }

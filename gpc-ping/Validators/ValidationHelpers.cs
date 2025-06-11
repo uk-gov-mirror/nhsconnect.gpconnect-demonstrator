@@ -1,3 +1,4 @@
+using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text.Json;
 using System.Text.RegularExpressions;
@@ -5,14 +6,14 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace gpc_ping.Validators;
 
-public static class ValidationHelpers
+public class ValidationHelper : IValidationCommonValidation
 {
     /// <summary>
     /// Deserializes RequestingPractitioner claim, and validates common properties across spec versions
     /// </summary>
     /// <param name="requestingPractitionerClaim"></param>
     /// <returns></returns>
-    public static (bool IsValid, string[] Messages, RequestingPractitioner? requestingPractitioner)
+    public (bool IsValid, string[] Messages, RequestingPractitioner? requestingPractitioner)
         DeserializeAndValidateCommonRequestingPractitionerProperties(
             Claim? requestingPractitionerClaim)
     {
@@ -67,7 +68,7 @@ public static class ValidationHelpers
             : (false, messages.ToArray(), parsedPractitioner);
     }
 
-    public static (bool IsValid, string[] Messages) ValidateRequestingPractitionerIdentifier(
+    public (bool IsValid, string[] Messages) ValidateRequestingPractitionerIdentifier(
         RequestingPractitioner requestingPractitioner, int requiredLength)
     {
         if (requestingPractitioner.Identifier.Length == 0)
@@ -99,7 +100,7 @@ public static class ValidationHelpers
     }
 
 
-    public static (bool IsValid, string Message) ValidateRequestingDeviceCommon(RequestingDevice requestingDevice)
+    public (bool IsValid, string Message) ValidateRequestingDeviceCommon(RequestingDevice requestingDevice)
     {
         var identifierNode = requestingDevice.Identifier;
         if (identifierNode == null || identifierNode.Length == 0)
@@ -120,7 +121,7 @@ public static class ValidationHelpers
             string.IsNullOrWhiteSpace(firstIdentifier.Value) ||
             string.IsNullOrWhiteSpace(requestingDevice.Model) ||
             string.IsNullOrWhiteSpace(requestingDevice.Version) ||
-            !ValidationHelpers.IsValidUrl(firstIdentifier.System))
+            !IsValidUrl(firstIdentifier.System))
         {
             return string.IsNullOrEmpty(warningMessage)
                 ? (false, "Invalid requesting device - see GP Connect specification")
@@ -132,8 +133,56 @@ public static class ValidationHelpers
             : (true, $"The requesting device is valid. \n {warningMessage}");
     }
 
+    public (bool IsValid, string[] Messages, T? DeserializedClaim) ValidateRequestingOrganizationCommon<T>(
+        JwtSecurityToken token) where T : RequestingOrganization
+    {
+        var claim = token.Claims.FirstOrDefault(x => x.Type == "requesting_organization");
 
-    private static bool IsValidUrl(string url)
+        if (claim == null || string.IsNullOrWhiteSpace(claim.Value))
+        {
+            return (false, ["'requesting_organization' claim cannot be null or empty"], null);
+        }
+
+        try
+        {
+            List<string> messages = [];
+            var deserializedValue = JsonSerializer.Deserialize<T>(claim.Value);
+            if (deserializedValue == null)
+            {
+                return (false, ["Invalid requesting organization claim"], null);
+            }
+
+            if (string.IsNullOrWhiteSpace(deserializedValue.ResourceType))
+            {
+                return (false, ["'requesting_organization:resource_type' claim cannot be null or empty"],
+                    deserializedValue);
+            }
+
+            if (deserializedValue.Identifier == null || deserializedValue.Identifier.Length < 1)
+            {
+                return (false, ["'requesting_organization' is missing an identifier value"], deserializedValue);
+            }
+
+            for (var index = 0; index < deserializedValue.Identifier.Length; index++)
+            {
+                var identifier = deserializedValue.Identifier[index];
+                if (string.IsNullOrWhiteSpace(identifier.System) || string.IsNullOrWhiteSpace(identifier.Value))
+                {
+                    messages.Add($"'requesting_organization' - identifier[{index}] claim is invalid");
+                }
+            }
+
+            return messages.Count > 0
+                ? (false, messages.ToArray(), deserializedValue)
+                : (true, ["'requesting_organization' claim is valid"], deserializedValue);
+        }
+        catch (JsonException jsonException)
+        {
+            return (false, [jsonException.Message], null);
+        }
+    }
+
+    private bool IsValidUrl(string url)
     {
         const string pattern = @"^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$";
         return Regex.IsMatch(url, pattern);

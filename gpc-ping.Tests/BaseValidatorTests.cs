@@ -3,7 +3,10 @@ using System.Security.Claims;
 using System.Text.Json;
 using Shouldly;
 using gpc_ping;
+using gpc_ping.Validators;
 using gpc.Helpers;
+using NLog.Web.LayoutRenderers;
+using NSubstitute;
 using static gpc.Helpers.TestHelpers;
 
 public class BaseValidatorTests
@@ -16,7 +19,7 @@ public class BaseValidatorTests
         // Arrange
         const string tokenString = "eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0.eyJhdWQiOiJhdWRpZW5jZV90ZXN0In0.";
         var token = new JwtSecurityTokenHandler().ReadJwtToken(tokenString);
-        var testValidator = new TestValidator(token);
+        var testValidator = new TestValidator(token, new ValidationHelper());
 
         // Act
         var result = testValidator.ValidateHeader();
@@ -34,7 +37,7 @@ public class BaseValidatorTests
     {
         // Arrange
         var token = new JwtSecurityTokenHandler().ReadJwtToken(tokenString);
-        var testValidator = new TestValidator(token);
+        var testValidator = new TestValidator(token, new ValidationHelper());
 
         // Act
         var result = testValidator.ValidateHeader();
@@ -56,7 +59,7 @@ public class BaseValidatorTests
             "eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0.eyJpc3MiOiJodHRwczovL2F1dGhvcml6ZS5maGlyLm5ocy5uZXQvdG9rZW4ifQ.";
 
         var token = new JwtSecurityTokenHandler().ReadJwtToken(tokenString);
-        var testValidator = new TestValidator(token);
+        var testValidator = new TestValidator(token, new ValidationHelper());
 
         // Act
         var result = testValidator.ValidateIssuer();
@@ -72,7 +75,7 @@ public class BaseValidatorTests
         // Arrange
         const string tokenString = "eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0.eyJpc3MiOiJjb25zdW1lcnN1cHBsaWVyIn0.";
         var token = new JwtSecurityTokenHandler().ReadJwtToken(tokenString);
-        var testValidator = new TestValidator(token);
+        var testValidator = new TestValidator(token, new ValidationHelper());
 
         // Act
         var result = testValidator.ValidateIssuer();
@@ -88,7 +91,7 @@ public class BaseValidatorTests
         // Arrange
         const string tokenString = "eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0.eyJpc3MiOiIifQ.";
         var token = new JwtSecurityTokenHandler().ReadJwtToken(tokenString);
-        var testValidator = new TestValidator(token);
+        var testValidator = new TestValidator(token, new ValidationHelper());
 
         // Act
         var result = testValidator.ValidateIssuer();
@@ -112,7 +115,7 @@ public class BaseValidatorTests
         };
 
         var token = new JwtSecurityToken(claims: claims);
-        var validator = new TestValidator(token);
+        var validator = new TestValidator(token, new ValidationHelper());
 
         // Act
         var result = validator.ValidateSubject("1");
@@ -128,7 +131,7 @@ public class BaseValidatorTests
     {
         // Arrange
         var token = new JwtSecurityToken(claims: new List<Claim>());
-        var validator = new TestValidator(token);
+        var validator = new TestValidator(token, new ValidationHelper());
 
         // Act
         var result = validator.ValidateSubject("019102910");
@@ -148,7 +151,7 @@ public class BaseValidatorTests
         };
 
         var token = new JwtSecurityToken(claims: claims);
-        var validator = new TestValidator(token);
+        var validator = new TestValidator(token, new ValidationHelper());
 
         // Act
         var result = validator.ValidateSubject("0101");
@@ -779,6 +782,58 @@ public class BaseValidatorTests
         result.IsValid.ShouldBeTrue();
         result.Message.ShouldContain("The requesting device is valid.");
         result.Message.ShouldContain("warning: resource_type is missing or empty");
+    }
+
+    #endregion
+
+    #region ValidateRequestingOrganization
+
+    [Fact]
+    public void ValidateRequestingOrganization_ShouldCall_ValidationHelpers_ValidateRequestingOrganizationCommon()
+    {
+        // Arrange
+        const string tokenString =
+            "eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJSZXNvdXJjZVR5cGUiOiJPcmdhbml6YXRpb24iLCJJZGVudGlmaWVyIjpbeyJTeXN0ZW0iOiJodHRwczovL3ZhbGlkLnVybCIsIlZhbHVlIjoiMDE5MTIzIn1dfQ.";
+
+        var token = new JwtSecurityTokenHandler().ReadJwtToken(tokenString);
+
+        var mockHelper = Substitute.For<IValidationCommonValidation>();
+        mockHelper.ValidateRequestingOrganizationCommon<RequestingOrganization>(token).Returns((true, [], null));
+
+        var testValidator = new TestValidator(token, mockHelper);
+
+        // Act
+        testValidator.ValidateRequestingOrganization();
+
+        // Assert
+        mockHelper
+            .Received(1)
+            .ValidateRequestingOrganizationCommon<RequestingOrganization>(token);
+    }
+
+    [Fact]
+    public void
+        ValidateRequestingOrganization_ShouldReturn_ValidationHelpers_ValidateRequestingOrganizationCommon_ReturnType()
+    {
+        // Arrange
+        const string tokenString =
+            "eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJSZXNvdXJjZVR5cGUiOiJPcmdhbml6YXRpb24iLCJJZGVudGlmaWVyIjpbeyJTeXN0ZW0iOiJodHRwczovL3ZhbGlkLnVybCIsIlZhbHVlIjoiMDE5MTIzIn1dfQ.";
+
+        var token = new JwtSecurityTokenHandler().ReadJwtToken(tokenString);
+
+        var mockHelper = Substitute.For<IValidationCommonValidation>();
+        mockHelper.ValidateRequestingOrganizationCommon<RequestingOrganization>(token)
+            .Returns((true, ["Returning message from helper"], null));
+
+        var testValidator = new TestValidator(token, mockHelper);
+
+        // Act
+        var result = testValidator.ValidateRequestingOrganization();
+
+        // Assert
+        result.IsValid.ShouldBeTrue();
+        result.Messages.Length.ShouldBe(1);
+        result.Messages[0].ShouldBe("Returning message from helper");
     }
 
     #endregion

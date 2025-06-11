@@ -11,12 +11,22 @@ namespace gpc_ping;
 /// Base Validator which validates using GP Connect API - Cross organisation audit and provenance
 /// </summary>
 /// <param name="token">Deserialized JWT string</param>
-public abstract class BaseValidator(JwtSecurityToken token)
+public abstract class BaseValidator
 {
+    protected IValidationCommonValidation _validationHelper;
+
+    protected BaseValidator(JwtSecurityToken token, IValidationCommonValidation validationHelper)
+    {
+        Token = token ?? throw new ArgumentNullException(nameof(token));
+        _validationHelper = validationHelper;
+    }
+
+    public JwtSecurityToken Token { get; }
+
     public (bool IsValid, string Message) ValidateHeader()
     {
-        var validAlg = string.Equals(token.Header.Alg, "none", StringComparison.InvariantCultureIgnoreCase);
-        var validTyp = string.Equals(token.Header.Typ, "JWT", StringComparison.InvariantCultureIgnoreCase);
+        var validAlg = string.Equals(Token.Header.Alg, "none", StringComparison.InvariantCultureIgnoreCase);
+        var validTyp = string.Equals(Token.Header.Typ, "JWT", StringComparison.InvariantCultureIgnoreCase);
 
         return validAlg && validTyp
             ? (true, "Header is valid")
@@ -25,12 +35,12 @@ public abstract class BaseValidator(JwtSecurityToken token)
 
     public (bool IsValid, string Message) ValidateIssuer()
     {
-        if (string.IsNullOrWhiteSpace(token.Issuer))
+        if (string.IsNullOrWhiteSpace(Token.Issuer))
         {
             return (false, "Issuer value cannot be null or empty");
         }
 
-        var isValidUrl = Uri.TryCreate(token.Issuer, UriKind.Absolute, out var uri) && uri.Scheme == Uri.UriSchemeHttps;
+        var isValidUrl = Uri.TryCreate(Token.Issuer, UriKind.Absolute, out var uri) && uri.Scheme == Uri.UriSchemeHttps;
 
         return isValidUrl
             ? (true, "Issuer is valid")
@@ -44,7 +54,7 @@ public abstract class BaseValidator(JwtSecurityToken token)
             return (false, "Requesting practitioner id is null");
         }
 
-        var subject = token.Claims.SingleOrDefault(x => x.Type == "sub")?.Value;
+        var subject = Token.Claims.SingleOrDefault(x => x.Type == "sub")?.Value;
 
         if (string.IsNullOrEmpty(subject))
         {
@@ -58,9 +68,9 @@ public abstract class BaseValidator(JwtSecurityToken token)
 
     public virtual (bool IsValid, string Message) ValidateAudience()
     {
-        return token.Claims.FirstOrDefault(x => x.Type == "aud")?.Value == null
+        return Token.Claims.FirstOrDefault(x => x.Type == "aud")?.Value == null
             ? (false, "'aud' claim cannot be null or empty")
-            : IsValidAudience(token.Claims.FirstOrDefault(x => x.Type == "aud"));
+            : IsValidAudience(Token.Claims.FirstOrDefault(x => x.Type == "aud"));
     }
 
     /// <summary>
@@ -95,7 +105,7 @@ public abstract class BaseValidator(JwtSecurityToken token)
         // Local helper method
         long GetUnixTimeClaim(string claimType, string missingMessage, string invalidMessage)
         {
-            var value = token.Claims.SingleOrDefault(x => x.Type == claimType)?.Value;
+            var value = Token.Claims.SingleOrDefault(x => x.Type == claimType)?.Value;
 
             if (string.IsNullOrWhiteSpace(value))
             {
@@ -114,7 +124,7 @@ public abstract class BaseValidator(JwtSecurityToken token)
     public virtual (bool IsValid, string Message) ValidateReasonForRequest()
     {
         var reason =
-            token.Claims.FirstOrDefault(x => x.Type == "reason_for_request")?.Value;
+            Token.Claims.FirstOrDefault(x => x.Type == "reason_for_request")?.Value;
         if (string.IsNullOrWhiteSpace(reason))
             return (false, "Missing 'reason_for_request' claim");
 
@@ -131,7 +141,7 @@ public abstract class BaseValidator(JwtSecurityToken token)
             throw new ArgumentException("acceptedClaims must not be null or empty", nameof(acceptedClaimValues));
         }
 
-        var scopeClaim = token.Claims.FirstOrDefault(x => x.Type == "requested_scope");
+        var scopeClaim = Token.Claims.FirstOrDefault(x => x.Type == "requested_scope");
         if (scopeClaim == null)
         {
             return (false, "Missing 'requested_scope' claim");
@@ -157,7 +167,7 @@ public abstract class BaseValidator(JwtSecurityToken token)
 
     public virtual (bool IsValid, string Message) ValidateRequestingDevice()
     {
-        var claim = token.Claims.FirstOrDefault(x => x.Type == "requesting_device");
+        var claim = Token.Claims.FirstOrDefault(x => x.Type == "requesting_device");
 
         if (claim == null || string.IsNullOrWhiteSpace(claim.Value))
         {
@@ -176,17 +186,22 @@ public abstract class BaseValidator(JwtSecurityToken token)
 
         return requestingDevice == null
             ? (false, "Invalid requesting device - see GP Connect specification")
-            : ValidationHelpers.ValidateRequestingDeviceCommon(requestingDevice);
+            : _validationHelper.ValidateRequestingDeviceCommon(requestingDevice);
     }
 
+    public virtual (bool IsValid, string[] Messages) ValidateRequestingOrganization()
+    {
+        var (isValid, messages, _) =
+            _validationHelper.ValidateRequestingOrganizationCommon<RequestingOrganization>(Token);
 
-    public abstract (bool IsValid, string Message) ValidateRequestingOrganization();
+        return (isValid, messages);
+    }
 
     public virtual (bool IsValid, string[] Messages) ValidateRequestingPractitioner()
     {
         var (isValid, messages, requestingPractitioner) =
-            ValidationHelpers.DeserializeAndValidateCommonRequestingPractitionerProperties(
-                token.Claims.FirstOrDefault(x => x.Type == "requesting_practitioner"));
+            _validationHelper.DeserializeAndValidateCommonRequestingPractitionerProperties(
+                Token.Claims.FirstOrDefault(x => x.Type == "requesting_practitioner"));
 
         if (!isValid)
         {
@@ -196,7 +211,7 @@ public abstract class BaseValidator(JwtSecurityToken token)
         const int requiredIdentifierLength = 3;
 
         var (isIdentifierValid, identifierMessages) =
-            ValidationHelpers.ValidateRequestingPractitionerIdentifier(requestingPractitioner,
+            _validationHelper.ValidateRequestingPractitionerIdentifier(requestingPractitioner,
                 requiredIdentifierLength);
 
         return !isIdentifierValid ? (false, identifierMessages) : (true, ["'requesting_practitioner claim is valid"]);

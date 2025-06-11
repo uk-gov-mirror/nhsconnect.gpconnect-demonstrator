@@ -1,12 +1,21 @@
 using System.Security.Claims;
 using System.Text.Json;
 using gpc_ping.Validators;
+using gpc.Helpers;
 using Shouldly;
 
 namespace gpc_ping.Tests;
 
 public class ValidationHelpersTests
 {
+    public ValidationHelper ValidationHelpers { get; set; }
+
+    public ValidationHelpersTests()
+    {
+        ValidationHelpers = new ValidationHelper();
+    }
+
+
     #region ValidateRequestingDeviceCommonProps
 
     [Fact]
@@ -365,6 +374,132 @@ public class ValidationHelpersTests
         result.Messages.ShouldContain("'requesting_practitioner': name, id valid ");
         result.requestingPractitioner.ShouldNotBeNull();
         result.requestingPractitioner!.Id.ShouldBe("123");
+    }
+
+    #endregion
+
+
+    #region ValidateRequestingOrganization
+
+    [Fact]
+    public void ValidateRequestingOrganization_Should_ReturnTrue_When_Valid()
+    {
+        // Arrange
+        var requestingRecord = new RequestedRecord()
+        {
+            ResourceType = "Organization", Identifier =
+            [
+                new Identifier { System = "https://valid.url", Value = "019123" }
+            ]
+        };
+        var json = JsonSerializer.Serialize(requestingRecord);
+
+        var validator = TestHelpers.CreateValidatorWithToken<TestValidator>(new Dictionary<string, string>
+            { { "requesting_organization", json } });
+
+        // Act
+        var result = ValidationHelpers.ValidateRequestingOrganizationCommon<RequestingOrganization>(validator.Token);
+
+        // Assert
+        result.IsValid.ShouldBeTrue();
+        result.Messages.Length.ShouldBe(1);
+        result.Messages[0].ShouldBe("'requesting_organization' claim is valid");
+    }
+
+    [Fact]
+    public void ValidateRequestingOrganization_ReturnsInvalid_WhenClaimIsMissing()
+    {
+        // Arrange
+        var validator = TestHelpers.CreateValidatorWithToken<TestValidator>(new Dictionary<string, string>());
+
+        // Act
+        var result = ValidationHelpers.ValidateRequestingOrganizationCommon<RequestingOrganization>(validator.Token);
+
+        // Assert
+        result.IsValid.ShouldBeFalse();
+        result.Messages.ShouldContain("'requesting_organization' claim cannot be null or empty");
+    }
+
+    [Fact]
+    public void ValidateRequestingOrganization_ReturnsInvalid_WhenClaimValueIsEmpty()
+    {
+        var validator = TestHelpers.CreateValidatorWithToken<TestValidator>(new Dictionary<string, string>
+        {
+            { "requesting_organization", string.Empty }
+        });
+
+        var result = ValidationHelpers.ValidateRequestingOrganizationCommon<RequestingOrganization>(validator.Token);
+
+        result.IsValid.ShouldBeFalse();
+        result.Messages.ShouldContain("'requesting_organization' claim cannot be null or empty");
+    }
+
+    [Fact]
+    public void ValidateRequestingOrganization_ReturnsInvalid_WhenResourceTypeIsMissing()
+    {
+        var json = JsonSerializer.Serialize(new
+        {
+            Identifier = new[] { new { System = "http://system", Value = "123" } }
+        });
+
+        var validator = TestHelpers.CreateValidatorWithToken<TestValidator>(new Dictionary<string, string>
+        {
+            { "requesting_organization", json }
+        });
+
+        var result = ValidationHelpers.ValidateRequestingOrganizationCommon<RequestingOrganization>(validator.Token);
+
+        result.IsValid.ShouldBeFalse();
+        result.Messages.ShouldContain("'requesting_organization:resource_type' claim cannot be null or empty");
+    }
+
+    [Fact]
+    public void ValidateRequestedRecord_ReturnsInvalid_WhenIdentifierIsNull()
+    {
+        var json = JsonSerializer.Serialize(new { ResourceType = "Organization", Identifier = (object)null! });
+        var validator = TestHelpers.CreateValidatorWithToken<TestValidator>(new Dictionary<string, string>
+        {
+            { "requesting_organization", json }
+        });
+
+        var result = ValidationHelpers.ValidateRequestingOrganizationCommon<RequestingOrganization>(validator.Token);
+
+        result.IsValid.ShouldBeFalse();
+        result.Messages.ShouldContain("'requesting_organization' is missing an identifier value");
+    }
+
+    [Fact]
+    public void ValidateRequestingOrganization_ReturnsInvalid_WhenIdentifierIsEmpty()
+    {
+        var json = JsonSerializer.Serialize(new { ResourceType = "Organization", Identifier = new object[] { } });
+        var validator = TestHelpers.CreateValidatorWithToken<TestValidator>(new Dictionary<string, string>
+        {
+            { "requesting_organization", json }
+        });
+        var result = ValidationHelpers.ValidateRequestingOrganizationCommon<RequestingOrganization>(validator.Token);
+
+        result.IsValid.ShouldBeFalse();
+        result.Messages.ShouldContain("'requesting_organization' is missing an identifier value");
+    }
+
+    [Fact]
+    public void ValidateRequestingOrganization_ReturnsInvalid_WhenIdentifierHasEmptySystemOrValue()
+    {
+        var json = JsonSerializer.Serialize(new
+        {
+            ResourceType = "Organization",
+            Identifier = new[] { new { System = "", Value = "" } }
+        });
+
+        var validator = TestHelpers.CreateValidatorWithToken<TestValidator>(new Dictionary<string, string>
+        {
+            { "requesting_organization", json }
+        });
+
+        var result = ValidationHelpers.ValidateRequestingOrganizationCommon<RequestingOrganization>(validator.Token);
+
+        result.IsValid.ShouldBeFalse();
+        result.Messages.ShouldContain("'requesting_organization' - identifier[0] claim is invalid");
     }
 
     #endregion
