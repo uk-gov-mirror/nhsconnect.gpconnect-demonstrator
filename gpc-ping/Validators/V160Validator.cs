@@ -6,6 +6,18 @@ namespace gpc_ping.Validators;
 
 public class V160Validator(JwtSecurityToken token) : BaseValidator(token)
 {
+    public override (bool IsValid, string Message) ValidateReasonForRequest()
+    {
+        var reason = token.Claims.FirstOrDefault(x => x.Type == "reason_for_request")?.Value;
+
+        if (string.IsNullOrEmpty(reason))
+            return (false, "Missing 'reason_for_request' claim");
+
+        return reason is "directcare" or "migration"
+            ? (true, "'reason_for_request' is valid")
+            : (false, $"Invalid 'reason_for_request': '{reason}'");
+    }
+
     public override (bool IsValid, string Message) ValidateRequestedScope(string[] acceptedClaimValues)
     {
         string[] acceptedConfidentialityValues =
@@ -58,11 +70,6 @@ public class V160Validator(JwtSecurityToken token) : BaseValidator(token)
         }
     }
 
-    public override (bool IsValid, string Message) ValidateRequestedRecord()
-    {
-        throw new NotImplementedException();
-    }
-
     public override (bool IsValid, string Message) ValidateRequestingDevice()
     {
         throw new NotImplementedException();
@@ -73,7 +80,7 @@ public class V160Validator(JwtSecurityToken token) : BaseValidator(token)
         throw new NotImplementedException();
     }
 
-    public override (bool IsValid, string Message) ValidateRequestingPractitioner()
+    public override (bool IsValid, string[] Messages) ValidateRequestingPractitioner()
     {
         throw new NotImplementedException();
     }

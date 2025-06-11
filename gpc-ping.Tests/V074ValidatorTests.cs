@@ -1,6 +1,8 @@
 using System.ComponentModel;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using System.Text.Json;
+using gpc_ping;
 using gpc_ping.Validators;
 using Shouldly;
 using gpc.Helpers;
@@ -10,7 +12,7 @@ namespace gpc;
 
 public class V074ValidatorTests
 {
-    # region Audience Tests
+    # region Audience
 
     [Fact]
     public void ValidateAudience_ValidAudience()
@@ -27,7 +29,7 @@ public class V074ValidatorTests
 
         // Assert
         result.IsValid.ShouldBeTrue();
-        result.Message.ShouldBe("Audience is valid");
+        result.Message.ShouldBe("'aud' claim is valid");
     }
 
     [Theory]
@@ -45,26 +47,27 @@ public class V074ValidatorTests
 
         // Assert
         result.IsValid.ShouldBeFalse();
-        result.Message.ShouldBe("Audience is not valid - see GP Connect specification");
+        result.Message.ShouldBe("'aud' claim is not valid - see GP Connect specification");
     }
 
 
     [Theory]
-    [InlineData("Empty audience", "eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0.eyJhdWQiOiIifQ.")] // empty aud
-    [InlineData("null", "eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0.eyJhdWQiOm51bGx9.")] // null
-    [InlineData("Whitespace", "eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0.eyJhdWQiOiIgICAifQ.")] // whitespace
-    public void ValidateAudience_InvalidAudience_NullOrEmptyAudience(string reason, string? tokenString)
+    [InlineData("")] // empty aud
+    [InlineData(" ")] // whitespace
+    public void ValidateAudience_InvalidAudience_EmptyOrWhitespaceAudience(string? tokenString)
     {
         // Arrange
-        var token = new JwtSecurityTokenHandler().ReadJwtToken(tokenString);
-        var validator = new V074Validator(token);
+        var validator = TestHelpers.CreateValidatorWithToken<V074Validator>(new Dictionary<string, string>
+        {
+            { "aud", tokenString }
+        });
 
         // Act
         var result = validator.ValidateAudience();
 
         // Assert
         result.IsValid.ShouldBeFalse();
-        result.Message.ShouldBe("Audience is not valid - must have value");
+        result.Message.ShouldBe("'aud' claim cannot be null or empty");
     }
 
     #endregion
@@ -85,14 +88,15 @@ public class V074ValidatorTests
 
         // Assert
         result.IsValid.ShouldBeTrue();
-        result.Message.ShouldBe("Reason for request is valid.");
+        result.Message.ShouldBe("'reason_for_request' is valid.");
     }
 
     [Fact]
     public void ValidateReasonForRequest_ReturnsFalse_WhenMissingClaim()
     {
         // Arrange
-        var validator = TestHelpers.CreateValidatorWithToken<V074Validator>(new Dictionary<string, string>());
+        var validator =
+            TestHelpers.CreateValidatorWithToken<V074Validator>(new Dictionary<string, string>());
 
         // Act
         var result = validator.ValidateReasonForRequest();
@@ -116,7 +120,392 @@ public class V074ValidatorTests
 
         // Assert
         result.IsValid.ShouldBeFalse();
-        result.Message.ShouldBe($"Invalid reason for request: 'patient_data'");
+        result.Message.ShouldBe($"Invalid 'reason_for_request': 'patient_data'");
+    }
+
+    #endregion
+
+    #region Requesting Device
+
+    [Fact]
+    public void ValidateRequestingDevice_Should_ReturnFalse_When_ClaimIsMissing()
+    {
+        var validator = TestHelpers.CreateValidatorWithToken<V074Validator>(new Dictionary<string, string>());
+
+        var result = validator.ValidateRequestingDevice();
+
+        result.IsValid.ShouldBeFalse();
+        result.Message.ShouldBe("'requesting_device' claim cannot be null or empty");
+    }
+
+    [Theory]
+    [InlineData("")]
+    [InlineData("   ")]
+    public void ValidateRequestingDevice_Should_ReturnFalse_When_ClaimValueIsEmptyOrWhitespace(string claimValue)
+    {
+        var validator = TestHelpers.CreateValidatorWithToken<V074Validator>(
+            new Dictionary<string, string> { { "requesting_device", claimValue } });
+
+        var result = validator.ValidateRequestingDevice();
+
+        result.IsValid.ShouldBeFalse();
+        result.Message.ShouldBe("'requesting_device' claim cannot be null or empty");
+    }
+
+    [Fact]
+    public void ValidateRequestingDevice_Should_ReturnFalse_When_ClaimValueIsInvalidJson()
+    {
+        var validator = TestHelpers.CreateValidatorWithToken<V074Validator>(
+            new Dictionary<string, string> { { "requesting_device", "{ invalid json" } });
+
+        var result = validator.ValidateRequestingDevice();
+
+        result.IsValid.ShouldBeFalse();
+        result.Message.ShouldBe("Failed to parse 'requesting_device' claim");
+    }
+
+
+    [Fact]
+    public void ValidateRequestingDevice_Should_ReturnFalse_When_DeserializedDeviceIsNull()
+    {
+        var validator = TestHelpers.CreateValidatorWithToken<V074Validator>(
+            new Dictionary<string, string> { { "requesting_device", "null" } });
+
+        var result = validator.ValidateRequestingDevice();
+
+        result.IsValid.ShouldBeFalse();
+        result.Message.ShouldBe("Invalid requesting device - see GP Connect specification");
+    }
+
+    [Fact]
+    public void ValidateRequestingDevice_Should_ReturnFalse_When_IdentifierIsEmpty()
+    {
+        var device = new V074RequestingDevice()
+        {
+            Identifier = Array.Empty<Identifier>(),
+            Model = "ModelX",
+            Version = "1.0"
+        };
+        var json = JsonSerializer.Serialize(device);
+
+        var validator = TestHelpers.CreateValidatorWithToken<V074Validator>(
+            new Dictionary<string, string> { { "requesting_device", json } });
+
+        var result = validator.ValidateRequestingDevice();
+
+        result.IsValid.ShouldBeFalse();
+        result.Message.ShouldBe("Invalid requesting device - see GP Connect specification");
+    }
+
+    [Theory]
+    [InlineData(null)]
+    [InlineData("")]
+    [InlineData("   ")]
+    public void ValidateRequestingDevice_Should_ReturnFalse_When_FirstIdentifierSystemIsNullOrWhitespace(string system)
+    {
+        var device = new V074RequestingDevice()
+        {
+            ResourceType = "ResourceType",
+            Identifier = new[]
+            {
+                new Identifier { System = system, Value = "some-value" }
+            },
+            Model = "ModelX",
+            Version = "1.0"
+        };
+        var json = JsonSerializer.Serialize(device);
+
+        var validator = TestHelpers.CreateValidatorWithToken<V074Validator>(
+            new Dictionary<string, string> { { "requesting_device", json } });
+
+        var result = validator.ValidateRequestingDevice();
+
+        result.IsValid.ShouldBeFalse();
+        result.Message.ShouldBe("Invalid requesting device - see GP Connect specification");
+    }
+
+    [Fact]
+    public void ValidateRequestingDevice_Should_ReturnFalse_When_FirstIdentifierSystemIsInvalidUrl()
+    {
+        var device = new V074RequestingDevice()
+        {
+            ResourceType = "ResourceType",
+            Identifier = new[]
+            {
+                new Identifier { System = "not-a-valid-url", Value = "some-value" }
+            },
+            Model = "ModelX",
+            Version = "1.0"
+        };
+        var json = JsonSerializer.Serialize(device);
+
+        var validator = TestHelpers.CreateValidatorWithToken<V074Validator>(
+            new Dictionary<string, string> { { "requesting_device", json } });
+
+        var result = validator.ValidateRequestingDevice();
+
+        result.IsValid.ShouldBeFalse();
+        result.Message.ShouldBe("Invalid requesting device - see GP Connect specification");
+    }
+
+    [Theory]
+    [InlineData(null)]
+    [InlineData("")]
+    [InlineData("   ")]
+    public void ValidateRequestingDevice_Should_ReturnFalse_When_FirstIdentifierValueIsNullOrWhitespace(string value)
+    {
+        var device = new V074RequestingDevice()
+        {
+            ResourceType = "ResourceType",
+            Identifier = new[]
+            {
+                new Identifier { System = "https://valid.url", Value = value }
+            },
+            Model = "ModelX",
+            Version = "1.0"
+        };
+        var json = JsonSerializer.Serialize(device);
+
+        var validator = TestHelpers.CreateValidatorWithToken<V074Validator>(
+            new Dictionary<string, string> { { "requesting_device", json } });
+
+        var result = validator.ValidateRequestingDevice();
+
+        result.IsValid.ShouldBeFalse();
+        result.Message.ShouldBe("Invalid requesting device - see GP Connect specification");
+    }
+
+    [Theory]
+    [InlineData(null)]
+    [InlineData("")]
+    [InlineData("   ")]
+    public void ValidateRequestingDevice_Should_ReturnFalse_When_ModelIsNullOrWhitespace(string model)
+    {
+        var device = new V074RequestingDevice()
+        {
+            ResourceType = "ResourceType",
+            Identifier = new[]
+            {
+                new Identifier { System = "https://valid.url", Value = "value" }
+            },
+            Model = model,
+            Version = "1.0"
+        };
+        var json = JsonSerializer.Serialize(device);
+
+        var validator = TestHelpers.CreateValidatorWithToken<V074Validator>(
+            new Dictionary<string, string> { { "requesting_device", json } });
+
+        var result = validator.ValidateRequestingDevice();
+
+        result.IsValid.ShouldBeFalse();
+        result.Message.ShouldBe("Invalid requesting device - see GP Connect specification");
+    }
+
+    [Theory]
+    [InlineData(null)]
+    [InlineData("")]
+    [InlineData("   ")]
+    public void ValidateRequestingDevice_Should_ReturnFalse_When_VersionIsNullOrWhitespace(string version)
+    {
+        var device = new V074RequestingDevice()
+        {
+            ResourceType = "ResourceType",
+            Identifier = new[]
+            {
+                new Identifier { System = "https://valid.url", Value = "value" }
+            },
+            Model = "ModelX",
+            Version = version
+        };
+        var json = JsonSerializer.Serialize(device);
+
+        var validator = TestHelpers.CreateValidatorWithToken<V074Validator>(
+            new Dictionary<string, string> { { "requesting_device", json } });
+
+        var result = validator.ValidateRequestingDevice();
+
+        result.IsValid.ShouldBeFalse();
+        result.Message.ShouldBe("Invalid requesting device - see GP Connect specification");
+    }
+
+    [Fact]
+    public void ValidateRequestingDevice_Should_ReturnTrue_When_RequestingDeviceIsValid()
+    {
+        var device = new V074RequestingDevice()
+        {
+            ResourceType = "ResourceType",
+            Id = "deviceId",
+            Identifier = new[]
+            {
+                new Identifier { System = "https://valid.url", Value = "device-123" }
+            },
+            Model = "ModelX",
+            Version = "1.0"
+        };
+        var json = JsonSerializer.Serialize(device);
+
+        var validator = TestHelpers.CreateValidatorWithToken<V074Validator>(
+            new Dictionary<string, string> { { "requesting_device", json } });
+
+        var result = validator.ValidateRequestingDevice();
+
+        result.IsValid.ShouldBeTrue();
+        result.Message.ShouldBe("The requesting device is valid.");
+    }
+
+    [Theory]
+    [InlineData(null)]
+    [InlineData("")]
+    public void Validate_RequestingDevice_Should_ReturnFalse_WhenRequestingDeviceId_IsMissing(
+        string requestingDeviceId)
+    {
+        var device = new V074RequestingDevice()
+        {
+            ResourceType = "ResourceType",
+            Id = requestingDeviceId,
+            Identifier = new[]
+            {
+                new Identifier { System = "https://valid.url", Value = "device-123" }
+            },
+            Model = "ModelX",
+            Version = "1.0"
+        };
+        var json = JsonSerializer.Serialize(device);
+
+        var validator = TestHelpers.CreateValidatorWithToken<V074Validator>(
+            new Dictionary<string, string> { { "requesting_device", json } });
+
+        var result = validator.ValidateRequestingDevice();
+
+        result.IsValid.ShouldBeFalse();
+        result.Message.ShouldBe("Invalid requesting device - missing Id");
+    }
+
+    #endregion
+
+    #region Requested Record
+
+    [Fact]
+    public void Validate_RequestedRecord_Should_ReturnTrue_When_Valid()
+    {
+        var requestingRecord = new RequestedRecord()
+        {
+            ResourceType = "Patient", Identifier =
+            [
+                new Identifier { System = "https://valid.url", Value = "device-123" }
+            ]
+        };
+        var json = JsonSerializer.Serialize(requestingRecord);
+
+        // Arrange
+        var validator = TestHelpers.CreateValidatorWithToken<V074Validator>(new Dictionary<string, string>
+            { { "requested_record", json } });
+
+        // Act
+
+        var result = validator.ValidateRequestedRecord();
+
+        // Assert
+        result.IsValid.ShouldBeTrue();
+        result.Messages.Length.ShouldBe(1);
+        result.Messages[0].ShouldBe("'requested_record' claim is valid");
+    }
+
+    [Fact]
+    public void ValidateRequestedRecord_ReturnsInvalid_WhenClaimIsMissing()
+    {
+        // Arrange
+        var validator = TestHelpers.CreateValidatorWithToken<V074Validator>(new Dictionary<string, string>());
+
+        // Act
+        var result = validator.ValidateRequestedRecord();
+
+        // Assert
+        result.IsValid.ShouldBeFalse();
+        result.Messages.ShouldContain("'requested_record' claim cannot be null or empty");
+    }
+
+    [Fact]
+    public void ValidateRequestedRecord_ReturnsInvalid_WhenClaimValueIsEmpty()
+    {
+        var validator = TestHelpers.CreateValidatorWithToken<V074Validator>(new Dictionary<string, string>
+        {
+            { "requested_record", string.Empty }
+        });
+
+        var result = validator.ValidateRequestedRecord();
+
+        Assert.False(result.IsValid);
+        Assert.Contains("'requested_record' claim cannot be null or empty", result.Messages);
+    }
+
+    [Fact]
+    public void ValidateRequestedRecord_ReturnsInvalid_WhenResourceTypeIsMissing()
+    {
+        var json = JsonSerializer.Serialize(new
+        {
+            Identifier = new[] { new { System = "http://system", Value = "123" } }
+        });
+
+        var validator = TestHelpers.CreateValidatorWithToken<V074Validator>(new Dictionary<string, string>
+        {
+            { "requested_record", json }
+        });
+
+        var result = validator.ValidateRequestedRecord();
+
+        Assert.False(result.IsValid);
+        Assert.Contains("'resource_type' claim cannot be null or empty", result.Messages);
+    }
+
+    [Fact]
+    public void ValidateRequestedRecord_ReturnsInvalid_WhenIdentifierIsNull()
+    {
+        var json = JsonSerializer.Serialize(new { ResourceType = "Patient", Identifier = (object)null! });
+        var validator = TestHelpers.CreateValidatorWithToken<V074Validator>(new Dictionary<string, string>
+        {
+            { "requested_record", json }
+        });
+
+        var result = validator.ValidateRequestedRecord();
+
+        Assert.False(result.IsValid);
+        Assert.Contains("'requested_record' claim is missing an identifier value", result.Messages);
+    }
+
+    [Fact]
+    public void ValidateRequestedRecord_ReturnsInvalid_WhenIdentifierIsEmpty()
+    {
+        var json = JsonSerializer.Serialize(new { ResourceType = "Patient", Identifier = new object[] { } });
+        var validator = TestHelpers.CreateValidatorWithToken<V074Validator>(new Dictionary<string, string>
+        {
+            { "requested_record", json }
+        });
+        var result = validator.ValidateRequestedRecord();
+
+        Assert.False(result.IsValid);
+        Assert.Contains("'requested_record' claim is missing an identifier value", result.Messages);
+    }
+
+    [Fact]
+    public void ValidateRequestedRecord_ReturnsInvalid_WhenIdentifierHasEmptySystemOrValue()
+    {
+        var json = JsonSerializer.Serialize(new
+        {
+            ResourceType = "Patient",
+            Identifier = new[] { new { System = "", Value = "" } }
+        });
+
+        var validator = TestHelpers.CreateValidatorWithToken<V074Validator>(new Dictionary<string, string>
+        {
+            { "requested_record", json }
+        });
+
+        var result = validator.ValidateRequestedRecord();
+
+        Assert.False(result.IsValid);
+        Assert.Contains("'requested_record' - identifier[0] claim is invalid", result.Messages);
     }
 
     #endregion

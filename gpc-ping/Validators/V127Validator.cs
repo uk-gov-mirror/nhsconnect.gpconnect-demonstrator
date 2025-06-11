@@ -4,11 +4,6 @@ namespace gpc_ping.Validators;
 
 public class V127Validator(JwtSecurityToken token) : BaseValidator(token)
 {
-    public override (bool IsValid, string Message) ValidateRequestedRecord()
-    {
-        throw new NotImplementedException();
-    }
-
     public override (bool IsValid, string Message) ValidateRequestingDevice()
     {
         throw new NotImplementedException();
@@ -19,7 +14,8 @@ public class V127Validator(JwtSecurityToken token) : BaseValidator(token)
         throw new NotImplementedException();
     }
 
-    public override (bool IsValid, string Message) ValidateRequestingPractitioner()
+
+    public override (bool IsValid, string[] Messages) ValidateRequestingPractitioner()
     {
         throw new NotImplementedException();
     }

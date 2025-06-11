@@ -103,14 +103,35 @@ public class BaseValidatorTests
     #region Validate Subject
 
     [Fact]
-    public void ValidateSubject_Should_Return_False_When_Subject_Is_Missing()
+    public void ValidateSubject_Should_Return_True_When_Subject_Is_Valid()
     {
         // Arrange
-        var token = new JwtSecurityToken(claims: new List<Claim>()); // no "sub" claim
+        var claims = new List<Claim>
+        {
+            new("sub", "1"),
+        };
+
+        var token = new JwtSecurityToken(claims: claims);
         var validator = new TestValidator(token);
 
         // Act
-        var result = validator.ValidateSubject();
+        var result = validator.ValidateSubject("1");
+
+        // Assert
+        result.Message.ShouldBe("Subject is valid.");
+        result.IsValid.ShouldBeTrue();
+    }
+
+
+    [Fact]
+    public void ValidateSubject_Should_Return_False_When_Subject_Is_Missing()
+    {
+        // Arrange
+        var token = new JwtSecurityToken(claims: new List<Claim>());
+        var validator = new TestValidator(token);
+
+        // Act
+        var result = validator.ValidateSubject("019102910");
 
         // Assert
         result.IsValid.ShouldBeFalse();
@@ -118,37 +139,19 @@ public class BaseValidatorTests
     }
 
     [Fact]
-    public void ValidateSubject_Should_Return_False_and_Reason_When_Subject_Does_Not_Match_Id()
+    public void ValidateSubject_Should_Return_False_When_Subject_Does_Not_Match_Id()
     {
-        var practitioner = new RequestingPractitioner
-        {
-            Id = "1",
-            Identifier = new[]
-            {
-                new Identifier { System = "local", Value = "1" }
-            },
-            Name = new Name
-            {
-                Family = new[] { "Smith" },
-                Given = new[] { "John" },
-                Prefix = new[] { "Dr" }
-            }
-        };
-
         const string subject = "2";
-
-        var json = JsonSerializer.Serialize(practitioner);
         var claims = new List<Claim>
         {
             new("sub", subject),
-            new("requesting_practitioner", json)
         };
 
         var token = new JwtSecurityToken(claims: claims);
         var validator = new TestValidator(token);
 
         // Act
-        var result = validator.ValidateSubject();
+        var result = validator.ValidateSubject("0101");
 
         // Arrange
         result.IsValid.ShouldBeFalse();
@@ -156,44 +159,7 @@ public class BaseValidatorTests
     }
 
     [Fact]
-    public void ValidateSubject_Should_Return_True_When_Subject_Is_Valid()
-    {
-        // Arrange
-        var practitioner = new RequestingPractitioner
-        {
-            Id = "1",
-            Identifier =
-            [
-                new Identifier { System = "local", Value = "1" }
-            ],
-            Name = new Name
-            {
-                Family = ["Smith"],
-                Given = ["John"],
-                Prefix = ["Dr"]
-            }
-        };
-
-        var json = JsonSerializer.Serialize(practitioner);
-        var claims = new List<Claim>
-        {
-            new("sub", "1"),
-            new("requesting_practitioner", json)
-        };
-
-        var token = new JwtSecurityToken(claims: claims);
-        var validator = new TestValidator(token);
-
-        // Act
-        var result = validator.ValidateSubject();
-
-        // Assert
-        result.Message.ShouldBe("Subject is valid.");
-        result.IsValid.ShouldBeTrue();
-    }
-
-    [Fact]
-    public void ValidateSubject_ShouldReturnFalse_When_RequestingPractitionerIsMissing()
+    public void ValidateSubject_ShouldReturnFalse_When_RequestingPractitionerIdIsNull()
     {
         // Arrange
         var validator = TestHelpers.CreateValidatorWithToken<TestValidator>(new Dictionary<string, string>
@@ -202,11 +168,11 @@ public class BaseValidatorTests
         });
 
         // Arrange
-        var result = validator.ValidateSubject();
+        var result = validator.ValidateSubject(null);
 
         // Act
         result.IsValid.ShouldBeFalse();
-        result.Message.ShouldBe("Missing 'requesting_practitioner' claim.");
+        result.Message.ShouldBe("Requesting practitioner id is null");
     }
 
     #endregion
@@ -371,7 +337,7 @@ public class BaseValidatorTests
 
         // Assert
         result.IsValid.ShouldBeFalse();
-        result.Message.ShouldBe("Audience is not valid - must have value");
+        result.Message.ShouldBe("'aud' claim cannot be null or empty");
     }
 
     [Fact]
@@ -535,6 +501,284 @@ public class BaseValidatorTests
         // Assert
         exception.Message.ShouldContain("acceptedClaims must not be null or empty");
         exception.ParamName.ShouldBe("acceptedClaimValues");
+    }
+
+    #endregion
+
+    #region ValidateRequestingDevice
+
+    [Fact]
+    public void ValidateRequestingDevice_Should_ReturnFalse_When_ClaimIsMissing()
+    {
+        var validator = CreateValidatorWithToken<TestValidator>(new Dictionary<string, string>());
+
+        var result = validator.ValidateRequestingDevice();
+
+        result.IsValid.ShouldBeFalse();
+        result.Message.ShouldBe("'requesting_device' claim cannot be null or empty");
+    }
+
+    [Theory]
+    [InlineData("")]
+    [InlineData("   ")]
+    public void Should_ReturnFalse_When_ClaimValueIsEmptyOrWhitespace(string claimValue)
+    {
+        var validator = CreateValidatorWithToken<TestValidator>(
+            new Dictionary<string, string> { { "requesting_device", claimValue } });
+
+        var result = validator.ValidateRequestingDevice();
+
+        result.IsValid.ShouldBeFalse();
+        result.Message.ShouldBe("'requesting_device' claim cannot be null or empty");
+    }
+
+    [Fact]
+    public void Should_ReturnFalse_When_ClaimValueIsInvalidJson()
+    {
+        var validator = CreateValidatorWithToken<TestValidator>(
+            new Dictionary<string, string> { { "requesting_device", "{ invalid json" } });
+
+        var result = validator.ValidateRequestingDevice();
+
+        result.IsValid.ShouldBeFalse();
+        result.Message.ShouldBe("Failed to parse 'requesting_device' claim");
+    }
+
+    [Fact]
+    public void Should_ReturnFalse_When_DeserializedDeviceIsNull()
+    {
+        var validator = CreateValidatorWithToken<TestValidator>(
+            new Dictionary<string, string> { { "requesting_device", "null" } });
+
+        var result = validator.ValidateRequestingDevice();
+
+        result.IsValid.ShouldBeFalse();
+        result.Message.ShouldBe("Invalid requesting device - see GP Connect specification");
+    }
+
+    [Fact]
+    public void Should_ReturnFalse_When_IdentifierIsEmpty()
+    {
+        var device = new RequestingDevice
+        {
+            Identifier = Array.Empty<Identifier>(),
+            Model = "ModelX",
+            Version = "1.0"
+        };
+        var json = JsonSerializer.Serialize(device);
+
+        var validator = CreateValidatorWithToken<TestValidator>(
+            new Dictionary<string, string> { { "requesting_device", json } });
+
+        var result = validator.ValidateRequestingDevice();
+
+        result.IsValid.ShouldBeFalse();
+        result.Message.ShouldBe("Invalid requesting device - see GP Connect specification");
+    }
+
+    [Theory]
+    [InlineData(null)]
+    [InlineData("")]
+    [InlineData("   ")]
+    public void Should_ReturnFalse_When_FirstIdentifierSystemIsNullOrWhitespace(string system)
+    {
+        var device = new RequestingDevice
+        {
+            ResourceType = "ResourceType",
+            Identifier = new[]
+            {
+                new Identifier { System = system, Value = "some-value" }
+            },
+            Model = "ModelX",
+            Version = "1.0"
+        };
+        var json = JsonSerializer.Serialize(device);
+
+        var validator = CreateValidatorWithToken<TestValidator>(
+            new Dictionary<string, string> { { "requesting_device", json } });
+
+        var result = validator.ValidateRequestingDevice();
+
+        result.IsValid.ShouldBeFalse();
+        result.Message.ShouldBe("Invalid requesting device - see GP Connect specification");
+    }
+
+    [Fact]
+    public void Should_ReturnFalse_When_FirstIdentifierSystemIsInvalidUrl()
+    {
+        var device = new RequestingDevice
+        {
+            ResourceType = "ResourceType",
+            Identifier = new[]
+            {
+                new Identifier { System = "not-a-valid-url", Value = "some-value" }
+            },
+            Model = "ModelX",
+            Version = "1.0"
+        };
+        var json = JsonSerializer.Serialize(device);
+
+        var validator = CreateValidatorWithToken<TestValidator>(
+            new Dictionary<string, string> { { "requesting_device", json } });
+
+        var result = validator.ValidateRequestingDevice();
+
+        result.IsValid.ShouldBeFalse();
+        result.Message.ShouldBe("Invalid requesting device - see GP Connect specification");
+    }
+
+    [Theory]
+    [InlineData(null)]
+    [InlineData("")]
+    [InlineData("   ")]
+    public void Should_ReturnFalse_When_FirstIdentifierValueIsNullOrWhitespace(string value)
+    {
+        var device = new RequestingDevice
+        {
+            ResourceType = "resource type",
+            Identifier = new[]
+            {
+                new Identifier { System = "https://valid.url", Value = value }
+            },
+            Model = "ModelX",
+            Version = "1.0"
+        };
+        var json = JsonSerializer.Serialize(device);
+
+        var validator = CreateValidatorWithToken<TestValidator>(
+            new Dictionary<string, string> { { "requesting_device", json } });
+
+        var result = validator.ValidateRequestingDevice();
+
+        result.IsValid.ShouldBeFalse();
+        result.Message.ShouldContain("Invalid requesting device - see GP Connect specification");
+    }
+
+    [Fact]
+    public void Should_ReturnTrue_WithWarning_WhenMissingResourceType()
+    {
+        var device = new RequestingDevice
+        {
+            Identifier = new[]
+            {
+                new Identifier { System = "https://valid.url", Value = "value" }
+            },
+            Model = "ModelX",
+            Version = "1.0"
+        };
+        var json = JsonSerializer.Serialize(device);
+
+        var validator = CreateValidatorWithToken<TestValidator>(
+            new Dictionary<string, string> { { "requesting_device", json } });
+
+        var result = validator.ValidateRequestingDevice();
+
+        result.IsValid.ShouldBeTrue();
+        result.Message.ShouldContain("The requesting device is valid.");
+        result.Message.ShouldContain("warning: resource_type is missing or empty");
+    }
+
+    [Theory]
+    [InlineData(null)]
+    [InlineData("")]
+    [InlineData("   ")]
+    public void Should_ReturnFalse_When_ModelIsNullOrWhitespace(string model)
+    {
+        var device = new RequestingDevice
+        {
+            ResourceType = "ResourceType",
+            Identifier = new[]
+            {
+                new Identifier { System = "https://valid.url", Value = "value" }
+            },
+            Model = model,
+            Version = "1.0"
+        };
+        var json = JsonSerializer.Serialize(device);
+
+        var validator = CreateValidatorWithToken<TestValidator>(
+            new Dictionary<string, string> { { "requesting_device", json } });
+
+        var result = validator.ValidateRequestingDevice();
+
+        result.IsValid.ShouldBeFalse();
+        result.Message.ShouldBe("Invalid requesting device - see GP Connect specification");
+    }
+
+    [Theory]
+    [InlineData(null)]
+    [InlineData("")]
+    [InlineData("   ")]
+    public void Should_ReturnFalse_When_VersionIsNullOrWhitespace(string version)
+    {
+        var device = new RequestingDevice
+        {
+            ResourceType = "ResourceType",
+            Identifier = new[]
+            {
+                new Identifier { System = "https://valid.url", Value = "value" }
+            },
+            Model = "ModelX",
+            Version = version
+        };
+        var json = JsonSerializer.Serialize(device);
+
+        var validator = CreateValidatorWithToken<TestValidator>(
+            new Dictionary<string, string> { { "requesting_device", json } });
+
+        var result = validator.ValidateRequestingDevice();
+
+        result.IsValid.ShouldBeFalse();
+        result.Message.ShouldBe("Invalid requesting device - see GP Connect specification");
+    }
+
+    [Fact]
+    public void Should_ReturnTrue_When_RequestingDeviceIsValid()
+    {
+        var device = new RequestingDevice
+        {
+            ResourceType = "resource_type",
+            Identifier = new[]
+            {
+                new Identifier { System = "https://valid.url", Value = "device-123" }
+            },
+            Model = "ModelX",
+            Version = "1.0"
+        };
+        var json = JsonSerializer.Serialize(device);
+
+        var validator = CreateValidatorWithToken<TestValidator>(
+            new Dictionary<string, string> { { "requesting_device", json } });
+
+        var result = validator.ValidateRequestingDevice();
+
+        result.IsValid.ShouldBeTrue();
+        result.Message.ShouldBe("The requesting device is valid.");
+    }
+
+
+    [Fact]
+    public void Should_ReturnTrue_AndWarning_When_RequestingDeviceIsValid_AndMissingResourceType()
+    {
+        var device = new RequestingDevice
+        {
+            Identifier = new[]
+            {
+                new Identifier { System = "https://valid.url", Value = "device-123" }
+            },
+            Model = "ModelX",
+            Version = "1.0"
+        };
+        var json = JsonSerializer.Serialize(device);
+
+        var validator = CreateValidatorWithToken<TestValidator>(
+            new Dictionary<string, string> { { "requesting_device", json } });
+
+        var result = validator.ValidateRequestingDevice();
+
+        result.IsValid.ShouldBeTrue();
+        result.Message.ShouldContain("The requesting device is valid.");
+        result.Message.ShouldContain("warning: resource_type is missing or empty");
     }
 
     #endregion

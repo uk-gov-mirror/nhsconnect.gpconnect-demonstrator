@@ -2,6 +2,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text.Json;
 using System.Text.RegularExpressions;
+using gpc_ping.Validators;
 using Microsoft.IdentityModel.Tokens;
 
 namespace gpc_ping;
@@ -36,10 +37,13 @@ public abstract class BaseValidator(JwtSecurityToken token)
             : (false, "Issuer must contain the URL of auth server token endpoint");
     }
 
-    // TODO: update this method to pass in a requestingPractitionerId,
-    // instead of carrying out logic in method to compare with
-    public (bool IsValid, string Message) ValidateSubject(string requestingPractitionerId)
+    public (bool IsValid, string Message) ValidateSubject(string? requestingPractitionerId)
     {
+        if (requestingPractitionerId == null)
+        {
+            return (false, "Requesting practitioner id is null");
+        }
+
         var subject = token.Claims.SingleOrDefault(x => x.Type == "sub")?.Value;
 
         if (string.IsNullOrEmpty(subject))
@@ -47,34 +51,22 @@ public abstract class BaseValidator(JwtSecurityToken token)
             return (false, "Subject cannot be null or empty");
         }
 
-        var practitionerClaim = token.Claims.SingleOrDefault(x => x.Type == "requesting_practitioner")?.Value;
-
-        if (string.IsNullOrEmpty(practitionerClaim))
-        {
-            return (false, "Missing 'requesting_practitioner' claim.");
-        }
-
-        RequestingPractitioner? practitioner;
-
-        try
-        {
-            practitioner = JsonSerializer.Deserialize<RequestingPractitioner>(practitionerClaim);
-        }
-        catch (JsonException)
-        {
-            return (false, "Invalid JSON in 'requesting_practitioner' claim.");
-        }
-
-        if (practitioner == null || string.IsNullOrEmpty(practitioner.Id))
-        {
-            return (false, "'requesting_practitioner.id' is missing or empty.");
-        }
-
-        return !practitioner.Id.Equals(subject)
+        return !requestingPractitionerId.Equals(subject)
             ? (false, "Subject and requesting_practitioner.Id mismatch")
             : (true, "Subject is valid.");
     }
 
+    public virtual (bool IsValid, string Message) ValidateAudience()
+    {
+        return token.Claims.FirstOrDefault(x => x.Type == "aud")?.Value == null
+            ? (false, "'aud' claim cannot be null or empty")
+            : IsValidAudience(token.Claims.FirstOrDefault(x => x.Type == "aud"));
+    }
+
+    /// <summary>
+    /// Validates both 'iat' and 'exp' claims
+    /// </summary>
+    /// <returns></returns>
     public (bool IsValid, string[] Messages) ValidateLifetime()
     {
         var messages = new List<string>();
@@ -118,12 +110,6 @@ public abstract class BaseValidator(JwtSecurityToken token)
         }
     }
 
-    public virtual (bool IsValid, string Message) ValidateAudience()
-    {
-        return token.Audiences.IsNullOrEmpty()
-            ? (false, "Audience is not valid - must have value")
-            : IsValidAudience(token.Claims.FirstOrDefault(x => x.Type == "aud"));
-    }
 
     public virtual (bool IsValid, string Message) ValidateReasonForRequest()
     {
@@ -134,8 +120,8 @@ public abstract class BaseValidator(JwtSecurityToken token)
 
         // GP Connect only supports usage for direct care on most versions of spec
         return reason == "directcare"
-            ? (true, "Reason for request is valid.")
-            : (false, $"Invalid reason for request: '{reason}'");
+            ? (true, "'reason_for_request' is valid.")
+            : (false, $"Invalid 'reason_for_request': '{reason}'");
     }
 
     public virtual (bool IsValid, string Message) ValidateRequestedScope(string[] acceptedClaimValues)
@@ -168,19 +154,55 @@ public abstract class BaseValidator(JwtSecurityToken token)
             : (false, "Invalid 'requested_scope' claim - claim contains invalid value(s)");
     }
 
-    public abstract (bool IsValid, string Message)
-        ValidateRequestedRecord();
 
-    public abstract (bool IsValid, string Message)
-        ValidateRequestingDevice();
+    public virtual (bool IsValid, string Message) ValidateRequestingDevice()
+    {
+        var claim = token.Claims.FirstOrDefault(x => x.Type == "requesting_device");
 
-    public abstract (bool IsValid, string Message)
-        ValidateRequestingOrganization();
+        if (claim == null || string.IsNullOrWhiteSpace(claim.Value))
+        {
+            return (false, "'requesting_device' claim cannot be null or empty");
+        }
 
-    public abstract (bool IsValid, string Message)
-        ValidateRequestingPractitioner();
+        RequestingDevice? requestingDevice;
+        try
+        {
+            requestingDevice = JsonSerializer.Deserialize<RequestingDevice>(claim.Value);
+        }
+        catch (JsonException)
+        {
+            return (false, "Failed to parse 'requesting_device' claim");
+        }
 
-    private (bool IsValid, string Message) IsValidAudience(Claim? audienceClaim)
+        return requestingDevice == null
+            ? (false, "Invalid requesting device - see GP Connect specification")
+            : ValidationHelpers.ValidateRequestingDeviceCommon(requestingDevice);
+    }
+
+
+    public abstract (bool IsValid, string Message) ValidateRequestingOrganization();
+
+    public virtual (bool IsValid, string[] Messages) ValidateRequestingPractitioner()
+    {
+        var (isValid, messages, requestingPractitioner) =
+            ValidationHelpers.DeserializeAndValidateCommonRequestingPractitionerProperties(
+                token.Claims.FirstOrDefault(x => x.Type == "requesting_practitioner"));
+
+        if (!isValid)
+        {
+            return (false, messages);
+        }
+
+        const int requiredIdentifierLength = 3;
+
+        var (isIdentifierValid, identifierMessages) =
+            ValidationHelpers.ValidateRequestingPractitionerIdentifier(requestingPractitioner,
+                requiredIdentifierLength);
+
+        return !isIdentifierValid ? (false, identifierMessages) : (true, ["'requesting_practitioner claim is valid"]);
+    }
+
+    private static (bool IsValid, string Message) IsValidAudience(Claim? audienceClaim)
     {
         var value = audienceClaim?.Value;
         if (audienceClaim == null || string.IsNullOrWhiteSpace(value))
