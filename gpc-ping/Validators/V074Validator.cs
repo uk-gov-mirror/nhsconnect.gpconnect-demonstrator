@@ -133,15 +133,15 @@ public class V074Validator : BaseValidator
     public override (bool IsValid, string[] Messages) ValidateRequestingPractitioner()
     {
         var (isValid, messages, requestingPractitioner) =
-            _validationHelper.DeserializeAndValidateCommonRequestingPractitionerProperties(
+            _validationHelper.DeserializeAndValidateCommonRequestingPractitionerProperties<V074RequestingPractitioner>(
                 Token.Claims.FirstOrDefault(x => x.Type == "requesting_practitioner"));
 
-        if (!isValid)
+        if (!isValid || requestingPractitioner == null)
         {
             return (false, messages);
         }
 
-        const int requiredIdentifierLength = 3;
+        const int requiredIdentifierLength = 2;
         var (isIdentifierValid, identifierMessages) =
             _validationHelper.ValidateRequestingPractitionerIdentifier(requestingPractitioner,
                 requiredIdentifierLength);
@@ -160,7 +160,7 @@ public class V074Validator : BaseValidator
         }
 
         var coding = requestingPractitioner.PractitionerRole.First().Role.Coding.First();
-        if (string.IsNullOrEmpty(coding.System) || string.IsNullOrEmpty(coding.Value))
+        if (string.IsNullOrEmpty(coding.System) || string.IsNullOrEmpty(coding.Code))
         {
             return (false, ["practitioner role: coding is invalid"]);
         }

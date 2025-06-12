@@ -5,9 +5,9 @@ namespace gpc_ping;
 
 public interface IValidationCommonValidation
 {
-    (bool IsValid, string[] Messages, RequestingPractitioner? requestingPractitioner)
-        DeserializeAndValidateCommonRequestingPractitionerProperties(
-            Claim? requestingPractitionerClaim);
+    (bool IsValid, string[] Messages, T? Practitioner)
+        DeserializeAndValidateCommonRequestingPractitionerProperties<T>(Claim? requestingPractitionerClaim)
+        where T : RequestingPractitioner;
 
     (bool IsValid, string[] Messages) ValidateRequestingPractitionerIdentifier(
         RequestingPractitioner requestingPractitioner, int requiredLength);

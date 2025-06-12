@@ -286,46 +286,49 @@ public class ValidationHelpersTests
     [Fact]
     public void ReturnsFalse_WhenClaimIsNull()
     {
-        var result = ValidationHelpers.DeserializeAndValidateCommonRequestingPractitionerProperties(null);
+        var result = ValidationHelpers
+            .DeserializeAndValidateCommonRequestingPractitionerProperties<RequestingPractitioner>(null);
 
         result.IsValid.ShouldBeFalse();
         result.Messages.ShouldContain("Missing 'requesting_practitioner' claim");
-        result.requestingPractitioner.ShouldBeNull();
+        result.Practitioner.ShouldBeNull();
     }
 
     [Fact]
     public void ReturnsFalse_WhenClaimValueIsNullOrEmpty()
     {
         var result =
-            ValidationHelpers.DeserializeAndValidateCommonRequestingPractitionerProperties(
+            ValidationHelpers.DeserializeAndValidateCommonRequestingPractitionerProperties<RequestingPractitioner>(
                 new Claim("requesting_practitioner", ""));
 
         result.IsValid.ShouldBeFalse();
         result.Messages.ShouldContain("'requesting_practitioner' value cannot be null or empty");
-        result.requestingPractitioner.ShouldBeNull();
+        result.Practitioner.ShouldBeNull();
     }
 
     [Fact]
     public void ReturnsFalse_WhenJsonIsInvalid()
     {
-        var result = ValidationHelpers.DeserializeAndValidateCommonRequestingPractitionerProperties(
-            new Claim("requesting_practitioner", "{this is not valid JSON string}"));
+        var result = ValidationHelpers
+            .DeserializeAndValidateCommonRequestingPractitionerProperties<RequestingPractitioner>(
+                new Claim("requesting_practitioner", "{this is not valid JSON string}"));
 
         result.IsValid.ShouldBeFalse();
         result.Messages.ShouldContain("Invalid JSON in 'requesting_practitioner' claim.");
-        result.requestingPractitioner.ShouldBeNull();
+        result.Practitioner.ShouldBeNull();
     }
 
     [Fact]
     public void ReturnsFalse_WhenPractitionerIsNullOrIdIsMissing()
     {
         var json = JsonSerializer.Serialize(new RequestingPractitioner { Id = null });
-        var result = ValidationHelpers.DeserializeAndValidateCommonRequestingPractitionerProperties(
-            new Claim("requesting_practitioner", json));
+        var result = ValidationHelpers
+            .DeserializeAndValidateCommonRequestingPractitionerProperties<RequestingPractitioner>(
+                new Claim("requesting_practitioner", json));
 
         result.IsValid.ShouldBeFalse();
         result.Messages.ShouldContain("'requesting_practitioner.id' is missing or empty.");
-        result.requestingPractitioner.ShouldNotBeNull();
+        result.Practitioner.ShouldNotBeNull();
     }
 
     [Fact]
@@ -343,8 +346,9 @@ public class ValidationHelpersTests
         };
 
         var json = JsonSerializer.Serialize(practitioner);
-        var result = ValidationHelpers.DeserializeAndValidateCommonRequestingPractitionerProperties(
-            new Claim("requesting_practitioner", json));
+        var result = ValidationHelpers
+            .DeserializeAndValidateCommonRequestingPractitionerProperties<RequestingPractitioner>(
+                new Claim("requesting_practitioner", json));
 
         result.IsValid.ShouldBeFalse();
         result.Messages.ShouldContain("name: family name is missing or empty.");
@@ -367,13 +371,14 @@ public class ValidationHelpersTests
         };
 
         var json = JsonSerializer.Serialize(practitioner);
-        var result = ValidationHelpers.DeserializeAndValidateCommonRequestingPractitionerProperties(
-            new Claim("requesting_practitioner", json));
+        var result = ValidationHelpers
+            .DeserializeAndValidateCommonRequestingPractitionerProperties<RequestingPractitioner>(
+                new Claim("requesting_practitioner", json));
 
         result.IsValid.ShouldBeTrue();
         result.Messages.ShouldContain("'requesting_practitioner': name, id valid ");
-        result.requestingPractitioner.ShouldNotBeNull();
-        result.requestingPractitioner!.Id.ShouldBe("123");
+        result.Practitioner.ShouldNotBeNull();
+        result.Practitioner!.Id.ShouldBe("123");
     }
 
     #endregion

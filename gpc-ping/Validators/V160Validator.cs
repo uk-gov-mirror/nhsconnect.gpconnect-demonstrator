@@ -70,14 +70,4 @@ public class V160Validator(JwtSecurityToken token, IValidationCommonValidation v
             return (false, $"Invalid 'requested_scope' claim - claim contains {values.Length} invalid value(s)");
         }
     }
-
-    public override (bool IsValid, string Message) ValidateRequestingDevice()
-    {
-        throw new NotImplementedException();
-    }
-
-    public override (bool IsValid, string[] Messages) ValidateRequestingPractitioner()
-    {
-        throw new NotImplementedException();
-    }
 }

@@ -13,9 +13,9 @@ public class ValidationHelper : IValidationCommonValidation
     /// </summary>
     /// <param name="requestingPractitionerClaim"></param>
     /// <returns></returns>
-    public (bool IsValid, string[] Messages, RequestingPractitioner? requestingPractitioner)
-        DeserializeAndValidateCommonRequestingPractitionerProperties(
-            Claim? requestingPractitionerClaim)
+    public (bool IsValid, string[] Messages, T? Practitioner)
+        DeserializeAndValidateCommonRequestingPractitionerProperties<T>(Claim? requestingPractitionerClaim)
+        where T : RequestingPractitioner
     {
         if (requestingPractitionerClaim == null)
         {
@@ -23,12 +23,14 @@ public class ValidationHelper : IValidationCommonValidation
         }
 
         if (string.IsNullOrEmpty(requestingPractitionerClaim.Value))
+        {
             return (false, ["'requesting_practitioner' value cannot be null or empty"], null);
+        }
 
-        RequestingPractitioner? parsedPractitioner;
+        T? parsedPractitioner;
         try
         {
-            parsedPractitioner = JsonSerializer.Deserialize<RequestingPractitioner>(requestingPractitionerClaim.Value);
+            parsedPractitioner = JsonSerializer.Deserialize<T>(requestingPractitionerClaim.Value);
         }
         catch (JsonException)
         {
@@ -40,8 +42,9 @@ public class ValidationHelper : IValidationCommonValidation
             return (false, ["'requesting_practitioner.id' is missing or empty."], parsedPractitioner);
         }
 
-        // name:
+        // Shared validation on base properties
         var messages = new List<string>();
+
         if (parsedPractitioner.Name == null)
         {
             return (false, ["Name property is missing or empty."], parsedPractitioner);
@@ -56,7 +59,6 @@ public class ValidationHelper : IValidationCommonValidation
         {
             messages.Add("name: given name is missing or empty.");
         }
-
 
         if (parsedPractitioner.Name.Prefix.Length == 0)
         {
@@ -98,7 +100,6 @@ public class ValidationHelper : IValidationCommonValidation
 
         return messages.Count != 0 ? (false, messages.ToArray()) : (true, messages.ToArray());
     }
-
 
     public (bool IsValid, string Message) ValidateRequestingDeviceCommon(RequestingDevice requestingDevice)
     {

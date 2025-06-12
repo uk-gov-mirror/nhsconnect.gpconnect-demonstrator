@@ -199,11 +199,11 @@ public abstract class BaseValidator
 
     public virtual (bool IsValid, string[] Messages) ValidateRequestingPractitioner()
     {
-        var (isValid, messages, requestingPractitioner) =
-            _validationHelper.DeserializeAndValidateCommonRequestingPractitionerProperties(
+        var (isValid, messages, deserializedRequestingPractitioner) =
+            _validationHelper.DeserializeAndValidateCommonRequestingPractitionerProperties<RequestingPractitioner>(
                 Token.Claims.FirstOrDefault(x => x.Type == "requesting_practitioner"));
 
-        if (!isValid)
+        if (!isValid || deserializedRequestingPractitioner == null)
         {
             return (false, messages);
         }
@@ -211,7 +211,7 @@ public abstract class BaseValidator
         const int requiredIdentifierLength = 3;
 
         var (isIdentifierValid, identifierMessages) =
-            _validationHelper.ValidateRequestingPractitionerIdentifier(requestingPractitioner,
+            _validationHelper.ValidateRequestingPractitionerIdentifier(deserializedRequestingPractitioner,
                 requiredIdentifierLength);
 
         return !isIdentifierValid ? (false, identifierMessages) : (true, ["'requesting_practitioner claim is valid"]);

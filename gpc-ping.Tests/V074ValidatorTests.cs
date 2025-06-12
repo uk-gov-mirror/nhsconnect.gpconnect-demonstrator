@@ -636,4 +636,189 @@ public class V074ValidatorTests
     }
 
     #endregion
+
+    #region ValidateRequestingPractitioner
+
+    [Fact]
+    public void ValidateRequestingPractitioner_InvalidDeserialization_ReturnsFalse()
+    {
+        // Arrange
+        const string tokenString =
+            "eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJJZCI6IjAxMDEwIiwiTmFtZSI6InRlc3QtbmFtZSIsIlJlc291cmNlVHlwZSI6Ik9yZ2FuaXphdGlvbiIsIklkZW50aWZpZXIiOlt7IlN5c3RlbSI6Imh0dHBzOi8vdmFsaWQudXJsIiwiVmFsdWUiOiIwMTkxMjMifV19.";
+
+        var mockHelper = Substitute.For<IValidationCommonValidation>();
+        mockHelper
+            .DeserializeAndValidateCommonRequestingPractitionerProperties<V074RequestingPractitioner>(Arg.Any<Claim>())
+            .Returns((false, new[] { "invalid claim" }, null));
+
+
+        var token = new JwtSecurityTokenHandler().ReadJwtToken(tokenString);
+        var testValidator = new V074Validator(token, mockHelper);
+
+
+        // Act
+        var result = testValidator.ValidateRequestingPractitioner();
+
+        // Assert
+        result.IsValid.ShouldBeFalse();
+        result.Messages.ShouldContain("invalid claim");
+    }
+
+    [Fact]
+    public void ValidateRequestingPractitioner_InvalidIdentifier_ReturnsFalse()
+    {
+        // Arrange
+        const string tokenString =
+            "eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJJZCI6IjAxMDEwIiwiTmFtZSI6InRlc3QtbmFtZSIsIlJlc291cmNlVHlwZSI6Ik9yZ2FuaXphdGlvbiIsIklkZW50aWZpZXIiOlt7IlN5c3RlbSI6Imh0dHBzOi8vdmFsaWQudXJsIiwiVmFsdWUiOiIwMTkxMjMifV19.";
+
+        var dummyPractitioner = new V074RequestingPractitioner();
+
+        var token = new JwtSecurityTokenHandler().ReadJwtToken(tokenString);
+        var mockHelper = Substitute.For<IValidationCommonValidation>();
+        var testValidator = new V074Validator(token, mockHelper);
+
+        mockHelper
+            .DeserializeAndValidateCommonRequestingPractitionerProperties<V074RequestingPractitioner>(Arg.Any<Claim>())
+            .Returns((true, [], dummyPractitioner));
+
+        mockHelper
+            .ValidateRequestingPractitionerIdentifier(dummyPractitioner, 2)
+            .Returns((false, new[] { "bad identifier" }));
+
+        // Act
+        var result = testValidator.ValidateRequestingPractitioner();
+
+        // Assert
+        Assert.False(result.IsValid);
+        Assert.Contains("bad identifier", result.Messages);
+    }
+
+    [Fact]
+    public void ValidateRequestingPractitioner_ValidFlow_ReturnsTrue()
+    {
+        // Arrange
+        const string tokenString =
+            "eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJyZXF1ZXN0aW5nX3ByYWN0aXRpb25lciI6eyJyZXNvdXJjZVR5cGUiOiJQcmFjdGl0aW9uZXIiLCJpZCI6ImY3NzM3YmY1LWNmZTctNDkxYy1hZjNhLTZmNzE3N2Q1YWVlMSIsImlkZW50aWZpZXIiOlt7InN5c3RlbSI6Imh0dHA6Ly9maGlyLm5ocy5uZXQvc2RzLXVzZXItaWQiLCJ2YWx1ZSI6IjExMTIyMjMzMzQ0NCJ9LHsic3lzdGVtIjoiaHR0cDovL2NvbnN1bWVyc3VwcGxpZXIuY29tL0lkL3VzZXItZ3VpZCIsInZhbHVlIjoiNTRiOWQ5ODctYzJmMS00ZmRkLWE0NDktZTY3Y2RmNDFkZDJiIn1dLCJuYW1lIjp7ImZhbWlseSI6WyJKb25lcyJdLCJnaXZlbiI6WyJDbGFpcmUiXSwicHJlZml4IjpbIkRyIl19LCJwcmFjdGl0aW9uZXJSb2xlIjpbeyJyb2xlIjp7ImNvZGluZyI6W3sic3lzdGVtIjoiaHR0cDovL2ZoaXIubmhzLm5ldC9WYWx1ZVNldC9zZHMtam9iLXJvbGUtbmFtZS0xIiwiY29kZSI6IlI4MDAwIn1dfX1dfX0.";
+
+        var token = new JwtSecurityTokenHandler().ReadJwtToken(tokenString);
+        var mockHelper = Substitute.For<IValidationCommonValidation>();
+
+        var dummyPractitioner = new V074RequestingPractitioner
+        {
+            ResourceType = "Practitioner",
+            Id = "f7737bf5-cfe7-491c-af3a-6f7177d5aee1",
+            Identifier = new[]
+            {
+                new Identifier
+                {
+                    System = "http://fhir.nhs.net/sds-user-id",
+                    Value = "111222333444"
+                },
+                new Identifier
+                {
+                    System = "http://consumersupplier.com/Id/user-guid",
+                    Value = "54b9d987-c2f1-4fdd-a449-e67cdf41dd2b"
+                }
+            },
+            Name = new Name
+            {
+                Family = new[]
+                {
+                    "Jones"
+                },
+                Given = new[] { "Claire" },
+                Prefix = new[] { "Dr" }
+            },
+            PractitionerRole = new[]
+            {
+                new PractitionerRole
+                {
+                    Role = new Role
+                    {
+                        Coding = new[]
+                        {
+                            new Coding
+                            {
+                                System = "http://fhir.nhs.net/ValueSet/sds-job-role-name-1",
+                                Code = "R8000"
+                            }
+                        }
+                    }
+                }
+            }
+        };
+        var testValidator = new V074Validator(token, mockHelper);
+
+        mockHelper
+            .DeserializeAndValidateCommonRequestingPractitionerProperties<V074RequestingPractitioner>(Arg.Any<Claim>())
+            .Returns((true, [], dummyPractitioner));
+
+        mockHelper
+            .ValidateRequestingPractitionerIdentifier(dummyPractitioner, 2)
+            .Returns((true, []));
+
+        // Act
+        var result = testValidator.ValidateRequestingPractitioner();
+
+        // Assert
+        result.IsValid.ShouldBeTrue();
+        result.Messages.ShouldContain("'requesting_practitioner claim is valid");
+    }
+
+    [Fact]
+    public void ValidateRequestingPractitioner_CallsDeserializeAndValidateRequestingPractitionerProperties()
+    {
+        // Arrange
+        const string tokenString =
+            "eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJyZXF1ZXN0aW5nX3ByYWN0aXRpb25lciI6eyJpZCI6ImY3NzM3YmY1LWNmZTctNDkxYy1hZjNhLTZmNzE3N2Q1YWVlMSIsImlkZW50aWZpZXIiOlt7InN5c3RlbSI6Imh0dHA6Ly9maGlyLm5ocy5uZXQvc2RzLXVzZXItaWQiLCJ2YWx1ZSI6IjExMTIyMjMzMzQ0NCJ9LHsic3lzdGVtIjoiaHR0cDovL2NvbnN1bWVyc3VwcGxpZXIuY29tL0lkL3VzZXItZ3VpZCIsInZhbHVlIjoiNTRiOWQ5ODctYzJmMS00ZmRkLWE0NDktZTY3Y2RmNDFkZDJiIn1dLCJuYW1lIjp7ImZhbWlseSI6WyJKb25lcyJdLCJnaXZlbiI6WyJDbGFpcmUiXSwicHJlZml4IjpbIkRyIl19fX0.";
+
+        var token = new JwtSecurityTokenHandler().ReadJwtToken(tokenString);
+        var mockHelper = Substitute.For<IValidationCommonValidation>();
+
+        var dummyPractitioner = new V074RequestingPractitioner()
+        {
+            Id = "10101",
+            Identifier =
+            [
+                new Identifier()
+                {
+                    System = "https://fhir.nhs.uk/Id/sds-user-id",
+                    Value = "111222333444"
+                },
+                new Identifier()
+                {
+                    System = "https://fhir.nhs.uk/Id/sds-role-profile-id",
+                    Value = "444555666777"
+                },
+                new Identifier()
+                {
+                    System = "https://consumersupplier.com/Id/user-guid",
+                    Value = "98ed4f78-814d-4266-8d5b-cde742f3093c"
+                }
+            ],
+            Name =
+                new Name()
+                {
+                    Family = ["Stark"], Given = ["Tony"], Prefix = ["Mr"]
+                }
+        };
+
+        var testValidator = new V074Validator(token, mockHelper);
+
+        mockHelper
+            .DeserializeAndValidateCommonRequestingPractitionerProperties<V074RequestingPractitioner>(Arg.Any<Claim>())
+            .Returns((true, [], dummyPractitioner));
+
+        mockHelper
+            .ValidateRequestingPractitionerIdentifier(dummyPractitioner, 2)
+            .Returns((true, []));
+
+        // Act
+        testValidator.ValidateRequestingPractitioner();
+
+        // Assert
+        mockHelper.Received(1).ValidateRequestingPractitionerIdentifier(dummyPractitioner, 2);
+    }
+
+    #endregion
 }
