@@ -10,6 +10,11 @@ public class V074Validator : BaseValidator
     {
     }
 
+    public override (bool IsValid, string[] Messages) Validate()
+    {
+        return ValidateAll(["patient/*.read", "organization/*.read"]);
+    }
+
     public override (bool IsValid, string Message) ValidateAudience()
     {
         var audience = Token.Claims.FirstOrDefault(x => x.Type == "aud")?.Value;

@@ -5,7 +5,6 @@ using Shouldly;
 using gpc_ping;
 using gpc_ping.Validators;
 using gpc.Helpers;
-using NLog.Web.LayoutRenderers;
 using NSubstitute;
 using static gpc.Helpers.TestHelpers;
 

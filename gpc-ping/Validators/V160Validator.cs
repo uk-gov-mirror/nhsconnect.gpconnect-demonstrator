@@ -1,12 +1,15 @@
 using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using Microsoft.IdentityModel.Tokens;
 
 namespace gpc_ping.Validators;
 
 public class V160Validator(JwtSecurityToken token, IValidationCommonValidation validationHelper)
     : BaseValidator(token, validationHelper)
 {
+    public override (bool IsValid, string[] Messages) Validate()
+    {
+        return ValidateAll(StaticValues.BaseScopes);
+    }
+
     public override (bool IsValid, string Message) ValidateReasonForRequest()
     {
         var reason = token.Claims.FirstOrDefault(x => x.Type == "reason_for_request")?.Value;

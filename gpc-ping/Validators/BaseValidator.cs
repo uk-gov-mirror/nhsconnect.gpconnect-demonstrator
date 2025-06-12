@@ -2,8 +2,6 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text.Json;
 using System.Text.RegularExpressions;
-using gpc_ping.Validators;
-using Microsoft.IdentityModel.Tokens;
 
 namespace gpc_ping;
 
@@ -19,6 +17,57 @@ public abstract class BaseValidator
     {
         Token = token ?? throw new ArgumentNullException(nameof(token));
         _validationHelper = validationHelper;
+    }
+
+    private string[] BASE_SCOPES =
+    [
+        "patient/*.read", "patient/*.write", "organization/*.read", "organisation/*.write"
+    ];
+
+    public abstract (bool IsValid, string[] Messages) Validate();
+
+    protected (bool IsValid, string[] Messages) ValidateAll(string[] acceptedScopes)
+    {
+        var messages = new List<string>();
+
+        var results = new List<(bool IsValid, string Message)>
+        {
+            ValidateHeader(),
+            ValidateIssuer(),
+            ValidateAudience(),
+            ValidateReasonForRequest(),
+            ValidateRequestedScope(acceptedScopes),
+            ValidateRequestingDevice()
+        };
+
+        var (lifetimeValid, lifetimeMessages) = ValidateLifetime();
+        messages.AddRange(lifetimeMessages);
+        results.Add((lifetimeValid, string.Join("; ", lifetimeMessages)));
+
+        var (organizationValid, organizationMessages) = ValidateRequestingOrganization();
+        messages.AddRange(organizationMessages);
+        results.Add((organizationValid, string.Join("; ", organizationMessages)));
+
+        var (practitionerValid, practitionerMessages) = ValidateRequestingPractitioner();
+        messages.AddRange(practitionerMessages);
+        results.Add((practitionerValid, string.Join("; ", practitionerMessages)));
+
+        string? practitionerId = null;
+        if (practitionerValid)
+        {
+            var practitionerJson = Token.Claims.FirstOrDefault(c => c.Type == "requesting_practitioner")?.Value;
+            if (!string.IsNullOrEmpty(practitionerJson))
+            {
+                practitionerId = JsonSerializer.Deserialize<RequestingPractitioner>(practitionerJson)?.Id;
+            }
+        }
+
+        var (subjectValid, subjectMessage) = ValidateSubject(practitionerId);
+        messages.Add(subjectMessage);
+        results.Add((subjectValid, subjectMessage));
+
+        var isValid = results.All(r => r.IsValid);
+        return (isValid, messages.ToArray());
     }
 
     public JwtSecurityToken Token { get; }
