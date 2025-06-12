@@ -11,6 +11,6 @@ public static class ClaimNames
     public static string RequestedRecord = "requested_record";
     public static string RequestedScope = "requested_scope";
     public static string RequestingDevice = "requesting_device";
-    public static string RequestingOrganiztion = "requesting_organization";
+    public static string RequestingOrganization = "requesting_organization";
     public static string RequestingPractitioner = "requesting_practitioner";
 }

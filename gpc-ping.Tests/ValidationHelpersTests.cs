@@ -222,7 +222,8 @@ public class ValidationHelpersTests
         var result = ValidationHelpers.ValidateRequestingPractitionerIdentifier(practitioner, 1);
 
         result.IsValid.ShouldBeFalse();
-        result.Messages.ShouldContain("identifier:[0] system' is missing or empty.");
+        result.Messages.ShouldContain(
+            $"{ClaimNames.RequestingPractitioner}:identifier:[0] system' is missing or empty.");
     }
 
     [Fact]
@@ -236,7 +237,8 @@ public class ValidationHelpersTests
         var result = ValidationHelpers.ValidateRequestingPractitionerIdentifier(practitioner, 1);
 
         result.IsValid.ShouldBeFalse();
-        result.Messages.ShouldContain("identifier:[0] value' is missing or empty.");
+        result.Messages.ShouldContain(
+            $"{ClaimNames.RequestingPractitioner}:identifier:[0] value' is missing or empty.");
     }
 
     [Fact]
@@ -255,10 +257,14 @@ public class ValidationHelpersTests
 
         result.IsValid.ShouldBeFalse();
         result.Messages.Length.ShouldBe(4);
-        result.Messages.ShouldContain("identifier:[0] system' is missing or empty.");
-        result.Messages.ShouldContain("identifier:[0] value' is missing or empty.");
-        result.Messages.ShouldContain("identifier:[1] system' is missing or empty.");
-        result.Messages.ShouldContain("identifier:[1] value' is missing or empty.");
+        result.Messages.ShouldContain(
+            $"{ClaimNames.RequestingPractitioner}:identifier:[0] system' is missing or empty.");
+        result.Messages.ShouldContain(
+            $"{ClaimNames.RequestingPractitioner}:identifier:[0] value' is missing or empty.");
+        result.Messages.ShouldContain(
+            $"{ClaimNames.RequestingPractitioner}:identifier:[1] system' is missing or empty.");
+        result.Messages.ShouldContain(
+            $"{ClaimNames.RequestingPractitioner}:identifier:[1] value' is missing or empty.");
     }
 
     [Fact]

@@ -89,12 +89,12 @@ public class ValidationHelper : IValidationCommonValidation
             var identifier = requestingPractitioner.Identifier[index];
             if (string.IsNullOrEmpty(identifier.System))
             {
-                messages.Add($"identifier:[{index}] system' is missing or empty.");
+                messages.Add($"{ClaimNames.RequestingPractitioner}:identifier:[{index}] system' is missing or empty.");
             }
 
             if (string.IsNullOrEmpty(identifier.Value))
             {
-                messages.Add($"identifier:[{index}] value' is missing or empty.");
+                messages.Add($"{ClaimNames.RequestingPractitioner}:identifier:[{index}] value' is missing or empty.");
             }
         }
 
@@ -137,11 +137,11 @@ public class ValidationHelper : IValidationCommonValidation
     public (bool IsValid, string[] Messages, T? DeserializedClaim) ValidateRequestingOrganizationCommon<T>(
         JwtSecurityToken token) where T : RequestingOrganization
     {
-        var claim = token.Claims.FirstOrDefault(x => x.Type == "requesting_organization");
+        var claim = token.Claims.FirstOrDefault(x => x.Type == $"{ClaimNames.RequestingOrganization}");
 
         if (claim == null || string.IsNullOrWhiteSpace(claim.Value))
         {
-            return (false, ["'requesting_organization' claim cannot be null or empty"], null);
+            return (false, [$"'{ClaimNames.RequestingOrganization}' claim cannot be null or empty"], null);
         }
 
         try
