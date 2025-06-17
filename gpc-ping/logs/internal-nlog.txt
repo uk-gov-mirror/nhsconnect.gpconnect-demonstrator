@@ -1,0 +1,80 @@
+2025-06-16 08:23:27.4371 Info Loading assembly name: NLog.Web.AspNetCore
+2025-06-16 08:23:27.4516 Info NLog.Web.AspNetCore, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.8.1035. Product version: 5.3.8+0c5db2371c65c25905734b0335fd0c593ee61ad6. GlobalAssemblyCache: False
+2025-06-16 08:23:27.4865 Info Registered target NLog.Targets.ColoredConsoleTarget(Name=coloredConsole)
+2025-06-16 08:23:27.4904 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2025-06-16 08:23:27.4904 Info Registered target NLog.Targets.FileTarget(Name=jwtlogs)
+2025-06-16 08:23:27.4976 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.8.2366. Product version: 5.2.8+f586f1341c46fa38aaaff4c641e7f0fa7e813943. GlobalAssemblyCache: False
+2025-06-16 08:23:27.5595 Info Validating config: TargetNames=allfile, coloredConsole, jwtlogs, ConfigItems=95, FilePath=/Users/griordan/git/gpconnect-demonstrator/gpc-ping/bin/Debug/net9.0/nlog.config
+2025-06-16 08:23:27.5659 Info Configuration initialized.
+2025-06-16 08:23:27.6302 Info Validating config: TargetNames=allfile, coloredConsole, jwtlogs, ConfigItems=95, FilePath=/Users/griordan/git/gpconnect-demonstrator/gpc-ping/bin/Debug/net9.0/nlog.config
+2025-06-16 08:23:27.6440 Info Validating config: TargetNames=allfile, coloredConsole, jwtlogs, ConfigItems=95, FilePath=/Users/griordan/git/gpconnect-demonstrator/gpc-ping/bin/Debug/net9.0/nlog.config
+2025-06-16 08:24:08.1325 Info Loading assembly name: NLog.Web.AspNetCore
+2025-06-16 08:24:08.1487 Info NLog.Web.AspNetCore, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.8.1035. Product version: 5.3.8+0c5db2371c65c25905734b0335fd0c593ee61ad6. GlobalAssemblyCache: False
+2025-06-16 08:24:08.1766 Info Registered target NLog.Targets.ColoredConsoleTarget(Name=coloredConsole)
+2025-06-16 08:24:08.1794 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2025-06-16 08:24:08.1794 Info Registered target NLog.Targets.FileTarget(Name=jwtlogs)
+2025-06-16 08:24:08.1843 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.8.2366. Product version: 5.2.8+f586f1341c46fa38aaaff4c641e7f0fa7e813943. GlobalAssemblyCache: False
+2025-06-16 08:24:08.2545 Info Validating config: TargetNames=allfile, coloredConsole, jwtlogs, ConfigItems=95, FilePath=/Users/griordan/git/gpconnect-demonstrator/gpc-ping/bin/Debug/net9.0/nlog.config
+2025-06-16 08:24:08.2639 Info Configuration initialized.
+2025-06-16 08:24:08.3462 Info Validating config: TargetNames=allfile, coloredConsole, jwtlogs, ConfigItems=95, FilePath=/Users/griordan/git/gpconnect-demonstrator/gpc-ping/bin/Debug/net9.0/nlog.config
+2025-06-16 08:24:08.3477 Info Validating config: TargetNames=allfile, coloredConsole, jwtlogs, ConfigItems=95, FilePath=/Users/griordan/git/gpconnect-demonstrator/gpc-ping/bin/Debug/net9.0/nlog.config
+2025-06-16 08:28:20.3600 Info Loading assembly name: NLog.Web.AspNetCore
+2025-06-16 08:28:20.3736 Info NLog.Web.AspNetCore, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.8.1035. Product version: 5.3.8+0c5db2371c65c25905734b0335fd0c593ee61ad6. GlobalAssemblyCache: False
+2025-06-16 08:28:20.3960 Info Registered target NLog.Targets.ColoredConsoleTarget(Name=coloredConsole)
+2025-06-16 08:28:20.3985 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2025-06-16 08:28:20.3989 Info Registered target NLog.Targets.FileTarget(Name=jwtlogs)
+2025-06-16 08:28:20.4026 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.8.2366. Product version: 5.2.8+f586f1341c46fa38aaaff4c641e7f0fa7e813943. GlobalAssemblyCache: False
+2025-06-16 08:28:20.4668 Info Validating config: TargetNames=allfile, coloredConsole, jwtlogs, ConfigItems=95, FilePath=/Users/griordan/git/gpconnect-demonstrator/gpc-ping/bin/Debug/net9.0/nlog.config
+2025-06-16 08:28:20.4729 Info Configuration initialized.
+2025-06-16 08:28:20.5196 Info Validating config: TargetNames=allfile, coloredConsole, jwtlogs, ConfigItems=95, FilePath=/Users/griordan/git/gpconnect-demonstrator/gpc-ping/bin/Debug/net9.0/nlog.config
+2025-06-16 08:28:20.5204 Info Validating config: TargetNames=allfile, coloredConsole, jwtlogs, ConfigItems=95, FilePath=/Users/griordan/git/gpconnect-demonstrator/gpc-ping/bin/Debug/net9.0/nlog.config
+2025-06-16 08:49:08.2311 Info Loading assembly name: NLog.Web.AspNetCore
+2025-06-16 08:49:08.2605 Info NLog.Web.AspNetCore, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.8.1035. Product version: 5.3.8+0c5db2371c65c25905734b0335fd0c593ee61ad6. GlobalAssemblyCache: False
+2025-06-16 08:49:08.2934 Info Registered target NLog.Targets.ColoredConsoleTarget(Name=coloredConsole)
+2025-06-16 08:49:08.2968 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2025-06-16 08:49:08.2968 Info Registered target NLog.Targets.FileTarget(Name=jwtlogs)
+2025-06-16 08:49:08.3015 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.8.2366. Product version: 5.2.8+f586f1341c46fa38aaaff4c641e7f0fa7e813943. GlobalAssemblyCache: False
+2025-06-16 08:49:08.3638 Info Validating config: TargetNames=allfile, coloredConsole, jwtlogs, ConfigItems=95, FilePath=/Users/griordan/git/gpconnect-demonstrator/gpc-ping/bin/Debug/net9.0/nlog.config
+2025-06-16 08:49:08.3727 Info Configuration initialized.
+2025-06-16 08:49:08.4597 Info Validating config: TargetNames=allfile, coloredConsole, jwtlogs, ConfigItems=95, FilePath=/Users/griordan/git/gpconnect-demonstrator/gpc-ping/bin/Debug/net9.0/nlog.config
+2025-06-16 08:49:08.4606 Info Validating config: TargetNames=allfile, coloredConsole, jwtlogs, ConfigItems=95, FilePath=/Users/griordan/git/gpconnect-demonstrator/gpc-ping/bin/Debug/net9.0/nlog.config
+2025-06-16 08:50:09.9832 Info Loading assembly name: NLog.Web.AspNetCore
+2025-06-16 08:50:10.0215 Info NLog.Web.AspNetCore, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.8.1035. Product version: 5.3.8+0c5db2371c65c25905734b0335fd0c593ee61ad6. GlobalAssemblyCache: False
+2025-06-16 08:50:10.0618 Info Registered target NLog.Targets.ColoredConsoleTarget(Name=coloredConsole)
+2025-06-16 08:50:10.0654 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2025-06-16 08:50:10.0654 Info Registered target NLog.Targets.FileTarget(Name=jwtlogs)
+2025-06-16 08:50:10.0729 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.8.2366. Product version: 5.2.8+f586f1341c46fa38aaaff4c641e7f0fa7e813943. GlobalAssemblyCache: False
+2025-06-16 08:50:10.1398 Info Validating config: TargetNames=allfile, coloredConsole, jwtlogs, ConfigItems=95, FilePath=/Users/griordan/git/gpconnect-demonstrator/gpc-ping/bin/Debug/net9.0/nlog.config
+2025-06-16 08:50:10.1479 Info Configuration initialized.
+2025-06-16 08:50:10.2213 Info Validating config: TargetNames=allfile, coloredConsole, jwtlogs, ConfigItems=95, FilePath=/Users/griordan/git/gpconnect-demonstrator/gpc-ping/bin/Debug/net9.0/nlog.config
+2025-06-16 08:50:10.2223 Info Validating config: TargetNames=allfile, coloredConsole, jwtlogs, ConfigItems=95, FilePath=/Users/griordan/git/gpconnect-demonstrator/gpc-ping/bin/Debug/net9.0/nlog.config
+2025-06-17 09:59:06.8501 Info Loading assembly name: NLog.Web.AspNetCore
+2025-06-17 09:59:06.8960 Info NLog.Web.AspNetCore, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.8.1035. Product version: 5.3.8+0c5db2371c65c25905734b0335fd0c593ee61ad6. GlobalAssemblyCache: False
+2025-06-17 09:59:06.9424 Info Registered target NLog.Targets.ColoredConsoleTarget(Name=coloredConsole)
+2025-06-17 09:59:06.9472 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2025-06-17 09:59:06.9475 Info Registered target NLog.Targets.FileTarget(Name=jwtlogs)
+2025-06-17 09:59:06.9546 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.8.2366. Product version: 5.2.8+f586f1341c46fa38aaaff4c641e7f0fa7e813943. GlobalAssemblyCache: False
+2025-06-17 09:59:07.0300 Info Validating config: TargetNames=allfile, coloredConsole, jwtlogs, ConfigItems=95, FilePath=/Users/griordan/git/gpconnect-demonstrator/gpc-ping/bin/Debug/net9.0/nlog.config
+2025-06-17 09:59:07.0409 Info Configuration initialized.
+2025-06-17 09:59:07.1649 Info Validating config: TargetNames=allfile, coloredConsole, jwtlogs, ConfigItems=95, FilePath=/Users/griordan/git/gpconnect-demonstrator/gpc-ping/bin/Debug/net9.0/nlog.config
+2025-06-17 09:59:07.1663 Info Validating config: TargetNames=allfile, coloredConsole, jwtlogs, ConfigItems=95, FilePath=/Users/griordan/git/gpconnect-demonstrator/gpc-ping/bin/Debug/net9.0/nlog.config
+2025-06-17 10:42:55.9495 Info Loading assembly name: NLog.Web.AspNetCore
+2025-06-17 10:42:55.9708 Info NLog.Web.AspNetCore, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.8.1035. Product version: 5.3.8+0c5db2371c65c25905734b0335fd0c593ee61ad6. GlobalAssemblyCache: False
+2025-06-17 10:42:56.0049 Info Registered target NLog.Targets.ColoredConsoleTarget(Name=coloredConsole)
+2025-06-17 10:42:56.0089 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2025-06-17 10:42:56.0095 Info Registered target NLog.Targets.FileTarget(Name=jwtlogs)
+2025-06-17 10:42:56.0156 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.8.2366. Product version: 5.2.8+f586f1341c46fa38aaaff4c641e7f0fa7e813943. GlobalAssemblyCache: False
+2025-06-17 10:42:56.0873 Info Validating config: TargetNames=allfile, coloredConsole, jwtlogs, ConfigItems=95, FilePath=/Users/griordan/git/gpconnect-demonstrator/gpc-ping/bin/Debug/net9.0/nlog.config
+2025-06-17 10:42:56.0968 Info Configuration initialized.
+2025-06-17 10:42:56.1844 Info Validating config: TargetNames=allfile, coloredConsole, jwtlogs, ConfigItems=95, FilePath=/Users/griordan/git/gpconnect-demonstrator/gpc-ping/bin/Debug/net9.0/nlog.config
+2025-06-17 10:42:56.1857 Info Validating config: TargetNames=allfile, coloredConsole, jwtlogs, ConfigItems=95, FilePath=/Users/griordan/git/gpconnect-demonstrator/gpc-ping/bin/Debug/net9.0/nlog.config
+2025-06-17 13:20:22.9985 Info Loading assembly name: NLog.Web.AspNetCore
+2025-06-17 13:20:23.0767 Info NLog.Web.AspNetCore, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.8.1035. Product version: 5.3.8+0c5db2371c65c25905734b0335fd0c593ee61ad6. GlobalAssemblyCache: False
+2025-06-17 13:20:23.1359 Info Registered target NLog.Targets.ColoredConsoleTarget(Name=coloredConsole)
+2025-06-17 13:20:23.1419 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2025-06-17 13:20:23.1419 Info Registered target NLog.Targets.FileTarget(Name=jwtlogs)
+2025-06-17 13:20:23.1511 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.8.2366. Product version: 5.2.8+f586f1341c46fa38aaaff4c641e7f0fa7e813943. GlobalAssemblyCache: False
+2025-06-17 13:20:23.2282 Info Validating config: TargetNames=allfile, coloredConsole, jwtlogs, ConfigItems=95, FilePath=/Users/griordan/git/gpconnect-demonstrator/gpc-ping/bin/Debug/net9.0/nlog.config
+2025-06-17 13:20:23.2409 Info Configuration initialized.
+2025-06-17 13:20:23.3443 Info Validating config: TargetNames=allfile, coloredConsole, jwtlogs, ConfigItems=95, FilePath=/Users/griordan/git/gpconnect-demonstrator/gpc-ping/bin/Debug/net9.0/nlog.config
+2025-06-17 13:20:23.3455 Info Validating config: TargetNames=allfile, coloredConsole, jwtlogs, ConfigItems=95, FilePath=/Users/griordan/git/gpconnect-demonstrator/gpc-ping/bin/Debug/net9.0/nlog.config

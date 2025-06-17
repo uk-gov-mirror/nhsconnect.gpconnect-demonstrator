@@ -43,8 +43,7 @@ public class V074Validator : BaseValidator
         try
         {
             List<string> messages = [];
-            var deserialized = JsonSerializer.Deserialize<RequestedRecord>(claim.Value);
-
+            var deserialized = JsonService.DeserializeClaim<RequestedRecord>(claim.Value);
 
             if (deserialized == null)
             {
@@ -53,7 +52,7 @@ public class V074Validator : BaseValidator
 
             if (string.IsNullOrWhiteSpace(deserialized.ResourceType))
             {
-                return (false, ["'resource_type' claim cannot be null or empty"]);
+                return (false, ["'requested_record:resource_type' claim cannot be null or empty"]);
             }
 
             if (deserialized.Identifier == null || deserialized.Identifier.Length < 1)
@@ -67,7 +66,7 @@ public class V074Validator : BaseValidator
                 var identifier = deserialized.Identifier[index];
                 if (string.IsNullOrWhiteSpace(identifier.System) || string.IsNullOrWhiteSpace(identifier.Value))
                 {
-                    messages.Add($"'requested_record' - identifier[{index}] claim is invalid");
+                    messages.Add($"'requested_record:identifier[{index}] claim is invalid");
                 }
             }
 
@@ -87,15 +86,7 @@ public class V074Validator : BaseValidator
             return (false, "'requesting_device' claim cannot be null or empty");
         }
 
-        V074RequestingDevice? requestingDevice;
-        try
-        {
-            requestingDevice = JsonSerializer.Deserialize<V074RequestingDevice>(claim.Value);
-        }
-        catch (JsonException)
-        {
-            return (false, "Failed to parse 'requesting_device' claim");
-        }
+        var requestingDevice = JsonService.DeserializeClaim<V074RequestingDevice>(claim.Value);
 
         if (requestingDevice == null)
         {
@@ -108,8 +99,8 @@ public class V074Validator : BaseValidator
             return baseValidationResult;
 
         return string.IsNullOrWhiteSpace(requestingDevice.Id)
-            ? (false, "Invalid requesting device - missing Id")
-            : (true, "The requesting device is valid.");
+            ? (false, "'requesting_device' claim is invalid - missing id")
+            : (true, "'requesting_device' claim is valid");
     }
 
     public override (bool IsValid, string[] Messages) ValidateRequestingOrganization()
@@ -124,7 +115,7 @@ public class V074Validator : BaseValidator
 
         if (string.IsNullOrEmpty(deserializedClaim.Id))
         {
-            return (false, ["Invalid 'requesting_organization' - missing Id"]);
+            return (false, ["'requesting_organization' claim is invalid - missing id"]);
         }
 
         if (string.IsNullOrEmpty(deserializedClaim.Name))
@@ -132,7 +123,7 @@ public class V074Validator : BaseValidator
             return (false, ["Invalid 'requesting_organization' - missing Name"]);
         }
 
-        return (true, ["'requesting_organization' is valid"]);
+        return (true, ["'requesting_organization' claim is valid"]);
     }
 
     public override (bool IsValid, string[] Messages) ValidateRequestingPractitioner()

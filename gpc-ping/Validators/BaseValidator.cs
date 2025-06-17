@@ -28,8 +28,6 @@ public abstract class BaseValidator
 
     protected (bool IsValid, string[] Messages) ValidateAll(string[] acceptedScopes)
     {
-        var messages = new List<string>();
-
         var results = new List<(bool IsValid, string Message)>
         {
             ValidateHeader(),
@@ -41,15 +39,12 @@ public abstract class BaseValidator
         };
 
         var (lifetimeValid, lifetimeMessages) = ValidateLifetime();
-        messages.AddRange(lifetimeMessages);
         results.Add((lifetimeValid, string.Join("; ", lifetimeMessages)));
 
         var (organizationValid, organizationMessages) = ValidateRequestingOrganization();
-        messages.AddRange(organizationMessages);
         results.Add((organizationValid, string.Join("; ", organizationMessages)));
 
         var (practitionerValid, practitionerMessages) = ValidateRequestingPractitioner();
-        messages.AddRange(practitionerMessages);
         results.Add((practitionerValid, string.Join("; ", practitionerMessages)));
 
         string? practitionerId = null;
@@ -58,16 +53,17 @@ public abstract class BaseValidator
             var practitionerJson = Token.Claims.FirstOrDefault(c => c.Type == "requesting_practitioner")?.Value;
             if (!string.IsNullOrEmpty(practitionerJson))
             {
-                practitionerId = JsonSerializer.Deserialize<RequestingPractitioner>(practitionerJson)?.Id;
+                var deserializedObject = JsonService.DeserializeClaim<RequestingPractitioner>(practitionerJson);
+                practitionerId = deserializedObject?.Id;
             }
         }
 
         var (subjectValid, subjectMessage) = ValidateSubject(practitionerId);
-        messages.Add(subjectMessage);
         results.Add((subjectValid, subjectMessage));
 
         var isValid = results.All(r => r.IsValid);
-        return (isValid, messages.ToArray());
+        string[] messages = results.Select(x => x.Message).ToArray();
+        return (isValid, messages);
     }
 
     public JwtSecurityToken Token { get; }
@@ -89,18 +85,19 @@ public abstract class BaseValidator
             return (false, "Issuer value cannot be null or empty");
         }
 
-        var isValidUrl = Uri.TryCreate(Token.Issuer, UriKind.Absolute, out var uri) && uri.Scheme == Uri.UriSchemeHttps;
+        var isValidUrl = Uri.TryCreate(Token.Issuer, UriKind.Absolute, out var uri);
 
         return isValidUrl
-            ? (true, "Issuer is valid")
-            : (false, "Issuer must contain the URL of auth server token endpoint");
+            ? (true, $"'{ClaimNames.Issuer}' claim is valid")
+            : (false,
+                $"'{ClaimNames.Issuer} claim is invalid -  claim must contain the URL of auth server token endpoint");
     }
 
     public (bool IsValid, string Message) ValidateSubject(string? requestingPractitionerId)
     {
         if (requestingPractitionerId == null)
         {
-            return (false, "Requesting practitioner id is null");
+            return (false, $"'{ClaimNames.Subject}' claim is invalid - 'requesting_practitioner:id' is null");
         }
 
         var subject = Token.Claims.SingleOrDefault(x => x.Type == ClaimNames.Subject)?.Value;
@@ -111,15 +108,16 @@ public abstract class BaseValidator
         }
 
         return !requestingPractitionerId.Equals(subject)
-            ? (false, "Subject and requesting_practitioner.Id mismatch")
-            : (true, "Subject is valid.");
+            ? (false,
+                $"'{ClaimNames.Subject}' claim is invalid - {ClaimNames.Subject}:id and {ClaimNames.RequestingPractitioner}:id mismatch")
+            : (true, $"'{ClaimNames.Subject}' claim is valid.");
     }
 
     public virtual (bool IsValid, string Message) ValidateAudience()
     {
         return Token.Claims.FirstOrDefault(x => x.Type == ClaimNames.Audience)?.Value == null
-            ? (false, "'aud' claim cannot be null or empty")
-            : IsValidAudience(Token.Claims.FirstOrDefault(x => x.Type == "aud"));
+            ? (false, $"'{ClaimNames.Audience}' claim cannot be null or empty")
+            : IsValidAudience(Token.Claims.FirstOrDefault(x => x.Type == $"{ClaimNames.Audience}"));
     }
 
     /// <summary>
@@ -151,7 +149,7 @@ public abstract class BaseValidator
             messages.Add("Lifetime of claim is not valid");
 
         return messages.Count == 0
-            ? (true, ["Lifetime is valid"])
+            ? (true, ["Lifetime of claim is valid"])
             : (false, messages.ToArray());
 
         // Local helper method
@@ -178,7 +176,8 @@ public abstract class BaseValidator
         var reason =
             Token.Claims.FirstOrDefault(x => x.Type == ClaimNames.ReasonForRequest)?.Value;
         if (string.IsNullOrWhiteSpace(reason))
-            return (false, $"Missing '{ClaimNames.ReasonForRequest}' claim");
+            return (false,
+                $"'{ClaimNames.ReasonForRequest}' is invalid - Missing '{ClaimNames.ReasonForRequest}' claim");
 
         // GP Connect only supports usage for direct care on most versions of spec
         return reason == "directcare"
@@ -196,7 +195,7 @@ public abstract class BaseValidator
         var scopeClaim = Token.Claims.FirstOrDefault(x => x.Type == $"{ClaimNames.RequestedScope}");
         if (scopeClaim == null)
         {
-            return (false, $"Missing '{ClaimNames.RequestedScope}' claim");
+            return (false, $"'{ClaimNames.RequestedScope}' claim is invalid - missing '{ClaimNames.RequestedScope}' claim");
         }
 
         if (string.IsNullOrWhiteSpace(scopeClaim.Value))
@@ -213,7 +212,7 @@ public abstract class BaseValidator
 
         return acceptedClaimValues.Contains(claimValues.First())
             ? (true, $"'{ClaimNames.RequestedScope}' claim is valid")
-            : (false, $"Invalid '{ClaimNames.RequestedScope}' claim - claim contains invalid value(s)");
+            : (false, $"'{ClaimNames.RequestedScope}' claim is invalid - claim contains invalid value(s)");
     }
 
 
@@ -223,21 +222,13 @@ public abstract class BaseValidator
 
         if (claim == null || string.IsNullOrWhiteSpace(claim.Value))
         {
-            return (false, $"'{ClaimNames.RequestingDevice}' claim cannot be null or empty");
+            return (false, $"'{ClaimNames.RequestingDevice}' claim is invalid - claim cannot be null or empty");
         }
 
-        RequestingDevice? requestingDevice;
-        try
-        {
-            requestingDevice = JsonSerializer.Deserialize<RequestingDevice>(claim.Value);
-        }
-        catch (JsonException)
-        {
-            return (false, $"Failed to parse '{ClaimNames.RequestingDevice}' claim");
-        }
+        var requestingDevice = JsonService.DeserializeClaim<RequestingDevice>(claim.Value);
 
         return requestingDevice == null
-            ? (false, "Invalid requesting device - see GP Connect specification")
+            ? (false, $"'{ClaimNames.RequestingDevice}' claim is invalid - see GP Connect specification")
             : _validationHelper.ValidateRequestingDeviceCommon(requestingDevice);
     }
 

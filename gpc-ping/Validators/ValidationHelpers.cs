@@ -30,7 +30,13 @@ public class ValidationHelper : IValidationCommonValidation
         T? parsedPractitioner;
         try
         {
-            parsedPractitioner = JsonSerializer.Deserialize<T>(requestingPractitionerClaim.Value);
+            var deserializedObject = JsonService.DeserializeClaim<T>(requestingPractitionerClaim.Value);
+            if (deserializedObject == null)
+            {
+                return (false, ["Invalid 'requesting_practitioner'"], null);
+            }
+
+            parsedPractitioner = deserializedObject;
         }
         catch (JsonException)
         {
@@ -106,14 +112,14 @@ public class ValidationHelper : IValidationCommonValidation
         var identifierNode = requestingDevice.Identifier;
         if (identifierNode == null || identifierNode.Length == 0)
         {
-            return (false, "Invalid requesting device - see GP Connect specification");
+            return (false, $"'{ClaimNames.RequestingDevice}' claim is invalid - identifier is missing or empty");
         }
 
         var warningMessage = "";
         // not mandatory but warning
         if (string.IsNullOrWhiteSpace(requestingDevice.ResourceType))
         {
-            warningMessage = "warning: resource_type is missing or empty.";
+            warningMessage = $"warning: '{ClaimNames.RequestingDevice}:resource_type' is missing or empty";
         }
 
         var firstIdentifier = identifierNode.First();
@@ -125,13 +131,14 @@ public class ValidationHelper : IValidationCommonValidation
             !IsValidUrl(firstIdentifier.System))
         {
             return string.IsNullOrEmpty(warningMessage)
-                ? (false, "Invalid requesting device - see GP Connect specification")
-                : (false, $"Invalid requesting device - see GP Connect specification \n {warningMessage}");
+                ? (false, $"'{ClaimNames.RequestingDevice}' claim is invalid - see GP Connect specification")
+                : (false,
+                    $"'{ClaimNames.RequestingDevice}' claim is invalid - see GP Connect specification \n {warningMessage}");
         }
 
         return string.IsNullOrEmpty(warningMessage)
-            ? (true, "The requesting device is valid.")
-            : (true, $"The requesting device is valid. \n {warningMessage}");
+            ? (true, $"'{ClaimNames.RequestingDevice}' claim is valid")
+            : (true, $"'{ClaimNames.RequestingDevice}' claim is valid \n {warningMessage}");
     }
 
     public (bool IsValid, string[] Messages, T? DeserializedClaim) ValidateRequestingOrganizationCommon<T>(
@@ -141,27 +148,34 @@ public class ValidationHelper : IValidationCommonValidation
 
         if (claim == null || string.IsNullOrWhiteSpace(claim.Value))
         {
-            return (false, [$"'{ClaimNames.RequestingOrganization}' claim cannot be null or empty"], null);
+            return (false, [$"'{ClaimNames.RequestingOrganization}' claim is invalid - claim cannot be null or empty"],
+                null);
         }
 
         try
         {
             List<string> messages = [];
-            var deserializedValue = JsonSerializer.Deserialize<T>(claim.Value);
+            var deserializedValue = JsonService.DeserializeClaim<T>(claim.Value);
+
             if (deserializedValue == null)
             {
-                return (false, ["Invalid requesting organization claim"], null);
+                return (false, [$"'{ClaimNames.RequestingOrganization}' claim is invalid"], null);
             }
 
             if (string.IsNullOrWhiteSpace(deserializedValue.ResourceType))
             {
-                return (false, ["'requesting_organization:resource_type' claim cannot be null or empty"],
+                return (false,
+                    [
+                        $"'{ClaimNames.RequestingOrganization}:resource_type' claim is invalid - claim cannot be null or empty"
+                    ],
                     deserializedValue);
             }
 
             if (deserializedValue.Identifier == null || deserializedValue.Identifier.Length < 1)
             {
-                return (false, ["'requesting_organization' is missing an identifier value"], deserializedValue);
+                return (false,
+                    [$"'{ClaimNames.RequestingOrganization}' claim is invalid -  claim missing an identifier value"],
+                    deserializedValue);
             }
 
             for (var index = 0; index < deserializedValue.Identifier.Length; index++)
@@ -169,13 +183,13 @@ public class ValidationHelper : IValidationCommonValidation
                 var identifier = deserializedValue.Identifier[index];
                 if (string.IsNullOrWhiteSpace(identifier.System) || string.IsNullOrWhiteSpace(identifier.Value))
                 {
-                    messages.Add($"'requesting_organization' - identifier[{index}] claim is invalid");
+                    messages.Add($"'{ClaimNames.RequestingOrganization}:identifier[{index}]' claim is invalid");
                 }
             }
 
             return messages.Count > 0
                 ? (false, messages.ToArray(), deserializedValue)
-                : (true, ["'requesting_organization' claim is valid"], deserializedValue);
+                : (true, [$"'{ClaimNames.RequestingOrganization}' claim is valid"], deserializedValue);
         }
         catch (JsonException jsonException)
         {

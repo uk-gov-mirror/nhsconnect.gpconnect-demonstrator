@@ -17,6 +17,7 @@ public class Program
         builder.Services.AddScoped<IValidationCommonValidation, ValidationHelper>();
 
 
+
         try
         {
             var startupLogger = LogManager.Setup()
@@ -99,23 +100,31 @@ public class Program
                 return Results.BadRequest(new { message = "Invalid JWT token - unable to read" });
             }
 
-            BaseValidator validator = version switch
+            try
             {
-                "v0.7.4" => new V074Validator(jwtToken, validationHelper),
-                "v1.2.7" => new V127Validator(jwtToken, validationHelper),
-                "v1.5.0" => new V150Validator(jwtToken, validationHelper),
-                "v1.6.0" => new V160Validator(jwtToken, validationHelper),
-                _ => throw new NotImplementedException($"Version {version} is not supported")
-            };
+                version = version.Trim().Trim('"');
+                BaseValidator validator = version switch
+                {
+                    "v0.7.4" => new V074Validator(jwtToken, validationHelper),
+                    "v1.2.7" => new V127Validator(jwtToken, validationHelper),
+                    "v1.5.0" => new V150Validator(jwtToken, validationHelper),
+                    "v1.6.0" => new V160Validator(jwtToken, validationHelper),
+                    _ => throw new NotImplementedException($"Version '{version}' is not supported")
+                };
 
-            var (isValid, messages) = validator.Validate();
+                var (isValid, messages) = validator.Validate();
 
 
-            var message = string.Join(Environment.NewLine, messages);
-
-            return isValid
-                ? Results.BadRequest(new { message })
-                : Results.Ok(new { message = $"Success - {message.Trim()}" });
+                return isValid
+                    ? Results.BadRequest(new { message = messages })
+                    : Results.Ok(new { message = messages });
+            }
+            catch (NotImplementedException ex)
+            {
+                return Results.BadRequest(new { message = ex.Message });
+            }
         });
+
+        app.Run();
     }
 }

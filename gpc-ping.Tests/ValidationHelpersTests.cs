@@ -29,7 +29,7 @@ public class ValidationHelpersTests
         var result = ValidationHelpers.ValidateRequestingDeviceCommon(device);
 
         result.IsValid.ShouldBeFalse();
-        result.Message.ShouldBe("Invalid requesting device - see GP Connect specification");
+        result.Message.ShouldBe("'requesting_device' claim is invalid - identifier is missing or empty");
     }
 
     [Fact]
@@ -43,7 +43,7 @@ public class ValidationHelpersTests
         var result = ValidationHelpers.ValidateRequestingDeviceCommon(device);
 
         result.IsValid.ShouldBeFalse();
-        result.Message.ShouldBe("Invalid requesting device - see GP Connect specification");
+        result.Message.ShouldBe("'requesting_device' claim is invalid - identifier is missing or empty");
     }
 
     [Fact]
@@ -59,7 +59,7 @@ public class ValidationHelpersTests
         var result = ValidationHelpers.ValidateRequestingDeviceCommon(device);
 
         result.IsValid.ShouldBeFalse();
-        result.Message.ShouldContain("Invalid requesting device");
+        result.Message.ShouldContain("'requesting_device' claim is invalid - see GP Connect specification");
     }
 
     [Fact]
@@ -75,7 +75,7 @@ public class ValidationHelpersTests
         var result = ValidationHelpers.ValidateRequestingDeviceCommon(device);
 
         result.IsValid.ShouldBeFalse();
-        result.Message.ShouldContain("Invalid requesting device");
+        result.Message.ShouldContain("'requesting_device' claim is invalid - see GP Connect specification");
     }
 
     [Fact]
@@ -91,7 +91,7 @@ public class ValidationHelpersTests
         var result = ValidationHelpers.ValidateRequestingDeviceCommon(device);
 
         result.IsValid.ShouldBeFalse();
-        result.Message.ShouldContain("Invalid requesting device");
+        result.Message.ShouldContain("'requesting_device' claim is invalid - see GP Connect specification");
     }
 
     [Fact]
@@ -107,7 +107,7 @@ public class ValidationHelpersTests
         var result = ValidationHelpers.ValidateRequestingDeviceCommon(device);
 
         result.IsValid.ShouldBeFalse();
-        result.Message.ShouldContain("Invalid requesting device");
+        result.Message.ShouldContain("'requesting_device' claim is invalid - see GP Connect specification");
     }
 
     [Fact]
@@ -123,7 +123,7 @@ public class ValidationHelpersTests
         var result = ValidationHelpers.ValidateRequestingDeviceCommon(device);
 
         result.IsValid.ShouldBeFalse();
-        result.Message.ShouldContain("Invalid requesting device");
+        result.Message.ShouldContain("'requesting_device' claim is invalid - see GP Connect specification");
     }
 
     [Fact]
@@ -140,7 +140,7 @@ public class ValidationHelpersTests
         var result = ValidationHelpers.ValidateRequestingDeviceCommon(device);
 
         result.IsValid.ShouldBeTrue();
-        result.Message.ShouldBe("The requesting device is valid.");
+        result.Message.ShouldBe("'requesting_device' claim is valid");
     }
 
     [Fact]
@@ -157,8 +157,8 @@ public class ValidationHelpersTests
         var result = ValidationHelpers.ValidateRequestingDeviceCommon(device);
 
         result.IsValid.ShouldBeTrue();
-        result.Message.ShouldContain("The requesting device is valid.");
-        result.Message.ShouldContain("warning: resource_type is missing or empty.");
+        result.Message.ShouldContain("'requesting_device' claim is valid");
+        result.Message.ShouldContain("warning: 'requesting_device:resource_type' is missing or empty");
     }
 
     [Fact]
@@ -175,8 +175,8 @@ public class ValidationHelpersTests
         var result = ValidationHelpers.ValidateRequestingDeviceCommon(device);
 
         result.IsValid.ShouldBeFalse();
-        result.Message.ShouldContain("Invalid requesting device");
-        result.Message.ShouldContain("warning: resource_type is missing or empty.");
+        result.Message.ShouldContain("'requesting_device' claim is invalid - see GP Connect specification");
+        result.Message.ShouldContain($"warning: 'requesting_device:resource_type' is missing or empty");
     }
 
     #endregion
@@ -320,7 +320,7 @@ public class ValidationHelpersTests
                 new Claim("requesting_practitioner", "{this is not valid JSON string}"));
 
         result.IsValid.ShouldBeFalse();
-        result.Messages.ShouldContain("Invalid JSON in 'requesting_practitioner' claim.");
+        result.Messages.ShouldContain("Invalid 'requesting_practitioner'");
         result.Practitioner.ShouldBeNull();
     }
 
@@ -428,7 +428,7 @@ public class ValidationHelpersTests
 
         // Assert
         result.IsValid.ShouldBeFalse();
-        result.Messages.ShouldContain("'requesting_organization' claim cannot be null or empty");
+        result.Messages.ShouldContain("'requesting_organization' claim is invalid - claim cannot be null or empty");
     }
 
     [Fact]
@@ -442,7 +442,7 @@ public class ValidationHelpersTests
         var result = ValidationHelpers.ValidateRequestingOrganizationCommon<RequestingOrganization>(validator.Token);
 
         result.IsValid.ShouldBeFalse();
-        result.Messages.ShouldContain("'requesting_organization' claim cannot be null or empty");
+        result.Messages.ShouldContain("'requesting_organization' claim is invalid - claim cannot be null or empty");
     }
 
     [Fact]
@@ -461,7 +461,8 @@ public class ValidationHelpersTests
         var result = ValidationHelpers.ValidateRequestingOrganizationCommon<RequestingOrganization>(validator.Token);
 
         result.IsValid.ShouldBeFalse();
-        result.Messages.ShouldContain("'requesting_organization:resource_type' claim cannot be null or empty");
+        result.Messages.ShouldContain(
+            "'requesting_organization:resource_type' claim is invalid - claim cannot be null or empty");
     }
 
     [Fact]
@@ -476,7 +477,8 @@ public class ValidationHelpersTests
         var result = ValidationHelpers.ValidateRequestingOrganizationCommon<RequestingOrganization>(validator.Token);
 
         result.IsValid.ShouldBeFalse();
-        result.Messages.ShouldContain("'requesting_organization' is missing an identifier value");
+        result.Messages.ShouldContain(
+            "'requesting_organization' claim is invalid -  claim missing an identifier value");
     }
 
     [Fact]
@@ -490,7 +492,8 @@ public class ValidationHelpersTests
         var result = ValidationHelpers.ValidateRequestingOrganizationCommon<RequestingOrganization>(validator.Token);
 
         result.IsValid.ShouldBeFalse();
-        result.Messages.ShouldContain("'requesting_organization' is missing an identifier value");
+        result.Messages.ShouldContain(
+            "'requesting_organization' claim is invalid -  claim missing an identifier value");
     }
 
     [Fact]
@@ -510,7 +513,7 @@ public class ValidationHelpersTests
         var result = ValidationHelpers.ValidateRequestingOrganizationCommon<RequestingOrganization>(validator.Token);
 
         result.IsValid.ShouldBeFalse();
-        result.Messages.ShouldContain("'requesting_organization' - identifier[0] claim is invalid");
+        result.Messages.ShouldContain("'requesting_organization:identifier[0]' claim is invalid");
     }
 
     #endregion

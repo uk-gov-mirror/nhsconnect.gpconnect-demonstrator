@@ -64,7 +64,7 @@ public class BaseValidatorTests
         var result = testValidator.ValidateIssuer();
 
         // Assert
-        result.Message.ShouldBe("Issuer is valid");
+        result.Message.ShouldBe("'iss' claim is valid");
         result.IsValid.ShouldBeTrue();
     }
 
@@ -81,7 +81,7 @@ public class BaseValidatorTests
 
         // Assert
         result.IsValid.ShouldBeFalse();
-        result.Message.ShouldBe("Issuer must contain the URL of auth server token endpoint");
+        result.Message.ShouldBe("'iss claim is invalid -  claim must contain the URL of auth server token endpoint");
     }
 
     [Fact]
@@ -120,7 +120,7 @@ public class BaseValidatorTests
         var result = validator.ValidateSubject("1");
 
         // Assert
-        result.Message.ShouldBe("Subject is valid.");
+        result.Message.ShouldBe("'sub' claim is valid.");
         result.IsValid.ShouldBeTrue();
     }
 
@@ -157,7 +157,7 @@ public class BaseValidatorTests
 
         // Arrange
         result.IsValid.ShouldBeFalse();
-        result.Message.ShouldBe("Subject and requesting_practitioner.Id mismatch");
+        result.Message.ShouldBe("'sub' claim is invalid - sub:id and requesting_practitioner:id mismatch");
     }
 
     [Fact]
@@ -174,7 +174,7 @@ public class BaseValidatorTests
 
         // Act
         result.IsValid.ShouldBeFalse();
-        result.Message.ShouldBe("Requesting practitioner id is null");
+        result.Message.ShouldBe("'sub' claim is invalid - 'requesting_practitioner:id' is null");
     }
 
     #endregion
@@ -254,7 +254,7 @@ public class BaseValidatorTests
         var result = validator.ValidateLifetime();
 
         result.IsValid.ShouldBeTrue();
-        result.Messages.ShouldContain("Lifetime is valid");
+        result.Messages.ShouldContain("Lifetime of claim is valid");
     }
 
     [Fact]
@@ -418,7 +418,7 @@ public class BaseValidatorTests
 
         // Assert
         result.IsValid.ShouldBeFalse();
-        result.Message.ShouldBe("Invalid 'requested_scope' claim - claim contains invalid value(s)");
+        result.Message.ShouldBe("'requested_scope' claim is invalid - claim contains invalid value(s)");
     }
 
     [Fact]
@@ -432,7 +432,7 @@ public class BaseValidatorTests
 
         // Assert
         result.IsValid.ShouldBeFalse();
-        result.Message.ShouldBe("Missing 'requested_scope' claim");
+        result.Message.ShouldBe("'requested_scope' claim is invalid - missing 'requested_scope' claim");
     }
 
     [Fact]
@@ -517,7 +517,7 @@ public class BaseValidatorTests
         var result = validator.ValidateRequestingDevice();
 
         result.IsValid.ShouldBeFalse();
-        result.Message.ShouldBe("'requesting_device' claim cannot be null or empty");
+        result.Message.ShouldBe("'requesting_device' claim is invalid - claim cannot be null or empty");
     }
 
     [Theory]
@@ -531,7 +531,7 @@ public class BaseValidatorTests
         var result = validator.ValidateRequestingDevice();
 
         result.IsValid.ShouldBeFalse();
-        result.Message.ShouldBe("'requesting_device' claim cannot be null or empty");
+        result.Message.ShouldBe("'requesting_device' claim is invalid - claim cannot be null or empty");
     }
 
     [Fact]
@@ -543,7 +543,7 @@ public class BaseValidatorTests
         var result = validator.ValidateRequestingDevice();
 
         result.IsValid.ShouldBeFalse();
-        result.Message.ShouldBe("Failed to parse 'requesting_device' claim");
+        result.Message.ShouldBe("'requesting_device' claim is invalid - see GP Connect specification");
     }
 
     [Fact]
@@ -555,7 +555,7 @@ public class BaseValidatorTests
         var result = validator.ValidateRequestingDevice();
 
         result.IsValid.ShouldBeFalse();
-        result.Message.ShouldBe("Invalid requesting device - see GP Connect specification");
+        result.Message.ShouldBe("'requesting_device' claim is invalid - see GP Connect specification");
     }
 
     [Fact]
@@ -575,7 +575,7 @@ public class BaseValidatorTests
         var result = validator.ValidateRequestingDevice();
 
         result.IsValid.ShouldBeFalse();
-        result.Message.ShouldBe("Invalid requesting device - see GP Connect specification");
+        result.Message.ShouldBe("'requesting_device' claim is invalid - identifier is missing or empty");
     }
 
     [Theory]
@@ -602,7 +602,7 @@ public class BaseValidatorTests
         var result = validator.ValidateRequestingDevice();
 
         result.IsValid.ShouldBeFalse();
-        result.Message.ShouldBe("Invalid requesting device - see GP Connect specification");
+        result.Message.ShouldBe("'requesting_device' claim is invalid - see GP Connect specification");
     }
 
     [Fact]
@@ -626,7 +626,7 @@ public class BaseValidatorTests
         var result = validator.ValidateRequestingDevice();
 
         result.IsValid.ShouldBeFalse();
-        result.Message.ShouldBe("Invalid requesting device - see GP Connect specification");
+        result.Message.ShouldBe("'requesting_device' claim is invalid - see GP Connect specification");
     }
 
     [Theory]
@@ -653,7 +653,7 @@ public class BaseValidatorTests
         var result = validator.ValidateRequestingDevice();
 
         result.IsValid.ShouldBeFalse();
-        result.Message.ShouldContain("Invalid requesting device - see GP Connect specification");
+        result.Message.ShouldContain("'requesting_device' claim is invalid - see GP Connect specification");
     }
 
     [Fact]
@@ -676,8 +676,8 @@ public class BaseValidatorTests
         var result = validator.ValidateRequestingDevice();
 
         result.IsValid.ShouldBeTrue();
-        result.Message.ShouldContain("The requesting device is valid.");
-        result.Message.ShouldContain("warning: resource_type is missing or empty");
+        result.Message.ShouldContain("'requesting_device' claim is valid");
+        result.Message.ShouldContain("warning: 'requesting_device:resource_type' is missing or empty");
     }
 
     [Theory]
@@ -704,7 +704,7 @@ public class BaseValidatorTests
         var result = validator.ValidateRequestingDevice();
 
         result.IsValid.ShouldBeFalse();
-        result.Message.ShouldBe("Invalid requesting device - see GP Connect specification");
+        result.Message.ShouldBe("'requesting_device' claim is invalid - see GP Connect specification");
     }
 
     [Theory]
@@ -731,7 +731,7 @@ public class BaseValidatorTests
         var result = validator.ValidateRequestingDevice();
 
         result.IsValid.ShouldBeFalse();
-        result.Message.ShouldBe("Invalid requesting device - see GP Connect specification");
+        result.Message.ShouldBe("'requesting_device' claim is invalid - see GP Connect specification");
     }
 
     [Fact]
@@ -755,7 +755,7 @@ public class BaseValidatorTests
         var result = validator.ValidateRequestingDevice();
 
         result.IsValid.ShouldBeTrue();
-        result.Message.ShouldBe("The requesting device is valid.");
+        result.Message.ShouldBe("'requesting_device' claim is valid");
     }
 
 
@@ -779,8 +779,8 @@ public class BaseValidatorTests
         var result = validator.ValidateRequestingDevice();
 
         result.IsValid.ShouldBeTrue();
-        result.Message.ShouldContain("The requesting device is valid.");
-        result.Message.ShouldContain("warning: resource_type is missing or empty");
+        result.Message.ShouldContain("'requesting_device' claim is valid");
+        result.Message.ShouldContain("warning: 'requesting_device:resource_type' is missing or empty");
     }
 
     #endregion
