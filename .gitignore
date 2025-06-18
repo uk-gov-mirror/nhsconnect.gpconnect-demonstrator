@@ -76,6 +76,7 @@ fabric.properties
 
 # Logs
 *.log
+*/internal-nlog.txt
 # Temporary files
 *.tmp
 *~
