@@ -26,7 +26,7 @@ public class V074Validator : BaseValidator
 
         var value = Token.Audiences.FirstOrDefault();
 
-        return value == "https://authorize.fhir.nhs.net/token"
+        return value == StaticValues.V074AudienceUrl
             ? (true, "'aud' claim is valid")
             : (false, "'aud' claim is not valid - see GP Connect specification");
     }
