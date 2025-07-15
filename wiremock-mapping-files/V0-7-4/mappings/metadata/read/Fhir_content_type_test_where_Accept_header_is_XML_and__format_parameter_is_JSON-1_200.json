@@ -1,0 +1,44 @@
+{
+  "name": "Fhir content type test where Accept header is XML and _format parameter is JSON-1",
+  "request": {
+    "method": "GET",
+    "urlPath": "/gpconnect-demonstrator/v0/fhir",
+    "queryParameters": {
+      "_format": {
+        "equalTo": "application/json+fhir"
+      }
+    },
+    "headers": {
+      "Accept": {
+        "equalTo": "application/xml+fhir"
+      },
+      "Ssp-To": {
+        "equalTo": "200000000985"
+      },
+      "Ssp-InteractionId": {
+        "equalTo": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata"
+      }
+    },
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": {
+          "expression": "$.parameter",
+          "absent": true
+        }
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Content-Encoding": "",
+      "Content-Type": "application/json+fhir;charset=UTF-8",
+      "Date": "Tue, 20 May 2025 15:54:01 GMT",
+      "Server": "nginx/1.19.6",
+      "X-Powered-By": "HAPI FHIR 2.2 REST Server (FHIR Server; FHIR 1.0.2/DSTU2)"
+    },
+    "bodyFileName": "Fhir_content_type_test_where_Accept_header_is_XML_and__format_parameter_is_JSON-1_200_389192.json"
+  }
+}

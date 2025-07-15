@@ -1,0 +1,104 @@
+{
+  "name": "Request and response in XML-8",
+  "request": {
+    "method": "POST",
+    "urlPath": "/gpconnect-demonstrator/v0/fhir",
+    "headers": {
+      "Accept": {
+        "equalTo": "application/xml+fhir"
+      },
+      "Ssp-To": {
+        "equalTo": "200000000985"
+      },
+      "Ssp-InteractionId": {
+        "equalTo": "urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord"
+      }
+    },
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": {
+          "expression": "$.parameter[?(@.name=='patientsNHSNumber')]",
+          "absent": true
+        }
+      },
+      {
+        "matchesJsonPath": {
+          "expression": "$.parameter[?(@.name=='patientnhsnumber')]",
+          "absent": true
+        }
+      },
+      {
+        "matchesJsonPath": {
+          "expression": "$.parameter[?(@.name=='PATIENTNHSNUMBER')]",
+          "absent": true
+        }
+      },
+      {
+        "matchesJsonPath": {
+          "expression": "$.parameter[?(@.name=='RecordSection')]",
+          "absent": true
+        }
+      },
+      {
+        "matchesJsonPath": {
+          "expression": "$.parameter[?(@.name=='RECORDSECTION')]",
+          "absent": true
+        }
+      },
+      {
+        "matchesJsonPath": {
+          "expression": "$.parameter[?(@.name=='recordSections')]",
+          "absent": true
+        }
+      },
+      {
+        "matchesJsonPath": {
+          "expression": "$.parameter[?(@.name=='time')]",
+          "absent": true
+        }
+      },
+      {
+        "matchesJsonPath": {
+          "expression": "$.parameter[?(@.name=='timePeriod')]",
+          "absent": true
+        }
+      },
+      {
+        "matchesJsonPath": {
+          "expression": "$.parameter[?(@.name=='TimePeriod')]",
+          "absent": true
+        }
+      },
+      {
+        "matchesJsonPath": {
+          "expression": "$.parameter[?(@.name=='TIMEPERIOD')]",
+          "absent": true
+        }
+      },
+      {
+        "matchesJsonPath": {
+          "expression": "$.parameter[?(@.name=='patientNHSNumber')].valueIdentifier.value",
+          "matches": "^9658218873$"
+        }
+      },
+      {
+        "matchesJsonPath": {
+          "expression": "$.parameter[?(@.name=='recordSection')].valueCodeableConcept.coding[*].code",
+          "matches": "^PRB$"
+        }
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Content-Type": "application/xml+fhir;charset=UTF-8",
+      "Date": "Tue, 20 May 2025 15:54:03 GMT",
+      "Server": "nginx/1.19.6",
+      "X-Powered-By": "HAPI FHIR 2.2 REST Server (FHIR Server; FHIR 1.0.2/DSTU2)"
+    },
+    "bodyFileName": "Request_and_response_in_XML-8_200_bce306.json"
+  }
+}

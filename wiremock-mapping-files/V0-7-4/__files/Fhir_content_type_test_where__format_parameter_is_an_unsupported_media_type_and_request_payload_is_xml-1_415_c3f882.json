@@ -1,0 +1,1 @@
+<OperationOutcome xmlns="http://hl7.org/fhir"><issue><severity value="error"/><code value="processing"/><diagnostics value="Unsupported accept media type"/></issue></OperationOutcome>

@@ -1,0 +1,110 @@
+{
+  "name": "Request patient summary with parameters in oposite order to other tests-4",
+  "request": {
+    "method": "POST",
+    "urlPath": "/gpconnect-demonstrator/v0/fhir",
+    "headers": {
+      "Accept": {
+        "equalTo": "application/json+fhir"
+      },
+      "Ssp-To": {
+        "equalTo": "200000000985"
+      },
+      "Ssp-InteractionId": {
+        "equalTo": "urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord"
+      }
+    },
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": {
+          "expression": "$.parameter[?(@.name=='patientsNHSNumber')]",
+          "absent": true
+        }
+      },
+      {
+        "matchesJsonPath": {
+          "expression": "$.parameter[?(@.name=='patientnhsnumber')]",
+          "absent": true
+        }
+      },
+      {
+        "matchesJsonPath": {
+          "expression": "$.parameter[?(@.name=='PATIENTNHSNUMBER')]",
+          "absent": true
+        }
+      },
+      {
+        "matchesJsonPath": {
+          "expression": "$.parameter[?(@.name=='RecordSection')]",
+          "absent": true
+        }
+      },
+      {
+        "matchesJsonPath": {
+          "expression": "$.parameter[?(@.name=='RECORDSECTION')]",
+          "absent": true
+        }
+      },
+      {
+        "matchesJsonPath": {
+          "expression": "$.parameter[?(@.name=='recordSections')]",
+          "absent": true
+        }
+      },
+      {
+        "matchesJsonPath": {
+          "expression": "$.parameter[?(@.name=='time')]",
+          "absent": true
+        }
+      },
+      {
+        "matchesJsonPath": {
+          "expression": "$.parameter[?(@.name=='TimePeriod')]",
+          "absent": true
+        }
+      },
+      {
+        "matchesJsonPath": {
+          "expression": "$.parameter[?(@.name=='TIMEPERIOD')]",
+          "absent": true
+        }
+      },
+      {
+        "matchesJsonPath": {
+          "expression": "$.parameter[?(@.name=='timePeriod')].valuePeriod.start",
+          "matches": "^\\d{4}\\-\\d{2}\\-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\+\\d{2}:\\d{2}$"
+        }
+      },
+      {
+        "matchesJsonPath": {
+          "expression": "$.parameter[?(@.name=='timePeriod')].valuePeriod.end",
+          "matches": "^\\d{4}\\-\\d{2}\\-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\+\\d{2}:\\d{2}$"
+        }
+      },
+      {
+        "matchesJsonPath": {
+          "expression": "$.parameter[?(@.name=='recordSection')].valueCodeableConcept.coding[*].code",
+          "matches": "^REF$"
+        }
+      },
+      {
+        "matchesJsonPath": {
+          "expression": "$.parameter[?(@.name=='patientNHSNumber')].valueIdentifier.value",
+          "matches": "^9658218873$"
+        }
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Content-Type": "application/json+fhir;charset=UTF-8",
+      "Date": "Tue, 20 May 2025 15:53:53 GMT",
+      "Server": "nginx/1.19.6",
+      "X-Powered-By": "HAPI FHIR 2.2 REST Server (FHIR Server; FHIR 1.0.2/DSTU2)"
+    },
+    "bodyFileName": "Request_patient_summary_with_parameters_in_oposite_order_to_other_tests-4_200_f6c3a1.json"
+  }
+}

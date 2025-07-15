@@ -1,0 +1,35 @@
+{
+  "name": "Security reject a  non ssl request-1",
+  "request": {
+    "method": "GET",
+    "urlPath": "/gpconnect-demonstrator/v0/fhir",
+    "headers": {
+      "Accept": {
+        "equalTo": "application/json+fhir"
+      },
+      "Ssp-To": {
+        "equalTo": "200000000985"
+      },
+      "Ssp-InteractionId": {
+        "equalTo": "urn:nhs:names:services:gpconnect:fhir:rest:read:metadata"
+      }
+    },
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": {
+          "expression": "$.parameter",
+          "absent": true
+        }
+      }
+    ]
+  },
+  "response": {
+    "status": 404,
+    "headers": {
+      "Content-Type": "text/html",
+      "Date": "Tue, 20 May 2025 15:54:34 GMT",
+      "Server": "Microsoft-IIS/10.0"
+    },
+    "bodyFileName": "Security_reject_a_non_ssl_request-1_404_c97caa.json"
+  }
+}

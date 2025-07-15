@@ -1,0 +1,104 @@
+{
+  "name": "When request is received after allowed access period post patient death returns patient not found-9",
+  "request": {
+    "method": "POST",
+    "urlPath": "/gpconnect-demonstrator/v0/fhir",
+    "headers": {
+      "Accept": {
+        "equalTo": "application/json+fhir"
+      },
+      "Ssp-To": {
+        "equalTo": "200000000985"
+      },
+      "Ssp-InteractionId": {
+        "equalTo": "urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord"
+      }
+    },
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": {
+          "expression": "$.parameter[?(@.name=='patientsNHSNumber')]",
+          "absent": true
+        }
+      },
+      {
+        "matchesJsonPath": {
+          "expression": "$.parameter[?(@.name=='patientnhsnumber')]",
+          "absent": true
+        }
+      },
+      {
+        "matchesJsonPath": {
+          "expression": "$.parameter[?(@.name=='PATIENTNHSNUMBER')]",
+          "absent": true
+        }
+      },
+      {
+        "matchesJsonPath": {
+          "expression": "$.parameter[?(@.name=='RecordSection')]",
+          "absent": true
+        }
+      },
+      {
+        "matchesJsonPath": {
+          "expression": "$.parameter[?(@.name=='RECORDSECTION')]",
+          "absent": true
+        }
+      },
+      {
+        "matchesJsonPath": {
+          "expression": "$.parameter[?(@.name=='recordSections')]",
+          "absent": true
+        }
+      },
+      {
+        "matchesJsonPath": {
+          "expression": "$.parameter[?(@.name=='time')]",
+          "absent": true
+        }
+      },
+      {
+        "matchesJsonPath": {
+          "expression": "$.parameter[?(@.name=='timePeriod')]",
+          "absent": true
+        }
+      },
+      {
+        "matchesJsonPath": {
+          "expression": "$.parameter[?(@.name=='TimePeriod')]",
+          "absent": true
+        }
+      },
+      {
+        "matchesJsonPath": {
+          "expression": "$.parameter[?(@.name=='TIMEPERIOD')]",
+          "absent": true
+        }
+      },
+      {
+        "matchesJsonPath": {
+          "expression": "$.parameter[?(@.name=='patientNHSNumber')].valueIdentifier.value",
+          "matches": "^9000000017$"
+        }
+      },
+      {
+        "matchesJsonPath": {
+          "expression": "$.parameter[?(@.name=='recordSection')].valueCodeableConcept.coding[*].code",
+          "matches": "^REF$"
+        }
+      }
+    ]
+  },
+  "response": {
+    "status": 404,
+    "headers": {
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Content-Type": "application/json+fhir;charset=UTF-8",
+      "Date": "Tue, 20 May 2025 15:53:59 GMT",
+      "Server": "nginx/1.19.6",
+      "X-Powered-By": "HAPI FHIR 2.2 REST Server (FHIR Server; FHIR 1.0.2/DSTU2)"
+    },
+    "bodyFileName": "When_request_is_received_after_allowed_access_period_post_patient_death_returns_patient_not_found-9_404_95a3fe.json"
+  }
+}

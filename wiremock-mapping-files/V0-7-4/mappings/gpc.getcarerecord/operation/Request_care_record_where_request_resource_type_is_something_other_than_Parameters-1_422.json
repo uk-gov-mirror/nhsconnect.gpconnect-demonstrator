@@ -1,0 +1,36 @@
+{
+  "name": "Request care record where request resource type is something other than Parameters-1",
+  "request": {
+    "method": "POST",
+    "urlPath": "/gpconnect-demonstrator/v0/fhir",
+    "headers": {
+      "Accept": {
+        "equalTo": "application/json+fhir"
+      },
+      "Ssp-To": {
+        "equalTo": "200000000985"
+      },
+      "Ssp-InteractionId": {
+        "equalTo": "urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord"
+      }
+    },
+    "bodyPatterns": [
+      {
+        "equalToJson": "{\"resourceType\":\"InvalidResourceType\",\"parameter\":[{\"name\":\"patientNHSNumber\",\"valueIdentifier\":{\"system\":\"http://fhir.nhs.net/Id/nhs-number\",\"value\":\"9658218873\"}},{\"name\":\"recordSection\",\"valueCodeableConcept\":{\"coding\":[{\"system\":\"http://fhir.nhs.net/ValueSet/gpconnect-record-section-1\",\"code\":\"SUM\"}]}}]}",
+        "ignoreArrayOrder": true
+      }
+    ]
+  },
+  "response": {
+    "status": 422,
+    "headers": {
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Content-Type": "application/json+fhir;charset=UTF-8",
+      "Date": "Tue, 20 May 2025 15:53:48 GMT",
+      "Server": "nginx/1.19.6",
+      "X-Powered-By": "HAPI FHIR 2.2 REST Server (FHIR Server; FHIR 1.0.2/DSTU2)"
+    },
+    "bodyFileName": "Request_care_record_where_request_resource_type_is_something_other_than_Parameters-1_422_3d2d01.json"
+  }
+}
