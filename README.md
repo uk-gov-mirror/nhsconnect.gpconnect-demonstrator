@@ -85,7 +85,36 @@ Once running, you can test endpoints using `curl`, Postman, or your application:
 - **Hit a mocked endpoint**:
 
   ```bash
-  curl http://localhost:8080/Patient/12345
+  curl -X POST "http://localhost:8080/gpconnect-demonstrator/v0/fhir" \
+  -H "Accept: application/xml+fhir" \
+  -H "Ssp-TraceID: c9064589-6e18-471c-97bd-2fcd4bd7e749" \
+  -H "Ssp-From: 200000000985" \
+  -H "Ssp-To: 200000000985" \
+  -H "Ssp-InteractionId: urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord" \
+  -H "Content-Type: application/json+fhir" \
+  --data '{
+    "resourceType": "Parameters",
+    "parameter": [
+      {
+        "name": "patientNHSNumber",
+        "valueIdentifier": {
+          "system": "http://fhir.nhs.net/Id/nhs-number",
+          "value": "9658218873"
+        }
+      },
+      {
+        "name": "recordSection",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://fhir.nhs.net/ValueSet/gpconnect-record-section-1",
+              "code": "CLI"
+            }
+          ]
+        }
+      }
+    ]
+  }'
   ```
 
   (Adjust the path to match any of the mappings in `mappings/`.)
