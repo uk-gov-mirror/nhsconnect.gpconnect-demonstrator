@@ -285,6 +285,14 @@ function createRequestItem(testItem, nhsNoMap) {
     });
   }
 
+  // Add Content-Type header if we have a request body with content type
+  if (requestData.body && requestData.body.value && requestData.contentType) {
+    headers.push({
+      key: 'Content-Type',
+      value: requestData.contentType,
+    });
+  }
+
   // Create URL parameters
   const queryParams = [];
   let hasDateParams = false;
@@ -323,7 +331,7 @@ function createRequestItem(testItem, nhsNoMap) {
       raw: decodedBody,
       options: {
         raw: {
-          language: 'json',
+          language: requestData.contentType || 'json',
         },
       },
     };
@@ -338,6 +346,7 @@ function createRequestItem(testItem, nhsNoMap) {
 
   const url = {
     raw: replacedFullUrl,
+    protocol: replacedFullUrl.match(/^https?/)[0],
     host: [replacedFullUrl.replace(/^https?:\/\//, '').split('/')[0]],
     path: replacedFullUrl
       .replace(/^https?:\/\/[^/]+\//, '')
@@ -389,6 +398,7 @@ function createRequestItem(testItem, nhsNoMap) {
 
   const originalRequestUrl = {
     raw: originalFullUrl,
+    protocol: originalFullUrl.match(/^https?/)[0],
     host: [originalFullUrl.replace(/^https?:\/\//, '').split('/')[0]],
     path: originalFullUrl
       .replace(/^https?:\/\/[^/]+\//, '')
