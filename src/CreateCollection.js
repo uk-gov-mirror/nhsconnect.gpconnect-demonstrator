@@ -299,6 +299,11 @@ function createRequestItem(testItem, nhsNoMap) {
   if (requestData.parameters) {
     if (Array.isArray(requestData.parameters)) {
       requestData.parameters.forEach((param) => {
+        // Skip parameters that start with underscore (test-specific parameters)
+        if (param.name.startsWith('_')) {
+          return;
+        }
+
         // Replace NHS numbers in parameter values
         let replacedValue = replaceNHSNumbers(param.value, nhsNoMap);
 
@@ -408,10 +413,12 @@ function createRequestItem(testItem, nhsNoMap) {
 
   // Add query parameters to URL if they exist
   if (requestData.parameters && requestData.parameters.length > 0) {
-    originalRequestUrl.query = requestData.parameters.map((param) => ({
-      key: param.name,
-      value: param.value,
-    }));
+    originalRequestUrl.query = requestData.parameters
+      .filter((param) => !param.name.startsWith('_')) // Filter out underscore parameters
+      .map((param) => ({
+        key: param.name,
+        value: param.value,
+      }));
   }
 
   const exampleResponse = new sdk.Response({
